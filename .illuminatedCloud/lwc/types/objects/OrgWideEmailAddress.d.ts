@@ -2,18 +2,18 @@
 
 declare interface OrgWideEmailAddress extends SObject 
 {
-    Address: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DisplayName: string;
-    IsAllowAllProfiles: boolean;
-    IsVerified: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    OrgEmailAddressSecurityItems: OrgEmailAddressSecurity[];
-    Purpose: string;
-    SetupEntityAccessItems: SetupEntityAccess[];
-    SystemModstamp: string;
+    Address?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DisplayName?: string;
+    IsAllowAllProfiles?: boolean;
+    IsVerified?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    OrgEmailAddressSecurityItems?: OrgEmailAddressSecurity[];
+    Purpose?: string;
+    SetupEntityAccessItems?: SetupEntityAccess[];
+    SystemModstamp?: string;
 }

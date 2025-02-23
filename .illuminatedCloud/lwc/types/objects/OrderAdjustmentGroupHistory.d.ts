@@ -2,14 +2,14 @@
 
 declare interface OrderAdjustmentGroupHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    OrderAdjustmentGroup: OrderAdjustmentGroup;
-    OrderAdjustmentGroupId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    OrderAdjustmentGroup?: OrderAdjustmentGroup;
+    OrderAdjustmentGroupId?: string;
 }

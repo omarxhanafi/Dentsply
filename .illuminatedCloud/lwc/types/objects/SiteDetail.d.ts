@@ -2,7 +2,7 @@
 
 declare interface SiteDetail extends SObject 
 {
-    DurableId: string;
-    IsRegistrationEnabled: boolean;
-    SecureUrl: string;
+    DurableId?: string;
+    IsRegistrationEnabled?: boolean;
+    SecureUrl?: string;
 }

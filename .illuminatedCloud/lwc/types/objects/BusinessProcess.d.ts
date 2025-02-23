@@ -2,17 +2,17 @@
 
 declare interface BusinessProcess extends SObject 
 {
-    BusinessProcess: RecordType;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Description: string;
-    IsActive: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    NamespacePrefix: string;
-    SystemModstamp: string;
-    TableEnumOrId: string;
+    BusinessProcess?: RecordType;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Description?: string;
+    IsActive?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    NamespacePrefix?: string;
+    SystemModstamp?: string;
+    TableEnumOrId?: string;
 }

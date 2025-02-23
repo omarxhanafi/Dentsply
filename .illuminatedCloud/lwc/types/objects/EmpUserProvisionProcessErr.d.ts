@@ -2,36 +2,36 @@
 
 declare interface EmpUserProvisionProcessErr extends SObject 
 {
-    Account: Account;
-    AccountId: string;
+    Account?: Account;
+    AccountId?: string;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    ErrorCode: string;
-    ErrorMessage: string;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    Name: string;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    ProvisioningProcess: EmpUserProvisioningProcess;
-    ProvisioningProcessId: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    ErrorCode?: string;
+    ErrorMessage?: string;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    Name?: string;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    ProvisioningProcess?: EmpUserProvisioningProcess;
+    ProvisioningProcessId?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
 }

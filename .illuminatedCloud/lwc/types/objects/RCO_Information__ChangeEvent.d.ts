@@ -2,16 +2,16 @@
 
 declare interface RCO_Information__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

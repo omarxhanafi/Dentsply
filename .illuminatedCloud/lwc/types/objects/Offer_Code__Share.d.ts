@@ -2,14 +2,14 @@
 
 declare interface Offer_Code__Share extends SObject 
 {
-    AccessLevel: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Parent: Offer_Code__c;
-    ParentId: string;
-    RowCause: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    AccessLevel?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Parent?: Offer_Code__c;
+    ParentId?: string;
+    RowCause?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

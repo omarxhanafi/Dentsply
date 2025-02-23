@@ -9,7 +9,7 @@ declare interface Sales_Quarter__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,12 +17,12 @@ declare interface Sales_Quarter__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Account__r?: Account;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Implant Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,11 +38,11 @@ declare interface Sales_Quarter__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XiVE</code></td><td>XiVE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Implant_Brand__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Implant_Brand__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Number of DI implants sold</b></h3>
      * <p>Based on confirmed sales from distributor.</p>
@@ -54,7 +54,7 @@ declare interface Sales_Quarter__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Number_of_DI_implants_sold__c: number;
+    Number_of_DI_implants_sold__c?: number;
     /**
      * <h3><b>Number of est DI Implants</b></h3>
      * <p>To be filled in by Sales Rep when agreing on an implant purchase.</p>
@@ -66,6 +66,6 @@ declare interface Sales_Quarter__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Number_of_est_DI_Implants__c: number;
-    ReplayId: string;
+    Number_of_est_DI_Implants__c?: number;
+    ReplayId?: string;
 }

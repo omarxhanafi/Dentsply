@@ -2,11 +2,11 @@
 
 declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Activity Stub</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__ActivityStub__c: string;
+    CventEvents__ActivityStub__c?: string;
     /**
      * <h3><b>Attendee</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link CventEvents__Attendee__c})</td></tr>
      * </table>
      */
-    CventEvents__Attendee__c: string;
+    CventEvents__Attendee__c?: string;
     /**
      * <h3><b>Attendee</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link CventEvents__Attendee__c})</td></tr>
      * </table>
      */
-    CventEvents__Attendee__r: CventEvents__Attendee__c;
+    CventEvents__Attendee__r?: CventEvents__Attendee__c;
     /**
      * <h3><b>Attendee Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__AttendeeName__c: string;
+    CventEvents__AttendeeName__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Contact__c: string;
+    CventEvents__Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,7 +63,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Contact__r: Contact;
+    CventEvents__Contact__r?: Contact;
     /**
      * <h3><b>Details</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,7 +71,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    CventEvents__Details__c: string;
+    CventEvents__Details__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,7 +82,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__DisplayType__c: string;
+    CventEvents__DisplayType__c?: string;
     /**
      * <h3><b>Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Event__c: string;
+    CventEvents__Event__c?: string;
     /**
      * <h3><b>Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -100,7 +100,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Event__r: CventEvents__Event__c;
+    CventEvents__Event__r?: CventEvents__Event__c;
     /**
      * <h3><b>Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__EventTitle__c: string;
+    CventEvents__EventTitle__c?: string;
     /**
      * <h3><b>Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -123,7 +123,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Group__c: string;
+    CventEvents__Group__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,7 +132,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Lead__c: string;
+    CventEvents__Lead__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -141,7 +141,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Lead__r: Lead;
+    CventEvents__Lead__r?: Lead;
     /**
      * <h3><b>Related Object Name</b></h3>
      * <p>Contains name of the related entity.</p>
@@ -153,7 +153,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__ObjectName__c: string;
+    CventEvents__ObjectName__c?: string;
     /**
      * <h3><b>Object Stub</b></h3>
      * <p>Contains Cvent stub of the related entity.</p>
@@ -165,7 +165,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__ObjectStub__c: string;
+    CventEvents__ObjectStub__c?: string;
     /**
      * <h3><b>Related Object Type</b></h3>
      * <p>Contains type of the related entity.</p>
@@ -177,7 +177,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__ObjectType__c: string;
+    CventEvents__ObjectType__c?: string;
     /**
      * <h3><b>Activity Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -186,7 +186,7 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__Timestamp__c: string;
+    CventEvents__Timestamp__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -197,10 +197,10 @@ declare interface CventEvents__AttendeeActivity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Type__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    CventEvents__Type__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
 }

@@ -10,12 +10,12 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Active__c: boolean;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Active__c?: boolean;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Internal Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,7 +23,7 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1000)</td></tr>
      * </table>
      */
-    Description__c: string;
+    Description__c?: string;
     /**
      * <h3><b>End date</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,7 +32,7 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    End_date__c: Date;
+    End_date__c?: Date;
     /**
      * <h3><b>Fixed Price ?</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,7 +41,7 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FixedPrice__c: boolean;
+    FixedPrice__c?: boolean;
     /**
      * <h3><b>FOC delivery</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,13 +57,13 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales rep</code></td><td>Sales rep</td><td nowrap>true</td></tr>
      * </table>
      */
-    FOC_delivery__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    FOC_delivery__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Price Book</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price_Book__c: string;
+    Price_Book__c?: string;
     /**
      * <h3><b>Price Book</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price_Book__r: Pricebook2;
+    Price_Book__r?: Pricebook2;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity__c: number;
+    Quantity__c?: number;
     /**
      * <h3><b>Quote Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -100,8 +100,8 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    QuoteDescription__c: string;
-    ReplayId: string;
+    QuoteDescription__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Start date</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Start_date__c: Date;
+    Start_date__c?: Date;
     /**
      * <h3><b>Total Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -121,7 +121,7 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">BOM__c.Discount_Value__c</code></td></tr>
      * </table>
      */
-    Total_Discount__c: number;
+    Total_Discount__c?: number;
     /**
      * <h3><b>Total price</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,5 +132,5 @@ declare interface Product_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">BOM__c.Row_price__c</code></td></tr>
      * </table>
      */
-    Total_price__c: number;
+    Total_price__c?: number;
 }

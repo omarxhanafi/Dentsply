@@ -2,19 +2,19 @@
 
 declare interface PartnerNetworkRecordConnection extends SObject 
 {
-    Connection: PartnerNetworkConnection;
-    ConnectionId: string;
-    EndDate: string;
-    LocalRecord: SObject;
-    LocalRecordId: string;
-    ParentRecord: SObject;
-    ParentRecordId: string;
-    PartnerRecord: SObject;
-    PartnerRecordId: string;
-    RelatedRecords: string;
-    SendClosedTasks: boolean;
-    SendEmails: boolean;
-    SendOpenTasks: boolean;
-    StartDate: string;
-    Status: string;
+    Connection?: PartnerNetworkConnection;
+    ConnectionId?: string;
+    EndDate?: string;
+    LocalRecord?: SObject;
+    LocalRecordId?: string;
+    ParentRecord?: SObject;
+    ParentRecordId?: string;
+    PartnerRecord?: SObject;
+    PartnerRecordId?: string;
+    RelatedRecords?: string;
+    SendClosedTasks?: boolean;
+    SendEmails?: boolean;
+    SendOpenTasks?: boolean;
+    StartDate?: string;
+    Status?: string;
 }

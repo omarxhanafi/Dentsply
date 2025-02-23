@@ -10,12 +10,12 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Allowed_discount__c: number;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Allowed_discount__c?: number;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Discount lever</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Skonto</code></td><td>Skonto</td><td nowrap>true</td></tr>
      * </table>
      */
-    Discount_lever__c: string;
+    Discount_lever__c?: string;
     /**
      * <h3><b>Discount Model</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,7 +52,7 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Discount_model__c})</td></tr>
      * </table>
      */
-    Discount_Model__c: string;
+    Discount_Model__c?: string;
     /**
      * <h3><b>Discount Model</b></h3>
      * <h4>Field Attributes</h4>
@@ -60,7 +60,7 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Discount_model__c})</td></tr>
      * </table>
      */
-    Discount_Model__r: Discount_model__c;
+    Discount_Model__r?: Discount_model__c;
     /**
      * <h3><b>Equals</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,10 +71,10 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equals__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Equals__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Max</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,7 +83,7 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Max__c: number;
+    Max__c?: number;
     /**
      * <h3><b>Max (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Max_perc__c: number;
+    Max_perc__c?: number;
     /**
      * <h3><b>Max Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -103,7 +103,7 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MaxNumber__c: number;
+    MaxNumber__c?: number;
     /**
      * <h3><b>Min</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Min__c: number;
+    Min__c?: number;
     /**
      * <h3><b>Min (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -121,7 +121,7 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Min_perc__c: number;
+    Min_perc__c?: number;
     /**
      * <h3><b>Min Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,7 +132,7 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MinNumber__c: number;
+    MinNumber__c?: number;
     /**
      * <h3><b>Min Total Sales Net</b></h3>
      * <h4>Field Attributes</h4>
@@ -143,8 +143,8 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MinTotalSalesNet__c: number;
-    Name: string;
+    MinTotalSalesNet__c?: number;
+    Name?: string;
     /**
      * <h3><b>Allowed payment terms (months)</b></h3>
      * <h4>Field Attributes</h4>
@@ -156,8 +156,8 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Payment_terms_months__c: number;
-    ReplayId: string;
+    Payment_terms_months__c?: number;
+    ReplayId?: string;
     /**
      * <h3><b>Text Match Result</b></h3>
      * <h4>Field Attributes</h4>
@@ -168,5 +168,5 @@ declare interface Discount_row__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TextMatchResult__c: string;
+    TextMatchResult__c?: string;
 }

@@ -11,7 +11,7 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    AllowMultipleMembersPerAccount__c: boolean;
+    AllowMultipleMembersPerAccount__c?: boolean;
     /**
      * <h3><b>Allow Multiple Members per Contact</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -21,7 +21,7 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    AllowMultipleMembersPerContact__c: boolean;
+    AllowMultipleMembersPerContact__c?: boolean;
     /**
      * <h3><b>Allow Program Members</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -31,8 +31,8 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    AllowProgramMembers__c: boolean;
-    ChangeEventHeader: ChangeEventHeader;
+    AllowProgramMembers__c?: boolean;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Contact Required</b></h3>
      * <p>TFUS-000002932</p>
@@ -42,7 +42,7 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ContactRequired__c: boolean;
+    ContactRequired__c?: boolean;
     /**
      * <h3><b>Country</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -52,11 +52,11 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>DEP Record Hash</b></h3>
      * <h4>Field Attributes</h4>
@@ -67,7 +67,7 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DEPRecordHash__c: string;
+    DEPRecordHash__c?: string;
     /**
      * <h3><b>DEP Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    DEPUniqueKey__c: string;
+    DEPUniqueKey__c?: string;
     /**
      * <h3><b>End Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -87,7 +87,7 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EndDate__c: Date;
+    EndDate__c?: Date;
     /**
      * <h3><b>External Id</b></h3>
      * <p>External Key to identify program on external platform - such as the One DS Loyalty platform</p>
@@ -99,11 +99,11 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    ExternalId__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    ExternalId__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Notifications</b></h3>
      * <p>TFUS-000002384. Controls whether a chatter post will be created that notifies users in the parent account territory once a program registration has been activated.</p>
@@ -118,9 +118,9 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Send Chatter Notification to Territory Users</code></td><td>Send Chatter Notification to Territory Users</td><td nowrap>true</td></tr>
      * </table>
      */
-    Notifications__c: string;
-    Owner: SObject;
-    OwnerId: string;
+    Notifications__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Program Description</b></h3>
      * <p>210318: TFUS-000002864 &amp; TFUS-000002865
@@ -130,8 +130,8 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    ProgramDescription__c: string;
-    ReplayId: string;
+    ProgramDescription__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Start date</b></h3>
      * <h4>Field Attributes</h4>
@@ -140,7 +140,7 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartDate__c: Date;
+    StartDate__c?: Date;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -155,7 +155,7 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inactive</code></td><td>Inactive</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Subtype</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -165,7 +165,7 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Subtype__c: string;
+    Subtype__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -174,5 +174,5 @@ declare interface LoyaltyProgram__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Type__c: string;
+    Type__c?: string;
 }

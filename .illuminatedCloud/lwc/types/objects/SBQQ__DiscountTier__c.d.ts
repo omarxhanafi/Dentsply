@@ -6,22 +6,22 @@
  */
 declare interface SBQQ__DiscountTier__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__PriceTier__c.SBQQ__OriginalDiscountTier__c}.
      */
-    PriceTiers__r: SBQQ__PriceTier__c[];
+    PriceTiers__r?: SBQQ__PriceTier__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLine__c.SBQQ__DiscountTier__c}.
      */
-    QuoteLines__r: SBQQ__QuoteLine__c[];
+    QuoteLines__r?: SBQQ__QuoteLine__c[];
     /**
      * <h3><b>Discount (%)</b></h3>
      * <p>Discount percentage applied when quantity falls in this tier.</p>
@@ -32,7 +32,7 @@ declare interface SBQQ__DiscountTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Discount__c: number;
+    SBQQ__Discount__c?: number;
     /**
      * <h3><b>Discount ({0})</b></h3>
      * <p>Discount amount applied when quantity falls in this tier.</p>
@@ -43,7 +43,7 @@ declare interface SBQQ__DiscountTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DiscountAmount__c: number;
+    SBQQ__DiscountAmount__c?: number;
     /**
      * <h3><b>Lower Bound</b></h3>
      * <p>Lower bound of the quantity range for this tier</p>
@@ -55,7 +55,7 @@ declare interface SBQQ__DiscountTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__LowerBound__c: number;
+    SBQQ__LowerBound__c?: number;
     /**
      * <h3><b>Number</b></h3>
      * <p>Number indicating this tier&#39;s position within the schedule.</p>
@@ -67,7 +67,7 @@ declare interface SBQQ__DiscountTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Number__c: number;
+    SBQQ__Number__c?: number;
     /**
      * <h3><b>Price</b></h3>
      * <p>The actual price of this discount tier. This field will be populated when a new set of discount schedules are created for a new Order record.</p>
@@ -78,7 +78,7 @@ declare interface SBQQ__DiscountTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Price__c: number;
+    SBQQ__Price__c?: number;
     /**
      * <h3><b>Schedule</b></h3>
      * <p>Discount Schedule to which this tier belongs.</p>
@@ -88,7 +88,7 @@ declare interface SBQQ__DiscountTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Schedule__c: string;
+    SBQQ__Schedule__c?: string;
     /**
      * <h3><b>Schedule</b></h3>
      * <p>Discount Schedule to which this tier belongs.</p>
@@ -98,7 +98,7 @@ declare interface SBQQ__DiscountTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Schedule__r: SBQQ__DiscountSchedule__c;
+    SBQQ__Schedule__r?: SBQQ__DiscountSchedule__c;
     /**
      * <h3><b>Upper Bound</b></h3>
      * <p>Upper bound of the quantity range for this tier.</p>
@@ -110,17 +110,17 @@ declare interface SBQQ__DiscountTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UpperBound__c: number;
+    SBQQ__UpperBound__c?: number;
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLine__c.SBQQ__TermDiscountTier__c}.
      */
-    TermDiscountedQuoteLines__r: SBQQ__QuoteLine__c[];
+    TermDiscountedQuoteLines__r?: SBQQ__QuoteLine__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__WebQuoteLine__c.SBQQ__TermDiscountTier__c}.
      */
-    TermDiscountedWebQuoteLines__r: SBQQ__WebQuoteLine__c[];
+    TermDiscountedWebQuoteLines__r?: SBQQ__WebQuoteLine__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__WebQuoteLine__c.SBQQ__DiscountTier__c}.
      */
-    WebQuoteLines__r: SBQQ__WebQuoteLine__c[];
+    WebQuoteLines__r?: SBQQ__WebQuoteLine__c[];
 }

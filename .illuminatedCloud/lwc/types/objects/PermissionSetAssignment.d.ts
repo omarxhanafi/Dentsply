@@ -2,14 +2,14 @@
 
 declare interface PermissionSetAssignment extends SObject 
 {
-    Assignee: User;
-    AssigneeId: string;
-    ExpirationDate: string;
-    IsActive: boolean;
-    IsRevoked: boolean;
-    PermissionSet: PermissionSet;
-    PermissionSetGroup: PermissionSetGroup;
-    PermissionSetGroupId: string;
-    PermissionSetId: string;
-    SystemModstamp: string;
+    Assignee?: User;
+    AssigneeId?: string;
+    ExpirationDate?: string;
+    IsActive?: boolean;
+    IsRevoked?: boolean;
+    PermissionSet?: PermissionSet;
+    PermissionSetGroup?: PermissionSetGroup;
+    PermissionSetGroupId?: string;
+    PermissionSetId?: string;
+    SystemModstamp?: string;
 }

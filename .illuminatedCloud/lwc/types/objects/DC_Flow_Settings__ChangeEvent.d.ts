@@ -2,16 +2,16 @@
 
 declare interface DC_Flow_Settings__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Response Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface DC_Flow_Settings__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Responce_Key__c: string;
+    Responce_Key__c?: string;
     /**
      * <h3><b>Response Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface DC_Flow_Settings__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Responce_Value__c: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    Responce_Value__c?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

@@ -17,7 +17,7 @@ declare interface AccountSubSegmentationMatrix__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ControllingField__c: string;
+    ControllingField__c?: string;
     /**
      * <h3><b>Country (Alpha 2)</b></h3>
      * <p>Country Code in ISO Alpha 2 format.</p>
@@ -29,10 +29,10 @@ declare interface AccountSubSegmentationMatrix__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
+    Country__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
     /**
      * <h3><b>Low Threshold (MIN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,8 +44,8 @@ declare interface AccountSubSegmentationMatrix__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td></tr>
      * </table>
      */
-    LowThresholdMIN__c: number;
-    MasterLabel: string;
+    LowThresholdMIN__c?: number;
+    MasterLabel?: string;
     /**
      * <h3><b>Medium Threshold (MAX)</b></h3>
      * <p>Max number that is within &quot;Medium&quot;.</p>
@@ -57,7 +57,7 @@ declare interface AccountSubSegmentationMatrix__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MediumThresholdMAX__c: number;
+    MediumThresholdMAX__c?: number;
     /**
      * <h3><b>Medium Threshold (MIN)</b></h3>
      * <p>Lowest number to be classified as &quot;Medium&quot;.</p>
@@ -69,10 +69,10 @@ declare interface AccountSubSegmentationMatrix__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MediumThresholdMIN__c: number;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    MediumThresholdMIN__c?: number;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>Target Field</b></h3>
      * <p>Target field to set on the Account.</p>
@@ -84,5 +84,5 @@ declare interface AccountSubSegmentationMatrix__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TargetField__c: string;
+    TargetField__c?: string;
 }

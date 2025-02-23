@@ -114,6 +114,12 @@ declare module "@salesforce/schema/ExpressionSetDefinition.ProcedurePlanOptionEx
     export default ProcedurePlanOptionExpSetDefinition;
 }
 
+declare module "@salesforce/schema/ExpressionSetDefinition.SalesTransactionTypes" {
+    import { FieldId } from "@salesforce/schema";
+    const SalesTransactionTypes: FieldId;
+    export default SalesTransactionTypes;
+}
+
 declare module "@salesforce/schema/ExpressionSetDefinition.SystemModstamp" {
     import { FieldId } from "@salesforce/schema";
     const SystemModstamp: FieldId;

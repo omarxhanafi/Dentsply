@@ -2,12 +2,12 @@
 
 declare interface AsyncOperationEvent extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
-    OperationDetails: AsyncOperationStatus[];
-    OperationId: string;
-    ReplayId: string;
-    SourceEvent: SObject;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
+    OperationDetails?: AsyncOperationStatus[];
+    OperationId?: string;
+    ReplayId?: string;
+    SourceEvent?: SObject;
 }

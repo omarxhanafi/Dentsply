@@ -2,14 +2,14 @@
 
 declare interface maps__Route__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,7 +18,7 @@ declare interface maps__Route__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Date__c: Date;
+    maps__Date__c?: Date;
     /**
      * <h3><b>Options</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface maps__Route__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__Options__c: string;
+    maps__Options__c?: string;
     /**
      * <h3><b>Travel Distance (Miles)</b></h3>
      * <h4>Field Attributes</h4>
@@ -37,7 +37,7 @@ declare interface maps__Route__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TravelDistance__c: number;
+    maps__TravelDistance__c?: number;
     /**
      * <h3><b>Travel Time (Min)</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface maps__Route__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TravelTime__c: number;
+    maps__TravelTime__c?: number;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,7 +57,7 @@ declare interface maps__Route__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__User__c: string;
+    maps__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,9 +66,9 @@ declare interface maps__Route__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__User__r: User;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__User__r?: User;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

@@ -114,6 +114,18 @@ declare module "@salesforce/schema/UnitOfMeasureChangeEvent.UnitCode" {
     export default UnitCode;
 }
 
+declare module "@salesforce/schema/UnitOfMeasureChangeEvent.UnitOfMeasureClass" {
+    import { FieldId } from "@salesforce/schema";
+    const UnitOfMeasureClass: FieldId;
+    export default UnitOfMeasureClass;
+}
+
+declare module "@salesforce/schema/UnitOfMeasureChangeEvent.UnitOfMeasureClassId" {
+    import { FieldId } from "@salesforce/schema";
+    const UnitOfMeasureClassId: FieldId;
+    export default UnitOfMeasureClassId;
+}
+
 declare module "@salesforce/schema/UnitOfMeasureChangeEvent.UserRecordAccess" {
     import { FieldId } from "@salesforce/schema";
     const UserRecordAccess: FieldId;

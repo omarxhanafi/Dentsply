@@ -2,12 +2,12 @@
 
 declare interface KnowledgeableUser extends SObject 
 {
-    Network: Network;
-    NetworkId: string;
-    RawRank: number;
-    SystemModstamp: string;
-    Topic: Topic;
-    TopicId: string;
-    User: SObject;
-    UserId: string;
+    Network?: Network;
+    NetworkId?: string;
+    RawRank?: number;
+    SystemModstamp?: string;
+    Topic?: Topic;
+    TopicId?: string;
+    User?: SObject;
+    UserId?: string;
 }

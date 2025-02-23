@@ -2,14 +2,14 @@
 
 declare interface FlowVariableView extends SObject 
 {
-    ApiName: string;
-    DataType: string;
-    Description: string;
-    DurableId: string;
-    FlowVersionView: FlowVersionView;
-    FlowVersionViewId: string;
-    IsCollection: boolean;
-    IsInput: boolean;
-    IsOutput: boolean;
-    ObjectType: string;
+    ApiName?: string;
+    DataType?: string;
+    Description?: string;
+    DurableId?: string;
+    FlowVersionView?: FlowVersionView;
+    FlowVersionViewId?: string;
+    IsCollection?: boolean;
+    IsInput?: boolean;
+    IsOutput?: boolean;
+    ObjectType?: string;
 }

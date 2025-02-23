@@ -2,17 +2,17 @@
 
 declare interface Territory2ObjSharingConfig extends SObject 
 {
-    AccessLevel: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    SystemModstamp: string;
-    Territory2: Territory2;
-    Territory2Id: string;
-    TerritoryMgmtObjectConfig: TerritoryMgmtObjectConfig;
-    TerritoryMgmtObjectConfigId: string;
+    AccessLevel?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    SystemModstamp?: string;
+    Territory2?: Territory2;
+    Territory2Id?: string;
+    TerritoryMgmtObjectConfig?: TerritoryMgmtObjectConfig;
+    TerritoryMgmtObjectConfigId?: string;
 }

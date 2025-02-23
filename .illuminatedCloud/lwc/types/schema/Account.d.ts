@@ -3276,6 +3276,12 @@ declare module "@salesforce/schema/Account.Free_Insurance_Medical_Care__c" {
     export default Free_Insurance_Medical_Care__c;
 }
 
+declare module "@salesforce/schema/Account.FulfillmentAssets" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentAssets: FieldId;
+    export default FulfillmentAssets;
+}
+
 declare module "@salesforce/schema/Account.FulfillmentOrders" {
     import { FieldId } from "@salesforce/schema";
     const FulfillmentOrders: FieldId;
@@ -4566,6 +4572,12 @@ declare module "@salesforce/schema/Account.Oral_Agreements__r" {
     export default Oral_Agreements__r;
 }
 
+declare module "@salesforce/schema/Account.OrderItemRecipients" {
+    import { FieldId } from "@salesforce/schema";
+    const OrderItemRecipients: FieldId;
+    export default OrderItemRecipients;
+}
+
 declare module "@salesforce/schema/Account.Order_Products__r" {
     import { FieldId } from "@salesforce/schema";
     const Order_Products__r: FieldId;
@@ -5574,6 +5586,12 @@ declare module "@salesforce/schema/Account.PrimaryRecord" {
     export default PrimaryRecord;
 }
 
+declare module "@salesforce/schema/Account.PrimaryRevenueTransactionErrorLogs" {
+    import { FieldId } from "@salesforce/schema";
+    const PrimaryRevenueTransactionErrorLogs: FieldId;
+    export default PrimaryRevenueTransactionErrorLogs;
+}
+
 declare module "@salesforce/schema/Account.PrimaryWho" {
     import { FieldId } from "@salesforce/schema";
     const PrimaryWho: FieldId;
@@ -5782,6 +5800,18 @@ declare module "@salesforce/schema/Account.QuoteLineGroups__r" {
     import { FieldId } from "@salesforce/schema";
     const QuoteLineGroups__r: FieldId;
     export default QuoteLineGroups__r;
+}
+
+declare module "@salesforce/schema/Account.QuoteLineItemRecipients" {
+    import { FieldId } from "@salesforce/schema";
+    const QuoteLineItemRecipients: FieldId;
+    export default QuoteLineItemRecipients;
+}
+
+declare module "@salesforce/schema/Account.Quotes" {
+    import { FieldId } from "@salesforce/schema";
+    const Quotes: FieldId;
+    export default Quotes;
 }
 
 declare module "@salesforce/schema/Account.Quotes__pr" {
@@ -6802,6 +6832,12 @@ declare module "@salesforce/schema/Account.Sold_Stock_Abut_s_LY_CY__c" {
     import { FieldId } from "@salesforce/schema";
     const Sold_Stock_Abut_s_LY_CY__c: FieldId;
     export default Sold_Stock_Abut_s_LY_CY__c;
+}
+
+declare module "@salesforce/schema/Account.SourceSystemIdentifier" {
+    import { FieldId } from "@salesforce/schema";
+    const SourceSystemIdentifier: FieldId;
+    export default SourceSystemIdentifier;
 }
 
 declare module "@salesforce/schema/Account.SourceSystemName__c" {

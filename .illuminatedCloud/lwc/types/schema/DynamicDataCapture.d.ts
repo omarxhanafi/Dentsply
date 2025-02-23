@@ -12,12 +12,6 @@ declare module "@salesforce/schema/DynamicDataCapture.ActionDefinition" {
     export default ActionDefinition;
 }
 
-declare module "@salesforce/schema/DynamicDataCapture.ActionType" {
-    import { FieldId } from "@salesforce/schema";
-    const ActionType: FieldId;
-    export default ActionType;
-}
-
 declare module "@salesforce/schema/DynamicDataCapture.ApprovalSubmissions" {
     import { FieldId } from "@salesforce/schema";
     const ApprovalSubmissions: FieldId;
@@ -90,22 +84,10 @@ declare module "@salesforce/schema/DynamicDataCapture.CurrencyIsoCode" {
     export default CurrencyIsoCode;
 }
 
-declare module "@salesforce/schema/DynamicDataCapture.Description" {
-    import { FieldId } from "@salesforce/schema";
-    const Description: FieldId;
-    export default Description;
-}
-
 declare module "@salesforce/schema/DynamicDataCapture.DocEnvelopeRefObjects" {
     import { FieldId } from "@salesforce/schema";
     const DocEnvelopeRefObjects: FieldId;
     export default DocEnvelopeRefObjects;
-}
-
-declare module "@salesforce/schema/DynamicDataCapture.ExecutionOrder" {
-    import { FieldId } from "@salesforce/schema";
-    const ExecutionOrder: FieldId;
-    export default ExecutionOrder;
 }
 
 declare module "@salesforce/schema/DynamicDataCapture.FeedSubscriptionsForEntity" {
@@ -154,12 +136,6 @@ declare module "@salesforce/schema/DynamicDataCapture.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;
     export default IsDeleted;
-}
-
-declare module "@salesforce/schema/DynamicDataCapture.IsRequired" {
-    import { FieldId } from "@salesforce/schema";
-    const IsRequired: FieldId;
-    export default IsRequired;
 }
 
 declare module "@salesforce/schema/DynamicDataCapture.LastModifiedBy" {
@@ -240,24 +216,6 @@ declare module "@salesforce/schema/DynamicDataCapture.ParentRecordId" {
     export default ParentRecordId;
 }
 
-declare module "@salesforce/schema/DynamicDataCapture.ParentRecordType" {
-    import { FieldId } from "@salesforce/schema";
-    const ParentRecordType: FieldId;
-    export default ParentRecordType;
-}
-
-declare module "@salesforce/schema/DynamicDataCapture.PausedFlowInterview" {
-    import { FieldId } from "@salesforce/schema";
-    const PausedFlowInterview: FieldId;
-    export default PausedFlowInterview;
-}
-
-declare module "@salesforce/schema/DynamicDataCapture.PausedFlowInterviewId" {
-    import { FieldId } from "@salesforce/schema";
-    const PausedFlowInterviewId: FieldId;
-    export default PausedFlowInterviewId;
-}
-
 declare module "@salesforce/schema/DynamicDataCapture.ProcessInstances" {
     import { FieldId } from "@salesforce/schema";
     const ProcessInstances: FieldId;
@@ -270,12 +228,6 @@ declare module "@salesforce/schema/DynamicDataCapture.ProcessSteps" {
     export default ProcessSteps;
 }
 
-declare module "@salesforce/schema/DynamicDataCapture.ProcessType" {
-    import { FieldId } from "@salesforce/schema";
-    const ProcessType: FieldId;
-    export default ProcessType;
-}
-
 declare module "@salesforce/schema/DynamicDataCapture.RelatedRecord" {
     import { FieldId } from "@salesforce/schema";
     const RelatedRecord: FieldId;
@@ -286,12 +238,6 @@ declare module "@salesforce/schema/DynamicDataCapture.SobjectLookupValue" {
     import { FieldId } from "@salesforce/schema";
     const SobjectLookupValue: FieldId;
     export default SobjectLookupValue;
-}
-
-declare module "@salesforce/schema/DynamicDataCapture.StatusCategory" {
-    import { FieldId } from "@salesforce/schema";
-    const StatusCategory: FieldId;
-    export default StatusCategory;
 }
 
 declare module "@salesforce/schema/DynamicDataCapture.SystemModstamp" {

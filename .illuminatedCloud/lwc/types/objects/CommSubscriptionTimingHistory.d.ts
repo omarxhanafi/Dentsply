@@ -2,14 +2,14 @@
 
 declare interface CommSubscriptionTimingHistory extends SObject 
 {
-    CommSubscriptionTiming: CommSubscriptionTiming;
-    CommSubscriptionTimingId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CommSubscriptionTiming?: CommSubscriptionTiming;
+    CommSubscriptionTimingId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

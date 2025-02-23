@@ -2,7 +2,7 @@
 
 declare interface XSBU_2_orgs__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Connection Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -13,7 +13,7 @@ declare interface XSBU_2_orgs__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Connection_Id_del__c: string;
+    Connection_Id_del__c?: string;
     /**
      * <h3><b>Country Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,11 +24,11 @@ declare interface XSBU_2_orgs__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Code_del__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country_Code_del__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>ISO currency</b></h3>
      * <p>This should have currency of receiver org if they do not have multi-currency enabled</p>
@@ -40,11 +40,11 @@ declare interface XSBU_2_orgs__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ISO_currency_del__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    ISO_currency_del__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Named Credential</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface XSBU_2_orgs__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Named_Credential__c: string;
+    Named_Credential__c?: string;
     /**
      * <h3><b>Opportunity RecordType Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,8 +66,8 @@ declare interface XSBU_2_orgs__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity_RecordType_Id__c: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    Opportunity_RecordType_Id__c?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

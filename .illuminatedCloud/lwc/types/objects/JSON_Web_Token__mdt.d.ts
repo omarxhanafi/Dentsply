@@ -15,7 +15,7 @@ declare interface JSON_Web_Token__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Algorithm__c: string;
+    Algorithm__c?: string;
     /**
      * <h3><b>Audiences</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,8 +26,8 @@ declare interface JSON_Web_Token__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Audiences__c: string;
-    DeveloperName: string;
+    Audiences__c?: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Endpoint</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface JSON_Web_Token__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Endpoint__c: string;
+    Endpoint__c?: string;
     /**
      * <h3><b>Issuer</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,12 +49,12 @@ declare interface JSON_Web_Token__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Issuer__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    Issuer__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>RSA Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface JSON_Web_Token__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    RSA_Key__c: string;
+    RSA_Key__c?: string;
     /**
      * <h3><b>Subscriber</b></h3>
      * <h4>Field Attributes</h4>
@@ -73,8 +73,8 @@ declare interface JSON_Web_Token__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Subscriber__c: string;
-    SystemModstamp: string;
+    Subscriber__c?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>Token Duration</b></h3>
      * <h4>Field Attributes</h4>
@@ -85,5 +85,5 @@ declare interface JSON_Web_Token__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Token_Duration__c: number;
+    Token_Duration__c?: number;
 }

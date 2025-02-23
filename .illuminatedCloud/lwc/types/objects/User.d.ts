@@ -2,89 +2,89 @@
 
 declare interface User extends SObject 
 {
-    AboutMe: string;
-    AcceptedEventRelations: AcceptedEventRelation[];
-    Account: Account;
+    AboutMe?: string;
+    AcceptedEventRelations?: AcceptedEventRelation[];
+    Account?: Account;
     /**
      * The reciprocal relationship for {@link Field_Sales_Project_Members__c.Sales_Rep__c}.
      */
-    Account_Leads__r: Field_Sales_Project_Members__c[];
+    Account_Leads__r?: Field_Sales_Project_Members__c[];
     /**
      * The reciprocal relationship for {@link Account_Plan__c.PREBusinessOwner__c}.
      */
-    Account_Plans1__r: Account_Plan__c[];
+    Account_Plans1__r?: Account_Plan__c[];
     /**
      * The reciprocal relationship for {@link Account_Plan__c.IMPLBusinessOwner__c}.
      */
-    Account_Plans2__r: Account_Plan__c[];
+    Account_Plans2__r?: Account_Plan__c[];
     /**
      * The reciprocal relationship for {@link Account_Plan__c.ORTHOBusinessOwner__c}.
      */
-    Account_Plans3__r: Account_Plan__c[];
+    Account_Plans3__r?: Account_Plan__c[];
     /**
      * The reciprocal relationship for {@link Account_Plan__c.LABBusinessOwner__c}.
      */
-    Account_Plans4__r: Account_Plan__c[];
+    Account_Plans4__r?: Account_Plan__c[];
     /**
      * The reciprocal relationship for {@link Account_Plan__c.EQUIPBusinessOwner__c}.
      */
-    Account_Plans5__r: Account_Plan__c[];
+    Account_Plans5__r?: Account_Plan__c[];
     /**
      * The reciprocal relationship for {@link Account_Plan__c.DSGenericOwner__c}.
      */
-    Account_Plans__r: Account_Plan__c[];
+    Account_Plans__r?: Account_Plan__c[];
     /**
      * The reciprocal relationship for {@link LoyaltyProgramParticipant__c.SalesRep__c}.
      */
-    Account_Program_Members__r: LoyaltyProgramParticipant__c[];
-    Account_Requests__r: Account_Create_Change_Request__c[];
-    AccountId: string;
+    Account_Program_Members__r?: LoyaltyProgramParticipant__c[];
+    Account_Requests__r?: Account_Create_Change_Request__c[];
+    AccountId?: string;
     /**
      * The reciprocal relationship for {@link Account.Custom_ETM2_Owner_IMPL__c}.
      */
-    Accounts2__r: Account[];
+    Accounts2__r?: Account[];
     /**
      * The reciprocal relationship for {@link Account.Custom_ETM2_Owner_PREP__c}.
      */
-    Accounts3__r: Account[];
+    Accounts3__r?: Account[];
     /**
      * The reciprocal relationship for {@link Account.Custom_ETM2_Owner_ORTH__c}.
      */
-    Accounts4__r: Account[];
+    Accounts4__r?: Account[];
     /**
      * The reciprocal relationship for {@link Account.Custom_ETM2_Owner_SIMPLANT__c}.
      */
-    Accounts5__r: Account[];
+    Accounts5__r?: Account[];
     /**
      * The reciprocal relationship for {@link Account.Custom_ETM2_Custom_Owner_Generalist__c}.
      */
-    Accounts6__r: Account[];
+    Accounts6__r?: Account[];
     /**
      * The reciprocal relationship for {@link Account.Custom_ETM2_Owner_Equipment__c}.
      */
-    Accounts7__r: Account[];
+    Accounts7__r?: Account[];
     /**
      * The reciprocal relationship for {@link Account.Custom_ETM2_Owner_LAB__c}.
      */
-    Accounts8__r: Account[];
+    Accounts8__r?: Account[];
     /**
      * The reciprocal relationship for {@link Account.COVID_Rebound_Point_of_Contact__c}.
      */
-    Accounts__r: Account[];
+    Accounts__r?: Account[];
     /**
      * The reciprocal relationship for {@link Account_Plan__c.AccountPlanOwner__c}.
      */
-    Accounts_Plans__r: Account_Plan__c[];
+    Accounts_Plans__r?: Account_Plan__c[];
     /**
      * The reciprocal relationship for {@link AccountTeamMember.UserId}.
      */
-    AccountTeams: AccountTeamMember[];
-    AccountUserTerritory2Views: AccountUserTerritory2View[];
+    AccountTeams?: AccountTeamMember[];
+    AccountUserTerritory2Views?: AccountUserTerritory2View[];
     /**
      * The reciprocal relationship for {@link Contract.ActivatedById}.
      */
-    ActivatedBy: Contract;
-    Actor: ProcessInstanceHistory;
+    ActivatedBy?: Contract;
+    Actor?: ProcessInstanceHistory;
     /**
      * <h3><b>Actual Sales LY</b></h3>
      * <p>Sales LY on Accounts owned by the rep. Used in Italy to group reps into categories by size. Updated manually. If more countries would use this field, update this description accordingly</p>
@@ -96,27 +96,27 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Actual_Sales_LY__c: number;
-    Address: Address;
+    Actual_Sales_LY__c?: number;
+    Address?: Address;
     /**
      * The reciprocal relationship for {@link LiveAgentSession.AgentId}.
      */
-    Agent: LiveAgentSession;
-    Alias: string;
-    ApexExecutionUser: OauthTokenExchHandlerApp;
+    Agent?: LiveAgentSession;
+    Alias?: string;
+    ApexExecutionUser?: OauthTokenExchHandlerApp;
     /**
      * The reciprocal relationship for {@link ApprovalSubmissionDetail.ActionPerformedById}.
      */
-    ApprovalSubmissionDetails: ApprovalSubmissionDetail[];
+    ApprovalSubmissionDetails?: ApprovalSubmissionDetail[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    ArchivedBy: ContentDocument;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    ArchivedBy?: ContentDocument;
     /**
      * <h3><b>Area Manager DI (DE)</b></h3>
      * <p>Shows the Area Manager of a certain Sales Rep. Used in Approval rules etc</p>
@@ -125,7 +125,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    Area_Manager_DI_DE__c: string;
+    Area_Manager_DI_DE__c?: string;
     /**
      * <h3><b>Area Manager DI (DE)</b></h3>
      * <p>Shows the Area Manager of a certain Sales Rep. Used in Approval rules etc</p>
@@ -134,38 +134,38 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    Area_Manager_DI_DE__r: User;
+    Area_Manager_DI_DE__r?: User;
     /**
      * The reciprocal relationship for {@link Article__c.Rep_Assigned__c}.
      */
-    Article_Numbers1__r: Article__c[];
+    Article_Numbers1__r?: Article__c[];
     /**
      * The reciprocal relationship for {@link Article__c.Manager_Assigned__c}.
      */
-    Article_Numbers2__r: Article__c[];
+    Article_Numbers2__r?: Article__c[];
     /**
      * The reciprocal relationship for {@link Article__c.Sales_Director__c}.
      */
-    Article_Numbers3__r: Article__c[];
+    Article_Numbers3__r?: Article__c[];
     /**
      * The reciprocal relationship for {@link Article__c.CS_Agent_Processing_Return__c}.
      */
-    Article_Numbers__r: Article__c[];
-    ArticleArchivedBy: Knowledge__kav;
-    ArticleCreatedBy: Knowledge__kav;
-    AssignedBy: Knowledge__kav;
-    AssignedTo: Knowledge__kav;
+    Article_Numbers__r?: Article__c[];
+    ArticleArchivedBy?: Knowledge__kav;
+    ArticleCreatedBy?: Knowledge__kav;
+    AssignedBy?: Knowledge__kav;
+    AssignedTo?: FulfillmentStepChangeEvent;
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.AssignedToId}.
      */
-    AssignedWorkItems: ApprovalWorkItem[];
-    Assignee: FlowOrchestrationWorkItem;
+    AssignedWorkItems?: ApprovalWorkItem[];
+    Assignee?: FlowOrchestrationWorkItem;
     /**
      * The reciprocal relationship for {@link Obligation.AssigneeUserId}.
      */
-    AssigneeUser: Obligation;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    AssigneeUser?: Obligation;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * <h3><b>ATWC 2012</b></h3>
      * <h4>Field Attributes</h4>
@@ -174,14 +174,14 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ATWC_2012__c: boolean;
-    Author: Document;
+    ATWC_2012__c?: boolean;
+    Author?: Document;
     /**
      * The reciprocal relationship for {@link AuthorizationFormConsent.ConsentGiverId}.
      */
-    AuthorizationFormConsents: AuthorizationFormConsent[];
-    BadgeText: string;
-    BannerPhotoUrl: string;
+    AuthorizationFormConsents?: AuthorizationFormConsent[];
+    BadgeText?: string;
+    BannerPhotoUrl?: string;
     /**
      * <h3><b>Business Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -193,85 +193,85 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Business_Area__c: string;
-    BusinessOwner: FieldDefinition;
-    CallCenter: CallCenter;
-    CallCenterId: string;
+    Business_Area__c?: string;
+    BusinessOwner?: FieldDefinition;
+    CallCenter?: CallCenter;
+    CallCenterId?: string;
     /**
      * The reciprocal relationship for {@link Campaign.Secondary_Campaign_Owner__c}.
      */
-    Campaign2Owner__r: Campaign[];
+    Campaign2Owner__r?: Campaign[];
     /**
      * The reciprocal relationship for {@link CampaignMember.CampaignMemberOwner__c}.
      */
-    Campaign_Members__r: CampaignMember[];
+    Campaign_Members__r?: CampaignMember[];
     /**
      * The reciprocal relationship for {@link Campaign.Campaign_Approver__c}.
      */
-    Campaigns1__r: Campaign[];
+    Campaigns1__r?: Campaign[];
     /**
      * The reciprocal relationship for {@link Campaign.HQ_Campaign_Coordinator__c}.
      */
-    Campaigns2__r: Campaign[];
+    Campaigns2__r?: Campaign[];
     /**
      * The reciprocal relationship for {@link Campaign.HQ_second_Campaign_Coordinator__c}.
      */
-    Campaigns3__r: Campaign[];
+    Campaigns3__r?: Campaign[];
     /**
      * The reciprocal relationship for {@link Campaign.Technical_Advisor_Requested__c}.
      */
-    Campaigns4__r: Campaign[];
+    Campaigns4__r?: Campaign[];
     /**
      * The reciprocal relationship for {@link Campaign.Campaign_Coordinator__c}.
      */
-    Campaigns__r: Campaign[];
+    Campaigns__r?: Campaign[];
     /**
      * The reciprocal relationship for {@link Case.Rep__c}.
      */
-    Cases1__r: Case[];
+    Cases1__r?: Case[];
     /**
      * The reciprocal relationship for {@link Case.Manager__c}.
      */
-    Cases2__r: Case[];
+    Cases2__r?: Case[];
     /**
      * The reciprocal relationship for {@link Case.Area_Sales_Director__c}.
      */
-    Cases3__r: Case[];
+    Cases3__r?: Case[];
     /**
      * The reciprocal relationship for {@link Case.Responsible_for_Error__c}.
      */
-    Cases__r: Case[];
-    ChangedBy: ActivityFieldHistory;
+    Cases__r?: Case[];
+    ChangedBy?: ActivityFieldHistory;
     /**
      * The reciprocal relationship for {@link geopointe__Check_In__c.geopointe__Who__c}.
      */
-    Check_Ins__r: geopointe__Check_In__c[];
-    City: string;
+    Check_Ins__r?: geopointe__Check_In__c[];
+    City?: string;
     /**
      * The reciprocal relationship for {@link User.NA_Lab_Channel_DM__c}.
      */
-    Clinical_to_Lab_Relation__r: User[];
-    Co_Travel_Manager__r: LookedUpFromActivity[];
+    Clinical_to_Lab_Relation__r?: User[];
+    Co_Travel_Manager__r?: LookedUpFromActivity[];
     /**
      * The reciprocal relationship for {@link Coaching_Feedback_Report__c.Sales_Manager__c}.
      */
-    Coaching_Feedback_Reports1__r: Coaching_Feedback_Report__c[];
+    Coaching_Feedback_Reports1__r?: Coaching_Feedback_Report__c[];
     /**
      * The reciprocal relationship for {@link Coaching_Feedback_Report__c.Sales_Representative__c}.
      */
-    Coaching_Feedback_Reports__r: Coaching_Feedback_Report__c[];
-    CombinedAttachments: CombinedAttachment[];
+    Coaching_Feedback_Reports__r?: Coaching_Feedback_Report__c[];
+    CombinedAttachments?: CombinedAttachment[];
     /**
      * The reciprocal relationship for {@link CommSubscriptionConsent.ConsentGiverId}.
      */
-    CommSubscriptionConsents: CommSubscriptionConsent[];
-    CommunityNickname: string;
-    CompanyAuthorizedBy: Order;
-    CompanyName: string;
+    CommSubscriptionConsents?: CommSubscriptionConsent[];
+    CommunityNickname?: string;
+    CompanyAuthorizedBy?: Order;
+    CompanyName?: string;
     /**
      * The reciprocal relationship for {@link Contract.CompanySignedId}.
      */
-    CompanySigned: Contract;
+    CompanySigned?: Contract;
     /**
      * <h3><b>Computer Login Id</b></h3>
      * <p>DO NOT DELETE - Used for Encore Integration</p>
@@ -283,30 +283,30 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ComputerId__c: string;
-    ConsentedUser: VideoCall[];
+    ComputerId__c?: string;
+    ConsentedUser?: VideoCall[];
     /**
      * The reciprocal relationship for {@link AuthorizationFormConsent.ConsentGiverId}.
      */
-    ConsentGiver: AuthorizationFormConsent;
-    Contact: Contact;
-    ContactId: string;
+    ConsentGiver?: AuthorizationFormConsent;
+    Contact?: Contact;
+    ContactId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhoId}.
      */
-    ContactRequests: ContactRequest[];
-    Contacts__r: Contact[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContentModifiedBy: ContentVersion;
+    ContactRequests?: ContactRequest[];
+    Contacts__r?: Contact[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContentModifiedBy?: ContentVersion;
     /**
      * The reciprocal relationship for {@link Contract.Area_manager_DE__c}.
      */
-    Contracts__r: Contract[];
+    Contracts__r?: Contract[];
     /**
      * The reciprocal relationship for {@link Contract.CompanySignedId}.
      */
-    ContractsSigned: Contract[];
-    ConversationParticipants: ConversationParticipant[];
+    ContractsSigned?: Contract[];
+    ConversationParticipants?: ConversationParticipant[];
     /**
      * <h3><b>Cost Center</b></h3>
      * <h4>Field Attributes</h4>
@@ -317,8 +317,8 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CostCenter__c: string;
-    Country: string;
+    CostCenter__c?: string;
+    Country?: string;
     /**
      * <h3><b>Country Code (3-digit)</b></h3>
      * <p>3-digit country code. Used mainly for Wave reporting where it is needed in Wave maps for the map to understand which country we are referring to. Dependent on user country so the three digit code will be automatically entered based on User Country - NOTE: when adding a new User Country you must state which 3 digit code belongs to that country for it to work.</p>
@@ -328,10 +328,10 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Code_3_digit__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country_Code_3_digit__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>CRM Internal Team Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -339,11 +339,11 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    CRM_Internal_Team_Comments__c: string;
+    CRM_Internal_Team_Comments__c?: string;
     /**
      * The reciprocal relationship for {@link Case.CRM_Analyst__c}.
      */
-    CRM_Requests__r: Case[];
+    CRM_Requests__r?: Case[];
     /**
      * <h3><b>CRM team comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -351,7 +351,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(500)</td></tr>
      * </table>
      */
-    CRM_team_comments__c: string;
+    CRM_team_comments__c?: string;
     /**
      * <h3><b>CRM Admin Actions</b></h3>
      * <p>Hyperlink to redirect to a screen flow to allow admins to unfreeze a user.</p>
@@ -364,17 +364,17 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CRMAdminActions__c: string;
+    CRMAdminActions__c?: string;
     /**
      * The reciprocal relationship for {@link Account.CT_Application_Specialist__c}.
      */
-    CT_Application_Specialist__r: Account[];
-    CurrencyIsoCode: string;
-    CventEvents__NominationApprovers__r: CventEvents__NominationApprover__c[];
-    CventEvents__NominationRules__r: CventEvents__NominationRule__c[];
-    CventEvents__Nominations__r: CventEvents__Nomination__c[];
-    CventEvents__OpportunityConfigurations__r: CventEvents__OpportunityConfiguration__c[];
-    CventEvents__TaskConfigurations__r: CventEvents__TaskConfiguration__c[];
+    CT_Application_Specialist__r?: Account[];
+    CurrencyIsoCode?: string;
+    CventEvents__NominationApprovers__r?: CventEvents__NominationApprover__c[];
+    CventEvents__NominationRules__r?: CventEvents__NominationRule__c[];
+    CventEvents__Nominations__r?: CventEvents__Nomination__c[];
+    CventEvents__OpportunityConfigurations__r?: CventEvents__OpportunityConfiguration__c[];
+    CventEvents__TaskConfigurations__r?: CventEvents__TaskConfiguration__c[];
     /**
      * <h3><b>CY Implant ASP</b></h3>
      * <h4>Field Attributes</h4>
@@ -383,7 +383,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CY_Implant_ASP__c: number;
+    CY_Implant_ASP__c?: number;
     /**
      * <h3><b>DB Region</b></h3>
      * <p>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</p>
@@ -401,8 +401,8 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">LA</code></td><td>LA</td><td nowrap>true</td></tr>
      * </table>
      */
-    DB_Region__c: string;
-    DeclinedEventRelations: DeclinedEventRelation[];
+    DB_Region__c?: string;
+    DeclinedEventRelations?: DeclinedEventRelation[];
     /**
      * <h3><b>Default Activity Length In Minutes</b></h3>
      * <p>The number of minutes that an activity or task duration should default to.</p>
@@ -414,7 +414,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_Activity_Length_In_Minutes__c: number;
+    Default_Activity_Length_In_Minutes__c?: number;
     /**
      * <h3><b>Default CFE SBUs</b></h3>
      * <h4>Field Attributes</h4>
@@ -423,7 +423,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_CFE_SBUs__c: string;
+    Default_CFE_SBUs__c?: string;
     /**
      * <h3><b>Default Event Subject</b></h3>
      * <h4>Field Attributes</h4>
@@ -435,7 +435,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;{||EventType||}{ - ||WhoName||}{ - ||RelatedToName||}&quot;</code></td></tr>
      * </table>
      */
-    Default_Event_Subject__c: string;
+    Default_Event_Subject__c?: string;
     /**
      * <h3><b>Default Event Update Calendar</b></h3>
      * <h4>Field Attributes</h4>
@@ -444,27 +444,27 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Default_Event_Update_Calendar__c: boolean;
+    Default_Event_Update_Calendar__c?: boolean;
     /**
      * The reciprocal relationship for {@link Default_price_book__c.User__c}.
      */
-    Default_price_books__r: Default_price_book__c[];
-    DefaultCurrencyIsoCode: string;
-    DefaultGroupNotificationFrequency: string;
-    DelegatedApprover: SObject;
-    DelegatedApproverId: string;
-    DelegatedUsers: User[];
-    DeletedBy: DeleteEvent;
+    Default_price_books__r?: Default_price_book__c[];
+    DefaultCurrencyIsoCode?: string;
+    DefaultGroupNotificationFrequency?: string;
+    DelegatedApprover?: SObject;
+    DelegatedApproverId?: string;
+    DelegatedUsers?: User[];
+    DeletedBy?: DeleteEvent;
     /**
      * The reciprocal relationship for {@link Shipment.DeliveredToId}.
      */
-    DeliveredTo: Shipment;
+    DeliveredTo?: Shipment;
     /**
      * The reciprocal relationship for {@link Shipment.DeliveredToId}.
      */
-    DeliveredToShipments: Shipment[];
-    Department: string;
-    DigestFrequency: string;
+    DeliveredToShipments?: Shipment[];
+    Department?: string;
+    DigestFrequency?: string;
     /**
      * <h3><b>Digital Region (UK)</b></h3>
      * <p>Used by UK to define what Digital Region a Clinical TSM belongs to.</p>
@@ -484,11 +484,11 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Digital R6</code></td><td>Digital R6</td><td nowrap>true</td></tr>
      * </table>
      */
-    Digital_Region_D_UK__c: string;
+    Digital_Region_D_UK__c?: string;
     /**
      * The reciprocal relationship for {@link Account.Digital_Rep__c}.
      */
-    DigitalRepUKAccountUser__r: Account[];
+    DigitalRepUKAccountUser__r?: Account[];
     /**
      * <h3><b>District</b></h3>
      * <h4>Field Attributes</h4>
@@ -770,12 +770,12 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DE DI Region 34</code></td><td>DE DI Region 34</td><td nowrap>true</td></tr>
      * </table>
      */
-    District__c: string;
-    Division: string;
+    District__c?: string;
+    Division?: string;
     /**
      * The reciprocal relationship for {@link DocumentRecipient.RecipientId}.
      */
-    DocumentRecipients: DocumentRecipient[];
+    DocumentRecipients?: DocumentRecipient[];
     /**
      * <h3><b>Do Not Freeze</b></h3>
      * <p>Field used by an Apex Batch that will freeze users that didn&#39;t login for a certain amount of time. The apex batch does not include the users flagged as &quot;do not freeze&quot;</p>
@@ -785,7 +785,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    DoNotFreeze__c: boolean;
+    DoNotFreeze__c?: boolean;
     /**
      * <h3><b>DPG User</b></h3>
      * <p>Request from TFUS-2415</p>
@@ -795,7 +795,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    DpgUser__c: boolean;
+    DpgUser__c?: boolean;
     /**
      * <h3><b>EAO 2010</b></h3>
      * <p>Used to determine if user is attending EAO 2010 and if so qualified to be given information about the event in Content.</p>
@@ -805,7 +805,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    EAO_2010__c: boolean;
+    EAO_2010__c?: boolean;
     /**
      * <h3><b>EAO 2011</b></h3>
      * <p>Used to determine if user is attending EAO 2011 and if so qualified to be given information about the event in Content.</p>
@@ -815,12 +815,12 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    EAO_2011__c: boolean;
-    echosign_dev1__Agreements1__r: echosign_dev1__SIGN_Agreement__c[];
-    echosign_dev1__Agreements2__r: echosign_dev1__SIGN_Agreement__c[];
-    echosign_dev1__Agreements3__r: echosign_dev1__SIGN_Agreement__c[];
-    echosign_dev1__Agreements__r: echosign_dev1__SIGN_Agreement__c[];
-    echosign_dev1__Agreements_Senders__r: echosign_dev1__SIGN_Agreement__c[];
+    EAO_2011__c?: boolean;
+    echosign_dev1__Agreements1__r?: echosign_dev1__SIGN_Agreement__c[];
+    echosign_dev1__Agreements2__r?: echosign_dev1__SIGN_Agreement__c[];
+    echosign_dev1__Agreements3__r?: echosign_dev1__SIGN_Agreement__c[];
+    echosign_dev1__Agreements__r?: echosign_dev1__SIGN_Agreement__c[];
+    echosign_dev1__Agreements_Senders__r?: echosign_dev1__SIGN_Agreement__c[];
     /**
      * <h3><b>Adobe Sign Allow Sending As Other Users</b></h3>
      * <p>Check this box so that others in this Salesforce organization can send Adobe Sign agreements on behalf of this user.</p>
@@ -830,7 +830,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__EchoSign_Allow_Delegated_Sending__c: boolean;
+    echosign_dev1__EchoSign_Allow_Delegated_Sending__c?: boolean;
     /**
      * <h3><b>Adobe Sign Email Verified</b></h3>
      * <p>This checkbox indicates that the user&#39;s email address has been validated in Adobe Sign API.</p>
@@ -840,10 +840,10 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__EchoSign_Email_Verified__c: boolean;
-    echosign_dev1__Echosign_Recipients__r: echosign_dev1__SIGN_Recipients__c[];
-    echosign_dev1__Process_Templates__r: echosign_dev1__SIGN_Data_Mapping__c[];
-    echosign_dev1__Recipient_Templates__r: echosign_dev1__Recipient_Template__c[];
+    echosign_dev1__EchoSign_Email_Verified__c?: boolean;
+    echosign_dev1__Echosign_Recipients__r?: echosign_dev1__SIGN_Recipients__c[];
+    echosign_dev1__Process_Templates__r?: echosign_dev1__SIGN_Data_Mapping__c[];
+    echosign_dev1__Recipient_Templates__r?: echosign_dev1__Recipient_Template__c[];
     /**
      * <h3><b>Edit report package</b></h3>
      * <h4>Field Attributes</h4>
@@ -855,33 +855,34 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Edit_report_package__c: string;
-    Email: string;
-    EmailEncodingKey: string;
-    EmailMessageRelations: EmailMessageRelation[];
-    EmailPreferencesAutoBcc: boolean;
-    EmailPreferencesAutoBccStayInTouch: boolean;
-    EmailPreferencesStayInTouchReminder: boolean;
-    EmployeeNumber: string;
-    EntityCreators: NetworkActivityAudit[];
-    EntityIdentifier: ContentNotification;
+    Edit_report_package__c?: string;
+    Email?: string;
+    EmailEncodingKey?: string;
+    EmailMessageRelations?: EmailMessageRelation[];
+    EmailPreferencesAutoBcc?: boolean;
+    EmailPreferencesAutoBccStayInTouch?: boolean;
+    EmailPreferencesStayInTouchReminder?: boolean;
+    EmployeeNumber?: string;
+    EndDay?: string;
+    EntityCreators?: NetworkActivityAudit[];
+    EntityIdentifier?: ContentNotification;
     /**
      * The reciprocal relationship for {@link EquipmentBooking__c.CustomerCareAgent__c}.
      */
-    Equipment_Bookings1__r: EquipmentBooking__c[];
+    Equipment_Bookings1__r?: EquipmentBooking__c[];
     /**
      * The reciprocal relationship for {@link EquipmentBooking__c.SalesRep__c}.
      */
-    Equipment_Bookings__r: EquipmentBooking__c[];
+    Equipment_Bookings__r?: EquipmentBooking__c[];
     /**
      * The reciprocal relationship for {@link UserEsignVendorIdentifier.UserId}.
      */
-    EsignUser: UserEsignVendorIdentifier[];
+    EsignUser?: UserEsignVendorIdentifier[];
     /**
      * The reciprocal relationship for {@link EventAttendees__c.RelationId__c}.
      */
-    EventAttendees__r: EventAttendees__c[];
-    EventRelations: EventRelation[];
+    EventAttendees__r?: EventAttendees__c[];
+    EventRelations?: EventRelation[];
     /**
      * <h3><b>Exclude from login history report</b></h3>
      * <p>Used for reporting on users login history for admin purposes.</p>
@@ -891,14 +892,14 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Exclude_from_login_history_report__c: boolean;
-    ExecuteApexHandlerAs: MyDomainDiscoverableLogin;
-    ExecuteHandlerAs: ExtlClntAppOauthPlcyCnfg;
-    ExecutionUser: AuthProvider;
+    Exclude_from_login_history_report__c?: boolean;
+    ExecuteApexHandlerAs?: MyDomainDiscoverableLogin;
+    ExecuteHandlerAs?: ExtlClntAppOauthPlcyCnfg;
+    ExecutionUser?: AuthProvider;
     /**
      * The reciprocal relationship for {@link Expert__c.Other_Contact_Point__c}.
      */
-    Experts__r: Expert__c[];
+    Experts__r?: Expert__c[];
     /**
      * <h3><b>Expiration Date</b></h3>
      * <p>Date when the user will be automatically disabled by the freeze batch process. This field is used to schedule and manage user deactivation.</p>
@@ -908,19 +909,19 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ExpirationDate__c: Date;
-    Extension: string;
-    ExternalDataUserAuths: ExternalDataUserAuth[];
+    ExpirationDate__c?: Date;
+    Extension?: string;
+    ExternalDataUserAuths?: ExternalDataUserAuth[];
     /**
      * The reciprocal relationship for {@link SBQQ__FavoriteShare__c.SBQQ__User__c}.
      */
-    FavoriteShares__r: SBQQ__FavoriteShare__c[];
-    Fax: string;
-    FederationIdentifier: string;
-    FeedItemCreatedBy: NetworkFeedResponseMetric;
-    Feeds: UserFeed[];
-    FeedSubscriptions: EntitySubscription[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    FavoriteShares__r?: SBQQ__FavoriteShare__c[];
+    Fax?: string;
+    FederationIdentifier?: string;
+    FeedItemCreatedBy?: NetworkFeedResponseMetric;
+    Feeds?: UserFeed[];
+    FeedSubscriptions?: EntitySubscription[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>Field Sales Ratio (%)</b></h3>
      * <p>Describes if the user should be counted as a full-time sales rep(100%) or not.
@@ -934,20 +935,20 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td></tr>
      * </table>
      */
-    FieldSalesRatioPerc__c: number;
-    FileDeletedBy: AuditTrailFileExport[];
-    FirstName: string;
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    Folder: Dashboard;
-    ForecastEnabled: boolean;
+    FieldSalesRatioPerc__c?: number;
+    FileDeletedBy?: AuditTrailFileExport[];
+    FirstName?: string;
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    Folder?: Dashboard;
+    ForecastEnabled?: boolean;
     /**
      * The reciprocal relationship for {@link Territory2.ForecastUserId}.
      */
-    ForecastUser: Territory2;
-    From: EmailMessage;
-    FSL__User_Settings__r: FSL__UserSetting__c[];
-    FSL__User_Territories__r: FSL__User_Territory__c[];
+    ForecastUser?: Territory2;
+    From?: EmailMessage;
+    FSL__User_Settings__r?: FSL__UserSetting__c[];
+    FSL__User_Territories__r?: FSL__User_Territory__c[];
     /**
      * <h3><b>SFS Resource Type</b></h3>
      * <p>A Field Service Starter Kit package field:
@@ -968,7 +969,9 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Community</code></td><td>Contractor Dispatcher (Community Dispatcher)</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSSK__FSK_FSL_Resource_Type__c: string;
+    FSSK__FSK_FSL_Resource_Type__c?: string;
+    FulfillmentStepDefinitions?: FulfillmentStepDefinition[];
+    FulfillmentSteps?: FulfillmentStep[];
     /**
      * <h3><b>Full Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -980,29 +983,29 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Full_Name__c: string;
-    FullPhotoUrl: string;
-    GeocodeAccuracy: string;
+    Full_Name__c?: string;
+    FullPhotoUrl?: string;
+    GeocodeAccuracy?: string;
     /**
      * The reciprocal relationship for {@link geopointe__GP_Assignment_Area__c.geopointe__User__c}.
      */
-    Geopointe_Assignment_Areas__r: geopointe__GP_Assignment_Area__c[];
+    Geopointe_Assignment_Areas__r?: geopointe__GP_Assignment_Area__c[];
     /**
      * The reciprocal relationship for {@link geopointe__GP_Device_Daily_Summary__c.geopointe__User__c}.
      */
-    Geopointe_Device_Daily_Summaries__r: geopointe__GP_Device_Daily_Summary__c[];
+    Geopointe_Device_Daily_Summaries__r?: geopointe__GP_Device_Daily_Summary__c[];
     /**
      * The reciprocal relationship for {@link geopointe__GP_Device__c.geopointe__User__c}.
      */
-    Geopointe_Devices__r: geopointe__GP_Device__c[];
+    Geopointe_Devices__r?: geopointe__GP_Device__c[];
     /**
      * The reciprocal relationship for {@link geopointe__GP_Route_Plan_User__c.geopointe__User__c}.
      */
-    Geopointe_Route_Plan_Users__r: geopointe__GP_Route_Plan_User__c[];
+    Geopointe_Route_Plan_Users__r?: geopointe__GP_Route_Plan_User__c[];
     /**
      * The reciprocal relationship for {@link geopointe__Route_Share__c.geopointe__User__c}.
      */
-    Geopointe_Route_Shares__r: geopointe__Route_Share__c[];
+    Geopointe_Route_Shares__r?: geopointe__Route_Share__c[];
     /**
      * <h3><b>Global Product Platform (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1017,29 +1020,29 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Digital</code></td><td>Digital</td><td nowrap>true</td></tr>
      * </table>
      */
-    Global_Product_Platform_GPP__c: string;
-    Go_To_Market_Journeys__r: GTMJourney__c[];
+    Global_Product_Platform_GPP__c?: string;
+    Go_To_Market_Journeys__r?: GTMJourney__c[];
     /**
      * The reciprocal relationship for {@link geopointe__GP_Daily_Report_Summary__c.geopointe__User__c}.
      */
-    GP_Daily_Report_Summaries__r: geopointe__GP_Daily_Report_Summary__c[];
+    GP_Daily_Report_Summaries__r?: geopointe__GP_Daily_Report_Summary__c[];
     /**
      * The reciprocal relationship for {@link geopointe__GP_Resource_View_Group_Member__c.geopointe__User__c}.
      */
-    GP_Group_Member__r: geopointe__GP_Resource_View_Group_Member__c[];
-    GroupMembershipRequests: CollaborationGroupMemberRequest[];
-    GroupMemberships: CollaborationGroupMember[];
-    GuestRecordDefaultOwner: Site;
-    GuestUser: Site;
-    HeadlessDiscoveryExecutionUser: NetworkAuthApiSettings;
+    GP_Group_Member__r?: geopointe__GP_Resource_View_Group_Member__c[];
+    GroupMembershipRequests?: CollaborationGroupMemberRequest[];
+    GroupMemberships?: CollaborationGroupMember[];
+    GuestRecordDefaultOwner?: Site;
+    GuestUser?: Site;
+    HeadlessDiscoveryExecutionUser?: NetworkAuthApiSettings;
     /**
      * The reciprocal relationship for {@link VideoCall.HostId}.
      */
-    Host: VideoCall[];
+    Host?: VideoCall[];
     /**
      * The reciprocal relationship for {@link Implant_Rescue_Service__c.rescue_partner__c}.
      */
-    Implant_Rescue_Services__r: Implant_Rescue_Service__c[];
+    Implant_Rescue_Services__r?: Implant_Rescue_Service__c[];
     /**
      * <h3><b>Implant Volume Quota CY</b></h3>
      * <p>Field used for setting quota in Implants. Initially only for JP.</p>
@@ -1051,7 +1054,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_Volume_Quota_CY__c: number;
+    Implant_Volume_Quota_CY__c?: number;
     /**
      * <h3><b>Implants User</b></h3>
      * <p>Use User&#39;s SBUs instead</p>
@@ -1061,32 +1064,32 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Implants_User__c: boolean;
-    Individual: Individual;
-    IndividualId: string;
-    InsertedBy: AccountFeed;
-    InstalledMobileApps: InstalledMobileApp[];
+    Implants_User__c?: boolean;
+    Individual?: Individual;
+    IndividualId?: string;
+    InsertedBy?: AccountFeed;
+    InstalledMobileApps?: InstalledMobileApp[];
     /**
      * The reciprocal relationship for {@link Integration_Default_User__c.xame_Failed_Person_Acc_t_Conversion_User__c}.
      */
-    Integration_Default_Users__r: Integration_Default_User__c[];
+    Integration_Default_Users__r?: Integration_Default_User__c[];
     /**
      * The reciprocal relationship for {@link IntegrationProviderDcsnRqmt.RunAsUserId}.
      */
-    IntegrationProviderDcsnRqmts: IntegrationProviderDcsnRqmt[];
+    IntegrationProviderDcsnRqmts?: IntegrationProviderDcsnRqmt[];
     /**
      * The reciprocal relationship for {@link InternalParticipant__c.Employee__c}.
      */
-    Internal_Participants__r: InternalParticipant__c[];
-    InternalAttendee: EngagementAttendeeChangeEvent;
-    InternalAttendees: EngagementAttendee[];
+    Internal_Participants__r?: InternalParticipant__c[];
+    InternalAttendee?: EngagementAttendeeChangeEvent;
+    InternalAttendees?: EngagementAttendee[];
     /**
      * The reciprocal relationship for {@link Internal_Orders__c.Sales_Owner__c}.
      */
-    InternalOrders__r: Internal_Orders__c[];
-    InterviewStartedBy: FlowExecutionErrorEvent;
-    Inviter: CollaborationInvitation;
-    InvokedByUser: PlatformAction;
+    InternalOrders__r?: Internal_Orders__c[];
+    InterviewStartedBy?: FlowExecutionErrorEvent;
+    Inviter?: CollaborationInvitation;
+    InvokedByUser?: PlatformAction;
     /**
      * <h3><b>Active User?</b></h3>
      * <p>Standard fields are not available for Account Reports, only Custom Owner fields are included</p>
@@ -1096,7 +1099,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF ( IsActive=True,True,False)</code></td></tr>
      * </table>
      */
-    Is_Active__c: boolean;
+    Is_Active__c?: boolean;
     /**
      * <h3><b>Is My Country? (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1108,7 +1111,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Is_My_Country_HQ__c: number;
+    Is_My_Country_HQ__c?: number;
     /**
      * <h3><b>Is My Market?</b></h3>
      * <p>Checks if the users market is the same as the logged in users market. If so marked as True, else False. Is used to get around that there are no &quot;My users&quot; option available in views</p>
@@ -1118,49 +1121,50 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( TEXT($User.Market__c) =  TEXT(Market__c)  , TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    Is_My_Market__c: boolean;
-    IsActive: boolean;
-    IsExtIndicatorVisible: boolean;
-    IsPortalEnabled: boolean;
-    IsProfilePhotoActive: boolean;
+    Is_My_Market__c?: boolean;
+    IsActive?: boolean;
+    IsExtIndicatorVisible?: boolean;
+    IsPartner?: boolean;
+    IsPortalEnabled?: boolean;
+    IsProfilePhotoActive?: boolean;
     /**
      * The reciprocal relationship for {@link KOL_Contract__c.KOLContractOwner__c}.
      */
-    KOL_Contracts__r: KOL_Contract__c[];
+    KOL_Contracts__r?: KOL_Contract__c[];
     /**
      * The reciprocal relationship for {@link KolInternalContact__c.InternalContact__c}.
      */
-    KOL_Internal_Contacts__r: KolInternalContact__c[];
-    LanguageLocaleKey: string;
-    LastActor: ProcessInstance;
-    LastEditBy: FeedComment;
-    LastLoginDate: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastName: string;
-    LastPasswordChangeDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    Latitude: number;
-    LeadOrContactOwner: CampaignMember;
+    KOL_Internal_Contacts__r?: KolInternalContact__c[];
+    LanguageLocaleKey?: string;
+    LastActor?: ProcessInstance;
+    LastEditBy?: FeedComment;
+    LastLoginDate?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastName?: string;
+    LastPasswordChangeDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    Latitude?: number;
+    LeadOrContactOwner?: CampaignMember;
     /**
      * The reciprocal relationship for {@link Lead.Information_gathered_by__c}.
      */
-    Leads__r: Lead[];
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    ListEmails: ListEmail[];
+    Leads__r?: Lead[];
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    ListEmails?: ListEmail[];
     /**
      * The reciprocal relationship for {@link LiveChatTranscriptEvent.AgentId}.
      */
-    LiveChatTranscriptEvents: LiveChatTranscriptEvent[];
+    LiveChatTranscriptEvents?: LiveChatTranscriptEvent[];
     /**
      * The reciprocal relationship for {@link LiveAgentSession.AgentId}.
      */
-    LiveChatTranscripts: LiveAgentSession[];
-    LocaleSidKey: string;
-    LogUser: ApexLog;
-    Longitude: number;
+    LiveChatTranscripts?: LiveAgentSession[];
+    LocaleSidKey?: string;
+    LogUser?: ApexLog;
+    Longitude?: number;
     /**
      * <h3><b>LY Implant ASP</b></h3>
      * <h4>Field Attributes</h4>
@@ -1169,13 +1173,13 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LY_Implant_ASP__c: number;
+    LY_Implant_ASP__c?: number;
     /**
      * The reciprocal relationship for {@link Account.Main_DS_Contact__c}.
      */
-    MainOwnerAccount__r: Account[];
-    ManagedUsers: User[];
-    Manager: User;
+    MainOwnerAccount__r?: Account[];
+    ManagedUsers?: User[];
+    Manager?: User;
     /**
      * <h3><b>Manager&#39;s Manager</b></h3>
      * <p>The manager&#39;s manager, used to get the next approver after the manager</p>
@@ -1188,7 +1192,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manager_s_Manager__c: string;
+    Manager_s_Manager__c?: string;
     /**
      * <h3><b>Manager selection</b></h3>
      * <p>Workaround used to select users Manager</p>
@@ -1197,7 +1201,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    Manager_workaround__c: string;
+    Manager_workaround__c?: string;
     /**
      * <h3><b>Manager selection</b></h3>
      * <p>Workaround used to select users Manager</p>
@@ -1206,17 +1210,17 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    Manager_workaround__r: User;
-    ManagerId: string;
+    Manager_workaround__r?: User;
+    ManagerId?: string;
     /**
      * The reciprocal relationship for {@link User.Manager_workaround__c}.
      */
-    ManagerWorkaround__r: User[];
-    maps__AdvRouteContinuousTravels__r: maps__AdvRouteContinuousTravel__c[];
-    maps__AdvRouteDebugs__r: maps__DebugLog__c[];
-    maps__AdvRouteOffDays__r: maps__AdvRouteOffDays__c[];
-    maps__AdvRouteSettings__r: maps__AdvRouteSettings__c[];
-    maps__AdvRouteTemplateUsers__r: maps__AdvRouteTemplateUser__c[];
+    ManagerWorkaround__r?: User[];
+    maps__AdvRouteContinuousTravels__r?: maps__AdvRouteContinuousTravel__c[];
+    maps__AdvRouteDebugs__r?: maps__DebugLog__c[];
+    maps__AdvRouteOffDays__r?: maps__AdvRouteOffDays__c[];
+    maps__AdvRouteSettings__r?: maps__AdvRouteSettings__c[];
+    maps__AdvRouteTemplateUsers__r?: maps__AdvRouteTemplateUser__c[];
     /**
      * <h3><b>Allow Maps Exports</b></h3>
      * <h4>Field Attributes</h4>
@@ -1225,8 +1229,8 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__AllowMapsExports__c: boolean;
-    maps__AssignmentRules__r: maps__AssignmentRule__c[];
+    maps__AllowMapsExports__c?: boolean;
+    maps__AssignmentRules__r?: maps__AssignmentRule__c[];
     /**
      * <h3><b>Maps Beta Tester</b></h3>
      * <h4>Field Attributes</h4>
@@ -1235,7 +1239,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__BetaTester__c: boolean;
+    maps__BetaTester__c?: boolean;
     /**
      * <h3><b>Maps Default Latitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -1246,7 +1250,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultLatitude__c: number;
+    maps__DefaultLatitude__c?: number;
     /**
      * <h3><b>Maps Default Longitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -1257,7 +1261,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultLongitude__c: number;
+    maps__DefaultLongitude__c?: number;
     /**
      * <h3><b>Default Proximity Radius</b></h3>
      * <h4>Field Attributes</h4>
@@ -1268,7 +1272,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultProximityRadius__c: number;
+    maps__DefaultProximityRadius__c?: number;
     /**
      * <h3><b>DefaultType</b></h3>
      * <h4>Field Attributes</h4>
@@ -1279,7 +1283,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultType__c: string;
+    maps__DefaultType__c?: string;
     /**
      * <h3><b>Maps Default Zoom Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -1290,7 +1294,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultZoomLevel__c: number;
+    maps__DefaultZoomLevel__c?: number;
     /**
      * <h3><b>Device Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -1302,7 +1306,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DeviceId__c: string;
+    maps__DeviceId__c?: string;
     /**
      * <h3><b>Device Vendor</b></h3>
      * <h4>Field Attributes</h4>
@@ -1314,7 +1318,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DeviceVendor__c: string;
+    maps__DeviceVendor__c?: string;
     /**
      * <h3><b>Edit Maps Org Wide Queries</b></h3>
      * <h4>Field Attributes</h4>
@@ -1323,7 +1327,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__EditMapsOrgWideQueries__c: boolean;
+    maps__EditMapsOrgWideQueries__c?: boolean;
     /**
      * <h3><b>Finished Maps Advanced Route Setup</b></h3>
      * <h4>Field Attributes</h4>
@@ -1332,17 +1336,17 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__FinishedAdvRouteSetup__c: boolean;
-    maps__LiveAssetDailySummaries__r: maps__LiveAssetDailySummary__c[];
-    maps__LiveDrivers__r: maps__LiveDriver__c[];
-    maps__LiveIoTDevices__r: maps__LiveIoTDevice__c[];
-    maps__Maps_Analytics__r: maps__Analytic__c[];
-    maps__Maps_Folder_Permissions__r: maps__FolderPermission__c[];
-    maps__Maps_Layers__r: maps__Layer__c[];
-    maps__Maps_Routes__r: maps__Route__c[];
-    maps__Maps_Settings_Groups__r: maps__SettingsGroup__c[];
-    maps__MapsFolders__r: maps__Folder__c[];
-    maps__MAPSLocations__r: maps__Location__c[];
+    maps__FinishedAdvRouteSetup__c?: boolean;
+    maps__LiveAssetDailySummaries__r?: maps__LiveAssetDailySummary__c[];
+    maps__LiveDrivers__r?: maps__LiveDriver__c[];
+    maps__LiveIoTDevices__r?: maps__LiveIoTDevice__c[];
+    maps__Maps_Analytics__r?: maps__Analytic__c[];
+    maps__Maps_Folder_Permissions__r?: maps__FolderPermission__c[];
+    maps__Maps_Layers__r?: maps__Layer__c[];
+    maps__Maps_Routes__r?: maps__Route__c[];
+    maps__Maps_Settings_Groups__r?: maps__SettingsGroup__c[];
+    maps__MapsFolders__r?: maps__Folder__c[];
+    maps__MAPSLocations__r?: maps__Location__c[];
     /**
      * <h3><b>Map Settings</b></h3>
      * <h4>Field Attributes</h4>
@@ -1350,8 +1354,8 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__MapsSetting__c: string;
-    maps__MapsTerritories__r: maps__ShapeLayer__c[];
+    maps__MapsSetting__c?: string;
+    maps__MapsTerritories__r?: maps__ShapeLayer__c[];
     /**
      * <h3><b>Maps Max Export Size</b></h3>
      * <h4>Field Attributes</h4>
@@ -1362,7 +1366,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MaxExportSize__c: number;
+    maps__MaxExportSize__c?: number;
     /**
      * <h3><b>Maps Max Query Size</b></h3>
      * <h4>Field Attributes</h4>
@@ -1373,8 +1377,8 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MaxQuerySize__c: number;
-    maps__Preferences__r: maps__TPUserPreference__c[];
+    maps__MaxQuerySize__c?: number;
+    maps__Preferences__r?: maps__TPUserPreference__c[];
     /**
      * <h3><b>Preferred Type of Measurement</b></h3>
      * <h4>Field Attributes</h4>
@@ -1392,7 +1396,7 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Feet</code></td><td>Feet</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__PreferredTypeOfMeasurement__c: string;
+    maps__PreferredTypeOfMeasurement__c?: string;
     /**
      * <h3><b>Receive Batch Exception Emails</b></h3>
      * <p>DEPRECATED</p>
@@ -1402,9 +1406,9 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__ReceiveBatchExceptionEmails__c: boolean;
-    maps__Saved_Queries__r: maps__MarkerLayer__c[];
-    maps__TestChildLookup__r: User[];
+    maps__ReceiveBatchExceptionEmails__c?: boolean;
+    maps__Saved_Queries__r?: maps__MarkerLayer__c[];
+    maps__TestChildLookup__r?: User[];
     /**
      * <h3><b>TestUserLookup</b></h3>
      * <p>For blueline bug.</p>
@@ -1413,7 +1417,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    maps__TestUserLookup__c: string;
+    maps__TestUserLookup__c?: string;
     /**
      * <h3><b>TestUserLookup</b></h3>
      * <p>For blueline bug.</p>
@@ -1422,7 +1426,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    maps__TestUserLookup__r: User;
+    maps__TestUserLookup__r?: User;
     /**
      * <h3><b>Territory Planning Approver</b></h3>
      * <h4>Field Attributes</h4>
@@ -1431,7 +1435,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__TPApprover__c: boolean;
+    maps__TPApprover__c?: boolean;
     /**
      * <h3><b>Territory Planning Publisher</b></h3>
      * <h4>Field Attributes</h4>
@@ -1440,7 +1444,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__TPPublisher__c: boolean;
+    maps__TPPublisher__c?: boolean;
     /**
      * <h3><b>Maps Version</b></h3>
      * <h4>Field Attributes</h4>
@@ -1456,7 +1460,7 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Beta</code></td><td>Beta</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Version__c: string;
+    maps__Version__c?: string;
     /**
      * <h3><b>Market</b></h3>
      * <p>&lt;ADMINISTRATION&gt; Keep the values of this field aligned with the Price Book Market field values.</p>
@@ -1506,10 +1510,10 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vietnam</code></td><td>Vietnam</td><td nowrap>true</td></tr>
      * </table>
      */
-    Market__c: string;
-    MediumBannerPhotoUrl: string;
-    MediumPhotoUrl: string;
-    Member: CaseTeamMember;
+    Market__c?: string;
+    MediumBannerPhotoUrl?: string;
+    MediumPhotoUrl?: string;
+    Member?: CaseTeamMember;
     /**
      * <h3><b>Mobile User?</b></h3>
      * <p>This is to enabled reporting on activities to see whether or not the user is set up for Mobile</p>
@@ -1519,8 +1523,8 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Mobile_User__c: boolean;
-    MobilePhone: string;
+    Mobile_User__c?: boolean;
+    MobilePhone?: string;
     /**
      * <h3><b>ERP User ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -1531,7 +1535,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Uer_ID__c: string;
+    Movex_Uer_ID__c?: string;
     /**
      * <h3><b>My Direct Report</b></h3>
      * <h4>Field Attributes</h4>
@@ -1540,7 +1544,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ManagerId=$User.Id || Id=$User.Id</code></td></tr>
      * </table>
      */
-    My_Direct_Report__c: boolean;
+    My_Direct_Report__c?: boolean;
     /**
      * <h3><b>My Peers (Same Manager)</b></h3>
      * <p>Checked for all users who has the same Manager as the logged in user. Dynamic formula based on logged in user. For sharing of calendars etc. If the logged in user is that manager the  result is also true</p>
@@ -1550,7 +1554,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(ISBLANK($User.ManagerId), FALSE, IF( (Manager.Id=$User.ManagerId || Id=$User.ManagerId), TRUE,FALSE))</code></td></tr>
      * </table>
      */
-    My_Peers_Same_Manager__c: boolean;
+    My_Peers_Same_Manager__c?: boolean;
     /**
      * <h3><b>NA: Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1562,7 +1566,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Area__c: string;
+    NA_Area__c?: string;
     /**
      * <h3><b>NA Clinical Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1574,11 +1578,11 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Clinical_Area__c: string;
+    NA_Clinical_Area__c?: string;
     /**
      * The reciprocal relationship for {@link User.NA_Inside_Account_Manager__c}.
      */
-    NA_IAM__r: User[];
+    NA_IAM__r?: User[];
     /**
      * <h3><b>NA: Inside Account Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -1586,7 +1590,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Inside_Account_Manager__c: string;
+    NA_Inside_Account_Manager__c?: string;
     /**
      * <h3><b>NA: Inside Account Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -1594,7 +1598,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Inside_Account_Manager__r: User;
+    NA_Inside_Account_Manager__r?: User;
     /**
      * <h3><b>NA Lab Channel DM</b></h3>
      * <h4>Field Attributes</h4>
@@ -1602,7 +1606,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Lab_Channel_DM__c: string;
+    NA_Lab_Channel_DM__c?: string;
     /**
      * <h3><b>NA Lab Channel DM</b></h3>
      * <h4>Field Attributes</h4>
@@ -1610,7 +1614,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Lab_Channel_DM__r: User;
+    NA_Lab_Channel_DM__r?: User;
     /**
      * <h3><b>NA Lab Channel DM Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -1622,7 +1626,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Lab_Channel_DM_Role__c: string;
+    NA_Lab_Channel_DM_Role__c?: string;
     /**
      * <h3><b>NA: Profile Team Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -1630,7 +1634,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Profile_Team_Assigned__c: string;
+    NA_Profile_Team_Assigned__c?: string;
     /**
      * <h3><b>NA: Profile Team Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -1638,7 +1642,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Profile_Team_Assigned__r: User;
+    NA_Profile_Team_Assigned__r?: User;
     /**
      * <h3><b>NA Regen Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1650,7 +1654,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Regen_Area__c: string;
+    NA_Regen_Area__c?: string;
     /**
      * <h3><b>NA: Regional Marketing Coordinator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1658,7 +1662,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Regional_Marketing_Coordinator__c: string;
+    NA_Regional_Marketing_Coordinator__c?: string;
     /**
      * <h3><b>NA: Regional Marketing Coordinator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1666,7 +1670,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Regional_Marketing_Coordinator__r: User;
+    NA_Regional_Marketing_Coordinator__r?: User;
     /**
      * <h3><b>NA Simplant DM</b></h3>
      * <h4>Field Attributes</h4>
@@ -1674,7 +1678,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Simplant_DM__c: string;
+    NA_Simplant_DM__c?: string;
     /**
      * <h3><b>NA Simplant DM</b></h3>
      * <h4>Field Attributes</h4>
@@ -1682,7 +1686,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Simplant_DM__r: User;
+    NA_Simplant_DM__r?: User;
     /**
      * <h3><b>NA Simplant DM Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -1694,7 +1698,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Simplant_DM_Role__c: string;
+    NA_Simplant_DM_Role__c?: string;
     /**
      * <h3><b>NA: Sales Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1706,8 +1710,8 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_University_Area__c: string;
-    Name: string;
+    NA_University_Area__c?: string;
+    Name?: string;
     /**
      * <h3><b>Is National Admin?</b></h3>
      * <p>Users with information in this field will receive information adressed to National Admins</p>
@@ -1722,63 +1726,64 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental</code></td><td>Dental</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    National_Admin__c: string;
-    NetworkMemberUsers: NetworkMember[];
-    NetworkUserHistoryRecentToUser: NetworkUserHistoryRecent[];
-    NumberOfFailedLogins: number;
-    ObjectUserTerritory2Views: ObjectUserTerritory2View[];
-    OfflinePdaTrialExpirationDate: string;
-    OfflineTrialExpirationDate: string;
-    Omni_DataPacks: OmniDataPack[];
-    OmniInteractionAccessConfigs: OmniInteractionAccessConfig[];
+    National_Admin__c?: string;
+    NetworkMemberUsers?: NetworkMember[];
+    NetworkUserHistoryRecentToUser?: NetworkUserHistoryRecent[];
+    NumberOfFailedLogins?: number;
+    ObjectUserTerritory2Views?: ObjectUserTerritory2View[];
+    OfflinePdaTrialExpirationDate?: string;
+    OfflineTrialExpirationDate?: string;
+    Omni_DataPacks?: OmniDataPack[];
+    OmniInteractionAccessConfigs?: OmniInteractionAccessConfig[];
     /**
      * The reciprocal relationship for {@link OpportunityLineItem.Installed_by__c}.
      */
-    Opportunity_Product_Installed__r: OpportunityLineItem[];
+    Opportunity_Product_Installed__r?: OpportunityLineItem[];
     /**
      * The reciprocal relationship for {@link OpportunityTeamMember.UserId}.
      */
-    OpportunityTeams: OpportunityTeamMember[];
+    OpportunityTeams?: OpportunityTeamMember[];
     /**
      * The reciprocal relationship for {@link Order.Customer_Service_Rep_Responsible__c}.
      */
-    Orders1__r: Order[];
+    Orders1__r?: Order[];
     /**
      * The reciprocal relationship for {@link Order.CS_Project_Team_Member_Assigned__c}.
      */
-    Orders2__r: Order[];
+    Orders2__r?: Order[];
     /**
      * The reciprocal relationship for {@link Order.FirstLevelApprover__c}.
      */
-    Orders3__r: Order[];
+    Orders3__r?: Order[];
     /**
      * The reciprocal relationship for {@link Order.SecondLevelApprover__c}.
      */
-    Orders4__r: Order[];
+    Orders4__r?: Order[];
     /**
      * The reciprocal relationship for {@link Order.Regional_Manager__c}.
      */
-    Orders__r: Order[];
+    Orders__r?: Order[];
     /**
      * The reciprocal relationship for {@link Order.Account_Owner__c}.
      */
-    OrdersOwned__r: Order[];
-    OriginalActor: ProcessInstanceHistory;
-    OutOfOfficeMessage: string;
-    OverflowAssignee: QueueRoutingConfig;
-    OwnedContentDocuments: OwnedContentDocument[];
+    OrdersOwned__r?: Order[];
+    OriginalActor?: ProcessInstanceHistory;
+    OutOfOfficeMessage?: string;
+    OverflowAssignee?: QueueRoutingConfig;
+    OwnedContentDocuments?: OwnedContentDocument[];
     /**
      * The reciprocal relationship for {@link Account.OwnerId}.
      */
-    Owner: Account;
-    Parent: ChatterActivity;
-    ParentEntities: NetworkActivityAudit[];
+    Owner?: Account;
+    Parent?: ChatterActivity;
+    ParentEntities?: NetworkActivityAudit[];
     /**
      * The reciprocal relationship for {@link DelegatedAccount.ManagedById}.
      */
-    ParentId: DelegatedAccount[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PausingUser: FlowRecordVersion;
+    ParentId?: DelegatedAccount[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PasswordExpirationDate?: string;
+    PausingUser?: FlowRecordVersion;
     /**
      * <h3><b>PEERS Responsible</b></h3>
      * <h4>Field Attributes</h4>
@@ -1787,7 +1792,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    PEERS_Responsible__c: boolean;
+    PEERS_Responsible__c?: boolean;
     /**
      * <h3><b>Permission</b></h3>
      * <h4>Field Attributes</h4>
@@ -1796,9 +1801,9 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Permission__c: boolean;
-    PermissionSetAssignments: PermissionSetAssignment[];
-    PermissionSetLicenseAssignments: PermissionSetLicenseAssign[];
+    Permission__c?: boolean;
+    PermissionSetAssignments?: PermissionSetAssignment[];
+    PermissionSetLicenseAssignments?: PermissionSetLicenseAssign[];
     /**
      * <h3><b>Personal Order Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -1809,149 +1814,149 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Personal_Order_Account__c: string;
-    PersonRecord: UserEmailPreferredPerson[];
-    Phone: string;
+    Personal_Order_Account__c?: string;
+    PersonRecord?: UserEmailPreferredPerson[];
+    Phone?: string;
     /**
      * The reciprocal relationship for {@link PLZ_Dental__c.AM__c}.
      */
-    PLZ_Dental1__r: PLZ_Dental__c[];
+    PLZ_Dental1__r?: PLZ_Dental__c[];
     /**
      * The reciprocal relationship for {@link PLZ_Dental__c.GVL_Simplant__c}.
      */
-    PLZ_Dental2__r: PLZ_Dental__c[];
+    PLZ_Dental2__r?: PLZ_Dental__c[];
     /**
      * The reciprocal relationship for {@link PLZ_Dental__c.RVL__c}.
      */
-    PLZ_Dental__r: PLZ_Dental__c[];
-    PortalAccountOwner: UserRole;
-    PortalRole: string;
+    PLZ_Dental__r?: PLZ_Dental__c[];
+    PortalAccountOwner?: UserRole;
+    PortalRole?: string;
     /**
      * The reciprocal relationship for {@link PLZ_Dental__c.GVL_digital__c}.
      */
-    Postal_Code3__r: PLZ_Dental__c[];
+    Postal_Code3__r?: PLZ_Dental__c[];
     /**
      * The reciprocal relationship for {@link PLZ_Dental__c.GVL_clinical__c}.
      */
-    Postal_Code__r: PLZ_Dental__c[];
+    Postal_Code__r?: PLZ_Dental__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_23_User__c}.
      */
-    Postal_Codes10qA__r: Postal_Codes__c[];
+    Postal_Codes10qA__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_6_User__c}.
      */
-    Postal_Codes10qK__r: Postal_Codes__c[];
+    Postal_Codes10qK__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_24_User__c}.
      */
-    Postal_Codes1__r: Postal_Codes__c[];
+    Postal_Codes1__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_25_User__c}.
      */
-    Postal_Codes2__r: Postal_Codes__c[];
+    Postal_Codes2__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_22_User__c}.
      */
-    Postal_Codes3__r: Postal_Codes__c[];
+    Postal_Codes3__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_8_User__c}.
      */
-    Postal_Codes4Ts5__r: Postal_Codes__c[];
+    Postal_Codes4Ts5__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_10_User__c}.
      */
-    Postal_Codes4U1g__r: Postal_Codes__c[];
+    Postal_Codes4U1g__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_18_User__c}.
      */
-    Postal_Codes4Vrs__r: Postal_Codes__c[];
+    Postal_Codes4Vrs__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_9_User__c}.
      */
-    Postal_Codes5__r: Postal_Codes__c[];
+    Postal_Codes5__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_17_User__c}.
      */
-    Postal_Codes6__r: Postal_Codes__c[];
+    Postal_Codes6__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_2_User__c}.
      */
-    Postal_Codes9__r: Postal_Codes__c[];
+    Postal_Codes9__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_4_User__c}.
      */
-    Postal_Codes__r: Postal_Codes__c[];
+    Postal_Codes__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_1_User__c}.
      */
-    Postal_CodesnsNe__r: Postal_Codes__c[];
+    Postal_CodesnsNe__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_14_User__c}.
      */
-    Postal_Codesntuf1__r: Postal_Codes__c[];
+    Postal_Codesntuf1__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_11_User__c}.
      */
-    Postal_CodesntuP__r: Postal_Codes__c[];
+    Postal_CodesntuP__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_15_User__c}.
      */
-    Postal_Codesntut__r: Postal_Codes__c[];
+    Postal_Codesntut__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_12_User__c}.
      */
-    Postal_CodesntuU__r: Postal_Codes__c[];
+    Postal_CodesntuU__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_13_User__c}.
      */
-    Postal_CodesntuV__r: Postal_Codes__c[];
+    Postal_CodesntuV__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_19_User__c}.
      */
-    Postal_Codesntv3__r: Postal_Codes__c[];
+    Postal_Codesntv3__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_20_User__c}.
      */
-    Postal_CodesntvI__r: Postal_Codes__c[];
+    Postal_CodesntvI__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_21_User__c}.
      */
-    Postal_CodesntvS__r: Postal_Codes__c[];
+    Postal_CodesntvS__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_3_User__c}.
      */
-    Postal_CodesQQkw__r: Postal_Codes__c[];
+    Postal_CodesQQkw__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_5_User__c}.
      */
-    Postal_CodesQQlV_del__r: Postal_Codes__c[];
+    Postal_CodesQQlV_del__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_7_User__c}.
      */
-    Postal_CodessafR__r: Postal_Codes__c[];
+    Postal_CodessafR__r?: Postal_Codes__c[];
     /**
      * The reciprocal relationship for {@link Postal_Codes__c.Territory_16_User__c}.
      */
-    Postal_CodessS4h__r: Postal_Codes__c[];
-    PostalCode: string;
+    Postal_CodessS4h__r?: Postal_Codes__c[];
+    PostalCode?: string;
     /**
      * The reciprocal relationship for {@link AgentWork.PreferredUserId}.
      */
-    PreferredUser: AgentWork;
-    PrimaryContact: PartnerNetworkConnection;
+    PreferredUser?: AgentWork;
+    PrimaryContact?: PartnerNetworkConnection;
     /**
      * The reciprocal relationship for {@link ProcedureTracker__c.SalesRep__c}.
      */
-    Procedures__r: ProcedureTracker__c[];
+    Procedures__r?: ProcedureTracker__c[];
     /**
      * The reciprocal relationship for {@link ProcedureTracker__c.CIS__c}.
      */
-    Procedures_CIS__r: ProcedureTracker__c[];
+    Procedures_CIS__r?: ProcedureTracker__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__ProcessInputValue__c.SBQQ__UserID__c}.
      */
-    Process_Input_Values__r: SBQQ__ProcessInputValue__c[];
+    Process_Input_Values__r?: SBQQ__ProcessInputValue__c[];
     /**
      * <h3><b>Product Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1965,7 +1970,7 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental</code></td><td>Dental</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
+    Product_Area__c?: string;
     /**
      * <h3><b>Product Area Code</b></h3>
      * <p>This field shows a numeric representation of Product Area (1=Dental, 2=Surgery,3=Urology, 4=Healthcare, 5=All). Used in reports</p>
@@ -1978,7 +1983,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Area_Code__c: number;
+    Product_Area_Code__c?: number;
     /**
      * <h3><b>Product-Country Code</b></h3>
      * <p>A code representing the combiantion of user product area and country. Dental Austratlia = 101, Surgery Australia = 201 etc. Used in reports.</p>
@@ -1991,12 +1996,12 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Country_Code__c: number;
+    Product_Country_Code__c?: number;
     /**
      * The reciprocal relationship for {@link ProductInstruction__c.ProductInstructor__c}.
      */
-    Product_Instructions__r: ProductInstruction__c[];
-    Profile: Profile;
+    Product_Instructions__r?: ProductInstruction__c[];
+    Profile?: Profile;
     /**
      * <h3><b>Profile Name</b></h3>
      * <p>used to display profile name when data is extracted by dataloader</p>
@@ -2009,18 +2014,18 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Profile__c: string;
-    ProfileId: string;
+    Profile__c?: string;
+    ProfileId?: string;
     /**
      * The reciprocal relationship for {@link User.NA_Profile_Team_Assigned__c}.
      */
-    ProfileTeam__r: User[];
+    ProfileTeam__r?: User[];
     /**
      * The reciprocal relationship for {@link Project_Member__c.Project_Member__c}.
      */
-    Project_Members__r: Project_Member__c[];
-    PublishedByUser: PromptVersion;
-    Publisher: CalendarView;
+    Project_Members__r?: Project_Member__c[];
+    PublishedByUser?: PromptVersion;
+    Publisher?: CalendarView;
     /**
      * <h3><b>q1</b></h3>
      * <h4>Field Attributes</h4>
@@ -2028,7 +2033,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    q1__c: string;
+    q1__c?: string;
     /**
      * <h3><b>q1</b></h3>
      * <h4>Field Attributes</h4>
@@ -2036,11 +2041,11 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    q1__r: User;
+    q1__r?: User;
     /**
      * The reciprocal relationship for {@link Q_A__c.Submitted_By__c}.
      */
-    Q_A__r: Q_A__c[];
+    Q_A__r?: Q_A__c[];
     /**
      * <h3><b>Questionnaire Access</b></h3>
      * <h4>Field Attributes</h4>
@@ -2049,41 +2054,41 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Questionnaire_Access__c: string;
+    Questionnaire_Access__c?: string;
     /**
      * The reciprocal relationship for {@link Questionnaire_Setup__c.Default_User__c}.
      */
-    Questionnaires_Setup__r: Questionnaire_Setup__c[];
+    Questionnaires_Setup__r?: Questionnaire_Setup__c[];
     /**
      * The reciprocal relationship for {@link Quote.X2nd_level_Manager__c}.
      */
-    Quotes1__r: Quote[];
+    Quotes1__r?: Quote[];
     /**
      * The reciprocal relationship for {@link Quote.Manager__c}.
      */
-    Quotes__r: Quote[];
+    Quotes__r?: Quote[];
     /**
      * The reciprocal relationship for {@link Rebound_Relationship__c.Relationship_OwnerRebound__c}.
      */
-    Rebound_Relationship_Owner1__r: Rebound_Relationship__c[];
+    Rebound_Relationship_Owner1__r?: Rebound_Relationship__c[];
     /**
      * The reciprocal relationship for {@link ProductTransfer.ReceivedById}.
      */
-    ReceivedBy: ProductTransfer;
+    ReceivedBy?: ProductTransfer;
     /**
      * The reciprocal relationship for {@link ProductTransfer.ReceivedById}.
      */
-    ReceivedByProductTransfers: ProductTransfer[];
-    ReceivesAdminInfoEmails: boolean;
-    ReceivesInfoEmails: boolean;
-    RecordActionHistories: RecordActionHistory[];
+    ReceivedByProductTransfers?: ProductTransfer[];
+    ReceivesAdminInfoEmails?: boolean;
+    ReceivesInfoEmails?: boolean;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    ReferenceRecord: CallCenterRoutingMap;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    ReferenceRecord?: CallCenterRoutingMap;
     /**
      * <h3><b>Region</b></h3>
      * <h4>Field Attributes</h4>
@@ -2292,17 +2297,17 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">JP: PREP Kanto</code></td><td>JP: PREP Kanto</td><td nowrap>true</td></tr>
      * </table>
      */
-    Region__c: string;
-    RegistrationExecutionUser: NetworkAuthApiSettings;
-    Related: Group;
-    RelatedPerson: VideoCallParticipantChangeEvent;
-    RelatedPersons: VideoCallParticipant[];
+    Region__c?: string;
+    RegistrationExecutionUser?: NetworkAuthApiSettings;
+    Related?: Group;
+    RelatedPerson?: VideoCallParticipantChangeEvent;
+    RelatedPersons?: VideoCallParticipant[];
     /**
      * The reciprocal relationship for {@link ServiceResource.RelatedRecordId}.
      */
-    RelatedRecord: ServiceResource;
-    RelatedTo: ListEmailChangeEvent;
-    Relation: EventRelationChangeEvent;
+    RelatedRecord?: ServiceResource;
+    RelatedTo?: ListEmailChangeEvent;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>Report Package</b></h3>
      * <h4>Field Attributes</h4>
@@ -2314,23 +2319,23 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&#39;a2X0J0000006vavUAA&#39;</code></td></tr>
      * </table>
      */
-    Report_Package__c: string;
-    ResumingUser: FlowRecordVersion;
+    Report_Package__c?: string;
+    ResumingUser?: FlowRecordVersion;
     /**
      * The reciprocal relationship for {@link Return_Auth_NAImp__c.Customer_Service_Agent_Completed_Return__c}.
      */
-    Return_Authorizations__r: Return_Auth_NAImp__c[];
+    Return_Authorizations__r?: Return_Auth_NAImp__c[];
     /**
      * The reciprocal relationship for {@link ReturnOrder.ReturnedById}.
      */
-    ReturnedBy: ReturnOrder;
+    ReturnedBy?: ReturnOrder;
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.ReviewedById}.
      */
-    ReviewedWorkItems: ApprovalWorkItem[];
-    RunAs: Territory2AlignmentLog;
-    RunAsUser: EmailServicesAddress;
-    RunningUser: Dashboard;
+    ReviewedWorkItems?: ApprovalWorkItem[];
+    RunAs?: Territory2AlignmentLog;
+    RunAsUser?: EmailServicesAddress;
+    RunningUser?: Dashboard;
     /**
      * <h3><b>Strategic Business Unit (SBU)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2350,7 +2355,7 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Shared Services</code></td><td>Shared Services</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_Business_Unit_SBU__c: string;
+    Sales_Business_Unit_SBU__c?: string;
     /**
      * <h3><b>Sales Channel (IMPL)</b></h3>
      * <p>Limited to IMPL at the moment, controled by validation rule to enforce a value when it&#39;s an IMPL sales rep and prevent any Value when otherwise</p>
@@ -2370,15 +2375,15 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Lab</code></td><td>Lab</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_Channel__c: string;
+    Sales_Channel__c?: string;
     /**
      * The reciprocal relationship for {@link Sales_History__c.Sales_Owner__c}.
      */
-    Sales_History__r: Sales_History__c[];
+    Sales_History__r?: Sales_History__c[];
     /**
      * The reciprocal relationship for {@link Field_Sales_Project_Members__c.SuggestedOwner__c}.
      */
-    Sales_Leads__r: Field_Sales_Project_Members__c[];
+    Sales_Leads__r?: Field_Sales_Project_Members__c[];
     /**
      * <h3><b>Sales Quota LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -2389,7 +2394,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_2010__c: number;
+    Sales_Quota_2010__c?: number;
     /**
      * <h3><b>Sales Quota CY</b></h3>
      * <p>Used to set Sales Quota for Current Year. Inititially to be used only for Dental Sales Reps.
@@ -2402,7 +2407,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_CY__c: number;
+    Sales_Quota_CY__c?: number;
     /**
      * <h3><b>Sales Quota Q1</b></h3>
      * <p>Created for DI - France</p>
@@ -2414,7 +2419,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_Q1__c: number;
+    Sales_Quota_Q1__c?: number;
     /**
      * <h3><b>Sales Quota Q2</b></h3>
      * <p>Created for DI - France</p>
@@ -2426,7 +2431,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_Q2__c: number;
+    Sales_Quota_Q2__c?: number;
     /**
      * <h3><b>Sales Quota Q3</b></h3>
      * <p>Created for DI France</p>
@@ -2438,7 +2443,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_Q3__c: number;
+    Sales_Quota_Q3__c?: number;
     /**
      * <h3><b>Sales Quota Q4</b></h3>
      * <p>Created for DI France.</p>
@@ -2450,12 +2455,12 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_Q4__c: number;
+    Sales_Quota_Q4__c?: number;
     /**
      * The reciprocal relationship for {@link User.Area_Manager_DI_DE__c}.
      */
-    Sales_Reps__r: User[];
-    SalesforceUser: UserProvAccount;
+    Sales_Reps__r?: User[];
+    SalesforceUser?: UserProvAccount;
     /**
      * <h3><b>SBU Ratio (CDCM)</b></h3>
      * <p>SIRONA CAD/CAM CEREC</p>
@@ -2466,7 +2471,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_CERE__c: number;
+    SBU_Ratio_CERE__c?: number;
     /**
      * <h3><b>SBU Ratio (ENDO)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2476,7 +2481,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_ENDO__c: number;
+    SBU_Ratio_ENDO__c?: number;
     /**
      * <h3><b>SBU Ratio (IMAG)</b></h3>
      * <p>SIRONA Imaging systems Intra &amp; Extra Oral</p>
@@ -2487,7 +2492,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_IMAG__c: number;
+    SBU_Ratio_IMAG__c?: number;
     /**
      * <h3><b>SBU Ratio (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2497,7 +2502,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_IMPL__c: number;
+    SBU_Ratio_IMPL__c?: number;
     /**
      * <h3><b>SBU Ratio (INST)</b></h3>
      * <p>SIRONA Instruments</p>
@@ -2508,7 +2513,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_INST__c: number;
+    SBU_Ratio_INST__c?: number;
     /**
      * <h3><b>SBU Ratio (ORTH)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2518,7 +2523,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_ORTH__c: number;
+    SBU_Ratio_ORTH__c?: number;
     /**
      * <h3><b>SBU Ratio (PREV)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2528,7 +2533,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_PREV__c: number;
+    SBU_Ratio_PREV__c?: number;
     /**
      * <h3><b>SBU Ratio (PROS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2538,7 +2543,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_PROS__c: number;
+    SBU_Ratio_PROS__c?: number;
     /**
      * <h3><b>SBU Ratio (REST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2548,7 +2553,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_REST__c: number;
+    SBU_Ratio_REST__c?: number;
     /**
      * <h3><b>SBU Ratio (TRCE)</b></h3>
      * <p>SIRONA Treatment Centers</p>
@@ -2559,7 +2564,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_TRCE__c: number;
+    SBU_Ratio_TRCE__c?: number;
     /**
      * <h3><b>SBU User Count (IMAG)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2571,7 +2576,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_IMAG__c: number;
+    SBU_User_Count_IMAG__c?: number;
     /**
      * <h3><b>SBU User Count (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2583,7 +2588,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_IMPL__c: number;
+    SBU_User_Count_IMPL__c?: number;
     /**
      * <h3><b>SBU User Count (INST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2595,7 +2600,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_INST__c: number;
+    SBU_User_Count_INST__c?: number;
     /**
      * <h3><b>SBU User Count (ORTH)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2607,7 +2612,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_ORTH__c: number;
+    SBU_User_Count_ORTH__c?: number;
     /**
      * <h3><b>SBU User Count (PREV)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2619,7 +2624,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_PREV__c: number;
+    SBU_User_Count_PREV__c?: number;
     /**
      * <h3><b>SBU User Count (PROS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2631,7 +2636,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_PROS__c: number;
+    SBU_User_Count_PROS__c?: number;
     /**
      * <h3><b>SBU User Count (REST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2643,7 +2648,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_REST__c: number;
+    SBU_User_Count_REST__c?: number;
     /**
      * <h3><b>SBU User Count (TRCE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2655,7 +2660,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_TRCE__c: number;
+    SBU_User_Count_TRCE__c?: number;
     /**
      * <h3><b>SBU User Count (CDCM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2667,7 +2672,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_CountCDCM__c: number;
+    SBU_User_CountCDCM__c?: number;
     /**
      * <h3><b>SBU User Count (ENDO)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2679,9 +2684,9 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_CountENDO__c: number;
-    SenderEmail: string;
-    SenderName: string;
+    SBU_User_CountENDO__c?: number;
+    SenderEmail?: string;
+    SenderName?: string;
     /**
      * <h3><b>Service Cloud Special Permissions</b></h3>
      * <h4>Field Attributes</h4>
@@ -2698,13 +2703,13 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Light Service Cloud</code></td><td>Light Service Cloud</td><td nowrap>true</td></tr>
      * </table>
      */
-    Service_Cloud_Special_Permissions__c: string;
+    Service_Cloud_Special_Permissions__c?: string;
     /**
      * The reciprocal relationship for {@link ServiceResource.RelatedRecordId}.
      */
-    ServiceResources: ServiceResource[];
-    SessionHandler: MessagingChannel;
-    SessionPermSetActivations: SessionPermSetActivation[];
+    ServiceResources?: ServiceResource[];
+    SessionHandler?: MessagingChannel;
+    SessionPermSetActivations?: SessionPermSetActivation[];
     /**
      * <h3><b>SF Implementation Level</b></h3>
      * <p>To be used instead of mentioneing &quot;Basic&quot; in the Profile Name. Some profiles might still need to have that tag in their name.</p>
@@ -2721,12 +2726,12 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales Advanced</code></td><td>Sales Advanced</td><td nowrap>true</td></tr>
      * </table>
      */
-    SF_Implementation_Level__c: string;
-    SharedEntity: CollaborationInvitation;
-    Shares: UserShare[];
-    Signature: string;
-    SmallBannerPhotoUrl: string;
-    SmallPhotoUrl: string;
+    SF_Implementation_Level__c?: string;
+    SharedEntity?: CollaborationInvitation;
+    Shares?: UserShare[];
+    Signature?: string;
+    SmallBannerPhotoUrl?: string;
+    SmallPhotoUrl?: string;
     /**
      * <h3><b>SR Origin</b></h3>
      * <h4>Field Attributes</h4>
@@ -2743,31 +2748,33 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dentsply Implants</code></td><td>Dentsply Implants</td><td nowrap>true</td></tr>
      * </table>
      */
-    SR_Origin__c: string;
+    SR_Origin__c?: string;
     /**
      * The reciprocal relationship for {@link Integration_Default_User__c.Id_Failed_Person_Acc_t_Conversion_User__c}.
      */
-    SSIS_Default_Users__r: Integration_Default_User__c[];
-    State: string;
-    StayInTouchNote: string;
-    StayInTouchSignature: string;
-    StayInTouchSubject: string;
-    Street: string;
-    Subject: StampAssignment;
-    SubmittedBy: ProcessInstance;
-    SubscribedToUser: ContentUserSubscription;
-    SubscriberUser: ContentUserSubscription;
+    SSIS_Default_Users__r?: Integration_Default_User__c[];
+    StartDay?: string;
+    State?: string;
+    StayInTouchNote?: string;
+    StayInTouchSignature?: string;
+    StayInTouchSubject?: string;
+    Street?: string;
+    SuAccessExpirationDate?: Date;
+    Subject?: StampAssignment;
+    SubmittedBy?: ProcessInstance;
+    SubscribedToUser?: ContentUserSubscription;
+    SubscriberUser?: ContentUserSubscription;
     /**
      * The reciprocal relationship for {@link SwarmMember.RelatedRecordId}.
      */
-    SwarmMembers: SwarmMember[];
+    SwarmMembers?: SwarmMember[];
     /**
      * The reciprocal relationship for {@link Swarm.RelatedRecordId}.
      */
-    Swarms: Swarm[];
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TargetUser: MessagingSession;
+    Swarms?: Swarm[];
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TargetUser?: MessagingSession;
     /**
      * <h3><b>Team</b></h3>
      * <h4>Field Attributes</h4>
@@ -2844,49 +2851,49 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Workflow Integration Specialist</code></td><td>Workflow Integration Specialist</td><td nowrap>true</td></tr>
      * </table>
      */
-    Team__c: string;
+    Team__c?: string;
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_Defect__c.TMFC_Defect_Assignee__c}.
      */
-    TeamForce_Defects__r: TMFC_TeamForce_Defect__c[];
+    TeamForce_Defects__r?: TMFC_TeamForce_Defect__c[];
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_Key_Decision__c.TMFC_Key_Decision_Sign_Off__c}.
      */
-    TeamForce_Key_Decisions__r: TMFC_TeamForce_Key_Decision__c[];
+    TeamForce_Key_Decisions__r?: TMFC_TeamForce_Key_Decision__c[];
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_Sprint__c.TMFC_Sprint_Design_Sign_Off__c}.
      */
-    TeamForce_Sprints1__r: TMFC_TeamForce_Sprint__c[];
+    TeamForce_Sprints1__r?: TMFC_TeamForce_Sprint__c[];
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_Sprint__c.TMFC_Sprint_Delivery_Sign_Off__c}.
      */
-    TeamForce_Sprints__r: TMFC_TeamForce_Sprint__c[];
-    TeamForce_Test_Scripts__r: TMFC_TeamForce_Test_Script__c[];
-    TeamForce_User_Requested__r: TMFC_TeamForce_User_Story__c[];
+    TeamForce_Sprints__r?: TMFC_TeamForce_Sprint__c[];
+    TeamForce_Test_Scripts__r?: TMFC_TeamForce_Test_Script__c[];
+    TeamForce_User_Requested__r?: TMFC_TeamForce_User_Story__c[];
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_User_Story__c.TMFC_User_Story_Design_Sign_Off__c}.
      */
-    TeamForce_User_Stories1__r: TMFC_TeamForce_User_Story__c[];
+    TeamForce_User_Stories1__r?: TMFC_TeamForce_User_Story__c[];
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_User_Story__c.QAOwner__c}.
      */
-    TeamForce_User_Stories2__r: TMFC_TeamForce_User_Story__c[];
+    TeamForce_User_Stories2__r?: TMFC_TeamForce_User_Story__c[];
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_User_Story__c.TMFC_User_Story_Dev_Sign_Off__c}.
      */
-    TeamForce_User_Stories__r: TMFC_TeamForce_User_Story__c[];
+    TeamForce_User_Stories__r?: TMFC_TeamForce_User_Story__c[];
     /**
      * The reciprocal relationship for {@link TeamForce_User_Story_Test__c.Tester__c}.
      */
-    TeamForce_User_Story_Tests1__r: TeamForce_User_Story_Test__c[];
+    TeamForce_User_Story_Tests1__r?: TeamForce_User_Story_Test__c[];
     /**
      * The reciprocal relationship for {@link TeamForce_User_Story_Test__c.User_Story_Test_Owner__c}.
      */
-    TeamForce_User_Story_Tests__r: TeamForce_User_Story_Test__c[];
+    TeamForce_User_Story_Tests__r?: TeamForce_User_Story_Test__c[];
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_Work_Task__c.TMFC_Work_Task_Assignee__c}.
      */
-    TeamForce_Work_Tasks__r: TMFC_TeamForce_Work_Task__c[];
+    TeamForce_Work_Tasks__r?: TMFC_TeamForce_Work_Task__c[];
     /**
      * <h3><b>Territory</b></h3>
      * <h4>Field Attributes</h4>
@@ -3624,7 +3631,7 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Minneapolis Southeast</code></td><td>Minneapolis Southeast</td><td nowrap>true</td></tr>
      * </table>
      */
-    Territory__c: string;
+    Territory__c?: string;
     /**
      * <h3><b>Country field</b></h3>
      * <h4>Field Attributes</h4>
@@ -3635,7 +3642,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Country_field__c: string;
+    testInCountry1__Country_field__c?: string;
     /**
      * <h3><b>InCountry Debug Mode</b></h3>
      * <h4>Field Attributes</h4>
@@ -3649,11 +3656,12 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Replication</code></td><td>Replication</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__DebugMode__c: string;
-    TimeZoneSidKey: string;
-    Title: string;
-    tz__World_Clock__r: tz__World_Clock_Location__c[];
-    UndecidedEventRelations: UndecidedEventRelation[];
+    testInCountry1__DebugMode__c?: string;
+    TimeZoneSidKey?: string;
+    Title?: string;
+    TransferRequester?: AgentWork;
+    tz__World_Clock__r?: tz__World_Clock_Location__c[];
+    UndecidedEventRelations?: UndecidedEventRelation[];
     /**
      * <h3><b>US TeleSales Team Name</b></h3>
      * <p>Used for US DNA TeleSales Reportin</p>
@@ -3666,15 +3674,15 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    US_TeleSales_Team_Name__c: string;
+    US_TeleSales_Team_Name__c?: string;
     /**
      * The reciprocal relationship for {@link AgentWork.UserId}.
      */
-    User: AgentWork;
+    User?: AgentWork;
     /**
      * The reciprocal relationship for {@link User.NA_Regional_Marketing_Coordinator__c}.
      */
-    User__r: User[];
+    User__r?: User[];
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -3683,7 +3691,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Country__c: string;
+    User_Country__c?: string;
     /**
      * <h3><b>User Country Abbreviation</b></h3>
      * <p>Sets the country abbreviations based on User Country. Note that HQ: DE/ HQ: SE are set as DE/SE as this fields is created for matching user records to cost/revenue transactions in reports</p>
@@ -3696,7 +3704,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Country_Abbreviation__c: string;
+    User_Country_Abbreviation__c?: string;
     /**
      * <h3><b>User Country Code</b></h3>
      * <p>A numeric code that is representing the country 1=Australia, 2= Austria etc. Used in reports</p>
@@ -3709,7 +3717,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Country_Code__c: number;
+    User_Country_Code__c?: number;
     /**
      * <h3><b>User Country - Text</b></h3>
      * <h4>Field Attributes</h4>
@@ -3721,7 +3729,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Country_Text__c: string;
+    User_Country_Text__c?: string;
     /**
      * <h3><b>User # (HQ)</b></h3>
      * <p>Used in reports</p>
@@ -3734,7 +3742,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_HQ__c: number;
+    User_HQ__c?: number;
     /**
      * <h3><b>User ID (18 digit)</b></h3>
      * <p>Used also in ETM</p>
@@ -3747,7 +3755,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_ID_18_digit__c: string;
+    User_ID_18_digit__c?: string;
     /**
      * <h3><b>User License</b></h3>
      * <p>Display the User License type</p>
@@ -3760,7 +3768,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_License__c: string;
+    User_License__c?: string;
     /**
      * <h3><b>User RCO</b></h3>
      * <p>Formula field to set the RCO belonging of a User depending on the user country selected.</p>
@@ -3773,7 +3781,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_RCO__c: string;
+    User_RCO__c?: string;
     /**
      * <h3><b>User Region</b></h3>
      * <h4>Field Attributes</h4>
@@ -3785,7 +3793,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Region__c: string;
+    User_Region__c?: string;
     /**
      * <h3><b>User SBU</b></h3>
      * <p>Used to capture the SBU belonging of a user. It&#39;s based on the SBU ratio fields. If no ratio has been assigned &quot;Not Set&quot; will be displayed</p>
@@ -3798,7 +3806,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_SBU__c: string;
+    User_SBU__c?: string;
     /**
      * <h3><b>User Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -3830,128 +3838,129 @@ declare interface User extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Virtual Sales</code></td><td>Virtual Sales</td><td nowrap>true</td></tr>
      * </table>
      */
-    User_Type__c: string;
+    User_Type__c?: string;
     /**
      * The reciprocal relationship for {@link geopointe__User_Usage__c.geopointe__User__c}.
      */
-    User_Usage__r: geopointe__User_Usage__c[];
-    UserAccountTeams: UserAccountTeamMember[];
-    UserEntityAccessRights: UserEntityAccess[];
-    UserFieldAccessRights: UserFieldAccess[];
-    Username: string;
-    UserOrGroup: AccountBrandShare;
-    UserPermissionsAvantgoUser: boolean;
-    UserPermissionsCallCenterAutoLogin: boolean;
-    UserPermissionsChatterAnswersUser: boolean;
-    UserPermissionsInteractionUser: boolean;
-    UserPermissionsKnowledgeUser: boolean;
-    UserPermissionsLiveAgentUser: boolean;
-    UserPermissionsMarketingUser: boolean;
-    UserPermissionsOfflineUser: boolean;
-    UserPermissionsSFContentUser: boolean;
-    UserPermissionsSupportUser: boolean;
-    UserPreferences: UserPreference[];
-    UserPreferencesActionLauncherEinsteinGptConsent: boolean;
-    UserPreferencesActivityRemindersPopup: boolean;
-    UserPreferencesApexPagesDeveloperMode: boolean;
-    UserPreferencesAssistiveActionsEnabledInActionLauncher: boolean;
-    UserPreferencesBRELookupTableWelcomeMat: boolean;
-    UserPreferencesCacheDiagnostics: boolean;
-    UserPreferencesContentEmailAsAndWhen: boolean;
-    UserPreferencesContentNoEmail: boolean;
-    UserPreferencesCreateLEXAppsWTShown: boolean;
-    UserPreferencesDisableAllFeedsEmail: boolean;
-    UserPreferencesDisableBookmarkEmail: boolean;
-    UserPreferencesDisableChangeCommentEmail: boolean;
-    UserPreferencesDisableEndorsementEmail: boolean;
-    UserPreferencesDisableFileShareNotificationsForApi: boolean;
-    UserPreferencesDisableFollowersEmail: boolean;
-    UserPreferencesDisableLaterCommentEmail: boolean;
-    UserPreferencesDisableLikeEmail: boolean;
-    UserPreferencesDisableMentionsPostEmail: boolean;
-    UserPreferencesDisableMessageEmail: boolean;
-    UserPreferencesDisableProfilePostEmail: boolean;
-    UserPreferencesDisableSharePostEmail: boolean;
-    UserPreferencesDisCommentAfterLikeEmail: boolean;
-    UserPreferencesDisMentionsCommentEmail: boolean;
-    UserPreferencesDisProfPostCommentEmail: boolean;
-    UserPreferencesEnableAutoSubForFeeds: boolean;
-    UserPreferencesEventRemindersCheckboxDefault: boolean;
-    UserPreferencesExcludeMailAppAttachments: boolean;
-    UserPreferencesFavoritesShowTopFavorites: boolean;
-    UserPreferencesFavoritesWTShown: boolean;
-    UserPreferencesGlobalNavBarWTShown: boolean;
-    UserPreferencesGlobalNavGridMenuWTShown: boolean;
-    UserPreferencesHasCelebrationBadge: boolean;
-    UserPreferencesHasSentWarningEmail: boolean;
-    UserPreferencesHasSentWarningEmail238: boolean;
-    UserPreferencesHasSentWarningEmail240: boolean;
-    UserPreferencesHideBiggerPhotoCallout: boolean;
-    UserPreferencesHideBrowseProductRedirectConfirmation: boolean;
-    UserPreferencesHideChatterOnboardingSplash: boolean;
-    UserPreferencesHideCSNDesktopTask: boolean;
-    UserPreferencesHideCSNGetChatterMobileTask: boolean;
-    UserPreferencesHideEndUserOnboardingAssistantModal: boolean;
-    UserPreferencesHideLightningMigrationModal: boolean;
-    UserPreferencesHideOnlineSalesAppTabVisibilityRequirementsModal: boolean;
-    UserPreferencesHideOnlineSalesAppWelcomeMat: boolean;
-    UserPreferencesHideSecondChatterOnboardingSplash: boolean;
-    UserPreferencesHideSfxWelcomeMat: boolean;
-    UserPreferencesLightningExperiencePreferred: boolean;
-    UserPreferencesLiveAgentMiawSetupDeflection: boolean;
-    UserPreferencesNewLightningReportRunPageEnabled: boolean;
-    UserPreferencesPathAssistantCollapsed: boolean;
-    UserPreferencesPreviewCustomTheme: boolean;
-    UserPreferencesPreviewLightning: boolean;
-    UserPreferencesReceiveNoNotificationsAsApprover: boolean;
-    UserPreferencesReceiveNotificationsAsDelegatedApprover: boolean;
-    UserPreferencesRecordHomeReservedWTShown: boolean;
-    UserPreferencesRecordHomeSectionCollapseWTShown: boolean;
-    UserPreferencesReminderSoundOff: boolean;
-    UserPreferencesReverseOpenActivitiesView: boolean;
-    UserPreferencesShowCityToExternalUsers: boolean;
-    UserPreferencesShowCityToGuestUsers: boolean;
-    UserPreferencesShowCountryToExternalUsers: boolean;
-    UserPreferencesShowCountryToGuestUsers: boolean;
-    UserPreferencesShowEmailToExternalUsers: boolean;
-    UserPreferencesShowEmailToGuestUsers: boolean;
-    UserPreferencesShowFaxToExternalUsers: boolean;
-    UserPreferencesShowFaxToGuestUsers: boolean;
-    UserPreferencesShowForecastingChangeSignals: boolean;
-    UserPreferencesShowForecastingRoundedAmounts: boolean;
-    UserPreferencesShowManagerToExternalUsers: boolean;
-    UserPreferencesShowManagerToGuestUsers: boolean;
-    UserPreferencesShowMobilePhoneToExternalUsers: boolean;
-    UserPreferencesShowMobilePhoneToGuestUsers: boolean;
-    UserPreferencesShowPostalCodeToExternalUsers: boolean;
-    UserPreferencesShowPostalCodeToGuestUsers: boolean;
-    UserPreferencesShowProfilePicToGuestUsers: boolean;
-    UserPreferencesShowStateToExternalUsers: boolean;
-    UserPreferencesShowStateToGuestUsers: boolean;
-    UserPreferencesShowStreetAddressToExternalUsers: boolean;
-    UserPreferencesShowStreetAddressToGuestUsers: boolean;
-    UserPreferencesShowTerritoryTimeZoneShifts: boolean;
-    UserPreferencesShowTitleToExternalUsers: boolean;
-    UserPreferencesShowTitleToGuestUsers: boolean;
-    UserPreferencesShowWorkPhoneToExternalUsers: boolean;
-    UserPreferencesShowWorkPhoneToGuestUsers: boolean;
-    UserPreferencesSortFeedByComment: boolean;
-    UserPreferencesSRHOverrideActivities: boolean;
-    UserPreferencesSuppressEventSFXReminders: boolean;
-    UserPreferencesSuppressTaskSFXReminders: boolean;
-    UserPreferencesTaskRemindersCheckboxDefault: boolean;
-    UserPreferencesUserDebugModePref: boolean;
-    UserRole: UserRole;
-    UserRoleId: string;
-    Users: AuthSession;
+    User_Usage__r?: geopointe__User_Usage__c[];
+    UserAccountTeams?: UserAccountTeamMember[];
+    UserEntityAccessRights?: UserEntityAccess[];
+    UserFieldAccessRights?: UserFieldAccess[];
+    UserLogins?: UserLogin[];
+    Username?: string;
+    UserOrGroup?: AccountBrandShare;
+    UserPermissionsAvantgoUser?: boolean;
+    UserPermissionsCallCenterAutoLogin?: boolean;
+    UserPermissionsChatterAnswersUser?: boolean;
+    UserPermissionsInteractionUser?: boolean;
+    UserPermissionsKnowledgeUser?: boolean;
+    UserPermissionsLiveAgentUser?: boolean;
+    UserPermissionsMarketingUser?: boolean;
+    UserPermissionsOfflineUser?: boolean;
+    UserPermissionsSFContentUser?: boolean;
+    UserPermissionsSupportUser?: boolean;
+    UserPreferences?: UserPreference[];
+    UserPreferencesActionLauncherEinsteinGptConsent?: boolean;
+    UserPreferencesActivityRemindersPopup?: boolean;
+    UserPreferencesApexPagesDeveloperMode?: boolean;
+    UserPreferencesAssistiveActionsEnabledInActionLauncher?: boolean;
+    UserPreferencesBRELookupTableWelcomeMat?: boolean;
+    UserPreferencesCacheDiagnostics?: boolean;
+    UserPreferencesContentEmailAsAndWhen?: boolean;
+    UserPreferencesContentNoEmail?: boolean;
+    UserPreferencesCreateLEXAppsWTShown?: boolean;
+    UserPreferencesDisableAllFeedsEmail?: boolean;
+    UserPreferencesDisableBookmarkEmail?: boolean;
+    UserPreferencesDisableChangeCommentEmail?: boolean;
+    UserPreferencesDisableEndorsementEmail?: boolean;
+    UserPreferencesDisableFileShareNotificationsForApi?: boolean;
+    UserPreferencesDisableFollowersEmail?: boolean;
+    UserPreferencesDisableLaterCommentEmail?: boolean;
+    UserPreferencesDisableLikeEmail?: boolean;
+    UserPreferencesDisableMentionsPostEmail?: boolean;
+    UserPreferencesDisableMessageEmail?: boolean;
+    UserPreferencesDisableProfilePostEmail?: boolean;
+    UserPreferencesDisableSharePostEmail?: boolean;
+    UserPreferencesDisCommentAfterLikeEmail?: boolean;
+    UserPreferencesDisMentionsCommentEmail?: boolean;
+    UserPreferencesDisProfPostCommentEmail?: boolean;
+    UserPreferencesEnableAutoSubForFeeds?: boolean;
+    UserPreferencesEventRemindersCheckboxDefault?: boolean;
+    UserPreferencesExcludeMailAppAttachments?: boolean;
+    UserPreferencesFavoritesShowTopFavorites?: boolean;
+    UserPreferencesFavoritesWTShown?: boolean;
+    UserPreferencesGlobalNavBarWTShown?: boolean;
+    UserPreferencesGlobalNavGridMenuWTShown?: boolean;
+    UserPreferencesHasCelebrationBadge?: boolean;
+    UserPreferencesHasSentWarningEmail?: boolean;
+    UserPreferencesHasSentWarningEmail238?: boolean;
+    UserPreferencesHasSentWarningEmail240?: boolean;
+    UserPreferencesHideBiggerPhotoCallout?: boolean;
+    UserPreferencesHideBrowseProductRedirectConfirmation?: boolean;
+    UserPreferencesHideChatterOnboardingSplash?: boolean;
+    UserPreferencesHideCSNDesktopTask?: boolean;
+    UserPreferencesHideCSNGetChatterMobileTask?: boolean;
+    UserPreferencesHideEndUserOnboardingAssistantModal?: boolean;
+    UserPreferencesHideLightningMigrationModal?: boolean;
+    UserPreferencesHideOnlineSalesAppTabVisibilityRequirementsModal?: boolean;
+    UserPreferencesHideOnlineSalesAppWelcomeMat?: boolean;
+    UserPreferencesHideSecondChatterOnboardingSplash?: boolean;
+    UserPreferencesHideSfxWelcomeMat?: boolean;
+    UserPreferencesLightningExperiencePreferred?: boolean;
+    UserPreferencesLiveAgentMiawSetupDeflection?: boolean;
+    UserPreferencesNewLightningReportRunPageEnabled?: boolean;
+    UserPreferencesPathAssistantCollapsed?: boolean;
+    UserPreferencesPreviewCustomTheme?: boolean;
+    UserPreferencesPreviewLightning?: boolean;
+    UserPreferencesReceiveNoNotificationsAsApprover?: boolean;
+    UserPreferencesReceiveNotificationsAsDelegatedApprover?: boolean;
+    UserPreferencesRecordHomeReservedWTShown?: boolean;
+    UserPreferencesRecordHomeSectionCollapseWTShown?: boolean;
+    UserPreferencesReminderSoundOff?: boolean;
+    UserPreferencesReverseOpenActivitiesView?: boolean;
+    UserPreferencesShowCityToExternalUsers?: boolean;
+    UserPreferencesShowCityToGuestUsers?: boolean;
+    UserPreferencesShowCountryToExternalUsers?: boolean;
+    UserPreferencesShowCountryToGuestUsers?: boolean;
+    UserPreferencesShowEmailToExternalUsers?: boolean;
+    UserPreferencesShowEmailToGuestUsers?: boolean;
+    UserPreferencesShowFaxToExternalUsers?: boolean;
+    UserPreferencesShowFaxToGuestUsers?: boolean;
+    UserPreferencesShowForecastingChangeSignals?: boolean;
+    UserPreferencesShowForecastingRoundedAmounts?: boolean;
+    UserPreferencesShowManagerToExternalUsers?: boolean;
+    UserPreferencesShowManagerToGuestUsers?: boolean;
+    UserPreferencesShowMobilePhoneToExternalUsers?: boolean;
+    UserPreferencesShowMobilePhoneToGuestUsers?: boolean;
+    UserPreferencesShowPostalCodeToExternalUsers?: boolean;
+    UserPreferencesShowPostalCodeToGuestUsers?: boolean;
+    UserPreferencesShowProfilePicToGuestUsers?: boolean;
+    UserPreferencesShowStateToExternalUsers?: boolean;
+    UserPreferencesShowStateToGuestUsers?: boolean;
+    UserPreferencesShowStreetAddressToExternalUsers?: boolean;
+    UserPreferencesShowStreetAddressToGuestUsers?: boolean;
+    UserPreferencesShowTerritoryTimeZoneShifts?: boolean;
+    UserPreferencesShowTitleToExternalUsers?: boolean;
+    UserPreferencesShowTitleToGuestUsers?: boolean;
+    UserPreferencesShowWorkPhoneToExternalUsers?: boolean;
+    UserPreferencesShowWorkPhoneToGuestUsers?: boolean;
+    UserPreferencesSortFeedByComment?: boolean;
+    UserPreferencesSRHOverrideActivities?: boolean;
+    UserPreferencesSuppressEventSFXReminders?: boolean;
+    UserPreferencesSuppressTaskSFXReminders?: boolean;
+    UserPreferencesTaskRemindersCheckboxDefault?: boolean;
+    UserPreferencesUserDebugModePref?: boolean;
+    UserRole?: UserRole;
+    UserRoleId?: string;
+    Users?: AuthSession;
     /**
      * The reciprocal relationship for {@link User.q1__c}.
      */
-    Users__r: User[];
-    UserSites: Site[];
-    UserTeams: UserTeamMember[];
-    UserTerritory2Associations: UserTerritory2Association[];
-    UserType: string;
+    Users__r?: User[];
+    UserSites?: Site[];
+    UserTeams?: UserTeamMember[];
+    UserTerritory2Associations?: UserTerritory2Association[];
+    UserType?: string;
     /**
      * <h3><b>User Unique</b></h3>
      * <p>Field is used to generate unique user counts on various reports</p>
@@ -3964,7 +3973,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UserUnique__c: number;
+    UserUnique__c?: number;
     /**
      * <h3><b>View All EA Products</b></h3>
      * <h4>Field Attributes</h4>
@@ -3975,7 +3984,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    View_All_EA_Products__c: string;
+    View_All_EA_Products__c?: string;
     /**
      * <h3><b>View All Wave Data</b></h3>
      * <h4>Field Attributes</h4>
@@ -3986,11 +3995,11 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    View_All_Wave_Data__c: string;
+    View_All_Wave_Data__c?: string;
     /**
      * The reciprocal relationship for {@link VoiceCall.UserId}.
      */
-    VoiceCalls: VoiceCall[];
+    VoiceCalls?: VoiceCall[];
     /**
      * <h3><b>Wave Primary SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -4001,7 +4010,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Primary_SBU__c: string;
+    Wave_Primary_SBU__c?: string;
     /**
      * <h3><b>Wave Territory Id 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -4012,7 +4021,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_1__c: string;
+    Wave_Territory_Id_1__c?: string;
     /**
      * <h3><b>Wave Territory Id 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -4023,7 +4032,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_2__c: string;
+    Wave_Territory_Id_2__c?: string;
     /**
      * <h3><b>Wave Territory Id 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -4034,7 +4043,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_3__c: string;
+    Wave_Territory_Id_3__c?: string;
     /**
      * <h3><b>Wave Territory Id 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -4045,7 +4054,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_4__c: string;
+    Wave_Territory_Id_4__c?: string;
     /**
      * <h3><b>Wave Territory Id 5</b></h3>
      * <h4>Field Attributes</h4>
@@ -4056,7 +4065,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_5__c: string;
+    Wave_Territory_Id_5__c?: string;
     /**
      * <h3><b>Wave Territory Id 6</b></h3>
      * <h4>Field Attributes</h4>
@@ -4067,7 +4076,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_6__c: string;
+    Wave_Territory_Id_6__c?: string;
     /**
      * <h3><b>Wave Territory Id 7</b></h3>
      * <h4>Field Attributes</h4>
@@ -4078,7 +4087,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_7__c: string;
+    Wave_Territory_Id_7__c?: string;
     /**
      * <h3><b>Wave User Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -4089,7 +4098,7 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_User_Id__c: string;
+    Wave_User_Id__c?: string;
     /**
      * <h3><b>WC2012 Country/Market Target (HQ)</b></h3>
      * <p>This field is set for all users but only used for analysis regarding Dental (WC2012). For analysis only. Should never appear in any page layouts</p>
@@ -4102,10 +4111,10 @@ declare interface User extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WC2012_Country_Market_Target_HQ__c: number;
+    WC2012_Country_Market_Target_HQ__c?: number;
     /**
      * The reciprocal relationship for {@link SBQQ__WebQuote__c.SBQQ__SalesRep__c}.
      */
-    WebQuotes__r: SBQQ__WebQuote__c[];
-    What: RecordAlertChangeEvent;
+    WebQuotes__r?: SBQQ__WebQuote__c[];
+    What?: RecordAlertChangeEvent;
 }

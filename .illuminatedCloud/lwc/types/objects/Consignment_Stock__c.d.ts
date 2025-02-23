@@ -13,7 +13,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,15 +21,15 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
     /**
      * <h3><b>Article</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article__c: string;
+    Article__c?: string;
     /**
      * <h3><b>Article</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,14 +47,14 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article__r: Product2;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    Article__r?: Product2;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Brand__c: string;
+    Brand__c?: string;
     /**
      * <h3><b>Business Area Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,12 +78,12 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Business_Area_Code__c: string;
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    Business_Area_Code__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * <h3><b>Consignment Stock External ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -94,27 +94,27 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Consignment_Stock_External_ID__c: string;
+    Consignment_Stock_External_ID__c?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
     /**
      * <h3><b>Expiration Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Expiration_Date__c: Date;
+    Expiration_Date__c?: Date;
     /**
      * <h3><b>Expiration Flag</b></h3>
      * <h4>Field Attributes</h4>
@@ -136,10 +136,10 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Expiration_Flag__c: string;
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    Expiration_Flag__c?: string;
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>GDW Unique Key</b></h3>
      * <p>External Key for GDW Integration - starting at March 2021</p>
@@ -151,19 +151,19 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    GDWUniqueKey__c: string;
+    GDWUniqueKey__c?: string;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Lot#</b></h3>
      * <h4>Field Attributes</h4>
@@ -174,7 +174,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lot__c: string;
+    Lot__c?: string;
     /**
      * <h3><b>Movex Expiration Date</b></h3>
      * <p>From the field MITLOC.BREF in Movex. This is NOT a date field but in a format &quot;YYYY-MM&quot;. This field is used in the Expiration Date formula field (that transforms it to a date format)</p>
@@ -186,11 +186,11 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LotRef1__c: string;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    LotRef1__c?: string;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>On-hand Balance</b></h3>
      * <p>The Balance = the current quantity in the Consigment Stock. The items may come from different lots</p>
@@ -202,18 +202,18 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    On_hand_Balance__c: number;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    On_hand_Balance__c?: number;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Product Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -225,7 +225,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Category__c: string;
+    Product_Category__c?: string;
     /**
      * <h3><b>Product GPP</b></h3>
      * <h4>Field Attributes</h4>
@@ -237,7 +237,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_GPP__c: string;
+    Product_GPP__c?: string;
     /**
      * <h3><b>Product Group 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -249,7 +249,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_1__c: string;
+    Product_Group_1__c?: string;
     /**
      * <h3><b>Product Group 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -261,7 +261,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_2__c: string;
+    Product_Group_2__c?: string;
     /**
      * <h3><b>Product Group 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -273,7 +273,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_3__c: string;
+    Product_Group_3__c?: string;
     /**
      * <h3><b>Product Group 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -285,7 +285,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_4__c: string;
+    Product_Group_4__c?: string;
     /**
      * <h3><b>Product Group 4 Code (HQ)</b></h3>
      * <p>Used in Roll-up summary fields as a filter criteria as a roll-up summary field can not filter on formulas. Is updated via workflow</p>
@@ -297,7 +297,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_4_Code__c: string;
+    Product_Group_4_Code__c?: string;
     /**
      * <h3><b>Product Line</b></h3>
      * <h4>Field Attributes</h4>
@@ -309,7 +309,7 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Line__c: string;
+    Product_Line__c?: string;
     /**
      * <h3><b>Product SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -321,27 +321,27 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_SBU__c: string;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    Product_SBU__c?: string;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    SobjectLookupValue: AIInsightValue;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>SourceSystemName</b></h3>
      * <p>SourceSystemName</p>
@@ -353,22 +353,22 @@ declare interface Consignment_Stock__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceSystemName__c: string;
-    SystemModstamp: string;
-    Tags: Consignment_Stock__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    SourceSystemName__c?: string;
+    SystemModstamp?: string;
+    Tags?: Consignment_Stock__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

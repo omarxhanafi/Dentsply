@@ -14,10 +14,10 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Comment__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Comment__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Delete Row Count</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Delete_Row_Count__c: number;
+    Delete_Row_Count__c?: number;
     /**
      * <h3><b>End Date Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    End_Date_Time__c: string;
+    End_Date_Time__c?: string;
     /**
      * <h3><b>Error Row Count</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Error_Row_Count__c: number;
+    Error_Row_Count__c?: number;
     /**
      * <h3><b>Extract Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,7 +59,7 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Extract_Filter__c: string;
+    Extract_Filter__c?: string;
     /**
      * <h3><b>Extract Row Count</b></h3>
      * <h4>Field Attributes</h4>
@@ -70,12 +70,12 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Extract_Row_Count__c: number;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Extract_Row_Count__c?: number;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>SSIS Integration Log</b></h3>
      * <h4>Field Attributes</h4>
@@ -84,7 +84,7 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SSIS_Integration_Log__c: string;
+    SSIS_Integration_Log__c?: string;
     /**
      * <h3><b>SSIS Integration Log</b></h3>
      * <h4>Field Attributes</h4>
@@ -93,11 +93,11 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SSIS_Integration_Log__r: SSIS_Integration_Log__c;
+    SSIS_Integration_Log__r?: SSIS_Integration_Log__c;
     /**
      * The reciprocal relationship for {@link SSIS_Integration_Task_Execution_Error__c.SSIS_Integration_Task_Log__c}.
      */
-    SSIS_Integration_Task_Execution_Errors__r: SSIS_Integration_Task_Execution_Error__c[];
+    SSIS_Integration_Task_Execution_Errors__r?: SSIS_Integration_Task_Execution_Error__c[];
     /**
      * <h3><b>SSIS Task Execution Instance Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,7 +108,7 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    SSIS_Task_Execution_Instance_Id__c: number;
+    SSIS_Task_Execution_Instance_Id__c?: number;
     /**
      * <h3><b>Start Date Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -118,7 +118,7 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Start_Date_Time__c: string;
+    Start_Date_Time__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -129,7 +129,7 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Status Update Date Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -139,7 +139,7 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Status_Update_Date_Time__c: string;
+    Status_Update_Date_Time__c?: string;
     /**
      * <h3><b>Upsert Row Count</b></h3>
      * <h4>Field Attributes</h4>
@@ -150,5 +150,5 @@ declare interface SSIS_Integration_Task_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Upsert_Row_Count__c: number;
+    Upsert_Row_Count__c?: number;
 }

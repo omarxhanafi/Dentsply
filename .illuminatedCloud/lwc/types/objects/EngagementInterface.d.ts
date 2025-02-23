@@ -2,7 +2,7 @@
 
 declare interface EngagementInterface extends SObject 
 {
-    EndDateTime: string;
-    ImplementorType: string;
-    StartDateTime: string;
+    EndDateTime?: string;
+    ImplementorType?: string;
+    StartDateTime?: string;
 }

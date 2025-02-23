@@ -16,7 +16,7 @@ declare interface ServiceCloudSLAPriorityMapping__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CaseType__c: string;
+    CaseType__c?: string;
     /**
      * <h3><b>Case Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface ServiceCloudSLAPriorityMapping__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Complaint_Category__c: string;
+    Complaint_Category__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,12 +38,12 @@ declare interface ServiceCloudSLAPriorityMapping__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    Country__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,8 +54,8 @@ declare interface ServiceCloudSLAPriorityMapping__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Priority__c: string;
-    QualifiedApiName: string;
+    Priority__c?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Product Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,6 +66,6 @@ declare interface ServiceCloudSLAPriorityMapping__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__c: string;
-    SystemModstamp: string;
+    SBU__c?: string;
+    SystemModstamp?: string;
 }

@@ -6,18 +6,18 @@
  */
 declare interface SBQQ__ContractedPrice__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLine__c.SBQQ__ContractedPrice__c}.
      */
-    Quote_Lines__r: SBQQ__QuoteLine__c[];
+    Quote_Lines__r?: SBQQ__QuoteLine__c[];
     /**
      * <h3><b>Account</b></h3>
      * <p>Account for which this price was negotiated.</p>
@@ -27,7 +27,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Account__c: string;
+    SBQQ__Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <p>Account for which this price was negotiated.</p>
@@ -37,7 +37,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Account__r: Account;
+    SBQQ__Account__r?: Account;
     /**
      * <h3><b>Contract</b></h3>
      * <p>Sales contract that governs this price.</p>
@@ -48,7 +48,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Contract__c: string;
+    SBQQ__Contract__c?: string;
     /**
      * <h3><b>Contract</b></h3>
      * <p>Sales contract that governs this price.</p>
@@ -59,7 +59,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Contract__r: Contract;
+    SBQQ__Contract__r?: Contract;
     /**
      * <h3><b>Description</b></h3>
      * <p>Description for the Contracted Price</p>
@@ -70,7 +70,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Description__c: string;
+    SBQQ__Description__c?: string;
     /**
      * <h3><b>Discount</b></h3>
      * <p>Discount off the list price (percent) represented by this Contracted Price. Either this field or Price should be set but not both.</p>
@@ -81,7 +81,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Discount__c: number;
+    SBQQ__Discount__c?: number;
     /**
      * <h3><b>Discount Schedule</b></h3>
      * <p>Volume discount schedule to use for this product with this customer.</p>
@@ -92,7 +92,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DiscountSchedule__c: string;
+    SBQQ__DiscountSchedule__c?: string;
     /**
      * <h3><b>Discount Schedule</b></h3>
      * <p>Volume discount schedule to use for this product with this customer.</p>
@@ -103,7 +103,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DiscountSchedule__r: SBQQ__DiscountSchedule__c;
+    SBQQ__DiscountSchedule__r?: SBQQ__DiscountSchedule__c;
     /**
      * <h3><b>Effective Date</b></h3>
      * <p>Effective date for this contracted price.</p>
@@ -114,7 +114,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__EffectiveDate__c: Date;
+    SBQQ__EffectiveDate__c?: Date;
     /**
      * <h3><b>Expiration Date</b></h3>
      * <p>Expiration date for this contracted price.</p>
@@ -125,7 +125,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ExpirationDate__c: Date;
+    SBQQ__ExpirationDate__c?: Date;
     /**
      * <h3><b>Filter Field</b></h3>
      * <p>Quote line field that&#39;s evaluated to determine if this contracted price applies.</p>
@@ -143,7 +143,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product Family</code></td><td>Product Family</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__FilterField__c: string;
+    SBQQ__FilterField__c?: string;
     /**
      * <h3><b>Filter Value</b></h3>
      * <p>Value the filter field is tested against to determine if this contracted price should apply.</p>
@@ -155,7 +155,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FilterValue__c: string;
+    SBQQ__FilterValue__c?: string;
     /**
      * <h3><b>Non Discountable</b></h3>
      * <p>Flag that marks the line covered by this price as non-discountable. Overrides Non Discountable flag on the product.</p>
@@ -166,7 +166,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__NonDiscountable__c: boolean;
+    SBQQ__NonDiscountable__c?: boolean;
     /**
      * <h3><b>Operator</b></h3>
      * <p>Operator used to evaluate Filter Field value against Filter Value.</p>
@@ -189,7 +189,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">contains</code></td><td>contains</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Operator__c: string;
+    SBQQ__Operator__c?: string;
     /**
      * <h3><b>Original Quote Line</b></h3>
      * <p>The Quote Line that originated this Contracted Price.</p>
@@ -200,7 +200,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OriginalQuoteLine__c: string;
+    SBQQ__OriginalQuoteLine__c?: string;
     /**
      * <h3><b>Original Quote Line</b></h3>
      * <p>The Quote Line that originated this Contracted Price.</p>
@@ -211,7 +211,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OriginalQuoteLine__r: SBQQ__QuoteLine__c;
+    SBQQ__OriginalQuoteLine__r?: SBQQ__QuoteLine__c;
     /**
      * <h3><b>Price</b></h3>
      * <p>Actual price that was negotiated. This value will override any other price such as the one from a price book or a volume-discounted price.</p>
@@ -222,7 +222,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Price__c: number;
+    SBQQ__Price__c?: number;
     /**
      * <h3><b>Product</b></h3>
      * <p>Product for which this price was negotiated.</p>
@@ -233,7 +233,7 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__c: string;
+    SBQQ__Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>Product for which this price was negotiated.</p>
@@ -244,9 +244,9 @@ declare interface SBQQ__ContractedPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__r: Product2;
+    SBQQ__Product__r?: Product2;
     /**
      * The reciprocal relationship for {@link SBQQ__WebQuoteLine__c.SBQQ__ContractedPrice__c}.
      */
-    WebQuoteLines__r: SBQQ__WebQuoteLine__c[];
+    WebQuoteLines__r?: SBQQ__WebQuoteLine__c[];
 }

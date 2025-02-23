@@ -161,6 +161,9 @@
       "c/opportunityWinLossLwc": [
         "src/lwc/opportunityWinLossLwc/opportunityWinLossLwc"
       ],
+      "c/orderCloneLwc": [
+        "src/lwc/orderCloneLwc/orderCloneLwc"
+      ],
       "c/orderDealerLwc": [
         "src/lwc/orderDealerLwc/orderDealerLwc"
       ],

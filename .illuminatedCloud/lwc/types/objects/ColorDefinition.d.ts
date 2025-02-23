@@ -2,10 +2,10 @@
 
 declare interface ColorDefinition extends SObject 
 {
-    Color: string;
-    Context: string;
-    DurableId: string;
-    TabDefinition: TabDefinition;
-    TabDefinitionId: string;
-    Theme: string;
+    Color?: string;
+    Context?: string;
+    DurableId?: string;
+    TabDefinition?: TabDefinition;
+    TabDefinitionId?: string;
+    Theme?: string;
 }

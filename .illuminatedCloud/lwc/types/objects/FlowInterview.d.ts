@@ -2,48 +2,47 @@
 
 declare interface FlowInterview extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrentElement: string;
-    CurrentFlowVersion: string;
-    /**
-     * The reciprocal relationship for {@link DynamicDataCapture.PausedFlowInterviewId}.
-     */
-    DynamicDataCaptures: DynamicDataCapture[];
-    EngineType: string;
-    Error: string;
-    FlowVersionView: FlowVersionView;
-    FlowVersionViewId: string;
-    Guid: string;
-    Interview: FlowOrchestrationInstance;
-    InterviewLabel: string;
-    InterviewStatus: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterFlowVersion: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrentElement?: string;
+    CurrentFlowVersion?: string;
+    EngineType?: string;
+    Error?: string;
+    FlowInterview?: FulfillmentStepChangeEvent;
+    FlowVersionView?: FlowVersionView;
+    FlowVersionViewId?: string;
+    FulfillmentSteps?: FulfillmentStep[];
+    Guid?: string;
+    Interview?: FlowOrchestrationInstance;
+    InterviewLabel?: string;
+    InterviewStatus?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterFlowVersion?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * The reciprocal relationship for {@link WorkStep.PausedFlowInterviewId}.
      */
-    PausedFlowInterview: WorkStep;
-    PauseLabel: string;
+    PausedFlowInterview?: WorkStep;
+    PauseLabel?: string;
     /**
      * The reciprocal relationship for {@link RecordAction.FlowInterviewId}.
      */
-    RecordActions: RecordAction[];
-    RecordRelations: FlowRecordRelation[];
-    Shares: FlowInterviewShare[];
-    StageRelations: FlowStageRelation[];
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    WasPausedFromScreen: boolean;
+    RecordActions?: RecordAction[];
+    RecordRelations?: FlowRecordRelation[];
+    SerializedView?: string;
+    Shares?: FlowInterviewShare[];
+    StageRelations?: FlowStageRelation[];
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    WasPausedFromScreen?: boolean;
     /**
      * The reciprocal relationship for {@link WorkStep.PausedFlowInterviewId}.
      */
-    WorkSteps: WorkStep[];
+    WorkSteps?: WorkStep[];
 }

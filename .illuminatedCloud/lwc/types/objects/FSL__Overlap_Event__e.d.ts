@@ -6,10 +6,10 @@
  */
 declare interface FSL__Overlap_Event__e extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
     /**
      * <h3><b>Absence_Type_Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,7 +20,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Absence_Type_Name__c: string;
+    FSL__Absence_Type_Name__c?: string;
     /**
      * <h3><b>End</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__End__c: string;
+    FSL__End__c?: string;
     /**
      * <h3><b>Event_Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Event_Type__c: string;
+    FSL__Event_Type__c?: string;
     /**
      * <h3><b>Overlap_Length_ in_ Minutes</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Overlap_Length_in_Minutes__c: number;
+    FSL__Overlap_Length_in_Minutes__c?: number;
     /**
      * <h3><b>Record_ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Record_ID__c: string;
+    FSL__Record_ID__c?: string;
     /**
      * <h3><b>Resource_ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -73,7 +73,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Resource_ID__c: string;
+    FSL__Resource_ID__c?: string;
     /**
      * <h3><b>Resource_Time_Zone</b></h3>
      * <h4>Field Attributes</h4>
@@ -84,7 +84,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Resource_Time_Zone__c: string;
+    FSL__Resource_Time_Zone__c?: string;
     /**
      * <h3><b>Start</b></h3>
      * <h4>Field Attributes</h4>
@@ -93,7 +93,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__Start__c: string;
+    FSL__Start__c?: string;
     /**
      * <h3><b>Subject</b></h3>
      * <h4>Field Attributes</h4>
@@ -104,7 +104,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Subject__c: string;
+    FSL__Subject__c?: string;
     /**
      * <h3><b>Territory_ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,7 +115,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Territory_ID__c: string;
+    FSL__Territory_ID__c?: string;
     /**
      * <h3><b>Territory_Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -126,7 +126,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Territory_Name__c: string;
+    FSL__Territory_Name__c?: string;
     /**
      * <h3><b>User_ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -137,7 +137,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__User_ID__c: string;
+    FSL__User_ID__c?: string;
     /**
      * <h3><b>Work_Type_ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -148,7 +148,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Work_Type_ID__c: string;
+    FSL__Work_Type_ID__c?: string;
     /**
      * <h3><b>Work_Type_Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -159,7 +159,7 @@ declare interface FSL__Overlap_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Work_Type_Name__c: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    FSL__Work_Type_Name__c?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

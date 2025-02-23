@@ -9,29 +9,29 @@ declare interface Idea extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32000)</td></tr>
      * </table>
      */
-    Additional_information_from_CoE__c: string;
+    Additional_information_from_CoE__c?: string;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    Body: string;
-    Categories: string;
-    Comments: IdeaComment[];
-    Community: Community;
-    CommunityId: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CreatorFullPhotoUrl: string;
-    CreatorName: string;
-    CreatorSmallPhotoUrl: string;
-    CurrencyIsoCode: string;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    Body?: string;
+    Categories?: string;
+    Comments?: IdeaComment[];
+    Community?: Community;
+    CommunityId?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CreatorFullPhotoUrl?: string;
+    CreatorName?: string;
+    CreatorSmallPhotoUrl?: string;
+    CurrencyIsoCode?: string;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Focus area</b></h3>
      * <p>What focus area(s) can be matched to this Idea? If there are changes of focus areas change this fiels accordingly</p>
@@ -49,21 +49,21 @@ declare interface Idea extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SFDC skills</code></td><td>SFDC skills</td><td nowrap>true</td></tr>
      * </table>
      */
-    Focus_area__c: string;
-    IsDeleted: boolean;
-    IsHtml: boolean;
-    IsMerged: boolean;
-    LastComment: IdeaComment;
-    LastCommentDate: string;
-    LastCommentId: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    NumComments: number;
-    ParentIdea: Idea;
-    ParentIdeaId: string;
+    Focus_area__c?: string;
+    IsDeleted?: boolean;
+    IsHtml?: boolean;
+    IsMerged?: boolean;
+    LastComment?: IdeaComment;
+    LastCommentDate?: string;
+    LastCommentId?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    NumComments?: number;
+    ParentIdea?: Idea;
+    ParentIdeaId?: string;
     /**
      * <h3><b>Planned for implementation Quarter</b></h3>
      * <p>This field gives an estimate when an Idea marked with &quot;Planned for implementation&quot; can be expected to be implemented.</p>
@@ -82,7 +82,7 @@ declare interface Idea extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Undecided</code></td><td>Undecided</td><td nowrap>true</td></tr>
      * </table>
      */
-    Planned_for_implementation_Quarter__c: string;
+    Planned_for_implementation_Quarter__c?: string;
     /**
      * <h3><b>Product Area</b></h3>
      * <p>The Product Area that best matches your Idea</p>
@@ -97,10 +97,10 @@ declare interface Idea extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental</code></td><td>Dental</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    RelatedRecord: FlowRecordRelation;
+    Product_Area__c?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    RelatedRecord?: FlowRecordRelation;
     /**
      * <h3><b>Request type</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,14 +115,14 @@ declare interface Idea extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Fast track</code></td><td>Fast track</td><td nowrap>true</td></tr>
      * </table>
      */
-    Request_type__c: string;
-    SobjectLookupValue: AIInsightValue;
-    Status: string;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    Title: string;
-    Votes: Vote[];
-    VoteScore: number;
-    VoteTotal: number;
+    Request_type__c?: string;
+    SobjectLookupValue?: AIInsightValue;
+    Status?: string;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    Title?: string;
+    Votes?: Vote[];
+    VoteScore?: number;
+    VoteTotal?: number;
 }

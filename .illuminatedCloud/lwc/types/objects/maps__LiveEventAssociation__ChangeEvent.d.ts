@@ -2,14 +2,14 @@
 
 declare interface maps__LiveEventAssociation__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Associated Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,7 +18,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssociatedAccount__c: string;
+    maps__AssociatedAccount__c?: string;
     /**
      * <h3><b>Associated Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssociatedAccount__r: Account;
+    maps__AssociatedAccount__r?: Account;
     /**
      * <h3><b>Associated Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssociatedContact__c: string;
+    maps__AssociatedContact__c?: string;
     /**
      * <h3><b>Associated Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssociatedContact__r: Contact;
+    maps__AssociatedContact__r?: Contact;
     /**
      * <h3><b>Associated Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssociatedLead__c: string;
+    maps__AssociatedLead__c?: string;
     /**
      * <h3><b>Associated Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,7 +63,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssociatedLead__r: Lead;
+    maps__AssociatedLead__r?: Lead;
     /**
      * <h3><b>Associated Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssociatedOpportunity__c: string;
+    maps__AssociatedOpportunity__c?: string;
     /**
      * <h3><b>Associated Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssociatedOpportunity__r: Opportunity;
+    maps__AssociatedOpportunity__r?: Opportunity;
     /**
      * <h3><b>Distance To Stop (ft)</b></h3>
      * <h4>Field Attributes</h4>
@@ -93,7 +93,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DistanceToStopFeet__c: number;
+    maps__DistanceToStopFeet__c?: number;
     /**
      * <h3><b>Distance To Stop (km)</b></h3>
      * <h4>Field Attributes</h4>
@@ -104,7 +104,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DistanceToStopKilos__c: number;
+    maps__DistanceToStopKilos__c?: number;
     /**
      * <h3><b>Distance To Stop (m)</b></h3>
      * <h4>Field Attributes</h4>
@@ -116,7 +116,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DistanceToStopMeters__c: number;
+    maps__DistanceToStopMeters__c?: number;
     /**
      * <h3><b>Distance To Stop (mi)</b></h3>
      * <p>Distance to the stop in miles</p>
@@ -129,7 +129,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DistanceToStopMiles__c: number;
+    maps__DistanceToStopMiles__c?: number;
     /**
      * <h3><b>Distance Units</b></h3>
      * <h4>Field Attributes</h4>
@@ -146,7 +146,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">meters</code></td><td>meters</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__DistanceUnits__c: string;
+    maps__DistanceUnits__c?: string;
     /**
      * <h3><b>Event Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -156,7 +156,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EventDate__c: Date;
+    maps__EventDate__c?: Date;
     /**
      * <h3><b>Event Start Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -166,7 +166,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EventStartTime__c: string;
+    maps__EventStartTime__c?: string;
     /**
      * <h3><b>Event Stop Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -176,7 +176,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EventStopTime__c: string;
+    maps__EventStopTime__c?: string;
     /**
      * <h3><b>Live Asset Daily Summary Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -184,7 +184,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__LiveAssetDailySummaryEvent__c})</td></tr>
      * </table>
      */
-    maps__LiveAssetDailySummaryEvent__c: string;
+    maps__LiveAssetDailySummaryEvent__c?: string;
     /**
      * <h3><b>Live Asset Daily Summary Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -192,7 +192,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__LiveAssetDailySummaryEvent__c})</td></tr>
      * </table>
      */
-    maps__LiveAssetDailySummaryEvent__r: maps__LiveAssetDailySummaryEvent__c;
+    maps__LiveAssetDailySummaryEvent__r?: maps__LiveAssetDailySummaryEvent__c;
     /**
      * <h3><b>Live Summary Stop Relationship Config</b></h3>
      * <h4>Field Attributes</h4>
@@ -201,7 +201,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveSummaryStopRelationshipConfig__c: string;
+    maps__LiveSummaryStopRelationshipConfig__c?: string;
     /**
      * <h3><b>Live Summary Stop Relationship Config</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,7 +210,7 @@ declare interface maps__LiveEventAssociation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveSummaryStopRelationshipConfig__r: maps__LiveSummaryStopRelationshipConfig__c;
-    Name: string;
-    ReplayId: string;
+    maps__LiveSummaryStopRelationshipConfig__r?: maps__LiveSummaryStopRelationshipConfig__c;
+    Name?: string;
+    ReplayId?: string;
 }

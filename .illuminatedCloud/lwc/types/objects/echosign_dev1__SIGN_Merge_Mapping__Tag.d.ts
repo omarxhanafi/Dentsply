@@ -2,13 +2,13 @@
 
 declare interface echosign_dev1__SIGN_Merge_Mapping__Tag extends SObject 
 {
-    CreatedDate: string;
-    IsDeleted: boolean;
-    Item: SIGN_Merge_Mapping__c;
-    ItemId: string;
-    Name: string;
-    SystemModstamp: string;
-    TagDefinition: TagDefinition;
-    TagDefinitionId: string;
-    Type: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    Item?: SIGN_Merge_Mapping__c;
+    ItemId?: string;
+    Name?: string;
+    SystemModstamp?: string;
+    TagDefinition?: TagDefinition;
+    TagDefinitionId?: string;
+    Type?: string;
 }

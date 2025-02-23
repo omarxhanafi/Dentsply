@@ -2,14 +2,14 @@
 
 declare interface AttributeDefinitionHistory extends SObject 
 {
-    AttributeDefinition: AttributeDefinition;
-    AttributeDefinitionId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    AttributeDefinition?: AttributeDefinition;
+    AttributeDefinitionId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

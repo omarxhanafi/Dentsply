@@ -2,14 +2,14 @@
 
 declare interface ProductItemHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ProductItem: ProductItem;
-    ProductItemId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ProductItem?: ProductItem;
+    ProductItemId?: string;
 }

@@ -12,12 +12,12 @@ declare interface CVENT_CampaignEventMapping__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CampaignStatus__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    CampaignStatus__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Cvent Event Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,12 +28,12 @@ declare interface CVENT_CampaignEventMapping__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEventStatus__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    CventEventStatus__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

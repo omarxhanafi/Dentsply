@@ -2,14 +2,14 @@
 
 declare interface ContractHistory extends SObject 
 {
-    Contract: Contract;
-    ContractId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    Contract?: Contract;
+    ContractId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

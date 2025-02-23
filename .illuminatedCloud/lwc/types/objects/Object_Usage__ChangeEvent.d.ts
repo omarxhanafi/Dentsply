@@ -18,8 +18,8 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Good</code></td><td>Good</td><td nowrap>true</td></tr>
      * </table>
      */
-    Adoption_Status__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Adoption_Status__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Country</b></h3>
      * <p>Country</p>
@@ -29,7 +29,7 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <p>Country</p>
@@ -39,11 +39,11 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__r: Country__c;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country__r?: Country__c;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Feature Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,11 +61,11 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">External Application</code></td><td>External Application</td><td nowrap>true</td></tr>
      * </table>
      */
-    Feature_Type__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Feature_Type__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Notes__c: string;
+    Notes__c?: string;
     /**
      * <h3><b>Object/Feature</b></h3>
      * <h4>Field Attributes</h4>
@@ -119,7 +119,7 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">X-SBU Prospecting</code></td><td>X-SBU Prospecting</td><td nowrap>true</td></tr>
      * </table>
      */
-    Object_Feature__c: string;
+    Object_Feature__c?: string;
     /**
      * <h3><b>Object/feature sub-type</b></h3>
      * <h4>Field Attributes</h4>
@@ -154,10 +154,10 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Marketing Cloud</code></td><td>Marketing Cloud</td><td nowrap>true</td></tr>
      * </table>
      */
-    Object_feature_sub_type__c: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    Object_feature_sub_type__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <p>Lookup field to SBU Information object in SFDC</p>
@@ -167,7 +167,7 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <p>Lookup field to SBU Information object in SFDC</p>
@@ -177,7 +177,7 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__r: SBU_Information__c;
+    SBU__r?: SBU_Information__c;
     /**
      * <h3><b>Status</b></h3>
      * <p>Used to state if this object/feature is in use, not in use but possible to get if needed and time to deploy, not possible to get for some reason - e.g. can&#39;t get a sales integration becasue sales not available in GDW</p>
@@ -194,5 +194,5 @@ declare interface Object_Usage__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Possible</code></td><td>Not Possible</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
 }

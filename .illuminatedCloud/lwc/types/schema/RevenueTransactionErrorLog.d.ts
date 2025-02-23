@@ -18,6 +18,12 @@ declare module "@salesforce/schema/RevenueTransactionErrorLog.AsyncOperationTrac
     export default AsyncOperationTrackerId;
 }
 
+declare module "@salesforce/schema/RevenueTransactionErrorLog.Category" {
+    import { FieldId } from "@salesforce/schema";
+    const Category: FieldId;
+    export default Category;
+}
+
 declare module "@salesforce/schema/RevenueTransactionErrorLog.ContextRecord" {
     import { FieldId } from "@salesforce/schema";
     const ContextRecord: FieldId;
@@ -40,6 +46,12 @@ declare module "@salesforce/schema/RevenueTransactionErrorLog.CreatedDate" {
     import { FieldId } from "@salesforce/schema";
     const CreatedDate: FieldId;
     export default CreatedDate;
+}
+
+declare module "@salesforce/schema/RevenueTransactionErrorLog.ErrorCode" {
+    import { FieldId } from "@salesforce/schema";
+    const ErrorCode: FieldId;
+    export default ErrorCode;
 }
 
 declare module "@salesforce/schema/RevenueTransactionErrorLog.ErrorLogNumber" {
@@ -102,6 +114,18 @@ declare module "@salesforce/schema/RevenueTransactionErrorLog.PrimaryRecord" {
     export default PrimaryRecord;
 }
 
+declare module "@salesforce/schema/RevenueTransactionErrorLog.PrimaryRecord2" {
+    import { FieldId } from "@salesforce/schema";
+    const PrimaryRecord2: FieldId;
+    export default PrimaryRecord2;
+}
+
+declare module "@salesforce/schema/RevenueTransactionErrorLog.PrimaryRecord2Id" {
+    import { FieldId } from "@salesforce/schema";
+    const PrimaryRecord2Id: FieldId;
+    export default PrimaryRecord2Id;
+}
+
 declare module "@salesforce/schema/RevenueTransactionErrorLog.PrimaryRecordId" {
     import { FieldId } from "@salesforce/schema";
     const PrimaryRecordId: FieldId;
@@ -112,6 +136,24 @@ declare module "@salesforce/schema/RevenueTransactionErrorLog.RelatedRecord" {
     import { FieldId } from "@salesforce/schema";
     const RelatedRecord: FieldId;
     export default RelatedRecord;
+}
+
+declare module "@salesforce/schema/RevenueTransactionErrorLog.RelatedRecordId" {
+    import { FieldId } from "@salesforce/schema";
+    const RelatedRecordId: FieldId;
+    export default RelatedRecordId;
+}
+
+declare module "@salesforce/schema/RevenueTransactionErrorLog.RequestIdentifier" {
+    import { FieldId } from "@salesforce/schema";
+    const RequestIdentifier: FieldId;
+    export default RequestIdentifier;
+}
+
+declare module "@salesforce/schema/RevenueTransactionErrorLog.RevenueTransactionErrLog" {
+    import { FieldId } from "@salesforce/schema";
+    const RevenueTransactionErrLog: FieldId;
+    export default RevenueTransactionErrLog;
 }
 
 declare module "@salesforce/schema/RevenueTransactionErrorLog.Shares" {

@@ -2,14 +2,14 @@
 
 declare interface TMFC_TeamForce_User_Story__Share extends SObject 
 {
-    AccessLevel: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Parent: TMFC_TeamForce_User_Story__c;
-    ParentId: string;
-    RowCause: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    AccessLevel?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Parent?: TMFC_TeamForce_User_Story__c;
+    ParentId?: string;
+    RowCause?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

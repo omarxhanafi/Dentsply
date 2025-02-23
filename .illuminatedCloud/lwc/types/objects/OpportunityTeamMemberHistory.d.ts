@@ -2,14 +2,14 @@
 
 declare interface OpportunityTeamMemberHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    OpportunityTeamMember: OpportunityTeamMember;
-    OpportunityTeamMemberId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    OpportunityTeamMember?: OpportunityTeamMember;
+    OpportunityTeamMemberId?: string;
 }

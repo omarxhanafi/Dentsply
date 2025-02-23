@@ -2,7 +2,7 @@
 
 declare interface WorkTypeChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -11,15 +11,15 @@ declare interface WorkTypeChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
-    DurationInMinutes: number;
-    DurationType: string;
-    EstimatedDuration: number;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
+    DurationInMinutes?: number;
+    DurationType?: string;
+    EstimatedDuration?: number;
     /**
      * <h3><b>Due Date Offset</b></h3>
      * <p>Minutes</p>
@@ -31,7 +31,7 @@ declare interface WorkTypeChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Due_Date_Offset__c: number;
+    FSL__Due_Date_Offset__c?: number;
     /**
      * <h3><b>Exact Appointments</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,17 +40,17 @@ declare interface WorkTypeChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__Exact_Appointments__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MinimumCrewSize: number;
-    Name: string;
-    Owner: User;
-    OwnerId: string;
-    RecommendedCrewSize: number;
-    ReplayId: string;
-    ServiceReportTemplate: ServiceReportLayout;
-    ServiceReportTemplateId: string;
-    ShouldAutoCreateSvcAppt: boolean;
+    FSL__Exact_Appointments__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MinimumCrewSize?: number;
+    Name?: string;
+    Owner?: User;
+    OwnerId?: string;
+    RecommendedCrewSize?: number;
+    ReplayId?: string;
+    ServiceReportTemplate?: ServiceReportLayout;
+    ServiceReportTemplateId?: string;
+    ShouldAutoCreateSvcAppt?: boolean;
 }

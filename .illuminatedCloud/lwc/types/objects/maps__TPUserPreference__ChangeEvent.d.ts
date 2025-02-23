@@ -2,14 +2,14 @@
 
 declare interface maps__TPUserPreference__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Access</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Commenter</code></td><td>Commenter</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Access__c: string;
+    maps__Access__c?: string;
     /**
      * <h3><b>Alignment</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Alignment__c: string;
+    maps__Alignment__c?: string;
     /**
      * <h3><b>Alignment</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Alignment__r: maps__TPAlignment__c;
+    maps__Alignment__r?: maps__TPAlignment__c;
     /**
      * <h3><b>Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Area__c: string;
+    maps__Area__c?: string;
     /**
      * <h3><b>Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -60,7 +60,7 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Area__r: maps__TPArea__c;
+    maps__Area__r?: maps__TPArea__c;
     /**
      * <h3><b>Data Set</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DataSet__c: string;
+    maps__DataSet__c?: string;
     /**
      * <h3><b>Data Set</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DataSet__r: maps__TPDataSet__c;
+    maps__DataSet__r?: maps__TPDataSet__c;
     /**
      * <h3><b>Preferences</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,7 +86,7 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__Preferences__c: string;
+    maps__Preferences__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -95,7 +95,7 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__User__c: string;
+    maps__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -104,9 +104,9 @@ declare interface maps__TPUserPreference__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__User__r: User;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__User__r?: User;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

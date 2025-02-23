@@ -2,16 +2,16 @@
 
 declare interface StampAssignment extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Stamp: Stamp;
-    StampId: string;
-    Subject: User;
-    SubjectId: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Stamp?: Stamp;
+    StampId?: string;
+    Subject?: User;
+    SubjectId?: string;
+    SystemModstamp?: string;
 }

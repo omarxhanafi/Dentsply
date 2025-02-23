@@ -2,7 +2,7 @@
 
 declare interface OpportunityAssignment__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -13,15 +13,15 @@ declare interface OpportunityAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Pricebook Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,8 +32,8 @@ declare interface OpportunityAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PricebookId__c: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    PricebookId__c?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

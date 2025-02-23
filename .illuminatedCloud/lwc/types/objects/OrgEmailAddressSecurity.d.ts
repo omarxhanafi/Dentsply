@@ -2,9 +2,9 @@
 
 declare interface OrgEmailAddressSecurity extends SObject 
 {
-    OrgWideEmailAddress: OrgWideEmailAddress;
-    OrgWideEmailAddressId: string;
-    Parent: Profile;
-    ParentId: string;
-    SystemModstamp: string;
+    OrgWideEmailAddress?: OrgWideEmailAddress;
+    OrgWideEmailAddressId?: string;
+    Parent?: Profile;
+    ParentId?: string;
+    SystemModstamp?: string;
 }

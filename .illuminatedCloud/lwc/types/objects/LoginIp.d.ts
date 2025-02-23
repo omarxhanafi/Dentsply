@@ -2,11 +2,11 @@
 
 declare interface LoginIp extends SObject 
 {
-    ChallengeMethod: string;
-    ChallengeSentDate: string;
-    CreatedDate: string;
-    IsAuthenticated: boolean;
-    SourceIp: string;
-    Users: User;
-    UsersId: string;
+    ChallengeMethod?: string;
+    ChallengeSentDate?: string;
+    CreatedDate?: string;
+    IsAuthenticated?: boolean;
+    SourceIp?: string;
+    Users?: User;
+    UsersId?: string;
 }

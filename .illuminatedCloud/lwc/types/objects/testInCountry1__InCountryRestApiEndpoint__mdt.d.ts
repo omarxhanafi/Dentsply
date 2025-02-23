@@ -5,13 +5,13 @@
  */
 declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject 
 {
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>CertificateNameApi</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__CertificateNameApi__c: string;
+    testInCountry1__CertificateNameApi__c?: string;
     /**
      * <h3><b>CertificateNameBatch</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__CertificateNameBatch__c: string;
+    testInCountry1__CertificateNameBatch__c?: string;
     /**
      * <h3><b>CertificateNameRest</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__CertificateNameRest__c: string;
+    testInCountry1__CertificateNameRest__c?: string;
     /**
      * <h3><b>CertificateNameServerless</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__CertificateNameServerless__c: string;
+    testInCountry1__CertificateNameServerless__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <p>Object_relationship__c.Country__c field must have the same values</p>
@@ -319,7 +319,7 @@ declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">none</code></td><td>none</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__Country__c: string;
+    testInCountry1__Country__c?: string;
     /**
      * <h3><b>Default</b></h3>
      * <h4>Field Attributes</h4>
@@ -328,7 +328,7 @@ declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    testInCountry1__Default__c: boolean;
+    testInCountry1__Default__c?: boolean;
     /**
      * <h3><b>Endpoint</b></h3>
      * <h4>Field Attributes</h4>
@@ -339,7 +339,7 @@ declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Endpoint__c: string;
+    testInCountry1__Endpoint__c?: string;
     /**
      * <h3><b>Token</b></h3>
      * <h4>Field Attributes</h4>
@@ -350,7 +350,7 @@ declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Token__c: string;
+    testInCountry1__Token__c?: string;
     /**
      * <h3><b>x_env_id</b></h3>
      * <h4>Field Attributes</h4>
@@ -361,5 +361,5 @@ declare interface testInCountry1__InCountryRestApiEndpoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__x_env_id__c: string;
+    testInCountry1__x_env_id__c?: string;
 }

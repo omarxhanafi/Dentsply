@@ -2,14 +2,14 @@
 
 declare interface maps__SettingsGroupAssignment__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Profile ID or User ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,7 +20,7 @@ declare interface maps__SettingsGroupAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EntityId__c: string;
+    maps__EntityId__c?: string;
     /**
      * <h3><b>Settings Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface maps__SettingsGroupAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__SettingsGroup__c})</td></tr>
      * </table>
      */
-    maps__SettingsGroup__c: string;
+    maps__SettingsGroup__c?: string;
     /**
      * <h3><b>Settings Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface maps__SettingsGroupAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__SettingsGroup__c})</td></tr>
      * </table>
      */
-    maps__SettingsGroup__r: maps__SettingsGroup__c;
-    Name: string;
-    ReplayId: string;
+    maps__SettingsGroup__r?: maps__SettingsGroup__c;
+    Name?: string;
+    ReplayId?: string;
 }

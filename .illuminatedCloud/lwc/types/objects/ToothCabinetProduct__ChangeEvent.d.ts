@@ -9,7 +9,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Article (SKU)</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ArticleSKU__c: string;
+    ArticleSKU__c?: string;
     /**
      * <h3><b>Balance</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,12 +39,12 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Balance__c: number;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Balance__c?: number;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Earnings 10%</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerEarnings10__c: number;
+    CustomerEarnings10__c?: number;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,7 +63,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Description__c: string;
+    Description__c?: string;
     /**
      * <h3><b>Indicator Nr</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    IndicatorNr__c: number;
+    IndicatorNr__c?: number;
     /**
      * <h3><b>Installed Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,11 +83,11 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    InstalledDate__c: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    InstalledDate__c?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Planned Turnover</b></h3>
      * <h4>Field Attributes</h4>
@@ -98,7 +98,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PlannedTurnover__c: number;
+    PlannedTurnover__c?: number;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -107,7 +107,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -116,7 +116,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__r: Product2;
+    Product__r?: Product2;
     /**
      * <h3><b>Quantity of Basic Load</b></h3>
      * <h4>Field Attributes</h4>
@@ -127,7 +127,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QuantityofBasicLoad__c: number;
+    QuantityofBasicLoad__c?: number;
     /**
      * <h3><b>Quarter/Year</b></h3>
      * <p>Expected Format &quot;Q2 - 2020&quot;</p>
@@ -139,8 +139,8 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quarter_Year__c: string;
-    ReplayId: string;
+    Quarter_Year__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Tooth Cabinet</b></h3>
      * <h4>Field Attributes</h4>
@@ -148,7 +148,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link ToothCabinet__c})</td></tr>
      * </table>
      */
-    ToothCabinet__c: string;
+    ToothCabinet__c?: string;
     /**
      * <h3><b>Tooth Cabinet</b></h3>
      * <h4>Field Attributes</h4>
@@ -156,7 +156,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link ToothCabinet__c})</td></tr>
      * </table>
      */
-    ToothCabinet__r: ToothCabinet__c;
+    ToothCabinet__r?: ToothCabinet__c;
     /**
      * <h3><b>Total Repurchase</b></h3>
      * <p>Refill Sales Total since basic load</p>
@@ -168,7 +168,7 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalRepurchase__c: number;
+    TotalRepurchase__c?: number;
     /**
      * <h3><b>Turnover</b></h3>
      * <h4>Field Attributes</h4>
@@ -179,5 +179,5 @@ declare interface ToothCabinetProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Turnover__c: number;
+    Turnover__c?: number;
 }

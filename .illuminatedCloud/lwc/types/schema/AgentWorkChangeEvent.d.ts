@@ -312,6 +312,18 @@ declare module "@salesforce/schema/AgentWorkChangeEvent.Status" {
     export default Status;
 }
 
+declare module "@salesforce/schema/AgentWorkChangeEvent.TransferRequester" {
+    import { FieldId } from "@salesforce/schema";
+    const TransferRequester: FieldId;
+    export default TransferRequester;
+}
+
+declare module "@salesforce/schema/AgentWorkChangeEvent.TransferRequesterId" {
+    import { FieldId } from "@salesforce/schema";
+    const TransferRequesterId: FieldId;
+    export default TransferRequesterId;
+}
+
 declare module "@salesforce/schema/AgentWorkChangeEvent.User" {
     import { FieldId } from "@salesforce/schema";
     const User: FieldId;

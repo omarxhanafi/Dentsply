@@ -16,8 +16,8 @@ declare interface ActionOverride__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;new&quot;</code></td></tr>
      * </table>
      */
-    ActionName__c: string;
-    DeveloperName: string;
+    ActionName__c?: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Flow name (API)</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,11 +28,11 @@ declare interface ActionOverride__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FlowName__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    FlowName__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface ActionOverride__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Object__c: string;
+    Object__c?: string;
     /**
      * <h3><b>Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,7 +52,7 @@ declare interface ActionOverride__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Object__r: EntityDefinition;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Object__r?: EntityDefinition;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

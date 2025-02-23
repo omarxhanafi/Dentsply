@@ -2,11 +2,11 @@
 
 declare interface echosign_dev1__ParticipantSet__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>ParticipantSetId</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface echosign_dev1__ParticipantSet__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__ParticipantSetId__c: string;
+    echosign_dev1__ParticipantSetId__c?: string;
     /**
      * <h3><b>PrivateMessage</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface echosign_dev1__ParticipantSet__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    echosign_dev1__PrivateMessage__c: string;
+    echosign_dev1__PrivateMessage__c?: string;
     /**
      * <h3><b>Roles</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface echosign_dev1__ParticipantSet__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OTHER</code></td><td>OTHER</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Roles__c: string;
+    echosign_dev1__Roles__c?: string;
     /**
      * <h3><b>SecurityOptions</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface echosign_dev1__ParticipantSet__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">GOVERNMENT ID</code></td><td>GOVERNMENT ID</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__SecurityOptions__c: string;
+    echosign_dev1__SecurityOptions__c?: string;
     /**
      * <h3><b>SigningOrder</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,7 +83,7 @@ declare interface echosign_dev1__ParticipantSet__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__SigningOrder__c: number;
+    echosign_dev1__SigningOrder__c?: number;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -126,12 +126,12 @@ declare interface echosign_dev1__ParticipantSet__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">RECALLED</code></td><td>RECALLED</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Status__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    echosign_dev1__Status__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

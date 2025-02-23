@@ -17,13 +17,13 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Prof. Dr.</code></td><td>Prof. Dr.</td><td nowrap>true</td></tr>
      * </table>
      */
-    AcademicTitle__c: string;
-    AcceptedEventRelations: AcceptedEventRelation[];
+    AcademicTitle__c?: string;
+    AcceptedEventRelations?: AcceptedEventRelation[];
     /**
      * The reciprocal relationship for {@link Account_Create_Change_Request__c.Lead__c}.
      */
-    Account_Requests__r: Account_Create_Change_Request__c[];
-    ActivityHistories: ActivityHistory[];
+    Account_Requests__r?: Account_Create_Change_Request__c[];
+    ActivityHistories?: ActivityHistory[];
     /**
      * <h3><b>Additional Information</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,26 +31,26 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32000)</td></tr>
      * </table>
      */
-    Additional_Information__c: string;
-    Address: Address;
-    AnnualRevenue: number;
+    Additional_Information__c?: string;
+    Address?: Address;
+    AnnualRevenue?: number;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
-    Attachments: Attachment[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
+    Attachments?: Attachment[];
     /**
      * The reciprocal relationship for {@link AuthorizationFormConsent.ConsentGiverId}.
      */
-    AuthorizationFormConsents: AuthorizationFormConsent[];
-    BouncedObject: EmailBounceEvent;
-    CampaignMembers: CampaignMember[];
+    AuthorizationFormConsents?: AuthorizationFormConsent[];
+    BouncedObject?: EmailBounceEvent;
+    CampaignMembers?: CampaignMember[];
     /**
      * <h3><b>Campaign Member Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,14 +61,14 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CampaignMemberStatus__c: string;
+    CampaignMemberStatus__c?: string;
     /**
      * The reciprocal relationship for {@link geopointe__Check_In__c.geopointe__Lead__c}.
      */
-    Check_Ins__r: geopointe__Check_In__c[];
-    City: string;
-    CombinedAttachments: CombinedAttachment[];
-    Company: string;
+    Check_Ins__r?: geopointe__Check_In__c[];
+    City?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    Company?: string;
     /**
      * <h3><b>Company Type</b></h3>
      * <p>Type of Account (Dependent on Product Area)</p>
@@ -90,30 +90,30 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Distributor</code></td><td>Distributor</td><td nowrap>true</td></tr>
      * </table>
      */
-    Company_Type__c: string;
-    CompanyLocal: string;
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    Company_Type__c?: string;
+    CompanyLocal?: string;
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link AuthorizationFormConsent.ConsentGiverId}.
      */
-    ConsentGiver: AuthorizationFormConsent;
+    ConsentGiver?: AuthorizationFormConsent;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhoId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    ConvertedAccount: Account;
-    ConvertedAccountId: string;
-    ConvertedContact: Contact;
-    ConvertedContactId: string;
-    ConvertedDate: Date;
-    ConvertedOpportunity: Opportunity;
-    ConvertedOpportunityId: string;
-    Country: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    ConvertedAccount?: Account;
+    ConvertedAccountId?: string;
+    ConvertedContact?: Contact;
+    ConvertedContactId?: string;
+    ConvertedDate?: Date;
+    ConvertedOpportunity?: Opportunity;
+    ConvertedOpportunityId?: string;
+    Country?: string;
     /**
      * <h3><b>Country Code (3-digit)</b></h3>
      * <p>TFUS-000002404 Used by Eloqua</p>
@@ -123,7 +123,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Code_3_digit__c: string;
+    Country_Code_3_digit__c?: string;
     /**
      * <h3><b>Lead Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -183,13 +183,13 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">US</code></td><td>US</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country_Lead__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    CventEvents__AttendeeActivities__r: CventEvents__AttendeeActivity__c[];
-    CventEvents__Attendees__r: CventEvents__Attendee__c[];
+    Country_Lead__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    CventEvents__AttendeeActivities__r?: CventEvents__AttendeeActivity__c[];
+    CventEvents__Attendees__r?: CventEvents__Attendee__c[];
     /**
      * <h3><b>Cvent Contact Stub</b></h3>
      * <h4>Field Attributes</h4>
@@ -200,9 +200,9 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__ContactStub__c: string;
-    CventEvents__Nominations__r: CventEvents__Nomination__c[];
-    CventEvents__Respondents__r: CventEvents__Respondent__c[];
+    CventEvents__ContactStub__c?: string;
+    CventEvents__Nominations__r?: CventEvents__Nomination__c[];
+    CventEvents__Respondents__r?: CventEvents__Respondent__c[];
     /**
      * <h3><b>Data Quality Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -214,7 +214,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Data_Quality_Description__c: string;
+    Data_Quality_Description__c?: string;
     /**
      * <h3><b>Data Quality Score</b></h3>
      * <h4>Field Attributes</h4>
@@ -226,7 +226,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Data_Quality_Score__c: number;
+    Data_Quality_Score__c?: number;
     /**
      * <h3><b>DB Created Date without Time</b></h3>
      * <p>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</p>
@@ -237,7 +237,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DB_Created_Date_without_Time__c: Date;
+    DB_Created_Date_without_Time__c?: Date;
     /**
      * <h3><b>DB Lead Age</b></h3>
      * <p>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</p>
@@ -250,8 +250,8 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DB_Lead_Age__c: number;
-    DeclinedEventRelations: DeclinedEventRelation[];
+    DB_Lead_Age__c?: number;
+    DeclinedEventRelations?: DeclinedEventRelation[];
     /**
      * <h3><b>Marked for Deletion</b></h3>
      * <p>This field indicates, that the Lead should be deleted soon, most likely because it has been identified as inactive. This field is created to be set/updated by admins or an automated process.
@@ -262,7 +262,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Deletion__c: boolean;
+    Deletion__c?: boolean;
     /**
      * <h3><b>Prevent Deletion</b></h3>
      * <p>This field can be checked by users to prevent deletion of the contact during future clean-ups. Most likely this is required when the field has been flagged/suggested for deletion with the field &quot;Marked for Deletion&quot;(Deletion__c). This usually happens in case a contact has been identified to be inactive.</p>
@@ -272,7 +272,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    DeletionPrevention__c: boolean;
+    DeletionPrevention__c?: boolean;
     /**
      * <h3><b>Department</b></h3>
      * <p>Department where leads works</p>
@@ -284,8 +284,8 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Department__c: string;
-    Description: string;
+    Department__c?: string;
+    Description?: string;
     /**
      * <h3><b>Direct Dial</b></h3>
      * <p>Phone number of lead</p>
@@ -295,7 +295,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Direct_Dial__c: string;
+    Direct_Dial__c?: string;
     /**
      * <h3><b>District</b></h3>
      * <p>Dependent on Territory - 200 in the UK, Non in NA</p>
@@ -539,7 +539,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">YORK</code></td><td>YORK</td><td nowrap>true</td></tr>
      * </table>
      */
-    District__c: string;
+    District__c?: string;
     /**
      * <h3><b>Do Not Mail</b></h3>
      * <h4>Field Attributes</h4>
@@ -548,33 +548,33 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Do_Not_Mail__c: boolean;
+    Do_Not_Mail__c?: boolean;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
-    DoNotCall: boolean;
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
+    DoNotCall?: boolean;
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    echosign_dev1__Agreements2__r: echosign_dev1__SIGN_Agreement__c[];
-    echosign_dev1__Agreements3__r: echosign_dev1__SIGN_Agreement__c[];
-    echosign_dev1__Agreements4__r: echosign_dev1__SIGN_Agreement__c[];
-    echosign_dev1__Agreements__r: echosign_dev1__SIGN_Agreement__c[];
-    echosign_dev1__Echosign_Recipients__r: echosign_dev1__SIGN_Recipients__c[];
-    echosign_dev1__Recipient_Templates__r: echosign_dev1__Recipient_Template__c[];
-    Email: string;
-    EmailBouncedDate: string;
-    EmailBouncedReason: string;
-    EmailMessageRelations: EmailMessageRelation[];
-    EmailStatuses: EmailStatus[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EngagementInitiatingAttendee: EngagementInteraction[];
-    EngagementRelatedPerson: EngagementTopic[];
-    EventRelations: EventRelation[];
-    Events: Event[];
-    EventWhoRelations: EventWhoRelation[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    echosign_dev1__Agreements2__r?: echosign_dev1__SIGN_Agreement__c[];
+    echosign_dev1__Agreements3__r?: echosign_dev1__SIGN_Agreement__c[];
+    echosign_dev1__Agreements4__r?: echosign_dev1__SIGN_Agreement__c[];
+    echosign_dev1__Agreements__r?: echosign_dev1__SIGN_Agreement__c[];
+    echosign_dev1__Echosign_Recipients__r?: echosign_dev1__SIGN_Recipients__c[];
+    echosign_dev1__Recipient_Templates__r?: echosign_dev1__Recipient_Template__c[];
+    Email?: string;
+    EmailBouncedDate?: string;
+    EmailBouncedReason?: string;
+    EmailMessageRelations?: EmailMessageRelation[];
+    EmailStatuses?: EmailStatus[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EngagementInitiatingAttendee?: EngagementInteraction[];
+    EngagementRelatedPerson?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
+    EventWhoRelations?: EventWhoRelation[];
     /**
      * <h3><b>Exhibition (CH)</b></h3>
      * <h4>Field Attributes</h4>
@@ -583,7 +583,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Exhibition_CH__c: string;
+    Exhibition_CH__c?: string;
     /**
      * <h3><b>Implant system experience</b></h3>
      * <h4>Field Attributes</h4>
@@ -603,12 +603,12 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Experience_from_these_implant_systems__c: string;
-    ExternalAttendee: EngagementAttendeeChangeEvent;
-    ExternalAttendees: EngagementAttendee[];
-    Fax: string;
-    Feeds: LeadFeed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    Experience_from_these_implant_systems__c?: string;
+    ExternalAttendee?: EngagementAttendeeChangeEvent;
+    ExternalAttendees?: EngagementAttendee[];
+    Fax?: string;
+    Feeds?: LeadFeed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>Field of profession</b></h3>
      * <h4>Field Attributes</h4>
@@ -626,21 +626,21 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Lab Technician</code></td><td>Lab Technician</td><td nowrap>true</td></tr>
      * </table>
      */
-    Field_of_profession__c: string;
-    FirstName: string;
-    FirstNameLocal: string;
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    From: EmailMessage;
+    Field_of_profession__c?: string;
+    FirstName?: string;
+    FirstNameLocal?: string;
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    From?: EmailMessage;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    GeocodeAccuracy: string;
-    GetFeedback_Aut__Responses__r: GetFeedback_Aut__Response__c[];
-    HasOptedOutOfEmail: boolean;
-    HasOptedOutOfFax: boolean;
-    Histories: LeadHistory[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    GeocodeAccuracy?: string;
+    GetFeedback_Aut__Responses__r?: GetFeedback_Aut__Response__c[];
+    HasOptedOutOfEmail?: boolean;
+    HasOptedOutOfFax?: boolean;
+    Histories?: LeadHistory[];
     /**
      * <h3><b>How collected?</b></h3>
      * <h4>Field Attributes</h4>
@@ -658,7 +658,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Hard Copy Signed Form</code></td><td>Hard Copy Signed Form</td><td nowrap>true</td></tr>
      * </table>
      */
-    HowCollected__c: string;
+    HowCollected__c?: string;
     /**
      * <h3><b>I&#39;m working with the following imp.syst:</b></h3>
      * <h4>Field Attributes</h4>
@@ -667,7 +667,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    I_m_working_with_the_following_imp_syst__c: string;
+    I_m_working_with_the_following_imp_syst__c?: string;
     /**
      * <h3><b>I perform the prosthetic procedure</b></h3>
      * <h4>Field Attributes</h4>
@@ -676,7 +676,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    I_perform_the_prosthetic_procedure__c: boolean;
+    I_perform_the_prosthetic_procedure__c?: boolean;
     /**
      * <h3><b>I perform the surgical procedure</b></h3>
      * <h4>Field Attributes</h4>
@@ -685,7 +685,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    I_perform_the_surgical_procedure__c: boolean;
+    I_perform_the_surgical_procedure__c?: boolean;
     /**
      * <h3><b>I will perform the prosthetic procedure</b></h3>
      * <h4>Field Attributes</h4>
@@ -694,7 +694,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    I_will_perform_the_prosthetic_procedure__c: boolean;
+    I_will_perform_the_prosthetic_procedure__c?: boolean;
     /**
      * <h3><b>I will perform the surgical procedure</b></h3>
      * <h4>Field Attributes</h4>
@@ -703,7 +703,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    I_will_perform_the_surgical_procedure__c: boolean;
+    I_will_perform_the_surgical_procedure__c?: boolean;
     /**
      * <h3><b>IDS Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -714,7 +714,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    IDSBrand__c: string;
+    IDSBrand__c?: string;
     /**
      * <h3><b>IDS Campaign</b></h3>
      * <h4>Field Attributes</h4>
@@ -725,7 +725,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    IDSCampaign__c: string;
+    IDSCampaign__c?: string;
     /**
      * <h3><b>IDS Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -736,7 +736,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    IDSDealer__c: string;
+    IDSDealer__c?: string;
     /**
      * <h3><b>IDS Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -744,7 +744,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32000)</td></tr>
      * </table>
      */
-    IDSDescription__c: string;
+    IDSDescription__c?: string;
     /**
      * <h3><b>IDS URL Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -755,7 +755,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    IDSURLSource__c: string;
+    IDSURLSource__c?: string;
     /**
      * <h3><b>IDS Voucher Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -766,7 +766,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    IDSVoucherCode__c: string;
+    IDSVoucherCode__c?: string;
     /**
      * <h3><b>Implant User?</b></h3>
      * <h4>Field Attributes</h4>
@@ -775,10 +775,10 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Implant_User__c: boolean;
-    Individual: Individual;
-    IndividualId: string;
-    Industry: string;
+    Implant_User__c?: boolean;
+    Individual?: Individual;
+    IndividualId?: string;
+    Industry?: string;
     /**
      * <h3><b>Info about Atlantis</b></h3>
      * <h4>Field Attributes</h4>
@@ -787,7 +787,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Info_about_Atlantis__c: boolean;
+    Info_about_Atlantis__c?: boolean;
     /**
      * <h3><b>Info about Cresco</b></h3>
      * <h4>Field Attributes</h4>
@@ -796,7 +796,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Info_about_Cresco__c: boolean;
+    Info_about_Cresco__c?: boolean;
     /**
      * <h3><b>Info about Scientific Documentation</b></h3>
      * <h4>Field Attributes</h4>
@@ -805,7 +805,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Info_about_Scientific_Documentation__c: boolean;
+    Info_about_Scientific_Documentation__c?: boolean;
     /**
      * <h3><b>Info about Training &amp; Education</b></h3>
      * <h4>Field Attributes</h4>
@@ -814,7 +814,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Info_about_Training_Education__c: boolean;
+    Info_about_Training_Education__c?: boolean;
     /**
      * <h3><b>Information gathered by</b></h3>
      * <h4>Field Attributes</h4>
@@ -823,7 +823,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Information_gathered_by__c: string;
+    Information_gathered_by__c?: string;
     /**
      * <h3><b>Information gathered by</b></h3>
      * <h4>Field Attributes</h4>
@@ -832,8 +832,8 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Information_gathered_by__r: User;
-    InitiatingAttendee: EngagementInteractionChangeEvent;
+    Information_gathered_by__r?: User;
+    InitiatingAttendee?: EngagementInteractionChangeEvent;
     /**
      * <h3><b>Insert Email Marketing Consent Collected</b></h3>
      * <h4>Field Attributes</h4>
@@ -849,7 +849,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Insert_Email_Marketing_Consent_Collected__c: string;
+    Insert_Email_Marketing_Consent_Collected__c?: string;
     /**
      * <h3><b>Send me documentations about</b></h3>
      * <h4>Field Attributes</h4>
@@ -865,13 +865,13 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">e-Newsletter</code></td><td>e-Newsletter</td><td nowrap>true</td></tr>
      * </table>
      */
-    Interested_In__c: string;
-    IsConverted: boolean;
-    IsDeleted: boolean;
-    IsUnreadByOwner: boolean;
-    Jigsaw: string;
-    JigsawContact: SObject;
-    JigsawContactId: string;
+    Interested_In__c?: string;
+    IsConverted?: boolean;
+    IsDeleted?: boolean;
+    IsUnreadByOwner?: boolean;
+    Jigsaw?: string;
+    JigsawContact?: SObject;
+    JigsawContactId?: string;
     /**
      * <h3><b>Language (SP)</b></h3>
      * <h4>Field Attributes</h4>
@@ -902,18 +902,18 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">日本語</code></td><td>日本語</td><td nowrap>true</td></tr>
      * </table>
      */
-    Language__c: string;
-    LastActivityDate: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastName: string;
-    LastNameLocal: string;
-    LastReferencedDate: string;
-    LastTransferDate: Date;
-    LastViewedDate: string;
-    Latitude: number;
-    Lead: CampaignMemberChangeEvent;
+    Language__c?: string;
+    LastActivityDate?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastName?: string;
+    LastNameLocal?: string;
+    LastReferencedDate?: string;
+    LastTransferDate?: Date;
+    LastViewedDate?: string;
+    Latitude?: number;
+    Lead?: CampaignMemberChangeEvent;
     /**
      * <h3><b>Lead ID (DE) for transfer</b></h3>
      * <p>Pulls the Lead ID and uses this field to transfer the ID to the Account</p>
@@ -925,7 +925,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lead_ID_DE__c: string;
+    Lead_ID_DE__c?: string;
     /**
      * <h3><b>Lead Source (Other)</b></h3>
      * <h4>Field Attributes</h4>
@@ -936,7 +936,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lead_Source_Other__c: string;
+    Lead_Source_Other__c?: string;
     /**
      * <h3><b>Lead Source Name #</b></h3>
      * <p>Identifies where the Lead has come from - Congress Name, External List Id etc</p>
@@ -948,20 +948,20 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lead_Source_Serial__c: string;
-    LeadOrContact: CampaignMember;
-    LeadSource: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    ListEmailIndividualRecipients: ListEmailIndividualRecipient[];
-    ListEmails: ListEmail[];
+    Lead_Source_Serial__c?: string;
+    LeadOrContact?: CampaignMember;
+    LeadSource?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    ListEmailIndividualRecipients?: ListEmailIndividualRecipient[];
+    ListEmails?: ListEmail[];
     /**
      * The reciprocal relationship for {@link LiveChatTranscript.LeadId}.
      */
-    LiveChatTranscripts: LiveChatTranscript[];
-    LocalRecord: PartnerNetworkRecordConnection;
-    Longitude: number;
-    maps__AdvRouteVisitWindows__r: maps__AdvRouteVisitWindows__c[];
-    maps__AdvRouteWaypoints__r: maps__AdvRouteWaypoint__c[];
+    LiveChatTranscripts?: LiveChatTranscript[];
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Longitude?: number;
+    maps__AdvRouteVisitWindows__r?: maps__AdvRouteVisitWindows__c[];
+    maps__AdvRouteWaypoints__r?: maps__AdvRouteWaypoint__c[];
     /**
      * <h3><b>Maps Assignment Rule</b></h3>
      * <h4>Field Attributes</h4>
@@ -970,7 +970,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssignmentRule__c: string;
+    maps__AssignmentRule__c?: string;
     /**
      * <h3><b>Maps Assignment Rule</b></h3>
      * <h4>Field Attributes</h4>
@@ -979,10 +979,10 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssignmentRule__r: maps__AssignmentRule__c;
-    maps__LeadAutoAssignmentLogs__r: maps__DebugLog__c[];
-    maps__LiveEventAssociations__r: maps__LiveEventAssociation__c[];
-    maps__Maps_Waypoints__r: maps__Waypoint__c[];
+    maps__AssignmentRule__r?: maps__AssignmentRule__c;
+    maps__LeadAutoAssignmentLogs__r?: maps__DebugLog__c[];
+    maps__LiveEventAssociations__r?: maps__LiveEventAssociation__c[];
+    maps__Maps_Waypoints__r?: maps__Waypoint__c[];
     /**
      * <h3><b>Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -997,11 +997,11 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">UK</code></td><td>UK</td><td nowrap>true</td></tr>
      * </table>
      */
-    Market__c: string;
+    Market__c?: string;
     /**
      * The reciprocal relationship for {@link Marketing_Activities__c.Lead__c}.
      */
-    Marketing_Activities__r: Marketing_Activities__c[];
+    Marketing_Activities__r?: Marketing_Activities__c[];
     /**
      * <h3><b>Marketing Channel</b></h3>
      * <h4>Field Attributes</h4>
@@ -1056,21 +1056,21 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zoom</code></td><td>Zoom</td><td nowrap>true</td></tr>
      * </table>
      */
-    MarketingChannel__c: string;
-    MasterRecord: Lead;
-    MasterRecordId: string;
+    MarketingChannel__c?: string;
+    MasterRecord?: Lead;
+    MasterRecordId?: string;
     /**
      * The reciprocal relationship for {@link MessagingEndUser.LeadId}.
      */
-    MessagingEndUsers: MessagingEndUser[];
+    MessagingEndUsers?: MessagingEndUser[];
     /**
      * The reciprocal relationship for {@link MessagingSession.LeadId}.
      */
-    MessagingSessions: MessagingSession[];
-    MobilePhone: string;
-    Name: string;
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    MessagingSessions?: MessagingSession[];
+    MobilePhone?: string;
+    Name?: string;
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>NPI/Practitioner ID?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1081,11 +1081,11 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NPIPractitionerID__c: string;
-    NumberOfEmployees: number;
-    ObjectTerritory2Associations: ObjectTerritory2Association[];
-    ObjectUserTerritory2Views: ObjectUserTerritory2View[];
-    OpenActivities: OpenActivity[];
+    NPIPractitionerID__c?: string;
+    NumberOfEmployees?: number;
+    ObjectTerritory2Associations?: ObjectTerritory2Association[];
+    ObjectUserTerritory2Views?: ObjectUserTerritory2View[];
+    OpenActivities?: OpenActivity[];
     /**
      * <h3><b>Other Implant system experience</b></h3>
      * <h4>Field Attributes</h4>
@@ -1096,7 +1096,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_Implant_system_experience__c: string;
+    Other_Implant_system_experience__c?: string;
     /**
      * <h3><b>Other Information</b></h3>
      * <p>To capture any other relevant information</p>
@@ -1105,7 +1105,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(10000)</td></tr>
      * </table>
      */
-    Other_Information__c: string;
+    Other_Information__c?: string;
     /**
      * <h3><b>Other interest</b></h3>
      * <h4>Field Attributes</h4>
@@ -1116,7 +1116,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_interest__c: string;
+    Other_interest__c?: string;
     /**
      * <h3><b>Other profession</b></h3>
      * <h4>Field Attributes</h4>
@@ -1127,8 +1127,8 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_profession__c: string;
-    Owner: SObject;
+    Other_profession__c?: string;
+    Owner?: SObject;
     /**
      * <h3><b>Owner Territory</b></h3>
      * <h4>Field Attributes</h4>
@@ -1140,14 +1140,14 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Owner_Territory__c: string;
-    OwnerId: string;
-    Parent: FeedComment;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerAccount: Account;
-    PartnerAccountId: string;
-    PartnerRecord: PartnerNetworkRecordConnection;
+    Owner_Territory__c?: string;
+    OwnerId?: string;
+    Parent?: FeedComment;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerAccount?: Account;
+    PartnerAccountId?: string;
+    PartnerRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Perf. both prosthetic and surgical proc.</b></h3>
      * <h4>Field Attributes</h4>
@@ -1156,14 +1156,14 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Perf_both_prosthetic_and_surgical_proc__c: boolean;
+    Perf_both_prosthetic_and_surgical_proc__c?: boolean;
     /**
      * The reciprocal relationship for {@link SocialPersona.ParentId}.
      */
-    Personas: SocialPersona[];
-    PersonRecord: UserEmailPreferredPerson[];
-    Phone: string;
-    PhotoUrl: string;
+    Personas?: SocialPersona[];
+    PersonRecord?: UserEmailPreferredPerson[];
+    Phone?: string;
+    PhotoUrl?: string;
     /**
      * <h3><b>Preferred Communication Channel</b></h3>
      * <p>How the Lead would like to contacted in future.  Maps to Contact Preferences (U-End) field when converting lead</p>
@@ -1180,7 +1180,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Phone</code></td><td>Phone</td><td nowrap>true</td></tr>
      * </table>
      */
-    Please_contact_me_by__c: string;
+    Please_contact_me_by__c?: string;
     /**
      * <h3><b>Postal Code Info</b></h3>
      * <h4>Field Attributes</h4>
@@ -1189,7 +1189,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Postal_Code_Info__c: string;
+    Postal_Code_Info__c?: string;
     /**
      * <h3><b>Postal Code Info</b></h3>
      * <h4>Field Attributes</h4>
@@ -1198,8 +1198,8 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Postal_Code_Info__r: Postal_Codes__c;
-    PostalCode: string;
+    Postal_Code_Info__r?: Postal_Codes__c;
+    PostalCode?: string;
     /**
      * <h3><b>Preferred Language</b></h3>
      * <h4>Field Attributes</h4>
@@ -1208,9 +1208,9 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PreferredLanguage__c: string;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
-    PrimaryWho: ActivityHistory;
+    PreferredLanguage__c?: string;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
+    PrimaryWho?: ActivityHistory;
     /**
      * <h3><b>Privacy (IT)</b></h3>
      * <p>Select Yes if the Lead has given his/her consent to Astra Tech storing information about him/her.</p>
@@ -1226,9 +1226,9 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Privacy__c: string;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    Privacy__c?: string;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Product Area</b></h3>
      * <p>Product Area - Dependent on Country</p>
@@ -1244,7 +1244,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Urology</code></td><td>Urology</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
+    Product_Area__c?: string;
     /**
      * <h3><b>Interested in the following Products</b></h3>
      * <p>Identifies what product(s) the customer is interested in</p>
@@ -1267,7 +1267,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">STEPPS</code></td><td>STEPPS</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Interest__c: string;
+    Product_Interest__c?: string;
     /**
      * <h3><b>Products &amp; procedures, ATIS</b></h3>
      * <h4>Field Attributes</h4>
@@ -1276,7 +1276,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Products_procedures_ATIS__c: boolean;
+    Products_procedures_ATIS__c?: boolean;
     /**
      * <h3><b>Profession</b></h3>
      * <p>Profession of Lead - Dependent upon Product Area</p>
@@ -1314,7 +1314,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales Manager</code></td><td>Sales Manager</td><td nowrap>true</td></tr>
      * </table>
      */
-    Profession__c: string;
+    Profession__c?: string;
     /**
      * <h3><b>Question 2: marginal bone maintenance?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1330,7 +1330,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">C. 0.44 mm, 0.95 mm, 0.68 mm</code></td><td>C. 0.44 mm, 0.95 mm, 0.68 mm</td><td nowrap>true</td></tr>
      * </table>
      */
-    Question_2_marginal_bone_maintenance__c: string;
+    Question_2_marginal_bone_maintenance__c?: string;
     /**
      * <h3><b>Question 3: combination key features?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1346,7 +1346,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">C. Integrated Esthetics</code></td><td>C. Integrated Esthetics</td><td nowrap>true</td></tr>
      * </table>
      */
-    Question_3_combination_key_features__c: string;
+    Question_3_combination_key_features__c?: string;
     /**
      * <h3><b>Question 4: new study OsseoSpeed?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1362,7 +1362,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">C. Five-year follow-up</code></td><td>C. Five-year follow-up</td><td nowrap>true</td></tr>
      * </table>
      */
-    Question_4_new_study_OsseoSpeed__c: string;
+    Question_4_new_study_OsseoSpeed__c?: string;
     /**
      * <h3><b>Question 5: Atlantis designed for?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1378,7 +1378,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">C. Implants from Straumann only</code></td><td>C. Implants from Straumann only</td><td nowrap>true</td></tr>
      * </table>
      */
-    Question_5_Atlantis_designed_for__c: string;
+    Question_5_Atlantis_designed_for__c?: string;
     /**
      * <h3><b>Question 6: Atlantis available in?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1394,7 +1394,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">C. Titanium, gold-shaded titanium, zirconia</code></td><td>C. Titanium, gold-shaded titanium, zirconia</td><td nowrap>true</td></tr>
      * </table>
      */
-    Question_6_Atlantis_available_in__c: string;
+    Question_6_Atlantis_available_in__c?: string;
     /**
      * <h3><b>Question 7: Atlantis abutments designed?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1409,19 +1409,19 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">B. From a scanned wax abutment</code></td><td>B. From a scanned wax abutment</td><td nowrap>true</td></tr>
      * </table>
      */
-    Question_7_Atlantis_abutments_designed__c: string;
-    Rating: string;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    Question_7_Atlantis_abutments_designed__c?: string;
+    Rating?: string;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RecordType: RecordType;
-    RecordTypeId: string;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Region</b></h3>
      * <p>Dependent on Product Area</p>
@@ -1452,16 +1452,16 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Canada</code></td><td>Canada</td><td nowrap>true</td></tr>
      * </table>
      */
-    Region__c: string;
-    RelatedPerson: EngagementTopicChangeEvent;
-    RelatedPersons: VideoCallParticipant[];
-    RelatedRecord: ContentDistribution;
+    Region__c?: string;
+    RelatedPerson?: EngagementTopicChangeEvent;
+    RelatedPersons?: VideoCallParticipant[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
-    RelatedTo: ListEmailChangeEvent;
-    Relation: EventRelationChangeEvent;
+    RelatedRecords?: VoiceCall[];
+    RelatedTo?: ListEmailChangeEvent;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>Role/Profession</b></h3>
      * <h4>Field Attributes</h4>
@@ -1470,10 +1470,10 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RoleProfession__c: string;
-    Salutation: string;
-    ServiceAppointments: ServiceAppointment[];
-    Shares: LeadShare[];
+    RoleProfession__c?: string;
+    Salutation?: string;
+    ServiceAppointments?: ServiceAppointment[];
+    Shares?: LeadShare[];
     /**
      * <h3><b>Showpad Activity Count</b></h3>
      * <p>The amount of Showpad Activities where this lead has been a part of.</p>
@@ -1486,8 +1486,8 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Activity_Count__c: number;
-    ShowpadForSF__Showpad_Content_Views__r: ShowpadForSF__Showpad_Content_View__c[];
+    ShowpadForSF__Showpad_Activity_Count__c?: number;
+    ShowpadForSF__Showpad_Content_Views__r?: ShowpadForSF__Showpad_Content_View__c[];
     /**
      * <h3><b>Showpad Last Activity Date</b></h3>
      * <p>The date of the last Showpad Activity where this lead was a part of.</p>
@@ -1497,7 +1497,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Last_Activity_Date__c: string;
+    ShowpadForSF__Showpad_Last_Activity_Date__c?: string;
     /**
      * <h3><b>Showpad Last View Date</b></h3>
      * <p>The last time that this lead has viewed content in Showpad activities.</p>
@@ -1507,7 +1507,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Last_View_Date__c: string;
+    ShowpadForSF__Showpad_Last_View_Date__c?: string;
     /**
      * <h3><b>Showpad Last Viewed Content</b></h3>
      * <p>The last viewed content by this lead in Showpad activities.</p>
@@ -1517,7 +1517,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Last_Viewed_Content__c: string;
+    ShowpadForSF__Showpad_Last_Viewed_Content__c?: string;
     /**
      * <h3><b>Showpad Last Viewed Content</b></h3>
      * <p>The last viewed content by this lead in Showpad activities.</p>
@@ -1527,7 +1527,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Last_Viewed_Content__r: ShowpadForSF__Showpad_Content__c;
+    ShowpadForSF__Showpad_Last_Viewed_Content__r?: ShowpadForSF__Showpad_Content__c;
     /**
      * <h3><b>Showpad View Count</b></h3>
      * <p>Number of times that this lead has viewed content in Showpad activities.</p>
@@ -1540,8 +1540,8 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_View_Count__c: number;
-    SobjectLookupValue: AIInsightValue;
+    ShowpadForSF__Showpad_View_Count__c?: number;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Specialty</b></h3>
      * <h4>Field Attributes</h4>
@@ -1550,8 +1550,8 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Specialty__c: string;
-    State: string;
+    Specialty__c?: string;
+    State?: string;
     /**
      * <h3><b>State/Province</b></h3>
      * <p>Picklist dependent on Country</p>
@@ -1615,9 +1615,9 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WY</code></td><td>WY</td><td nowrap>true</td></tr>
      * </table>
      */
-    State_Province__c: string;
-    Status: string;
-    Street: string;
+    State_Province__c?: string;
+    Status?: string;
+    Street?: string;
     /**
      * <h3><b>Suffix</b></h3>
      * <p>Suffix to the Lead Name</p>
@@ -1629,10 +1629,10 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Suffix__c: string;
-    SystemModstamp: string;
-    Tags: LeadTag[];
-    Target: AIRecordInsight;
+    Suffix__c?: string;
+    SystemModstamp?: string;
+    Tags?: LeadTag[];
+    Target?: AIRecordInsight;
     /**
      * <h3><b>Target Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1652,14 +1652,14 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental Other (i.e. Auxiliary staff Nurse, Hygienist etc.)</code></td><td>Dental Other (i.e. Auxiliary staff Nurse, Hygienist etc.)</td><td nowrap>true</td></tr>
      * </table>
      */
-    Target_Type__c: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    Target_Type__c?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhoId}.
      */
-    Tasks: Task[];
-    TaskWhoRelations: TaskWhoRelation[];
+    Tasks?: Task[];
+    TaskWhoRelations?: TaskWhoRelation[];
     /**
      * <h3><b>temporary convert</b></h3>
      * <h4>Field Attributes</h4>
@@ -1670,7 +1670,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    temporary_convert__c: number;
+    temporary_convert__c?: number;
     /**
      * <h3><b>Territory</b></h3>
      * <p>Dependant on Region</p>
@@ -1824,7 +1824,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Maritimes / Halifax</code></td><td>Maritimes / Halifax</td><td nowrap>true</td></tr>
      * </table>
      */
-    Territory__c: string;
+    Territory__c?: string;
     /**
      * <h3><b>Country field</b></h3>
      * <h4>Field Attributes</h4>
@@ -1835,9 +1835,9 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Country_field__c: string;
-    Title: string;
-    Topic: EngagementTopicChangeEvent;
+    testInCountry1__Country_field__c?: string;
+    Title?: string;
+    Topic?: EngagementTopicChangeEvent;
     /**
      * <h3><b>Topic (SP)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1848,8 +1848,8 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Topic_SP__c: string;
-    TopicAssignments: TopicAssignment[];
+    Topic_SP__c?: string;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>DST Setting</b></h3>
      * <p>This is a hidden field and should not be added to the page layouts.</p>
@@ -1859,7 +1859,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__DST_Setting__c: string;
+    tz__DST_Setting__c?: string;
     /**
      * <h3><b>DST Setting</b></h3>
      * <p>This is a hidden field and should not be added to the page layouts.</p>
@@ -1869,7 +1869,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__DST_Setting__r: tz__DST_Setting__c;
+    tz__DST_Setting__r?: tz__DST_Setting__c;
     /**
      * <h3><b>Local Time</b></h3>
      * <p>Shows the current local time for the Lead in 24-hr format.</p>
@@ -1882,7 +1882,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Local_Time_24__c: string;
+    tz__Local_Time_24__c?: string;
     /**
      * <h3><b>Local Time</b></h3>
      * <p>Shows the current local time (without date) for the Lead in 24-hr format.</p>
@@ -1895,7 +1895,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Local_Time_24_Short__c: string;
+    tz__Local_Time_24_Short__c?: string;
     /**
      * <h3><b>Local Time</b></h3>
      * <p>Shows the current local time for the Lead.</p>
@@ -1908,7 +1908,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Local_Time__c: string;
+    tz__Local_Time__c?: string;
     /**
      * <h3><b>Local Time</b></h3>
      * <p>Shows the current local time (without date) for the Lead.</p>
@@ -1921,7 +1921,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Local_Time_Short__c: string;
+    tz__Local_Time_Short__c?: string;
     /**
      * <h3><b>Timezone Standard</b></h3>
      * <p>Timezone abbreviation when DST is off (PST, EST, etc.). This is a hidden field and should not be added to the page layouts.</p>
@@ -1933,7 +1933,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone__c: string;
+    tz__Timezone__c?: string;
     /**
      * <h3><b>Timezone DST</b></h3>
      * <p>Timezone abbreviation when DST is on (PDT, EDT, etc.). This is a hidden field and should not be added to the page layouts.</p>
@@ -1945,7 +1945,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_DST__c: string;
+    tz__Timezone_DST__c?: string;
     /**
      * <h3><b>Timezone DST (Full)</b></h3>
      * <p>Full timezone name when the DST is on. This is a hidden field and should not be added to the page layouts.</p>
@@ -1957,7 +1957,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_DST_Full__c: string;
+    tz__Timezone_DST_Full__c?: string;
     /**
      * <h3><b>Timezone</b></h3>
      * <p>Current timezone abbreviation (PST, EST,etc..)</p>
@@ -1970,7 +1970,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_F__c: string;
+    tz__Timezone_F__c?: string;
     /**
      * <h3><b>Timezone Standard (Full)</b></h3>
      * <p>Full timezone name when the DST is off. This is a hidden field and should not be added to the page layouts.</p>
@@ -1982,7 +1982,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_Full__c: string;
+    tz__Timezone_Full__c?: string;
     /**
      * <h3><b>Timezone (Full)</b></h3>
      * <p>Current timezone full name.</p>
@@ -1995,7 +1995,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_Full_F__c: string;
+    tz__Timezone_Full_F__c?: string;
     /**
      * <h3><b>Timezone (IANA)</b></h3>
      * <p>Timezone as defined by Internet Assigned Numbers Authority (IANA).</p>
@@ -2007,7 +2007,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_IANA__c: string;
+    tz__Timezone_IANA__c?: string;
     /**
      * <h3><b>Timezone SFDC</b></h3>
      * <p>Salesforce IANA timezone.</p>
@@ -2019,7 +2019,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_SFDC__c: string;
+    tz__Timezone_SFDC__c?: string;
     /**
      * <h3><b>UTC Offset DST</b></h3>
      * <p>UTC Offset when the DST is on. This is a hidden field and should not be added to the page layouts.</p>
@@ -2031,7 +2031,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__UTC_Offset_DST__c: number;
+    tz__UTC_Offset_DST__c?: number;
     /**
      * <h3><b>UTC Offset</b></h3>
      * <p>Current UTC timezone offset.</p>
@@ -2044,7 +2044,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__UTC_Offset_F__c: number;
+    tz__UTC_Offset_F__c?: number;
     /**
      * <h3><b>UTC Offset Standard</b></h3>
      * <p>UTC Offset when the DST is off. This is a hidden field and should not be added to the page layouts.</p>
@@ -2056,13 +2056,13 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__UTF_Offset__c: number;
-    UndecidedEventRelations: UndecidedEventRelation[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    tz__UTF_Offset__c?: number;
+    UndecidedEventRelations?: UndecidedEventRelation[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
+    VideoRelatedRecords?: VideoCall[];
     /**
      * <h3><b>WC2012 ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -2073,9 +2073,9 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WC2012_ID__c: string;
-    Website: string;
-    What: RecordAlertChangeEvent;
+    WC2012_ID__c?: string;
+    Website?: string;
+    What?: RecordAlertChangeEvent;
     /**
      * <h3><b>When collected?</b></h3>
      * <h4>Field Attributes</h4>
@@ -2085,7 +2085,7 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">If($User.FirstName = &#39;Eloqua&#39; &amp;&amp; $User.LastName = &#39;Integration&#39;,now(),null)</code></td></tr>
      * </table>
      */
-    WhenCollected__c: string;
+    WhenCollected__c?: string;
     /**
      * <h3><b>Where collected?</b></h3>
      * <h4>Field Attributes</h4>
@@ -2097,10 +2097,10 @@ declare interface Lead extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">If($User.FirstName = &#39;Eloqua&#39; &amp;&amp; $User.LastName = &#39;Integration&#39;,&#39;Eloqua Web Form&#39;,null)</code></td></tr>
      * </table>
      */
-    WhereCollected__c: string;
-    Who: EventChangeEvent;
+    WhereCollected__c?: string;
+    Who?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

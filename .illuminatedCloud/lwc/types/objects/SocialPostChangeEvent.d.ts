@@ -2,21 +2,21 @@
 
 declare interface SocialPostChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Handle: string;
-    Headline: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LikedBy: string;
-    Name: string;
-    Owner: User;
-    OwnerId: string;
-    Posted: string;
-    Provider: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Handle?: string;
+    Headline?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LikedBy?: string;
+    Name?: string;
+    Owner?: User;
+    OwnerId?: string;
+    Posted?: string;
+    Provider?: string;
+    ReplayId?: string;
 }

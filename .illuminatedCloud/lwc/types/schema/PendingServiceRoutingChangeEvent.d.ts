@@ -240,6 +240,18 @@ declare module "@salesforce/schema/PendingServiceRoutingChangeEvent.ServiceChann
     export default ServiceChannelId;
 }
 
+declare module "@salesforce/schema/PendingServiceRoutingChangeEvent.TransferRequester" {
+    import { FieldId } from "@salesforce/schema";
+    const TransferRequester: FieldId;
+    export default TransferRequester;
+}
+
+declare module "@salesforce/schema/PendingServiceRoutingChangeEvent.TransferRequesterId" {
+    import { FieldId } from "@salesforce/schema";
+    const TransferRequesterId: FieldId;
+    export default TransferRequesterId;
+}
+
 declare module "@salesforce/schema/PendingServiceRoutingChangeEvent.UserRecordAccess" {
     import { FieldId } from "@salesforce/schema";
     const UserRecordAccess: FieldId;

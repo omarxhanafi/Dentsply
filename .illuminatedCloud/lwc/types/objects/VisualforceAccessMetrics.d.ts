@@ -2,12 +2,12 @@
 
 declare interface VisualforceAccessMetrics extends SObject 
 {
-    ApexPage: ApexPage;
-    ApexPageId: string;
-    DailyPageViewCount: number;
-    LogDate: Date;
-    MetricsDate: Date;
-    Profile: Profile;
-    ProfileId: string;
-    SystemModstamp: string;
+    ApexPage?: ApexPage;
+    ApexPageId?: string;
+    DailyPageViewCount?: number;
+    LogDate?: Date;
+    MetricsDate?: Date;
+    Profile?: Profile;
+    ProfileId?: string;
+    SystemModstamp?: string;
 }

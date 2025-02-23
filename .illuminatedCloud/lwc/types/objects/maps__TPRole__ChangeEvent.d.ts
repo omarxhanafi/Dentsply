@@ -2,14 +2,14 @@
 
 declare interface maps__TPRole__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Account Access Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,7 +20,7 @@ declare interface maps__TPRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AccountAccessLevel__c: string;
+    maps__AccountAccessLevel__c?: string;
     /**
      * <h3><b>Account Team Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface maps__TPRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AccountTeamRole__c: string;
+    maps__AccountTeamRole__c?: string;
     /**
      * <h3><b>Case Access Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface maps__TPRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CaseAccessLevel__c: string;
+    maps__CaseAccessLevel__c?: string;
     /**
      * <h3><b>Opportunity Access Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface maps__TPRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__OpportunityAccessLevel__c: string;
+    maps__OpportunityAccessLevel__c?: string;
     /**
      * <h3><b>Territory Team Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,9 +64,9 @@ declare interface maps__TPRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TerritoryTeamRole__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__TerritoryTeamRole__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

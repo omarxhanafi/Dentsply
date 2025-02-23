@@ -2,16 +2,16 @@
 
 declare interface ShowpadForSF__Showpad_Activity_Item__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Showpad Activity</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface ShowpadForSF__Showpad_Activity_Item__ChangeEvent extends SObje
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link ShowpadForSF__Showpad_Activity__c})</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Activity__c: string;
+    ShowpadForSF__Showpad_Activity__c?: string;
     /**
      * <h3><b>Showpad Activity</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface ShowpadForSF__Showpad_Activity_Item__ChangeEvent extends SObje
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link ShowpadForSF__Showpad_Activity__c})</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Activity__r: ShowpadForSF__Showpad_Activity__c;
+    ShowpadForSF__Showpad_Activity__r?: ShowpadForSF__Showpad_Activity__c;
     /**
      * <h3><b>Showpad Content</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface ShowpadForSF__Showpad_Activity_Item__ChangeEvent extends SObje
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Content__c: string;
+    ShowpadForSF__Showpad_Content__c?: string;
     /**
      * <h3><b>Showpad Content</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,5 +45,5 @@ declare interface ShowpadForSF__Showpad_Activity_Item__ChangeEvent extends SObje
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Content__r: ShowpadForSF__Showpad_Content__c;
+    ShowpadForSF__Showpad_Content__r?: ShowpadForSF__Showpad_Content__c;
 }

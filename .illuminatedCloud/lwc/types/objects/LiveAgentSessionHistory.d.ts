@@ -2,14 +2,14 @@
 
 declare interface LiveAgentSessionHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    LiveAgentSession: LiveAgentSession;
-    LiveAgentSessionId: string;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    LiveAgentSession?: LiveAgentSession;
+    LiveAgentSessionId?: string;
+    NewValue?: any;
+    OldValue?: any;
 }

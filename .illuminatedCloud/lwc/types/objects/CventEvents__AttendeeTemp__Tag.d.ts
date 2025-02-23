@@ -2,13 +2,13 @@
 
 declare interface CventEvents__AttendeeTemp__Tag extends SObject 
 {
-    CreatedDate: string;
-    IsDeleted: boolean;
-    Item: AttendeeTemp__c;
-    ItemId: string;
-    Name: string;
-    SystemModstamp: string;
-    TagDefinition: TagDefinition;
-    TagDefinitionId: string;
-    Type: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    Item?: AttendeeTemp__c;
+    ItemId?: string;
+    Name?: string;
+    SystemModstamp?: string;
+    TagDefinition?: TagDefinition;
+    TagDefinitionId?: string;
+    Type?: string;
 }

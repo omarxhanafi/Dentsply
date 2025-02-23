@@ -702,6 +702,18 @@ declare module "@salesforce/schema/Product2ChangeEvent.TariffCode__c" {
     export default TariffCode__c;
 }
 
+declare module "@salesforce/schema/Product2ChangeEvent.TaxPolicy" {
+    import { FieldId } from "@salesforce/schema";
+    const TaxPolicy: FieldId;
+    export default TaxPolicy;
+}
+
+declare module "@salesforce/schema/Product2ChangeEvent.TaxPolicyId" {
+    import { FieldId } from "@salesforce/schema";
+    const TaxPolicyId: FieldId;
+    export default TaxPolicyId;
+}
+
 declare module "@salesforce/schema/Product2ChangeEvent.TransferRecordMode" {
     import { FieldId } from "@salesforce/schema";
     const TransferRecordMode: FieldId;
@@ -718,6 +730,12 @@ declare module "@salesforce/schema/Product2ChangeEvent.Unit_of_Measurement__c" {
     import { FieldId } from "@salesforce/schema";
     const Unit_of_Measurement__c: FieldId;
     export default Unit_of_Measurement__c;
+}
+
+declare module "@salesforce/schema/Product2ChangeEvent.UsageModelType" {
+    import { FieldId } from "@salesforce/schema";
+    const UsageModelType: FieldId;
+    export default UsageModelType;
 }
 
 declare module "@salesforce/schema/Product2ChangeEvent.UserRecordAccess" {

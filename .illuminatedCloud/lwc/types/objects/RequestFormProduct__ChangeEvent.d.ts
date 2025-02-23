@@ -2,15 +2,15 @@
 
 declare interface RequestFormProduct__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface RequestFormProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price__c: number;
+    Price__c?: number;
     /**
      * <h3><b>Product Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,7 +30,7 @@ declare interface RequestFormProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductName__c: string;
+    ProductName__c?: string;
     /**
      * <h3><b>Product Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface RequestFormProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductName__r: Product2;
+    ProductName__r?: Product2;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,8 +50,8 @@ declare interface RequestFormProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity__c: number;
-    ReplayId: string;
+    Quantity__c?: number;
+    ReplayId?: string;
     /**
      * <h3><b>Request Form</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,7 +59,7 @@ declare interface RequestFormProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link RequestForm__c})</td></tr>
      * </table>
      */
-    RequestForm__c: string;
+    RequestForm__c?: string;
     /**
      * <h3><b>Request Form</b></h3>
      * <h4>Field Attributes</h4>
@@ -67,5 +67,5 @@ declare interface RequestFormProduct__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link RequestForm__c})</td></tr>
      * </table>
      */
-    RequestForm__r: RequestForm__c;
+    RequestForm__r?: RequestForm__c;
 }

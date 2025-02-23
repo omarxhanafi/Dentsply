@@ -6,9 +6,9 @@
  */
 declare interface Monthly_Review__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Date</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -20,12 +20,12 @@ declare interface Monthly_Review__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">today()</code></td></tr>
      * </table>
      */
-    Date__c: Date;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Date__c?: Date;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <p>Connects the AP with the Monthly Review</p>
@@ -35,7 +35,7 @@ declare interface Monthly_Review__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Ortho_Opportunity__c: string;
+    Ortho_Opportunity__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <p>Connects the AP with the Monthly Review</p>
@@ -45,7 +45,7 @@ declare interface Monthly_Review__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Ortho_Opportunity__r: Opportunity;
+    Ortho_Opportunity__r?: Opportunity;
     /**
      * <h3><b>Quality of Accountplan</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,7 +64,7 @@ declare interface Monthly_Review__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">5</code></td><td>5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Quality_of_Accountplan__c: string;
+    Quality_of_Accountplan__c?: string;
     /**
      * <h3><b>Quality of Accountplan icon</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,7 +76,7 @@ declare interface Monthly_Review__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quality_of_Accountplan_icon__c: string;
+    Quality_of_Accountplan_icon__c?: string;
     /**
      * <h3><b>Review Input</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -86,5 +86,5 @@ declare interface Monthly_Review__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Review_Input__c: string;
+    Review_Input__c?: string;
 }

@@ -2,38 +2,38 @@
 
 declare interface AssetStatePeriod extends SObject 
 {
-    Amount: number;
+    Amount?: number;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    Asset: Asset;
-    AssetId: string;
-    AssetStatePeriodAttributes: AssetStatePeriodAttribute[];
-    AssetStatePeriodNumber: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    EndDate: string;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Mrr: number;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Quantity: number;
-    RelatedRecord: FlowRecordRelation;
-    SobjectLookupValue: AIInsightValue;
-    StartDate: string;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    Asset?: Asset;
+    AssetId?: string;
+    AssetStatePeriodAttributes?: AssetStatePeriodAttribute[];
+    AssetStatePeriodNumber?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    EndDate?: string;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Mrr?: number;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Quantity?: number;
+    RelatedRecord?: FlowRecordRelation;
+    SobjectLookupValue?: AIInsightValue;
+    StartDate?: string;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
 }

@@ -2,10 +2,10 @@
 
 declare interface SetupEntityAccess extends SObject 
 {
-    Parent: PermissionSet;
-    ParentId: string;
-    SetupEntity: SObject;
-    SetupEntityId: string;
-    SetupEntityType: string;
-    SystemModstamp: string;
+    Parent?: PermissionSet;
+    ParentId?: string;
+    SetupEntity?: SObject;
+    SetupEntityId?: string;
+    SetupEntityType?: string;
+    SystemModstamp?: string;
 }

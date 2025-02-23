@@ -2,71 +2,71 @@
 
 declare interface UserEsignVendorIdentifier extends SObject 
 {
-    ActivityHistories: ActivityHistory[];
+    ActivityHistories?: ActivityHistory[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
-    CombinedAttachments: CombinedAttachment[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
+    CombinedAttachments?: CombinedAttachment[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EventRelations: EventRelation[];
-    Events: Event[];
-    ExternalUserIdentifier: string;
-    Feeds: UserEsignVendorIdentifierFeed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    Histories: UserEsignVendorIdentifierHistory[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    Name: string;
-    OpenActivities: OpenActivity[];
-    Owner: SObject;
-    OwnerId: string;
-    Parent: FeedComment;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    RelatedRecord: FlowRecordRelation;
+    Emails?: EmailMessage[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
+    ExternalUserIdentifier?: string;
+    Feeds?: UserEsignVendorIdentifierFeed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    Histories?: UserEsignVendorIdentifierHistory[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    Name?: string;
+    OpenActivities?: OpenActivity[];
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: FeedComment;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: UserEsignVendorIdentifierShare[];
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: UserEsignVendorIdentifierShare[];
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
-    User: User;
-    UserId: string;
-    Vendor: string;
-    VendorType: string;
-    What: EventChangeEvent;
+    Tasks?: Task[];
+    User?: User;
+    UserId?: string;
+    Vendor?: string;
+    VendorType?: string;
+    What?: EventChangeEvent;
 }

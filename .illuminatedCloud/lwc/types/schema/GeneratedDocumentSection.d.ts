@@ -84,6 +84,18 @@ declare module "@salesforce/schema/GeneratedDocumentSection.DisplayHeaderFontSty
     export default DisplayHeaderFontStyle;
 }
 
+declare module "@salesforce/schema/GeneratedDocumentSection.DocumentTemplateClause" {
+    import { FieldId } from "@salesforce/schema";
+    const DocumentTemplateClause: FieldId;
+    export default DocumentTemplateClause;
+}
+
+declare module "@salesforce/schema/GeneratedDocumentSection.DocumentTemplateClauseId" {
+    import { FieldId } from "@salesforce/schema";
+    const DocumentTemplateClauseId: FieldId;
+    export default DocumentTemplateClauseId;
+}
+
 declare module "@salesforce/schema/GeneratedDocumentSection.DocumentTemplateSection" {
     import { FieldId } from "@salesforce/schema";
     const DocumentTemplateSection: FieldId;

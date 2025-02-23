@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__RelatedContent__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Display Order</b></h3>
      * <p>The order in which this item will appear to a sales user in the Related Content menu. If blank, the content will be sorted last.</p>
@@ -25,7 +25,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DisplayOrder__c: number;
+    SBQQ__DisplayOrder__c?: number;
     /**
      * <h3><b>Document Name</b></h3>
      * <p>This contains the file name for the related content.</p>
@@ -38,7 +38,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DocumentName__c: string;
+    SBQQ__DocumentName__c?: string;
     /**
      * <h3><b>External Id</b></h3>
      * <p>ID of the record that contains the actual content. Eg: Document or Salesforce Content.</p>
@@ -50,7 +50,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ExternalId__c: string;
+    SBQQ__ExternalId__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <p>Opportunity related to this content.</p>
@@ -61,7 +61,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Opportunity__c: string;
+    SBQQ__Opportunity__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <p>Opportunity related to this content.</p>
@@ -72,7 +72,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Opportunity__r: Opportunity;
+    SBQQ__Opportunity__r?: Opportunity;
     /**
      * <h3><b>Product</b></h3>
      * <p>Product related to this content.</p>
@@ -83,7 +83,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__c: string;
+    SBQQ__Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>Product related to this content.</p>
@@ -94,7 +94,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__r: Product2;
+    SBQQ__Product__r?: Product2;
     /**
      * <h3><b>Quote</b></h3>
      * <p>Quote related to this content.</p>
@@ -105,7 +105,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Quote__c: string;
+    SBQQ__Quote__c?: string;
     /**
      * <h3><b>Quote</b></h3>
      * <p>Quote related to this content.</p>
@@ -116,7 +116,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Quote__r: SBQQ__Quote__c;
+    SBQQ__Quote__r?: SBQQ__Quote__c;
     /**
      * <h3><b>Quote Template</b></h3>
      * <p>Template related to this content.</p>
@@ -127,7 +127,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteTemplate__c: string;
+    SBQQ__QuoteTemplate__c?: string;
     /**
      * <h3><b>Quote Template</b></h3>
      * <p>Template related to this content.</p>
@@ -138,7 +138,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteTemplate__r: SBQQ__QuoteTemplate__c;
+    SBQQ__QuoteTemplate__r?: SBQQ__QuoteTemplate__c;
     /**
      * <h3><b>Required</b></h3>
      * <p>Indicates whether this content as required for this product.</p>
@@ -149,7 +149,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Required__c: boolean;
+    SBQQ__Required__c?: boolean;
     /**
      * <h3><b>Template Section</b></h3>
      * <p>Template Section related to this content.</p>
@@ -160,7 +160,7 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TemplateSection__c: string;
+    SBQQ__TemplateSection__c?: string;
     /**
      * <h3><b>Template Section</b></h3>
      * <p>Template Section related to this content.</p>
@@ -171,5 +171,5 @@ declare interface SBQQ__RelatedContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TemplateSection__r: SBQQ__TemplateSection__c;
+    SBQQ__TemplateSection__r?: SBQQ__TemplateSection__c;
 }

@@ -9,46 +9,46 @@ declare interface Project_Target__c extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Follow-up date</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,17 +57,17 @@ declare interface Project_Target__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Follow_up_date__c: Date;
+    Follow_up_date__c?: Date;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Method for measure</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,22 +76,22 @@ declare interface Project_Target__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Method_for_measure__c: string;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Method_for_measure__c?: string;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,7 +99,7 @@ declare interface Project_Target__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__c: string;
+    Project__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -107,30 +107,30 @@ declare interface Project_Target__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__r: Project__c;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    Project__r?: Project__c;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: Project_Target__Tag[];
-    Target: AIRecordInsight;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: Project_Target__Tag[];
+    Target?: AIRecordInsight;
     /**
      * <h3><b>Target Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,7 +138,7 @@ declare interface Project_Target__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Target_Description__c: string;
+    Target_Description__c?: string;
     /**
      * <h3><b>Target KPI</b></h3>
      * <h4>Field Attributes</h4>
@@ -149,7 +149,7 @@ declare interface Project_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Target_KPI__c: string;
+    Target_KPI__c?: string;
     /**
      * <h3><b>Target reach (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -167,19 +167,19 @@ declare interface Project_Target__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">100</code></td><td>100</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Target_reach__c: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    Target_reach__c?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

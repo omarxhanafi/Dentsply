@@ -2,18 +2,18 @@
 
 declare interface SiteRedirectMapping extends SObject 
 {
-    Action: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsActive: boolean;
-    IsDynamic: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Site: Site;
-    SiteId: string;
-    Source: string;
-    SystemModstamp: string;
-    Target: string;
+    Action?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsActive?: boolean;
+    IsDynamic?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Site?: Site;
+    SiteId?: string;
+    Source?: string;
+    SystemModstamp?: string;
+    Target?: string;
 }

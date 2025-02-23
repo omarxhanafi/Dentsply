@@ -15,7 +15,7 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Answer__c: string;
+    Answer__c?: string;
     /**
      * <h3><b>Category</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Counrty: Japan</p>
@@ -42,10 +42,10 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Others</code></td><td>Others</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Category__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Image 1</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Counrty: Japan</p>
@@ -55,7 +55,7 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Image_1__c: string;
+    Image_1__c?: string;
     /**
      * <h3><b>Image 2</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Counrty: Japan</p>
@@ -65,8 +65,8 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Image_2__c: string;
-    IsDeleted: boolean;
+    Image_2__c?: string;
+    IsDeleted?: boolean;
     /**
      * <h3><b>Item</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Counrty: Japan</p>
@@ -77,7 +77,7 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Item__c: string;
+    Item__c?: string;
     /**
      * <h3><b>Item</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Counrty: Japan</p>
@@ -88,11 +88,11 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Item__r: Item__c;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Item__r?: Item__c;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Non-ERP Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,7 +102,7 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NonERPProduct__c: string;
+    NonERPProduct__c?: string;
     /**
      * <h3><b>Non-ERP Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NonERPProduct__r: Non_ERP_Products__c;
+    NonERPProduct__r?: Non_ERP_Products__c;
     /**
      * <h3><b>Question</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Counrty: Japan</p>
@@ -122,7 +122,7 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Question__c: string;
+    Question__c?: string;
     /**
      * <h3><b>Sort Order</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Counrty: Japan - Use to view by this order</p>
@@ -134,5 +134,5 @@ declare interface FAQ__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sort_Order__c: number;
+    Sort_Order__c?: number;
 }

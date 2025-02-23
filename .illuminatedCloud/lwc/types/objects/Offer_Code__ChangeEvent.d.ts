@@ -10,7 +10,7 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Related__c: string;
+    Campaign_Related__c?: string;
     /**
      * <h3><b>Related Campaign</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,12 +19,12 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Related__r: Campaign;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Campaign_Related__r?: Campaign;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
+    Description__c?: string;
     /**
      * <h3><b>Expiration Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,10 +42,10 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Expiration_Date__c: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Expiration_Date__c?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Legacy ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,8 +56,8 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Legacy_ID__c: string;
-    Name: string;
+    Legacy_ID__c?: string;
+    Name?: string;
     /**
      * <h3><b>Offer Code Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Offer_Code_Status__c: string;
+    Offer_Code_Status__c?: string;
     /**
      * <h3><b>Offer Code Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,9 +90,9 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Retention</code></td><td>Retention</td><td nowrap>true</td></tr>
      * </table>
      */
-    Offer_Code_Type__c: string;
-    Owner: SObject;
-    OwnerId: string;
+    Offer_Code_Type__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Quantity Limit</b></h3>
      * <p>Used for US/CA Implants order solution where approval levels are indicated on order line level (TFUS-4410)</p>
@@ -104,8 +104,8 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QuantityLimit__c: number;
-    ReplayId: string;
+    QuantityLimit__c?: number;
+    ReplayId?: string;
     /**
      * <h3><b>Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -114,7 +114,7 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Start_Date__c: Date;
+    Start_Date__c?: Date;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -129,7 +129,7 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Special</code></td><td>Special</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type__c: string;
+    Type__c?: string;
     /**
      * <h3><b>Used by Country/SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -153,6 +153,7 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Iberia - Telesales</code></td><td>Iberia - Telesales</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Indonesia</code></td><td>Indonesia</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Italy - indirect</code></td><td>Italy - indirect</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Netherlands-EDS</code></td><td>Netherlands-EDS</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New Zealand</code></td><td>New Zealand</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Taiwan</code></td><td>Taiwan</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Taiwan - Consumables</code></td><td>Taiwan - Consumables</td><td nowrap>true</td></tr>
@@ -169,7 +170,7 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vietnam</code></td><td>Vietnam</td><td nowrap>true</td></tr>
      * </table>
      */
-    Used_by_Country_SBU__c: string;
+    Used_by_Country_SBU__c?: string;
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -179,5 +180,5 @@ declare interface Offer_Code__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CASE($User.User_Country__c, &quot;Australia&quot;,&quot;Australia&quot;, &quot;Austria&quot;,&quot;Austria&quot;, &quot;Belarus&quot;,&quot;Belarus&quot;, &quot;Belgium&quot;,&quot;Belgium&quot;, &quot;Brazil&quot;,&quot;Brazil&quot;, &quot;Canada&quot;, &quot;Canada&quot;, &quot;China&quot;,&quot;China&quot;, &quot;Denmark&quot;,&quot;Denmark&quot;, &quot;Finland&quot;,&quot;Finland&quot;, &quot;France&quot;,&quot;France&quot;, &quot;Germany&quot;,&quot;Germany&quot;, &quot;Holland&quot;,&quot;Holland&quot;, &quot;Hong Kong&quot;,&quot;Hong Kong&quot;, &quot;India&quot;,&quot;India&quot;, &quot;Indonesia&quot;,&quot;Indonesia&quot;, &quot;Italy&quot;,&quot;Italy&quot;, &quot;Kuwait&quot;,&quot;Kuwait&quot;, &quot;Egypt&quot;,&quot;Egypt&quot;, &quot;Jordan&quot;,&quot;Jordan&quot;, &quot;Algeria&quot;,&quot;Algeria&quot;, &quot;Tunisia&quot;,&quot;Tunisia&quot;, &quot;Cameroun&quot;,&quot;Cameroun&quot;, &quot;Senegal &quot;,&quot;Senegal &quot;, &quot;Oman&quot;,&quot;Oman&quot;, &quot;Iran&quot;,&quot;Iran&quot;, &quot;Iraq&quot;,&quot; Iraq&quot;, &quot;Libya&quot;,&quot;Libya&quot;, &quot;Yemen&quot;,&quot;Yemen&quot;, &quot;Bahrain&quot;,&quot;Bahrain&quot;, &quot;Mauritius&quot;,&quot;Mauritius&quot;, &quot;Maldives&quot;,&quot;Maldives&quot;, &quot;Japan&quot;,&quot;Japan&quot;, &quot;Kazakhstan&quot;,&quot;Kazakhstan&quot;, &quot;Lebanon&quot;,&quot;Lebanon&quot;, &quot;Luxembourg&quot;,&quot;Luxembourg&quot;, &quot;Latvia&quot;,&quot;Latvia&quot;, &quot;Lithuania&quot;,&quot;Lithuania&quot;, &quot;Estonia&quot;,&quot;Estonia&quot;, &quot;Malaysia&quot;,&quot;Malaysia&quot;, &quot;Morocco&quot;,&quot;Morocco&quot;, &quot;New Zealand&quot;,&quot;New Zealand&quot;, &quot;Norway&quot;,&quot;Norway&quot;, &quot;Philippines&quot;,&quot;Philippines&quot;, &quot;Portugal&quot;,&quot;Portugal&quot;, &quot;Poland&quot;,&quot;Poland&quot;, &quot;Russia&quot;,&quot;Russia&quot;, &quot;Saudi Arabia&quot;,&quot;Saudi Arabia&quot;, &quot;Singapore&quot;,&quot;Singapore&quot;, &quot;Slovakia&quot;,&quot;Slovakia&quot;, &quot;South Africa&quot;,&quot;South Africa&quot;, &quot;South Korea&quot;,&quot;South Korea&quot;, &quot;Spain&quot;,&quot;Spain&quot;, &quot;Sweden&quot;,&quot;Sweden&quot;, &quot;Switzerland&quot;,&quot;Switzerland&quot;, &quot;Taiwan&quot;,&quot;Taiwan&quot;, &quot;Thailand&quot;,&quot;Thailand&quot;, &quot;Turkey&quot;,&quot;Turkey&quot;, &quot;United Arab Emirates&quot;,&quot;United Arab Emirates&quot;, &quot;UK&quot;, &quot;UK&quot;, &quot;Ukraine&quot;, &quot;Ukraine&quot;, &quot;USA&quot;,&quot;USA&quot;, &quot;Vietnam&quot;,&quot;Vietnam&quot;, &quot;HQ: SE&quot;)</code></td></tr>
      * </table>
      */
-    UserCountry__c: string;
+    UserCountry__c?: string;
 }

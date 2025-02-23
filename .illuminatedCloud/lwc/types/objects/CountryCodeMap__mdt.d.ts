@@ -16,7 +16,7 @@ declare interface CountryCodeMap__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Country__c: string;
+    Campaign_Country__c?: string;
     /**
      * <h3><b>Country Code (2-digit)</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface CountryCodeMap__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Code_2_digit__c: string;
+    Country_Code_2_digit__c?: string;
     /**
      * <h3><b>Country Code (3-digit)</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface CountryCodeMap__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Code_3_digit__c: string;
+    Country_Code_3_digit__c?: string;
     /**
      * <h3><b>Country Code (full)</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,14 +49,14 @@ declare interface CountryCodeMap__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Code_full__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Country_Code_full__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>User Details Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -67,5 +67,5 @@ declare interface CountryCodeMap__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UserDetailsCountry__c: string;
+    UserDetailsCountry__c?: string;
 }

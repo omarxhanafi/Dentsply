@@ -14,7 +14,7 @@ declare interface Refined_pricebook_connection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,11 +24,11 @@ declare interface Refined_pricebook_connection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
+    Account__r?: Account;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
     /**
      * <h3><b>Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,11 +39,11 @@ declare interface Refined_pricebook_connection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Key__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Key__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Refined pricebook type</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface Refined_pricebook_connection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Refined_pricebook_type__c: string;
+    Refined_pricebook_type__c?: string;
     /**
      * <h3><b>Refined pricebook type</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,5 +63,5 @@ declare interface Refined_pricebook_connection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Refined_pricebook_type__r: Refined_pricebook_type__c;
+    Refined_pricebook_type__r?: Refined_pricebook_type__c;
 }

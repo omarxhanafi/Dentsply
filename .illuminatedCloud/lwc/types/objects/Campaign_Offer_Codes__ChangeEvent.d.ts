@@ -9,7 +9,7 @@ declare interface Campaign_Offer_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Campaign})</td></tr>
      * </table>
      */
-    Campaign__c: string;
+    Campaign__c?: string;
     /**
      * <h3><b>Campaign</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,16 +17,16 @@ declare interface Campaign_Offer_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Campaign})</td></tr>
      * </table>
      */
-    Campaign__r: Campaign;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Campaign__r?: Campaign;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Offer Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,7 +34,7 @@ declare interface Campaign_Offer_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Offer_Code__c})</td></tr>
      * </table>
      */
-    Offer_Code__c: string;
+    Offer_Code__c?: string;
     /**
      * <h3><b>Offer Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface Campaign_Offer_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Offer_Code__c})</td></tr>
      * </table>
      */
-    Offer_Code__r: Offer_Code__c;
+    Offer_Code__r?: Offer_Code__c;
     /**
      * <h3><b>Offer Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,6 +54,6 @@ declare interface Campaign_Offer_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Offer_Type__c: string;
-    ReplayId: string;
+    Offer_Type__c?: string;
+    ReplayId?: string;
 }

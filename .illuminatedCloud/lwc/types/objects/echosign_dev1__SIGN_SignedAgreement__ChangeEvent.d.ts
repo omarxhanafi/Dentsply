@@ -2,11 +2,11 @@
 
 declare interface echosign_dev1__SIGN_SignedAgreement__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Image</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,7 +18,7 @@ declare interface echosign_dev1__SIGN_SignedAgreement__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Image__c: string;
+    echosign_dev1__Image__c?: string;
     /**
      * <h3><b>Image URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface echosign_dev1__SIGN_SignedAgreement__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__ImageUrl__c: string;
+    echosign_dev1__ImageUrl__c?: string;
     /**
      * <h3><b>Page</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface echosign_dev1__SIGN_SignedAgreement__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Page__c: number;
+    echosign_dev1__Page__c?: number;
     /**
      * <h3><b>Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface echosign_dev1__SIGN_SignedAgreement__ChangeEvent extends SObje
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link echosign_dev1__SIGN_Agreement__c})</td></tr>
      * </table>
      */
-    echosign_dev1__SIGN_Agreement__c: string;
+    echosign_dev1__SIGN_Agreement__c?: string;
     /**
      * <h3><b>Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,10 +56,10 @@ declare interface echosign_dev1__SIGN_SignedAgreement__ChangeEvent extends SObje
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link echosign_dev1__SIGN_Agreement__c})</td></tr>
      * </table>
      */
-    echosign_dev1__SIGN_Agreement__r: echosign_dev1__SIGN_Agreement__c;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    echosign_dev1__SIGN_Agreement__r?: echosign_dev1__SIGN_Agreement__c;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
 }

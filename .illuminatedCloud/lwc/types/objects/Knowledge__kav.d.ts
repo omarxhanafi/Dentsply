@@ -12,45 +12,45 @@ declare interface Knowledge__kav extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Answer__c: string;
+    Answer__c?: string;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    ArchivedBy: User;
-    ArchivedById: string;
-    ArchivedDate: string;
-    ArticleArchivedBy: User;
-    ArticleArchivedById: string;
-    ArticleArchivedDate: string;
-    ArticleCaseAttachCount: number;
-    ArticleCreatedBy: User;
-    ArticleCreatedById: string;
-    ArticleCreatedDate: string;
-    ArticleNumber: string;
-    ArticleTotalViewCount: number;
-    AssignedBy: User;
-    AssignedById: string;
-    AssignedTo: SObject;
-    AssignedToId: string;
-    AssignmentDate: string;
-    AssignmentDueDate: string;
-    AssignmentNote: string;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
-    CaseArticles: CaseArticle[];
-    ClickedRecord: SearchActivity;
-    CombinedAttachments: CombinedAttachment[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    DataCategorySelections: Knowledge__DataCategorySelection[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    ArchivedBy?: User;
+    ArchivedById?: string;
+    ArchivedDate?: string;
+    ArticleArchivedBy?: User;
+    ArticleArchivedById?: string;
+    ArticleArchivedDate?: string;
+    ArticleCaseAttachCount?: number;
+    ArticleCreatedBy?: User;
+    ArticleCreatedById?: string;
+    ArticleCreatedDate?: string;
+    ArticleNumber?: string;
+    ArticleTotalViewCount?: number;
+    AssignedBy?: User;
+    AssignedById?: string;
+    AssignedTo?: SObject;
+    AssignedToId?: string;
+    AssignmentDate?: string;
+    AssignmentDueDate?: string;
+    AssignmentNote?: string;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
+    CaseArticles?: CaseArticle[];
+    ClickedRecord?: SearchActivity;
+    CombinedAttachments?: CombinedAttachment[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    DataCategorySelections?: Knowledge__DataCategorySelection[];
     /**
      * <h3><b>Displayed Text</b></h3>
      * <p>Shows first 254 characters of the answer, it will be updated automatically through process builder. The text will be displayed in the Knowledge component</p>
@@ -62,45 +62,45 @@ declare interface Knowledge__kav extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Displayed_Text__c: string;
-    EngagementInitiatedTopic: EngagementTopic[];
-    FirstPublishedDate: string;
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    IsDeleted: boolean;
-    IsLatestVersion: boolean;
-    IsMasterLanguage: boolean;
-    IsVisibleInApp: boolean;
-    IsVisibleInCsp: boolean;
-    IsVisibleInPkb: boolean;
-    IsVisibleInPrm: boolean;
-    KnowledgeArticle: Knowledge__ka;
-    KnowledgeArticleId: string;
+    Displayed_Text__c?: string;
+    EngagementInitiatedTopic?: EngagementTopic[];
+    FirstPublishedDate?: string;
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    IsDeleted?: boolean;
+    IsLatestVersion?: boolean;
+    IsMasterLanguage?: boolean;
+    IsVisibleInApp?: boolean;
+    IsVisibleInCsp?: boolean;
+    IsVisibleInPkb?: boolean;
+    IsVisibleInPrm?: boolean;
+    KnowledgeArticle?: Knowledge__ka;
+    KnowledgeArticleId?: string;
     /**
      * The reciprocal relationship for {@link LinkedArticle.KnowledgeArticleVersionId}.
      */
-    KnowledgeArticleVersion: LinkedArticle;
-    Language: string;
-    LargeLanguageModel: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastPublishedDate: string;
+    KnowledgeArticleVersion?: LinkedArticle;
+    Language?: string;
+    LargeLanguageModel?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastPublishedDate?: string;
     /**
      * The reciprocal relationship for {@link LinkedArticle.KnowledgeArticleVersionId}.
      */
-    LinkedArticles: LinkedArticle[];
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    MasterVersion: Knowledge__kav;
-    MasterVersionId: string;
-    MigratedToFromArticleVersion: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    NextReviewDate: string;
-    Owner: SObject;
-    OwnerId: string;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    PublishStatus: string;
+    LinkedArticles?: LinkedArticle[];
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    MasterVersion?: Knowledge__kav;
+    MasterVersionId?: string;
+    MigratedToFromArticleVersion?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    NextReviewDate?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    PublishStatus?: string;
     /**
      * <h3><b>Question</b></h3>
      * <p>Question for FAQ</p>
@@ -109,9 +109,9 @@ declare interface Knowledge__kav extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Question__c: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
+    Question__c?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Related SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -120,17 +120,17 @@ declare interface Knowledge__kav extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Related_SBU__c: string;
-    SearchPromotionRules: SearchPromotionRule[];
-    Source: Case;
-    SourceId: string;
-    Summary: string;
-    SystemModstamp: string;
-    TargetObject: ProcessInstanceChangeEvent;
-    Title: string;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UrlName: string;
-    ValidationStatus: string;
-    VersionNumber: number;
+    Related_SBU__c?: string;
+    SearchPromotionRules?: SearchPromotionRule[];
+    Source?: Case;
+    SourceId?: string;
+    Summary?: string;
+    SystemModstamp?: string;
+    TargetObject?: ProcessInstanceChangeEvent;
+    Title?: string;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UrlName?: string;
+    ValidationStatus?: string;
+    VersionNumber?: number;
 }

@@ -2,14 +2,14 @@
 
 declare interface CommSubscriptionChannelTypeHistory extends SObject 
 {
-    CommSubscriptionChannelType: CommSubscriptionChannelType;
-    CommSubscriptionChannelTypeId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CommSubscriptionChannelType?: CommSubscriptionChannelType;
+    CommSubscriptionChannelTypeId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

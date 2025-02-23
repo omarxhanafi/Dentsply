@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__FieldMetadata__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Field Name</b></h3>
      * <p>API name of the field described by this record.</p>
@@ -25,7 +25,7 @@ declare interface SBQQ__FieldMetadata__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FieldName__c: string;
+    SBQQ__FieldName__c?: string;
     /**
      * <h3><b>Object Name</b></h3>
      * <p>API name of the object that contains the field described by this record.</p>
@@ -37,5 +37,5 @@ declare interface SBQQ__FieldMetadata__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ObjectName__c: string;
+    SBQQ__ObjectName__c?: string;
 }

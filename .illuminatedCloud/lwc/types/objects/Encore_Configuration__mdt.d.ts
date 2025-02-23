@@ -6,7 +6,7 @@
  */
 declare interface Encore_Configuration__mdt extends SObject 
 {
-    DeveloperName: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Encore configuration value</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,11 +14,11 @@ declare interface Encore_Configuration__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(2000)</td></tr>
      * </table>
      */
-    Encore_configuration_value__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Encore_configuration_value__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

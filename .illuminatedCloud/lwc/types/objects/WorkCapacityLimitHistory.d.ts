@@ -2,14 +2,14 @@
 
 declare interface WorkCapacityLimitHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    WorkCapacityLimit: WorkCapacityLimit;
-    WorkCapacityLimitId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    WorkCapacityLimit?: WorkCapacityLimit;
+    WorkCapacityLimitId?: string;
 }

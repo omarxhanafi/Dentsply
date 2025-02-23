@@ -5,9 +5,9 @@
  */
 declare interface SSIS_Merged_Sales_History_Lines__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Description</b></h3>
      * <p>Used to add a description about why a specific history line has been merged with a Movex Account is did not originally belong to.</p>
@@ -18,12 +18,12 @@ declare interface SSIS_Merged_Sales_History_Lines__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Description__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Sales History External ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,5 +34,5 @@ declare interface SSIS_Merged_Sales_History_Lines__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_History_External_ID__c: string;
+    Sales_History_External_ID__c?: string;
 }

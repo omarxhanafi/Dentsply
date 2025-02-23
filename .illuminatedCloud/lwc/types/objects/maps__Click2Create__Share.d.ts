@@ -2,14 +2,14 @@
 
 declare interface maps__Click2Create__Share extends SObject 
 {
-    AccessLevel: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Parent: Click2Create__c;
-    ParentId: string;
-    RowCause: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    AccessLevel?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Parent?: Click2Create__c;
+    ParentId?: string;
+    RowCause?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

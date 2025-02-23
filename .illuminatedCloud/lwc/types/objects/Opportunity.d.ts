@@ -10,8 +10,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(4000)</td></tr>
      * </table>
      */
-    Accomplishments_To_Date__c: string;
-    Account: Account;
+    Accomplishments_To_Date__c?: string;
+    Account?: Account;
     /**
      * <h3><b>Account Country (ORTH)</b></h3>
      * <p>Used for Tools to be Used (Ortho)</p>
@@ -39,7 +39,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Ukraine</code></td><td>Ukraine</td><td nowrap>true</td></tr>
      * </table>
      */
-    Account_Country_Ortho__c: string;
+    Account_Country_Ortho__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Plan__c: string;
+    Account_Plan__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,7 +57,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Plan__r: Account_Plan__c;
+    Account_Plan__r?: Account_Plan__c;
     /**
      * <h3><b>Account Plan Type (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,7 +77,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">MIS 4</code></td><td>MIS 4</td><td nowrap>true</td></tr>
      * </table>
      */
-    Account_Plan_Type_IMPL__c: string;
+    Account_Plan_Type_IMPL__c?: string;
     /**
      * <h3><b>Account Plan Type (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -94,7 +94,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">KEEP</code></td><td>KEEP</td><td nowrap>true</td></tr>
      * </table>
      */
-    Account_Plan_Type_Ortho__c: string;
+    Account_Plan_Type_Ortho__c?: string;
     /**
      * <h3><b>Account Strategy</b></h3>
      * <h4>Field Attributes</h4>
@@ -105,9 +105,9 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy__c: string;
-    AccountId: string;
-    AccountPartners: AccountPartner[];
+    Account_Strategy__c?: string;
+    AccountId?: string;
+    AccountPartners?: AccountPartner[];
     /**
      * <h3><b>Account Postal Code</b></h3>
      * <p>TFUS-000005101
@@ -121,7 +121,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountPostalCode__c: string;
+    AccountPostalCode__c?: string;
     /**
      * <h3><b>Account Program Member</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -131,7 +131,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountProgramMember__c: string;
+    AccountProgramMember__c?: string;
     /**
      * <h3><b>Account Program Member</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -141,7 +141,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountProgramMember__r: LoyaltyProgramParticipant__c;
+    AccountProgramMember__r?: LoyaltyProgramParticipant__c;
     /**
      * <h3><b>Account State &amp; City</b></h3>
      * <p>TFUS-000005101
@@ -155,8 +155,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountStateCity__c: string;
-    ActivityHistories: ActivityHistory[];
+    AccountStateCity__c?: string;
+    ActivityHistories?: ActivityHistory[];
     /**
      * <h3><b>Actual Close Date</b></h3>
      * <p>Date when the opportunity was actually closed (as opposed to when it is planned to be closed).</p>
@@ -166,7 +166,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ActualCloseDate__c: Date;
+    ActualCloseDate__c?: Date;
     /**
      * <h3><b>Additional Comment</b></h3>
      * <p>This is intended to add a comment in xSBU email template.
@@ -177,12 +177,12 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Additional_Comment__c: string;
+    Additional_Comment__c?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__RelatedContent__c.SBQQ__Opportunity__c}.
      */
-    Additional_Documents__r: SBQQ__RelatedContent__c[];
-    Amount: number;
+    Additional_Documents__r?: SBQQ__RelatedContent__c[];
+    Amount?: number;
     /**
      * <h3><b>Amount - Annual Incremental Revenue</b></h3>
      * <h4>Field Attributes</h4>
@@ -191,7 +191,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Amount_Incremental__c: number;
+    Amount_Incremental__c?: number;
     /**
      * <h3><b>Amount - This Single Initiative</b></h3>
      * <h4>Field Attributes</h4>
@@ -200,7 +200,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Amount_This_Single_Initiative__c: number;
+    Amount_This_Single_Initiative__c?: number;
     /**
      * <h3><b>Annuity Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -209,7 +209,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Annuity__c: number;
+    Annuity__c?: number;
     /**
      * <h3><b>Anticipated Outcome</b></h3>
      * <p>COS field used for North America Dental.</p>
@@ -218,7 +218,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(500)</td></tr>
      * </table>
      */
-    Anticipated_Outcome__c: string;
+    Anticipated_Outcome__c?: string;
     /**
      * <h3><b>Apgar Score</b></h3>
      * <h4>Field Attributes</h4>
@@ -230,7 +230,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Apgar_Score__c: number;
+    Apgar_Score__c?: number;
     /**
      * <h3><b>Approval Status</b></h3>
      * <p>TFUS-000005460</p>
@@ -252,15 +252,15 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Rejected</code></td><td>Rejected</td><td nowrap>true</td></tr>
      * </table>
      */
-    Approval_Status__c: string;
+    Approval_Status__c?: string;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
     /**
      * <h3><b>Approved by Sales Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -275,11 +275,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>true</td></tr>
      * </table>
      */
-    Approved_by_Sales_Manager__c: string;
+    Approved_by_Sales_Manager__c?: string;
     /**
      * The reciprocal relationship for {@link Asset.Opportunity__c}.
      */
-    Assets__r: Asset[];
+    Assets__r?: Asset[];
     /**
      * <h3><b>Assign Owner Automatically</b></h3>
      * <h4>Field Attributes</h4>
@@ -288,7 +288,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Assign_Owner_Automatically__c: boolean;
+    Assign_Owner_Automatically__c?: boolean;
     /**
      * <h3><b>Astra Tech Implant System</b></h3>
      * <p>Check this check box if the Opportunity is primarily aimed for restorative Astra Tech Implants system products.</p>
@@ -298,7 +298,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Astra_Tech_Implant_System__c: boolean;
+    Astra_Tech_Implant_System__c?: boolean;
     /**
      * <h3><b>ATL Abut&#39;s Potential/Year</b></h3>
      * <p>This field shows the Total Yearly Atlantis Abutments potential on the Account associated with this Opportunity. It is taken from the Account record and can therefore only be changed there.</p>
@@ -311,7 +311,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ATL_Abuts_Potential_Year__c: number;
+    ATL_Abuts_Potential_Year__c?: number;
     /**
      * <h3><b>Atlantis</b></h3>
      * <p>Check this check box if the Opportunity is primarily aimed for restorative Atlantis products.</p>
@@ -321,10 +321,10 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Atlantis__c: boolean;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
-    Attachments: Attachment[];
+    Atlantis__c?: boolean;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
+    Attachments?: Attachment[];
     /**
      * <h3><b>Attention paid at Customer Meeting?</b></h3>
      * <h4>Field Attributes</h4>
@@ -340,7 +340,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Intermittent Engagement</code></td><td>Intermittent Engagement</td><td nowrap>true</td></tr>
      * </table>
      */
-    Attention_paid_at_Customer_Meeting__c: string;
+    Attention_paid_at_Customer_Meeting__c?: string;
     /**
      * <h3><b>Business Initiative</b></h3>
      * <h4>Field Attributes</h4>
@@ -355,17 +355,17 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Top 5 Priorities</code></td><td>Top 5 Priorities</td><td nowrap>true</td></tr>
      * </table>
      */
-    Business_Initiative__c: string;
-    Campaign: Campaign;
+    Business_Initiative__c?: string;
+    Campaign?: Campaign;
     /**
      * The reciprocal relationship for {@link CampaignMember.Opportunity__c}.
      */
-    Campaign_Members__r: CampaignMember[];
-    CampaignId: string;
+    Campaign_Members__r?: CampaignMember[];
+    CampaignId?: string;
     /**
      * The reciprocal relationship for {@link CampaignInfluence.OpportunityId}.
      */
-    CampaignInfluences: CampaignInfluence[];
+    CampaignInfluences?: CampaignInfluence[];
     /**
      * <h3><b>catalog of measures</b></h3>
      * <h4>Field Attributes</h4>
@@ -387,7 +387,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">training inhouse campaigns</code></td><td>training / inhouse campaigns</td><td nowrap>true</td></tr>
      * </table>
      */
-    catalog_of_measures__c: string;
+    catalog_of_measures__c?: string;
     /**
      * <h3><b>#CFE Target CY</b></h3>
      * <p>planned Number of CFEs</p>
@@ -399,7 +399,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFE_Target_CY__c: number;
+    CFE_Target_CY__c?: number;
     /**
      * <h3><b># CFEs CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -411,7 +411,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_CY__c: number;
+    CFEs_CY__c?: number;
     /**
      * <h3><b># CFEs Last 6 Months</b></h3>
      * <p>Total number of completed CFEs Last 6 Months towards Account associated with Opportunity.</p>
@@ -424,7 +424,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Last_6_Months_D__c: number;
+    CFEs_Last_6_Months_D__c?: number;
     /**
      * <h3><b># CFEs Last 7-12 Months</b></h3>
      * <p>Total number of completed CFEs Last 7-12 months towards Account associated with Opportunity.</p>
@@ -437,7 +437,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Last_7_12_Months_D__c: number;
+    CFEs_Last_7_12_Months_D__c?: number;
     /**
      * <h3><b># CFEs Next 6 Months</b></h3>
      * <p>Total number of planned CFEs next 6 months towards Account associated with Opportunity.</p>
@@ -450,7 +450,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Next_6_Months_D__c: number;
+    CFEs_Next_6_Months_D__c?: number;
     /**
      * <h3><b># CFEs While AP Open</b></h3>
      * <p>Number of IMPL CFEs performed towards the Account of the Opportunity while the account plan was open. Updated by cloud job &quot;AggregateApCFEs&quot;.</p>
@@ -462,7 +462,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_While_AP_Open__c: number;
+    CFEs_While_AP_Open__c?: number;
     /**
      * <h3><b># CFEs completed</b></h3>
      * <h4>Field Attributes</h4>
@@ -473,13 +473,13 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEsCompleted__c: number;
+    CFEsCompleted__c?: number;
     /**
      * The reciprocal relationship for {@link geopointe__Check_In__c.geopointe__Opportunity__c}.
      */
-    Check_Ins__r: geopointe__Check_In__c[];
-    CloseDate: Date;
-    CombinedAttachments: CombinedAttachment[];
+    Check_Ins__r?: geopointe__Check_In__c[];
+    CloseDate?: Date;
+    CombinedAttachments?: CombinedAttachment[];
     /**
      * <h3><b>Commission Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -490,7 +490,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Commission_Amount__c: number;
+    Commission_Amount__c?: number;
     /**
      * <h3><b>commission payed</b></h3>
      * <p>case: 00179379</p>
@@ -500,7 +500,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    commission_payed__c: boolean;
+    commission_payed__c?: boolean;
     /**
      * <h3><b>Competitor</b></h3>
      * <p>Multiple selection to competitors</p>
@@ -533,7 +533,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zimmer Dental</code></td><td>Zimmer Dental</td><td nowrap>true</td></tr>
      * </table>
      */
-    Competitor__c: string;
+    Competitor__c?: string;
     /**
      * <h3><b>Competitor Information</b></h3>
      * <p>Relevant information about Competitor</p>
@@ -542,21 +542,21 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1000)</td></tr>
      * </table>
      */
-    Competitor_Information__c: string;
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
-    Contact: Contact;
-    ContactId: string;
+    Competitor_Information__c?: string;
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
+    Contact?: Contact;
+    ContactId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    Contract: Contract;
-    ContractId: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    Contract?: Contract;
+    ContractId?: string;
     /**
      * <h3><b>Contract/order confirmed</b></h3>
      * <h4>Field Attributes</h4>
@@ -565,7 +565,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ContractOrderConfirmed__c: Date;
+    ContractOrderConfirmed__c?: Date;
     /**
      * <h3><b>Contract/order presented</b></h3>
      * <h4>Field Attributes</h4>
@@ -574,12 +574,12 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ContractOrderPresented__c: Date;
+    ContractOrderPresented__c?: Date;
     /**
      * The reciprocal relationship for {@link Contract.Opportunity__c}.
      */
-    Contracts__r: Contract[];
-    ConvertedOpportunity: Lead;
+    Contracts__r?: Contract[];
+    ConvertedOpportunity?: Lead;
     /**
      * <h3><b>Created by - Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -591,7 +591,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Created_by_Manager__c: string;
+    Created_by_Manager__c?: string;
     /**
      * <h3><b>Created by Me</b></h3>
      * <p>Dynamic Checkbox that shows if the logged in user created the opportunity.
@@ -602,7 +602,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedById ==  $User.Id, TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    Created_by_Me__c: boolean;
+    Created_by_Me__c?: boolean;
     /**
      * <h3><b>Created by My Direct Reports</b></h3>
      * <p>created to meet this request
@@ -613,7 +613,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedBy.ManagerId = $User.Id, True, false)</code></td></tr>
      * </table>
      */
-    Created_by_My_Direct_Reports__c: boolean;
+    Created_by_My_Direct_Reports__c?: boolean;
     /**
      * <h3><b>Created by Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -625,10 +625,10 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Created_by_Role__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Created_by_Role__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Creator Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -640,7 +640,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Country__c: string;
+    Creator_Country__c?: string;
     /**
      * <h3><b>Cross-sell opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -649,7 +649,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CrossSellOpportunity__c: boolean;
+    CrossSellOpportunity__c?: boolean;
     /**
      * <h3><b>CSAT Survey Score</b></h3>
      * <p>Populated through GetFeedBack. TFUS-000005007</p>
@@ -661,8 +661,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CSATSurveyScore__c: number;
-    CurrencyIsoCode: string;
+    CSATSurveyScore__c?: number;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Current customer position</b></h3>
      * <h4>Field Attributes</h4>
@@ -682,7 +682,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Uneasiness</code></td><td>Uneasiness</td><td nowrap>true</td></tr>
      * </table>
      */
-    Current_customer_position__c: string;
+    Current_customer_position__c?: string;
     /**
      * <h3><b>Current products used</b></h3>
      * <p>Used for trials &amp; tenders to track current products used</p>
@@ -694,11 +694,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Current_products_used__c: string;
+    Current_products_used__c?: string;
     /**
      * The reciprocal relationship for {@link Current_products_used__c.Trial_Tender__c}.
      */
-    Current_products_used__r: Current_products_used__c[];
+    Current_products_used__r?: Current_products_used__c[];
     /**
      * <h3><b>Customer Opinion of Milling Results</b></h3>
      * <h4>Field Attributes</h4>
@@ -714,7 +714,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Customer was satisfied</code></td><td>Customer was satisfied</td><td nowrap>true</td></tr>
      * </table>
      */
-    Customer_Opinion_of_Milling_Results__c: string;
+    Customer_Opinion_of_Milling_Results__c?: string;
     /**
      * <h3><b>Customer profile communication</b></h3>
      * <h4>Field Attributes</h4>
@@ -732,7 +732,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">5</code></td><td>5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Customer_profile_communication__c: string;
+    Customer_profile_communication__c?: string;
     /**
      * <h3><b>Customer profile innovative</b></h3>
      * <h4>Field Attributes</h4>
@@ -750,7 +750,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">5</code></td><td>5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Customer_profile_innovative__c: string;
+    Customer_profile_innovative__c?: string;
     /**
      * <h3><b>Customer profile Quality awareness</b></h3>
      * <h4>Field Attributes</h4>
@@ -768,7 +768,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">5</code></td><td>5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Customer_profile_Quality_awareness__c: string;
+    Customer_profile_Quality_awareness__c?: string;
     /**
      * <h3><b>Customer profile Reputation</b></h3>
      * <h4>Field Attributes</h4>
@@ -786,7 +786,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">5</code></td><td>5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Customer_profile_Reputation__c: string;
+    Customer_profile_Reputation__c?: string;
     /**
      * <h3><b>Customer profile sales potential</b></h3>
      * <h4>Field Attributes</h4>
@@ -804,7 +804,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">5</code></td><td>5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Customer_profile_sales_potential__c: string;
+    Customer_profile_sales_potential__c?: string;
     /**
      * <h3><b>Customer Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -812,7 +812,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    CustomerNotes__c: string;
+    CustomerNotes__c?: string;
     /**
      * <h3><b>Attendee</b></h3>
      * <h4>Field Attributes</h4>
@@ -821,7 +821,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Attendee__c: string;
+    CventEvents__Attendee__c?: string;
     /**
      * <h3><b>Attendee</b></h3>
      * <h4>Field Attributes</h4>
@@ -830,7 +830,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Attendee__r: CventEvents__Attendee__c;
+    CventEvents__Attendee__r?: CventEvents__Attendee__c;
     /**
      * <h3><b>Cvent Event Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -839,7 +839,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Event__c: string;
+    CventEvents__Event__c?: string;
     /**
      * <h3><b>Cvent Event Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -848,7 +848,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Event__r: CventEvents__Event__c;
+    CventEvents__Event__r?: CventEvents__Event__c;
     /**
      * <h3><b>Cvent Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -860,7 +860,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__EventTitle__c: string;
+    CventEvents__EventTitle__c?: string;
     /**
      * <h3><b>Data Quality Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -872,7 +872,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Data_Quality_Description__c: string;
+    Data_Quality_Description__c?: string;
     /**
      * <h3><b>Data Quality Score</b></h3>
      * <h4>Field Attributes</h4>
@@ -884,7 +884,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Data_Quality_Score__c: number;
+    Data_Quality_Score__c?: number;
     /**
      * <h3><b>Days since Next Steps Updated</b></h3>
      * <h4>Field Attributes</h4>
@@ -896,7 +896,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Days_since_Next_Steps_Updated__c: number;
+    Days_since_Next_Steps_Updated__c?: number;
     /**
      * <h3><b>DB Competitor</b></h3>
      * <p>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and can delete this field.</p>
@@ -913,7 +913,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Competitor C</code></td><td>Competitor C</td><td nowrap>true</td></tr>
      * </table>
      */
-    DB_Competitor__c: string;
+    DB_Competitor__c?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -922,7 +922,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__c: string;
+    Dealer__c?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -931,7 +931,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__r: Account;
+    Dealer__r?: Account;
     /**
      * <h3><b>Dealer Rep Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -949,7 +949,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Territory Manager</code></td><td>Territory Manager</td><td nowrap>true</td></tr>
      * </table>
      */
-    Dealer_Rep_Type__c: string;
+    Dealer_Rep_Type__c?: string;
     /**
      * <h3><b>Dealer&#39;s Sales Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -958,7 +958,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_s_Sales_Rep__c: string;
+    Dealer_s_Sales_Rep__c?: string;
     /**
      * <h3><b>Dealer&#39;s Sales Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -967,7 +967,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_s_Sales_Rep__r: Contact;
+    Dealer_s_Sales_Rep__r?: Contact;
     /**
      * <h3><b>Dealer&#39;s Sales Rep Email</b></h3>
      * <p>Field to prepopulate the additional too in &quot;E-mail the Opportunity&quot; button for BeNelux market</p>
@@ -980,7 +980,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_s_Sales_Rep_Email__c: string;
+    Dealer_s_Sales_Rep_Email__c?: string;
     /**
      * <h3><b>Dealer Sales Rep (secondary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -989,7 +989,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_Sales_Rep_secondary__c: string;
+    Dealer_Sales_Rep_secondary__c?: string;
     /**
      * <h3><b>Dealer Sales Rep (secondary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -998,7 +998,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_Sales_Rep_secondary__r: Contact;
+    Dealer_Sales_Rep_secondary__r?: Contact;
     /**
      * <h3><b>Dealers Sales Rep Type (secondary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1016,7 +1016,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Territory Manager</code></td><td>Territory Manager</td><td nowrap>true</td></tr>
      * </table>
      */
-    Dealers_Sales_Rep_Type_secondary__c: string;
+    Dealers_Sales_Rep_Type_secondary__c?: string;
     /**
      * <h3><b>Demo Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -1025,7 +1025,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DemoDate__c: Date;
+    DemoDate__c?: Date;
     /**
      * <h3><b>Demo Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -1033,8 +1033,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(2000)</td></tr>
      * </table>
      */
-    DemoNotes__c: string;
-    Description: string;
+    DemoNotes__c?: string;
+    Description?: string;
     /**
      * <h3><b>Distributor Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -1045,7 +1045,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor_Rep__c: string;
+    Distributor_Rep__c?: string;
     /**
      * <h3><b>Distributor Specialist</b></h3>
      * <h4>Field Attributes</h4>
@@ -1056,17 +1056,17 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor_Specialist__c: string;
+    Distributor_Specialist__c?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
-    echosign_dev1__R00N70000001hM2REAU__r: echosign_dev1__SIGN_Agreement__c[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
+    echosign_dev1__R00N70000001hM2REAU__r?: echosign_dev1__SIGN_Agreement__c[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EngagementInitiatedTopic: EngagementTopic[];
+    Emails?: EmailMessage[];
+    EngagementInitiatedTopic?: EngagementTopic[];
     /**
      * <h3><b>Est # of ATL Abut&#39;s CY</b></h3>
      * <p>FOR LAB ACCOUNTS: The estimated # of Atlantis Abutments you anticipate this lab to PURCHASE current year.
@@ -1079,7 +1079,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_of_ATL_Abuts_Current_CY__c: number;
+    Est_of_ATL_Abuts_Current_CY__c?: number;
     /**
      * <h3><b>Est # of ATL ISUS CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -1090,7 +1090,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_of_ATL_ISUS_CY__c: number;
+    Est_of_ATL_ISUS_CY__c?: number;
     /**
      * <h3><b>Est # of Implants CY</b></h3>
      * <p>Input the estimated # of Implants this Customer will purchase within current CY.</p>
@@ -1102,7 +1102,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_of_Implants_Current_CY__c: number;
+    Est_of_Implants_Current_CY__c?: number;
     /**
      * <h3><b>Est # of Implants LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -1113,7 +1113,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_of_Implants_LY__c: number;
+    Est_of_Implants_LY__c?: number;
     /**
      * <h3><b>Est # of Stock Abut&#39;s CY</b></h3>
      * <p>FOR LAB ACCOUNTS: The estimated # of Stock Abutments you anticipate this lab to PURCHASE current year.
@@ -1126,7 +1126,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_of_Stock_Abuts_Current_CY__c: number;
+    Est_of_Stock_Abuts_Current_CY__c?: number;
     /**
      * <h3><b>Est Sales CY</b></h3>
      * <p>Field added to add Est Sales CY on the Opp instead of inheriting from Account.</p>
@@ -1138,7 +1138,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Sales_CY_2__c: number;
+    Est_Sales_CY_2__c?: number;
     /**
      * <h3><b>Est Sales LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -1149,7 +1149,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Sales_LY__c: number;
+    Est_Sales_LY__c?: number;
     /**
      * <h3><b>Est Sales Other</b></h3>
      * <p>updated through PushAmountToOpportunities trigger, then Est Other Sales CY (D) shows its value.</p>
@@ -1161,12 +1161,12 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Sales_Other_D__c: number;
-    EventRelations: EventRelation[];
-    Events: Event[];
-    ExpectedRevenue: number;
-    Feeds: OpportunityFeed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    Est_Sales_Other_D__c?: number;
+    EventRelations?: EventRelation[];
+    Events?: Event[];
+    ExpectedRevenue?: number;
+    Feeds?: OpportunityFeed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>Final Installation Date</b></h3>
      * <p>Australian specific request for support of their direct business: see TFUS-000005491</p>
@@ -1176,14 +1176,14 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Final_Installation_Date__c: Date;
-    FirstPublishLocation: ContentVersion;
-    Fiscal: string;
-    FiscalQuarter: number;
-    FiscalYear: number;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    ForecastCategory: string;
-    ForecastCategoryName: string;
+    Final_Installation_Date__c?: Date;
+    FirstPublishLocation?: ContentVersion;
+    Fiscal?: string;
+    FiscalQuarter?: number;
+    FiscalYear?: number;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    ForecastCategory?: string;
+    ForecastCategoryName?: string;
     /**
      * <h3><b>Fulfillment date</b></h3>
      * <h4>Field Attributes</h4>
@@ -1192,11 +1192,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Fulfillment_date__c: Date;
+    Fulfillment_date__c?: Date;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
     /**
      * <h3><b>Red Progress Status Focus Approval</b></h3>
      * <h4>Field Attributes</h4>
@@ -1211,7 +1211,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>true</td></tr>
      * </table>
      */
-    GET_AP_Red_Light_Focus_Approval__c: string;
+    GET_AP_Red_Light_Focus_Approval__c?: string;
     /**
      * <h3><b>GET Opportunity Subtype</b></h3>
      * <h4>Field Attributes</h4>
@@ -1233,7 +1233,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Regen</code></td><td>Regen</td><td nowrap>true</td></tr>
      * </table>
      */
-    GET_Opportunity_Subtype__c: string;
+    GET_Opportunity_Subtype__c?: string;
     /**
      * <h3><b>GET Opportunity Type</b></h3>
      * <p>For IMPL NA
@@ -1254,8 +1254,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Standard</code></td><td>Standard</td><td nowrap>true</td></tr>
      * </table>
      */
-    GET_Opportunity_type__c: string;
-    GetFeedback_Aut__Responses__r: GetFeedback_Aut__Response__c[];
+    GET_Opportunity_type__c?: string;
+    GetFeedback_Aut__Responses__r?: GetFeedback_Aut__Response__c[];
     /**
      * <h3><b>Growing Practice Market Share</b></h3>
      * <p>Check this check box if you are planning on growing this Account by increasing the Dentsply Implants market share.</p>
@@ -1265,7 +1265,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Growing_Practice_Market_Share__c: boolean;
+    Growing_Practice_Market_Share__c?: boolean;
     /**
      * <h3><b>Growing Practice with Refferal events/IP</b></h3>
      * <p>Check this check box if you are planning on growing this Account by Refferal events/IP (CH/DE)</p>
@@ -1275,7 +1275,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Growing_Practice_with_Refferal_events_IP__c: boolean;
+    Growing_Practice_with_Refferal_events_IP__c?: boolean;
     /**
      * <h3><b>Growing Practice with STEPPS</b></h3>
      * <p>Check this check box if you are planning on growing this Account by STEPPS (CH/DE)</p>
@@ -1285,7 +1285,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Growing_Practice_with_STEPPS__c: boolean;
+    Growing_Practice_with_STEPPS__c?: boolean;
     /**
      * <h3><b>handover to dealer</b></h3>
      * <p>Case: handover to dealer (used in German/Austrian for Primescan process)</p>
@@ -1295,10 +1295,10 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    handover_to_dealer__c: boolean;
-    HasOpenActivity: boolean;
-    HasOpportunityLineItem: boolean;
-    HasOverdueTask: boolean;
+    handover_to_dealer__c?: boolean;
+    HasOpenActivity?: boolean;
+    HasOpportunityLineItem?: boolean;
+    HasOverdueTask?: boolean;
     /**
      * <h3><b>High Level Plan</b></h3>
      * <p>Please input here the high level activity you are planning to conduct in order to close the Opportunity.</p>
@@ -1307,8 +1307,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    High_Level_Plan__c: string;
-    Histories: OpportunityFieldHistory[];
+    High_Level_Plan__c?: string;
+    Histories?: OpportunityFieldHistory[];
     /**
      * <h3><b>HQTriggerField</b></h3>
      * <p>Used by HQ to trigger enforced Naming Convention</p>
@@ -1320,7 +1320,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HQTriggerField__c: string;
+    HQTriggerField__c?: string;
     /**
      * <h3><b>iCreateIt (HQ)</b></h3>
      * <p>Used mainly for xSBU to show the prospects the user sent. don&#39;t add to the layour</p>
@@ -1333,7 +1333,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    iCreateIt_HQ__c: string;
+    iCreateIt_HQ__c?: string;
     /**
      * <h3><b>Improved based on Managers feedback</b></h3>
      * <h4>Field Attributes</h4>
@@ -1348,7 +1348,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>true</td></tr>
      * </table>
      */
-    Improved_based_on_Managers_feedback__c: string;
+    Improved_based_on_Managers_feedback__c?: string;
     /**
      * <h3><b>Include Equipment</b></h3>
      * <p>Temporary field for NA to track if Equipment is included for Cerec GET AP</p>
@@ -1358,18 +1358,18 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Include_Equipment__c: boolean;
+    Include_Equipment__c?: boolean;
     /**
      * The reciprocal relationship for {@link Field_Sales_Project_Members__c.Opportunity__c}.
      */
-    Initiative_Accounts__r: Field_Sales_Project_Members__c[];
-    Initiative_Accounts__r_hpr: Field_Sales_Project_Members__c_hd[];
-    Initiative_Accounts__r_hst: Field_Sales_Project_Members__c_hd[];
-    IsClosed: boolean;
-    IsDeleted: boolean;
-    IsExcludedFromTerritory2Filter: boolean;
-    IsPrivate: boolean;
-    IsWon: boolean;
+    Initiative_Accounts__r?: Field_Sales_Project_Members__c[];
+    Initiative_Accounts__r_hpr?: Field_Sales_Project_Members__c_hd[];
+    Initiative_Accounts__r_hst?: Field_Sales_Project_Members__c_hd[];
+    IsClosed?: boolean;
+    IsDeleted?: boolean;
+    IsExcludedFromTerritory2Filter?: boolean;
+    IsPrivate?: boolean;
+    IsWon?: boolean;
     /**
      * <h3><b>Key Acct</b></h3>
      * <h4>Field Attributes</h4>
@@ -1381,7 +1381,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Key_Acct__c: string;
+    Key_Acct__c?: string;
     /**
      * <h3><b>Key GET Opportunity - NA</b></h3>
      * <p>Designates this opportunity as one of the required 5 Key GET Opportunities</p>
@@ -1391,7 +1391,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Key_GET_Opportunity_NA__c: boolean;
+    Key_GET_Opportunity_NA__c?: boolean;
     /**
      * <h3><b>Last Stage Change Date</b></h3>
      * <p>Date when the Opportunity stage was last changed. Used to calculate Stage Duration used for the Opportunity Flag-handling.</p>
@@ -1401,19 +1401,19 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Stage_Change_Date__c: Date;
-    LastActivityDate: Date;
-    LastAmountChangedHistory: OpportunityHistory;
-    LastAmountChangedHistoryId: string;
-    LastCloseDateChangedHistory: OpportunityHistory;
-    LastCloseDateChangedHistoryId: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastStageChangeDate: string;
-    LastViewedDate: string;
-    LeadSource: string;
+    Last_Stage_Change_Date__c?: Date;
+    LastActivityDate?: Date;
+    LastAmountChangedHistory?: OpportunityHistory;
+    LastAmountChangedHistoryId?: string;
+    LastCloseDateChangedHistory?: OpportunityHistory;
+    LastCloseDateChangedHistoryId?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastStageChangeDate?: string;
+    LastViewedDate?: string;
+    LeadSource?: string;
     /**
      * <h3><b>Left Card/Literature</b></h3>
      * <h4>Field Attributes</h4>
@@ -1422,10 +1422,10 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    LeftCardLiterature__c: boolean;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    ListEmails: ListEmail[];
-    LocalRecord: PartnerNetworkRecordConnection;
+    LeftCardLiterature__c?: boolean;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    ListEmails?: ListEmail[];
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Loss/Cancellation Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -1433,7 +1433,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32000)</td></tr>
      * </table>
      */
-    Loss_Cancellation_Description__c: string;
+    Loss_Cancellation_Description__c?: string;
     /**
      * <h3><b>Loss/Cancellation Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -1452,7 +1452,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Promotion</code></td><td>Promotion</td><td nowrap>true</td></tr>
      * </table>
      */
-    Loss_Cancellation_Reason__c: string;
+    Loss_Cancellation_Reason__c?: string;
     /**
      * <h3><b>Lost Opportunity Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -1471,7 +1471,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Time Related</code></td><td>Time Related</td><td nowrap>true</td></tr>
      * </table>
      */
-    Lost_Opportunity_Reason__c: string;
+    Lost_Opportunity_Reason__c?: string;
     /**
      * <h3><b>LY Accomplishment To Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -1479,7 +1479,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    LY_Accomplishment_To_Date__c: string;
+    LY_Accomplishment_To_Date__c?: string;
     /**
      * <h3><b>LY High Level Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -1487,7 +1487,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    LY_High_Level_Plan__c: string;
+    LY_High_Level_Plan__c?: string;
     /**
      * <h3><b>LY Obstacles To Overcome</b></h3>
      * <h4>Field Attributes</h4>
@@ -1495,7 +1495,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    LY_Obstacles_To_Overcome__c: string;
+    LY_Obstacles_To_Overcome__c?: string;
     /**
      * <h3><b>LY Summary</b></h3>
      * <h4>Field Attributes</h4>
@@ -1503,7 +1503,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    LY_Summary__c: string;
+    LY_Summary__c?: string;
     /**
      * <h3><b>Main Competitor</b></h3>
      * <h4>Field Attributes</h4>
@@ -1545,7 +1545,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zimmer Dental</code></td><td>Zimmer Dental</td><td nowrap>true</td></tr>
      * </table>
      */
-    Main_Competitor__c: string;
+    Main_Competitor__c?: string;
     /**
      * <h3><b>Manual Commission</b></h3>
      * <p>Some countries asked the possibility to enter manual commission for X-sbu opportunities being the automatic field can not be used for calculating commissions on the product brand level</p>
@@ -1555,7 +1555,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manual_Commission__c: number;
+    Manual_Commission__c?: number;
     /**
      * <h3><b>Set Name Manually</b></h3>
      * <h4>Field Attributes</h4>
@@ -1564,15 +1564,15 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ManualName__c: boolean;
-    maps__AdvRouteVisitWindows__r: maps__AdvRouteVisitWindows__c[];
-    maps__AdvRouteWaypoints__r: maps__AdvRouteWaypoint__c[];
-    maps__LiveEventAssociations__r: maps__LiveEventAssociation__c[];
-    maps__Maps_Waypoints__r: maps__Waypoint__c[];
+    ManualName__c?: boolean;
+    maps__AdvRouteVisitWindows__r?: maps__AdvRouteVisitWindows__c[];
+    maps__AdvRouteWaypoints__r?: maps__AdvRouteWaypoint__c[];
+    maps__LiveEventAssociations__r?: maps__LiveEventAssociation__c[];
+    maps__Maps_Waypoints__r?: maps__Waypoint__c[];
     /**
      * The reciprocal relationship for {@link MessagingSession.OpportunityId}.
      */
-    MessagingSessions: MessagingSession[];
+    MessagingSessions?: MessagingSession[];
     /**
      * <h3><b>Minimum CFEs</b></h3>
      * <h4>Field Attributes</h4>
@@ -1583,11 +1583,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Minimum_CFEs__c: number;
+    Minimum_CFEs__c?: number;
     /**
      * The reciprocal relationship for {@link Monthly_Review__c.Ortho_Opportunity__c}.
      */
-    Monthly_Reviews__r: Monthly_Review__c[];
+    Monthly_Reviews__r?: Monthly_Review__c[];
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -1673,6 +1673,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core</code></td><td>DS Core</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Care</code></td><td>DS Core Care</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Create</code></td><td>DS Core Create</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Enterprise</code></td><td>DS Core Enterprise</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS OmniTaper</code></td><td>DS OmniTaper</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS PrimeTaper</code></td><td>DS PrimeTaper</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DT Post</code></td><td>DT Post</td><td nowrap>true</td></tr>
@@ -1872,7 +1873,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other Single Unit Crown</code></td><td>Other Single Unit Crown</td><td nowrap>true</td></tr>
      * </table>
      */
-    NA_Brand__c: string;
+    NA_Brand__c?: string;
     /**
      * <h3><b>Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -1913,7 +1914,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    NA_Category__c: string;
+    NA_Category__c?: string;
     /**
      * <h3><b>NA: Opportunity Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1934,8 +1935,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Top EV Target</code></td><td>Top EV Target</td><td nowrap>true</td></tr>
      * </table>
      */
-    NA_Opportunity_Type__c: string;
-    Name: string;
+    NA_Opportunity_Type__c?: string;
+    Name?: string;
     /**
      * <h3><b>Network</b></h3>
      * <h4>Field Attributes</h4>
@@ -1944,7 +1945,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Network__c: string;
+    Network__c?: string;
     /**
      * <h3><b>Network</b></h3>
      * <h4>Field Attributes</h4>
@@ -1953,7 +1954,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Network__r: Network__c;
+    Network__r?: Network__c;
     /**
      * <h3><b>New Cases / Year (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -1965,7 +1966,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    New_Cases_Year_Ortho__c: number;
+    New_Cases_Year_Ortho__c?: number;
     /**
      * <h3><b>Next Steps Last Modified Date</b></h3>
      * <p>Workflow will update this file with date the Opportunity was last modified.</p>
@@ -1975,10 +1976,10 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Next_Steps_Last_Modified_Date__c: Date;
-    NextStep: string;
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    Next_Steps_Last_Modified_Date__c?: Date;
+    NextStep?: string;
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>Objective</b></h3>
      * <p>COS field used for North America Dental.</p>
@@ -1995,7 +1996,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product / Procedures</code></td><td>Product / Procedures</td><td nowrap>true</td></tr>
      * </table>
      */
-    Objective__c: string;
+    Objective__c?: string;
     /**
      * <h3><b>Objective Specifics</b></h3>
      * <p>COS field used for North America Dental.</p>
@@ -2021,7 +2022,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Train/ Stabilize Staff</code></td><td>Train/ Stabilize Staff</td><td nowrap>true</td></tr>
      * </table>
      */
-    Objective_Specifics__c: string;
+    Objective_Specifics__c?: string;
     /**
      * <h3><b>Obstacles To Overcome</b></h3>
      * <p>Please enter the obstacles you foresee - and how to overcome them - related to the Opportunity for this Account..</p>
@@ -2030,7 +2031,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(500)</td></tr>
      * </table>
      */
-    Obstacles_To_Overcome__c: string;
+    Obstacles_To_Overcome__c?: string;
     /**
      * <h3><b>Offer Code</b></h3>
      * <p>Related to User Story TFUS-000005396</p>
@@ -2040,7 +2041,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Offer_Code__c: string;
+    Offer_Code__c?: string;
     /**
      * <h3><b>Offer Code</b></h3>
      * <p>Related to User Story TFUS-000005396</p>
@@ -2050,7 +2051,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Offer_Code__r: Offer_Code__c;
+    Offer_Code__r?: Offer_Code__c;
     /**
      * <h3><b>Objective Cost</b></h3>
      * <p>COS field used for North America Dental.</p>
@@ -2060,12 +2061,12 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OK__c: number;
-    OpenActivities: OpenActivity[];
+    OK__c?: number;
+    OpenActivities?: OpenActivity[];
     /**
      * The reciprocal relationship for {@link MessagingSession.OpportunityId}.
      */
-    Opportunity: MessagingSession;
+    Opportunity?: MessagingSession;
     /**
      * <h3><b>Opportunity # (HQ)</b></h3>
      * <p>For Analysis</p>
@@ -2078,11 +2079,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity_HQ__c: number;
+    Opportunity_HQ__c?: number;
     /**
      * The reciprocal relationship for {@link Opportunity_Offer_Code__c.Opportunity__c}.
      */
-    Opportunity_Offer_Codes__r: Opportunity_Offer_Code__c[];
+    Opportunity_Offer_Codes__r?: Opportunity_Offer_Code__c[];
     /**
      * <h3><b>Opportunity Owner Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -2094,7 +2095,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity_Owner_Role__c: string;
+    Opportunity_Owner_Role__c?: string;
     /**
      * <h3><b>Opportunity Temperature</b></h3>
      * <h4>Field Attributes</h4>
@@ -2106,7 +2107,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity_Temperature__c: string;
+    Opportunity_Temperature__c?: string;
     /**
      * <h3><b>Opportunity Temperature</b></h3>
      * <h4>Field Attributes</h4>
@@ -2118,7 +2119,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity_TemperatureFormula__c: string;
+    Opportunity_TemperatureFormula__c?: string;
     /**
      * <h3><b>Opportunity Winning Probability</b></h3>
      * <h4>Field Attributes</h4>
@@ -2129,25 +2130,25 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity_Winning_Probability__c: number;
-    OpportunityCompetitors: OpportunityCompetitor[];
+    Opportunity_Winning_Probability__c?: number;
+    OpportunityCompetitors?: OpportunityCompetitor[];
     /**
      * The reciprocal relationship for {@link OpportunityContactRole.OpportunityId}.
      */
-    OpportunityContactRoles: OpportunityContactRole[];
-    OpportunityHistories: OpportunityHistory[];
-    OpportunityLineItems: OpportunityLineItem[];
-    OpportunityPartnersFrom: OpportunityPartner[];
-    OpportunityRelatedDeleteLogs: OpportunityRelatedDeleteLog[];
+    OpportunityContactRoles?: OpportunityContactRole[];
+    OpportunityHistories?: OpportunityHistory[];
+    OpportunityLineItems?: OpportunityLineItem[];
+    OpportunityPartnersFrom?: OpportunityPartner[];
+    OpportunityRelatedDeleteLogs?: OpportunityRelatedDeleteLog[];
     /**
      * The reciprocal relationship for {@link OpportunityTeamMember.OpportunityId}.
      */
-    OpportunityTeamMembers: OpportunityTeamMember[];
-    Orders: Order[];
+    OpportunityTeamMembers?: OpportunityTeamMember[];
+    Orders?: Order[];
     /**
      * The reciprocal relationship for {@link Other_Accounts_part_of_the_Account_Plan__c.Account_Plan__c}.
      */
-    Other_Accounts_part_of_the_Account_Plan__r: Other_Accounts_part_of_the_Account_Plan__c[];
+    Other_Accounts_part_of_the_Account_Plan__r?: Other_Accounts_part_of_the_Account_Plan__c[];
     /**
      * <h3><b>Overall Notes</b></h3>
      * <p>Concatenate Customer Notes &amp; Description to be displayed in list views</p>
@@ -2156,7 +2157,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    OverallNotes__c: string;
+    OverallNotes__c?: string;
     /**
      * <h3><b>Overdue?</b></h3>
      * <h4>Field Attributes</h4>
@@ -2168,7 +2169,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Overdue_Formula__c: string;
+    Overdue_Formula__c?: string;
     /**
      * <h3><b>Overdue (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2179,7 +2180,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Overdue_HQ__c: number;
+    Overdue_HQ__c?: number;
     /**
      * <h3><b>Owned by My Direct Reports</b></h3>
      * <h4>Field Attributes</h4>
@@ -2188,14 +2189,14 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( Owner.ManagerId = $User.Id, True, false)</code></td></tr>
      * </table>
      */
-    Owned_by_My_Direct_Reports__c: boolean;
-    Owner: User;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    Partners: Partner[];
+    Owned_by_My_Direct_Reports__c?: boolean;
+    Owner?: User;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    Partners?: Partner[];
     /**
      * <h3><b>Position to competition</b></h3>
      * <p>Position unseres unternehmen zu der Konkurenz - used on DE Focus Accountplans</p>
@@ -2213,7 +2214,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Weak</code></td><td>Weak</td><td nowrap>true</td></tr>
      * </table>
      */
-    Position_to_competition__c: string;
+    Position_to_competition__c?: string;
     /**
      * <h3><b>Potential (ORTH)</b></h3>
      * <p>Used in the Ortho Implementation</p>
@@ -2225,7 +2226,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Potential_Ortho__c: number;
+    Potential_Ortho__c?: number;
     /**
      * <h3><b>Practice Building</b></h3>
      * <p>Check this check box if you are planning on growing this Account by Practice Building.</p>
@@ -2235,9 +2236,9 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Practice_Building__c: boolean;
-    Pricebook2: Pricebook2;
-    Pricebook2Id: string;
+    Practice_Building__c?: boolean;
+    Pricebook2?: Pricebook2;
+    Pricebook2Id?: string;
     /**
      * <h3><b>Primary Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -2246,7 +2247,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Contact__c: string;
+    Primary_Contact__c?: string;
     /**
      * <h3><b>Primary Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -2255,7 +2256,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Contact__r: Contact;
+    Primary_Contact__r?: Contact;
     /**
      * <h3><b>Primary Contact ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -2267,7 +2268,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Contact_ID__c: string;
+    Primary_Contact_ID__c?: string;
     /**
      * <h3><b>Primary Contact NA Marketing Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -2279,7 +2280,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Contact_NA_Marketing_Address__c: string;
+    Primary_Contact_NA_Marketing_Address__c?: string;
     /**
      * <h3><b>Primary Contact&#39;s Email Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -2291,7 +2292,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Contact_s_Email_Address__c: string;
+    Primary_Contact_s_Email_Address__c?: string;
     /**
      * <h3><b>Primary Contact&#39;s Mobile</b></h3>
      * <h4>Field Attributes</h4>
@@ -2303,7 +2304,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Contact_s_Mobile__c: string;
+    Primary_Contact_s_Mobile__c?: string;
     /**
      * <h3><b>Primary Contact&#39;s Phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -2315,9 +2316,9 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Contact_s_Phone__c: string;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
-    Probability: number;
+    Primary_Contact_s_Phone__c?: string;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
+    Probability?: number;
     /**
      * <h3><b>Probability_target %</b></h3>
      * <h4>Field Attributes</h4>
@@ -2336,9 +2337,9 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">90</code></td><td>90</td><td nowrap>true</td></tr>
      * </table>
      */
-    Probability_target__c: string;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    Probability_target__c?: string;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -2373,7 +2374,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Wound Drains</code></td><td>Wound Drains</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -2387,7 +2388,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental</code></td><td>Dental</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
+    Product_Area__c?: string;
     /**
      * <h3><b>Product Line Interested In</b></h3>
      * <h4>Field Attributes</h4>
@@ -2421,11 +2422,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Imaging - 3D</code></td><td>Imaging - 3D</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Line_Interested_In__c: string;
+    Product_Line_Interested_In__c?: string;
     /**
      * The reciprocal relationship for {@link Product_Profiling__c.Opportunity__c}.
      */
-    Products_Profiling__r: Product_Profiling__c[];
+    Products_Profiling__r?: Product_Profiling__c[];
     /**
      * <h3><b>Product trial start</b></h3>
      * <h4>Field Attributes</h4>
@@ -2434,7 +2435,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductTrialStarted__c: Date;
+    ProductTrialStarted__c?: Date;
     /**
      * <h3><b>Projected # Implants Target CYTD</b></h3>
      * <p>The projected number of implants that should have been sold to be on target. Ex: if a target i 100 implants by the end of the year and 50% of the year is gone, the projected target is 50 implants</p>
@@ -2447,7 +2448,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Projected_Target__c: number;
+    Projected_Target__c?: number;
     /**
      * <h3><b>Sales Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -2456,7 +2457,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Prospect__c: string;
+    Prospect__c?: string;
     /**
      * <h3><b>Sales Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -2465,11 +2466,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Prospect__r: Field_Sales_Project_Members__c;
+    Prospect__r?: Field_Sales_Project_Members__c;
     /**
      * The reciprocal relationship for {@link Q_A__c.Opportunity_Name__c}.
      */
-    Prospecting_Answers__r: Q_A__c[];
+    Prospecting_Answers__r?: Q_A__c[];
     /**
      * <h3><b>Provider Sector</b></h3>
      * <h4>Field Attributes</h4>
@@ -2481,8 +2482,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Provider_Sector__c: string;
-    PushCount: number;
+    Provider_Sector__c?: string;
+    PushCount?: number;
     /**
      * <h3><b>Questionnaire Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -2491,7 +2492,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Questionnaire_Id__c: string;
+    Questionnaire_Id__c?: string;
     /**
      * <h3><b>Questionnaire Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -2500,7 +2501,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Questionnaire_Id__r: Questionnaire_Setup__c;
+    Questionnaire_Id__r?: Questionnaire_Setup__c;
     /**
      * <h3><b>Quick Links</b></h3>
      * <h4>Field Attributes</h4>
@@ -2512,15 +2513,15 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quick_Links__c: string;
+    Quick_Links__c?: string;
     /**
      * The reciprocal relationship for {@link Quote.OpportunityId}.
      */
-    Quotes: Quote[];
+    Quotes?: Quote[];
     /**
      * The reciprocal relationship for {@link SBQQ__Quote__c.SBQQ__Opportunity2__c}.
      */
-    Quotes2__r: SBQQ__Quote__c[];
+    Quotes2__r?: SBQQ__Quote__c[];
     /**
      * <h3><b>Quote sent</b></h3>
      * <h4>Field Attributes</h4>
@@ -2529,11 +2530,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QuoteSent__c: Date;
+    QuoteSent__c?: Date;
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteDocument__c.SBQQ__Opportunity__c}.
      */
-    R00N700000029COgEAM__r: SBQQ__QuoteDocument__c[];
+    R00N700000029COgEAM__r?: SBQQ__QuoteDocument__c[];
     /**
      * <h3><b>Rating CPC</b></h3>
      * <h4>Field Attributes</h4>
@@ -2545,7 +2546,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rating_CPC__c: string;
+    Rating_CPC__c?: string;
     /**
      * <h3><b>Rating CPI</b></h3>
      * <h4>Field Attributes</h4>
@@ -2557,7 +2558,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rating_CPI__c: string;
+    Rating_CPI__c?: string;
     /**
      * <h3><b>Rating CPQA</b></h3>
      * <h4>Field Attributes</h4>
@@ -2569,7 +2570,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    rating_cpqa__c: string;
+    rating_cpqa__c?: string;
     /**
      * <h3><b>Rating CPR</b></h3>
      * <h4>Field Attributes</h4>
@@ -2581,7 +2582,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rating_CPR__c: string;
+    Rating_CPR__c?: string;
     /**
      * <h3><b>Rating CPSP</b></h3>
      * <h4>Field Attributes</h4>
@@ -2593,7 +2594,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rating_CPSP__c: string;
+    Rating_CPSP__c?: string;
     /**
      * <h3><b>Real Implant Potential</b></h3>
      * <p>Implantatatportential - Used in DE Focus Account Plan</p>
@@ -2605,7 +2606,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Real_Implant_Potential__c: number;
+    Real_Implant_Potential__c?: number;
     /**
      * <h3><b>Reason for not approving Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -2613,7 +2614,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Reason_for_not_approving_Account_Plan__c: string;
+    Reason_for_not_approving_Account_Plan__c?: string;
     /**
      * <h3><b>Reason for Trial</b></h3>
      * <p>Used to track the reasons for setting up the trial</p>
@@ -2623,8 +2624,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Reason_for_Trial__c: string;
-    Record: CollaborationGroupRecordChangeEvent;
+    Reason_for_Trial__c?: string;
+    Record?: CollaborationGroupRecordChangeEvent;
     /**
      * <h3><b>Record Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -2639,17 +2640,17 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">GROW</code></td><td>GROW</td><td nowrap>true</td></tr>
      * </table>
      */
-    Record_Type__c: string;
-    RecordActionHistories: RecordActionHistory[];
+    Record_Type__c?: string;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RecordType: RecordType;
-    RecordTypeId: string;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Red Flag Status</b></h3>
      * <p>TBC. To be used in coaching process for Red Flag Opportunities</p>
@@ -2666,17 +2667,17 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">On Track</code></td><td>On Track</td><td nowrap>true</td></tr>
      * </table>
      */
-    Red_Flag_Status__c: string;
-    RelatedRecord: ContentDistribution;
+    Red_Flag_Status__c?: string;
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>S2S Product Line Interested In</b></h3>
      * <h4>Field Attributes</h4>
@@ -2690,7 +2691,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td><td>1</td><td nowrap>true</td></tr>
      * </table>
      */
-    S2S_Product_Line_Interested_In__c: string;
+    S2S_Product_Line_Interested_In__c?: string;
     /**
      * <h3><b>Temp Currency</b></h3>
      * <h4>Field Attributes</h4>
@@ -2710,7 +2711,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">USD</code></td><td>USD</td><td nowrap>true</td></tr>
      * </table>
      */
-    S2S_Tem_Currency__c: string;
+    S2S_Tem_Currency__c?: string;
     /**
      * <h3><b>Temp Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -2721,7 +2722,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    s2s_Temp_Amount__c: number;
+    s2s_Temp_Amount__c?: number;
     /**
      * <h3><b>s2s trigger</b></h3>
      * <p>This is to trigger the s2s synchro to wait it (get_questions) is completed.</p>
@@ -2732,7 +2733,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    s2s_trigger__c: string;
+    s2s_trigger__c?: string;
     /**
      * <h3><b>Sales competitor</b></h3>
      * <p>estimated sales of the competition</p>
@@ -2742,7 +2743,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Competitor__c: number;
+    Sales_Competitor__c?: number;
     /**
      * <h3><b>Sales CYTD (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -2754,7 +2755,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Ortho_CY_TD__c: number;
+    Sales_Ortho_CY_TD__c?: number;
     /**
      * <h3><b>Sales L12M-1 (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -2766,7 +2767,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Ortho_L12M_1__c: number;
+    Sales_Ortho_L12M_1__c?: number;
     /**
      * <h3><b>Sales L12M (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -2778,7 +2779,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Ortho_L12M__c: number;
+    Sales_Ortho_L12M__c?: number;
     /**
      * <h3><b>Sales L6M (ORTH)</b></h3>
      * <p>Updated by SFDC administrator at the beginning of each month</p>
@@ -2790,7 +2791,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Ortho_L6M__c: number;
+    Sales_Ortho_L6M__c?: number;
     /**
      * <h3><b>Sales LY (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -2802,7 +2803,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Ortho_LY__c: number;
+    Sales_Ortho_LY__c?: number;
     /**
      * <h3><b>Sales LYTD (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -2814,7 +2815,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Ortho_LY_TD__c: number;
+    Sales_Ortho_LY_TD__c?: number;
     /**
      * <h3><b>SBU Focus</b></h3>
      * <p>Field to select which SBUs is for interest</p>
@@ -2824,7 +2825,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBUs__c: string;
+    SBUs__c?: string;
     /**
      * <h3><b>Segmentation when Closed</b></h3>
      * <h4>Field Attributes</h4>
@@ -2835,10 +2836,10 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Segmentation_when_Closed__c: string;
-    ServiceAppointments: ServiceAppointment[];
-    Shares: OpportunityShare[];
-    ShowpadForSF__Showpad_Activities__r: ShowpadForSF__Showpad_Activity__c[];
+    Segmentation_when_Closed__c?: string;
+    ServiceAppointments?: ServiceAppointment[];
+    Shares?: OpportunityShare[];
+    ShowpadForSF__Showpad_Activities__r?: ShowpadForSF__Showpad_Activity__c[];
     /**
      * <h3><b>Signature Obtained?</b></h3>
      * <h4>Field Attributes</h4>
@@ -2854,7 +2855,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>true</td></tr>
      * </table>
      */
-    Signature_Obtained__c: string;
+    Signature_Obtained__c?: string;
     /**
      * <h3><b>Simplant</b></h3>
      * <h4>Field Attributes</h4>
@@ -2863,7 +2864,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Simplant__c: boolean;
+    Simplant__c?: boolean;
     /**
      * <h3><b>Local Stage</b></h3>
      * <h4>Field Attributes</h4>
@@ -2885,8 +2886,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Lost</code></td><td>Lost</td><td nowrap>true</td></tr>
      * </table>
      */
-    SIP_Stage__c: string;
-    SobjectLookupValue: AIInsightValue;
+    SIP_Stage__c?: string;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -2897,7 +2898,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Source__c: string;
+    Source__c?: string;
     /**
      * <h3><b>Opportunity ID (18 Digit)</b></h3>
      * <p>Contact ID (18 Digit)</p>
@@ -2910,7 +2911,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Source_opp_ID__c: string;
+    Source_opp_ID__c?: string;
     /**
      * <h3><b>Stage Duration</b></h3>
      * <p>Shows number of days since the Opportunity Stage was changed.</p>
@@ -2923,7 +2924,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_Duration__c: number;
+    Stage_Duration__c?: number;
     /**
      * <h3><b>Stage duration criteria</b></h3>
      * <h4>Field Attributes</h4>
@@ -2934,7 +2935,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_duration_criteria__c: number;
+    Stage_duration_criteria__c?: number;
     /**
      * <h3><b>Stage Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -2946,7 +2947,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_Guidance_ClosedLost__c: string;
+    Stage_Guidance_ClosedLost__c?: string;
     /**
      * <h3><b>Stage Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -2958,7 +2959,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_Guidance_ClosedWon__c: string;
+    Stage_Guidance_ClosedWon__c?: string;
     /**
      * <h3><b>Stage Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -2970,7 +2971,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_Guidance_Prospect__c: string;
+    Stage_Guidance_Prospect__c?: string;
     /**
      * <h3><b>Stage Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -2982,7 +2983,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_Guidance_Stage1__c: string;
+    Stage_Guidance_Stage1__c?: string;
     /**
      * <h3><b>Stage Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -2994,7 +2995,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_Guidance_Stage2__c: string;
+    Stage_Guidance_Stage2__c?: string;
     /**
      * <h3><b>Stage Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -3006,7 +3007,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_Guidance_Stage3__c: string;
+    Stage_Guidance_Stage3__c?: string;
     /**
      * <h3><b>Stage Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -3018,7 +3019,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_Guidance_Stage4__c: string;
+    Stage_Guidance_Stage4__c?: string;
     /**
      * <h3><b>Stage status (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3030,8 +3031,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stage_status_HQ__c: string;
-    StageName: string;
+    Stage_status_HQ__c?: string;
+    StageName?: string;
     /**
      * <h3><b>Start Date</b></h3>
      * <p>COS field used for North America Dental.</p>
@@ -3041,7 +3042,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Start_Date__c: Date;
+    Start_Date__c?: Date;
     /**
      * <h3><b>Strategic Goal</b></h3>
      * <h4>Field Attributes</h4>
@@ -3050,7 +3051,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Strategic_Goal__c: string;
+    Strategic_Goal__c?: string;
     /**
      * <h3><b>Strategic Goal</b></h3>
      * <h4>Field Attributes</h4>
@@ -3059,7 +3060,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Strategic_Goal__r: Strategic_Goal__c;
+    Strategic_Goal__r?: Strategic_Goal__c;
     /**
      * <h3><b>Strategy</b></h3>
      * <h4>Field Attributes</h4>
@@ -3076,7 +3077,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">TIME MINIMISE</code></td><td>TIME MINIMISE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Strategy__c: string;
+    Strategy__c?: string;
     /**
      * <h3><b>Sub-Focus</b></h3>
      * <p>Sub-focus created to split the implant business in the Account Plan opportunities - used by UK</p>
@@ -3093,7 +3094,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Digital</code></td><td>Digital</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sub_Focus__c: string;
+    Sub_Focus__c?: string;
     /**
      * <h3><b>Sub-Stage</b></h3>
      * <h4>Field Attributes</h4>
@@ -3129,7 +3130,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Bottom funnel – Actual sales</code></td><td>Bottom funnel – Actual sales</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sub_Stage__c: string;
+    Sub_Stage__c?: string;
     /**
      * <h3><b>Submitted for Approval Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -3138,7 +3139,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Submitted_for_Approval_Date__c: Date;
+    Submitted_for_Approval_Date__c?: Date;
     /**
      * <h3><b>Summary</b></h3>
      * <p>Please describe the identified opportunity and the objective you would like to reach with this Customer.</p>
@@ -3147,7 +3148,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(4000)</td></tr>
      * </table>
      */
-    Summary__c: string;
+    Summary__c?: string;
     /**
      * <h3><b>Survey Sent On</b></h3>
      * <p>Set the value when the survey is sent. TFUS-000005007</p>
@@ -3157,20 +3158,20 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SurveySentOn__c: string;
+    SurveySentOn__c?: string;
     /**
      * The reciprocal relationship for {@link SwarmMember.RelatedRecordId}.
      */
-    SwarmMembers: SwarmMember[];
+    SwarmMembers?: SwarmMember[];
     /**
      * The reciprocal relationship for {@link Swarm.RelatedRecordId}.
      */
-    Swarms: Swarm[];
-    SyncedQuote: Quote;
-    SyncedQuoteId: string;
-    SystemModstamp: string;
-    Tags: OpportunityTag[];
-    Target: AIRecordInsight;
+    Swarms?: Swarm[];
+    SyncedQuote?: Quote;
+    SyncedQuoteId?: string;
+    SystemModstamp?: string;
+    Tags?: OpportunityTag[];
+    Target?: AIRecordInsight;
     /**
      * <h3><b>Target Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -3187,7 +3188,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Top 25 Accounts</code></td><td>Top 25 Accounts</td><td nowrap>true</td></tr>
      * </table>
      */
-    Target_Priority__c: string;
+    Target_Priority__c?: string;
     /**
      * <h3><b>Targeted Minimum (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -3199,7 +3200,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Targeted_Minimum_Ortho__c: number;
+    Targeted_Minimum_Ortho__c?: number;
     /**
      * <h3><b>Targeted Value (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -3211,7 +3212,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Targeted_Value_Ortho__c: number;
+    Targeted_Value_Ortho__c?: number;
     /**
      * <h3><b>Target List</b></h3>
      * <h4>Field Attributes</h4>
@@ -3223,15 +3224,15 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TargetList__c: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    TargetList__c?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
-    Territory2: Territory2;
-    Territory2Id: string;
+    Tasks?: Task[];
+    Territory2?: Territory2;
+    Territory2Id?: string;
     /**
      * <h3><b>Country field</b></h3>
      * <h4>Field Attributes</h4>
@@ -3242,7 +3243,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Country_field__c: string;
+    testInCountry1__Country_field__c?: string;
     /**
      * <h3><b>Tools to be Used (ORTH)</b></h3>
      * <p>Used in the Ortho implementation</p>
@@ -3313,7 +3314,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SSO – IDB</code></td><td>SSO – IDB</td><td nowrap>true</td></tr>
      * </table>
      */
-    Tools_to_be_Used_Ortho__c: string;
+    Tools_to_be_Used_Ortho__c?: string;
     /**
      * <h3><b>Top 5 Type</b></h3>
      * <p>This field is only for UK</p>
@@ -3331,10 +3332,10 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Top 5 Implant</code></td><td>Top 5 Implant</td><td nowrap>true</td></tr>
      * </table>
      */
-    Top_5_Type__c: string;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    TotalOpportunityQuantity: number;
+    Top_5_Type__c?: string;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    TotalOpportunityQuantity?: number;
     /**
      * <h3><b>Trial Product</b></h3>
      * <p>Lookup to Non-ERP Product - same as used for product profiling on Contacts.</p>
@@ -3344,7 +3345,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Trial_Product__c: string;
+    Trial_Product__c?: string;
     /**
      * <h3><b>Trial Product</b></h3>
      * <p>Lookup to Non-ERP Product - same as used for product profiling on Contacts.</p>
@@ -3354,8 +3355,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Trial_Product__r: Non_ERP_Products__c;
-    Type: string;
+    Trial_Product__r?: Non_ERP_Products__c;
+    Type?: string;
     /**
      * <h3><b>Type of Questions Asked</b></h3>
      * <h4>Field Attributes</h4>
@@ -3371,7 +3372,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">None</code></td><td>None</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type_of_Questions_Asked__c: string;
+    Type_of_Questions_Asked__c?: string;
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -3455,8 +3456,8 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Estonia</code></td><td>Estonia</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    User_Country__c: string;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    User_Country__c?: string;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * <h3><b>Verbal commitment</b></h3>
      * <h4>Field Attributes</h4>
@@ -3465,11 +3466,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VerbalCommitment__c: Date;
+    VerbalCommitment__c?: Date;
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
+    VideoRelatedRecords?: VideoCall[];
     /**
      * <h3><b>Voucher Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -3480,7 +3481,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VoucherCode__c: string;
+    VoucherCode__c?: string;
     /**
      * <h3><b>Was the Decision Maker Present?</b></h3>
      * <h4>Field Attributes</h4>
@@ -3496,12 +3497,12 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Stakeholder present, but not final decision-maker</code></td><td>Stakeholder present, but not final decision-maker</td><td nowrap>true</td></tr>
      * </table>
      */
-    Was_the_Decision_Maker_Present__c: string;
+    Was_the_Decision_Maker_Present__c?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__WebQuote__c.SBQQ__Opportunity__c}.
      */
-    WebQuotes__r: SBQQ__WebQuote__c[];
-    What: EventChangeEvent;
+    WebQuotes__r?: SBQQ__WebQuote__c[];
+    What?: EventChangeEvent;
     /**
      * <h3><b>Wholesale Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -3510,7 +3511,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wholesale_Amount__c: number;
+    Wholesale_Amount__c?: number;
     /**
      * <h3><b>Win/Loss Description</b></h3>
      * <p>Explanation for winning / losing a Deal</p>
@@ -3519,7 +3520,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1000)</td></tr>
      * </table>
      */
-    Win_Loss_Description__c: string;
+    Win_Loss_Description__c?: string;
     /**
      * <h3><b>Win/Loss Reason</b></h3>
      * <p>Reason for winning / losing an Opportunity</p>
@@ -3541,7 +3542,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Cancelled</code></td><td>Cancelled</td><td nowrap>true</td></tr>
      * </table>
      */
-    Win_Loss_Reason__c: string;
+    Win_Loss_Reason__c?: string;
     /**
      * <h3><b>Won Competitive Specialist Customer by:</b></h3>
      * <h4>Field Attributes</h4>
@@ -3557,11 +3558,11 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Nobel Conversion</code></td><td>Nobel Conversion</td><td nowrap>true</td></tr>
      * </table>
      */
-    Won_Competitive_Specialist_Customer_by__c: string;
+    Won_Competitive_Specialist_Customer_by__c?: string;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
     /**
      * <h3><b>4. Overcoming Resistance Activities</b></h3>
      * <h4>Field Attributes</h4>
@@ -3578,7 +3579,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Trial Cases - If Needed</code></td><td>Trial Cases - If Needed</td><td nowrap>true</td></tr>
      * </table>
      */
-    X4_Overcoming_Resistance_Activities__c: string;
+    X4_Overcoming_Resistance_Activities__c?: string;
     /**
      * <h3><b>Account address</b></h3>
      * <h4>Field Attributes</h4>
@@ -3590,7 +3591,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Xsbu_Account_address__c: string;
+    Xsbu_Account_address__c?: string;
     /**
      * <h3><b>S2S Account name</b></h3>
      * <h4>Field Attributes</h4>
@@ -3602,7 +3603,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Xsbu_Account_name__c: string;
+    Xsbu_Account_name__c?: string;
     /**
      * <h3><b>s2s dealer name</b></h3>
      * <h4>Field Attributes</h4>
@@ -3614,7 +3615,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    xsbu_dealer_name__c: string;
+    xsbu_dealer_name__c?: string;
     /**
      * <h3><b>s2s Dealer&#39;s Sales Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -3626,7 +3627,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    xsbu_Dealer_s_Sales_Rep__c: string;
+    xsbu_Dealer_s_Sales_Rep__c?: string;
     /**
      * <h3><b>S2S Primary Contact name</b></h3>
      * <h4>Field Attributes</h4>
@@ -3638,7 +3639,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    xsbu_Primary_Contact_name__c: string;
+    xsbu_Primary_Contact_name__c?: string;
     /**
      * <h3><b>Prospect Sender</b></h3>
      * <h4>Field Attributes</h4>
@@ -3650,7 +3651,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Xsbu_Prospect_Sender__c: string;
+    Xsbu_Prospect_Sender__c?: string;
     /**
      * <h3><b>Quick links</b></h3>
      * <h4>Field Attributes</h4>
@@ -3662,7 +3663,7 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    XSBU_Quick_links__c: string;
+    XSBU_Quick_links__c?: string;
     /**
      * <h3><b>xxxPacket to try? (DE)</b></h3>
      * <p>Field used on GET Opps for Germany only.</p>
@@ -3672,5 +3673,5 @@ declare interface Opportunity extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    xxxPacket_to_try_DE__c: boolean;
+    xxxPacket_to_try_DE__c?: boolean;
 }

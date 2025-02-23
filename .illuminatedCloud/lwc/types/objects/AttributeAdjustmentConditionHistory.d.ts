@@ -2,14 +2,14 @@
 
 declare interface AttributeAdjustmentConditionHistory extends SObject 
 {
-    AttributeAdjustmentCondition: AttributeAdjustmentCondition;
-    AttributeAdjustmentConditionId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    AttributeAdjustmentCondition?: AttributeAdjustmentCondition;
+    AttributeAdjustmentConditionId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

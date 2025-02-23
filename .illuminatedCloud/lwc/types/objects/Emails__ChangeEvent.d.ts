@@ -2,7 +2,7 @@
 
 declare interface Emails__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Consent Collected by</b></h3>
      * <p>Tracks who collected the consent</p>
@@ -14,7 +14,7 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Consent_Collected_by__c: string;
+    Consent_Collected_by__c?: string;
     /**
      * <h3><b>Consent Collection Method</b></h3>
      * <p>Used to track how the consent was collected.</p>
@@ -32,7 +32,7 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Hard Copy Signed Form</code></td><td>Hard Copy Signed Form</td><td nowrap>true</td></tr>
      * </table>
      */
-    Consent_Collection_Method__c: string;
+    Consent_Collection_Method__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Contact})</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,11 +48,11 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Contact})</td></tr>
      * </table>
      */
-    Contact__r: Contact;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Contact__r?: Contact;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Double opt in</b></h3>
      * <p>Used to track where we have a double opt-in in countries that require this.</p>
@@ -62,7 +62,7 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Double_opt_in__c: boolean;
+    Double_opt_in__c?: boolean;
     /**
      * <h3><b>Email</b></h3>
      * <p>The email address</p>
@@ -74,7 +74,7 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email__c: string;
+    Email__c?: string;
     /**
      * <h3><b>Email Marketing Consent</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,7 +90,7 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Email_Marketing_Consent__c: string;
+    Email_Marketing_Consent__c?: string;
     /**
      * <h3><b>Email Marketing Consent Date</b></h3>
      * <p>Tracks when the consent was collected</p>
@@ -100,7 +100,7 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email_Marketing_Consent_Date__c: string;
+    Email_Marketing_Consent_Date__c?: string;
     /**
      * <h3><b>Email opt out</b></h3>
      * <h4>Field Attributes</h4>
@@ -109,7 +109,7 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Email_opt_out__c: boolean;
+    Email_opt_out__c?: boolean;
     /**
      * <h3><b>Inactive</b></h3>
      * <p>Set to True if the email is no longer in use</p>
@@ -119,12 +119,12 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Inactive__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    Inactive__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
     /**
      * <h3><b>When collected?</b></h3>
      * <h4>Field Attributes</h4>
@@ -133,7 +133,7 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WhenCollected__c: string;
+    WhenCollected__c?: string;
     /**
      * <h3><b>Where collected?</b></h3>
      * <h4>Field Attributes</h4>
@@ -144,5 +144,5 @@ declare interface Emails__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WhereCollected__c: string;
+    WhereCollected__c?: string;
 }

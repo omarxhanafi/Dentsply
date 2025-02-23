@@ -2,22 +2,22 @@
 
 declare interface ProductCatalogChangeEvent extends SObject 
 {
-    CatalogType: string;
-    ChangeEventHeader: ChangeEventHeader;
-    Code: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
-    EffectiveEndDate: string;
-    EffectiveStartDate: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    NumberOfCategories: number;
-    Owner: User;
-    OwnerId: string;
-    ReplayId: string;
+    CatalogType?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    Code?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
+    EffectiveEndDate?: string;
+    EffectiveStartDate?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    NumberOfCategories?: number;
+    Owner?: User;
+    OwnerId?: string;
+    ReplayId?: string;
 }

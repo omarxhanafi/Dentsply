@@ -2,13 +2,13 @@
 
 declare interface ContextPersistenceEvent extends SObject 
 {
-    CorrelationIdentifier: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
-    HasErrors: boolean;
-    ReplayId: string;
-    RequestIdentifier: string;
-    SourceEvent: AsyncOperationEvent;
+    CorrelationIdentifier?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
+    HasErrors?: boolean;
+    ReplayId?: string;
+    RequestIdentifier?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

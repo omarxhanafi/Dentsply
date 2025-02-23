@@ -6,9 +6,9 @@
  */
 declare interface geopointe__Route_Share__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Route</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface geopointe__Route_Share__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Route__c: string;
+    geopointe__Route__c?: string;
     /**
      * <h3><b>Route</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface geopointe__Route_Share__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Route__r: geopointe__Route__c;
+    geopointe__Route__r?: geopointe__Route__c;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface geopointe__Route_Share__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__User__c: string;
+    geopointe__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -46,10 +46,10 @@ declare interface geopointe__Route_Share__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__User__r: User;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__User__r?: User;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

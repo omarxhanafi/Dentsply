@@ -15,7 +15,7 @@ declare interface Voucher__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountProgramMember__c: string;
+    AccountProgramMember__c?: string;
     /**
      * <h3><b>Account Program Member</b></h3>
      * <p>Master Detail</p>
@@ -25,13 +25,13 @@ declare interface Voucher__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountProgramMember__r: LoyaltyProgramParticipant__c;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    AccountProgramMember__r?: LoyaltyProgramParticipant__c;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

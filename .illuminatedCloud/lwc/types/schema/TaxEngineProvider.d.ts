@@ -102,6 +102,12 @@ declare module "@salesforce/schema/TaxEngineProvider.SystemModstamp" {
     export default SystemModstamp;
 }
 
+declare module "@salesforce/schema/TaxEngineProvider.TaxEngines" {
+    import { FieldId } from "@salesforce/schema";
+    const TaxEngines: FieldId;
+    export default TaxEngines;
+}
+
 declare module "@salesforce/schema/TaxEngineProvider.UserRecordAccess" {
     import { FieldId } from "@salesforce/schema";
     const UserRecordAccess: FieldId;

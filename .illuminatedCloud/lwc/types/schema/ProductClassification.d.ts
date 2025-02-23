@@ -108,6 +108,12 @@ declare module "@salesforce/schema/ProductClassification.CurrencyIsoCode" {
     export default CurrencyIsoCode;
 }
 
+declare module "@salesforce/schema/ProductClassification.DecompositionRules" {
+    import { FieldId } from "@salesforce/schema";
+    const DecompositionRules: FieldId;
+    export default DecompositionRules;
+}
+
 declare module "@salesforce/schema/ProductClassification.DocEnvelopeRefObjects" {
     import { FieldId } from "@salesforce/schema";
     const DocEnvelopeRefObjects: FieldId;

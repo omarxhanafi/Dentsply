@@ -2,14 +2,14 @@
 
 declare interface SwarmMemberHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    SwarmMember: SwarmMember;
-    SwarmMemberId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    SwarmMember?: SwarmMember;
+    SwarmMemberId?: string;
 }

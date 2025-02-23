@@ -2,14 +2,14 @@
 
 declare interface ShiftPatternHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ShiftPattern: ShiftPattern;
-    ShiftPatternId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ShiftPattern?: ShiftPattern;
+    ShiftPatternId?: string;
 }

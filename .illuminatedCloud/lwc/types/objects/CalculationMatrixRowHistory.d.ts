@@ -2,14 +2,14 @@
 
 declare interface CalculationMatrixRowHistory extends SObject 
 {
-    CalculationMatrixRow: CalculationMatrixRow;
-    CalculationMatrixRowId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CalculationMatrixRow?: CalculationMatrixRow;
+    CalculationMatrixRowId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

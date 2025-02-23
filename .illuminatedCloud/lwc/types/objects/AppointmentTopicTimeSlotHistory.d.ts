@@ -2,14 +2,14 @@
 
 declare interface AppointmentTopicTimeSlotHistory extends SObject 
 {
-    AppointmentTopicTimeSlot: AppointmentTopicTimeSlot;
-    AppointmentTopicTimeSlotId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    AppointmentTopicTimeSlot?: AppointmentTopicTimeSlot;
+    AppointmentTopicTimeSlotId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

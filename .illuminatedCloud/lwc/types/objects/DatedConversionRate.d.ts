@@ -2,15 +2,15 @@
 
 declare interface DatedConversionRate extends SObject 
 {
-    ConversionRate: number;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    NextStartDate: Date;
-    StartDate: Date;
-    SystemModstamp: string;
+    ConversionRate?: number;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    NextStartDate?: Date;
+    StartDate?: Date;
+    SystemModstamp?: string;
 }

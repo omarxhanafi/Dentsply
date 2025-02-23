@@ -12,7 +12,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,23 +20,23 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
-    ActivityHistories: ActivityHistory[];
+    Account__r?: Account;
+    ActivityHistories?: ActivityHistory[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Attendee #10</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,7 +47,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee10__c: string;
+    Attendee10__c?: string;
     /**
      * <h3><b>Attendee #1</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee1__c: string;
+    Attendee1__c?: string;
     /**
      * <h3><b>Attendee #2</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee2__c: string;
+    Attendee2__c?: string;
     /**
      * <h3><b>Attendee #3</b></h3>
      * <h4>Field Attributes</h4>
@@ -80,7 +80,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee3__c: string;
+    Attendee3__c?: string;
     /**
      * <h3><b>Attendee #4</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee4__c: string;
+    Attendee4__c?: string;
     /**
      * <h3><b>Attendee #5</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,7 +102,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee5__c: string;
+    Attendee5__c?: string;
     /**
      * <h3><b>Attendee #6</b></h3>
      * <h4>Field Attributes</h4>
@@ -113,7 +113,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee6__c: string;
+    Attendee6__c?: string;
     /**
      * <h3><b>Attendee #7</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee7__c: string;
+    Attendee7__c?: string;
     /**
      * <h3><b>Attendee #8</b></h3>
      * <h4>Field Attributes</h4>
@@ -135,7 +135,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee8__c: string;
+    Attendee8__c?: string;
     /**
      * <h3><b>Attendee #9</b></h3>
      * <h4>Field Attributes</h4>
@@ -146,16 +146,16 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee9__c: string;
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    Attendee9__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
+    ContactRequests?: ContactRequest[];
     /**
      * <h3><b>Content</b></h3>
      * <h4>Field Attributes</h4>
@@ -197,9 +197,9 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">VDW.CONNECT App</code></td><td>VDW.CONNECT App</td><td nowrap>true</td></tr>
      * </table>
      */
-    Content__c: string;
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    Content__c?: string;
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -208,11 +208,11 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Delivery Complete (Incl. DFU)</b></h3>
      * <h4>Field Attributes</h4>
@@ -221,11 +221,11 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    DeliveryComplete__c: boolean;
+    DeliveryComplete__c?: boolean;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * <h3><b>Document Language</b></h3>
      * <h4>Field Attributes</h4>
@@ -241,7 +241,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">German</code></td><td>German</td><td nowrap>true</td></tr>
      * </table>
      */
-    Document_Language__c: string;
+    Document_Language__c?: string;
     /**
      * <h3><b>Document Locale</b></h3>
      * <h4>Field Attributes</h4>
@@ -253,11 +253,11 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Document_Locale__c: string;
+    Document_Locale__c?: string;
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * <h3><b>EDDY Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -268,7 +268,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EDDYComments__c: string;
+    EDDYComments__c?: string;
     /**
      * <h3><b>Email Dental Office</b></h3>
      * <h4>Field Attributes</h4>
@@ -279,17 +279,17 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EmailDentalOffice__c: string;
+    EmailDentalOffice__c?: string;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    Events: Event[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    Emails?: EmailMessage[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Follow-Up?</b></h3>
      * <h4>Field Attributes</h4>
@@ -307,12 +307,12 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inside Sales 8W</code></td><td>Inside Sales (After 8W)</td><td nowrap>true</td></tr>
      * </table>
      */
-    Follow_Up__c: string;
+    Follow_Up__c?: string;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: ProductInstruction__History[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: ProductInstruction__History[];
     /**
      * <h3><b>Instruction Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -322,19 +322,19 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Today()</code></td></tr>
      * </table>
      */
-    InstructionDate__c: Date;
-    IsDeleted: boolean;
-    LastActivityDate: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    OpenActivities: OpenActivity[];
+    InstructionDate__c?: Date;
+    IsDeleted?: boolean;
+    LastActivityDate?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    OpenActivities?: OpenActivity[];
     /**
      * <h3><b>Other Details</b></h3>
      * <h4>Field Attributes</h4>
@@ -345,22 +345,22 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OtherDetails__c: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    OtherDetails__c?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * The reciprocal relationship for {@link ProductInstructionLineItem__c.ProductInstruction__c}.
      */
-    Product_Instruction_Line_Items__r: ProductInstructionLineItem__c[];
+    Product_Instruction_Line_Items__r?: ProductInstructionLineItem__c[];
     /**
      * <h3><b>Product Area</b></h3>
      * <p>Controlling products being available to be picked</p>
@@ -376,7 +376,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CAS</code></td><td>CAS</td><td nowrap>true</td></tr>
      * </table>
      */
-    ProductArea__c: string;
+    ProductArea__c?: string;
     /**
      * <h3><b>Product Instructor</b></h3>
      * <h4>Field Attributes</h4>
@@ -385,7 +385,7 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductInstructor__c: string;
+    ProductInstructor__c?: string;
     /**
      * <h3><b>Product Instructor</b></h3>
      * <h4>Field Attributes</h4>
@@ -394,16 +394,16 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductInstructor__r: User;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProductInstructor__r?: User;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
     /**
      * <h3><b>Registered in Siroforce</b></h3>
      * <h4>Field Attributes</h4>
@@ -412,37 +412,37 @@ declare interface ProductInstruction__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Registered_in_SIroforce__c: boolean;
-    RelatedRecord: ContentDistribution;
+    Registered_in_SIroforce__c?: boolean;
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: ProductInstruction__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: ProductInstruction__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    Tasks?: Task[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

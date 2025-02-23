@@ -2,25 +2,25 @@
 
 declare interface OmniTrackingGroup extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Description: string;
-    DeveloperName: string;
-    EndDate: Date;
-    GroupType: string;
-    IsActive: boolean;
-    IsDeleted: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    MaxAgeInDays: number;
-    OmniExtTrackingDef: OmniExtTrackingDef;
-    OmniExtTrackingDefId: string;
-    OmniTrackingGroupKey: string;
-    OmniTrackingGroups: OmniTrackingComponentDef[];
-    StartDate: Date;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Description?: string;
+    DeveloperName?: string;
+    EndDate?: Date;
+    GroupType?: string;
+    IsActive?: boolean;
+    IsDeleted?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    MaxAgeInDays?: number;
+    OmniExtTrackingDef?: OmniExtTrackingDef;
+    OmniExtTrackingDefId?: string;
+    OmniTrackingGroupKey?: string;
+    OmniTrackingGroups?: OmniTrackingComponentDef[];
+    StartDate?: Date;
+    SystemModstamp?: string;
 }

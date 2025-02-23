@@ -2,18 +2,18 @@
 
 declare interface DC_Setting__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
     /**
      * <h3><b>Value</b></h3>
      * <p>To store the settings</p>
@@ -25,5 +25,5 @@ declare interface DC_Setting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Value__c: string;
+    Value__c?: string;
 }

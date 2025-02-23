@@ -5,18 +5,18 @@
  */
 declare interface SBQQ__ImportFormat__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__ImportColumn__c.SBQQ__ImportFormat__c}.
      */
-    ImportColumns__r: SBQQ__ImportColumn__c[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    ImportColumns__r?: SBQQ__ImportColumn__c[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Active</b></h3>
      * <p>When activated, the input format becomes available for use.</p>
@@ -27,7 +27,7 @@ declare interface SBQQ__ImportFormat__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Active__c: boolean;
+    SBQQ__Active__c?: boolean;
     /**
      * <h3><b>Import Format Name</b></h3>
      * <p>A meaningful name that describes the input format.</p>
@@ -39,7 +39,7 @@ declare interface SBQQ__ImportFormat__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ImportFormatName__c: string;
+    SBQQ__ImportFormatName__c?: string;
     /**
      * <h3><b>Target Object</b></h3>
      * <p>Target Object to be imported.</p>
@@ -55,7 +55,7 @@ declare interface SBQQ__ImportFormat__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quote Line</code></td><td>Quote Line</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TargetObject__c: string;
+    SBQQ__TargetObject__c?: string;
     /**
      * <h3><b># Unique Key</b></h3>
      * <p>A count of the unique Keys within the Import Format.</p>
@@ -69,5 +69,5 @@ declare interface SBQQ__ImportFormat__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UniqueKeyCount__c: string;
+    SBQQ__UniqueKeyCount__c?: string;
 }

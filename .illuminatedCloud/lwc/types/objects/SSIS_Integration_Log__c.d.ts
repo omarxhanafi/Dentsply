@@ -15,7 +15,7 @@ declare interface SSIS_Integration_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Azure_Job_Finished__c: string;
+    Azure_Job_Finished__c?: string;
     /**
      * <h3><b>Azure Job Started</b></h3>
      * <p>The time the Azure job was started.</p>
@@ -26,7 +26,7 @@ declare interface SSIS_Integration_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Azure_Job_Started__c: string;
+    Azure_Job_Started__c?: string;
     /**
      * <h3><b>Comment</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,10 +36,10 @@ declare interface SSIS_Integration_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Comment__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Comment__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Execution Type</b></h3>
      * <p>The type of execution. Automatic, manually</p>
@@ -51,7 +51,7 @@ declare interface SSIS_Integration_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Execution_Type__c: string;
+    Execution_Type__c?: string;
     /**
      * <h3><b>Finish time</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,12 +61,12 @@ declare interface SSIS_Integration_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Finish_time__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Finish_time__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,7 +77,7 @@ declare interface SSIS_Integration_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Source__c: string;
+    Source__c?: string;
     /**
      * <h3><b>SSIS Application Execution Instance Id</b></h3>
      * <p>The unique Identifier for the SSIS integration job.</p>
@@ -89,11 +89,11 @@ declare interface SSIS_Integration_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    SSIS_Application_Execution_Instance_Id__c: number;
+    SSIS_Application_Execution_Instance_Id__c?: number;
     /**
      * The reciprocal relationship for {@link SSIS_Integration_Task_Log__c.SSIS_Integration_Log__c}.
      */
-    SSIS_Integraiton_Task_Logs__r: SSIS_Integration_Task_Log__c[];
+    SSIS_Integraiton_Task_Logs__r?: SSIS_Integration_Task_Log__c[];
     /**
      * <h3><b>Start time</b></h3>
      * <h4>Field Attributes</h4>
@@ -103,7 +103,7 @@ declare interface SSIS_Integration_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Start_time__c: string;
+    Start_time__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <p>The status of the integrationjob. Running, finished, failed.....</p>
@@ -115,5 +115,5 @@ declare interface SSIS_Integration_Log__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
 }

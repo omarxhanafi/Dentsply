@@ -432,6 +432,12 @@ declare module "@salesforce/schema/Product2.Description" {
     export default Description;
 }
 
+declare module "@salesforce/schema/Product2.DestinationProduct" {
+    import { FieldId } from "@salesforce/schema";
+    const DestinationProduct: FieldId;
+    export default DestinationProduct;
+}
+
 declare module "@salesforce/schema/Product2.Dimensions__r" {
     import { FieldId } from "@salesforce/schema";
     const Dimensions__r: FieldId;
@@ -580,6 +586,12 @@ declare module "@salesforce/schema/Product2.FlowOrchestrationWorkItems" {
     import { FieldId } from "@salesforce/schema";
     const FlowOrchestrationWorkItems: FieldId;
     export default FlowOrchestrationWorkItems;
+}
+
+declare module "@salesforce/schema/Product2.FulfillmentAssets" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentAssets: FieldId;
+    export default FulfillmentAssets;
 }
 
 declare module "@salesforce/schema/Product2.FulfillmentOrderLineItems" {
@@ -760,6 +772,12 @@ declare module "@salesforce/schema/Product2.Legacy_System_ID__c" {
     import { FieldId } from "@salesforce/schema";
     const Legacy_System_ID__c: FieldId;
     export default Legacy_System_ID__c;
+}
+
+declare module "@salesforce/schema/Product2.LinkedArticles" {
+    import { FieldId } from "@salesforce/schema";
+    const LinkedArticles: FieldId;
+    export default LinkedArticles;
 }
 
 declare module "@salesforce/schema/Product2.LinkedEntity" {
@@ -1128,6 +1146,12 @@ declare module "@salesforce/schema/Product2.ProductDisqualifications" {
     export default ProductDisqualifications;
 }
 
+declare module "@salesforce/schema/Product2.ProductFulfillmentScenarios" {
+    import { FieldId } from "@salesforce/schema";
+    const ProductFulfillmentScenarios: FieldId;
+    export default ProductFulfillmentScenarios;
+}
+
 declare module "@salesforce/schema/Product2.ProductItems" {
     import { FieldId } from "@salesforce/schema";
     const ProductItems: FieldId;
@@ -1174,6 +1198,12 @@ declare module "@salesforce/schema/Product2.ProductTransfers" {
     import { FieldId } from "@salesforce/schema";
     const ProductTransfers: FieldId;
     export default ProductTransfers;
+}
+
+declare module "@salesforce/schema/Product2.ProductUsageGrants" {
+    import { FieldId } from "@salesforce/schema";
+    const ProductUsageGrants: FieldId;
+    export default ProductUsageGrants;
 }
 
 declare module "@salesforce/schema/Product2.ProductWarrantyTermProducts" {
@@ -1288,6 +1318,18 @@ declare module "@salesforce/schema/Product2.RecordTypeId" {
     import { FieldId } from "@salesforce/schema";
     const RecordTypeId: FieldId;
     export default RecordTypeId;
+}
+
+declare module "@salesforce/schema/Product2.ReferenceEntityAsyncOperationTrackers" {
+    import { FieldId } from "@salesforce/schema";
+    const ReferenceEntityAsyncOperationTrackers: FieldId;
+    export default ReferenceEntityAsyncOperationTrackers;
+}
+
+declare module "@salesforce/schema/Product2.ReferenceEntityRevenueAsyncOperations" {
+    import { FieldId } from "@salesforce/schema";
+    const ReferenceEntityRevenueAsyncOperations: FieldId;
+    export default ReferenceEntityRevenueAsyncOperations;
 }
 
 declare module "@salesforce/schema/Product2.Refined_pricebook_items__r" {
@@ -1458,6 +1500,12 @@ declare module "@salesforce/schema/Product2.SobjectLookupValue" {
     export default SobjectLookupValue;
 }
 
+declare module "@salesforce/schema/Product2.SourceProduct" {
+    import { FieldId } from "@salesforce/schema";
+    const SourceProduct: FieldId;
+    export default SourceProduct;
+}
+
 declare module "@salesforce/schema/Product2.SourceSystemName__c" {
     import { FieldId } from "@salesforce/schema";
     const SourceSystemName__c: FieldId;
@@ -1524,6 +1572,18 @@ declare module "@salesforce/schema/Product2.Tasks" {
     export default Tasks;
 }
 
+declare module "@salesforce/schema/Product2.TaxPolicy" {
+    import { FieldId } from "@salesforce/schema";
+    const TaxPolicy: FieldId;
+    export default TaxPolicy;
+}
+
+declare module "@salesforce/schema/Product2.TaxPolicyId" {
+    import { FieldId } from "@salesforce/schema";
+    const TaxPolicyId: FieldId;
+    export default TaxPolicyId;
+}
+
 declare module "@salesforce/schema/Product2.Tooth_Cabinet_Products__r" {
     import { FieldId } from "@salesforce/schema";
     const Tooth_Cabinet_Products__r: FieldId;
@@ -1564,6 +1624,18 @@ declare module "@salesforce/schema/Product2.UpgradeSources__r" {
     import { FieldId } from "@salesforce/schema";
     const UpgradeSources__r: FieldId;
     export default UpgradeSources__r;
+}
+
+declare module "@salesforce/schema/Product2.UsageModelType" {
+    import { FieldId } from "@salesforce/schema";
+    const UsageModelType: FieldId;
+    export default UsageModelType;
+}
+
+declare module "@salesforce/schema/Product2.UsageResources" {
+    import { FieldId } from "@salesforce/schema";
+    const UsageResources: FieldId;
+    export default UsageResources;
 }
 
 declare module "@salesforce/schema/Product2.UserRecordAccess" {

@@ -2,14 +2,14 @@
 
 declare interface ResourceAbsenceHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ResourceAbsence: ResourceAbsence;
-    ResourceAbsenceId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ResourceAbsence?: ResourceAbsence;
+    ResourceAbsenceId?: string;
 }

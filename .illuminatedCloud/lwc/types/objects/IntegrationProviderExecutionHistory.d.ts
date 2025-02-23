@@ -2,14 +2,14 @@
 
 declare interface IntegrationProviderExecutionHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IntegrationProviderExecution: IntegrationProviderExecution;
-    IntegrationProviderExecutionId: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IntegrationProviderExecution?: IntegrationProviderExecution;
+    IntegrationProviderExecutionId?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

@@ -14,7 +14,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,7 +23,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>ERP Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,7 +34,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Account_No__c: string;
+    Account_Account_No__c?: string;
     /**
      * <h3><b>Article (SKU)</b></h3>
      * <h4>Field Attributes</h4>
@@ -46,7 +46,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article__c: string;
+    Article__c?: string;
     /**
      * <h3><b>Article Description OLD</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,7 +57,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article_Description_OLD__c: string;
+    Article_Description_OLD__c?: string;
     /**
      * <h3><b>Atlantis Interface</b></h3>
      * <p>This field shows Attr 4 (Implant type) for the Atlantis abutment</p>
@@ -69,7 +69,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Atlantis_Interface_D__c: string;
+    Atlantis_Interface_D__c?: string;
     /**
      * <h3><b>Scanner Brand</b></h3>
      * <p>This field is integrated with Atlantis Attrb 5 (Scanner ID)</p>
@@ -81,7 +81,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Atlantis_Scanner_Brand_D__c: string;
+    Atlantis_Scanner_Brand_D__c?: string;
     /**
      * <h3><b>AWO Case No</b></h3>
      * <p>This fields shows the EXPECTED AWO-case number. This fields is created from the Order number on ALL Atlantis sales, which means that it can be created from sales not entered in AWO.</p>
@@ -94,7 +94,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AWO_Case_No_D__c: string;
+    AWO_Case_No_D__c?: string;
     /**
      * <h3><b>AWO-Link</b></h3>
      * <p>Opens the Order in AWO</p>
@@ -107,7 +107,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AWO_Link__c: string;
+    AWO_Link__c?: string;
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -119,7 +119,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Brand__c: string;
+    Brand__c?: string;
     /**
      * <h3><b>Business Area Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -131,7 +131,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Business_Area_Code__c: string;
+    Business_Area_Code__c?: string;
     /**
      * <h3><b>Campaign Code</b></h3>
      * <p>This field is integrated from Movex field &#39;Campaign Code&#39; (Stat.1.Code). In Movex, a value is set on the Invoice level, which means that all invoice lines/ Sales history records with the corresponding invoice number always contain this code.</p>
@@ -143,7 +143,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Code__c: string;
+    Campaign_Code__c?: string;
     /**
      * <h3><b>Country code</b></h3>
      * <h4>Field Attributes</h4>
@@ -155,10 +155,10 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_code__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country_code__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Customer Order Number</b></h3>
      * <p>This is the customer&#39; order number.</p>
@@ -170,7 +170,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Order_Number__c: string;
+    Customer_Order_Number__c?: string;
     /**
      * <h3><b>Discount Model</b></h3>
      * <h4>Field Attributes</h4>
@@ -181,7 +181,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Model__c: string;
+    Discount_Model__c?: string;
     /**
      * <h3><b>Free Prod</b></h3>
      * <h4>Field Attributes</h4>
@@ -193,7 +193,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Free_Prod__c: string;
+    Free_Prod__c?: string;
     /**
      * <h3><b>GDW Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -204,7 +204,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    GDWUniqueKey__c: string;
+    GDWUniqueKey__c?: string;
     /**
      * <h3><b>Implant Manufacturer</b></h3>
      * <h4>Field Attributes</h4>
@@ -215,7 +215,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_system__c: string;
+    Implant_system__c?: string;
     /**
      * <h3><b>Internal Order? (for analysis only)</b></h3>
      * <p>For analysis only, should not appear in any page layouts or search criterias if you are not a System administrator. The number 1 should appear if the order type is marked as an internal order type, else 0</p>
@@ -228,7 +228,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Internal_Order_for_analysis_only__c: number;
+    Internal_Order_for_analysis_only__c?: number;
     /**
      * <h3><b>Invoice Date +1Y</b></h3>
      * <p>The invoice date plus one year. Used for comparision of YTD and LYTD sales figures. For analysis only</p>
@@ -240,7 +240,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Date_1Y__c: Date;
+    Invoice_Date_1Y__c?: Date;
     /**
      * <h3><b>Invoice Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -250,7 +250,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Date__c: Date;
+    Invoice_Date__c?: Date;
     /**
      * <h3><b>Invoice Month</b></h3>
      * <h4>Field Attributes</h4>
@@ -262,7 +262,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Month__c: string;
+    Invoice_Month__c?: string;
     /**
      * <h3><b>Invoice Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -273,7 +273,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Number__c: string;
+    Invoice_Number__c?: string;
     /**
      * <h3><b>Invoice Year</b></h3>
      * <p>The Year when the Invoice is placed. For analysis</p>
@@ -286,8 +286,8 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Year__c: string;
-    IsDeleted: boolean;
+    Invoice_Year__c?: string;
+    IsDeleted?: boolean;
     /**
      * <h3><b>Atlantis™ Lab-based scanning</b></h3>
      * <h4>Field Attributes</h4>
@@ -299,10 +299,10 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lab_based_Scanning__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Lab_based_Scanning__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Lot Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -313,7 +313,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lot_Number__c: string;
+    Lot_Number__c?: string;
     /**
      * <h3><b>Moving Annual Total</b></h3>
      * <h4>Field Attributes</h4>
@@ -325,7 +325,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Moving_Annual_Total__c: string;
+    Moving_Annual_Total__c?: string;
     /**
      * <h3><b>Is My Sales?</b></h3>
      * <p>If this field shows a &quot;YES&quot; = My sales, otherwise &quot;NO&quot;. Use this field for filtering and to simulate &quot;My sales&quot; on reports and views</p>
@@ -338,8 +338,8 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    My_Sales__c: string;
-    Name: string;
+    My_Sales__c?: string;
+    Name?: string;
     /**
      * <h3><b>No longer exist in BPW (HQ)</b></h3>
      * <p>Field to be used to identify fields that no longer exist in BPW and therefore should be deleted from SFDC.</p>
@@ -350,7 +350,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    No_longer_exist_in_BPW__c: boolean;
+    No_longer_exist_in_BPW__c?: boolean;
     /**
      * <h3><b>Order Number</b></h3>
      * <p>This is the Astra Tech order number that this row corresponds to. Note that it is not until the article has been invoiced that the sales history record appears in Salesforce.</p>
@@ -362,7 +362,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Number__c: string;
+    Order_Number__c?: string;
     /**
      * <h3><b>Order Type</b></h3>
      * <p>Shows the Order Type</p>
@@ -374,7 +374,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Type__c: string;
+    Order_Type__c?: string;
     /**
      * <h3><b>Order Type Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -385,7 +385,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Type_Description__c: string;
+    Order_Type_Description__c?: string;
     /**
      * <h3><b>Our Reference</b></h3>
      * <p>Our Reference on the Order/Invoice. Comes from the field OREF in Movex</p>
@@ -397,7 +397,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Our_Reference__c: string;
+    Our_Reference__c?: string;
     /**
      * <h3><b>Payer ERP # (JP)</b></h3>
      * <p>Showing the Paying Accounts #.</p>
@@ -409,7 +409,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payer_Movex_D_JP__c: string;
+    Payer_Movex_D_JP__c?: string;
     /**
      * <h3><b>Payer Name (JP)</b></h3>
      * <p>Showing the name of the Paying Account.</p>
@@ -421,7 +421,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payer_Name_D_JP__c: string;
+    Payer_Name_D_JP__c?: string;
     /**
      * <h3><b>Postal Code</b></h3>
      * <p>The postal code of the clinic from where the lab sales is originating. Only used for Dental lab sales</p>
@@ -433,7 +433,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Postal_Code_D_NA__c: string;
+    Postal_Code_D_NA__c?: string;
     /**
      * <h3><b>Prd Grp 2 Article</b></h3>
      * <h4>Field Attributes</h4>
@@ -445,7 +445,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Prd_Grp_2_Article__c: string;
+    Prd_Grp_2_Article__c?: string;
     /**
      * <h3><b>Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -455,7 +455,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price__c: number;
+    Price__c?: number;
     /**
      * <h3><b>Price List Code (JP)</b></h3>
      * <p>Field used in JP to know what price list category was used. Field Price List Description(D-JP) shows the corresponding desciption. Brought over from Movex.
@@ -475,7 +475,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price_List_Code_D_JP__c: string;
+    Price_List_Code_D_JP__c?: string;
     /**
      * <h3><b>Price List Description (JP)</b></h3>
      * <p>Field set by a field update based on field Price List Code. Used in JP only.</p>
@@ -493,7 +493,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other Dealer</code></td><td>Other Dealer</td><td nowrap>true</td></tr>
      * </table>
      */
-    Price_List_Description_D_JP__c: string;
+    Price_List_Description_D_JP__c?: string;
     /**
      * <h3><b>Product Name</b></h3>
      * <p>A lookup field to Product object , we use SFDC ID to update this field</p>
@@ -504,7 +504,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product Name</b></h3>
      * <p>A lookup field to Product object , we use SFDC ID to update this field</p>
@@ -515,7 +515,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__r: Product2;
+    Product__r?: Product2;
     /**
      * <h3><b>Product Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -527,7 +527,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Category__c: string;
+    Product_Category__c?: string;
     /**
      * <h3><b>Product GPP</b></h3>
      * <h4>Field Attributes</h4>
@@ -539,7 +539,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_GPP__c: string;
+    Product_GPP__c?: string;
     /**
      * <h3><b>Product Group 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -551,7 +551,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_1__c: string;
+    Product_Group_1__c?: string;
     /**
      * <h3><b>Product Group 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -563,7 +563,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_2__c: string;
+    Product_Group_2__c?: string;
     /**
      * <h3><b>Product Group 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -575,7 +575,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_3__c: string;
+    Product_Group_3__c?: string;
     /**
      * <h3><b>Product Group 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -587,7 +587,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_4__c: string;
+    Product_Group_4__c?: string;
     /**
      * <h3><b>Product Group 4 Code (HQ)</b></h3>
      * <p>Used only for formulas and RUS fields, avoid using it in reports</p>
@@ -599,7 +599,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_HQ__c: string;
+    Product_Group_HQ__c?: string;
     /**
      * <h3><b>Product Group 4 OLD</b></h3>
      * <h4>Field Attributes</h4>
@@ -611,7 +611,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_OLD__c: string;
+    Product_Group_OLD__c?: string;
     /**
      * <h3><b>Product Line</b></h3>
      * <h4>Field Attributes</h4>
@@ -623,7 +623,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Line__c: string;
+    Product_Line__c?: string;
     /**
      * <h3><b>SBU Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -635,7 +635,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_SBU__c: string;
+    Product_SBU__c?: string;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -646,7 +646,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity__c: number;
+    Quantity__c?: number;
     /**
      * <h3><b>Record Transfered to Another Account?</b></h3>
      * <p>This fields is for checking Data Quality. If this field = &quot;1&quot;, it means that the Movex# doesn&#39;t corresponds and that the sales has been moved to another account (possibly through a merge). This gives errors in the integration.</p>
@@ -659,7 +659,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Record_Transfered_to_Another_Account__c: number;
+    Record_Transfered_to_Another_Account__c?: number;
     /**
      * <h3><b>Remake? (For analysis only)</b></h3>
      * <p>Returns Quantity if this is Invoice line is a Remake or else 0. Used only for Atlantis sales</p>
@@ -672,7 +672,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remake_For_analysis_only__c: number;
+    Remake_For_analysis_only__c?: number;
     /**
      * <h3><b>Sales History External ID</b></h3>
      * <p>Used to get a unique reference number. Based on Invoicenumber(XXXXXX)+Invoice line (YYYY) = XXXXXXYYY. Used for Upserts, should not be visible</p>
@@ -684,7 +684,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_History_External_ID__c: string;
+    Sales_History_External_ID__c?: string;
     /**
      * <h3><b>Sales Owner</b></h3>
      * <p>The Person who should get credit for the sale. Note that if this individual can not be tracked in Salesforce, the owner of the Account will be set as Sales Owner</p>
@@ -695,7 +695,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Owner__c: string;
+    Sales_Owner__c?: string;
     /**
      * <h3><b>Sales Owner</b></h3>
      * <p>The Person who should get credit for the sale. Note that if this individual can not be tracked in Salesforce, the owner of the Account will be set as Sales Owner</p>
@@ -706,7 +706,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Owner__r: User;
+    Sales_Owner__r?: User;
     /**
      * <h3><b>Sales Owner Salesman ID (HQ)</b></h3>
      * <p>Used for verification. Should not appear on any screens</p>
@@ -718,7 +718,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Owner_Salesman_ID_HQ__c: string;
+    Sales_Owner_Salesman_ID_HQ__c?: string;
     /**
      * <h3><b>Total Price (Currency)</b></h3>
      * <h4>Field Attributes</h4>
@@ -729,7 +729,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tot_Price__c: number;
+    Tot_Price__c?: number;
     /**
      * <h3><b>Total Value</b></h3>
      * <p>Total value is a numerice field that is the equivalent to the currency field Total Price. It is used to track local currency or multiple currencies in reports. Should not appear in any page layouts</p>
@@ -742,7 +742,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Value__c: number;
+    Total_Value__c?: number;
     /**
      * <h3><b>Warranty? (For analysis only)</b></h3>
      * <p>Returns Quantity if this is Invoice line is a Warranty or else 0. Used only for Atlantis sales</p>
@@ -755,7 +755,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Warranty_For_analysis_only__c: number;
+    Warranty_For_analysis_only__c?: number;
     /**
      * <h3><b>YrMonth</b></h3>
      * <h4>Field Attributes</h4>
@@ -766,7 +766,7 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    YrMonth__c: string;
+    YrMonth__c?: string;
     /**
      * <h3><b>YTD period</b></h3>
      * <p>This field gets the value YTD(YEAR) - i.e YTD(2009) when the invoice line is within the YTD period. Otherwise it is blank.
@@ -782,5 +782,5 @@ declare interface Internal_Orders__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    YTDperiod__c: string;
+    YTDperiod__c?: string;
 }

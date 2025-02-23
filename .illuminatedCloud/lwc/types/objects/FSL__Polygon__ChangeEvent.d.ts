@@ -2,11 +2,11 @@
 
 declare interface FSL__Polygon__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Color</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface FSL__Polygon__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Color__c: string;
+    FSL__Color__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface FSL__Polygon__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    FSL__Description__c: string;
+    FSL__Description__c?: string;
     /**
      * <h3><b>KML Details</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface FSL__Polygon__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    FSL__KML__c: string;
+    FSL__KML__c?: string;
     /**
      * <h3><b>Service Territory</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface FSL__Polygon__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Service_Territory__c: string;
+    FSL__Service_Territory__c?: string;
     /**
      * <h3><b>Service Territory</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,12 +51,12 @@ declare interface FSL__Polygon__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Service_Territory__r: ServiceTerritory;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    FSL__Service_Territory__r?: ServiceTerritory;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

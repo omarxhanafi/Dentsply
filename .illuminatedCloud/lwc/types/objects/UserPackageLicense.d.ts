@@ -2,15 +2,15 @@
 
 declare interface UserPackageLicense extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    PackageLicense: PackageLicense;
-    PackageLicenseId: string;
-    SystemModstamp: string;
-    User: User;
-    UserId: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    PackageLicense?: PackageLicense;
+    PackageLicenseId?: string;
+    SystemModstamp?: string;
+    User?: User;
+    UserId?: string;
 }

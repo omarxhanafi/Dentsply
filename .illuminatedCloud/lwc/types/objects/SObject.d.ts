@@ -2,5 +2,5 @@
 
 declare interface SObject 
 {
-    Id: string;
+    Id?: string;
 }

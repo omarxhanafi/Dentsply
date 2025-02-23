@@ -2,14 +2,14 @@
 
 declare interface FSL__Optimization_Request_Queue__Share extends SObject 
 {
-    AccessLevel: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Parent: Optimization_Request_Queue__c;
-    ParentId: string;
-    RowCause: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    AccessLevel?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Parent?: Optimization_Request_Queue__c;
+    ParentId?: string;
+    RowCause?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

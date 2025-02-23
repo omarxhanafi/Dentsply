@@ -2,18 +2,18 @@
 
 declare interface OmniSupervisorConfig extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DeveloperName: string;
-    IsDeleted: boolean;
-    IsTimelineHidden: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    OmniSupervisorConfig: OmniSupervisorConfigAction;
-    SkillVisibility: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DeveloperName?: string;
+    IsDeleted?: boolean;
+    IsTimelineHidden?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    OmniSupervisorConfig?: OmniSupervisorConfigAction;
+    SkillVisibility?: string;
+    SystemModstamp?: string;
 }

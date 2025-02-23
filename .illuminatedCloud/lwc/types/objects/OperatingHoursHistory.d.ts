@@ -2,14 +2,14 @@
 
 declare interface OperatingHoursHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    OperatingHours: OperatingHours;
-    OperatingHoursId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    OperatingHours?: OperatingHours;
+    OperatingHoursId?: string;
 }

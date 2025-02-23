@@ -5,9 +5,9 @@
  */
 declare interface geopointe__GP_Schedule_Exception__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface geopointe__GP_Schedule_Exception__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Date__c: Date;
+    geopointe__Date__c?: Date;
     /**
      * <h3><b>End Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface geopointe__GP_Schedule_Exception__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__End_Location__c: Location;
+    geopointe__End_Location__c?: Location;
     /**
      * <h3><b>End Location Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface geopointe__GP_Schedule_Exception__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__End_Location_Name__c: string;
+    geopointe__End_Location_Name__c?: string;
     /**
      * <h3><b>End Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface geopointe__GP_Schedule_Exception__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__End_Time__c: Time;
+    geopointe__End_Time__c?: Time;
     /**
      * <h3><b>RoutePlanner Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,7 +59,7 @@ declare interface geopointe__GP_Schedule_Exception__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__RoutePlanner_Id__c: string;
+    geopointe__RoutePlanner_Id__c?: string;
     /**
      * <h3><b>Start Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface geopointe__GP_Schedule_Exception__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Start_Location__c: Location;
+    geopointe__Start_Location__c?: Location;
     /**
      * <h3><b>Start Location Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -80,7 +80,7 @@ declare interface geopointe__GP_Schedule_Exception__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Start_Location_Name__c: string;
+    geopointe__Start_Location_Name__c?: string;
     /**
      * <h3><b>Start Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,10 +90,10 @@ declare interface geopointe__GP_Schedule_Exception__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Start_Time__c: Time;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__Start_Time__c?: Time;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

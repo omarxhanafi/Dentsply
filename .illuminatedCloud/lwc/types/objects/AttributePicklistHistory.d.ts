@@ -2,14 +2,14 @@
 
 declare interface AttributePicklistHistory extends SObject 
 {
-    AttributePicklist: AttributePicklist;
-    AttributePicklistId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    AttributePicklist?: AttributePicklist;
+    AttributePicklistId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

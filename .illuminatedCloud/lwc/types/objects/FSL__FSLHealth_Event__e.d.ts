@@ -5,10 +5,10 @@
  */
 declare interface FSL__FSLHealth_Event__e extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
     /**
      * <h3><b>json</b></h3>
      * <h4>Field Attributes</h4>
@@ -16,7 +16,7 @@ declare interface FSL__FSLHealth_Event__e extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    FSL__json__c: string;
+    FSL__json__c?: string;
     /**
      * <h3><b>Test Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface FSL__FSLHealth_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Test_Status__c: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    FSL__Test_Status__c?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

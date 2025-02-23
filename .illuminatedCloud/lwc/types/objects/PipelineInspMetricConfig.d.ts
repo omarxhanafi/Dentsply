@@ -2,18 +2,18 @@
 
 declare interface PipelineInspMetricConfig extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DeveloperName: string;
-    IsCumulative: boolean;
-    IsDeleted: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Localization: PipelineInspMetricConfigLocalization[];
-    MasterLabel: string;
-    Metric: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DeveloperName?: string;
+    IsCumulative?: boolean;
+    IsDeleted?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Localization?: PipelineInspMetricConfigLocalization[];
+    MasterLabel?: string;
+    Metric?: string;
+    SystemModstamp?: string;
 }

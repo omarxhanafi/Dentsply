@@ -21,7 +21,7 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dealer</code></td><td>Dealer</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    AssignOwnerFrom__c: string;
+    AssignOwnerFrom__c?: string;
     /**
      * <h3><b>Brands List</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    BrandsList__c: string;
+    BrandsList__c?: string;
     /**
      * <h3><b>Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,7 +56,7 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Digital Services</code></td><td>Digital Services</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
+    Category__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -323,7 +323,7 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZW</code></td><td>ZW</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Dealer/Distributor is Mandatory</b></h3>
      * <h4>Field Attributes</h4>
@@ -332,7 +332,7 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Dealer_Distributor_is_Mandatory__c: boolean;
+    Dealer_Distributor_is_Mandatory__c?: boolean;
     /**
      * <h3><b>Default Campaign Owner Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -343,7 +343,7 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DefaultCampaignOwner__c: string;
+    DefaultCampaignOwner__c?: string;
     /**
      * <h3><b>Default Lead Owner Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -354,7 +354,7 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DefaultLeadOwner__c: string;
+    DefaultLeadOwner__c?: string;
     /**
      * <h3><b>Default Procedure Tracker Owner Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -365,8 +365,8 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DefaultProcedureTrackerOwnerId__c: string;
-    DeveloperName: string;
+    DefaultProcedureTrackerOwnerId__c?: string;
+    DeveloperName?: string;
     /**
      * <h3><b>IsTest</b></h3>
      * <h4>Field Attributes</h4>
@@ -375,12 +375,12 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    IsTest__c: boolean;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    IsTest__c?: boolean;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Show Dealer/Distributor Search</b></h3>
      * <h4>Field Attributes</h4>
@@ -389,7 +389,7 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    ShowDistributor__c: boolean;
+    ShowDistributor__c?: boolean;
     /**
      * <h3><b>Show Manual Sales Lead Owner Assignment</b></h3>
      * <p>Control the visibility of the manual assignment field of the owner.</p>
@@ -399,8 +399,8 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ShowManualSalesLeadOwnerAssignment__c: boolean;
-    SystemModstamp: string;
+    ShowManualSalesLeadOwnerAssignment__c?: boolean;
+    SystemModstamp?: string;
     /**
      * <h3><b>User Roles</b></h3>
      * <h4>Field Attributes</h4>
@@ -411,5 +411,5 @@ declare interface LeadOpportunitySetting__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UserRoles__c: string;
+    UserRoles__c?: string;
 }

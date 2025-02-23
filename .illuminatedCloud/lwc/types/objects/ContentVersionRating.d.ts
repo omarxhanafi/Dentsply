@@ -2,13 +2,13 @@
 
 declare interface ContentVersionRating extends SObject 
 {
-    ContentVersion: ContentVersion;
-    ContentVersionId: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    LastModifiedDate: string;
-    Rating: number;
-    RelatedRecord: FlowRecordRelation;
-    User: User;
-    UserComment: string;
-    UserId: string;
+    ContentVersion?: ContentVersion;
+    ContentVersionId?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    LastModifiedDate?: string;
+    Rating?: number;
+    RelatedRecord?: FlowRecordRelation;
+    User?: User;
+    UserComment?: string;
+    UserId?: string;
 }

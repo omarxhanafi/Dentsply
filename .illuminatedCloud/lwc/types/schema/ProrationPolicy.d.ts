@@ -90,16 +90,34 @@ declare module "@salesforce/schema/ProrationPolicy.Name" {
     export default Name;
 }
 
+declare module "@salesforce/schema/ProrationPolicy.OrderItems" {
+    import { FieldId } from "@salesforce/schema";
+    const OrderItems: FieldId;
+    export default OrderItems;
+}
+
 declare module "@salesforce/schema/ProrationPolicy.ProductSellingModelOptions" {
     import { FieldId } from "@salesforce/schema";
     const ProductSellingModelOptions: FieldId;
     export default ProductSellingModelOptions;
 }
 
+declare module "@salesforce/schema/ProrationPolicy.ProrationPolicy" {
+    import { FieldId } from "@salesforce/schema";
+    const ProrationPolicy: FieldId;
+    export default ProrationPolicy;
+}
+
 declare module "@salesforce/schema/ProrationPolicy.ProrationPolicyType" {
     import { FieldId } from "@salesforce/schema";
     const ProrationPolicyType: FieldId;
     export default ProrationPolicyType;
+}
+
+declare module "@salesforce/schema/ProrationPolicy.QuoteLineItems" {
+    import { FieldId } from "@salesforce/schema";
+    const QuoteLineItems: FieldId;
+    export default QuoteLineItems;
 }
 
 declare module "@salesforce/schema/ProrationPolicy.RelatedRecord" {

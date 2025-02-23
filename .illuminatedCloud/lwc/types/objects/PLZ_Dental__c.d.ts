@@ -15,7 +15,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AM__c: string;
+    AM__c?: string;
     /**
      * <h3><b>AM</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AM__r: User;
+    AM__r?: User;
     /**
      * <h3><b>Area</b></h3>
      * <p>Area in der die PLZ liegt</p>
@@ -37,7 +37,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Area__c: string;
+    Area__c?: string;
     /**
      * <h3><b>City or Countryside</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    City_or_Country__c: string;
+    City_or_Country__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,10 +59,10 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Gebiet clinical</b></h3>
      * <p>Gebiet (clinical) in der die PLZ liegt</p>
@@ -74,7 +74,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Gebiet_clinical__c: string;
+    Gebiet_clinical__c?: string;
     /**
      * <h3><b>Gebiet digital</b></h3>
      * <p>Gebiet (digital) in der die PLZ liegt</p>
@@ -86,7 +86,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Gebiet_digital__c: string;
+    Gebiet_digital__c?: string;
     /**
      * <h3><b>Gebiet Simplant</b></h3>
      * <p>Gebiet (Simplant) in der die PLZ liegt</p>
@@ -98,7 +98,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Gebiet_Simplant__c: string;
+    Gebiet_Simplant__c?: string;
     /**
      * <h3><b>GVL clinical</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,7 +108,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GVL_clinical__c: string;
+    GVL_clinical__c?: string;
     /**
      * <h3><b>GVL clinical</b></h3>
      * <h4>Field Attributes</h4>
@@ -118,7 +118,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GVL_clinical__r: User;
+    GVL_clinical__r?: User;
     /**
      * <h3><b>GVL digital</b></h3>
      * <h4>Field Attributes</h4>
@@ -128,7 +128,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GVL_digital__c: string;
+    GVL_digital__c?: string;
     /**
      * <h3><b>GVL digital</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,7 +138,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GVL_digital__r: User;
+    GVL_digital__r?: User;
     /**
      * <h3><b>GVL Simplant</b></h3>
      * <h4>Field Attributes</h4>
@@ -148,7 +148,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GVL_Simplant__c: string;
+    GVL_Simplant__c?: string;
     /**
      * <h3><b>GVL Simplant</b></h3>
      * <h4>Field Attributes</h4>
@@ -158,11 +158,11 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GVL_Simplant__r: User;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    GVL_Simplant__r?: User;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Movex Gebiet</b></h3>
      * <p>Gibt die Movex Gebietsnummer der PLZ an</p>
@@ -174,7 +174,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Gebiet__c: string;
+    Movex_Gebiet__c?: string;
     /**
      * <h3><b>Movex ID</b></h3>
      * <p>Gibt die Movex Verkäufer ID der PLZ an</p>
@@ -186,8 +186,8 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_ID__c: string;
-    Name: string;
+    Movex_ID__c?: string;
+    Name?: string;
     /**
      * <h3><b>Region</b></h3>
      * <p>Region in der die PLZ liegt</p>
@@ -199,7 +199,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Region__c: string;
+    Region__c?: string;
     /**
      * <h3><b>RVL</b></h3>
      * <h4>Field Attributes</h4>
@@ -209,7 +209,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RVL__c: string;
+    RVL__c?: string;
     /**
      * <h3><b>RVL</b></h3>
      * <h4>Field Attributes</h4>
@@ -219,7 +219,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RVL__r: User;
+    RVL__r?: User;
     /**
      * <h3><b>Telefon AM</b></h3>
      * <h4>Field Attributes</h4>
@@ -229,7 +229,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Telefon_AM__c: string;
+    Telefon_AM__c?: string;
     /**
      * <h3><b>Telefon GVL clinical</b></h3>
      * <h4>Field Attributes</h4>
@@ -239,7 +239,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Telefon_GVL_clinical__c: string;
+    Telefon_GVL_clinical__c?: string;
     /**
      * <h3><b>Telefon GVL digital</b></h3>
      * <h4>Field Attributes</h4>
@@ -249,7 +249,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Telefon_GVL_digital__c: string;
+    Telefon_GVL_digital__c?: string;
     /**
      * <h3><b>Telefon GVL Simplant</b></h3>
      * <h4>Field Attributes</h4>
@@ -259,7 +259,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Telefon_GVL_Simplant__c: string;
+    Telefon_GVL_Simplant__c?: string;
     /**
      * <h3><b>Telefon RVL</b></h3>
      * <h4>Field Attributes</h4>
@@ -269,7 +269,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Telefon_RVL__c: string;
+    Telefon_RVL__c?: string;
     /**
      * <h3><b>Vertretung</b></h3>
      * <h4>Field Attributes</h4>
@@ -279,7 +279,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Vertretung__c: boolean;
+    Vertretung__c?: boolean;
     /**
      * <h3><b>Vertretung AM</b></h3>
      * <h4>Field Attributes</h4>
@@ -289,7 +289,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Vertretung_AM__c: boolean;
+    Vertretung_AM__c?: boolean;
     /**
      * <h3><b>Vertretung GVL clinical</b></h3>
      * <h4>Field Attributes</h4>
@@ -299,7 +299,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Vertretung_GVL_clinical__c: boolean;
+    Vertretung_GVL_clinical__c?: boolean;
     /**
      * <h3><b>Vertretung GVL digital</b></h3>
      * <h4>Field Attributes</h4>
@@ -309,7 +309,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Vertretung_GVL_digital__c: boolean;
+    Vertretung_GVL_digital__c?: boolean;
     /**
      * <h3><b>Vertretung GVL Simplant</b></h3>
      * <h4>Field Attributes</h4>
@@ -319,7 +319,7 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Vertretung_GVL_Simplant__c: boolean;
+    Vertretung_GVL_Simplant__c?: boolean;
     /**
      * <h3><b>Vertretung RVL</b></h3>
      * <h4>Field Attributes</h4>
@@ -329,5 +329,5 @@ declare interface PLZ_Dental__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Vertretung_RVL__c: boolean;
+    Vertretung_RVL__c?: boolean;
 }

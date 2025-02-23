@@ -2,14 +2,14 @@
 
 declare interface ProductTransferHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ProductTransfer: ProductTransfer;
-    ProductTransferId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ProductTransfer?: ProductTransfer;
+    ProductTransferId?: string;
 }

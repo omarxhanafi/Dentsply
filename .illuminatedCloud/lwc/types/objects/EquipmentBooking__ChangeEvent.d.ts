@@ -11,7 +11,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <p>The account related to this booking</p>
@@ -21,7 +21,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Additional Products</b></h3>
      * <p>Copied from Product Items and can be adjusted manually</p>
@@ -30,7 +30,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    AdditionalProducts__c: string;
+    AdditionalProducts__c?: string;
     /**
      * <h3><b>Asset</b></h3>
      * <p>Used only for Loan equipment. Link the defect device to the request.</p>
@@ -40,7 +40,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Asset__c: string;
+    Asset__c?: string;
     /**
      * <h3><b>Asset</b></h3>
      * <p>Used only for Loan equipment. Link the defect device to the request.</p>
@@ -50,7 +50,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Asset__r: Asset;
+    Asset__r?: Asset;
     /**
      * <h3><b>Billing Type</b></h3>
      * <p>If the loan equipment requires invoice</p>
@@ -67,7 +67,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Courtesy</code></td><td>Courtesy</td><td nowrap>true</td></tr>
      * </table>
      */
-    BillingType__c: string;
+    BillingType__c?: string;
     /**
      * <h3><b>Booking Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,7 +82,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Loan Equipment</code></td><td>Loan Equipment</td><td nowrap>true</td></tr>
      * </table>
      */
-    BookingType__c: string;
+    BookingType__c?: string;
     /**
      * <h3><b>Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case__c: string;
+    Case__c?: string;
     /**
      * <h3><b>Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -100,8 +100,8 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case__r: Case;
-    ChangeEventHeader: ChangeEventHeader;
+    Case__r?: Case;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>City</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    City__c: string;
+    City__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -121,7 +121,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -130,7 +130,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * <h3><b>Contract Returned</b></h3>
      * <h4>Field Attributes</h4>
@@ -139,7 +139,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ContractReturned__c: Date;
+    ContractReturned__c?: Date;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -148,7 +148,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Courier</b></h3>
      * <p>Courier name who is responsible for shipping</p>
@@ -170,11 +170,11 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">TOT TERRENY</code></td><td>TOT TERRENY</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Courier__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Courier__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Care Agent</b></h3>
      * <p>Refers to Customer Care Agent who is responsible for managing this equipment booking</p>
@@ -184,7 +184,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerCareAgent__c: string;
+    CustomerCareAgent__c?: string;
     /**
      * <h3><b>Customer Care Agent</b></h3>
      * <p>Refers to Customer Care Agent who is responsible for managing this equipment booking</p>
@@ -194,7 +194,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerCareAgent__r: User;
+    CustomerCareAgent__r?: User;
     /**
      * <h3><b>Delivery Date</b></h3>
      * <p>Delivery date for equipment to customer</p>
@@ -204,7 +204,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DeliveryDate__c: string;
+    DeliveryDate__c?: string;
     /**
      * <h3><b>Delivery Tracking Number</b></h3>
      * <p>Tracking number for shipment sent to customer</p>
@@ -216,7 +216,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DeliveryTrackingNumber__c: string;
+    DeliveryTrackingNumber__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -224,7 +224,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Description__c: string;
+    Description__c?: string;
     /**
      * <h3><b>End Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -233,7 +233,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EndDate__c: string;
+    EndDate__c?: string;
     /**
      * <h3><b>Equipment Serial Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -245,7 +245,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EquipmentSerialNumber__c: string;
+    EquipmentSerialNumber__c?: string;
     /**
      * <h3><b>Inventory Item</b></h3>
      * <p>Booked Equipment</p>
@@ -255,7 +255,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    InventoryItem__c: string;
+    InventoryItem__c?: string;
     /**
      * <h3><b>Inventory Item</b></h3>
      * <p>Booked Equipment</p>
@@ -265,10 +265,10 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    InventoryItem__r: ProductItem;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    InventoryItem__r?: ProductItem;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -277,7 +277,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Location__c: string;
+    Location__c?: string;
     /**
      * <h3><b>Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -286,8 +286,8 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Location__r: Location;
-    Name: string;
+    Location__r?: Location;
+    Name?: string;
     /**
      * <h3><b>Order Number (SO)</b></h3>
      * <p>SO/ Order number for repaired equipment</p>
@@ -299,9 +299,9 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrderNumber__c: string;
-    Owner: SObject;
-    OwnerId: string;
+    OrderNumber__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>PDF Bulter Locale</b></h3>
      * <h4>Field Attributes</h4>
@@ -313,7 +313,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PDFBulterLocale__c: string;
+    PDFBulterLocale__c?: string;
     /**
      * <h3><b>PDF Bulter Template</b></h3>
      * <h4>Field Attributes</h4>
@@ -325,7 +325,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PDFBulterTemplate__c: string;
+    PDFBulterTemplate__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -334,7 +334,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -343,9 +343,9 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__r: Product2;
-    RecordType: RecordType;
-    RecordTypeId: string;
+    Product__r?: Product2;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Release Date</b></h3>
      * <p>When the equipment is available in the inventory again.</p>
@@ -355,7 +355,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ReleaseDate__c: string;
+    ReleaseDate__c?: string;
     /**
      * <h3><b>Repaired Equipment Serial Number</b></h3>
      * <p>This will be filled manually by the customer service team</p>
@@ -367,8 +367,8 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RepairedEquipmentSerialNumber__c: string;
-    ReplayId: string;
+    RepairedEquipmentSerialNumber__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Return Date</b></h3>
      * <p>Pickup date of equipment from customer</p>
@@ -378,7 +378,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ReturnDate__c: string;
+    ReturnDate__c?: string;
     /**
      * <h3><b>Return Tracking Number</b></h3>
      * <p>Tracking number for return shipment</p>
@@ -390,7 +390,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ReturnTrackingNumber__c: string;
+    ReturnTrackingNumber__c?: string;
     /**
      * <h3><b>Sales Rep</b></h3>
      * <p>Refers to the Sales Rep who is responsible for managing this equipment booking</p>
@@ -400,7 +400,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesRep__c: string;
+    SalesRep__c?: string;
     /**
      * <h3><b>Sales Rep</b></h3>
      * <p>Refers to the Sales Rep who is responsible for managing this equipment booking</p>
@@ -410,7 +410,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesRep__r: User;
+    SalesRep__r?: User;
     /**
      * <h3><b>Select Delivery Template</b></h3>
      * <h4>Field Attributes</h4>
@@ -433,7 +433,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Spain: Equipment Booking</code></td><td>Spain: Equipment Booking</td><td nowrap>true</td></tr>
      * </table>
      */
-    SelectDeliveryTemplate__c: string;
+    SelectDeliveryTemplate__c?: string;
     /**
      * <h3><b>Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -442,7 +442,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartDate__c: string;
+    StartDate__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -461,7 +461,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Released</code></td><td>Released</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Street Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -472,7 +472,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StreetAddress__c: string;
+    StreetAddress__c?: string;
     /**
      * <h3><b>TF_Booking Period</b></h3>
      * <p>This field is used in PDF Butler to calculate Demo/Loan Period (Difference between Start Date and End Date)</p>
@@ -485,7 +485,7 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TF_BookingPeriod__c: string;
+    TF_BookingPeriod__c?: string;
     /**
      * <h3><b>Zip/Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -496,5 +496,5 @@ declare interface EquipmentBooking__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ZipPostalCode__c: string;
+    ZipPostalCode__c?: string;
 }

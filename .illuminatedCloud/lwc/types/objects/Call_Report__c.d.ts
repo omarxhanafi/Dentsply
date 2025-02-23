@@ -5,7 +5,7 @@
  */
 declare interface Call_Report__c extends SObject 
 {
-    Activities__r: LookedUpFromActivity[];
+    Activities__r?: LookedUpFromActivity[];
     /**
      * <h3><b>Activity Subtype</b></h3>
      * <p>200330 CFE 2.0</p>
@@ -15,7 +15,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ActivitySubtype__c: string;
+    ActivitySubtype__c?: string;
     /**
      * <h3><b>Activity Type</b></h3>
      * <p>200330 CFE 2.0</p>
@@ -25,7 +25,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ActivityType__c: string;
+    ActivityType__c?: string;
     /**
      * <h3><b>Ankylos</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,15 +34,15 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;Ankylos&quot;)</code></td></tr>
      * </table>
      */
-    Ankylos__c: boolean;
+    Ankylos__c?: boolean;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
     /**
      * <h3><b>Assigned To User Country</b></h3>
      * <p>SBU: ALL, Country: All - Not on Page Layout - Set to the User Country of the Assigned To. Used to Control the Values of the Products to report on</p>
@@ -116,7 +116,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vietnam</code></td><td>Vietnam</td><td nowrap>true</td></tr>
      * </table>
      */
-    Assigned_To_User_Country__c: string;
+    Assigned_To_User_Country__c?: string;
     /**
      * <h3><b>Astra Tech Implant System</b></h3>
      * <h4>Field Attributes</h4>
@@ -125,7 +125,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES(Products_discussed_IMPL__c, &quot;Astra Tech Implant System&quot;)</code></td></tr>
      * </table>
      */
-    Astra_Tech_Implant_System__c: boolean;
+    Astra_Tech_Implant_System__c?: boolean;
     /**
      * <h3><b>Astra Tech Implant System EV</b></h3>
      * <h4>Field Attributes</h4>
@@ -134,7 +134,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;Astra Tech Implant System EV&quot;)</code></td></tr>
      * </table>
      */
-    Astra_Tech_Implant_System_EV__c: boolean;
+    Astra_Tech_Implant_System_EV__c?: boolean;
     /**
      * <h3><b>Astra Tech Implant System Profile</b></h3>
      * <h4>Field Attributes</h4>
@@ -143,7 +143,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;Astra Tech Implant System Profile&quot;)</code></td></tr>
      * </table>
      */
-    Astra_Tech_Implant_System_Profile__c: boolean;
+    Astra_Tech_Implant_System_Profile__c?: boolean;
     /**
      * <h3><b>ATLANTIS Abutments</b></h3>
      * <h4>Field Attributes</h4>
@@ -152,7 +152,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;ATLANTIS Abutments&quot;)</code></td></tr>
      * </table>
      */
-    ATLANTIS_Abutments__c: boolean;
+    ATLANTIS_Abutments__c?: boolean;
     /**
      * <h3><b>ATLANTIS ISUS</b></h3>
      * <h4>Field Attributes</h4>
@@ -161,14 +161,14 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;ATLANTIS ISUS&quot;)</code></td></tr>
      * </table>
      */
-    ATLANTIS_ISUS__c: boolean;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ATLANTIS_ISUS__c?: boolean;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Call Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -176,18 +176,18 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    Call_Notes__c: string;
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    Call_Notes__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Course/Event Promotion</b></h3>
      * <p>Highlights that the Sales Reps have discussed courses or events promotion.</p>
@@ -197,7 +197,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CourseOrEventPromotion__c: boolean;
+    CourseOrEventPromotion__c?: boolean;
     /**
      * <h3><b>Courses</b></h3>
      * <h4>Field Attributes</h4>
@@ -206,9 +206,9 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Courses__c: boolean;
-    CreatedBy: User;
-    CreatedById: string;
+    Courses__c?: boolean;
+    CreatedBy?: User;
+    CreatedById?: string;
     /**
      * <h3><b>Created By My Direct Reports</b></h3>
      * <h4>Field Attributes</h4>
@@ -217,17 +217,17 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedBy.ManagerId = $User.Id, True, false)</code></td></tr>
      * </table>
      */
-    CreatedByMyDirectReports__c: boolean;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    CreatedByMyDirectReports__c?: boolean;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * <h3><b>End</b></h3>
      * <p>200331 CFE 2.0</p>
@@ -237,8 +237,8 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EndDateTime__c: string;
-    EngagementInitiatedTopic: EngagementTopic[];
+    EndDateTime__c?: string;
+    EngagementInitiatedTopic?: EngagementTopic[];
     /**
      * <h3><b>Event ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -249,8 +249,8 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Event_ID__c: string;
-    EventRelations: EventRelation[];
+    Event_ID__c?: string;
+    EventRelations?: EventRelation[];
     /**
      * <h3><b>EventWhoIds</b></h3>
      * <p>Test text field to hold EventWhoIds.</p>
@@ -262,10 +262,10 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EventWhoIds__c: string;
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    EventWhoIds__c?: string;
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Frios</b></h3>
      * <h4>Field Attributes</h4>
@@ -274,15 +274,15 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;Frios&quot;)</code></td></tr>
      * </table>
      */
-    Frios__c: boolean;
+    Frios__c?: boolean;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Left a Sample</b></h3>
      * <h4>Field Attributes</h4>
@@ -291,9 +291,9 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Left_Sample__c: boolean;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    Left_Sample__c?: boolean;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Met with Assistant</b></h3>
      * <h4>Field Attributes</h4>
@@ -302,7 +302,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Met_with_Assistant__c: boolean;
+    Met_with_Assistant__c?: boolean;
     /**
      * <h3><b>Met with Decision Maker</b></h3>
      * <h4>Field Attributes</h4>
@@ -311,7 +311,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Met_with_Decision_Maker__c: boolean;
+    Met_with_Decision_Maker__c?: boolean;
     /**
      * <h3><b>MySimplant</b></h3>
      * <h4>Field Attributes</h4>
@@ -320,11 +320,11 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;MySimplant&quot;)</code></td></tr>
      * </table>
      */
-    MySimplant__c: boolean;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    MySimplant__c?: boolean;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>Other SBU discussed</b></h3>
      * <p>SBU: ALL, Country: ALL - Used to capture in the call reporting if also additional SBUs were discussed during the meeting</p>
@@ -348,7 +348,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Imaging Systems</code></td><td>Imaging Systems</td><td nowrap>true</td></tr>
      * </table>
      */
-    Other_SBU_discussed__c: string;
+    Other_SBU_discussed__c?: string;
     /**
      * <h3><b>Other SBU notes</b></h3>
      * <p>SBU: ALL, Country: ALL - Used to capture notes about the other SBU discussed. E.g. if interested in a meeting with Sales Rep from that SBU</p>
@@ -357,7 +357,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Other_SBU_notes__c: string;
+    Other_SBU_notes__c?: string;
     /**
      * <h3><b>Other SBU Products Discussed</b></h3>
      * <h4>Field Attributes</h4>
@@ -372,13 +372,13 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">These should have been loaded in by APEX</code></td><td>These should have been loaded in by APEX</td><td nowrap>true</td></tr>
      * </table>
      */
-    Other_SBU_Products_Discussed__c: string;
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
+    Other_SBU_Products_Discussed__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Placed Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -387,14 +387,14 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Placed_Order__c: boolean;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Placed_Order__c?: boolean;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Product Group</b></h3>
      * <p>200317 CFE 2.0 POC</p>
@@ -404,7 +404,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductGroup__c: string;
+    ProductGroup__c?: string;
     /**
      * <h3><b>Products Discussed</b></h3>
      * <h4>Field Attributes</h4>
@@ -419,7 +419,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">These should have been loaded in by APEX</code></td><td>These should have been loaded in by APEX</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_Discussed__c: string;
+    Products_Discussed__c?: string;
     /**
      * <h3><b>Products discussed (CDCM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -464,6 +464,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core</code></td><td>DS Core</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Care</code></td><td>DS Core Care</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Create</code></td><td>DS Core Create</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Enterprise</code></td><td>DS Core Enterprise</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">inEoS X5</code></td><td>inEoS X5</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">inFire HTC</code></td><td>inFire HTC</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">inFire Speed</code></td><td>inFire Speed</td><td nowrap>true</td></tr>
@@ -494,7 +495,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SW</code></td><td>SW</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_CDCM__c: string;
+    Products_discussed_CDCM__c?: string;
     /**
      * <h3><b>Products discussed (ENDO)</b></h3>
      * <p>SBU: Endodontics, Countries: All - Used for call reporting of products. Controlled by VF to show on page layout if SBU= Endodontics</p>
@@ -614,7 +615,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">X-Smart Pro+</code></td><td>X-Smart Pro+</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_ENDO__c: string;
+    Products_discussed_ENDO__c?: string;
     /**
      * <h3><b>Products discussed (IMAG)</b></h3>
      * <h4>Field Attributes</h4>
@@ -689,7 +690,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XIOS XG Sensor</code></td><td>XIOS XG Sensor</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_IMAG__c: string;
+    Products_discussed_IMAG__c?: string;
     /**
      * <h3><b>Products discussed (IMPL)</b></h3>
      * <p>SBU: Implants, Countries: All - Used for call reporting of products. Controlled by VF to show on page layout if SBU= Implants</p>
@@ -767,7 +768,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XiVE</code></td><td>XiVE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_IMPL__c: string;
+    Products_discussed_IMPL__c?: string;
     /**
      * <h3><b>Products discussed (INST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -822,7 +823,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">T4 Line</code></td><td>T4 Line</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_INST__c: string;
+    Products_discussed_INST__c?: string;
     /**
      * <h3><b>Products discussed (ORTH)</b></h3>
      * <p>SBU: Orthodontics, Countries: All - Used for call reporting of products. Controlled by VF to show on page layout if SBU= Orthodontics</p>
@@ -970,7 +971,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zirbra</code></td><td>Zirbra</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_ORTH__c: string;
+    Products_discussed_ORTH__c?: string;
     /**
      * <h3><b>Products discussed (PREV)</b></h3>
      * <p>SBU: Preventive, Countries: All - Used for call reporting of products. Controlled by VF to show on page layout if SBU= Preventive</p>
@@ -1024,7 +1025,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">X-Ray</code></td><td>X-Ray</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_PREV__c: string;
+    Products_discussed_PREV__c?: string;
     /**
      * <h3><b>Products discussed (PROS)</b></h3>
      * <p>SBU: Prosthetics, Countries: All - Used for call reporting of products. Controlled by VF to show on page layout if SBU= Prosthetics</p>
@@ -1060,6 +1061,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Cercon kiss</code></td><td>Cercon kiss</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Cercon xt</code></td><td>Cercon xt</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Cercon xt ML</code></td><td>Cercon xt ML</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CEREC Cercon 4D Abutment</code></td><td>CEREC Cercon 4D Abutment</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CEREC Tessera</code></td><td>CEREC Tessera</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Consumables lab</code></td><td>Consumables lab</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Crown & Bridge</code></td><td>Crown &amp; Bridge</td><td nowrap>true</td></tr>
@@ -1125,7 +1127,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vulcan</code></td><td>Vulcan</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_PROS__c: string;
+    Products_discussed_PROS__c?: string;
     /**
      * <h3><b>Products discussed (REST)</b></h3>
      * <p>SBU: Restorative, Countries: All - Used for call reporting of products. Controlled by VF to show on page layout if SBU= Restorative</p>
@@ -1194,6 +1196,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Prime & Bond ACTIVE</code></td><td>Prime &amp; Bond ACTIVE</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Prime&Bond NT</code></td><td>Prime&amp;Bond NT</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Promix one</code></td><td>Promix one</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quixfil</code></td><td>Quixfil</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">RD1141 - Prime&Bond NT</code></td><td>RD1141 - Prime&amp;Bond NT</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">RD1146 - Prime&Bond XP</code></td><td>RD1146 - Prime&amp;Bond XP</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">RD1163 - XENO V</code></td><td>RD1163 - XENO V</td><td nowrap>true</td></tr>
@@ -1233,7 +1236,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zhermack - Occlufast Rock</code></td><td>Zhermack - Occlufast Rock</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_REST__c: string;
+    Products_discussed_REST__c?: string;
     /**
      * <h3><b>Products discussed (TRCE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1264,29 +1267,29 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Teneo</code></td><td>Teneo</td><td nowrap>true</td></tr>
      * </table>
      */
-    Products_discussed_TRCE__c: string;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    Products_discussed_TRCE__c?: string;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RecordType: RecordType;
-    RecordTypeId: string;
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: Call_Report__Share[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: Call_Report__Share[];
     /**
      * <h3><b>SIMPLANT Hardware</b></h3>
      * <h4>Field Attributes</h4>
@@ -1295,7 +1298,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;SIMPLANT Hardware&quot;)</code></td></tr>
      * </table>
      */
-    SIMPLANT_Hardware__c: boolean;
+    SIMPLANT_Hardware__c?: boolean;
     /**
      * <h3><b>SIMPLANT Software</b></h3>
      * <h4>Field Attributes</h4>
@@ -1304,8 +1307,8 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;SIMPLANT Software&quot;)</code></td></tr>
      * </table>
      */
-    SIMPLANT_Software__c: boolean;
-    SobjectLookupValue: AIInsightValue;
+    SIMPLANT_Software__c?: boolean;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Start</b></h3>
      * <p>200324 test start datetime field to be used to populate Event.StartDateTime</p>
@@ -1315,7 +1318,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartDateTime__c: string;
+    StartDateTime__c?: string;
     /**
      * <h3><b>Subject</b></h3>
      * <p>TFUS-000002466</p>
@@ -1327,7 +1330,7 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Subject__c: string;
+    Subject__c?: string;
     /**
      * <h3><b>Symbios</b></h3>
      * <h4>Field Attributes</h4>
@@ -1336,14 +1339,14 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;Symbios&quot;)</code></td></tr>
      * </table>
      */
-    Symbios__c: boolean;
-    SystemModstamp: string;
-    Tags: Call_Report__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    Symbios__c?: boolean;
+    SystemModstamp?: string;
+    Tags?: Call_Report__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>track event</b></h3>
      * <p>can be used to track events individually by country</p>
@@ -1353,12 +1356,12 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    track_event__c: boolean;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    track_event__c?: boolean;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
+    VideoRelatedRecords?: VideoCall[];
     /**
      * <h3><b>WeldOne</b></h3>
      * <h4>Field Attributes</h4>
@@ -1367,12 +1370,12 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;WeldOne&quot;)</code></td></tr>
      * </table>
      */
-    WeldOne__c: boolean;
-    What: EventChangeEvent;
+    WeldOne__c?: boolean;
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
     /**
      * <h3><b>XiVE</b></h3>
      * <h4>Field Attributes</h4>
@@ -1381,5 +1384,5 @@ declare interface Call_Report__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">INCLUDES( Products_discussed_IMPL__c , &quot;XiVE&quot;)</code></td></tr>
      * </table>
      */
-    XiVE__c: boolean;
+    XiVE__c?: boolean;
 }

@@ -12,7 +12,7 @@ declare interface CIMNote__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,22 +20,22 @@ declare interface CIMNote__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>CIM ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -46,20 +46,20 @@ declare interface CIMNote__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CIMID__c: string;
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    CIMID__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
     /**
      * <h3><b>Created by in CIM</b></h3>
      * <h4>Field Attributes</h4>
@@ -67,8 +67,8 @@ declare interface CIMNote__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1000)</td></tr>
      * </table>
      */
-    CreatedByInCIM__c: string;
-    CreatedDate: string;
+    CreatedByInCIM__c?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Created date in CIM</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,33 +77,33 @@ declare interface CIMNote__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CreatedDateInCIM__c: string;
-    CurrencyIsoCode: string;
+    CreatedDateInCIM__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
     /**
      * <h3><b>Note</b></h3>
      * <h4>Field Attributes</h4>
@@ -111,55 +111,55 @@ declare interface CIMNote__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Note__c: string;
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Note__c?: string;
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: CIMNote__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: CIMNote__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

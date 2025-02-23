@@ -5,9 +5,9 @@
  */
 declare interface geopointe__GP_Route_Plan_User__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Route Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface geopointe__GP_Route_Plan_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Route_Plan__c: string;
+    geopointe__Route_Plan__c?: string;
     /**
      * <h3><b>Route Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface geopointe__GP_Route_Plan_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Route_Plan__r: geopointe__GP_Route_Plan__c;
+    geopointe__Route_Plan__r?: geopointe__GP_Route_Plan__c;
     /**
      * <h3><b>Route Plan Configuration</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface geopointe__GP_Route_Plan_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Route_Plan_Configuration__c: string;
+    geopointe__Route_Plan_Configuration__c?: string;
     /**
      * <h3><b>Route Plan Configuration</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface geopointe__GP_Route_Plan_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Route_Plan_Configuration__r: geopointe__GP_Route_Plan_Configuration__c;
+    geopointe__Route_Plan_Configuration__r?: geopointe__GP_Route_Plan_Configuration__c;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface geopointe__GP_Route_Plan_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__User__c: string;
+    geopointe__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -65,10 +65,10 @@ declare interface geopointe__GP_Route_Plan_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__User__r: User;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__User__r?: User;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

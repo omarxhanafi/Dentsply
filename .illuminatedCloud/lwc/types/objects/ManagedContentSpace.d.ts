@@ -2,22 +2,22 @@
 
 declare interface ManagedContentSpace extends SObject 
 {
-    ApiName: string;
-    AuthoredManagedContentSpace: ManagedContent;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DefaultLanguage: string;
-    Description: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    Name: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    ApiName?: string;
+    AuthoredManagedContentSpace?: ManagedContent;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DefaultLanguage?: string;
+    Description?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    Name?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
 }

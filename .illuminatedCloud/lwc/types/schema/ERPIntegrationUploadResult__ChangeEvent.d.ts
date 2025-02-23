@@ -36,28 +36,16 @@ declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.Curre
     export default CurrencyIsoCode;
 }
 
-declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.DataFlowName__c" {
+declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.ERPIntegrationDataFlowRun__c" {
     import { FieldId } from "@salesforce/schema";
-    const DataFlowName__c: FieldId;
-    export default DataFlowName__c;
+    const ERPIntegrationDataFlowRun__c: FieldId;
+    export default ERPIntegrationDataFlowRun__c;
 }
 
-declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.Error__c" {
+declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.ERPIntegrationDataFlowRun__r" {
     import { FieldId } from "@salesforce/schema";
-    const Error__c: FieldId;
-    export default Error__c;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.ExecutionID__c" {
-    import { FieldId } from "@salesforce/schema";
-    const ExecutionID__c: FieldId;
-    export default ExecutionID__c;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.ExternalID__c" {
-    import { FieldId } from "@salesforce/schema";
-    const ExternalID__c: FieldId;
-    export default ExternalID__c;
+    const ERPIntegrationDataFlowRun__r: FieldId;
+    export default ERPIntegrationDataFlowRun__r;
 }
 
 declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.Id" {
@@ -84,46 +72,16 @@ declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.LastM
     export default LastModifiedDate;
 }
 
-declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.LogicAppURL__c" {
-    import { FieldId } from "@salesforce/schema";
-    const LogicAppURL__c: FieldId;
-    export default LogicAppURL__c;
-}
-
 declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.Name" {
     import { FieldId } from "@salesforce/schema";
     const Name: FieldId;
     export default Name;
 }
 
-declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.Owner" {
-    import { FieldId } from "@salesforce/schema";
-    const Owner: FieldId;
-    export default Owner;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.OwnerId" {
-    import { FieldId } from "@salesforce/schema";
-    const OwnerId: FieldId;
-    export default OwnerId;
-}
-
 declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.ReplayId" {
     import { FieldId } from "@salesforce/schema";
     const ReplayId: FieldId;
     export default ReplayId;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.Source__c" {
-    import { FieldId } from "@salesforce/schema";
-    const Source__c: FieldId;
-    export default Source__c;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.UploadResultURI__c" {
-    import { FieldId } from "@salesforce/schema";
-    const UploadResultURI__c: FieldId;
-    export default UploadResultURI__c;
 }
 
 declare module "@salesforce/schema/ERPIntegrationUploadResult__ChangeEvent.UserRecordAccess" {

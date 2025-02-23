@@ -45,7 +45,7 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Pricing</code></td><td>Pricing</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
+    Category__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -311,7 +311,7 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZW</code></td><td>ZW</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country Selection</b></h3>
      * <p>Field used for adding multiple countries to one custom metadata record</p>
@@ -323,7 +323,7 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CountrySelect__c: string;
+    CountrySelect__c?: string;
     /**
      * <h3><b>Default</b></h3>
      * <h4>Field Attributes</h4>
@@ -332,8 +332,8 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Default__c: boolean;
-    DeveloperName: string;
+    Default__c?: boolean;
+    DeveloperName?: string;
     /**
      * <h3><b>FieldsToDisplay</b></h3>
      * <h4>Field Attributes</h4>
@@ -344,11 +344,11 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FieldsToDisplay__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    FieldsToDisplay__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -358,7 +358,7 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Object__c: string;
+    Object__c?: string;
     /**
      * <h3><b>Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -368,7 +368,7 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Object__r: EntityDefinition;
+    Object__r?: EntityDefinition;
     /**
      * <h3><b>Opportunity stage</b></h3>
      * <h4>Field Attributes</h4>
@@ -397,8 +397,8 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Parked</code></td><td>Parked</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    OppStage__c: string;
-    QualifiedApiName: string;
+    OppStage__c?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Record Type Developer Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -409,7 +409,7 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RecordTypeDeveloperName__c: string;
+    RecordTypeDeveloperName__c?: string;
     /**
      * <h3><b>Stage guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -417,7 +417,7 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    StageGuidance__c: string;
+    StageGuidance__c?: string;
     /**
      * <h3><b>Stage Guidance Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -425,6 +425,6 @@ declare interface OppStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    StageGuidanceDescr__c: string;
-    SystemModstamp: string;
+    StageGuidanceDescr__c?: string;
+    SystemModstamp?: string;
 }

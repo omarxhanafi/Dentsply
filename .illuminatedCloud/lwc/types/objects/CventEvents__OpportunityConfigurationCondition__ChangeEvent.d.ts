@@ -2,11 +2,11 @@
 
 declare interface CventEvents__OpportunityConfigurationCondition__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface CventEvents__OpportunityConfigurationCondition__ChangeEvent ex
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Field__c: string;
+    CventEvents__Field__c?: string;
     /**
      * <h3><b>Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface CventEvents__OpportunityConfigurationCondition__ChangeEvent ex
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Object__c: string;
+    CventEvents__Object__c?: string;
     /**
      * <h3><b>Operator</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface CventEvents__OpportunityConfigurationCondition__ChangeEvent ex
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">includes all</code></td><td>includes all</td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__Operator__c: string;
+    CventEvents__Operator__c?: string;
     /**
      * <h3><b>Opportunity Configuration</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,7 +61,7 @@ declare interface CventEvents__OpportunityConfigurationCondition__ChangeEvent ex
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link CventEvents__OpportunityConfiguration__c})</td></tr>
      * </table>
      */
-    CventEvents__OpportunityConfiguration__c: string;
+    CventEvents__OpportunityConfiguration__c?: string;
     /**
      * <h3><b>Opportunity Configuration</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface CventEvents__OpportunityConfigurationCondition__ChangeEvent ex
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link CventEvents__OpportunityConfiguration__c})</td></tr>
      * </table>
      */
-    CventEvents__OpportunityConfiguration__r: CventEvents__OpportunityConfiguration__c;
+    CventEvents__OpportunityConfiguration__r?: CventEvents__OpportunityConfiguration__c;
     /**
      * <h3><b>Value</b></h3>
      * <p>Replaces Value__c field which has been deprecated.</p>
@@ -78,7 +78,7 @@ declare interface CventEvents__OpportunityConfigurationCondition__ChangeEvent ex
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(10000)</td></tr>
      * </table>
      */
-    CventEvents__sub_Value__c: string;
+    CventEvents__sub_Value__c?: string;
     /**
      * <h3><b>DEPRECATED</b></h3>
      * <p>Has been replaced by sub_Value</p>
@@ -90,10 +90,10 @@ declare interface CventEvents__OpportunityConfigurationCondition__ChangeEvent ex
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Value__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    CventEvents__Value__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
 }

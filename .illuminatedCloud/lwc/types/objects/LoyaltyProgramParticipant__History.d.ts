@@ -2,14 +2,14 @@
 
 declare interface LoyaltyProgramParticipant__History extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    Parent: LoyaltyProgramParticipant__c;
-    ParentId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    Parent?: LoyaltyProgramParticipant__c;
+    ParentId?: string;
 }

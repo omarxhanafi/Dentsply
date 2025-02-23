@@ -5,9 +5,9 @@
  */
 declare interface geopointe__GP_Route_Plan_Optimization_History__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Different Start Locations</b></h3>
      * <h4>Field Attributes</h4>
@@ -16,7 +16,7 @@ declare interface geopointe__GP_Route_Plan_Optimization_History__c extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Different_Start_Locations__c: string;
+    geopointe__Different_Start_Locations__c?: string;
     /**
      * <h3><b>Target Frequency Visits Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface geopointe__GP_Route_Plan_Optimization_History__c extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Freq_Num_Visits__c: number;
+    geopointe__Freq_Num_Visits__c?: number;
     /**
      * <h3><b>Job Summary</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface geopointe__GP_Route_Plan_Optimization_History__c extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Job_Summary__c: string;
+    geopointe__Job_Summary__c?: string;
     /**
      * <h3><b>Map Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,7 +47,7 @@ declare interface geopointe__GP_Route_Plan_Optimization_History__c extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Map_Object__c: string;
+    geopointe__Map_Object__c?: string;
     /**
      * <h3><b>Optimization Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface geopointe__GP_Route_Plan_Optimization_History__c extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Optimization_Date__c: string;
+    geopointe__Optimization_Date__c?: string;
     /**
      * <h3><b>Route Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,7 +68,7 @@ declare interface geopointe__GP_Route_Plan_Optimization_History__c extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Route_Plan__c: string;
+    geopointe__Route_Plan__c?: string;
     /**
      * <h3><b>Route Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface geopointe__GP_Route_Plan_Optimization_History__c extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Route_Plan__r: geopointe__GP_Route_Plan__c;
+    geopointe__Route_Plan__r?: geopointe__GP_Route_Plan__c;
     /**
      * <h3><b>Target Frequency Visits Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,10 +89,10 @@ declare interface geopointe__GP_Route_Plan_Optimization_History__c extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__RPC_Freq_Num_Visits_Field__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__RPC_Freq_Num_Visits_Field__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

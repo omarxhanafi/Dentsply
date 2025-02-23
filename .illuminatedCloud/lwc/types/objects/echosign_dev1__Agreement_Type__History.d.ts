@@ -2,14 +2,14 @@
 
 declare interface echosign_dev1__Agreement_Type__History extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    Parent: Agreement_Type__c;
-    ParentId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    Parent?: Agreement_Type__c;
+    ParentId?: string;
 }

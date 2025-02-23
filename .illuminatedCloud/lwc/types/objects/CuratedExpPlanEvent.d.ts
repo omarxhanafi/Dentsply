@@ -2,13 +2,13 @@
 
 declare interface CuratedExpPlanEvent extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
-    JobDetails: string;
-    PlanName: string;
-    PlanStatus: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
+    JobDetails?: string;
+    PlanName?: string;
+    PlanStatus?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

@@ -9,7 +9,7 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,8 +55,8 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Root To Crown</code></td><td>Root To Crown</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Category__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Condition Terms</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,11 +64,11 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    ConditionTerms__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ConditionTerms__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,11 +76,11 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(999)</td></tr>
      * </table>
      */
-    Description__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Description__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Payment Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PaymentAgreement__c: string;
+    PaymentAgreement__c?: string;
     /**
      * <h3><b>Product Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,10 +102,10 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductDescription__c: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    ReplayId: string;
+    ProductDescription__c?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Unit of Measure</b></h3>
      * <h4>Field Attributes</h4>
@@ -116,7 +116,7 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UnitofMeasure__c: string;
+    UnitofMeasure__c?: string;
     /**
      * <h3><b>Valid From</b></h3>
      * <h4>Field Attributes</h4>
@@ -125,7 +125,7 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ValidFrom__c: Date;
+    ValidFrom__c?: Date;
     /**
      * <h3><b>Valid To</b></h3>
      * <h4>Field Attributes</h4>
@@ -134,7 +134,7 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ValidTo__c: Date;
+    ValidTo__c?: Date;
     /**
      * <h3><b>Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -145,5 +145,5 @@ declare interface CustomerAgreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Value__c: number;
+    Value__c?: number;
 }

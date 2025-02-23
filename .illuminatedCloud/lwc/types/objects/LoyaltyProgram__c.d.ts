@@ -10,7 +10,7 @@ declare interface LoyaltyProgram__c extends SObject
     /**
      * The reciprocal relationship for {@link LoyaltyProgramTier__c.AccountProgram__c}.
      */
-    AccountProgramTiers__r: LoyaltyProgramTier__c[];
+    AccountProgramTiers__r?: LoyaltyProgramTier__c[];
     /**
      * <h3><b>Allow Multiple Members per Account</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -20,7 +20,7 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    AllowMultipleMembersPerAccount__c: boolean;
+    AllowMultipleMembersPerAccount__c?: boolean;
     /**
      * <h3><b>Allow Multiple Members per Contact</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -30,7 +30,7 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    AllowMultipleMembersPerContact__c: boolean;
+    AllowMultipleMembersPerContact__c?: boolean;
     /**
      * <h3><b>Allow Program Members</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -40,31 +40,31 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    AllowProgramMembers__c: boolean;
+    AllowProgramMembers__c?: boolean;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
+    ContactRequests?: ContactRequest[];
     /**
      * <h3><b>Contact Required</b></h3>
      * <p>TFUS-000002932</p>
@@ -74,9 +74,9 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ContactRequired__c: boolean;
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    ContactRequired__c?: boolean;
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Country</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -86,11 +86,11 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>DEP Record Hash</b></h3>
      * <h4>Field Attributes</h4>
@@ -101,7 +101,7 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DEPRecordHash__c: string;
+    DEPRecordHash__c?: string;
     /**
      * <h3><b>DEP Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,15 +112,15 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    DEPUniqueKey__c: string;
+    DEPUniqueKey__c?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * <h3><b>End Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -129,9 +129,9 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EndDate__c: Date;
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
+    EndDate__c?: Date;
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
     /**
      * <h3><b>External Id</b></h3>
      * <p>External Key to identify program on external platform - such as the One DS Loyalty platform</p>
@@ -143,30 +143,30 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    ExternalId__c: string;
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    ExternalId__c?: string;
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * The reciprocal relationship for {@link LoyaltyProgramParticipant__c.LoyaltyProgram__c}.
      */
-    LoyaltyProgramParticipants__r: LoyaltyProgramParticipant__c[];
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    LoyaltyProgramParticipants__r?: LoyaltyProgramParticipant__c[];
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>Notifications</b></h3>
      * <p>TFUS-000002384. Controls whether a chatter post will be created that notifies users in the parent account territory once a program registration has been activated.</p>
@@ -181,20 +181,20 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Send Chatter Notification to Territory Users</code></td><td>Send Chatter Notification to Territory Users</td><td nowrap>true</td></tr>
      * </table>
      */
-    Notifications__c: string;
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Notifications__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Program Description</b></h3>
      * <p>210318: TFUS-000002864 &amp; TFUS-000002865
@@ -204,28 +204,28 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    ProgramDescription__c: string;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProgramDescription__c?: string;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: LoyaltyProgram__Share[];
-    SobjectLookupValue: AIInsightValue;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: LoyaltyProgram__Share[];
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Start date</b></h3>
      * <h4>Field Attributes</h4>
@@ -234,7 +234,7 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartDate__c: Date;
+    StartDate__c?: Date;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -249,7 +249,7 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inactive</code></td><td>Inactive</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Subtype</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -259,14 +259,14 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Subtype__c: string;
-    SystemModstamp: string;
-    Tags: LoyaltyProgram__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    Subtype__c?: string;
+    SystemModstamp?: string;
+    Tags?: LoyaltyProgram__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -275,15 +275,15 @@ declare interface LoyaltyProgram__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Type__c: string;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    Type__c?: string;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

@@ -2,14 +2,14 @@
 
 declare interface FulfillOrdItemQtyChgEvent extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
-    FulfillmentOrderLineItem: FulfillmentOrderLineItem;
-    FulfillmentOrderLineItemId: string;
-    NewQuantity: number;
-    OldQuantity: number;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
+    FulfillmentOrderLineItem?: FulfillmentOrderLineItem;
+    FulfillmentOrderLineItemId?: string;
+    NewQuantity?: number;
+    OldQuantity?: number;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

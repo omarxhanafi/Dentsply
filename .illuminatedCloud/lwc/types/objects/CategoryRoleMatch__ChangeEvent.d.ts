@@ -12,17 +12,17 @@ declare interface CategoryRoleMatch__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Category__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    Category__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Role In Territory</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface CategoryRoleMatch__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Role__c: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    Role__c?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

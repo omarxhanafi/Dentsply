@@ -21,7 +21,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Account_plans_for_50_HIGH_Vol_GROW__c: string;
+    Account_plans_for_50_HIGH_Vol_GROW__c?: string;
     /**
      * <h3><b>Alternative CFEs Account Plan Acc Target</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,7 +30,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Alternative_CFEs_Account_Plan_Acc_Target__c: string;
+    Alternative_CFEs_Account_Plan_Acc_Target__c?: string;
     /**
      * <h3><b>Alternative CFEs Red Flagged Acc Target</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Alternative_CFEs_Red_Flagged_Acc_Target__c: string;
+    Alternative_CFEs_Red_Flagged_Acc_Target__c?: string;
     /**
      * <h3><b>Alternative GET Account Plan Target</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Alternative_GET_Account_Plan_Target__c: string;
+    Alternative_GET_Account_Plan_Target__c?: string;
     /**
      * <h3><b>Alternative GROW Account Plan Target</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,7 +57,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Alternative_GROW_Account_Plan_Target__c: string;
+    Alternative_GROW_Account_Plan_Target__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,10 +90,10 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">US</code></td><td>US</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Daily # of CFEs/ CSR</b></h3>
      * <h4>Field Attributes</h4>
@@ -104,7 +104,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Daily_of_CFEs_CSR__c: number;
+    Daily_of_CFEs_CSR__c?: number;
     /**
      * <h3><b>Dashboards completed?</b></h3>
      * <h4>Field Attributes</h4>
@@ -114,7 +114,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Dashboards_completed__c: boolean;
+    Dashboards_completed__c?: boolean;
     /**
      * <h3><b>% EDUCATE CFEs</b></h3>
      * <h4>Field Attributes</h4>
@@ -125,7 +125,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EDUCATE_CFEs__c: number;
+    EDUCATE_CFEs__c?: number;
     /**
      * <h3><b>% GET CFEs</b></h3>
      * <h4>Field Attributes</h4>
@@ -136,7 +136,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GET_CFEs__c: number;
+    GET_CFEs__c?: number;
     /**
      * <h3><b>% GROW CFEs</b></h3>
      * <h4>Field Attributes</h4>
@@ -147,8 +147,8 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GROW_CFEs__c: number;
-    IsDeleted: boolean;
+    GROW_CFEs__c?: number;
+    IsDeleted?: boolean;
     /**
      * <h3><b>% KEEP CFEs</b></h3>
      * <h4>Field Attributes</h4>
@@ -159,10 +159,10 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KEEP_CFEs__c: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    KEEP_CFEs__c?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Min 1 CFE/month to +30 Red Flagged Cust?</b></h3>
      * <h4>Field Attributes</h4>
@@ -178,7 +178,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Min_1_CFE_month_to_30_Red_Flagged_Cust__c: string;
+    Min_1_CFE_month_to_30_Red_Flagged_Cust__c?: string;
     /**
      * <h3><b>Min 1 CFE/month to Account Plan Acct&#39;s?</b></h3>
      * <h4>Field Attributes</h4>
@@ -194,7 +194,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Min_1_CFE_month_to_Account_Plan_Accounts__c: string;
+    Min_1_CFE_month_to_Account_Plan_Accounts__c?: string;
     /**
      * <h3><b>Motivation: CFE Division</b></h3>
      * <h4>Field Attributes</h4>
@@ -203,7 +203,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Motivation_CFE_Division__c: string;
+    Motivation_CFE_Division__c?: string;
     /**
      * <h3><b>Motivation: Daily # of CFEs/CSR</b></h3>
      * <h4>Field Attributes</h4>
@@ -212,7 +212,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Motivation_Daily_of_CFEs_CSR__c: string;
+    Motivation_Daily_of_CFEs_CSR__c?: string;
     /**
      * <h3><b>Motivation: # of Implant GROW Opps</b></h3>
      * <h4>Field Attributes</h4>
@@ -221,8 +221,8 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Motivation_of_Implant_GROW_Opps__c: string;
-    Name: string;
+    Motivation_of_Implant_GROW_Opps__c?: string;
+    Name?: string;
     /**
      * <h3><b>% REFERRAL CFEs</b></h3>
      * <h4>Field Attributes</h4>
@@ -233,7 +233,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    REFERRAL_CFEs__c: number;
+    REFERRAL_CFEs__c?: number;
     /**
      * <h3><b>SFE KPI Targets Approved By</b></h3>
      * <h4>Field Attributes</h4>
@@ -250,7 +250,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Matthias Kühner</code></td><td>Matthias Kühner</td><td nowrap>true</td></tr>
      * </table>
      */
-    SFE_KPI_Targets_Approved_By__c: string;
+    SFE_KPI_Targets_Approved_By__c?: string;
     /**
      * <h3><b>SFE KPI Targets Approved Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -260,7 +260,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SFE_KPI_Targets_Approved_Date__c: Date;
+    SFE_KPI_Targets_Approved_Date__c?: Date;
     /**
      * <h3><b>SFE KPI Targets ready to be submitted</b></h3>
      * <h4>Field Attributes</h4>
@@ -276,7 +276,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    SFE_KPI_Targets_ready_to_be_submitted__c: string;
+    SFE_KPI_Targets_ready_to_be_submitted__c?: string;
     /**
      * <h3><b>% STARTER CFEs</b></h3>
      * <h4>Field Attributes</h4>
@@ -287,7 +287,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    STARTER_CFEs__c: number;
+    STARTER_CFEs__c?: number;
     /**
      * <h3><b>% TIME MINIMIZE CFEs</b></h3>
      * <h4>Field Attributes</h4>
@@ -298,7 +298,7 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TIME_MINIMIZE_CFEs__c: number;
+    TIME_MINIMIZE_CFEs__c?: number;
     /**
      * <h3><b># of IMPLANT GET Account Plans/CSR</b></h3>
      * <h4>Field Attributes</h4>
@@ -309,5 +309,5 @@ declare interface SFE_KPI_Target__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    X_of_IMPLANT_GET_Account_Plans_CSR__c: number;
+    X_of_IMPLANT_GET_Account_Plans_CSR__c?: number;
 }

@@ -2,14 +2,14 @@
 
 declare interface DocumentTemplateHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    DocumentTemplate: DocumentTemplate;
-    DocumentTemplateId: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    DocumentTemplate?: DocumentTemplate;
+    DocumentTemplateId?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

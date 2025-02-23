@@ -15,10 +15,10 @@ declare interface SSIS_TrackWise__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Catalog_Model__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Catalog_Model__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Default Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface SSIS_TrackWise__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_Account__c: string;
+    Default_Account__c?: string;
     /**
      * <h3><b>Default Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface SSIS_TrackWise__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_Account__r: Account;
+    Default_Account__r?: Account;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface SSIS_TrackWise__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_Product__c: string;
+    Default_Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,12 +58,12 @@ declare interface SSIS_TrackWise__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_Product__r: Product2;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Default_Product__r?: Product2;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Record Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,5 +74,5 @@ declare interface SSIS_TrackWise__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Record_Type__c: string;
+    Record_Type__c?: string;
 }

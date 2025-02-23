@@ -18,6 +18,18 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.BasePrice__c" {
     export default BasePrice__c;
 }
 
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.BillingFrequency" {
+    import { FieldId } from "@salesforce/schema";
+    const BillingFrequency: FieldId;
+    export default BillingFrequency;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.BillingReference" {
+    import { FieldId } from "@salesforce/schema";
+    const BillingReference: FieldId;
+    export default BillingReference;
+}
+
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.CanBeDeleted__c" {
     import { FieldId } from "@salesforce/schema";
     const CanBeDeleted__c: FieldId;
@@ -54,6 +66,12 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.CurrencyIsoCode" {
     export default CurrencyIsoCode;
 }
 
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.CustomProductName" {
+    import { FieldId } from "@salesforce/schema";
+    const CustomProductName: FieldId;
+    export default CustomProductName;
+}
+
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.Description" {
     import { FieldId } from "@salesforce/schema";
     const Description: FieldId;
@@ -66,10 +84,34 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.Discount" {
     export default Discount;
 }
 
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.DiscountAmount" {
+    import { FieldId } from "@salesforce/schema";
+    const DiscountAmount: FieldId;
+    export default DiscountAmount;
+}
+
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.DiscountedUnitPrice__c" {
     import { FieldId } from "@salesforce/schema";
     const DiscountedUnitPrice__c: FieldId;
     export default DiscountedUnitPrice__c;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.EffectiveGrantDate" {
+    import { FieldId } from "@salesforce/schema";
+    const EffectiveGrantDate: FieldId;
+    export default EffectiveGrantDate;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.EndDate" {
+    import { FieldId } from "@salesforce/schema";
+    const EndDate: FieldId;
+    export default EndDate;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.EndQuantity" {
+    import { FieldId } from "@salesforce/schema";
+    const EndQuantity: FieldId;
+    export default EndQuantity;
 }
 
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.ExtraAppliedDiscount__c" {
@@ -108,6 +150,18 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.LastModifiedDate" {
     export default LastModifiedDate;
 }
 
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.LegalEntity" {
+    import { FieldId } from "@salesforce/schema";
+    const LegalEntity: FieldId;
+    export default LegalEntity;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.LegalEntityId" {
+    import { FieldId } from "@salesforce/schema";
+    const LegalEntityId: FieldId;
+    export default LegalEntityId;
+}
+
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.LineNumber" {
     import { FieldId } from "@salesforce/schema";
     const LineNumber: FieldId;
@@ -118,6 +172,18 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.NetPrice__c" {
     import { FieldId } from "@salesforce/schema";
     const NetPrice__c: FieldId;
     export default NetPrice__c;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.NetTotalPrice" {
+    import { FieldId } from "@salesforce/schema";
+    const NetTotalPrice: FieldId;
+    export default NetTotalPrice;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.NetUnitPrice" {
+    import { FieldId } from "@salesforce/schema";
+    const NetUnitPrice: FieldId;
+    export default NetUnitPrice;
 }
 
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.OpportunityLineItem" {
@@ -132,6 +198,42 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.OpportunityLineItemI
     export default OpportunityLineItemId;
 }
 
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.PartnerDiscountPercent" {
+    import { FieldId } from "@salesforce/schema";
+    const PartnerDiscountPercent: FieldId;
+    export default PartnerDiscountPercent;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.PartnerUnitPrice" {
+    import { FieldId } from "@salesforce/schema";
+    const PartnerUnitPrice: FieldId;
+    export default PartnerUnitPrice;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.PeriodBoundary" {
+    import { FieldId } from "@salesforce/schema";
+    const PeriodBoundary: FieldId;
+    export default PeriodBoundary;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.PeriodBoundaryDay" {
+    import { FieldId } from "@salesforce/schema";
+    const PeriodBoundaryDay: FieldId;
+    export default PeriodBoundaryDay;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.PeriodBoundaryStartMonth" {
+    import { FieldId } from "@salesforce/schema";
+    const PeriodBoundaryStartMonth: FieldId;
+    export default PeriodBoundaryStartMonth;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.PriceWaterfallIdentifier" {
+    import { FieldId } from "@salesforce/schema";
+    const PriceWaterfallIdentifier: FieldId;
+    export default PriceWaterfallIdentifier;
+}
+
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.PricebookEntry" {
     import { FieldId } from "@salesforce/schema";
     const PricebookEntry: FieldId;
@@ -142,6 +244,12 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.PricebookEntryId" {
     import { FieldId } from "@salesforce/schema";
     const PricebookEntryId: FieldId;
     export default PricebookEntryId;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.PricingTermCount" {
+    import { FieldId } from "@salesforce/schema";
+    const PricingTermCount: FieldId;
+    export default PricingTermCount;
 }
 
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.Product2" {
@@ -156,6 +264,30 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.Product2Id" {
     export default Product2Id;
 }
 
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.ProductSellingModel" {
+    import { FieldId } from "@salesforce/schema";
+    const ProductSellingModel: FieldId;
+    export default ProductSellingModel;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.ProductSellingModelId" {
+    import { FieldId } from "@salesforce/schema";
+    const ProductSellingModelId: FieldId;
+    export default ProductSellingModelId;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.ProrationPolicy" {
+    import { FieldId } from "@salesforce/schema";
+    const ProrationPolicy: FieldId;
+    export default ProrationPolicy;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.ProrationPolicyId" {
+    import { FieldId } from "@salesforce/schema";
+    const ProrationPolicyId: FieldId;
+    export default ProrationPolicyId;
+}
+
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.Quantity" {
     import { FieldId } from "@salesforce/schema";
     const Quantity: FieldId;
@@ -166,6 +298,18 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.Quote" {
     import { FieldId } from "@salesforce/schema";
     const Quote: FieldId;
     export default Quote;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.QuoteAction" {
+    import { FieldId } from "@salesforce/schema";
+    const QuoteAction: FieldId;
+    export default QuoteAction;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.QuoteActionId" {
+    import { FieldId } from "@salesforce/schema";
+    const QuoteActionId: FieldId;
+    export default QuoteActionId;
 }
 
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.QuoteId" {
@@ -258,10 +402,34 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.SortOrder" {
     export default SortOrder;
 }
 
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.StartDate" {
+    import { FieldId } from "@salesforce/schema";
+    const StartDate: FieldId;
+    export default StartDate;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.StartQuantity" {
+    import { FieldId } from "@salesforce/schema";
+    const StartQuantity: FieldId;
+    export default StartQuantity;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.SubscriptionTerm" {
+    import { FieldId } from "@salesforce/schema";
+    const SubscriptionTerm: FieldId;
+    export default SubscriptionTerm;
+}
+
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.TariffCode__c" {
     import { FieldId } from "@salesforce/schema";
     const TariffCode__c: FieldId;
     export default TariffCode__c;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.TotalAdjustmentAmount" {
+    import { FieldId } from "@salesforce/schema";
+    const TotalAdjustmentAmount: FieldId;
+    export default TotalAdjustmentAmount;
 }
 
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.TotalDiscountAmount__c" {
@@ -274,6 +442,12 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.TotalDiscountPercent
     import { FieldId } from "@salesforce/schema";
     const TotalDiscountPercentage__c: FieldId;
     export default TotalDiscountPercentage__c;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.TotalLineAmount" {
+    import { FieldId } from "@salesforce/schema";
+    const TotalLineAmount: FieldId;
+    export default TotalLineAmount;
 }
 
 declare module "@salesforce/schema/QuoteLineItemChangeEvent.TotalListPrice__c" {
@@ -334,4 +508,10 @@ declare module "@salesforce/schema/QuoteLineItemChangeEvent.VATRate__c" {
     import { FieldId } from "@salesforce/schema";
     const VATRate__c: FieldId;
     export default VATRate__c;
+}
+
+declare module "@salesforce/schema/QuoteLineItemChangeEvent.ValidationResult" {
+    import { FieldId } from "@salesforce/schema";
+    const ValidationResult: FieldId;
+    export default ValidationResult;
 }

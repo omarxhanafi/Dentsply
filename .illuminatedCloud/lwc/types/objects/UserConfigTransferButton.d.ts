@@ -2,16 +2,16 @@
 
 declare interface UserConfigTransferButton extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LiveChatButton: LiveChatButton;
-    LiveChatButtonId: string;
-    LiveChatUserConfig: LiveChatUserConfig;
-    LiveChatUserConfigId: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LiveChatButton?: LiveChatButton;
+    LiveChatButtonId?: string;
+    LiveChatUserConfig?: LiveChatUserConfig;
+    LiveChatUserConfigId?: string;
+    SystemModstamp?: string;
 }

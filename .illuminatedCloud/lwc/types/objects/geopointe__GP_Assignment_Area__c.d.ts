@@ -6,9 +6,9 @@
  */
 declare interface geopointe__GP_Assignment_Area__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Geopointe Assignment Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface geopointe__GP_Assignment_Area__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Assignment_Plan__c: string;
+    geopointe__Assignment_Plan__c?: string;
     /**
      * <h3><b>Geopointe Assignment Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface geopointe__GP_Assignment_Area__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Assignment_Plan__r: geopointe__GP_Assignment_Plan__c;
+    geopointe__Assignment_Plan__r?: geopointe__GP_Assignment_Plan__c;
     /**
      * <h3><b>Field Mapping</b></h3>
      * <p>Maps Assignment Area custom fields to the assigned record.</p>
@@ -36,7 +36,7 @@ declare interface geopointe__GP_Assignment_Area__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Field_Mapping__c: string;
+    geopointe__Field_Mapping__c?: string;
     /**
      * <h3><b>Geopointe Shape</b></h3>
      * <h4>Field Attributes</h4>
@@ -46,7 +46,7 @@ declare interface geopointe__GP_Assignment_Area__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Shape__c: string;
+    geopointe__Shape__c?: string;
     /**
      * <h3><b>Geopointe Shape</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,7 +56,7 @@ declare interface geopointe__GP_Assignment_Area__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Shape__r: geopointe__Shape__c;
+    geopointe__Shape__r?: geopointe__Shape__c;
     /**
      * <h3><b>SOQL Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -65,7 +65,7 @@ declare interface geopointe__GP_Assignment_Area__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__SOQL_Filter__c: string;
+    geopointe__SOQL_Filter__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -75,7 +75,7 @@ declare interface geopointe__GP_Assignment_Area__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__User__c: string;
+    geopointe__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -85,10 +85,10 @@ declare interface geopointe__GP_Assignment_Area__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__User__r: User;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__User__r?: User;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

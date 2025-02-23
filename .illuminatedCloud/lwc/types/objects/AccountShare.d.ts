@@ -2,17 +2,17 @@
 
 declare interface AccountShare extends SObject 
 {
-    Account: Account;
-    AccountAccessLevel: string;
-    AccountId: string;
-    CaseAccessLevel: string;
-    ContactAccessLevel: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    OpportunityAccessLevel: string;
-    RowCause: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    Account?: Account;
+    AccountAccessLevel?: string;
+    AccountId?: string;
+    CaseAccessLevel?: string;
+    ContactAccessLevel?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    OpportunityAccessLevel?: string;
+    RowCause?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

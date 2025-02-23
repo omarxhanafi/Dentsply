@@ -2,14 +2,14 @@
 
 declare interface RecordsetFilterCriteriaHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    RecordsetFilterCriteria: RecordsetFilterCriteria;
-    RecordsetFilterCriteriaId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    RecordsetFilterCriteria?: RecordsetFilterCriteria;
+    RecordsetFilterCriteriaId?: string;
 }

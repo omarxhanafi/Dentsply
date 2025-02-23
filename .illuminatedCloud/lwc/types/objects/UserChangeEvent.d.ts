@@ -2,9 +2,9 @@
 
 declare interface UserChangeEvent extends SObject 
 {
-    AboutMe: string;
-    Account: Account;
-    AccountId: string;
+    AboutMe?: string;
+    Account?: Account;
+    AccountId?: string;
     /**
      * <h3><b>Actual Sales LY</b></h3>
      * <p>Sales LY on Accounts owned by the rep. Used in Italy to group reps into categories by size. Updated manually. If more countries would use this field, update this description accordingly</p>
@@ -16,9 +16,9 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Actual_Sales_LY__c: number;
-    Address: Address;
-    Alias: string;
+    Actual_Sales_LY__c?: number;
+    Address?: Address;
+    Alias?: string;
     /**
      * <h3><b>Area Manager DI (DE)</b></h3>
      * <p>Shows the Area Manager of a certain Sales Rep. Used in Approval rules etc</p>
@@ -27,7 +27,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    Area_Manager_DI_DE__c: string;
+    Area_Manager_DI_DE__c?: string;
     /**
      * <h3><b>Area Manager DI (DE)</b></h3>
      * <p>Shows the Area Manager of a certain Sales Rep. Used in Approval rules etc</p>
@@ -36,7 +36,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    Area_Manager_DI_DE__r: User;
+    Area_Manager_DI_DE__r?: User;
     /**
      * <h3><b>ATWC 2012</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ATWC_2012__c: boolean;
+    ATWC_2012__c?: boolean;
     /**
      * <h3><b>Business Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,13 +57,13 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Business_Area__c: string;
-    CallCenter: CallCenter;
-    CallCenterId: string;
-    ChangeEventHeader: ChangeEventHeader;
-    City: string;
-    CommunityNickname: string;
-    CompanyName: string;
+    Business_Area__c?: string;
+    CallCenter?: CallCenter;
+    CallCenterId?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    City?: string;
+    CommunityNickname?: string;
+    CompanyName?: string;
     /**
      * <h3><b>Computer Login Id</b></h3>
      * <p>DO NOT DELETE - Used for Encore Integration</p>
@@ -75,9 +75,9 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ComputerId__c: string;
-    Contact: Contact;
-    ContactId: string;
+    ComputerId__c?: string;
+    Contact?: Contact;
+    ContactId?: string;
     /**
      * <h3><b>Cost Center</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,8 +88,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CostCenter__c: string;
-    Country: string;
+    CostCenter__c?: string;
+    Country?: string;
     /**
      * <h3><b>Country Code (3-digit)</b></h3>
      * <p>3-digit country code. Used mainly for Wave reporting where it is needed in Wave maps for the map to understand which country we are referring to. Dependent on user country so the three digit code will be automatically entered based on User Country - NOTE: when adding a new User Country you must state which 3 digit code belongs to that country for it to work.</p>
@@ -99,10 +99,10 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Code_3_digit__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country_Code_3_digit__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>CRM Internal Team Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    CRM_Internal_Team_Comments__c: string;
+    CRM_Internal_Team_Comments__c?: string;
     /**
      * <h3><b>CRM team comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -118,7 +118,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(500)</td></tr>
      * </table>
      */
-    CRM_team_comments__c: string;
+    CRM_team_comments__c?: string;
     /**
      * <h3><b>CRM Admin Actions</b></h3>
      * <p>Hyperlink to redirect to a screen flow to allow admins to unfreeze a user.</p>
@@ -131,8 +131,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CRMAdminActions__c: string;
-    CurrencyIsoCode: string;
+    CRMAdminActions__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>CY Implant ASP</b></h3>
      * <h4>Field Attributes</h4>
@@ -141,7 +141,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CY_Implant_ASP__c: number;
+    CY_Implant_ASP__c?: number;
     /**
      * <h3><b>DB Region</b></h3>
      * <p>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</p>
@@ -159,7 +159,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">LA</code></td><td>LA</td><td nowrap>true</td></tr>
      * </table>
      */
-    DB_Region__c: string;
+    DB_Region__c?: string;
     /**
      * <h3><b>Default Activity Length In Minutes</b></h3>
      * <p>The number of minutes that an activity or task duration should default to.</p>
@@ -171,7 +171,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_Activity_Length_In_Minutes__c: number;
+    Default_Activity_Length_In_Minutes__c?: number;
     /**
      * <h3><b>Default CFE SBUs</b></h3>
      * <h4>Field Attributes</h4>
@@ -180,7 +180,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_CFE_SBUs__c: string;
+    Default_CFE_SBUs__c?: string;
     /**
      * <h3><b>Default Event Subject</b></h3>
      * <h4>Field Attributes</h4>
@@ -192,7 +192,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;{||EventType||}{ - ||WhoName||}{ - ||RelatedToName||}&quot;</code></td></tr>
      * </table>
      */
-    Default_Event_Subject__c: string;
+    Default_Event_Subject__c?: string;
     /**
      * <h3><b>Default Event Update Calendar</b></h3>
      * <h4>Field Attributes</h4>
@@ -201,13 +201,13 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Default_Event_Update_Calendar__c: boolean;
-    DefaultCurrencyIsoCode: string;
-    DefaultGroupNotificationFrequency: string;
-    DelegatedApprover: SObject;
-    DelegatedApproverId: string;
-    Department: string;
-    DigestFrequency: string;
+    Default_Event_Update_Calendar__c?: boolean;
+    DefaultCurrencyIsoCode?: string;
+    DefaultGroupNotificationFrequency?: string;
+    DelegatedApprover?: SObject;
+    DelegatedApproverId?: string;
+    Department?: string;
+    DigestFrequency?: string;
     /**
      * <h3><b>Digital Region (UK)</b></h3>
      * <p>Used by UK to define what Digital Region a Clinical TSM belongs to.</p>
@@ -227,7 +227,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Digital R6</code></td><td>Digital R6</td><td nowrap>true</td></tr>
      * </table>
      */
-    Digital_Region_D_UK__c: string;
+    Digital_Region_D_UK__c?: string;
     /**
      * <h3><b>District</b></h3>
      * <h4>Field Attributes</h4>
@@ -509,8 +509,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DE DI Region 34</code></td><td>DE DI Region 34</td><td nowrap>true</td></tr>
      * </table>
      */
-    District__c: string;
-    Division: string;
+    District__c?: string;
+    Division?: string;
     /**
      * <h3><b>Do Not Freeze</b></h3>
      * <p>Field used by an Apex Batch that will freeze users that didn&#39;t login for a certain amount of time. The apex batch does not include the users flagged as &quot;do not freeze&quot;</p>
@@ -520,7 +520,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    DoNotFreeze__c: boolean;
+    DoNotFreeze__c?: boolean;
     /**
      * <h3><b>DPG User</b></h3>
      * <p>Request from TFUS-2415</p>
@@ -530,7 +530,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    DpgUser__c: boolean;
+    DpgUser__c?: boolean;
     /**
      * <h3><b>EAO 2010</b></h3>
      * <p>Used to determine if user is attending EAO 2010 and if so qualified to be given information about the event in Content.</p>
@@ -540,7 +540,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    EAO_2010__c: boolean;
+    EAO_2010__c?: boolean;
     /**
      * <h3><b>EAO 2011</b></h3>
      * <p>Used to determine if user is attending EAO 2011 and if so qualified to be given information about the event in Content.</p>
@@ -550,7 +550,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    EAO_2011__c: boolean;
+    EAO_2011__c?: boolean;
     /**
      * <h3><b>Adobe Sign Allow Sending As Other Users</b></h3>
      * <p>Check this box so that others in this Salesforce organization can send Adobe Sign agreements on behalf of this user.</p>
@@ -560,7 +560,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__EchoSign_Allow_Delegated_Sending__c: boolean;
+    echosign_dev1__EchoSign_Allow_Delegated_Sending__c?: boolean;
     /**
      * <h3><b>Adobe Sign Email Verified</b></h3>
      * <p>This checkbox indicates that the user&#39;s email address has been validated in Adobe Sign API.</p>
@@ -570,7 +570,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__EchoSign_Email_Verified__c: boolean;
+    echosign_dev1__EchoSign_Email_Verified__c?: boolean;
     /**
      * <h3><b>Edit report package</b></h3>
      * <h4>Field Attributes</h4>
@@ -582,13 +582,13 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Edit_report_package__c: string;
-    Email: string;
-    EmailEncodingKey: string;
-    EmailPreferencesAutoBcc: boolean;
-    EmailPreferencesAutoBccStayInTouch: boolean;
-    EmailPreferencesStayInTouchReminder: boolean;
-    EmployeeNumber: string;
+    Edit_report_package__c?: string;
+    Email?: string;
+    EmailEncodingKey?: string;
+    EmailPreferencesAutoBcc?: boolean;
+    EmailPreferencesAutoBccStayInTouch?: boolean;
+    EmailPreferencesStayInTouchReminder?: boolean;
+    EmployeeNumber?: string;
     /**
      * <h3><b>Exclude from login history report</b></h3>
      * <p>Used for reporting on users login history for admin purposes.</p>
@@ -598,7 +598,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Exclude_from_login_history_report__c: boolean;
+    Exclude_from_login_history_report__c?: boolean;
     /**
      * <h3><b>Expiration Date</b></h3>
      * <p>Date when the user will be automatically disabled by the freeze batch process. This field is used to schedule and manage user deactivation.</p>
@@ -608,10 +608,10 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ExpirationDate__c: Date;
-    Extension: string;
-    Fax: string;
-    FederationIdentifier: string;
+    ExpirationDate__c?: Date;
+    Extension?: string;
+    Fax?: string;
+    FederationIdentifier?: string;
     /**
      * <h3><b>Field Sales Ratio (%)</b></h3>
      * <p>Describes if the user should be counted as a full-time sales rep(100%) or not.
@@ -625,9 +625,9 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td></tr>
      * </table>
      */
-    FieldSalesRatioPerc__c: number;
-    FirstName: string;
-    ForecastEnabled: boolean;
+    FieldSalesRatioPerc__c?: number;
+    FirstName?: string;
+    ForecastEnabled?: boolean;
     /**
      * <h3><b>SFS Resource Type</b></h3>
      * <p>A Field Service Starter Kit package field:
@@ -648,7 +648,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Community</code></td><td>Contractor Dispatcher (Community Dispatcher)</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSSK__FSK_FSL_Resource_Type__c: string;
+    FSSK__FSK_FSL_Resource_Type__c?: string;
     /**
      * <h3><b>Full Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -660,8 +660,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Full_Name__c: string;
-    GeocodeAccuracy: string;
+    Full_Name__c?: string;
+    GeocodeAccuracy?: string;
     /**
      * <h3><b>Global Product Platform (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -676,7 +676,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Digital</code></td><td>Digital</td><td nowrap>true</td></tr>
      * </table>
      */
-    Global_Product_Platform_GPP__c: string;
+    Global_Product_Platform_GPP__c?: string;
     /**
      * <h3><b>Implant Volume Quota CY</b></h3>
      * <p>Field used for setting quota in Implants. Initially only for JP.</p>
@@ -688,7 +688,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_Volume_Quota_CY__c: number;
+    Implant_Volume_Quota_CY__c?: number;
     /**
      * <h3><b>Implants User</b></h3>
      * <p>Use User&#39;s SBUs instead</p>
@@ -698,9 +698,9 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Implants_User__c: boolean;
-    Individual: Individual;
-    IndividualId: string;
+    Implants_User__c?: boolean;
+    Individual?: Individual;
+    IndividualId?: string;
     /**
      * <h3><b>Active User?</b></h3>
      * <p>Standard fields are not available for Account Reports, only Custom Owner fields are included</p>
@@ -710,7 +710,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF ( IsActive=True,True,False)</code></td></tr>
      * </table>
      */
-    Is_Active__c: boolean;
+    Is_Active__c?: boolean;
     /**
      * <h3><b>Is My Country? (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -722,7 +722,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Is_My_Country_HQ__c: number;
+    Is_My_Country_HQ__c?: number;
     /**
      * <h3><b>Is My Market?</b></h3>
      * <p>Checks if the users market is the same as the logged in users market. If so marked as True, else False. Is used to get around that there are no &quot;My users&quot; option available in views</p>
@@ -732,19 +732,19 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( TEXT($User.Market__c) =  TEXT(Market__c)  , TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    Is_My_Market__c: boolean;
-    IsActive: boolean;
-    IsProfilePhotoActive: boolean;
-    LanguageLocaleKey: string;
-    LastLoginDate: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastName: string;
-    LastPasswordChangeDate: string;
-    Latitude: number;
-    LocaleSidKey: string;
-    Longitude: number;
+    Is_My_Market__c?: boolean;
+    IsActive?: boolean;
+    IsProfilePhotoActive?: boolean;
+    LanguageLocaleKey?: string;
+    LastLoginDate?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastName?: string;
+    LastPasswordChangeDate?: string;
+    Latitude?: number;
+    LocaleSidKey?: string;
+    Longitude?: number;
     /**
      * <h3><b>LY Implant ASP</b></h3>
      * <h4>Field Attributes</h4>
@@ -753,8 +753,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LY_Implant_ASP__c: number;
-    Manager: User;
+    LY_Implant_ASP__c?: number;
+    Manager?: User;
     /**
      * <h3><b>Manager&#39;s Manager</b></h3>
      * <p>The manager&#39;s manager, used to get the next approver after the manager</p>
@@ -767,7 +767,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manager_s_Manager__c: string;
+    Manager_s_Manager__c?: string;
     /**
      * <h3><b>Manager selection</b></h3>
      * <p>Workaround used to select users Manager</p>
@@ -776,7 +776,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    Manager_workaround__c: string;
+    Manager_workaround__c?: string;
     /**
      * <h3><b>Manager selection</b></h3>
      * <p>Workaround used to select users Manager</p>
@@ -785,8 +785,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    Manager_workaround__r: User;
-    ManagerId: string;
+    Manager_workaround__r?: User;
+    ManagerId?: string;
     /**
      * <h3><b>Allow Maps Exports</b></h3>
      * <h4>Field Attributes</h4>
@@ -795,7 +795,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__AllowMapsExports__c: boolean;
+    maps__AllowMapsExports__c?: boolean;
     /**
      * <h3><b>Maps Beta Tester</b></h3>
      * <h4>Field Attributes</h4>
@@ -804,7 +804,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__BetaTester__c: boolean;
+    maps__BetaTester__c?: boolean;
     /**
      * <h3><b>Maps Default Latitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -815,7 +815,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultLatitude__c: number;
+    maps__DefaultLatitude__c?: number;
     /**
      * <h3><b>Maps Default Longitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -826,7 +826,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultLongitude__c: number;
+    maps__DefaultLongitude__c?: number;
     /**
      * <h3><b>Default Proximity Radius</b></h3>
      * <h4>Field Attributes</h4>
@@ -837,7 +837,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultProximityRadius__c: number;
+    maps__DefaultProximityRadius__c?: number;
     /**
      * <h3><b>DefaultType</b></h3>
      * <h4>Field Attributes</h4>
@@ -848,7 +848,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultType__c: string;
+    maps__DefaultType__c?: string;
     /**
      * <h3><b>Maps Default Zoom Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -859,7 +859,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DefaultZoomLevel__c: number;
+    maps__DefaultZoomLevel__c?: number;
     /**
      * <h3><b>Device Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -871,7 +871,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DeviceId__c: string;
+    maps__DeviceId__c?: string;
     /**
      * <h3><b>Device Vendor</b></h3>
      * <h4>Field Attributes</h4>
@@ -883,7 +883,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DeviceVendor__c: string;
+    maps__DeviceVendor__c?: string;
     /**
      * <h3><b>Edit Maps Org Wide Queries</b></h3>
      * <h4>Field Attributes</h4>
@@ -892,7 +892,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__EditMapsOrgWideQueries__c: boolean;
+    maps__EditMapsOrgWideQueries__c?: boolean;
     /**
      * <h3><b>Finished Maps Advanced Route Setup</b></h3>
      * <h4>Field Attributes</h4>
@@ -901,7 +901,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__FinishedAdvRouteSetup__c: boolean;
+    maps__FinishedAdvRouteSetup__c?: boolean;
     /**
      * <h3><b>Map Settings</b></h3>
      * <h4>Field Attributes</h4>
@@ -909,7 +909,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__MapsSetting__c: string;
+    maps__MapsSetting__c?: string;
     /**
      * <h3><b>Maps Max Export Size</b></h3>
      * <h4>Field Attributes</h4>
@@ -920,7 +920,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MaxExportSize__c: number;
+    maps__MaxExportSize__c?: number;
     /**
      * <h3><b>Maps Max Query Size</b></h3>
      * <h4>Field Attributes</h4>
@@ -931,7 +931,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MaxQuerySize__c: number;
+    maps__MaxQuerySize__c?: number;
     /**
      * <h3><b>Preferred Type of Measurement</b></h3>
      * <h4>Field Attributes</h4>
@@ -949,7 +949,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Feet</code></td><td>Feet</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__PreferredTypeOfMeasurement__c: string;
+    maps__PreferredTypeOfMeasurement__c?: string;
     /**
      * <h3><b>Receive Batch Exception Emails</b></h3>
      * <p>DEPRECATED</p>
@@ -959,7 +959,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__ReceiveBatchExceptionEmails__c: boolean;
+    maps__ReceiveBatchExceptionEmails__c?: boolean;
     /**
      * <h3><b>TestUserLookup</b></h3>
      * <p>For blueline bug.</p>
@@ -968,7 +968,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    maps__TestUserLookup__c: string;
+    maps__TestUserLookup__c?: string;
     /**
      * <h3><b>TestUserLookup</b></h3>
      * <p>For blueline bug.</p>
@@ -977,7 +977,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    maps__TestUserLookup__r: User;
+    maps__TestUserLookup__r?: User;
     /**
      * <h3><b>Territory Planning Approver</b></h3>
      * <h4>Field Attributes</h4>
@@ -986,7 +986,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__TPApprover__c: boolean;
+    maps__TPApprover__c?: boolean;
     /**
      * <h3><b>Territory Planning Publisher</b></h3>
      * <h4>Field Attributes</h4>
@@ -995,7 +995,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__TPPublisher__c: boolean;
+    maps__TPPublisher__c?: boolean;
     /**
      * <h3><b>Maps Version</b></h3>
      * <h4>Field Attributes</h4>
@@ -1011,7 +1011,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Beta</code></td><td>Beta</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Version__c: string;
+    maps__Version__c?: string;
     /**
      * <h3><b>Market</b></h3>
      * <p>&lt;ADMINISTRATION&gt; Keep the values of this field aligned with the Price Book Market field values.</p>
@@ -1061,7 +1061,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vietnam</code></td><td>Vietnam</td><td nowrap>true</td></tr>
      * </table>
      */
-    Market__c: string;
+    Market__c?: string;
     /**
      * <h3><b>Mobile User?</b></h3>
      * <p>This is to enabled reporting on activities to see whether or not the user is set up for Mobile</p>
@@ -1071,8 +1071,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Mobile_User__c: boolean;
-    MobilePhone: string;
+    Mobile_User__c?: boolean;
+    MobilePhone?: string;
     /**
      * <h3><b>ERP User ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -1083,7 +1083,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Uer_ID__c: string;
+    Movex_Uer_ID__c?: string;
     /**
      * <h3><b>My Direct Report</b></h3>
      * <h4>Field Attributes</h4>
@@ -1092,7 +1092,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ManagerId=$User.Id || Id=$User.Id</code></td></tr>
      * </table>
      */
-    My_Direct_Report__c: boolean;
+    My_Direct_Report__c?: boolean;
     /**
      * <h3><b>My Peers (Same Manager)</b></h3>
      * <p>Checked for all users who has the same Manager as the logged in user. Dynamic formula based on logged in user. For sharing of calendars etc. If the logged in user is that manager the  result is also true</p>
@@ -1102,7 +1102,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(ISBLANK($User.ManagerId), FALSE, IF( (Manager.Id=$User.ManagerId || Id=$User.ManagerId), TRUE,FALSE))</code></td></tr>
      * </table>
      */
-    My_Peers_Same_Manager__c: boolean;
+    My_Peers_Same_Manager__c?: boolean;
     /**
      * <h3><b>NA: Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1114,7 +1114,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Area__c: string;
+    NA_Area__c?: string;
     /**
      * <h3><b>NA Clinical Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1126,7 +1126,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Clinical_Area__c: string;
+    NA_Clinical_Area__c?: string;
     /**
      * <h3><b>NA: Inside Account Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -1134,7 +1134,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Inside_Account_Manager__c: string;
+    NA_Inside_Account_Manager__c?: string;
     /**
      * <h3><b>NA: Inside Account Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -1142,7 +1142,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Inside_Account_Manager__r: User;
+    NA_Inside_Account_Manager__r?: User;
     /**
      * <h3><b>NA Lab Channel DM</b></h3>
      * <h4>Field Attributes</h4>
@@ -1150,7 +1150,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Lab_Channel_DM__c: string;
+    NA_Lab_Channel_DM__c?: string;
     /**
      * <h3><b>NA Lab Channel DM</b></h3>
      * <h4>Field Attributes</h4>
@@ -1158,7 +1158,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Lab_Channel_DM__r: User;
+    NA_Lab_Channel_DM__r?: User;
     /**
      * <h3><b>NA Lab Channel DM Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -1170,7 +1170,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Lab_Channel_DM_Role__c: string;
+    NA_Lab_Channel_DM_Role__c?: string;
     /**
      * <h3><b>NA: Profile Team Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -1178,7 +1178,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Profile_Team_Assigned__c: string;
+    NA_Profile_Team_Assigned__c?: string;
     /**
      * <h3><b>NA: Profile Team Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -1186,7 +1186,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Profile_Team_Assigned__r: User;
+    NA_Profile_Team_Assigned__r?: User;
     /**
      * <h3><b>NA Regen Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1198,7 +1198,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Regen_Area__c: string;
+    NA_Regen_Area__c?: string;
     /**
      * <h3><b>NA: Regional Marketing Coordinator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1206,7 +1206,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Regional_Marketing_Coordinator__c: string;
+    NA_Regional_Marketing_Coordinator__c?: string;
     /**
      * <h3><b>NA: Regional Marketing Coordinator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1214,7 +1214,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Regional_Marketing_Coordinator__r: User;
+    NA_Regional_Marketing_Coordinator__r?: User;
     /**
      * <h3><b>NA Simplant DM</b></h3>
      * <h4>Field Attributes</h4>
@@ -1222,7 +1222,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Simplant_DM__c: string;
+    NA_Simplant_DM__c?: string;
     /**
      * <h3><b>NA Simplant DM</b></h3>
      * <h4>Field Attributes</h4>
@@ -1230,7 +1230,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    NA_Simplant_DM__r: User;
+    NA_Simplant_DM__r?: User;
     /**
      * <h3><b>NA Simplant DM Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -1242,7 +1242,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Simplant_DM_Role__c: string;
+    NA_Simplant_DM_Role__c?: string;
     /**
      * <h3><b>NA: Sales Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1254,8 +1254,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_University_Area__c: string;
-    Name: string;
+    NA_University_Area__c?: string;
+    Name?: string;
     /**
      * <h3><b>Is National Admin?</b></h3>
      * <p>Users with information in this field will receive information adressed to National Admins</p>
@@ -1270,10 +1270,10 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental</code></td><td>Dental</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    National_Admin__c: string;
-    NumberOfFailedLogins: number;
-    OfflinePdaTrialExpirationDate: string;
-    OfflineTrialExpirationDate: string;
+    National_Admin__c?: string;
+    NumberOfFailedLogins?: number;
+    OfflinePdaTrialExpirationDate?: string;
+    OfflineTrialExpirationDate?: string;
     /**
      * <h3><b>PEERS Responsible</b></h3>
      * <h4>Field Attributes</h4>
@@ -1282,7 +1282,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    PEERS_Responsible__c: boolean;
+    PEERS_Responsible__c?: boolean;
     /**
      * <h3><b>Permission</b></h3>
      * <h4>Field Attributes</h4>
@@ -1291,7 +1291,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Permission__c: boolean;
+    Permission__c?: boolean;
     /**
      * <h3><b>Personal Order Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -1302,9 +1302,9 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Personal_Order_Account__c: string;
-    Phone: string;
-    PostalCode: string;
+    Personal_Order_Account__c?: string;
+    Phone?: string;
+    PostalCode?: string;
     /**
      * <h3><b>Product Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1318,7 +1318,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental</code></td><td>Dental</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
+    Product_Area__c?: string;
     /**
      * <h3><b>Product Area Code</b></h3>
      * <p>This field shows a numeric representation of Product Area (1=Dental, 2=Surgery,3=Urology, 4=Healthcare, 5=All). Used in reports</p>
@@ -1331,7 +1331,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Area_Code__c: number;
+    Product_Area_Code__c?: number;
     /**
      * <h3><b>Product-Country Code</b></h3>
      * <p>A code representing the combiantion of user product area and country. Dental Austratlia = 101, Surgery Australia = 201 etc. Used in reports.</p>
@@ -1344,8 +1344,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Country_Code__c: number;
-    Profile: Profile;
+    Product_Country_Code__c?: number;
+    Profile?: Profile;
     /**
      * <h3><b>Profile Name</b></h3>
      * <p>used to display profile name when data is extracted by dataloader</p>
@@ -1358,8 +1358,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Profile__c: string;
-    ProfileId: string;
+    Profile__c?: string;
+    ProfileId?: string;
     /**
      * <h3><b>q1</b></h3>
      * <h4>Field Attributes</h4>
@@ -1367,7 +1367,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    q1__c: string;
+    q1__c?: string;
     /**
      * <h3><b>q1</b></h3>
      * <h4>Field Attributes</h4>
@@ -1375,7 +1375,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Hierarchy</td></tr>
      * </table>
      */
-    q1__r: User;
+    q1__r?: User;
     /**
      * <h3><b>Questionnaire Access</b></h3>
      * <h4>Field Attributes</h4>
@@ -1384,9 +1384,9 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Questionnaire_Access__c: string;
-    ReceivesAdminInfoEmails: boolean;
-    ReceivesInfoEmails: boolean;
+    Questionnaire_Access__c?: string;
+    ReceivesAdminInfoEmails?: boolean;
+    ReceivesInfoEmails?: boolean;
     /**
      * <h3><b>Region</b></h3>
      * <h4>Field Attributes</h4>
@@ -1595,8 +1595,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">JP: PREP Kanto</code></td><td>JP: PREP Kanto</td><td nowrap>true</td></tr>
      * </table>
      */
-    Region__c: string;
-    ReplayId: string;
+    Region__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Report Package</b></h3>
      * <h4>Field Attributes</h4>
@@ -1608,7 +1608,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&#39;a2X0J0000006vavUAA&#39;</code></td></tr>
      * </table>
      */
-    Report_Package__c: string;
+    Report_Package__c?: string;
     /**
      * <h3><b>Strategic Business Unit (SBU)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1628,7 +1628,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Shared Services</code></td><td>Shared Services</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_Business_Unit_SBU__c: string;
+    Sales_Business_Unit_SBU__c?: string;
     /**
      * <h3><b>Sales Channel (IMPL)</b></h3>
      * <p>Limited to IMPL at the moment, controled by validation rule to enforce a value when it&#39;s an IMPL sales rep and prevent any Value when otherwise</p>
@@ -1648,7 +1648,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Lab</code></td><td>Lab</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_Channel__c: string;
+    Sales_Channel__c?: string;
     /**
      * <h3><b>Sales Quota LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -1659,7 +1659,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_2010__c: number;
+    Sales_Quota_2010__c?: number;
     /**
      * <h3><b>Sales Quota CY</b></h3>
      * <p>Used to set Sales Quota for Current Year. Inititially to be used only for Dental Sales Reps.
@@ -1672,7 +1672,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_CY__c: number;
+    Sales_Quota_CY__c?: number;
     /**
      * <h3><b>Sales Quota Q1</b></h3>
      * <p>Created for DI - France</p>
@@ -1684,7 +1684,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_Q1__c: number;
+    Sales_Quota_Q1__c?: number;
     /**
      * <h3><b>Sales Quota Q2</b></h3>
      * <p>Created for DI - France</p>
@@ -1696,7 +1696,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_Q2__c: number;
+    Sales_Quota_Q2__c?: number;
     /**
      * <h3><b>Sales Quota Q3</b></h3>
      * <p>Created for DI France</p>
@@ -1708,7 +1708,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_Q3__c: number;
+    Sales_Quota_Q3__c?: number;
     /**
      * <h3><b>Sales Quota Q4</b></h3>
      * <p>Created for DI France.</p>
@@ -1720,7 +1720,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Quota_Q4__c: number;
+    Sales_Quota_Q4__c?: number;
     /**
      * <h3><b>SBU Ratio (CDCM)</b></h3>
      * <p>SIRONA CAD/CAM CEREC</p>
@@ -1731,7 +1731,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_CERE__c: number;
+    SBU_Ratio_CERE__c?: number;
     /**
      * <h3><b>SBU Ratio (ENDO)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1741,7 +1741,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_ENDO__c: number;
+    SBU_Ratio_ENDO__c?: number;
     /**
      * <h3><b>SBU Ratio (IMAG)</b></h3>
      * <p>SIRONA Imaging systems Intra &amp; Extra Oral</p>
@@ -1752,7 +1752,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_IMAG__c: number;
+    SBU_Ratio_IMAG__c?: number;
     /**
      * <h3><b>SBU Ratio (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1762,7 +1762,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_IMPL__c: number;
+    SBU_Ratio_IMPL__c?: number;
     /**
      * <h3><b>SBU Ratio (INST)</b></h3>
      * <p>SIRONA Instruments</p>
@@ -1773,7 +1773,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_INST__c: number;
+    SBU_Ratio_INST__c?: number;
     /**
      * <h3><b>SBU Ratio (ORTH)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1783,7 +1783,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_ORTH__c: number;
+    SBU_Ratio_ORTH__c?: number;
     /**
      * <h3><b>SBU Ratio (PREV)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1793,7 +1793,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_PREV__c: number;
+    SBU_Ratio_PREV__c?: number;
     /**
      * <h3><b>SBU Ratio (PROS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1803,7 +1803,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_PROS__c: number;
+    SBU_Ratio_PROS__c?: number;
     /**
      * <h3><b>SBU Ratio (REST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1813,7 +1813,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_REST__c: number;
+    SBU_Ratio_REST__c?: number;
     /**
      * <h3><b>SBU Ratio (TRCE)</b></h3>
      * <p>SIRONA Treatment Centers</p>
@@ -1824,7 +1824,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBU_Ratio_TRCE__c: number;
+    SBU_Ratio_TRCE__c?: number;
     /**
      * <h3><b>SBU User Count (IMAG)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1836,7 +1836,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_IMAG__c: number;
+    SBU_User_Count_IMAG__c?: number;
     /**
      * <h3><b>SBU User Count (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1848,7 +1848,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_IMPL__c: number;
+    SBU_User_Count_IMPL__c?: number;
     /**
      * <h3><b>SBU User Count (INST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1860,7 +1860,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_INST__c: number;
+    SBU_User_Count_INST__c?: number;
     /**
      * <h3><b>SBU User Count (ORTH)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1872,7 +1872,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_ORTH__c: number;
+    SBU_User_Count_ORTH__c?: number;
     /**
      * <h3><b>SBU User Count (PREV)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1884,7 +1884,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_PREV__c: number;
+    SBU_User_Count_PREV__c?: number;
     /**
      * <h3><b>SBU User Count (PROS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1896,7 +1896,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_PROS__c: number;
+    SBU_User_Count_PROS__c?: number;
     /**
      * <h3><b>SBU User Count (REST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1908,7 +1908,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_REST__c: number;
+    SBU_User_Count_REST__c?: number;
     /**
      * <h3><b>SBU User Count (TRCE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1920,7 +1920,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_Count_TRCE__c: number;
+    SBU_User_Count_TRCE__c?: number;
     /**
      * <h3><b>SBU User Count (CDCM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1932,7 +1932,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_CountCDCM__c: number;
+    SBU_User_CountCDCM__c?: number;
     /**
      * <h3><b>SBU User Count (ENDO)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1944,9 +1944,9 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_User_CountENDO__c: number;
-    SenderEmail: string;
-    SenderName: string;
+    SBU_User_CountENDO__c?: number;
+    SenderEmail?: string;
+    SenderName?: string;
     /**
      * <h3><b>Service Cloud Special Permissions</b></h3>
      * <h4>Field Attributes</h4>
@@ -1963,7 +1963,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Light Service Cloud</code></td><td>Light Service Cloud</td><td nowrap>true</td></tr>
      * </table>
      */
-    Service_Cloud_Special_Permissions__c: string;
+    Service_Cloud_Special_Permissions__c?: string;
     /**
      * <h3><b>SF Implementation Level</b></h3>
      * <p>To be used instead of mentioneing &quot;Basic&quot; in the Profile Name. Some profiles might still need to have that tag in their name.</p>
@@ -1980,8 +1980,8 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales Advanced</code></td><td>Sales Advanced</td><td nowrap>true</td></tr>
      * </table>
      */
-    SF_Implementation_Level__c: string;
-    Signature: string;
+    SF_Implementation_Level__c?: string;
+    Signature?: string;
     /**
      * <h3><b>SR Origin</b></h3>
      * <h4>Field Attributes</h4>
@@ -1998,12 +1998,12 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dentsply Implants</code></td><td>Dentsply Implants</td><td nowrap>true</td></tr>
      * </table>
      */
-    SR_Origin__c: string;
-    State: string;
-    StayInTouchNote: string;
-    StayInTouchSignature: string;
-    StayInTouchSubject: string;
-    Street: string;
+    SR_Origin__c?: string;
+    State?: string;
+    StayInTouchNote?: string;
+    StayInTouchSignature?: string;
+    StayInTouchSubject?: string;
+    Street?: string;
     /**
      * <h3><b>Team</b></h3>
      * <h4>Field Attributes</h4>
@@ -2080,7 +2080,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Workflow Integration Specialist</code></td><td>Workflow Integration Specialist</td><td nowrap>true</td></tr>
      * </table>
      */
-    Team__c: string;
+    Team__c?: string;
     /**
      * <h3><b>Territory</b></h3>
      * <h4>Field Attributes</h4>
@@ -2818,7 +2818,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Minneapolis Southeast</code></td><td>Minneapolis Southeast</td><td nowrap>true</td></tr>
      * </table>
      */
-    Territory__c: string;
+    Territory__c?: string;
     /**
      * <h3><b>Country field</b></h3>
      * <h4>Field Attributes</h4>
@@ -2829,7 +2829,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Country_field__c: string;
+    testInCountry1__Country_field__c?: string;
     /**
      * <h3><b>InCountry Debug Mode</b></h3>
      * <h4>Field Attributes</h4>
@@ -2843,9 +2843,9 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Replication</code></td><td>Replication</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__DebugMode__c: string;
-    TimeZoneSidKey: string;
-    Title: string;
+    testInCountry1__DebugMode__c?: string;
+    TimeZoneSidKey?: string;
+    Title?: string;
     /**
      * <h3><b>US TeleSales Team Name</b></h3>
      * <p>Used for US DNA TeleSales Reportin</p>
@@ -2858,7 +2858,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    US_TeleSales_Team_Name__c: string;
+    US_TeleSales_Team_Name__c?: string;
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -2867,7 +2867,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Country__c: string;
+    User_Country__c?: string;
     /**
      * <h3><b>User Country Abbreviation</b></h3>
      * <p>Sets the country abbreviations based on User Country. Note that HQ: DE/ HQ: SE are set as DE/SE as this fields is created for matching user records to cost/revenue transactions in reports</p>
@@ -2880,7 +2880,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Country_Abbreviation__c: string;
+    User_Country_Abbreviation__c?: string;
     /**
      * <h3><b>User Country Code</b></h3>
      * <p>A numeric code that is representing the country 1=Australia, 2= Austria etc. Used in reports</p>
@@ -2893,7 +2893,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Country_Code__c: number;
+    User_Country_Code__c?: number;
     /**
      * <h3><b>User Country - Text</b></h3>
      * <h4>Field Attributes</h4>
@@ -2905,7 +2905,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Country_Text__c: string;
+    User_Country_Text__c?: string;
     /**
      * <h3><b>User # (HQ)</b></h3>
      * <p>Used in reports</p>
@@ -2918,7 +2918,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_HQ__c: number;
+    User_HQ__c?: number;
     /**
      * <h3><b>User ID (18 digit)</b></h3>
      * <p>Used also in ETM</p>
@@ -2931,7 +2931,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_ID_18_digit__c: string;
+    User_ID_18_digit__c?: string;
     /**
      * <h3><b>User License</b></h3>
      * <p>Display the User License type</p>
@@ -2944,7 +2944,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_License__c: string;
+    User_License__c?: string;
     /**
      * <h3><b>User RCO</b></h3>
      * <p>Formula field to set the RCO belonging of a User depending on the user country selected.</p>
@@ -2957,7 +2957,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_RCO__c: string;
+    User_RCO__c?: string;
     /**
      * <h3><b>User Region</b></h3>
      * <h4>Field Attributes</h4>
@@ -2969,7 +2969,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Region__c: string;
+    User_Region__c?: string;
     /**
      * <h3><b>User SBU</b></h3>
      * <p>Used to capture the SBU belonging of a user. It&#39;s based on the SBU ratio fields. If no ratio has been assigned &quot;Not Set&quot; will be displayed</p>
@@ -2982,7 +2982,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_SBU__c: string;
+    User_SBU__c?: string;
     /**
      * <h3><b>User Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -3014,111 +3014,111 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Virtual Sales</code></td><td>Virtual Sales</td><td nowrap>true</td></tr>
      * </table>
      */
-    User_Type__c: string;
-    Username: string;
-    UserPermissionsAvantgoUser: boolean;
-    UserPermissionsCallCenterAutoLogin: boolean;
-    UserPermissionsChatterAnswersUser: boolean;
-    UserPermissionsInteractionUser: boolean;
-    UserPermissionsKnowledgeUser: boolean;
-    UserPermissionsLiveAgentUser: boolean;
-    UserPermissionsMarketingUser: boolean;
-    UserPermissionsOfflineUser: boolean;
-    UserPermissionsSFContentUser: boolean;
-    UserPermissionsSupportUser: boolean;
-    UserPreferencesActionLauncherEinsteinGptConsent: boolean;
-    UserPreferencesActivityRemindersPopup: boolean;
-    UserPreferencesApexPagesDeveloperMode: boolean;
-    UserPreferencesAssistiveActionsEnabledInActionLauncher: boolean;
-    UserPreferencesBRELookupTableWelcomeMat: boolean;
-    UserPreferencesCacheDiagnostics: boolean;
-    UserPreferencesContentEmailAsAndWhen: boolean;
-    UserPreferencesContentNoEmail: boolean;
-    UserPreferencesCreateLEXAppsWTShown: boolean;
-    UserPreferencesDisableAllFeedsEmail: boolean;
-    UserPreferencesDisableBookmarkEmail: boolean;
-    UserPreferencesDisableChangeCommentEmail: boolean;
-    UserPreferencesDisableEndorsementEmail: boolean;
-    UserPreferencesDisableFileShareNotificationsForApi: boolean;
-    UserPreferencesDisableFollowersEmail: boolean;
-    UserPreferencesDisableLaterCommentEmail: boolean;
-    UserPreferencesDisableLikeEmail: boolean;
-    UserPreferencesDisableMentionsPostEmail: boolean;
-    UserPreferencesDisableMessageEmail: boolean;
-    UserPreferencesDisableProfilePostEmail: boolean;
-    UserPreferencesDisableSharePostEmail: boolean;
-    UserPreferencesDisCommentAfterLikeEmail: boolean;
-    UserPreferencesDisMentionsCommentEmail: boolean;
-    UserPreferencesDisProfPostCommentEmail: boolean;
-    UserPreferencesEnableAutoSubForFeeds: boolean;
-    UserPreferencesEventRemindersCheckboxDefault: boolean;
-    UserPreferencesExcludeMailAppAttachments: boolean;
-    UserPreferencesFavoritesShowTopFavorites: boolean;
-    UserPreferencesFavoritesWTShown: boolean;
-    UserPreferencesGlobalNavBarWTShown: boolean;
-    UserPreferencesGlobalNavGridMenuWTShown: boolean;
-    UserPreferencesHasCelebrationBadge: boolean;
-    UserPreferencesHasSentWarningEmail: boolean;
-    UserPreferencesHasSentWarningEmail238: boolean;
-    UserPreferencesHasSentWarningEmail240: boolean;
-    UserPreferencesHideBiggerPhotoCallout: boolean;
-    UserPreferencesHideBrowseProductRedirectConfirmation: boolean;
-    UserPreferencesHideChatterOnboardingSplash: boolean;
-    UserPreferencesHideCSNDesktopTask: boolean;
-    UserPreferencesHideCSNGetChatterMobileTask: boolean;
-    UserPreferencesHideEndUserOnboardingAssistantModal: boolean;
-    UserPreferencesHideLightningMigrationModal: boolean;
-    UserPreferencesHideOnlineSalesAppTabVisibilityRequirementsModal: boolean;
-    UserPreferencesHideOnlineSalesAppWelcomeMat: boolean;
-    UserPreferencesHideSecondChatterOnboardingSplash: boolean;
-    UserPreferencesHideSfxWelcomeMat: boolean;
-    UserPreferencesLightningExperiencePreferred: boolean;
-    UserPreferencesLiveAgentMiawSetupDeflection: boolean;
-    UserPreferencesNewLightningReportRunPageEnabled: boolean;
-    UserPreferencesPathAssistantCollapsed: boolean;
-    UserPreferencesPreviewCustomTheme: boolean;
-    UserPreferencesPreviewLightning: boolean;
-    UserPreferencesReceiveNoNotificationsAsApprover: boolean;
-    UserPreferencesReceiveNotificationsAsDelegatedApprover: boolean;
-    UserPreferencesRecordHomeReservedWTShown: boolean;
-    UserPreferencesRecordHomeSectionCollapseWTShown: boolean;
-    UserPreferencesReminderSoundOff: boolean;
-    UserPreferencesReverseOpenActivitiesView: boolean;
-    UserPreferencesShowCityToExternalUsers: boolean;
-    UserPreferencesShowCityToGuestUsers: boolean;
-    UserPreferencesShowCountryToExternalUsers: boolean;
-    UserPreferencesShowCountryToGuestUsers: boolean;
-    UserPreferencesShowEmailToExternalUsers: boolean;
-    UserPreferencesShowEmailToGuestUsers: boolean;
-    UserPreferencesShowFaxToExternalUsers: boolean;
-    UserPreferencesShowFaxToGuestUsers: boolean;
-    UserPreferencesShowForecastingChangeSignals: boolean;
-    UserPreferencesShowForecastingRoundedAmounts: boolean;
-    UserPreferencesShowManagerToExternalUsers: boolean;
-    UserPreferencesShowManagerToGuestUsers: boolean;
-    UserPreferencesShowMobilePhoneToExternalUsers: boolean;
-    UserPreferencesShowMobilePhoneToGuestUsers: boolean;
-    UserPreferencesShowPostalCodeToExternalUsers: boolean;
-    UserPreferencesShowPostalCodeToGuestUsers: boolean;
-    UserPreferencesShowProfilePicToGuestUsers: boolean;
-    UserPreferencesShowStateToExternalUsers: boolean;
-    UserPreferencesShowStateToGuestUsers: boolean;
-    UserPreferencesShowStreetAddressToExternalUsers: boolean;
-    UserPreferencesShowStreetAddressToGuestUsers: boolean;
-    UserPreferencesShowTerritoryTimeZoneShifts: boolean;
-    UserPreferencesShowTitleToExternalUsers: boolean;
-    UserPreferencesShowTitleToGuestUsers: boolean;
-    UserPreferencesShowWorkPhoneToExternalUsers: boolean;
-    UserPreferencesShowWorkPhoneToGuestUsers: boolean;
-    UserPreferencesSortFeedByComment: boolean;
-    UserPreferencesSRHOverrideActivities: boolean;
-    UserPreferencesSuppressEventSFXReminders: boolean;
-    UserPreferencesSuppressTaskSFXReminders: boolean;
-    UserPreferencesTaskRemindersCheckboxDefault: boolean;
-    UserPreferencesUserDebugModePref: boolean;
-    UserRole: UserRole;
-    UserRoleId: string;
-    UserType: string;
+    User_Type__c?: string;
+    Username?: string;
+    UserPermissionsAvantgoUser?: boolean;
+    UserPermissionsCallCenterAutoLogin?: boolean;
+    UserPermissionsChatterAnswersUser?: boolean;
+    UserPermissionsInteractionUser?: boolean;
+    UserPermissionsKnowledgeUser?: boolean;
+    UserPermissionsLiveAgentUser?: boolean;
+    UserPermissionsMarketingUser?: boolean;
+    UserPermissionsOfflineUser?: boolean;
+    UserPermissionsSFContentUser?: boolean;
+    UserPermissionsSupportUser?: boolean;
+    UserPreferencesActionLauncherEinsteinGptConsent?: boolean;
+    UserPreferencesActivityRemindersPopup?: boolean;
+    UserPreferencesApexPagesDeveloperMode?: boolean;
+    UserPreferencesAssistiveActionsEnabledInActionLauncher?: boolean;
+    UserPreferencesBRELookupTableWelcomeMat?: boolean;
+    UserPreferencesCacheDiagnostics?: boolean;
+    UserPreferencesContentEmailAsAndWhen?: boolean;
+    UserPreferencesContentNoEmail?: boolean;
+    UserPreferencesCreateLEXAppsWTShown?: boolean;
+    UserPreferencesDisableAllFeedsEmail?: boolean;
+    UserPreferencesDisableBookmarkEmail?: boolean;
+    UserPreferencesDisableChangeCommentEmail?: boolean;
+    UserPreferencesDisableEndorsementEmail?: boolean;
+    UserPreferencesDisableFileShareNotificationsForApi?: boolean;
+    UserPreferencesDisableFollowersEmail?: boolean;
+    UserPreferencesDisableLaterCommentEmail?: boolean;
+    UserPreferencesDisableLikeEmail?: boolean;
+    UserPreferencesDisableMentionsPostEmail?: boolean;
+    UserPreferencesDisableMessageEmail?: boolean;
+    UserPreferencesDisableProfilePostEmail?: boolean;
+    UserPreferencesDisableSharePostEmail?: boolean;
+    UserPreferencesDisCommentAfterLikeEmail?: boolean;
+    UserPreferencesDisMentionsCommentEmail?: boolean;
+    UserPreferencesDisProfPostCommentEmail?: boolean;
+    UserPreferencesEnableAutoSubForFeeds?: boolean;
+    UserPreferencesEventRemindersCheckboxDefault?: boolean;
+    UserPreferencesExcludeMailAppAttachments?: boolean;
+    UserPreferencesFavoritesShowTopFavorites?: boolean;
+    UserPreferencesFavoritesWTShown?: boolean;
+    UserPreferencesGlobalNavBarWTShown?: boolean;
+    UserPreferencesGlobalNavGridMenuWTShown?: boolean;
+    UserPreferencesHasCelebrationBadge?: boolean;
+    UserPreferencesHasSentWarningEmail?: boolean;
+    UserPreferencesHasSentWarningEmail238?: boolean;
+    UserPreferencesHasSentWarningEmail240?: boolean;
+    UserPreferencesHideBiggerPhotoCallout?: boolean;
+    UserPreferencesHideBrowseProductRedirectConfirmation?: boolean;
+    UserPreferencesHideChatterOnboardingSplash?: boolean;
+    UserPreferencesHideCSNDesktopTask?: boolean;
+    UserPreferencesHideCSNGetChatterMobileTask?: boolean;
+    UserPreferencesHideEndUserOnboardingAssistantModal?: boolean;
+    UserPreferencesHideLightningMigrationModal?: boolean;
+    UserPreferencesHideOnlineSalesAppTabVisibilityRequirementsModal?: boolean;
+    UserPreferencesHideOnlineSalesAppWelcomeMat?: boolean;
+    UserPreferencesHideSecondChatterOnboardingSplash?: boolean;
+    UserPreferencesHideSfxWelcomeMat?: boolean;
+    UserPreferencesLightningExperiencePreferred?: boolean;
+    UserPreferencesLiveAgentMiawSetupDeflection?: boolean;
+    UserPreferencesNewLightningReportRunPageEnabled?: boolean;
+    UserPreferencesPathAssistantCollapsed?: boolean;
+    UserPreferencesPreviewCustomTheme?: boolean;
+    UserPreferencesPreviewLightning?: boolean;
+    UserPreferencesReceiveNoNotificationsAsApprover?: boolean;
+    UserPreferencesReceiveNotificationsAsDelegatedApprover?: boolean;
+    UserPreferencesRecordHomeReservedWTShown?: boolean;
+    UserPreferencesRecordHomeSectionCollapseWTShown?: boolean;
+    UserPreferencesReminderSoundOff?: boolean;
+    UserPreferencesReverseOpenActivitiesView?: boolean;
+    UserPreferencesShowCityToExternalUsers?: boolean;
+    UserPreferencesShowCityToGuestUsers?: boolean;
+    UserPreferencesShowCountryToExternalUsers?: boolean;
+    UserPreferencesShowCountryToGuestUsers?: boolean;
+    UserPreferencesShowEmailToExternalUsers?: boolean;
+    UserPreferencesShowEmailToGuestUsers?: boolean;
+    UserPreferencesShowFaxToExternalUsers?: boolean;
+    UserPreferencesShowFaxToGuestUsers?: boolean;
+    UserPreferencesShowForecastingChangeSignals?: boolean;
+    UserPreferencesShowForecastingRoundedAmounts?: boolean;
+    UserPreferencesShowManagerToExternalUsers?: boolean;
+    UserPreferencesShowManagerToGuestUsers?: boolean;
+    UserPreferencesShowMobilePhoneToExternalUsers?: boolean;
+    UserPreferencesShowMobilePhoneToGuestUsers?: boolean;
+    UserPreferencesShowPostalCodeToExternalUsers?: boolean;
+    UserPreferencesShowPostalCodeToGuestUsers?: boolean;
+    UserPreferencesShowProfilePicToGuestUsers?: boolean;
+    UserPreferencesShowStateToExternalUsers?: boolean;
+    UserPreferencesShowStateToGuestUsers?: boolean;
+    UserPreferencesShowStreetAddressToExternalUsers?: boolean;
+    UserPreferencesShowStreetAddressToGuestUsers?: boolean;
+    UserPreferencesShowTerritoryTimeZoneShifts?: boolean;
+    UserPreferencesShowTitleToExternalUsers?: boolean;
+    UserPreferencesShowTitleToGuestUsers?: boolean;
+    UserPreferencesShowWorkPhoneToExternalUsers?: boolean;
+    UserPreferencesShowWorkPhoneToGuestUsers?: boolean;
+    UserPreferencesSortFeedByComment?: boolean;
+    UserPreferencesSRHOverrideActivities?: boolean;
+    UserPreferencesSuppressEventSFXReminders?: boolean;
+    UserPreferencesSuppressTaskSFXReminders?: boolean;
+    UserPreferencesTaskRemindersCheckboxDefault?: boolean;
+    UserPreferencesUserDebugModePref?: boolean;
+    UserRole?: UserRole;
+    UserRoleId?: string;
+    UserType?: string;
     /**
      * <h3><b>User Unique</b></h3>
      * <p>Field is used to generate unique user counts on various reports</p>
@@ -3131,7 +3131,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UserUnique__c: number;
+    UserUnique__c?: number;
     /**
      * <h3><b>View All EA Products</b></h3>
      * <h4>Field Attributes</h4>
@@ -3142,7 +3142,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    View_All_EA_Products__c: string;
+    View_All_EA_Products__c?: string;
     /**
      * <h3><b>View All Wave Data</b></h3>
      * <h4>Field Attributes</h4>
@@ -3153,7 +3153,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    View_All_Wave_Data__c: string;
+    View_All_Wave_Data__c?: string;
     /**
      * <h3><b>Wave Primary SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -3164,7 +3164,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Primary_SBU__c: string;
+    Wave_Primary_SBU__c?: string;
     /**
      * <h3><b>Wave Territory Id 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -3175,7 +3175,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_1__c: string;
+    Wave_Territory_Id_1__c?: string;
     /**
      * <h3><b>Wave Territory Id 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -3186,7 +3186,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_2__c: string;
+    Wave_Territory_Id_2__c?: string;
     /**
      * <h3><b>Wave Territory Id 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -3197,7 +3197,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_3__c: string;
+    Wave_Territory_Id_3__c?: string;
     /**
      * <h3><b>Wave Territory Id 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -3208,7 +3208,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_4__c: string;
+    Wave_Territory_Id_4__c?: string;
     /**
      * <h3><b>Wave Territory Id 5</b></h3>
      * <h4>Field Attributes</h4>
@@ -3219,7 +3219,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_5__c: string;
+    Wave_Territory_Id_5__c?: string;
     /**
      * <h3><b>Wave Territory Id 6</b></h3>
      * <h4>Field Attributes</h4>
@@ -3230,7 +3230,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_6__c: string;
+    Wave_Territory_Id_6__c?: string;
     /**
      * <h3><b>Wave Territory Id 7</b></h3>
      * <h4>Field Attributes</h4>
@@ -3241,7 +3241,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_Territory_Id_7__c: string;
+    Wave_Territory_Id_7__c?: string;
     /**
      * <h3><b>Wave User Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -3252,7 +3252,7 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Wave_User_Id__c: string;
+    Wave_User_Id__c?: string;
     /**
      * <h3><b>WC2012 Country/Market Target (HQ)</b></h3>
      * <p>This field is set for all users but only used for analysis regarding Dental (WC2012). For analysis only. Should never appear in any page layouts</p>
@@ -3265,5 +3265,5 @@ declare interface UserChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WC2012_Country_Market_Target_HQ__c: number;
+    WC2012_Country_Market_Target_HQ__c?: number;
 }

@@ -2,13 +2,13 @@
 
 declare interface TMFC_TeamForce_User_Story__Tag extends SObject 
 {
-    CreatedDate: string;
-    IsDeleted: boolean;
-    Item: TMFC_TeamForce_User_Story__c;
-    ItemId: string;
-    Name: string;
-    SystemModstamp: string;
-    TagDefinition: TagDefinition;
-    TagDefinitionId: string;
-    Type: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    Item?: TMFC_TeamForce_User_Story__c;
+    ItemId?: string;
+    Name?: string;
+    SystemModstamp?: string;
+    TagDefinition?: TagDefinition;
+    TagDefinitionId?: string;
+    Type?: string;
 }

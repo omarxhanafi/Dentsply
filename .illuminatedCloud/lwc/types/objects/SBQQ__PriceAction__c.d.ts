@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__PriceAction__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Target Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Explanation</code></td><td>Explanation</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Field__c: string;
+    SBQQ__Field__c?: string;
     /**
      * <h3><b>Formula</b></h3>
      * <p>You can construct a formula using many of Salesforce&#39;s available operators and functions. Refer to Salesforce CPQ documentation for the full list. You can also add in information from the quote or the target object field (i.e., SBQQ__QuoteLine__c.SBQQ__ListPrice__c).</p>
@@ -46,7 +46,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Formula__c: string;
+    SBQQ__Formula__c?: string;
     /**
      * <h3><b>Order</b></h3>
      * <p>Number which determines the order in which multiple actions on a rule are executed.</p>
@@ -58,7 +58,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Order__c: number;
+    SBQQ__Order__c?: number;
     /**
      * <h3><b>ParentRuleIsActive</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,7 +68,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ParentRuleIsActive__c: boolean;
+    SBQQ__ParentRuleIsActive__c?: boolean;
     /**
      * <h3><b>Rule</b></h3>
      * <p>Price rule running this action.</p>
@@ -78,7 +78,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Rule__c: string;
+    SBQQ__Rule__c?: string;
     /**
      * <h3><b>Rule</b></h3>
      * <p>Price rule running this action.</p>
@@ -88,7 +88,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Rule__r: SBQQ__PriceRule__c;
+    SBQQ__Rule__r?: SBQQ__PriceRule__c;
     /**
      * <h3><b>Rule Lookup Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -100,7 +100,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RuleLookupObject__c: string;
+    SBQQ__RuleLookupObject__c?: string;
     /**
      * <h3><b>RuleTargetsCalculator</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RuleTargetsCalculator__c: boolean;
+    SBQQ__RuleTargetsCalculator__c?: boolean;
     /**
      * <h3><b>Source Lookup Field</b></h3>
      * <p>API Name of the field to return from the row matching the condition.</p>
@@ -126,7 +126,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SBQQ__Value__c</code></td><td>SBQQ__Value__c</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__SourceLookupField__c: string;
+    SBQQ__SourceLookupField__c?: string;
     /**
      * <h3><b>Source Variable</b></h3>
      * <p>Summary variable that sources value for this action.</p>
@@ -137,7 +137,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SourceVariable__c: string;
+    SBQQ__SourceVariable__c?: string;
     /**
      * <h3><b>Source Variable</b></h3>
      * <p>Summary variable that sources value for this action.</p>
@@ -148,7 +148,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SourceVariable__r: SBQQ__SummaryVariable__c;
+    SBQQ__SourceVariable__r?: SBQQ__SummaryVariable__c;
     /**
      * <h3><b>Target Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -166,7 +166,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quote Line Pricing Guidance</code></td><td>Quote Line Pricing Guidance</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TargetObject__c: string;
+    SBQQ__TargetObject__c?: string;
     /**
      * <h3><b>Value</b></h3>
      * <p>The value that will be inserted into the Target Field when conditions are met.</p>
@@ -178,7 +178,7 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Value__c: string;
+    SBQQ__Value__c?: string;
     /**
      * <h3><b>Source Field</b></h3>
      * <p>Name of the field that sources value for this action.</p>
@@ -190,5 +190,5 @@ declare interface SBQQ__PriceAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ValueField__c: string;
+    SBQQ__ValueField__c?: string;
 }

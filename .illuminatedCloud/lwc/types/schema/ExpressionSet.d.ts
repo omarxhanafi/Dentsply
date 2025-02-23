@@ -108,6 +108,12 @@ declare module "@salesforce/schema/ExpressionSet.Events" {
     export default Events;
 }
 
+declare module "@salesforce/schema/ExpressionSet.ExecuteOnRule" {
+    import { FieldId } from "@salesforce/schema";
+    const ExecuteOnRule: FieldId;
+    export default ExecuteOnRule;
+}
+
 declare module "@salesforce/schema/ExpressionSet.ExecutionScale" {
     import { FieldId } from "@salesforce/schema";
     const ExecutionScale: FieldId;
@@ -148,6 +154,18 @@ declare module "@salesforce/schema/ExpressionSet.FirstPublishLocation" {
     import { FieldId } from "@salesforce/schema";
     const FirstPublishLocation: FieldId;
     export default FirstPublishLocation;
+}
+
+declare module "@salesforce/schema/ExpressionSet.FulfillmentStepDefinitions" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentStepDefinitions: FieldId;
+    export default FulfillmentStepDefinitions;
+}
+
+declare module "@salesforce/schema/ExpressionSet.FulfillmentSteps" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentSteps: FieldId;
+    export default FulfillmentSteps;
 }
 
 declare module "@salesforce/schema/ExpressionSet.GeneratedDocRefObjects" {
@@ -270,6 +288,12 @@ declare module "@salesforce/schema/ExpressionSet.ParentRecord" {
     export default ParentRecord;
 }
 
+declare module "@salesforce/schema/ExpressionSet.ProductDecompEnrichmentRules" {
+    import { FieldId } from "@salesforce/schema";
+    const ProductDecompEnrichmentRules: FieldId;
+    export default ProductDecompEnrichmentRules;
+}
+
 declare module "@salesforce/schema/ExpressionSet.RelatedRecord" {
     import { FieldId } from "@salesforce/schema";
     const RelatedRecord: FieldId;
@@ -286,6 +310,12 @@ declare module "@salesforce/schema/ExpressionSet.Relation" {
     import { FieldId } from "@salesforce/schema";
     const Relation: FieldId;
     export default Relation;
+}
+
+declare module "@salesforce/schema/ExpressionSet.ResumeOnRule" {
+    import { FieldId } from "@salesforce/schema";
+    const ResumeOnRule: FieldId;
+    export default ResumeOnRule;
 }
 
 declare module "@salesforce/schema/ExpressionSet.Shares" {

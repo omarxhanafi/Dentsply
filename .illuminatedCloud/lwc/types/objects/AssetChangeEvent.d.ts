@@ -2,9 +2,9 @@
 
 declare interface AssetChangeEvent extends SObject 
 {
-    Account: Account;
-    AccountId: string;
-    Address: Address;
+    Account?: Account;
+    AccountId?: string;
+    Address?: Address;
     /**
      * <h3><b>Age (# Days)</b></h3>
      * <h4>Field Attributes</h4>
@@ -16,7 +16,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AgeDays__c: string;
+    AgeDays__c?: string;
     /**
      * <h3><b>Age (Y+M)</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AgeYM__c: string;
+    AgeYM__c?: string;
     /**
      * <h3><b>Article Number (SKU)</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ArticleNumberSKU__c: string;
+    ArticleNumberSKU__c?: string;
     /**
      * <h3><b>Asset ID (18 Digit)</b></h3>
      * <p>Converting Id from 15 char to 18 char</p>
@@ -52,11 +52,11 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AssetID18Digits__c: string;
-    AssetServicedBy: Account;
-    AssetServicedById: string;
-    ChangeEventHeader: ChangeEventHeader;
-    City: string;
+    AssetID18Digits__c?: string;
+    AssetServicedBy?: Account;
+    AssetServicedById?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    City?: string;
     /**
      * <h3><b>Combined Fields</b></h3>
      * <p>Combining the Product Name and Serial number to make it easier for the Service Cloud users to select the correct Asset</p>
@@ -69,7 +69,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CombinedFields__c: string;
+    CombinedFields__c?: string;
     /**
      * <h3><b>Competitor Product?</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,14 +78,14 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product_Name__r.Competitor_Product__c</code></td></tr>
      * </table>
      */
-    Competitor_Product__c: boolean;
-    Contact: Contact;
-    ContactId: string;
-    Country: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Competitor_Product__c?: boolean;
+    Contact?: Contact;
+    ContactId?: string;
+    Country?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>DEP Unique Key</b></h3>
      * <p>UniqueKey for equipments consisting of ItemNumber_SerialNumber - used also for integrations and tieing e.g. Subscriptions for DS Core Care to an equipment</p>
@@ -97,9 +97,9 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    DEPUniqueKey__c: string;
-    Description: string;
-    DigitalAssetStatus: string;
+    DEPUniqueKey__c?: string;
+    Description?: string;
+    DigitalAssetStatus?: string;
     /**
      * <h3><b>Distributor</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DistributorText__c: string;
+    DistributorText__c?: string;
     /**
      * <h3><b>DSI serial number</b></h3>
      * <h4>Field Attributes</h4>
@@ -121,9 +121,10 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DSI_serial_number__c: string;
-    GeocodeAccuracy: string;
-    InstallDate: Date;
+    DSI_serial_number__c?: string;
+    GeocodeAccuracy?: string;
+    HasLifecycleManagement?: boolean;
+    InstallDate?: Date;
     /**
      * <h3><b>Installed At (Id)</b></h3>
      * <h4>Field Attributes</h4>
@@ -134,7 +135,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    InstalledAtIdText__c: string;
+    InstalledAtIdText__c?: string;
     /**
      * <h3><b>Invoice Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -145,16 +146,18 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Number__c: string;
-    IsCompetitorProduct: boolean;
-    IsInternal: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Latitude: number;
-    Location: Location;
-    LocationId: string;
-    Longitude: number;
+    Invoice_Number__c?: string;
+    IsCompetitorProduct?: boolean;
+    IsInternal?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Latitude?: number;
+    LifecycleEndDate?: string;
+    LifecycleStartDate?: string;
+    Location?: Location;
+    LocationId?: string;
+    Longitude?: number;
     /**
      * <h3><b>Main Partner</b></h3>
      * <h4>Field Attributes</h4>
@@ -163,7 +166,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MainPartner__c: string;
+    MainPartner__c?: string;
     /**
      * <h3><b>Main Partner</b></h3>
      * <h4>Field Attributes</h4>
@@ -172,7 +175,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MainPartner__r: Account;
+    MainPartner__r?: Account;
     /**
      * <h3><b>Manufacturer</b></h3>
      * <h4>Field Attributes</h4>
@@ -184,8 +187,8 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manufacturer__c: string;
-    Name: string;
+    Manufacturer__c?: string;
+    Name?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -194,7 +197,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity__c: string;
+    Opportunity__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -203,7 +206,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity__r: Opportunity;
+    Opportunity__r?: Opportunity;
     /**
      * <h3><b>Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -214,13 +217,14 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrderNumber__c: string;
-    Parent: Asset;
-    ParentId: string;
-    PostalCode: string;
-    Price: number;
-    Product2: Product2;
-    Product2Id: string;
+    OrderNumber__c?: string;
+    Parent?: Asset;
+    ParentId?: string;
+    PostalCode?: string;
+    Price?: number;
+    PricingSource?: string;
+    Product2?: Product2;
+    Product2Id?: string;
     /**
      * <h3><b>Product/Asset Name</b></h3>
      * <p>To combine the Product Name from the ERP Products &amp; Non-ERP Products, only to be displayed on the related lists</p>
@@ -233,7 +237,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Asset_Name__c: string;
+    Product_Asset_Name__c?: string;
     /**
      * <h3><b>Product Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -245,7 +249,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Category__c: string;
+    Product_Category__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -254,7 +258,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Name__c: string;
+    Product_Name__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -263,11 +267,11 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Name__r: Non_ERP_Products__c;
-    PurchaseDate: Date;
-    Quantity: number;
-    RecordType: RecordType;
-    RecordTypeId: string;
+    Product_Name__r?: Non_ERP_Products__c;
+    PurchaseDate?: Date;
+    Quantity?: number;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Registration Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -276,8 +280,10 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RegistrationDate__c: Date;
-    ReplayId: string;
+    RegistrationDate__c?: Date;
+    RenewalTerm?: number;
+    RenewalTermUnit?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Revenue Synergy commodity code</b></h3>
      * <h4>Field Attributes</h4>
@@ -288,9 +294,9 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Revenue_Synergy_commodity_code__c: string;
-    RootAsset: Asset;
-    RootAssetId: string;
+    Revenue_Synergy_commodity_code__c?: string;
+    RootAsset?: Asset;
+    RootAssetId?: string;
     /**
      * <h3><b>SAP Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -301,7 +307,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    SAPId__c: string;
+    SAPId__c?: string;
     /**
      * <h3><b>sent letter</b></h3>
      * <p>needed to track if a welcome letter was sent or not (Germany)</p>
@@ -311,8 +317,8 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    sent_letter__c: boolean;
-    SerialNumber: string;
+    sent_letter__c?: boolean;
+    SerialNumber?: string;
     /**
      * <h3><b>Service Agreement</b></h3>
      * <p>Temp field until we migrate the Service Agreement records</p>
@@ -324,7 +330,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ServiceAgreement__c: string;
+    ServiceAgreement__c?: string;
     /**
      * <h3><b>Ship-To Party</b></h3>
      * <h4>Field Attributes</h4>
@@ -333,7 +339,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShipToParty__c: string;
+    ShipToParty__c?: string;
     /**
      * <h3><b>Ship-To Party</b></h3>
      * <h4>Field Attributes</h4>
@@ -342,10 +348,10 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShipToParty__r: Account;
-    State: string;
-    Status: string;
-    Street: string;
+    ShipToParty__r?: Account;
+    State?: string;
+    Status?: string;
+    Street?: string;
     /**
      * <h3><b>Data Migration Action</b></h3>
      * <p>used to update ANZ Assets
@@ -364,7 +370,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Siroforce Asset</code></td><td>Siroforce Asset</td><td nowrap>true</td></tr>
      * </table>
      */
-    TF_DataMigrationAction__c: string;
+    TF_DataMigrationAction__c?: string;
     /**
      * <h3><b>Total price</b></h3>
      * <h4>Field Attributes</h4>
@@ -374,7 +380,7 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_price__c: number;
+    Total_price__c?: number;
     /**
      * <h3><b>Unique External ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -385,6 +391,6 @@ declare interface AssetChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    UniqueExternalID__c: string;
-    UsageEndDate: Date;
+    UniqueExternalID__c?: string;
+    UsageEndDate?: Date;
 }

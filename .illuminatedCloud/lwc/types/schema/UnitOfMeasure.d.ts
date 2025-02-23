@@ -132,6 +132,12 @@ declare module "@salesforce/schema/UnitOfMeasure.ProcessSteps" {
     export default ProcessSteps;
 }
 
+declare module "@salesforce/schema/UnitOfMeasure.ProductUsageGrants" {
+    import { FieldId } from "@salesforce/schema";
+    const ProductUsageGrants: FieldId;
+    export default ProductUsageGrants;
+}
+
 declare module "@salesforce/schema/UnitOfMeasure.RelatedRecord" {
     import { FieldId } from "@salesforce/schema";
     const RelatedRecord: FieldId;
@@ -192,10 +198,34 @@ declare module "@salesforce/schema/UnitOfMeasure.UnitCode" {
     export default UnitCode;
 }
 
+declare module "@salesforce/schema/UnitOfMeasure.UnitOfMeasureClass" {
+    import { FieldId } from "@salesforce/schema";
+    const UnitOfMeasureClass: FieldId;
+    export default UnitOfMeasureClass;
+}
+
+declare module "@salesforce/schema/UnitOfMeasure.UnitOfMeasureClassId" {
+    import { FieldId } from "@salesforce/schema";
+    const UnitOfMeasureClassId: FieldId;
+    export default UnitOfMeasureClassId;
+}
+
+declare module "@salesforce/schema/UnitOfMeasure.UnitOfMeasureClasses" {
+    import { FieldId } from "@salesforce/schema";
+    const UnitOfMeasureClasses: FieldId;
+    export default UnitOfMeasureClasses;
+}
+
 declare module "@salesforce/schema/UnitOfMeasure.UnitOfMeasures" {
     import { FieldId } from "@salesforce/schema";
     const UnitOfMeasures: FieldId;
     export default UnitOfMeasures;
+}
+
+declare module "@salesforce/schema/UnitOfMeasure.UsageResources" {
+    import { FieldId } from "@salesforce/schema";
+    const UsageResources: FieldId;
+    export default UsageResources;
 }
 
 declare module "@salesforce/schema/UnitOfMeasure.UserRecordAccess" {

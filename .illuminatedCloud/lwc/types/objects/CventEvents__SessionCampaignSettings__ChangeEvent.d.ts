@@ -2,11 +2,11 @@
 
 declare interface CventEvents__SessionCampaignSettings__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Status Checked In</b></h3>
      * <p>Stores the campaign member status for &quot;session.checkedIn&quot; activity type.</p>
@@ -18,7 +18,7 @@ declare interface CventEvents__SessionCampaignSettings__ChangeEvent extends SObj
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__StatusCheckedIn__c: string;
+    CventEvents__StatusCheckedIn__c?: string;
     /**
      * <h3><b>Status Enrolled</b></h3>
      * <p>Stores the campaign member status for &quot;session.enrolled&quot; activity type.</p>
@@ -30,7 +30,7 @@ declare interface CventEvents__SessionCampaignSettings__ChangeEvent extends SObj
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__StatusEnrolled__c: string;
+    CventEvents__StatusEnrolled__c?: string;
     /**
      * <h3><b>Status Feedback Submitted</b></h3>
      * <p>Stores the campaign member status for &quot;session.feedbackSubmitted&quot; activity type.</p>
@@ -42,7 +42,7 @@ declare interface CventEvents__SessionCampaignSettings__ChangeEvent extends SObj
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__StatusFeedbackSubmitted__c: string;
+    CventEvents__StatusFeedbackSubmitted__c?: string;
     /**
      * <h3><b>Status Unenrolled</b></h3>
      * <p>Stores the campaign member status for &quot;session.unenrolled&quot; activity type.</p>
@@ -54,7 +54,7 @@ declare interface CventEvents__SessionCampaignSettings__ChangeEvent extends SObj
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__StatusUnenrolled__c: string;
+    CventEvents__StatusUnenrolled__c?: string;
     /**
      * <h3><b>Status Waitlisted</b></h3>
      * <p>Stores the campaign member status for &quot;session.waitlisted&quot; activity type.</p>
@@ -66,12 +66,12 @@ declare interface CventEvents__SessionCampaignSettings__ChangeEvent extends SObj
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__StatusWaitlisted__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    CventEvents__StatusWaitlisted__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

@@ -2,11 +2,11 @@
 
 declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,7 +14,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link echosign_dev1__SIGN_Agreement__c})</td></tr>
      * </table>
      */
-    echosign_dev1__Agreement__c: string;
+    echosign_dev1__Agreement__c?: string;
     /**
      * <h3><b>Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link echosign_dev1__SIGN_Agreement__c})</td></tr>
      * </table>
      */
-    echosign_dev1__Agreement__r: echosign_dev1__SIGN_Agreement__c;
+    echosign_dev1__Agreement__r?: echosign_dev1__SIGN_Agreement__c;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Contact__c: string;
+    echosign_dev1__Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Contact__r: Contact;
+    echosign_dev1__Contact__r?: Contact;
     /**
      * <h3><b>Date/Time Completed</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Date_Time_Completed__c: string;
+    echosign_dev1__Date_Time_Completed__c?: string;
     /**
      * <h3><b>Email Address</b></h3>
      * <p>Applicable for the Recipient Type = Email</p>
@@ -61,7 +61,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Email_Address__c: string;
+    echosign_dev1__Email_Address__c?: string;
     /**
      * <h3><b>Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Group__c: string;
+    echosign_dev1__Group__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Lead__c: string;
+    echosign_dev1__Lead__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,7 +90,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Lead__r: Lead;
+    echosign_dev1__Lead__r?: Lead;
     /**
      * <h3><b>Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -101,7 +101,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Order_Number__c: number;
+    echosign_dev1__Order_Number__c?: number;
     /**
      * <h3><b>Participant Set Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Participant_Set_Order_Number__c: number;
+    echosign_dev1__Participant_Set_Order_Number__c?: number;
     /**
      * <h3><b>ParticipantId</b></h3>
      * <h4>Field Attributes</h4>
@@ -123,7 +123,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__ParticipantId__c: string;
+    echosign_dev1__ParticipantId__c?: string;
     /**
      * <h3><b>ParticipantSet</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,7 +132,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__ParticipantSet__c: string;
+    echosign_dev1__ParticipantSet__c?: string;
     /**
      * <h3><b>ParticipantSet</b></h3>
      * <h4>Field Attributes</h4>
@@ -141,7 +141,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__ParticipantSet__r: echosign_dev1__ParticipantSet__c;
+    echosign_dev1__ParticipantSet__r?: echosign_dev1__ParticipantSet__c;
     /**
      * <h3><b>Password</b></h3>
      * <h4>Field Attributes</h4>
@@ -152,7 +152,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Password__c: string;
+    echosign_dev1__Password__c?: string;
     /**
      * <h3><b>Person Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -161,7 +161,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Person_Account__c: string;
+    echosign_dev1__Person_Account__c?: string;
     /**
      * <h3><b>Person Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -170,7 +170,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Person_Account__r: Account;
+    echosign_dev1__Person_Account__r?: Account;
     /**
      * <h3><b>Phone Verification Country Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -287,7 +287,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">976</code></td><td>976</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Phone_Verification_Country_Code__c: string;
+    echosign_dev1__Phone_Verification_Country_Code__c?: string;
     /**
      * <h3><b>Phone Verification Phone Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -298,7 +298,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Phone_Verification_Phone_Number__c: string;
+    echosign_dev1__Phone_Verification_Phone_Number__c?: string;
     /**
      * <h3><b>Recipient Message</b></h3>
      * <h4>Field Attributes</h4>
@@ -306,7 +306,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Message__c: string;
+    echosign_dev1__Recipient_Message__c?: string;
     /**
      * <h3><b>Recipient Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -329,7 +329,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Delegate to Certified Recipient</code></td><td>Delegate to Certified Recipient</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Role__c: string;
+    echosign_dev1__Recipient_Role__c?: string;
     /**
      * <h3><b>Recipient Type</b></h3>
      * <p>Stores the Type of the Recipient</p>
@@ -348,7 +348,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Email</code></td><td>Email</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Type__c: string;
+    echosign_dev1__Recipient_Type__c?: string;
     /**
      * <h3><b>Recipient Workflow Label</b></h3>
      * <p>Recipient label defined in sign workflow</p>
@@ -360,7 +360,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Workflow_Label__c: string;
+    echosign_dev1__Recipient_Workflow_Label__c?: string;
     /**
      * <h3><b>Replaced</b></h3>
      * <h4>Field Attributes</h4>
@@ -369,7 +369,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Replaced__c: boolean;
+    echosign_dev1__Replaced__c?: boolean;
     /**
      * <h3><b>Signer Verification Method</b></h3>
      * <h4>Field Attributes</h4>
@@ -388,7 +388,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Government ID</code></td><td>Government ID</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Signer_Verification_Method__c: string;
+    echosign_dev1__Signer_Verification_Method__c?: string;
     /**
      * <h3><b>Source Recipient</b></h3>
      * <h4>Field Attributes</h4>
@@ -397,7 +397,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Source_Recipient__c: string;
+    echosign_dev1__Source_Recipient__c?: string;
     /**
      * <h3><b>Source Recipient</b></h3>
      * <h4>Field Attributes</h4>
@@ -406,7 +406,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Source_Recipient__r: echosign_dev1__SIGN_Recipients__c;
+    echosign_dev1__Source_Recipient__r?: echosign_dev1__SIGN_Recipients__c;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -438,7 +438,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Waiting for Signature</code></td><td>Waiting for Signature</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Status__c: string;
+    echosign_dev1__Status__c?: string;
     /**
      * <h3><b>useEmailAddress</b></h3>
      * <h4>Field Attributes</h4>
@@ -447,7 +447,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__useEmailAddress__c: boolean;
+    echosign_dev1__useEmailAddress__c?: boolean;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -456,7 +456,7 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__User__c: string;
+    echosign_dev1__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -465,10 +465,10 @@ declare interface echosign_dev1__SIGN_Recipients__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__User__r: User;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    echosign_dev1__User__r?: User;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
 }

@@ -2,14 +2,14 @@
 
 declare interface LinkedArticleHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    LinkedArticle: LinkedArticle;
-    LinkedArticleId: string;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    LinkedArticle?: LinkedArticle;
+    LinkedArticleId?: string;
+    NewValue?: any;
+    OldValue?: any;
 }

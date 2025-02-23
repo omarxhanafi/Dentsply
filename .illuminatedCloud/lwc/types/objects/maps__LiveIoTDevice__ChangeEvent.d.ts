@@ -2,14 +2,14 @@
 
 declare interface maps__LiveIoTDevice__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Device ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,7 +20,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DeviceId__c: string;
+    maps__DeviceId__c?: string;
     /**
      * <h3><b>Last Position Address</b></h3>
      * <p>The physical address the device last reported from</p>
@@ -32,7 +32,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LastPositionAddress__c: string;
+    maps__LastPositionAddress__c?: string;
     /**
      * <h3><b>Last Position Date/Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,7 +41,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LastPositionDateTime__c: string;
+    maps__LastPositionDateTime__c?: string;
     /**
      * <h3><b>Last Position Event (Raw)</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,7 +52,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LastPositionEventRaw__c: string;
+    maps__LastPositionEventRaw__c?: string;
     /**
      * <h3><b>Last Position Raw</b></h3>
      * <p>This is the raw response for the last position request</p>
@@ -61,7 +61,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__LastPositionRaw__c: string;
+    maps__LastPositionRaw__c?: string;
     /**
      * <h3><b>Batch Date/Time of Last Position</b></h3>
      * <h4>Field Attributes</h4>
@@ -70,7 +70,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LastPositionUpdateDateTime__c: string;
+    maps__LastPositionUpdateDateTime__c?: string;
     /**
      * <h3><b>Last Reported Time Zone</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LastReportedTimeZone__c: string;
+    maps__LastReportedTimeZone__c?: string;
     /**
      * <h3><b>Latest Daily Summary</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,7 +90,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LatestDailySummary__c: string;
+    maps__LatestDailySummary__c?: string;
     /**
      * <h3><b>Latest Daily Summary</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,7 +99,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LatestDailySummary__r: maps__LiveAssetDailySummary__c;
+    maps__LatestDailySummary__r?: maps__LiveAssetDailySummary__c;
     /**
      * <h3><b>Last Position</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,9 +108,9 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Location__c: maps__Location;
-    maps__Location__Latitude__s: number;
-    maps__Location__Longitude__s: number;
+    maps__Location__c?: maps__Location;
+    maps__Location__Latitude__s?: number;
+    maps__Location__Longitude__s?: number;
     /**
      * <h3><b>Odometer (km)</b></h3>
      * <p>Last available odometer reading, in kilometers</p>
@@ -122,7 +122,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__OdometerKm__c: number;
+    maps__OdometerKm__c?: number;
     /**
      * <h3><b>Odometer (mi)</b></h3>
      * <p>Last available odometer reading, in miles</p>
@@ -135,7 +135,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__OdometerMiles__c: number;
+    maps__OdometerMiles__c?: number;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -144,7 +144,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__User__c: string;
+    maps__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -153,7 +153,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__User__r: User;
+    maps__User__r?: User;
     /**
      * <h3><b>Device Vendor</b></h3>
      * <h4>Field Attributes</h4>
@@ -172,7 +172,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Ford</code></td><td>Ford</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Vendor__c: string;
+    maps__Vendor__c?: string;
     /**
      * <h3><b>VIN</b></h3>
      * <h4>Field Attributes</h4>
@@ -183,7 +183,7 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__VIN__c: string;
+    maps__VIN__c?: string;
     /**
      * <h3><b>VIN Last Updated</b></h3>
      * <h4>Field Attributes</h4>
@@ -192,9 +192,9 @@ declare interface maps__LiveIoTDevice__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__VINLastUpdated__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__VINLastUpdated__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

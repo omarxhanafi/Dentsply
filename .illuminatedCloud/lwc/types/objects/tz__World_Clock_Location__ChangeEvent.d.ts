@@ -2,18 +2,18 @@
 
 declare interface tz__World_Clock_Location__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Address</b></h3>
      * <p>Address related to the Place Id.</p>
@@ -25,7 +25,7 @@ declare interface tz__World_Clock_Location__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Address__c: string;
+    tz__Address__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <p>Stores the user to whom this configuration is relevant.</p>
@@ -35,7 +35,7 @@ declare interface tz__World_Clock_Location__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__User__c: string;
+    tz__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <p>Stores the user to whom this configuration is relevant.</p>
@@ -45,5 +45,5 @@ declare interface tz__World_Clock_Location__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__User__r: User;
+    tz__User__r?: User;
 }

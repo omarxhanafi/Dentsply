@@ -2,18 +2,18 @@
 
 declare interface EmailBounceEvent extends SObject 
 {
-    BouncedAddress: string;
-    BounceDate: string;
-    BouncedObject: SObject;
-    BouncedObjectId: string;
-    Classification: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    ErrorMessage: string;
-    EventUuid: string;
-    ReplayId: string;
-    SenderAddress: string;
-    ShouldGenerateDsn: boolean;
-    SourceEvent: AsyncOperationEvent;
+    BouncedAddress?: string;
+    BounceDate?: string;
+    BouncedObject?: SObject;
+    BouncedObjectId?: string;
+    Classification?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    ErrorMessage?: string;
+    EventUuid?: string;
+    ReplayId?: string;
+    SenderAddress?: string;
+    ShouldGenerateDsn?: boolean;
+    SourceEvent?: AsyncOperationEvent;
 }

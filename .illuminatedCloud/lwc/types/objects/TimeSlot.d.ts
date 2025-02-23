@@ -5,23 +5,23 @@ declare interface TimeSlot extends SObject
     /**
      * The reciprocal relationship for {@link AppointmentTopicTimeSlot.TimeSlotId}.
      */
-    AppointmentTopicTimeSlots: AppointmentTopicTimeSlot[];
+    AppointmentTopicTimeSlots?: AppointmentTopicTimeSlot[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    DayOfWeek: string;
-    EndTime: Time;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    DayOfWeek?: string;
+    EndTime?: Time;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Designated Work Boolean Fields</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface TimeSlot extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">None</code></td><td>None</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__Designated_Work_Boolean_Fields__c: string;
+    FSL__Designated_Work_Boolean_Fields__c?: string;
     /**
      * <h3><b>Slot Color</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,29 +64,29 @@ declare interface TimeSlot extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Black</code></td><td>Black</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__Slot_Color__c: string;
-    Histories: TimeSlotHistory[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    OperatingHours: OperatingHours;
-    OperatingHoursId: string;
-    RecordActionHistories: RecordActionHistory[];
+    FSL__Slot_Color__c?: string;
+    Histories?: TimeSlotHistory[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    OperatingHours?: OperatingHours;
+    OperatingHoursId?: string;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordsetFilterCriteria: RecordsetFilterCriteria;
-    RecordsetFilterCriteriaId: string;
-    RelatedRecord: FlowRecordRelation;
-    SobjectLookupValue: AIInsightValue;
-    StartTime: Time;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TimeSlotNumber: string;
-    Type: string;
+    RecordActions?: RecordAction[];
+    RecordsetFilterCriteria?: RecordsetFilterCriteria;
+    RecordsetFilterCriteriaId?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SobjectLookupValue?: AIInsightValue;
+    StartTime?: Time;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TimeSlotNumber?: string;
+    Type?: string;
 }

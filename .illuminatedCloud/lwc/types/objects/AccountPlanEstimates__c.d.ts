@@ -17,7 +17,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountName__c: string;
+    AccountName__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account_Plan__c})</td></tr>
      * </table>
      */
-    AccountPlan__c: string;
+    AccountPlan__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account_Plan__c})</td></tr>
      * </table>
      */
-    AccountPlan__r: Account_Plan__c;
+    AccountPlan__r?: Account_Plan__c;
     /**
      * <h3><b>Annual #</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Annual__c: number;
+    Annual__c?: number;
     /**
      * <h3><b>Annual Sales Quota</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,15 +52,15 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AnnualSalesQuota__c: number;
+    AnnualSalesQuota__c?: number;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
     /**
      * <h3><b>April #</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,14 +69,14 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    April__c: number;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    April__c?: number;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>August #</b></h3>
      * <h4>Field Attributes</h4>
@@ -85,7 +85,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    August__c: number;
+    August__c?: number;
     /**
      * <h3><b>Business Unit</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,7 +108,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    BusinessUnit__c: string;
+    BusinessUnit__c?: string;
     /**
      * <h3><b>BU Size (Amount)</b></h3>
      * <h4>Field Attributes</h4>
@@ -118,22 +118,22 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    BusinessUnitSize__c: number;
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    BusinessUnitSize__c?: number;
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>December #</b></h3>
      * <h4>Field Attributes</h4>
@@ -142,11 +142,11 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    December__c: number;
+    December__c?: number;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * <h3><b>DS Market Share %</b></h3>
      * <h4>Field Attributes</h4>
@@ -156,13 +156,13 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DSMarketShare__c: number;
+    DSMarketShare__c?: number;
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
     /**
      * <h3><b>February #</b></h3>
      * <h4>Field Attributes</h4>
@@ -171,16 +171,16 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    February__c: number;
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    February__c?: number;
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: AccountPlanEstimates__History[];
-    IsDeleted: boolean;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: AccountPlanEstimates__History[];
+    IsDeleted?: boolean;
     /**
      * <h3><b>January #</b></h3>
      * <h4>Field Attributes</h4>
@@ -189,7 +189,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    January__c: number;
+    January__c?: number;
     /**
      * <h3><b>July #</b></h3>
      * <h4>Field Attributes</h4>
@@ -198,7 +198,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    July__c: number;
+    July__c?: number;
     /**
      * <h3><b>June #</b></h3>
      * <h4>Field Attributes</h4>
@@ -207,10 +207,10 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    June__c: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    June__c?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Latest Estimate (LE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -220,9 +220,9 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    LatestEstimate__c: number;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    LatestEstimate__c?: number;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>March #</b></h3>
      * <h4>Field Attributes</h4>
@@ -231,7 +231,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    March__c: number;
+    March__c?: number;
     /**
      * <h3><b>May #</b></h3>
      * <h4>Field Attributes</h4>
@@ -240,11 +240,11 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    May__c: number;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    May__c?: number;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>November #</b></h3>
      * <h4>Field Attributes</h4>
@@ -253,7 +253,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    November__c: number;
+    November__c?: number;
     /**
      * <h3><b>October</b></h3>
      * <h4>Field Attributes</h4>
@@ -262,18 +262,18 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    October__c: number;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    October__c?: number;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Q1 #</b></h3>
      * <h4>Field Attributes</h4>
@@ -282,7 +282,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Q1__c: number;
+    Q1__c?: number;
     /**
      * <h3><b>Q1 Sales Quota</b></h3>
      * <h4>Field Attributes</h4>
@@ -292,7 +292,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Q1SalesQuota__c: number;
+    Q1SalesQuota__c?: number;
     /**
      * <h3><b>Q2 #</b></h3>
      * <h4>Field Attributes</h4>
@@ -301,7 +301,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Q2__c: number;
+    Q2__c?: number;
     /**
      * <h3><b>Q2 Sales Quota</b></h3>
      * <h4>Field Attributes</h4>
@@ -311,7 +311,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Q2SalesQuota__c: number;
+    Q2SalesQuota__c?: number;
     /**
      * <h3><b>Q3 #</b></h3>
      * <h4>Field Attributes</h4>
@@ -320,7 +320,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Q3__c: number;
+    Q3__c?: number;
     /**
      * <h3><b>Q3 Sales Quota</b></h3>
      * <h4>Field Attributes</h4>
@@ -330,7 +330,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Q3SalesQuota__c: number;
+    Q3SalesQuota__c?: number;
     /**
      * <h3><b>Q4 #</b></h3>
      * <h4>Field Attributes</h4>
@@ -339,7 +339,7 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Q4__c: number;
+    Q4__c?: number;
     /**
      * <h3><b>Q4 Sales Quota</b></h3>
      * <h4>Field Attributes</h4>
@@ -349,26 +349,26 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Q4SalesQuota__c: number;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    Q4SalesQuota__c?: number;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>September #</b></h3>
      * <h4>Field Attributes</h4>
@@ -377,15 +377,15 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    September__c: number;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: AccountPlanEstimates__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    September__c?: number;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: AccountPlanEstimates__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>Tracking Period</b></h3>
      * <h4>Field Attributes</h4>
@@ -401,17 +401,17 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Annually</code></td><td>Annually</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    TrackingPeriod__c: string;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    TrackingPeriod__c?: string;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
     /**
      * <h3><b>Calendar Year</b></h3>
      * <h4>Field Attributes</h4>
@@ -423,5 +423,5 @@ declare interface AccountPlanEstimates__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Year__c: string;
+    Year__c?: string;
 }

@@ -17,7 +17,7 @@ declare interface Unassigned_Local_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article_SKU__c: string;
+    Article_SKU__c?: string;
     /**
      * <h3><b>Company Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,10 +28,10 @@ declare interface Unassigned_Local_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Company_Code__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Company_Code__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,12 +42,12 @@ declare interface Unassigned_Local_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Description__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>SKU Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface Unassigned_Local_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    SKU_Key__c: string;
+    SKU_Key__c?: string;
     /**
      * <h3><b>Source Description</b></h3>
      * <p>The Text version of the ERP source ID (1=M3, 2=AX)</p>
@@ -71,7 +71,7 @@ declare interface Unassigned_Local_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Source_Description__c: string;
+    Source_Description__c?: string;
     /**
      * <h3><b>Source ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,7 +82,7 @@ declare interface Unassigned_Local_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Source_ID__c: number;
+    Source_ID__c?: number;
     /**
      * <h3><b>SSIS: ERP/SKU - Market Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface Unassigned_Local_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SSIS_ERP_SKU_Market_Mapping__c: string;
+    SSIS_ERP_SKU_Market_Mapping__c?: string;
     /**
      * <h3><b>SSIS: ERP/SKU - Market Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,7 +102,7 @@ declare interface Unassigned_Local_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SSIS_ERP_SKU_Market_Mapping__r: SSIS_ERP_SKU_Metadata_Country_Connectio__c;
+    SSIS_ERP_SKU_Market_Mapping__r?: SSIS_ERP_SKU_Metadata_Country_Connectio__c;
     /**
      * <h3><b>Valid in My market</b></h3>
      * <p>This field is checked if the unassigned local SKU is in the users market, used in reports and view filters</p>
@@ -113,5 +113,5 @@ declare interface Unassigned_Local_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Valid_in_My_market__c: boolean;
+    Valid_in_My_market__c?: boolean;
 }

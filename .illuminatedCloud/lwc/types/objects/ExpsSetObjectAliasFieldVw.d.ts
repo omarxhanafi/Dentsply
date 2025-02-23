@@ -2,18 +2,18 @@
 
 declare interface ExpsSetObjectAliasFieldVw extends SObject 
 {
-    DurableId: string;
-    ExpsSetDefVerVarField: string;
-    FieldAlias: string;
-    InstalledPackageName: string;
-    LastModifiedBy: string;
-    LastModifiedDate: string;
-    ManageableState: string;
-    NamespacePrefix: string;
-    ObjectAlias: string;
-    ObjectApiName: string;
-    SourceFieldDataType: string;
-    SourceFieldDecimalScale: number;
-    SourceFieldName: string;
-    UsageType: string;
+    DurableId?: string;
+    ExpsSetDefVerVarField?: string;
+    FieldAlias?: string;
+    InstalledPackageName?: string;
+    LastModifiedBy?: string;
+    LastModifiedDate?: string;
+    ManageableState?: string;
+    NamespacePrefix?: string;
+    ObjectAlias?: string;
+    ObjectApiName?: string;
+    SourceFieldDataType?: string;
+    SourceFieldDecimalScale?: number;
+    SourceFieldName?: string;
+    UsageType?: string;
 }

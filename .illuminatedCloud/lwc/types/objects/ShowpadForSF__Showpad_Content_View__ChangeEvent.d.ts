@@ -2,16 +2,16 @@
 
 declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,7 +20,7 @@ declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObjec
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Contact__c: string;
+    ShowpadForSF__Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObjec
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Contact__r: Contact;
+    ShowpadForSF__Contact__r?: Contact;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObjec
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Lead__c: string;
+    ShowpadForSF__Lead__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,7 +47,7 @@ declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObjec
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Lead__r: Lead;
+    ShowpadForSF__Lead__r?: Lead;
     /**
      * <h3><b>Showpad Activity Item</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObjec
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link ShowpadForSF__Showpad_Activity_Item__c})</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Activity_Item__c: string;
+    ShowpadForSF__Showpad_Activity_Item__c?: string;
     /**
      * <h3><b>Showpad Activity Item</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,7 +63,7 @@ declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObjec
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link ShowpadForSF__Showpad_Activity_Item__c})</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Activity_Item__r: ShowpadForSF__Showpad_Activity_Item__c;
+    ShowpadForSF__Showpad_Activity_Item__r?: ShowpadForSF__Showpad_Activity_Item__c;
     /**
      * <h3><b>Showpad ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObjec
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_ID__c: string;
+    ShowpadForSF__Showpad_ID__c?: string;
     /**
      * <h3><b>Time Spent</b></h3>
      * <p>The amount of time spent in seconds, viewing this piece of content.</p>
@@ -86,7 +86,7 @@ declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObjec
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Time_Spent__c: number;
+    ShowpadForSF__Time_Spent__c?: number;
     /**
      * <h3><b>View Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -95,5 +95,5 @@ declare interface ShowpadForSF__Showpad_Content_View__ChangeEvent extends SObjec
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__View_Time__c: string;
+    ShowpadForSF__View_Time__c?: string;
 }

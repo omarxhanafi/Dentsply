@@ -5,79 +5,80 @@ declare interface ProductCategory extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
-    Catalog: ProductCatalog;
-    CatalogId: string;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
+    Catalog?: ProductCatalog;
+    CatalogId?: string;
     /**
      * The reciprocal relationship for {@link ProductCategory.ParentCategoryId}.
      */
-    ChildCategories: ProductCategory[];
-    Code: string;
-    CombinedAttachments: CombinedAttachment[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
+    ChildCategories?: ProductCategory[];
+    Code?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
-    Feeds: ProductCategoryFeed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
+    Feeds?: ProductCategoryFeed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: ProductCategoryHistory[];
-    IsDeleted: boolean;
-    IsNavigational: boolean;
-    Items: ContractItemPrice[];
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    Name: string;
-    NumberOfProducts: number;
-    Parent: FeedComment;
-    ParentCategory: ProductCategory;
-    ParentCategoryId: string;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: ProductCategoryHistory[];
+    IsDeleted?: boolean;
+    IsNavigational?: boolean;
+    Items?: ContractItemPrice[];
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    Name?: string;
+    NumberOfProducts?: number;
+    Parent?: FeedComment;
+    ParentCategory?: ProductCategory;
+    ParentCategoryId?: string;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * The reciprocal relationship for {@link ProductCategoryProduct.ProductCategoryId}.
      */
-    ProductCategory: ProductCategoryProduct;
+    ProductCategory?: ProductCategoryProduct;
     /**
      * The reciprocal relationship for {@link ProductCategoryDisqual.CategoryId}.
      */
-    ProductCategoryDisqualifications: ProductCategoryDisqual[];
+    ProductCategoryDisqualifications?: ProductCategoryDisqual[];
     /**
      * The reciprocal relationship for {@link ProductCategoryProduct.ProductCategoryId}.
      */
-    ProductCategoryProducts: ProductCategoryProduct[];
+    ProductCategoryProducts?: ProductCategoryProduct[];
     /**
      * The reciprocal relationship for {@link ProductCategoryQualification.CategoryId}.
      */
-    ProductCategoryQualifications: ProductCategoryQualification[];
-    RelatedRecord: FlowRecordRelation;
-    SobjectLookupValue: AIInsightValue;
-    SortOrder: number;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    ProductCategoryQualifications?: ProductCategoryQualification[];
+    Record?: ObjectMetadataTag;
+    RelatedRecord?: FlowRecordRelation;
+    SobjectLookupValue?: AIInsightValue;
+    SortOrder?: number;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
 }

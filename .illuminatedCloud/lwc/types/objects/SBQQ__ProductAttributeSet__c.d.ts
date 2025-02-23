@@ -5,14 +5,14 @@
  */
 declare interface SBQQ__ProductAttributeSet__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Attribute Sets</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface SBQQ__ProductAttributeSet__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__AttributeSet__c: string;
+    SBQQ__AttributeSet__c?: string;
     /**
      * <h3><b>Attribute Sets</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,7 +32,7 @@ declare interface SBQQ__ProductAttributeSet__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__AttributeSet__r: SBQQ__AttributeSet__c;
+    SBQQ__AttributeSet__r?: SBQQ__AttributeSet__c;
     /**
      * <h3><b>Configured SKU</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface SBQQ__ProductAttributeSet__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ConfiguredSKU__c: string;
+    SBQQ__ConfiguredSKU__c?: string;
     /**
      * <h3><b>Parent Product Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,7 +56,7 @@ declare interface SBQQ__ProductAttributeSet__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductName__c: string;
+    SBQQ__ProductName__c?: string;
     /**
      * <h3><b>Product Option</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface SBQQ__ProductAttributeSet__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductOption__c: string;
+    SBQQ__ProductOption__c?: string;
     /**
      * <h3><b>Product Option</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,7 +76,7 @@ declare interface SBQQ__ProductAttributeSet__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductOption__r: SBQQ__ProductOption__c;
+    SBQQ__ProductOption__r?: SBQQ__ProductOption__c;
     /**
      * <h3><b>Product Option Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,7 +88,7 @@ declare interface SBQQ__ProductAttributeSet__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductOptionName__c: string;
+    SBQQ__ProductOptionName__c?: string;
     /**
      * <h3><b>Sequence</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,5 +99,5 @@ declare interface SBQQ__ProductAttributeSet__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Sequence__c: number;
+    SBQQ__Sequence__c?: number;
 }

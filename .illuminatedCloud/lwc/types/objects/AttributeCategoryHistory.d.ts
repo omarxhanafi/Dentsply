@@ -2,14 +2,14 @@
 
 declare interface AttributeCategoryHistory extends SObject 
 {
-    AttributeCategory: AttributeCategory;
-    AttributeCategoryId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    AttributeCategory?: AttributeCategory;
+    AttributeCategoryId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

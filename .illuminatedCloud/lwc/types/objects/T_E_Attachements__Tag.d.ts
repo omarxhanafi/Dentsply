@@ -2,13 +2,13 @@
 
 declare interface T_E_Attachements__Tag extends SObject 
 {
-    CreatedDate: string;
-    IsDeleted: boolean;
-    Item: T_E_Attachements__c;
-    ItemId: string;
-    Name: string;
-    SystemModstamp: string;
-    TagDefinition: TagDefinition;
-    TagDefinitionId: string;
-    Type: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    Item?: T_E_Attachements__c;
+    ItemId?: string;
+    Name?: string;
+    SystemModstamp?: string;
+    TagDefinition?: TagDefinition;
+    TagDefinitionId?: string;
+    Type?: string;
 }

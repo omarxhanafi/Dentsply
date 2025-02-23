@@ -2,14 +2,14 @@
 
 declare interface ContactPointEmailHistory extends SObject 
 {
-    ContactPointEmail: ContactPointEmail;
-    ContactPointEmailId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    ContactPointEmail?: ContactPointEmail;
+    ContactPointEmailId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

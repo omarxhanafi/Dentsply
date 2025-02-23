@@ -2,9 +2,9 @@
 
 declare interface PlatformEventUsageMetric extends SObject 
 {
-    EndDate: string;
-    ExternalId: string;
-    Name: string;
-    StartDate: string;
-    Value: number;
+    EndDate?: string;
+    ExternalId?: string;
+    Name?: string;
+    StartDate?: string;
+    Value?: number;
 }

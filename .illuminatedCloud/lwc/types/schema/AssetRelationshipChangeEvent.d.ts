@@ -24,6 +24,12 @@ declare module "@salesforce/schema/AssetRelationshipChangeEvent.AssetRelationshi
     export default AssetRelationshipNumber;
 }
 
+declare module "@salesforce/schema/AssetRelationshipChangeEvent.AssetRole" {
+    import { FieldId } from "@salesforce/schema";
+    const AssetRole: FieldId;
+    export default AssetRole;
+}
+
 declare module "@salesforce/schema/AssetRelationshipChangeEvent.ChangeEventHeader" {
     import { FieldId } from "@salesforce/schema";
     const ChangeEventHeader: FieldId;
@@ -58,6 +64,12 @@ declare module "@salesforce/schema/AssetRelationshipChangeEvent.FromDate" {
     import { FieldId } from "@salesforce/schema";
     const FromDate: FieldId;
     export default FromDate;
+}
+
+declare module "@salesforce/schema/AssetRelationshipChangeEvent.GroupingKey" {
+    import { FieldId } from "@salesforce/schema";
+    const GroupingKey: FieldId;
+    export default GroupingKey;
 }
 
 declare module "@salesforce/schema/AssetRelationshipChangeEvent.Id" {

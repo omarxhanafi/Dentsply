@@ -2,14 +2,14 @@
 
 declare interface ProductCategoryQualificationHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ProductCategoryQualification: ProductCategoryQualification;
-    ProductCategoryQualificationId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ProductCategoryQualification?: ProductCategoryQualification;
+    ProductCategoryQualificationId?: string;
 }

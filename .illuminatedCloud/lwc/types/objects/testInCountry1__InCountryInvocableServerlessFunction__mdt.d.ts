@@ -5,13 +5,13 @@
  */
 declare interface testInCountry1__InCountryInvocableServerlessFunction__mdt extends SObject 
 {
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>Class Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface testInCountry1__InCountryInvocableServerlessFunction__mdt exte
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__ClassName__c: string;
+    testInCountry1__ClassName__c?: string;
     /**
      * <h3><b>Serverless Function Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,5 +33,5 @@ declare interface testInCountry1__InCountryInvocableServerlessFunction__mdt exte
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__ServerlessFunctionName__c: string;
+    testInCountry1__ServerlessFunctionName__c?: string;
 }

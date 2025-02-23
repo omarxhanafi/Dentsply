@@ -2,14 +2,14 @@
 
 declare interface maps__TPUnitAssignment__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Aggregate Units 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__AggregateUnits1__c: string;
+    maps__AggregateUnits1__c?: string;
     /**
      * <h3><b>Aggregate Units 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__AggregateUnits2__c: string;
+    maps__AggregateUnits2__c?: string;
     /**
      * <h3><b>AlignmentId</b></h3>
      * <p>Text Id that can point to a Data Set or Alignment</p>
@@ -37,7 +37,7 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AlignmentId__c: string;
+    maps__AlignmentId__c?: string;
     /**
      * <h3><b>Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -46,7 +46,7 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Area__c: string;
+    maps__Area__c?: string;
     /**
      * <h3><b>Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Area__r: maps__TPArea__c;
+    maps__Area__r?: maps__TPArea__c;
     /**
      * <h3><b>Config</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,7 +63,7 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__Config__c: string;
+    maps__Config__c?: string;
     /**
      * <h3><b>ContainerId</b></h3>
      * <p>Text Id that points to an external container</p>
@@ -75,7 +75,7 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ContainerId__c: string;
+    maps__ContainerId__c?: string;
     /**
      * <h3><b>DataSourceId</b></h3>
      * <p>Text Id that can point to any data source</p>
@@ -87,7 +87,7 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DataSourceId__c: string;
+    maps__DataSourceId__c?: string;
     /**
      * <h3><b>Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -96,9 +96,9 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Location__c: maps__Location;
-    maps__Location__Latitude__s: number;
-    maps__Location__Longitude__s: number;
+    maps__Location__c?: maps__Location;
+    maps__Location__Latitude__s?: number;
+    maps__Location__Longitude__s?: number;
     /**
      * <h3><b>Metadata</b></h3>
      * <h4>Field Attributes</h4>
@@ -106,7 +106,7 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__Metadata__c: string;
+    maps__Metadata__c?: string;
     /**
      * <h3><b>UnitId</b></h3>
      * <p>Text Id that can point to any record</p>
@@ -118,9 +118,9 @@ declare interface maps__TPUnitAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__UnitId__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__UnitId__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

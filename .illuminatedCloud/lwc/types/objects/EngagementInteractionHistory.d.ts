@@ -2,14 +2,14 @@
 
 declare interface EngagementInteractionHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    EngagementInteraction: EngagementInteraction;
-    EngagementInteractionId: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    EngagementInteraction?: EngagementInteraction;
+    EngagementInteractionId?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

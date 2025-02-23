@@ -16,7 +16,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>New Practice (Account)</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,11 +25,11 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * The reciprocal relationship for {@link Account_Create_Change_Request__c.StartUpPractice__c}.
      */
-    Account_Requests__r: Account_Create_Change_Request__c[];
+    Account_Requests__r?: Account_Create_Change_Request__c[];
     /**
      * <h3><b>Account Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,23 +45,23 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental Support Organization</code></td><td>Dental Support Organization</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    AccountType__c: string;
-    ActivityHistories: ActivityHistory[];
+    AccountType__c?: string;
+    ActivityHistories?: ActivityHistory[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Cancellation Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,7 +77,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    CancellationReason__c: string;
+    CancellationReason__c?: string;
     /**
      * <h3><b>Cancellation Reason Details</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,7 +88,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CancellationReasonDetails__c: string;
+    CancellationReasonDetails__c?: string;
     /**
      * <h3><b>City</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,12 +99,12 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    City__c: string;
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    City__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * <h3><b>Existing Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -113,7 +113,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Existing Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -122,13 +122,13 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Country Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,11 +138,11 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CASE($User.User_Country__c, &quot;Australia&quot;,&quot;AU&quot;, &quot;Austria&quot;,&quot;AT&quot;, &quot;Belarus&quot;,&quot;BY&quot;, &quot;Belgium&quot;,&quot;BE&quot;, &quot;Brazil&quot;,&quot;BR&quot;, &quot;Canada&quot;, &quot;CA&quot;, &quot;Denmark&quot;,&quot;DK&quot;, &quot;Finland&quot;,&quot;FI&quot;, &quot;France&quot;,&quot;FR&quot;, &quot;Germany&quot;,&quot;DE&quot;, &quot;Holland&quot;,&quot;NL&quot;, &quot;India&quot;,&quot;IN&quot;, &quot;Italy&quot;,&quot;IT&quot;, &quot;Kazakhstan&quot;,&quot;KZ&quot;, &quot;Luxembourg&quot;,&quot;LU&quot;, &quot;New Zealand&quot;,&quot;NZ&quot;, &quot;Norway&quot;,&quot;NW&quot;, &quot;Portugal&quot;,&quot;PT&quot;, &quot;South Africa&quot;,&quot;ZA&quot;, &quot;Spain&quot;,&quot;SP&quot;, &quot;Sweden&quot;,&quot;SW&quot;, &quot;Switzerland&quot;,&quot;CH&quot;, &quot;UK&quot;, &quot;GB&quot;, &quot;Ukraine&quot;, &quot;UA&quot;, &quot;USA&quot;,&quot;US&quot;, &quot;Japan&quot;,&quot;JP&quot;, &quot;Turkey&quot;,&quot;R&quot;, &quot;United Arab Emirates&quot;,&quot;&quot;, &quot;Vietnam&quot;,&quot;VN&quot;, &quot;Thailand&quot;,&quot;TH&quot;, &quot;Taiwan&quot;,&quot;TW&quot;, &quot;South Korea&quot;,&quot;KR&quot;, &quot;Slovakia&quot;,&quot;SK&quot;, &quot;Singapore&quot;,&quot;SI&quot;, &quot;Saudi Arabia&quot;,&quot;SA&quot;, &quot;Indonesia&quot;,&quot;ID&quot;, &quot;Hong Kong&quot;,&quot;HK&quot;, &quot;China&quot;,&quot;CN&quot;, &quot;Russia&quot;,&quot;RU&quot;, &quot;Poland&quot;,&quot;PO&quot;, &quot;Philippines&quot;,&quot;PH&quot;, &quot;HQ: SE&quot;)</code></td></tr>
      * </table>
      */
-    CountryCode__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    CountryCode__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -150,22 +150,22 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Description__c: string;
+    Description__c?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    Events: Event[];
+    Emails?: EmailMessage[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
     /**
      * <h3><b>Expected Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -175,9 +175,9 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Expected_Amount__c: number;
-    Feeds: StartUpPractice__Feed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    Expected_Amount__c?: number;
+    Feeds?: StartUpPractice__Feed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>Finance Company</b></h3>
      * <h4>Field Attributes</h4>
@@ -188,7 +188,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FinanceCompany__c: string;
+    FinanceCompany__c?: string;
     /**
      * <h3><b>First Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -199,8 +199,8 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FirstName__c: string;
-    FirstPublishLocation: ContentVersion;
+    FirstName__c?: string;
+    FirstPublishLocation?: ContentVersion;
     /**
      * <h3><b>Fit-Out Company</b></h3>
      * <h4>Field Attributes</h4>
@@ -211,13 +211,13 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FitOutCompany__c: string;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    FitOutCompany__c?: string;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: StartUpPractice__History[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: StartUpPractice__History[];
     /**
      * <h3><b>Identified Needs &amp; Products</b></h3>
      * <h4>Field Attributes</h4>
@@ -225,12 +225,12 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    IdentifiedNeedsAndProducts__c: string;
-    IsDeleted: boolean;
-    LastActivityDate: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    IdentifiedNeedsAndProducts__c?: string;
+    IsDeleted?: boolean;
+    LastActivityDate?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Last Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -241,9 +241,9 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastName__c: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
+    LastName__c?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
     /**
      * <h3><b>Lead Source</b></h3>
      * <p>Direct (from the customer)
@@ -267,9 +267,9 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Referral</code></td><td>Referral</td><td nowrap>true</td></tr>
      * </table>
      */
-    Lead_Source__c: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    Lead_Source__c?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Mobile</b></h3>
      * <h4>Field Attributes</h4>
@@ -278,8 +278,8 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Mobile__c: string;
-    Name: string;
+    Mobile__c?: string;
+    Name?: string;
     /**
      * <h3><b>NDA Agreement Signed</b></h3>
      * <h4>Field Attributes</h4>
@@ -288,10 +288,10 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    NDAAgreementSigned__c: boolean;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    NDAAgreementSigned__c?: boolean;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>Obstacles</b></h3>
      * <h4>Field Attributes</h4>
@@ -299,7 +299,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Obstacles__c: string;
+    Obstacles__c?: string;
     /**
      * <h3><b>Estimated # of Dentists</b></h3>
      * <h4>Field Attributes</h4>
@@ -310,7 +310,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Dentists__c: number;
+    of_Dentists__c?: number;
     /**
      * <h3><b>Estimated # of Prophylaxis Chairs</b></h3>
      * <h4>Field Attributes</h4>
@@ -321,7 +321,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_ProphylaxisChairs__c: number;
+    of_ProphylaxisChairs__c?: number;
     /**
      * <h3><b>Estimated # of Technicians</b></h3>
      * <h4>Field Attributes</h4>
@@ -332,7 +332,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Technicians__c: number;
+    of_Technicians__c?: number;
     /**
      * <h3><b>Estimated # of Treatment Chairs</b></h3>
      * <h4>Field Attributes</h4>
@@ -343,8 +343,8 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_TreatmentChairs__c: number;
-    OpenActivities: OpenActivity[];
+    of_TreatmentChairs__c?: number;
+    OpenActivities?: OpenActivity[];
     /**
      * <h3><b>Overall Sales Budget (Amount)</b></h3>
      * <h4>Field Attributes</h4>
@@ -353,13 +353,13 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OverallSalesBudget__c: number;
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
+    OverallSalesBudget__c?: number;
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Planned Opening Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -368,8 +368,8 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PlannedOpeningDate__c: Date;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    PlannedOpeningDate__c?: Date;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * <h3><b>Private Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -380,7 +380,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PrivateEmail__c: string;
+    PrivateEmail__c?: string;
     /**
      * <h3><b>Probability (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -389,13 +389,13 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Probability__c: number;
+    Probability__c?: number;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Product Categories</b></h3>
      * <h4>Field Attributes</h4>
@@ -417,28 +417,28 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Single Unit Crown</code></td><td>Single Unit Crown</td><td nowrap>true</td></tr>
      * </table>
      */
-    ProductCategories__c: string;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProductCategories__c?: string;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: StartUpPractice__Share[];
-    SobjectLookupValue: AIInsightValue;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: StartUpPractice__Share[];
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Specialty</b></h3>
      * <h4>Field Attributes</h4>
@@ -474,7 +474,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Small Group</code></td><td>Small Group</td><td nowrap>true</td></tr>
      * </table>
      */
-    Specialty__c: string;
+    Specialty__c?: string;
     /**
      * <h3><b>State/Province</b></h3>
      * <h4>Field Attributes</h4>
@@ -485,7 +485,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StateProvince__c: string;
+    StateProvince__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -504,7 +504,7 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Cancelled</code></td><td>Cancelled</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -515,16 +515,16 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Street__c: string;
-    SystemModstamp: string;
-    Tags: StartUpPractice__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    Street__c?: string;
+    SystemModstamp?: string;
+    Tags?: StartUpPractice__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
+    Tasks?: Task[];
     /**
      * <h3><b>Title</b></h3>
      * <h4>Field Attributes</h4>
@@ -535,9 +535,9 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Title__c: string;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    Title__c?: string;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>Treatment Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -572,17 +572,17 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Restorative</code></td><td>Restorative</td><td nowrap>true</td></tr>
      * </table>
      */
-    TreatmentType__c: string;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    TreatmentType__c?: string;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
     /**
      * <h3><b>Zip/Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -593,5 +593,5 @@ declare interface StartUpPractice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ZipPostalCode__c: string;
+    ZipPostalCode__c?: string;
 }

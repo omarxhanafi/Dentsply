@@ -2,14 +2,14 @@
 
 declare interface AsyncOperationStatus extends SObject 
 {
-    Category: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
-    Message: string;
-    OperationDetails: AsyncOperationEvent;
-    SourceEvent: AsyncOperationEvent;
-    Status: string;
-    StatusCode: string;
+    Category?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
+    Message?: string;
+    OperationDetails?: AsyncOperationEvent;
+    SourceEvent?: AsyncOperationEvent;
+    Status?: string;
+    StatusCode?: string;
 }

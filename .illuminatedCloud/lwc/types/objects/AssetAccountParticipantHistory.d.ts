@@ -2,14 +2,14 @@
 
 declare interface AssetAccountParticipantHistory extends SObject 
 {
-    AssetAccountParticipant: AssetAccountParticipant;
-    AssetAccountParticipantId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    AssetAccountParticipant?: AssetAccountParticipant;
+    AssetAccountParticipantId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

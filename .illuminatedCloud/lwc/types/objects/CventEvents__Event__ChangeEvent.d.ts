@@ -12,7 +12,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    APACEstimatedBudget__c: string;
+    APACEstimatedBudget__c?: string;
     /**
      * <h3><b>Budget</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,8 +32,8 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">100,000 or more</code></td><td>100,000 or more</td><td nowrap>true</td></tr>
      * </table>
      */
-    Budget__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Budget__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>ContractedSpeaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,11 +44,11 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ContractedSpeaker__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContractedSpeaker__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Address 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,7 +59,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Address1__c: string;
+    CventEvents__pkg_Address1__c?: string;
     /**
      * <h3><b>Address 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -70,7 +70,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Address2__c: string;
+    CventEvents__pkg_Address2__c?: string;
     /**
      * <h3><b>Address 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Address3__c: string;
+    CventEvents__pkg_Address3__c?: string;
     /**
      * <h3><b>Agenda Link</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,7 +90,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_AgendaLink__c: string;
+    CventEvents__pkg_AgendaLink__c?: string;
     /**
      * <h3><b>Allow Add To Invitation List</b></h3>
      * <p>Reflects whether &#39;Invite&#39; button is shown on the event details page.</p>
@@ -100,7 +100,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__pkg_AllowAddInvitationList__c: boolean;
+    CventEvents__pkg_AllowAddInvitationList__c?: boolean;
     /**
      * <h3><b>Allow Invitation</b></h3>
      * <h4>Field Attributes</h4>
@@ -109,7 +109,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__pkg_AllowInvitation__c: boolean;
+    CventEvents__pkg_AllowInvitation__c?: boolean;
     /**
      * <h3><b>Allow Registration</b></h3>
      * <h4>Field Attributes</h4>
@@ -118,7 +118,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__pkg_AllowRegistration__c: boolean;
+    CventEvents__pkg_AllowRegistration__c?: boolean;
     /**
      * <h3><b>Archive Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -127,7 +127,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_ArchiveDate__c: Date;
+    CventEvents__pkg_ArchiveDate__c?: Date;
     /**
      * <h3><b>Archive Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -136,7 +136,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_ArchiveTime__c: Time;
+    CventEvents__pkg_ArchiveTime__c?: Time;
     /**
      * <h3><b>Capacity</b></h3>
      * <h4>Field Attributes</h4>
@@ -147,7 +147,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Capacity__c: number;
+    CventEvents__pkg_Capacity__c?: number;
     /**
      * <h3><b>Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -158,7 +158,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Category__c: string;
+    CventEvents__pkg_Category__c?: string;
     /**
      * <h3><b>City</b></h3>
      * <h4>Field Attributes</h4>
@@ -169,7 +169,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_City__c: string;
+    CventEvents__pkg_City__c?: string;
     /**
      * <h3><b>Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -180,7 +180,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Code__c: string;
+    CventEvents__pkg_Code__c?: string;
     /**
      * <h3><b>Country Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -191,7 +191,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_CountryCode__c: string;
+    CventEvents__pkg_CountryCode__c?: string;
     /**
      * <h3><b>Country Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -202,7 +202,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_CountryName__c: string;
+    CventEvents__pkg_CountryName__c?: string;
     /**
      * <h3><b>Creation Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -211,7 +211,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_CreationDate__c: Date;
+    CventEvents__pkg_CreationDate__c?: Date;
     /**
      * <h3><b>Creation Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -220,7 +220,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_CreationTime__c: Time;
+    CventEvents__pkg_CreationTime__c?: Time;
     /**
      * <h3><b>Currency Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -231,7 +231,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_CurrencyCode__c: string;
+    CventEvents__pkg_CurrencyCode__c?: string;
     /**
      * <h3><b>Currency Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -242,7 +242,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_CurrencyName__c: string;
+    CventEvents__pkg_CurrencyName__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -250,7 +250,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(20000)</td></tr>
      * </table>
      */
-    CventEvents__pkg_Description__c: string;
+    CventEvents__pkg_Description__c?: string;
     /**
      * <h3><b>End Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -259,7 +259,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_EndDate__c: Date;
+    CventEvents__pkg_EndDate__c?: Date;
     /**
      * <h3><b>End Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -268,7 +268,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_EndTime__c: Time;
+    CventEvents__pkg_EndTime__c?: Time;
     /**
      * <h3><b>Event Format</b></h3>
      * <h4>Field Attributes</h4>
@@ -279,7 +279,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_EventFormat__c: string;
+    CventEvents__pkg_EventFormat__c?: string;
     /**
      * <h3><b>Event Stub</b></h3>
      * <h4>Field Attributes</h4>
@@ -290,7 +290,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__pkg_EventStub__c: string;
+    CventEvents__pkg_EventStub__c?: string;
     /**
      * <h3><b>Has External Authentication</b></h3>
      * <h4>Field Attributes</h4>
@@ -299,7 +299,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__pkg_HasExternalAuthentication__c: boolean;
+    CventEvents__pkg_HasExternalAuthentication__c?: boolean;
     /**
      * <h3><b>Has Fee</b></h3>
      * <h4>Field Attributes</h4>
@@ -308,7 +308,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__pkg_HasFee__c: boolean;
+    CventEvents__pkg_HasFee__c?: boolean;
     /**
      * <h3><b>Invitation Link</b></h3>
      * <h4>Field Attributes</h4>
@@ -317,7 +317,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_InvitationLink__c: string;
+    CventEvents__pkg_InvitationLink__c?: string;
     /**
      * <h3><b>Is Archived</b></h3>
      * <h4>Field Attributes</h4>
@@ -326,7 +326,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__pkg_IsArchived__c: boolean;
+    CventEvents__pkg_IsArchived__c?: boolean;
     /**
      * <h3><b>Is Hidden</b></h3>
      * <h4>Field Attributes</h4>
@@ -335,7 +335,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__pkg_IsHidden__c: boolean;
+    CventEvents__pkg_IsHidden__c?: boolean;
     /**
      * <h3><b>Test Mode</b></h3>
      * <h4>Field Attributes</h4>
@@ -344,7 +344,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__pkg_IsTestMode__c: boolean;
+    CventEvents__pkg_IsTestMode__c?: boolean;
     /**
      * <h3><b>Language</b></h3>
      * <h4>Field Attributes</h4>
@@ -355,7 +355,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Language__c: string;
+    CventEvents__pkg_Language__c?: string;
     /**
      * <h3><b>Language Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -366,7 +366,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_LanguageCountry__c: string;
+    CventEvents__pkg_LanguageCountry__c?: string;
     /**
      * <h3><b>Last Modified Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -375,7 +375,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_LastModifiedDate__c: Date;
+    CventEvents__pkg_LastModifiedDate__c?: Date;
     /**
      * <h3><b>Last Modified Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -384,7 +384,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_LastModifiedTime__c: Time;
+    CventEvents__pkg_LastModifiedTime__c?: Time;
     /**
      * <h3><b>Latitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -395,7 +395,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Latitude__c: number;
+    CventEvents__pkg_Latitude__c?: number;
     /**
      * <h3><b>Launch Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -404,7 +404,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_LaunchDate__c: Date;
+    CventEvents__pkg_LaunchDate__c?: Date;
     /**
      * <h3><b>Launch Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -413,7 +413,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_LaunchTime__c: Time;
+    CventEvents__pkg_LaunchTime__c?: Time;
     /**
      * <h3><b>Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -424,7 +424,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Location__c: string;
+    CventEvents__pkg_Location__c?: string;
     /**
      * <h3><b>Longitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -435,7 +435,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Longitude__c: number;
+    CventEvents__pkg_Longitude__c?: number;
     /**
      * <h3><b>Planner Company</b></h3>
      * <h4>Field Attributes</h4>
@@ -446,7 +446,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_PlannerCompany__c: string;
+    CventEvents__pkg_PlannerCompany__c?: string;
     /**
      * <h3><b>Planner Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -457,7 +457,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_PlannerEmail__c: string;
+    CventEvents__pkg_PlannerEmail__c?: string;
     /**
      * <h3><b>Planner First Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -468,7 +468,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_PlannerFirstName__c: string;
+    CventEvents__pkg_PlannerFirstName__c?: string;
     /**
      * <h3><b>Planner Last Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -479,7 +479,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_PlannerLastName__c: string;
+    CventEvents__pkg_PlannerLastName__c?: string;
     /**
      * <h3><b>Planner Prefix</b></h3>
      * <h4>Field Attributes</h4>
@@ -490,7 +490,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_PlannerPrefix__c: string;
+    CventEvents__pkg_PlannerPrefix__c?: string;
     /**
      * <h3><b>Planner Title</b></h3>
      * <h4>Field Attributes</h4>
@@ -501,7 +501,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_PlannerTitle__c: string;
+    CventEvents__pkg_PlannerTitle__c?: string;
     /**
      * <h3><b>Planning Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -512,7 +512,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_PlanningStatus__c: string;
+    CventEvents__pkg_PlanningStatus__c?: string;
     /**
      * <h3><b>Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -523,7 +523,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_PostalCode__c: string;
+    CventEvents__pkg_PostalCode__c?: string;
     /**
      * <h3><b>Registration Deadline Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -532,7 +532,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_RegistrationDeadlineDate__c: Date;
+    CventEvents__pkg_RegistrationDeadlineDate__c?: Date;
     /**
      * <h3><b>Registration Deadline Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -541,7 +541,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_RegistrationDeadlineTime__c: Time;
+    CventEvents__pkg_RegistrationDeadlineTime__c?: Time;
     /**
      * <h3><b>Registration Link</b></h3>
      * <h4>Field Attributes</h4>
@@ -550,7 +550,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_RegistrationLink__c: string;
+    CventEvents__pkg_RegistrationLink__c?: string;
     /**
      * <h3><b>Require Nomination</b></h3>
      * <h4>Field Attributes</h4>
@@ -559,7 +559,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__pkg_RequireNomination__c: boolean;
+    CventEvents__pkg_RequireNomination__c?: boolean;
     /**
      * <h3><b>Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -568,7 +568,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_StartDate__c: Date;
+    CventEvents__pkg_StartDate__c?: Date;
     /**
      * <h3><b>Start Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -577,7 +577,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_StartTime__c: Time;
+    CventEvents__pkg_StartTime__c?: Time;
     /**
      * <h3><b>State Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -588,7 +588,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_StateCode__c: string;
+    CventEvents__pkg_StateCode__c?: string;
     /**
      * <h3><b>State Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -599,7 +599,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_StateName__c: string;
+    CventEvents__pkg_StateName__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -620,7 +620,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Processing</code></td><td>Processing</td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__pkg_Status__c: string;
+    CventEvents__pkg_Status__c?: string;
     /**
      * <h3><b>Summary Link</b></h3>
      * <h4>Field Attributes</h4>
@@ -629,7 +629,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_SummaryLink__c: string;
+    CventEvents__pkg_SummaryLink__c?: string;
     /**
      * <h3><b>Time Zone</b></h3>
      * <h4>Field Attributes</h4>
@@ -640,7 +640,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_TimeZone__c: string;
+    CventEvents__pkg_TimeZone__c?: string;
     /**
      * <h3><b>Time Zone Abbreviation</b></h3>
      * <h4>Field Attributes</h4>
@@ -651,7 +651,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_TimeZoneAbbreviation__c: string;
+    CventEvents__pkg_TimeZoneAbbreviation__c?: string;
     /**
      * <h3><b>Title</b></h3>
      * <h4>Field Attributes</h4>
@@ -662,7 +662,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_Title__c: string;
+    CventEvents__pkg_Title__c?: string;
     /**
      * <h3><b>Registration Is Open To</b></h3>
      * <h4>Field Attributes</h4>
@@ -673,7 +673,7 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__pkg_TypeName__c: string;
+    CventEvents__pkg_TypeName__c?: string;
     /**
      * <h3><b>KOL Manager email</b></h3>
      * <h4>Field Attributes</h4>
@@ -684,14 +684,14 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOLManageremail__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    KOLManageremail__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Total Event Budget Estimate</b></h3>
      * <h4>Field Attributes</h4>
@@ -711,5 +711,5 @@ declare interface CventEvents__Event__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">50,000 - 100,000</code></td><td>50,000 - 100,000</td><td nowrap>true</td></tr>
      * </table>
      */
-    TotalEventBudgetEstimate__c: string;
+    TotalEventBudgetEstimate__c?: string;
 }

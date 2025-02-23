@@ -12,8 +12,8 @@ declare interface Session_Participant__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CampaignMemberId__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    CampaignMemberId__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Company</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface Session_Participant__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Company__c: string;
+    Company__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,7 +34,7 @@ declare interface Session_Participant__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,15 +43,15 @@ declare interface Session_Participant__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Contact__r: Contact;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Contact__r?: Contact;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Profession</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,8 +63,8 @@ declare interface Session_Participant__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Profession__c: string;
-    ReplayId: string;
+    Profession__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Session</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface Session_Participant__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Campaign})</td></tr>
      * </table>
      */
-    Session__c: string;
+    Session__c?: string;
     /**
      * <h3><b>Session</b></h3>
      * <h4>Field Attributes</h4>
@@ -80,7 +80,7 @@ declare interface Session_Participant__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Campaign})</td></tr>
      * </table>
      */
-    Session__r: Campaign;
+    Session__r?: Campaign;
     /**
      * <h3><b>Target Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,5 +92,5 @@ declare interface Session_Participant__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Target_Type__c: string;
+    Target_Type__c?: string;
 }

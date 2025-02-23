@@ -9,29 +9,29 @@ declare interface Project_Member__c extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Country</b></h3>
      * <p>Lookup to the country object (interbnal object to keep track of the countries live in SFDC</p>
@@ -41,7 +41,7 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <p>Lookup to the country object (interbnal object to keep track of the countries live in SFDC</p>
@@ -51,7 +51,7 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__r: Country__c;
+    Country__r?: Country__c;
     /**
      * <h3><b>Country Location</b></h3>
      * <p>The country the member belongs to</p>
@@ -63,21 +63,21 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Location__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country_Location__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
     /**
      * <h3><b>External Member</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,23 +86,23 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    External_Member__c: boolean;
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    External_Member__c?: boolean;
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
     /**
      * <h3><b>Notes</b></h3>
      * <p>Place to add any specific notes about the project member - e.g. his/her role in the project and/or company</p>
@@ -111,19 +111,19 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Notes__c: string;
-    NotesAndAttachments: NoteAndAttachment[];
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Notes__c?: string;
+    NotesAndAttachments?: NoteAndAttachment[];
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -131,7 +131,7 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__c: string;
+    Project__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -139,7 +139,7 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__r: Project__c;
+    Project__r?: Project__c;
     /**
      * <h3><b>Project Member</b></h3>
      * <p>Add the member of the project (full SFDC license)</p>
@@ -149,7 +149,7 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project_Member__c: string;
+    Project_Member__c?: string;
     /**
      * <h3><b>Project Member</b></h3>
      * <p>Add the member of the project (full SFDC license)</p>
@@ -159,7 +159,7 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project_Member__r: User;
+    Project_Member__r?: User;
     /**
      * <h3><b>Project Role</b></h3>
      * <p>The user&#39;s role in the project</p>
@@ -185,32 +185,32 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">System Administrator</code></td><td>System Administrator</td><td nowrap>true</td></tr>
      * </table>
      */
-    Project_Role__c: string;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    Project_Role__c?: string;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: Project_Member__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: Project_Member__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * <h3><b>Time allocated per week</b></h3>
      * <p>Enter amount of hours allocated by the project member to this project.</p>
@@ -222,9 +222,9 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Time_allocated_per_week__c: number;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    Time_allocated_per_week__c?: number;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>Non-SFDC Project Member</b></h3>
      * <p>Add Project Member who isn&#39;t an SFDC user or has a Chatter Free user license</p>
@@ -234,7 +234,7 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Role__c: string;
+    User_Role__c?: string;
     /**
      * <h3><b>Non-SFDC Project Member</b></h3>
      * <p>Add Project Member who isn&#39;t an SFDC user or has a Chatter Free user license</p>
@@ -244,15 +244,15 @@ declare interface Project_Member__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Role__r: User_Role__c;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    User_Role__r?: User_Role__c;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

@@ -6,14 +6,14 @@
  */
 declare interface Research_Activity__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * The reciprocal relationship for {@link Investigator__c.Research_Activity__c}.
      */
-    Investigators__r: Investigator__c[];
-    IsDeleted: boolean;
+    Investigators__r?: Investigator__c[];
+    IsDeleted?: boolean;
     /**
      * <h3><b>KOL information</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,7 +23,7 @@ declare interface Research_Activity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_information__c: string;
+    KOL_information__c?: string;
     /**
      * <h3><b>KOL information</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,11 +33,11 @@ declare interface Research_Activity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_information__r: Expert__c;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    KOL_information__r?: Expert__c;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Status</b></h3>
      * <p>The status of the Research Activity</p>
@@ -56,5 +56,5 @@ declare interface Research_Activity__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Ongoing</code></td><td>Ongoing</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
 }

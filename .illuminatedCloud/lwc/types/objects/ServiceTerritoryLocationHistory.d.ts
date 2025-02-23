@@ -2,14 +2,14 @@
 
 declare interface ServiceTerritoryLocationHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ServiceTerritoryLocation: ServiceTerritoryLocation;
-    ServiceTerritoryLocationId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ServiceTerritoryLocation?: ServiceTerritoryLocation;
+    ServiceTerritoryLocationId?: string;
 }

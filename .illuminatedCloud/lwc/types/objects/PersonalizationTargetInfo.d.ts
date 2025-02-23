@@ -2,20 +2,20 @@
 
 declare interface PersonalizationTargetInfo extends SObject 
 {
-    Container: SObject;
-    ContainerId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DraftRow: PersonalizationTargetInfo;
-    DraftRowId: string;
-    GroupName: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    PublishStatus: string;
-    SystemModstamp: string;
-    TargetType: string;
-    TargetValue: string;
+    Container?: SObject;
+    ContainerId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DraftRow?: PersonalizationTargetInfo;
+    DraftRowId?: string;
+    GroupName?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    PublishStatus?: string;
+    SystemModstamp?: string;
+    TargetType?: string;
+    TargetValue?: string;
 }

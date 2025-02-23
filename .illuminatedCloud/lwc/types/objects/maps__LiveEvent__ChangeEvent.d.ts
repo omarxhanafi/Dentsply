@@ -2,14 +2,14 @@
 
 declare interface maps__LiveEvent__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Correlation Id</b></h3>
      * <p>Internal Use</p>
@@ -21,7 +21,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CorrelationId__c: string;
+    maps__CorrelationId__c?: string;
     /**
      * <h3><b>Device Id</b></h3>
      * <p>Device Involved with Event &amp; Rule</p>
@@ -33,7 +33,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DeviceId__c: string;
+    maps__DeviceId__c?: string;
     /**
      * <h3><b>Entry Date Time</b></h3>
      * <p>Date &amp; Time of Entry</p>
@@ -43,7 +43,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EntryDateTime__c: string;
+    maps__EntryDateTime__c?: string;
     /**
      * <h3><b>Entry Position</b></h3>
      * <p>Location of Entry Position</p>
@@ -53,9 +53,9 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EntryPosition__c: maps__Location;
-    maps__EntryPosition__Latitude__s: number;
-    maps__EntryPosition__Longitude__s: number;
+    maps__EntryPosition__c?: maps__Location;
+    maps__EntryPosition__Latitude__s?: number;
+    maps__EntryPosition__Longitude__s?: number;
     /**
      * <h3><b>Exit Date Time</b></h3>
      * <p>Date &amp; Time of Exit</p>
@@ -65,7 +65,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ExitDateTime__c: string;
+    maps__ExitDateTime__c?: string;
     /**
      * <h3><b>Exit Position</b></h3>
      * <p>Location of Exit Position</p>
@@ -75,9 +75,9 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ExitPosition__c: maps__Location;
-    maps__ExitPosition__Latitude__s: number;
-    maps__ExitPosition__Longitude__s: number;
+    maps__ExitPosition__c?: maps__Location;
+    maps__ExitPosition__Latitude__s?: number;
+    maps__ExitPosition__Longitude__s?: number;
     /**
      * <h3><b>Live Asset</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,7 +86,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveAsset__c: string;
+    maps__LiveAsset__c?: string;
     /**
      * <h3><b>Live Asset</b></h3>
      * <h4>Field Attributes</h4>
@@ -95,7 +95,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveAsset__r: maps__LiveAsset__c;
+    maps__LiveAsset__r?: maps__LiveAsset__c;
     /**
      * <h3><b>Live Event Type</b></h3>
      * <p>Record Type of Event Created</p>
@@ -111,7 +111,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Exits</code></td><td>Exits</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__LiveEventType__c: string;
+    maps__LiveEventType__c?: string;
     /**
      * <h3><b>Live IoT Device</b></h3>
      * <p>Lookup to IoT Device that Created Event</p>
@@ -121,7 +121,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveIoTDevice__c: string;
+    maps__LiveIoTDevice__c?: string;
     /**
      * <h3><b>Live IoT Device</b></h3>
      * <p>Lookup to IoT Device that Created Event</p>
@@ -131,7 +131,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveIoTDevice__r: maps__LiveIoTDevice__c;
+    maps__LiveIoTDevice__r?: maps__LiveIoTDevice__c;
     /**
      * <h3><b>Rule Id</b></h3>
      * <p>External Rule Id</p>
@@ -143,7 +143,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RuleId__c: string;
+    maps__RuleId__c?: string;
     /**
      * <h3><b>Rule Name</b></h3>
      * <p>The name or label for this rule</p>
@@ -155,7 +155,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RuleName__c: string;
+    maps__RuleName__c?: string;
     /**
      * <h3><b>Time Spent in Geofence (Hours)</b></h3>
      * <p>Amount of time spent within a Geofence in Hours</p>
@@ -168,7 +168,7 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__TimeSpentinGeofenceHours__c: number;
+    maps__TimeSpentinGeofenceHours__c?: number;
     /**
      * <h3><b>Time Spent in Geofence (Minutes)</b></h3>
      * <p>Amount of time spent within a Geofence in Minutes</p>
@@ -181,9 +181,9 @@ declare interface maps__LiveEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__TimeSpentinGeofenceMinutes__c: number;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__TimeSpentinGeofenceMinutes__c?: number;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

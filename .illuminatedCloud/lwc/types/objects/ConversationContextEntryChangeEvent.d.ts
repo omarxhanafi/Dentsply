@@ -2,18 +2,18 @@
 
 declare interface ConversationContextEntryChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    ConversationContextEntryName: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    CustomDetailContextKey: string;
-    CustomDetailContextValue: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Parent: LiveChatTranscript;
-    ParentId: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    ConversationContextEntryName?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    CustomDetailContextKey?: string;
+    CustomDetailContextValue?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Parent?: LiveChatTranscript;
+    ParentId?: string;
+    ReplayId?: string;
 }

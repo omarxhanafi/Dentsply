@@ -41,7 +41,7 @@ declare interface DI_Account_Record_Type_Mapping__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DNA Distributor</code></td><td>DNA Distributor</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Account_Type__c: string;
+    Account_Type__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface DI_Account_Record_Type_Mapping__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,7 +61,7 @@ declare interface DI_Account_Record_Type_Mapping__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__r: Country_Configuration__mdt;
+    Country__r?: Country_Configuration__mdt;
     /**
      * <h3><b>Customer Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,13 +77,13 @@ declare interface DI_Account_Record_Type_Mapping__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Distributor</code></td><td>Distributor</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Customer_Type__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    Customer_Type__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Record Type ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -94,6 +94,6 @@ declare interface DI_Account_Record_Type_Mapping__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Record_Type_ID__c: string;
-    SystemModstamp: string;
+    Record_Type_ID__c?: string;
+    SystemModstamp?: string;
 }

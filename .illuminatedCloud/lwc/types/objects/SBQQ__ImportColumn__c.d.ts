@@ -5,14 +5,14 @@
  */
 declare interface SBQQ__ImportColumn__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Column Index</b></h3>
      * <p>A numeric index value that represents the location of the column. Column index must start from 1.</p>
@@ -24,7 +24,7 @@ declare interface SBQQ__ImportColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ColumnIndex__c: number;
+    SBQQ__ColumnIndex__c?: number;
     /**
      * <h3><b>Field Name</b></h3>
      * <p>This is the API Name.</p>
@@ -45,7 +45,7 @@ declare interface SBQQ__ImportColumn__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">List Price</code></td><td>List Price</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__FieldName__c: string;
+    SBQQ__FieldName__c?: string;
     /**
      * <h3><b>Import Format</b></h3>
      * <p>The format in which your records are being imported.</p>
@@ -55,7 +55,7 @@ declare interface SBQQ__ImportColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ImportFormat__c: string;
+    SBQQ__ImportFormat__c?: string;
     /**
      * <h3><b>Import Format</b></h3>
      * <p>The format in which your records are being imported.</p>
@@ -65,7 +65,7 @@ declare interface SBQQ__ImportColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ImportFormat__r: SBQQ__ImportFormat__c;
+    SBQQ__ImportFormat__r?: SBQQ__ImportFormat__c;
     /**
      * <h3><b>Key</b></h3>
      * <p>This column represents a unique key column.</p>
@@ -76,5 +76,5 @@ declare interface SBQQ__ImportColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Key__c: boolean;
+    SBQQ__Key__c?: boolean;
 }

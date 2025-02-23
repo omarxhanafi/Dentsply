@@ -2,16 +2,16 @@
 
 declare interface OmniSupervisorConfigUser extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    OmniSupervisorConfig: OmniSupervisorConfig;
-    OmniSupervisorConfigId: string;
-    SystemModstamp: string;
-    User: User;
-    UserId: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    OmniSupervisorConfig?: OmniSupervisorConfig;
+    OmniSupervisorConfigId?: string;
+    SystemModstamp?: string;
+    User?: User;
+    UserId?: string;
 }

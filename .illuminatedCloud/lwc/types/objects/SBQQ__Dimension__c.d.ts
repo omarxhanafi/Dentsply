@@ -5,22 +5,22 @@
  */
 declare interface SBQQ__Dimension__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__Localization__c.SBQQ__PriceDimension__c}.
      */
-    Localizations__r: SBQQ__Localization__c[];
-    Name: string;
+    Localizations__r?: SBQQ__Localization__c[];
+    Name?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLine__c.SBQQ__Dimension__c}.
      */
-    Quote_Lines__r: SBQQ__QuoteLine__c[];
+    Quote_Lines__r?: SBQQ__QuoteLine__c[];
     /**
      * <h3><b>Cost Editable</b></h3>
      * <p>Controls whether cost for this product may be modified on individual quotes.</p>
@@ -38,7 +38,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__CostEditable__c: string;
+    SBQQ__CostEditable__c?: string;
     /**
      * <h3><b>Default Quantity</b></h3>
      * <p>Specify the starting quantity of the product when added.</p>
@@ -50,7 +50,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DefaultQuantity__c: number;
+    SBQQ__DefaultQuantity__c?: number;
     /**
      * <h3><b>Discount Schedule</b></h3>
      * <p>Discount schedule for use with this dimension</p>
@@ -61,7 +61,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DiscountSchedule__c: string;
+    SBQQ__DiscountSchedule__c?: string;
     /**
      * <h3><b>Discount Schedule</b></h3>
      * <p>Discount schedule for use with this dimension</p>
@@ -72,7 +72,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DiscountSchedule__r: SBQQ__DiscountSchedule__c;
+    SBQQ__DiscountSchedule__r?: SBQQ__DiscountSchedule__c;
     /**
      * <h3><b>Non Discountable</b></h3>
      * <p>Marks this dimension as not discountable.</p>
@@ -90,7 +90,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__NonDiscountable__c: string;
+    SBQQ__NonDiscountable__c?: string;
     /**
      * <h3><b>Non Partner Discountable</b></h3>
      * <p>Marks this dimension as non-discountable for partners.</p>
@@ -108,7 +108,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__NonPartnerDiscountable__c: string;
+    SBQQ__NonPartnerDiscountable__c?: string;
     /**
      * <h3><b>Price Book</b></h3>
      * <p>Associates this dimension to a particular Price Book</p>
@@ -119,7 +119,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PriceBook__c: string;
+    SBQQ__PriceBook__c?: string;
     /**
      * <h3><b>Price Book</b></h3>
      * <p>Associates this dimension to a particular Price Book</p>
@@ -130,7 +130,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PriceBook__r: Pricebook2;
+    SBQQ__PriceBook__r?: Pricebook2;
     /**
      * <h3><b>Price Editable</b></h3>
      * <p>Indicates this dimension allows for price to be freely editable when building a quote.</p>
@@ -148,7 +148,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__PriceEditable__c: string;
+    SBQQ__PriceEditable__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>The Product to which this Price Dimension is associated.</p>
@@ -159,7 +159,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__c: string;
+    SBQQ__Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>The Product to which this Price Dimension is associated.</p>
@@ -170,7 +170,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__r: Product2;
+    SBQQ__Product__r?: Product2;
     /**
      * <h3><b>Quantity Editable</b></h3>
      * <p>Flag that determines whether the quantity is editable.</p>
@@ -188,7 +188,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__QuantityEditable__c: string;
+    SBQQ__QuantityEditable__c?: string;
     /**
      * <h3><b>Quantity Scale</b></h3>
      * <p>Specifies the number of decimal places used in the Quantity field.</p>
@@ -200,7 +200,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuantityScale__c: number;
+    SBQQ__QuantityScale__c?: number;
     /**
      * <h3><b>Taxable</b></h3>
      * <p>Indicates whether this product is taxable.</p>
@@ -218,7 +218,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Taxable__c: string;
+    SBQQ__Taxable__c?: string;
     /**
      * <h3><b>Term Discount Schedule</b></h3>
      * <p>This is a schedule for discounts based on Subscription Term. Values entered into these fields will override the values entered at the Product level.</p>
@@ -229,7 +229,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TermDiscountSchedule__c: string;
+    SBQQ__TermDiscountSchedule__c?: string;
     /**
      * <h3><b>Term Discount Schedule</b></h3>
      * <p>This is a schedule for discounts based on Subscription Term. Values entered into these fields will override the values entered at the Product level.</p>
@@ -240,7 +240,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TermDiscountSchedule__r: SBQQ__DiscountSchedule__c;
+    SBQQ__TermDiscountSchedule__r?: SBQQ__DiscountSchedule__c;
     /**
      * <h3><b>Type</b></h3>
      * <p>For multi-dimensional products, the type of Price Dimension: One-Time or Yearly. Yearly Dimensions are always treated as Subscriptions.</p>
@@ -260,7 +260,7 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">One-time</code></td><td>One-time</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Type__c: string;
+    SBQQ__Type__c?: string;
     /**
      * <h3><b>Unit Price</b></h3>
      * <p>Unit price for this Dimension. This will override the value from the Price Book.</p>
@@ -271,13 +271,13 @@ declare interface SBQQ__Dimension__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UnitPrice__c: number;
+    SBQQ__UnitPrice__c?: number;
     /**
      * The reciprocal relationship for {@link SBQQ__Subscription__c.SBQQ__Dimension__c}.
      */
-    Subscriptions__r: SBQQ__Subscription__c[];
+    Subscriptions__r?: SBQQ__Subscription__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__WebQuoteLine__c.SBQQ__Dimension__c}.
      */
-    Web_Quote_Lines__r: SBQQ__WebQuoteLine__c[];
+    Web_Quote_Lines__r?: SBQQ__WebQuoteLine__c[];
 }

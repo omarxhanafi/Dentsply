@@ -2,14 +2,14 @@
 
 declare interface MessagingEndUserHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    MessagingEndUser: MessagingEndUser;
-    MessagingEndUserId: string;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    MessagingEndUser?: MessagingEndUser;
+    MessagingEndUserId?: string;
+    NewValue?: any;
+    OldValue?: any;
 }

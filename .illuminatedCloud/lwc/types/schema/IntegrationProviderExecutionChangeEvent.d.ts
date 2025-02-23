@@ -48,6 +48,18 @@ declare module "@salesforce/schema/IntegrationProviderExecutionChangeEvent.Execu
     export default ExecutionDateTime;
 }
 
+declare module "@salesforce/schema/IntegrationProviderExecutionChangeEvent.ExecutionStepInstance" {
+    import { FieldId } from "@salesforce/schema";
+    const ExecutionStepInstance: FieldId;
+    export default ExecutionStepInstance;
+}
+
+declare module "@salesforce/schema/IntegrationProviderExecutionChangeEvent.ExecutionStepInstanceId" {
+    import { FieldId } from "@salesforce/schema";
+    const ExecutionStepInstanceId: FieldId;
+    export default ExecutionStepInstanceId;
+}
+
 declare module "@salesforce/schema/IntegrationProviderExecutionChangeEvent.Id" {
     import { FieldId } from "@salesforce/schema";
     const Id: FieldId;

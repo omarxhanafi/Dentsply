@@ -15,7 +15,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ANKYLOS__c: boolean;
+    ANKYLOS__c?: boolean;
     /**
      * <h3><b>ASTRA TECH Implant System</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ASTRA_TECH_Implant_System__c: boolean;
+    ASTRA_TECH_Implant_System__c?: boolean;
     /**
      * <h3><b>ATLANTIS</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ATLANTIS__c: boolean;
+    ATLANTIS__c?: boolean;
     /**
      * <h3><b>By Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    By_Email__c: boolean;
+    By_Email__c?: boolean;
     /**
      * <h3><b>By Phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    By_Phone__c: boolean;
+    By_Phone__c?: boolean;
     /**
      * <h3><b>City</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    City__c: string;
+    City__c?: string;
     /**
      * <h3><b>Company Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,7 +77,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Company_Name__c: string;
+    Company_Name__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -288,10 +288,10 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zimbabwe</code></td><td>Zimbabwe</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>DENSTPLY Implants Magazine</b></h3>
      * <h4>Field Attributes</h4>
@@ -301,7 +301,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    DENSTPLY_Implants_Magazine__c: boolean;
+    DENSTPLY_Implants_Magazine__c?: boolean;
     /**
      * <h3><b>DENTSPLY Implants</b></h3>
      * <h4>Field Attributes</h4>
@@ -311,7 +311,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    DENTSPLY_Implants__c: boolean;
+    DENTSPLY_Implants__c?: boolean;
     /**
      * <h3><b>e-Newsletter</b></h3>
      * <h4>Field Attributes</h4>
@@ -321,7 +321,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    e_Newsletter__c: boolean;
+    e_Newsletter__c?: boolean;
     /**
      * <h3><b>Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -332,7 +332,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email__c: string;
+    Email__c?: string;
     /**
      * <h3><b>First Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -343,8 +343,8 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    First_Name__c: string;
-    IsDeleted: boolean;
+    First_Name__c?: string;
+    IsDeleted?: boolean;
     /**
      * <h3><b>Last Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -355,10 +355,10 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Name__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Last_Name__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>More Information</b></h3>
      * <h4>Field Attributes</h4>
@@ -368,8 +368,8 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    More_Information__c: string;
-    Name: string;
+    More_Information__c?: string;
+    Name?: string;
     /**
      * <h3><b>Others</b></h3>
      * <h4>Field Attributes</h4>
@@ -380,7 +380,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Others__c: string;
+    Others__c?: string;
     /**
      * <h3><b>Phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -390,7 +390,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Phone__c: string;
+    Phone__c?: string;
     /**
      * <h3><b>Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -401,7 +401,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Postal_Code__c: string;
+    Postal_Code__c?: string;
     /**
      * <h3><b>Profession</b></h3>
      * <h4>Field Attributes</h4>
@@ -436,7 +436,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales Manager</code></td><td>Sales Manager</td><td nowrap>true</td></tr>
      * </table>
      */
-    Profession__c: string;
+    Profession__c?: string;
     /**
      * <h3><b>Sales Reps Visits</b></h3>
      * <h4>Field Attributes</h4>
@@ -446,7 +446,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Sales_Reps_Visits__c: boolean;
+    Sales_Reps_Visits__c?: boolean;
     /**
      * <h3><b>Scientific documentation</b></h3>
      * <h4>Field Attributes</h4>
@@ -456,7 +456,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Scientific_documentation__c: boolean;
+    Scientific_documentation__c?: boolean;
     /**
      * <h3><b>SIMPLANT</b></h3>
      * <h4>Field Attributes</h4>
@@ -466,7 +466,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SIMPLANT__c: boolean;
+    SIMPLANT__c?: boolean;
     /**
      * <h3><b>STEPPS</b></h3>
      * <h4>Field Attributes</h4>
@@ -476,7 +476,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    STEPPS__c: boolean;
+    STEPPS__c?: boolean;
     /**
      * <h3><b>Street Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -487,7 +487,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Street_Address__c: string;
+    Street_Address__c?: string;
     /**
      * <h3><b>SYMBIOS</b></h3>
      * <h4>Field Attributes</h4>
@@ -497,7 +497,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SYMBIOS__c: boolean;
+    SYMBIOS__c?: boolean;
     /**
      * <h3><b>Target Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -518,7 +518,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Surgeon doing primarily only the surgical portion</code></td><td>Surgeon doing primarily only the surgical portion</td><td nowrap>true</td></tr>
      * </table>
      */
-    Target_Type__c: string;
+    Target_Type__c?: string;
     /**
      * <h3><b>Updated</b></h3>
      * <p>Will be used and visible only for CRM-team. Have we updated this to the real Contact?</p>
@@ -529,7 +529,7 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Updated__c: boolean;
+    Updated__c?: boolean;
     /**
      * <h3><b>XiVE</b></h3>
      * <h4>Field Attributes</h4>
@@ -539,5 +539,5 @@ declare interface EAO_2015__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    XiVE__c: boolean;
+    XiVE__c?: boolean;
 }

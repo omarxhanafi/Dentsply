@@ -39,7 +39,7 @@ declare interface TBDServiceCloudSLAPriority__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Software</code></td><td>Software</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    CaseCategory__c: string;
+    CaseCategory__c?: string;
     /**
      * <h3><b>Case Reason</b></h3>
      * <p>Copy of Case Reasons</p>
@@ -170,7 +170,7 @@ declare interface TBDServiceCloudSLAPriority__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Service Appointment</code></td><td>Service Appointment</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    CaseReason__c: string;
+    CaseReason__c?: string;
     /**
      * <h3><b>Case SBU</b></h3>
      * <p>Copy of SBUs values</p>
@@ -182,7 +182,7 @@ declare interface TBDServiceCloudSLAPriority__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CaseSBU__c: string;
+    CaseSBU__c?: string;
     /**
      * <h3><b>Case Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -196,7 +196,7 @@ declare interface TBDServiceCloudSLAPriority__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">General</code></td><td>General</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    CaseType__c: string;
+    CaseType__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <p>Copy of Country value</p>
@@ -206,12 +206,12 @@ declare interface TBDServiceCloudSLAPriority__mdt extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    Country__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -227,8 +227,8 @@ declare interface TBDServiceCloudSLAPriority__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">High</code></td><td>High</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Priority__c: string;
-    QualifiedApiName: string;
+    Priority__c?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <p>Copy of SBUs</p>
@@ -252,6 +252,6 @@ declare interface TBDServiceCloudSLAPriority__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">TRCE</code></td><td>TRCE</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBU__c: string;
-    SystemModstamp: string;
+    SBU__c?: string;
+    SystemModstamp?: string;
 }

@@ -13,8 +13,8 @@ declare interface MarginGuidance__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AreaCode__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    AreaCode__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Cost</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,14 +25,14 @@ declare interface MarginGuidance__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Cost__c: number;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Cost__c?: number;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Lower Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,10 +41,10 @@ declare interface MarginGuidance__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    LowerGuidance__c: number;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    LowerGuidance__c?: number;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface MarginGuidance__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,8 +62,8 @@ declare interface MarginGuidance__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__r: Product2;
-    ReplayId: string;
+    Product__r?: Product2;
+    ReplayId?: string;
     /**
      * <h3><b>Upper Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,5 +72,5 @@ declare interface MarginGuidance__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    UpperGuidance__c: number;
+    UpperGuidance__c?: number;
 }

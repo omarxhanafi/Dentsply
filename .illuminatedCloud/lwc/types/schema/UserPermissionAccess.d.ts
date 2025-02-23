@@ -1566,6 +1566,12 @@ declare module "@salesforce/schema/UserPermissionAccess.PermissionsManageContent
     export default PermissionsManageContentProperties;
 }
 
+declare module "@salesforce/schema/UserPermissionAccess.PermissionsManageContentTaxonomy" {
+    import { FieldId } from "@salesforce/schema";
+    const PermissionsManageContentTaxonomy: FieldId;
+    export default PermissionsManageContentTaxonomy;
+}
+
 declare module "@salesforce/schema/UserPermissionAccess.PermissionsManageContentTypes" {
     import { FieldId } from "@salesforce/schema";
     const PermissionsManageContentTypes: FieldId;
@@ -2038,6 +2044,12 @@ declare module "@salesforce/schema/UserPermissionAccess.PermissionsModifyAllData
     import { FieldId } from "@salesforce/schema";
     const PermissionsModifyAllData: FieldId;
     export default PermissionsModifyAllData;
+}
+
+declare module "@salesforce/schema/UserPermissionAccess.PermissionsModifyAllPolicyCenterPolicies" {
+    import { FieldId } from "@salesforce/schema";
+    const PermissionsModifyAllPolicyCenterPolicies: FieldId;
+    export default PermissionsModifyAllPolicyCenterPolicies;
 }
 
 declare module "@salesforce/schema/UserPermissionAccess.PermissionsModifyDataClassification" {
@@ -2856,6 +2868,12 @@ declare module "@salesforce/schema/UserPermissionAccess.PermissionsViewAllForeig
     export default PermissionsViewAllForeignKeyNames;
 }
 
+declare module "@salesforce/schema/UserPermissionAccess.PermissionsViewAllPolicyCenterPolicies" {
+    import { FieldId } from "@salesforce/schema";
+    const PermissionsViewAllPolicyCenterPolicies: FieldId;
+    export default PermissionsViewAllPolicyCenterPolicies;
+}
+
 declare module "@salesforce/schema/UserPermissionAccess.PermissionsViewAllProfiles" {
     import { FieldId } from "@salesforce/schema";
     const PermissionsViewAllProfiles: FieldId;
@@ -2886,6 +2904,12 @@ declare module "@salesforce/schema/UserPermissionAccess.PermissionsViewContent" 
     export default PermissionsViewContent;
 }
 
+declare module "@salesforce/schema/UserPermissionAccess.PermissionsViewContentTaxonomy" {
+    import { FieldId } from "@salesforce/schema";
+    const PermissionsViewContentTaxonomy: FieldId;
+    export default PermissionsViewContentTaxonomy;
+}
+
 declare module "@salesforce/schema/UserPermissionAccess.PermissionsViewCustomerSentiment" {
     import { FieldId } from "@salesforce/schema";
     const PermissionsViewCustomerSentiment: FieldId;
@@ -2914,6 +2938,12 @@ declare module "@salesforce/schema/UserPermissionAccess.PermissionsViewDraftArti
     import { FieldId } from "@salesforce/schema";
     const PermissionsViewDraftArticles: FieldId;
     export default PermissionsViewDraftArticles;
+}
+
+declare module "@salesforce/schema/UserPermissionAccess.PermissionsViewEnablementAnalytics" {
+    import { FieldId } from "@salesforce/schema";
+    const PermissionsViewEnablementAnalytics: FieldId;
+    export default PermissionsViewEnablementAnalytics;
 }
 
 declare module "@salesforce/schema/UserPermissionAccess.PermissionsViewEncryptedData" {

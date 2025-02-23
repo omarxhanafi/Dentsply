@@ -2,14 +2,14 @@
 
 declare interface maps__DriveProfile__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Hazardous Materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Hazardous_Materials__c: string;
+    maps__Hazardous_Materials__c?: string;
     /**
      * <h3><b>Height</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Height__c: number;
+    maps__Height__c?: number;
     /**
      * <h3><b>Height Units</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">meters</code></td><td>meters</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__HeightUnits__c: string;
+    maps__HeightUnits__c?: string;
     /**
      * <h3><b>Length</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,7 +61,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Length__c: number;
+    maps__Length__c?: number;
     /**
      * <h3><b>Length Units</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,7 +76,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">meters</code></td><td>meters</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__LengthUnits__c: string;
+    maps__LengthUnits__c?: string;
     /**
      * <h3><b>Number of Axles</b></h3>
      * <h4>Field Attributes</h4>
@@ -87,7 +87,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__NumberOfAxles__c: number;
+    maps__NumberOfAxles__c?: number;
     /**
      * <h3><b>Number of Trailers</b></h3>
      * <h4>Field Attributes</h4>
@@ -98,7 +98,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__NumberOfTrailers__c: number;
+    maps__NumberOfTrailers__c?: number;
     /**
      * <h3><b>Profile Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -113,7 +113,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Truck</code></td><td>Truck</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__ProfileType__c: string;
+    maps__ProfileType__c?: string;
     /**
      * <h3><b>Weight</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Weight__c: number;
+    maps__Weight__c?: number;
     /**
      * <h3><b>Weight Per Axle</b></h3>
      * <h4>Field Attributes</h4>
@@ -136,7 +136,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__WeightPerAxle__c: number;
+    maps__WeightPerAxle__c?: number;
     /**
      * <h3><b>Weight Units</b></h3>
      * <h4>Field Attributes</h4>
@@ -152,7 +152,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">kilos</code></td><td>kilos</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__WeightUnits__c: string;
+    maps__WeightUnits__c?: string;
     /**
      * <h3><b>Width</b></h3>
      * <h4>Field Attributes</h4>
@@ -163,7 +163,7 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Width__c: number;
+    maps__Width__c?: number;
     /**
      * <h3><b>Width Units</b></h3>
      * <h4>Field Attributes</h4>
@@ -178,9 +178,9 @@ declare interface maps__DriveProfile__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">meters</code></td><td>meters</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__WidthUnits__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__WidthUnits__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

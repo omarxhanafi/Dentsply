@@ -2,22 +2,22 @@
 
 declare interface CustomNotificationType extends SObject 
 {
-    Action: AIInsightAction;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CustomNotifTypeName: string;
-    Description: string;
-    Desktop: boolean;
-    DeveloperName: string;
-    IsDeleted: boolean;
-    IsSlack: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    Mobile: boolean;
-    NamespacePrefix: string;
-    SystemModstamp: string;
+    Action?: AIInsightAction;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CustomNotifTypeName?: string;
+    Description?: string;
+    Desktop?: boolean;
+    DeveloperName?: string;
+    IsDeleted?: boolean;
+    IsSlack?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    Mobile?: boolean;
+    NamespacePrefix?: string;
+    SystemModstamp?: string;
 }

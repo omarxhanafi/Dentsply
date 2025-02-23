@@ -2,11 +2,11 @@
 
 declare interface CventEvents__NominationRequestField__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Field</b></h3>
      * <p>API name of the field which is displayed on the nomination request.</p>
@@ -18,7 +18,7 @@ declare interface CventEvents__NominationRequestField__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Field__c: string;
+    CventEvents__Field__c?: string;
     /**
      * <h3><b>Object</b></h3>
      * <p>Salesforce object API name.</p>
@@ -30,12 +30,12 @@ declare interface CventEvents__NominationRequestField__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Object__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    CventEvents__Object__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

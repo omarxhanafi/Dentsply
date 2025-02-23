@@ -23,7 +23,7 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Form Submit</code></td><td>Form Submit</td><td nowrap>true</td></tr>
      * </table>
      */
-    Activity_type__c: string;
+    Activity_type__c?: string;
     /**
      * <h3><b>Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Comments__c: string;
+    Comments__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <p>Lookup related Contact</p>
@@ -44,7 +44,7 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <p>Lookup related Contact</p>
@@ -55,10 +55,10 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Contact__r?: Contact;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Due Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,11 +68,11 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Due_Date__c: Date;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Due_Date__c?: Date;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <p>Lookup to related lead</p>
@@ -83,7 +83,7 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lead__c: string;
+    Lead__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <p>Lookup to related lead</p>
@@ -94,8 +94,8 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lead__r: Lead;
-    Name: string;
+    Lead__r?: Lead;
+    Name?: string;
     /**
      * <h3><b>Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">High</code></td><td>High</td><td nowrap>true</td></tr>
      * </table>
      */
-    Priority__c: string;
+    Priority__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -129,7 +129,7 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Completed</code></td><td>Completed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Subject</b></h3>
      * <h4>Field Attributes</h4>
@@ -140,5 +140,5 @@ declare interface Marketing_Activities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Subject__c: string;
+    Subject__c?: string;
 }

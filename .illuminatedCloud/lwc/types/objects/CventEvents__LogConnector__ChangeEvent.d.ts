@@ -2,11 +2,11 @@
 
 declare interface CventEvents__LogConnector__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Log</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,7 +14,7 @@ declare interface CventEvents__LogConnector__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link CventEvents__Log__c})</td></tr>
      * </table>
      */
-    CventEvents__Log__c: string;
+    CventEvents__Log__c?: string;
     /**
      * <h3><b>Log</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface CventEvents__LogConnector__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link CventEvents__Log__c})</td></tr>
      * </table>
      */
-    CventEvents__Log__r: CventEvents__Log__c;
+    CventEvents__Log__r?: CventEvents__Log__c;
     /**
      * <h3><b>Related Record</b></h3>
      * <p>Hyperlink to the related record.</p>
@@ -35,7 +35,7 @@ declare interface CventEvents__LogConnector__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__RelatedRecord__c: string;
+    CventEvents__RelatedRecord__c?: string;
     /**
      * <h3><b>Related Record Id</b></h3>
      * <p>Salesforce Id of the record related to the log.</p>
@@ -47,7 +47,7 @@ declare interface CventEvents__LogConnector__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__RelatedRecordId__c: string;
+    CventEvents__RelatedRecordId__c?: string;
     /**
      * <h3><b>Related Record Name</b></h3>
      * <p>Name of the record related to the log.</p>
@@ -59,7 +59,7 @@ declare interface CventEvents__LogConnector__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__RelatedRecordName__c: string;
+    CventEvents__RelatedRecordName__c?: string;
     /**
      * <h3><b>Related Record Type</b></h3>
      * <p>Object type of the related record.</p>
@@ -71,10 +71,10 @@ declare interface CventEvents__LogConnector__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__RelatedRecordType__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    CventEvents__RelatedRecordType__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
 }

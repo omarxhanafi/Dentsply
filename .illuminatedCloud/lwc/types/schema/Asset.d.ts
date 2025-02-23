@@ -354,6 +354,12 @@ declare module "@salesforce/schema/Asset.FlowOrchestrationWorkItems" {
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/Asset.FulfillmentDecompositions" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentDecompositions: FieldId;
+    export default FulfillmentDecompositions;
+}
+
 declare module "@salesforce/schema/Asset.GeneratedDocRefObjects" {
     import { FieldId } from "@salesforce/schema";
     const GeneratedDocRefObjects: FieldId;
@@ -364,6 +370,12 @@ declare module "@salesforce/schema/Asset.GeocodeAccuracy" {
     import { FieldId } from "@salesforce/schema";
     const GeocodeAccuracy: FieldId;
     export default GeocodeAccuracy;
+}
+
+declare module "@salesforce/schema/Asset.HasLifecycleManagement" {
+    import { FieldId } from "@salesforce/schema";
+    const HasLifecycleManagement: FieldId;
+    export default HasLifecycleManagement;
 }
 
 declare module "@salesforce/schema/Asset.Histories" {
@@ -448,6 +460,18 @@ declare module "@salesforce/schema/Asset.Latitude" {
     import { FieldId } from "@salesforce/schema";
     const Latitude: FieldId;
     export default Latitude;
+}
+
+declare module "@salesforce/schema/Asset.LifecycleEndDate" {
+    import { FieldId } from "@salesforce/schema";
+    const LifecycleEndDate: FieldId;
+    export default LifecycleEndDate;
+}
+
+declare module "@salesforce/schema/Asset.LifecycleStartDate" {
+    import { FieldId } from "@salesforce/schema";
+    const LifecycleStartDate: FieldId;
+    export default LifecycleStartDate;
 }
 
 declare module "@salesforce/schema/Asset.LinkedEntity" {
@@ -586,6 +610,12 @@ declare module "@salesforce/schema/Asset.Price" {
     import { FieldId } from "@salesforce/schema";
     const Price: FieldId;
     export default Price;
+}
+
+declare module "@salesforce/schema/Asset.PricingSource" {
+    import { FieldId } from "@salesforce/schema";
+    const PricingSource: FieldId;
+    export default PricingSource;
 }
 
 declare module "@salesforce/schema/Asset.PrimaryAssets" {
@@ -762,6 +792,12 @@ declare module "@salesforce/schema/Asset.RelatedRecord" {
     export default RelatedRecord;
 }
 
+declare module "@salesforce/schema/Asset.RelatedRevenueTransactionErrorLogs" {
+    import { FieldId } from "@salesforce/schema";
+    const RelatedRevenueTransactionErrorLogs: FieldId;
+    export default RelatedRevenueTransactionErrorLogs;
+}
+
 declare module "@salesforce/schema/Asset.RelatedTo" {
     import { FieldId } from "@salesforce/schema";
     const RelatedTo: FieldId;
@@ -772,6 +808,18 @@ declare module "@salesforce/schema/Asset.Relation" {
     import { FieldId } from "@salesforce/schema";
     const Relation: FieldId;
     export default Relation;
+}
+
+declare module "@salesforce/schema/Asset.RenewalTerm" {
+    import { FieldId } from "@salesforce/schema";
+    const RenewalTerm: FieldId;
+    export default RenewalTerm;
+}
+
+declare module "@salesforce/schema/Asset.RenewalTermUnit" {
+    import { FieldId } from "@salesforce/schema";
+    const RenewalTermUnit: FieldId;
+    export default RenewalTermUnit;
 }
 
 declare module "@salesforce/schema/Asset.ResourcePreferences" {

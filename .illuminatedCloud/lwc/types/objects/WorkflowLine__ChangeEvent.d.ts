@@ -2,15 +2,15 @@
 
 declare interface WorkflowLine__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Order #</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface WorkflowLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order__c: number;
+    Order__c?: number;
     /**
      * <h3><b>Product Family</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,7 +30,7 @@ declare interface WorkflowLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductFamily__c: string;
+    ProductFamily__c?: string;
     /**
      * <h3><b>Product Family</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,8 +39,8 @@ declare interface WorkflowLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductFamily__r: ProductFamily__c;
-    ReplayId: string;
+    ProductFamily__r?: ProductFamily__c;
+    ReplayId?: string;
     /**
      * <h3><b>Workflow</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface WorkflowLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Workflow__c})</td></tr>
      * </table>
      */
-    Workflow__c: string;
+    Workflow__c?: string;
     /**
      * <h3><b>Workflow</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,5 +56,5 @@ declare interface WorkflowLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Workflow__c})</td></tr>
      * </table>
      */
-    Workflow__r: Workflow__c;
+    Workflow__r?: Workflow__c;
 }

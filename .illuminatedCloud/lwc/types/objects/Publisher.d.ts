@@ -2,12 +2,12 @@
 
 declare interface Publisher extends SObject 
 {
-    DurableId: string;
-    InstalledEntityDefinitions: EntityDefinition[];
-    InstalledFieldDefinitions: FieldDefinition[];
-    IsSalesforce: boolean;
-    MajorVersion: number;
-    MinorVersion: number;
-    Name: string;
-    NamespacePrefix: string;
+    DurableId?: string;
+    InstalledEntityDefinitions?: EntityDefinition[];
+    InstalledFieldDefinitions?: FieldDefinition[];
+    IsSalesforce?: boolean;
+    MajorVersion?: number;
+    MinorVersion?: number;
+    Name?: string;
+    NamespacePrefix?: string;
 }

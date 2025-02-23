@@ -2,15 +2,15 @@
 
 declare interface ProductConsumed extends SObject 
 {
-    ActivityHistories: ActivityHistory[];
+    ActivityHistories?: ActivityHistory[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
     /**
      * <h3><b>Article (SKU)</b></h3>
      * <p>Article number from Product record</p>
@@ -23,57 +23,57 @@ declare interface ProductConsumed extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ArticleSKU__c: string;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
+    ArticleSKU__c?: string;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EventRelations: EventRelation[];
-    Events: Event[];
-    Feeds: ProductConsumedFeed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    Emails?: EmailMessage[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
+    Feeds?: ProductConsumedFeed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: ProductConsumedHistory[];
-    IsDeleted: boolean;
-    IsProduct2Serialized: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    OpenActivities: OpenActivity[];
-    Parent: FeedComment;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PricebookEntry: PricebookEntry;
-    PricebookEntryId: string;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Product2: Product2;
-    Product2Id: string;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: ProductConsumedHistory[];
+    IsDeleted?: boolean;
+    IsProduct2Serialized?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    OpenActivities?: OpenActivity[];
+    Parent?: FeedComment;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PricebookEntry?: PricebookEntry;
+    PricebookEntryId?: string;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Product2?: Product2;
+    Product2Id?: string;
     /**
      * <h3><b>Part Number</b></h3>
      * <p>This field will be used as a reference in DS Service Report</p>
@@ -86,19 +86,19 @@ declare interface ProductConsumed extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductArticle__c: string;
-    ProductConsumedNumber: string;
+    ProductArticle__c?: string;
+    ProductConsumedNumber?: string;
     /**
      * The reciprocal relationship for {@link ProductConsumedState.ProductConsumedId}.
      */
-    ProductConsumedStates: ProductConsumedState[];
-    ProductItem: ProductItem;
-    ProductItemId: string;
+    ProductConsumedStates?: ProductConsumedState[];
+    ProductItem?: ProductItem;
+    ProductItemId?: string;
     /**
      * The reciprocal relationship for {@link ProductItemTransaction.RelatedRecordId}.
      */
-    ProductItemTransactions: ProductItemTransaction[];
-    ProductName: string;
+    ProductItemTransactions?: ProductItemTransaction[];
+    ProductName?: string;
     /**
      * <h3><b>Product Name</b></h3>
      * <p>Custom field to bring the product name from the Product Item. This should be placed in the layout and not the standard one, which allows the users to add products from the price book instead of the Product Item</p>
@@ -111,24 +111,24 @@ declare interface ProductConsumed extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductName__c: string;
-    QuantityConsumed: number;
-    QuantityUnitOfMeasure: string;
-    RecordActionHistories: RecordActionHistory[];
+    ProductName__c?: string;
+    QuantityConsumed?: number;
+    QuantityUnitOfMeasure?: string;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RelatedRecord: FlowRecordRelation;
+    RecordActions?: RecordAction[];
+    RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * The reciprocal relationship for {@link SerializedProductTransaction.RelatedRecordId}.
      */
-    SerializedProductTransactions: SerializedProductTransaction[];
+    SerializedProductTransactions?: SerializedProductTransaction[];
     /**
      * <h3><b>Serial Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -140,21 +140,21 @@ declare interface ProductConsumed extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SerialNumber__c: string;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    SerialNumber__c?: string;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
-    TopicAssignments: TopicAssignment[];
-    UnitPrice: number;
-    What: EventChangeEvent;
-    WorkOrder: WorkOrder;
-    WorkOrderId: string;
-    WorkOrderLineItem: WorkOrderLineItem;
-    WorkOrderLineItemId: string;
+    Tasks?: Task[];
+    TopicAssignments?: TopicAssignment[];
+    UnitPrice?: number;
+    What?: EventChangeEvent;
+    WorkOrder?: WorkOrder;
+    WorkOrderId?: string;
+    WorkOrderLineItem?: WorkOrderLineItem;
+    WorkOrderLineItemId?: string;
 }

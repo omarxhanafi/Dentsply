@@ -2,16 +2,16 @@
 
 declare interface FOStatusChangedEvent extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
-    FulfillmentOrder: FulfillmentOrder;
-    FulfillmentOrderId: string;
-    NewStatus: string;
-    NewStatusCategory: string;
-    OldStatus: string;
-    OldStatusCategory: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
+    FulfillmentOrder?: FulfillmentOrder;
+    FulfillmentOrderId?: string;
+    NewStatus?: string;
+    NewStatusCategory?: string;
+    OldStatus?: string;
+    OldStatusCategory?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

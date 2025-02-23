@@ -2,14 +2,14 @@
 
 declare interface CommSubscriptionConsentHistory extends SObject 
 {
-    CommSubscriptionConsent: CommSubscriptionConsent;
-    CommSubscriptionConsentId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CommSubscriptionConsent?: CommSubscriptionConsent;
+    CommSubscriptionConsentId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

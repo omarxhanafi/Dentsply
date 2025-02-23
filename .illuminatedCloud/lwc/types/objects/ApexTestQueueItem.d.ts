@@ -2,20 +2,20 @@
 
 declare interface ApexTestQueueItem extends SObject 
 {
-    ApexClass: ApexClass;
-    ApexClassId: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    ExtendedStatus: string;
-    ParentJob: AsyncApexJob;
-    ParentJobId: string;
-    QueueItem: ApexTestResult;
-    RelatedRecord: FlowRecordRelation;
-    ShouldSkipCodeCoverage: boolean;
-    Status: string;
-    SystemModstamp: string;
-    TestRunResult: ApexTestRunResult;
-    TestRunResultId: string;
+    ApexClass?: ApexClass;
+    ApexClassId?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    ExtendedStatus?: string;
+    ParentJob?: AsyncApexJob;
+    ParentJobId?: string;
+    QueueItem?: ApexTestResult;
+    RelatedRecord?: FlowRecordRelation;
+    ShouldSkipCodeCoverage?: boolean;
+    Status?: string;
+    SystemModstamp?: string;
+    TestRunResult?: ApexTestRunResult;
+    TestRunResultId?: string;
 }

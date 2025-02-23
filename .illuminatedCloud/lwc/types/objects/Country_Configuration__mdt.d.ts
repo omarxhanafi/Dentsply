@@ -15,14 +15,14 @@ declare interface Country_Configuration__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Default_User_ID__c: string;
-    DeveloperName: string;
+    Account_Default_User_ID__c?: string;
+    DeveloperName?: string;
     /**
      * The reciprocal relationship for {@link DI_Account_Record_Type_Mapping__mdt.Country__c}.
      */
-    DI_Account_Record_Type_Mappings__r: DI_Account_Record_Type_Mapping__mdt[];
-    Label: string;
-    Language: string;
+    DI_Account_Record_Type_Mappings__r?: DI_Account_Record_Type_Mapping__mdt[];
+    Label?: string;
+    Language?: string;
     /**
      * <h3><b>Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,7 +32,7 @@ declare interface Country_Configuration__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Market__c: string;
+    Market__c?: string;
     /**
      * <h3><b>Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,8 +42,8 @@ declare interface Country_Configuration__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Market__r: Market__mdt;
-    MasterLabel: string;
+    Market__r?: Market__mdt;
+    MasterLabel?: string;
     /**
      * <h3><b>Movex Prefix</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,8 +54,8 @@ declare interface Country_Configuration__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Prefix__c: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Movex_Prefix__c?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

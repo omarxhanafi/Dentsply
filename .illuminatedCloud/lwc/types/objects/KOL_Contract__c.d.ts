@@ -15,7 +15,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <p>Use this field only when the Contract should be linked to a specific account instead of a Contact.</p>
@@ -25,7 +25,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Advertorials/Testimonials</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,22 +36,22 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Advertorials_Testimonials__c: number;
+    Advertorials_Testimonials__c?: number;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b># Case Series Required</b></h3>
      * <p>Number of Cases to deliver on agreement/contract</p>
@@ -63,7 +63,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case_Series__c: number;
+    Case_Series__c?: number;
     /**
      * <h3><b># Case Series Remaining</b></h3>
      * <h4>Field Attributes</h4>
@@ -75,7 +75,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case_Series_Remaining__c: number;
+    Case_Series_Remaining__c?: number;
     /**
      * <h3><b># Clinic visits Required</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,7 +86,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Clinic_visit__c: number;
+    Clinic_visit__c?: number;
     /**
      * <h3><b># Clinical Pictures/Videos Required</b></h3>
      * <p>Number to deliver on agreement/contract</p>
@@ -98,7 +98,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Clinical_pictures_or_video__c: number;
+    Clinical_pictures_or_video__c?: number;
     /**
      * <h3><b># Clinical Pictures/Videos Remaining</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Clinical_Pictures_Videos_Remaining__c: number;
+    Clinical_Pictures_Videos_Remaining__c?: number;
     /**
      * <h3><b>Clinical testing of products</b></h3>
      * <p>Fill in checkbox if the contract includes Clinical testing of products</p>
@@ -120,8 +120,8 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Clinical_testing_of_products__c: boolean;
-    CombinedAttachments: CombinedAttachment[];
+    Clinical_testing_of_products__c?: boolean;
+    CombinedAttachments?: CombinedAttachment[];
     /**
      * <h3><b>Confidentiality</b></h3>
      * <p>Fill in checkbox if the contract includes Confidentiality</p>
@@ -131,11 +131,11 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Confidentiality__c: boolean;
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    Confidentiality__c?: boolean;
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * <h3><b>Consulting per day</b></h3>
      * <p>Honorarium of consulting per day</p>
@@ -145,7 +145,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Consulting_per_day__c: number;
+    Consulting_per_day__c?: number;
     /**
      * <h3><b>Consulting per half day</b></h3>
      * <p>Honorarium of consulting per half day</p>
@@ -155,7 +155,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Consulting_per_half_day__c: number;
+    Consulting_per_half_day__c?: number;
     /**
      * <h3><b>Consulting per hour</b></h3>
      * <p>Honorarium of consulting per hour</p>
@@ -165,7 +165,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Consulting_per_hour__c: number;
+    Consulting_per_hour__c?: number;
     /**
      * <h3><b>Consulting per month</b></h3>
      * <p>Honorarium of consulting per month</p>
@@ -175,7 +175,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Consulting_per_month__c: number;
+    Consulting_per_month__c?: number;
     /**
      * <h3><b>Contact</b></h3>
      * <p>Use this field only when the Contract should be linked to a specific Contact instead of an Account</p>
@@ -185,7 +185,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <p>Use this field only when the Contract should be linked to a specific Contact instead of an Account</p>
@@ -195,13 +195,13 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Contract in Force</b></h3>
      * <p>The day the cooperation has actually begun. Its important to follow since in most cases this date might be different from the date of signature.</p>
@@ -211,7 +211,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_in_Force__c: Date;
+    Contract_in_Force__c?: Date;
     /**
      * <h3><b>Site GL Department</b></h3>
      * <p>The Cost Center responsible for the Contract</p>
@@ -223,11 +223,11 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Cost_Center__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Cost_Center__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Support</b></h3>
      * <p>Fill in checkbox if the contract includes Customer Support</p>
@@ -237,7 +237,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Customer_Support__c: boolean;
+    Customer_Support__c?: boolean;
     /**
      * <h3><b>Date of Signature</b></h3>
      * <p>The date when the contract was signed</p>
@@ -247,11 +247,11 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Date_of_Signature__c: Date;
+    Date_of_Signature__c?: Date;
     /**
      * The reciprocal relationship for {@link KOL_Contract_Deliverable__c.KOL_Contract__c}.
      */
-    Deliverables__r: KOL_Contract_Deliverable__c[];
+    Deliverables__r?: KOL_Contract_Deliverable__c[];
     /**
      * <h3><b>Delivered Case Series</b></h3>
      * <p>The Case series already delivered in relation to the KOL Contract</p>
@@ -265,7 +265,7 @@ declare interface KOL_Contract__c extends SObject
      * </td></tr>
      * </table>
      */
-    Delivered_Case_Series__c: number;
+    Delivered_Case_Series__c?: number;
     /**
      * <h3><b>Delivered Clinical Picture or Video</b></h3>
      * <p>The Pictures or Videos delivered in relation to the KOL Contract</p>
@@ -279,7 +279,7 @@ declare interface KOL_Contract__c extends SObject
      * </td></tr>
      * </table>
      */
-    Delivered_Clinical_Picture_or_Video__c: number;
+    Delivered_Clinical_Picture_or_Video__c?: number;
     /**
      * <h3><b># Delivered Lectures</b></h3>
      * <h4>Field Attributes</h4>
@@ -291,7 +291,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Delivered_Lectures__c: number;
+    Delivered_Lectures__c?: number;
     /**
      * <h3><b>Delivered Lectures</b></h3>
      * <h4>Field Attributes</h4>
@@ -304,7 +304,7 @@ declare interface KOL_Contract__c extends SObject
      * </td></tr>
      * </table>
      */
-    Delivered_Lectures_count__c: number;
+    Delivered_Lectures_count__c?: number;
     /**
      * <h3><b>Delivered Presentation Materials</b></h3>
      * <p>The Presentation Materials delivered in relation to the KOL Contract</p>
@@ -318,7 +318,7 @@ declare interface KOL_Contract__c extends SObject
      * </td></tr>
      * </table>
      */
-    Delivered_Presentation_Materials__c: number;
+    Delivered_Presentation_Materials__c?: number;
     /**
      * <h3><b>Delivered Pubications</b></h3>
      * <p>The Publications delivered in relation to the KOL Contracts</p>
@@ -332,7 +332,7 @@ declare interface KOL_Contract__c extends SObject
      * </td></tr>
      * </table>
      */
-    Delivered_Pubications__c: number;
+    Delivered_Pubications__c?: number;
     /**
      * <h3><b>Delivered Reviews</b></h3>
      * <p>The Reviews delivered in relation to a KOL Contract</p>
@@ -346,7 +346,7 @@ declare interface KOL_Contract__c extends SObject
      * </td></tr>
      * </table>
      */
-    Delivered_Reviews__c: number;
+    Delivered_Reviews__c?: number;
     /**
      * <h3><b>Delivered Scientific Folders</b></h3>
      * <p>The Scientific Folders delivered in relation to the KOL Contract</p>
@@ -360,15 +360,15 @@ declare interface KOL_Contract__c extends SObject
      * </td></tr>
      * </table>
      */
-    Delivered_Scientific_Folders__c: number;
+    Delivered_Scientific_Folders__c?: number;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * <h3><b>Duration of confidentiality agreement</b></h3>
      * <p>End date to treat all confidential trade secrets with the consultant</p>
@@ -378,7 +378,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Duration_of_confidentiality_agreement__c: Date;
+    Duration_of_confidentiality_agreement__c?: Date;
     /**
      * <h3><b>Duration of enlargement</b></h3>
      * <p>End date - The contract will extend for one year if it is not terminated by either party</p>
@@ -388,7 +388,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Duration_of_enlargement__c: Date;
+    Duration_of_enlargement__c?: Date;
     /**
      * <h3><b>End Date</b></h3>
      * <p>The End Date of the Contract</p>
@@ -398,8 +398,8 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    End_Date__c: Date;
-    EngagementInitiatedTopic: EngagementTopic[];
+    End_Date__c?: Date;
+    EngagementInitiatedTopic?: EngagementTopic[];
     /**
      * <h3><b>Estimated Contract Value per year</b></h3>
      * <p>The Estimated value of the Contract Value per year</p>
@@ -409,8 +409,8 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Estimated_Contract_Value_per_year__c: number;
-    EventRelations: EventRelation[];
+    Estimated_Contract_Value_per_year__c?: number;
+    EventRelations?: EventRelation[];
     /**
      * <h3><b>Exclusivity</b></h3>
      * <p>Fill in checkbox if the contract includes Exclusivity</p>
@@ -420,7 +420,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Exclusivity__c: boolean;
+    Exclusivity__c?: boolean;
     /**
      * <h3><b>KOL information</b></h3>
      * <h4>Field Attributes</h4>
@@ -428,7 +428,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Expert__c})</td></tr>
      * </table>
      */
-    Expert__c: string;
+    Expert__c?: string;
     /**
      * <h3><b>KOL information</b></h3>
      * <h4>Field Attributes</h4>
@@ -436,7 +436,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Expert__c})</td></tr>
      * </table>
      */
-    Expert__r: Expert__c;
+    Expert__r?: Expert__c;
     /**
      * <h3><b>Expert Tier (current)</b></h3>
      * <h4>Field Attributes</h4>
@@ -448,7 +448,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Expert_Tier_current__c: string;
+    Expert_Tier_current__c?: string;
     /**
      * <h3><b>Expert Tier</b></h3>
      * <p>Used to track the Tier of the Expert when contract is created to see if it changes over time</p>
@@ -460,7 +460,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Expert_Tier_When_Created__c: string;
+    Expert_Tier_When_Created__c?: string;
     /**
      * <h3><b>External contract ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -471,14 +471,14 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    External_contract_ID__c: string;
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    External_contract_ID__c?: string;
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
     /**
      * <h3><b>Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -508,8 +508,8 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental Support – Group 3</code></td><td>Dental Support – Group 3</td><td nowrap>true</td></tr>
      * </table>
      */
-    Group__c: string;
-    Histories: KOL_Contract__History[];
+    Group__c?: string;
+    Histories?: KOL_Contract__History[];
     /**
      * <h3><b>Hospitations</b></h3>
      * <p>Fill in checkbox if the contract includes Hospitations</p>
@@ -519,7 +519,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Hospitations__c: boolean;
+    Hospitations__c?: boolean;
     /**
      * <h3><b>Hourly Rate</b></h3>
      * <h4>Field Attributes</h4>
@@ -528,7 +528,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hourly_Rate__c: number;
+    Hourly_Rate__c?: number;
     /**
      * <h3><b>Max allowed hourly rate</b></h3>
      * <h4>Field Attributes</h4>
@@ -538,7 +538,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Hourly_rate_max__c: number;
+    Hourly_rate_max__c?: number;
     /**
      * <h3><b>Minimum allowed hourly rate</b></h3>
      * <h4>Field Attributes</h4>
@@ -548,7 +548,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Hourly_rate_min__c: number;
+    Hourly_rate_min__c?: number;
     /**
      * <h3><b>Hours of work to be compensated</b></h3>
      * <h4>Field Attributes</h4>
@@ -559,7 +559,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">KOL_Contract_Deliverable__c.Work_hours__c</code></td></tr>
      * </table>
      */
-    Hours_of_work_to_be_compensated__c: number;
+    Hours_of_work_to_be_compensated__c?: number;
     /**
      * <h3><b>Hyperion Business Function</b></h3>
      * <h4>Field Attributes</h4>
@@ -581,7 +581,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">071 Clinical Trials</code></td><td>071 Clinical Trials</td><td nowrap>true</td></tr>
      * </table>
      */
-    Hyperion_Business_Function__c: string;
+    Hyperion_Business_Function__c?: string;
     /**
      * <h3><b>Include Case Series</b></h3>
      * <p>Fill in checkbox if the contract includes Case Series</p>
@@ -591,7 +591,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Include_Case_Series__c: boolean;
+    Include_Case_Series__c?: boolean;
     /**
      * <h3><b>Include Clinic visit</b></h3>
      * <p>Fill in checkbox if the contract includes Clinic visit</p>
@@ -601,7 +601,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Include_Clinic_visit__c: boolean;
+    Include_Clinic_visit__c?: boolean;
     /**
      * <h3><b>Include Clinical Pictures or video</b></h3>
      * <p>Fill in checkbox if the contract includes Clinical Picture or video</p>
@@ -611,7 +611,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Include_Clinical_Pictures_or_video__c: boolean;
+    Include_Clinical_Pictures_or_video__c?: boolean;
     /**
      * <h3><b>Include Lectures</b></h3>
      * <p>Fill in checkbox if the contract includes lecturers</p>
@@ -621,7 +621,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Include_Lectures__c: boolean;
+    Include_Lectures__c?: boolean;
     /**
      * <h3><b>Include Presentation material</b></h3>
      * <p>Fill in checkbox if the contract includes Presentation material</p>
@@ -631,7 +631,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Include_Presentation_material__c: boolean;
+    Include_Presentation_material__c?: boolean;
     /**
      * <h3><b>Include Publication</b></h3>
      * <p>Fill in checkbox if the contract includes Publication</p>
@@ -641,7 +641,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Include_Publication__c: boolean;
+    Include_Publication__c?: boolean;
     /**
      * <h3><b>Include Scientific posters</b></h3>
      * <p>Fill in checkbox if the contract includes Scientific posters</p>
@@ -651,7 +651,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Include_Scientific_posters__c: boolean;
+    Include_Scientific_posters__c?: boolean;
     /**
      * <h3><b>International Lecturing full day</b></h3>
      * <p>International honorarium full day</p>
@@ -661,7 +661,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    International_Lecturing_full_day__c: number;
+    International_Lecturing_full_day__c?: number;
     /**
      * <h3><b>International Lecturing half day</b></h3>
      * <p>International Lecturing half day</p>
@@ -671,7 +671,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    International_Lecturing_half_day__c: number;
+    International_Lecturing_half_day__c?: number;
     /**
      * <h3><b>International Lecturing per hour</b></h3>
      * <p>International Lecturing per hour</p>
@@ -681,7 +681,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    International_Lecturing_per_hour__c: number;
+    International_Lecturing_per_hour__c?: number;
     /**
      * <h3><b>International Lecturing per lecture</b></h3>
      * <p>International Lecturing per lecture</p>
@@ -691,8 +691,8 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    International_Lecturing_per_lecture__c: number;
-    IsDeleted: boolean;
+    International_Lecturing_per_lecture__c?: number;
+    IsDeleted?: boolean;
     /**
      * <h3><b>KOL Contract #</b></h3>
      * <p>This is the number of the KOL Contracts. Used to populate KOL Contract Name</p>
@@ -703,7 +703,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Contract__c: string;
+    KOL_Contract__c?: string;
     /**
      * <h3><b>KOL Contract</b></h3>
      * <p>The Concatenation of Account/Contact and KOL Contract number. used to find the right KOL Contract</p>
@@ -716,11 +716,11 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Contract_Name__c: string;
+    KOL_Contract_Name__c?: string;
     /**
      * The reciprocal relationship for {@link T_E_Attachements__c.KOL_Contract__c}.
      */
-    KOL_Speaker_Attachments__r: T_E_Attachements__c[];
+    KOL_Speaker_Attachments__r?: T_E_Attachements__c[];
     /**
      * <h3><b>KOL Contract Owner</b></h3>
      * <p>Set manually by user - the owner of the contract. Note, this is not a standarad Owner field and will have no impact on access or visibility.</p>
@@ -730,7 +730,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOLContractOwner__c: string;
+    KOLContractOwner__c?: string;
     /**
      * <h3><b>KOL Contract Owner</b></h3>
      * <p>Set manually by user - the owner of the contract. Note, this is not a standarad Owner field and will have no impact on access or visibility.</p>
@@ -740,12 +740,12 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOLContractOwner__r: User;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
+    KOLContractOwner__r?: User;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
     /**
      * <h3><b># of Deliverables</b></h3>
      * <p>Number of Deliverables to deliver on agreement/contract</p>
@@ -757,7 +757,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lectures__c: number;
+    Lectures__c?: number;
     /**
      * <h3><b># Deliverables Remaining</b></h3>
      * <h4>Field Attributes</h4>
@@ -769,7 +769,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lectures_Remaining__c: number;
+    Lectures_Remaining__c?: number;
     /**
      * <h3><b>Lecturing per preparation hour</b></h3>
      * <p>Honorarium of lecturing per preparation hour</p>
@@ -779,7 +779,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lecturing_per_preparation_hour__c: number;
+    Lecturing_per_preparation_hour__c?: number;
     /**
      * <h3><b>License Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -1038,6 +1038,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">VU</code></td><td>VU</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WF</code></td><td>WF</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WS</code></td><td>WS</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XK</code></td><td>XK</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">YE</code></td><td>YE</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">YT</code></td><td>YT</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZA</code></td><td>ZA</td><td nowrap>true</td></tr>
@@ -1045,9 +1046,9 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZW</code></td><td>ZW</td><td nowrap>true</td></tr>
      * </table>
      */
-    License_Country__c: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    License_Country__c?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Maintaining Implant data base</b></h3>
      * <p>Fill in checkbox if the contract includes Maintaining Implant data base</p>
@@ -1057,7 +1058,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Maintaining_Implant_data_base__c: boolean;
+    Maintaining_Implant_data_base__c?: boolean;
     /**
      * <h3><b>My Contract?</b></h3>
      * <p>Dynamic tickbox to show if this is a contract you own</p>
@@ -1067,8 +1068,8 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(  KOLContractOwner__c  = $User.Id , True, False)</code></td></tr>
      * </table>
      */
-    MyContract__c: boolean;
-    Name: string;
+    MyContract__c?: boolean;
+    Name?: string;
     /**
      * <h3><b>National Lecturing full day</b></h3>
      * <p>National - Honorarium of lecturing full day</p>
@@ -1078,7 +1079,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    National_Lecturing_full_day__c: number;
+    National_Lecturing_full_day__c?: number;
     /**
      * <h3><b>National Lecturing half day</b></h3>
      * <p>National Honorarium of lecturing half day</p>
@@ -1088,7 +1089,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    National_Lecturing_half_day__c: number;
+    National_Lecturing_half_day__c?: number;
     /**
      * <h3><b>National Lecturing per hour</b></h3>
      * <p>National Honorarium of lecturing per hour</p>
@@ -1098,7 +1099,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    National_Lecturing_per_hour__c: number;
+    National_Lecturing_per_hour__c?: number;
     /**
      * <h3><b>National Lecturing per lecture</b></h3>
      * <p>National Honorarium of lecturing per lecture</p>
@@ -1108,10 +1109,10 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    National_Lecturing_per_lecture__c: number;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    National_Lecturing_per_lecture__c?: number;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>Notice of termination(#month before end)</b></h3>
      * <p>The number of month before end date when the reminder for the expiration of the contract should be sent out</p>
@@ -1132,7 +1133,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">None</code></td><td>None</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Notice_of_termination_month_before_end__c: string;
+    Notice_of_termination_month_before_end__c?: string;
     /**
      * <h3><b># of hours of work</b></h3>
      * <h4>Field Attributes</h4>
@@ -1143,7 +1144,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_hours_of_work__c: number;
+    of_hours_of_work__c?: number;
     /**
      * <h3><b># of Planning Hours to be compensated</b></h3>
      * <h4>Field Attributes</h4>
@@ -1154,7 +1155,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Planning_Hours_to_be_compensated__c: number;
+    of_Planning_Hours_to_be_compensated__c?: number;
     /**
      * <h3><b># or Travel Hours to be compensated</b></h3>
      * <h4>Field Attributes</h4>
@@ -1165,11 +1166,11 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    or_Travel_Hours_to_be_compensated__c: number;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
+    or_Travel_Hours_to_be_compensated__c?: number;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Payment frequency</b></h3>
      * <h4>Field Attributes</h4>
@@ -1186,7 +1187,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Per Event</code></td><td>Per Event</td><td nowrap>true</td></tr>
      * </table>
      */
-    Payment_frequency__c: string;
+    Payment_frequency__c?: string;
     /**
      * <h3><b>Per Publication</b></h3>
      * <p>Honorarium for one publication</p>
@@ -1196,7 +1197,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Per_Publication__c: number;
+    Per_Publication__c?: number;
     /**
      * <h3><b>Planning compensation</b></h3>
      * <h4>Field Attributes</h4>
@@ -1206,7 +1207,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Plan_compensation__c: number;
+    Plan_compensation__c?: number;
     /**
      * <h3><b>Planning hours to be compensated</b></h3>
      * <h4>Field Attributes</h4>
@@ -1217,7 +1218,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">KOL_Contract_Deliverable__c.Planning_hours__c</code></td></tr>
      * </table>
      */
-    Planning_hours_to_be_compensated__c: number;
+    Planning_hours_to_be_compensated__c?: number;
     /**
      * <h3><b># Presentation materials Required</b></h3>
      * <p>Number to deliver on agreement/contract</p>
@@ -1229,7 +1230,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Presentation_material__c: number;
+    Presentation_material__c?: number;
     /**
      * <h3><b># Presentation Materials Remaining</b></h3>
      * <h4>Field Attributes</h4>
@@ -1241,14 +1242,14 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Presentation_Materials_Remaining__c: number;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Presentation_Materials_Remaining__c?: number;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b># Publications Required</b></h3>
      * <p>Deliverables on agreement/contract</p>
@@ -1260,7 +1261,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Publication__c: number;
+    Publication__c?: number;
     /**
      * <h3><b>Publication in Pubmed</b></h3>
      * <p>Honorarium for publication in Pubmed</p>
@@ -1270,7 +1271,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Publication_in_Pubmed__c: number;
+    Publication_in_Pubmed__c?: number;
     /**
      * <h3><b>Publication per working days</b></h3>
      * <p>Honorarium for publication per working days</p>
@@ -1280,7 +1281,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Publication_per_working_days__c: number;
+    Publication_per_working_days__c?: number;
     /**
      * <h3><b># Publications Remaining</b></h3>
      * <h4>Field Attributes</h4>
@@ -1292,7 +1293,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Publications_Remaining__c: number;
+    Publications_Remaining__c?: number;
     /**
      * <h3><b>Read the Contract - Specific information</b></h3>
      * <p>This contract includes specific information</p>
@@ -1302,28 +1303,28 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Read_the_Contract_Specific_infomraiton__c: boolean;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    Read_the_Contract_Specific_infomraiton__c?: boolean;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RecordType: RecordType;
-    RecordTypeId: string;
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>Reporting</b></h3>
      * <p>Fill in checkbox if the contract includes Reporting</p>
@@ -1333,7 +1334,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Reporting__c: boolean;
+    Reporting__c?: boolean;
     /**
      * <h3><b># Reviews Required</b></h3>
      * <p>Number to deliver on agreement/contract</p>
@@ -1345,7 +1346,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Reviews__c: number;
+    Reviews__c?: number;
     /**
      * <h3><b># Reviews Remaining</b></h3>
      * <h4>Field Attributes</h4>
@@ -1357,7 +1358,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Reviews_Remaining__c: number;
+    Reviews_Remaining__c?: number;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -1382,7 +1383,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
     /**
      * <h3><b># Scientific Posters Required</b></h3>
      * <p>Number to deliver on agreement/contract</p>
@@ -1394,7 +1395,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Scientific_posters__c: number;
+    Scientific_posters__c?: number;
     /**
      * <h3><b># Scientific Posters Remaining</b></h3>
      * <h4>Field Attributes</h4>
@@ -1406,12 +1407,12 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Scientific_Posters_Remaining__c: number;
-    SobjectLookupValue: AIInsightValue;
+    Scientific_Posters_Remaining__c?: number;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * The reciprocal relationship for {@link Engagement__c.Speaker_Contract__c}.
      */
-    Speaker_Engagements__r: Engagement__c[];
+    Speaker_Engagements__r?: Engagement__c[];
     /**
      * <h3><b>Start Date</b></h3>
      * <p>The expected or actual start date of the contract</p>
@@ -1421,7 +1422,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Start_Date__c: Date;
+    Start_Date__c?: Date;
     /**
      * <h3><b>Status</b></h3>
      * <p>The Status of the contract</p>
@@ -1440,7 +1441,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Terminated/Cancelled</code></td><td>Terminated/Cancelled</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Study Project</b></h3>
      * <p>Fill in checkbox if the contract includes Study Project</p>
@@ -1450,12 +1451,12 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Study_Project__c: boolean;
-    SystemModstamp: string;
-    Tags: KOL_Contract__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    Study_Project__c?: boolean;
+    SystemModstamp?: string;
+    Tags?: KOL_Contract__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * <h3><b>Tenancy</b></h3>
      * <p>Fill in checkbox if the contract includes Tenancy</p>
@@ -1465,9 +1466,9 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Tenancy__c: boolean;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    Tenancy__c?: boolean;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>Total compensation</b></h3>
      * <h4>Field Attributes</h4>
@@ -1477,7 +1478,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_compensation__c: number;
+    Total_compensation__c?: number;
     /**
      * <h3><b>Travel compensation</b></h3>
      * <h4>Field Attributes</h4>
@@ -1487,7 +1488,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Travel_compensation__c: number;
+    Travel_compensation__c?: number;
     /**
      * <h3><b>Travel expenses covered by DI?</b></h3>
      * <p>Travel expenses covered by DENTSPLY Implants?</p>
@@ -1503,7 +1504,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    Travel_expenses_covered_by_DI__c: string;
+    Travel_expenses_covered_by_DI__c?: string;
     /**
      * <h3><b>Travel hours to be compensated</b></h3>
      * <h4>Field Attributes</h4>
@@ -1514,7 +1515,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">KOL_Contract_Deliverable__c.Travel_hours__c</code></td></tr>
      * </table>
      */
-    Travel_hours_to_be_compensated__c: number;
+    Travel_hours_to_be_compensated__c?: number;
     /**
      * <h3><b>Traveling honorarium information</b></h3>
      * <p>To be used if other information is needed</p>
@@ -1523,7 +1524,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1000)</td></tr>
      * </table>
      */
-    Traveling_honorarium_information__c: string;
+    Traveling_honorarium_information__c?: string;
     /**
      * <h3><b>Traveling per day</b></h3>
      * <p>Honorarium of traveling per day</p>
@@ -1533,7 +1534,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Traveling_per_day__c: number;
+    Traveling_per_day__c?: number;
     /**
      * <h3><b>Traveling per half day</b></h3>
      * <p>Honorarium of traveling per half day</p>
@@ -1543,7 +1544,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Traveling_per_half_day__c: number;
+    Traveling_per_half_day__c?: number;
     /**
      * <h3><b>Traveling to consulting</b></h3>
      * <p>Honorarium of traveling to consulting</p>
@@ -1553,7 +1554,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Traveling_to_consulting__c: number;
+    Traveling_to_consulting__c?: number;
     /**
      * <h3><b>Travelling compensation</b></h3>
      * <h4>Field Attributes</h4>
@@ -1563,7 +1564,7 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Travelling_compensation__c: number;
+    Travelling_compensation__c?: number;
     /**
      * <h3><b>Type of Contract</b></h3>
      * <p>This i type of Speaker/KOL Contract</p>
@@ -1591,13 +1592,13 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Equipment Loan</code></td><td>Equipment Loan</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type_of_Contract__c: string;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    Type_of_Contract__c?: string;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * <h3><b>Work compensation</b></h3>
      * <h4>Field Attributes</h4>
@@ -1607,9 +1608,9 @@ declare interface KOL_Contract__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Work_compensation__c: number;
+    Work_compensation__c?: number;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

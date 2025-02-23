@@ -2,19 +2,19 @@
 
 declare interface OrderItemAttribute extends SObject 
 {
-    AttributeDefinition: AttributeDefinition;
-    AttributeDefinitionId: string;
-    AttributeName: string;
-    AttributePicklistValue: AttributePicklistValue;
-    AttributePicklistValueId: string;
-    AttributeValue: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    ExternalId: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    OrderItem: OrderItem;
-    OrderItemId: string;
+    AttributeDefinition?: AttributeDefinition;
+    AttributeDefinitionId?: string;
+    AttributeName?: string;
+    AttributePicklistValue?: AttributePicklistValue;
+    AttributePicklistValueId?: string;
+    AttributeValue?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    ExternalId?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    OrderItem?: OrderItem;
+    OrderItemId?: string;
 }

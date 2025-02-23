@@ -2,13 +2,13 @@
 
 declare interface DeleteEvent extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    DeletedBy: User;
-    DeletedById: string;
-    DeletedDate: string;
-    Record: string;
-    RecordName: string;
-    RelatedRecord: FlowRecordRelation;
-    SobjectName: string;
-    SystemModstamp: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    DeletedBy?: User;
+    DeletedById?: string;
+    DeletedDate?: string;
+    Record?: string;
+    RecordName?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SobjectName?: string;
+    SystemModstamp?: string;
 }

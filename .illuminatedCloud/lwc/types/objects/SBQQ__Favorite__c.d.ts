@@ -5,30 +5,30 @@
  */
 declare interface SBQQ__Favorite__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__FavoriteProduct__c.SBQQ__Favorite__c}.
      */
-    FavoriteProduct__r: SBQQ__FavoriteProduct__c[];
+    FavoriteProduct__r?: SBQQ__FavoriteProduct__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__FavoriteShare__c.SBQQ__Favorite__c}.
      */
-    FavoriteShares__r: SBQQ__FavoriteShare__c[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    FavoriteShares__r?: SBQQ__FavoriteShare__c[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLineGroup__c.SBQQ__Favorite__c}.
      */
-    QuoteLineGroups__r: SBQQ__QuoteLineGroup__c[];
+    QuoteLineGroups__r?: SBQQ__QuoteLineGroup__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLine__c.SBQQ__Favorite__c}.
      */
-    QuoteLines__r: SBQQ__QuoteLine__c[];
+    QuoteLines__r?: SBQQ__QuoteLine__c[];
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface SBQQ__Favorite__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Description__c: string;
+    SBQQ__Description__c?: string;
     /**
      * <h3><b>Owner Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,5 +50,5 @@ declare interface SBQQ__Favorite__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OwnerName__c: string;
+    SBQQ__OwnerName__c?: string;
 }

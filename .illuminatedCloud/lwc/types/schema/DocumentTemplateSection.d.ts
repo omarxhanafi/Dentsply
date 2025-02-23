@@ -96,6 +96,18 @@ declare module "@salesforce/schema/DocumentTemplateSection.DocumentTemplate" {
     export default DocumentTemplate;
 }
 
+declare module "@salesforce/schema/DocumentTemplateSection.DocumentTemplateClause" {
+    import { FieldId } from "@salesforce/schema";
+    const DocumentTemplateClause: FieldId;
+    export default DocumentTemplateClause;
+}
+
+declare module "@salesforce/schema/DocumentTemplateSection.DocumentTemplateClauseId" {
+    import { FieldId } from "@salesforce/schema";
+    const DocumentTemplateClauseId: FieldId;
+    export default DocumentTemplateClauseId;
+}
+
 declare module "@salesforce/schema/DocumentTemplateSection.DocumentTemplateId" {
     import { FieldId } from "@salesforce/schema";
     const DocumentTemplateId: FieldId;

@@ -13,7 +13,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Account City</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_City__c: string;
+    Account_City__c?: string;
     /**
      * <h3><b>Account Postal Code Zip</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Postal_Code_Zip__c: string;
+    Account_Postal_Code_Zip__c?: string;
     /**
      * <h3><b>Account State/Province</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,7 +57,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_State_Province__c: string;
+    Account_State_Province__c?: string;
     /**
      * <h3><b>Account Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Street__c: string;
+    Account_Street__c?: string;
     /**
      * <h3><b>Account Phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountPhone__c: string;
+    AccountPhone__c?: string;
     /**
      * <h3><b>Account Program Member</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -91,7 +91,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountProgramMember__c: string;
+    AccountProgramMember__c?: string;
     /**
      * <h3><b>Account Program Member</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -101,8 +101,8 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountProgramMember__r: LoyaltyProgramParticipant__c;
-    AccountProgramMembers__r: LoyaltyProgramParticipant__c[];
+    AccountProgramMember__r?: LoyaltyProgramParticipant__c;
+    AccountProgramMembers__r?: LoyaltyProgramParticipant__c[];
     /**
      * <h3><b>Account Visiting City</b></h3>
      * <h4>Field Attributes</h4>
@@ -114,7 +114,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountVisitingCity__c: string;
+    AccountVisitingCity__c?: string;
     /**
      * <h3><b>Account Visiting Postal Code Zip</b></h3>
      * <h4>Field Attributes</h4>
@@ -126,7 +126,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountVisitingPostalCode__c: string;
+    AccountVisitingPostalCode__c?: string;
     /**
      * <h3><b>Account Visiting State/Province</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,7 +138,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountVisitingState__c: string;
+    AccountVisitingState__c?: string;
     /**
      * <h3><b>Account Visiting Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -150,23 +150,23 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountVisitingStreet__c: string;
-    ActivityHistories: ActivityHistory[];
+    AccountVisitingStreet__c?: string;
+    ActivityHistories?: ActivityHistory[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -252,6 +252,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core</code></td><td>DS Core</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Care</code></td><td>DS Core Care</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Create</code></td><td>DS Core Create</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Enterprise</code></td><td>DS Core Enterprise</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS OmniTaper</code></td><td>DS OmniTaper</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS PrimeTaper</code></td><td>DS PrimeTaper</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DT Post</code></td><td>DT Post</td><td nowrap>true</td></tr>
@@ -478,7 +479,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XG5</code></td><td>XG5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Brand__c: string;
+    Brand__c?: string;
     /**
      * <h3><b>Campaign Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -487,7 +488,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign__c: string;
+    Campaign__c?: string;
     /**
      * <h3><b>Campaign Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -496,15 +497,15 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign__r: Campaign;
+    Campaign__r?: Campaign;
     /**
      * The reciprocal relationship for {@link CampaignMember.SalesLead__c}.
      */
-    Campaign_Members1__r: CampaignMember[];
+    Campaign_Members1__r?: CampaignMember[];
     /**
      * The reciprocal relationship for {@link CampaignMember.Initiative_Account__c}.
      */
-    Campaign_Members__r: CampaignMember[];
+    Campaign_Members__r?: CampaignMember[];
     /**
      * <h3><b>Campaign/Target List</b></h3>
      * <p>TFUS-000003881</p>
@@ -517,7 +518,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CampaignTargetList__c: string;
+    CampaignTargetList__c?: string;
     /**
      * <h3><b>&quot;Cancelled&quot; Assigned Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -526,7 +527,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CancelledAssignedDate__c: Date;
+    CancelledAssignedDate__c?: Date;
     /**
      * <h3><b>Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -567,7 +568,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
+    Category__c?: string;
     /**
      * <h3><b>Channel</b></h3>
      * <h4>Field Attributes</h4>
@@ -579,7 +580,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Channel__c: string;
+    Channel__c?: string;
     /**
      * <h3><b>Channel Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -591,7 +592,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ChannelPriority__c: number;
+    ChannelPriority__c?: number;
     /**
      * <h3><b>Closed Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -600,8 +601,8 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ClosedDate__c: Date;
-    CombinedAttachments: CombinedAttachment[];
+    ClosedDate__c?: Date;
+    CombinedAttachments?: CombinedAttachment[];
     /**
      * <h3><b>&quot;Completed&quot; Assigned Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -610,11 +611,11 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CompletedAssignedDate__c: Date;
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    CompletedAssignedDate__c?: Date;
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -623,7 +624,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -632,13 +633,13 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Converted to</b></h3>
      * <h4>Field Attributes</h4>
@@ -653,7 +654,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Order</code></td><td>Order</td><td nowrap>true</td></tr>
      * </table>
      */
-    Converted_to__c: string;
+    Converted_to__c?: string;
     /**
      * <h3><b>Create Account Program Member ?</b></h3>
      * <p>220210  TFUS-000003857:  Field used to convert a sales lead directly into an account program member</p>
@@ -663,9 +664,9 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Create_Account_Program_Member__c: boolean;
-    CreatedBy: User;
-    CreatedById: string;
+    Create_Account_Program_Member__c?: boolean;
+    CreatedBy?: User;
+    CreatedById?: string;
     /**
      * <h3><b>Created By Me?</b></h3>
      * <h4>Field Attributes</h4>
@@ -674,7 +675,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedById == $User.Id, TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    CreatedByMe__c: boolean;
+    CreatedByMe__c?: boolean;
     /**
      * <h3><b>Created By My Direct Reports</b></h3>
      * <h4>Field Attributes</h4>
@@ -683,8 +684,8 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedBy.ManagerId = $User.Id, True, false)</code></td></tr>
      * </table>
      */
-    CreatedByMyDirectReports__c: boolean;
-    CreatedDate: string;
+    CreatedByMyDirectReports__c?: boolean;
+    CreatedDate?: string;
     /**
      * <h3><b>Cross-sell sales lead?</b></h3>
      * <h4>Field Attributes</h4>
@@ -693,8 +694,8 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CrossSellProspect__c: boolean;
-    CurrencyIsoCode: string;
+    CrossSellProspect__c?: boolean;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -702,7 +703,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    CustomerNotes__c: string;
+    CustomerNotes__c?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -711,7 +712,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__c: string;
+    Dealer__c?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -720,22 +721,22 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__r: Account;
+    Dealer__r?: Account;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    Events: Event[];
+    Emails?: EmailMessage[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
     /**
      * <h3><b>&quot;Expired&quot; Assigned Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -744,9 +745,9 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ExpiredAssignedDate__c: Date;
-    Feeds: Field_Sales_Project_Members__Feed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    ExpiredAssignedDate__c?: Date;
+    Feeds?: Field_Sales_Project_Members__Feed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>Target List</b></h3>
      * <h4>Field Attributes</h4>
@@ -755,7 +756,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Field_Sales_Project__c: string;
+    Field_Sales_Project__c?: string;
     /**
      * <h3><b>Target List</b></h3>
      * <h4>Field Attributes</h4>
@@ -764,14 +765,14 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Field_Sales_Project__r: Field_Sales_Project__c;
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    Field_Sales_Project__r?: Field_Sales_Project__c;
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: Field_Sales_Project_Members__History[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: Field_Sales_Project_Members__History[];
     /**
      * <h3><b>Hot sales lead?</b></h3>
      * <h4>Field Attributes</h4>
@@ -780,7 +781,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Hot_prospect__c: boolean;
+    Hot_prospect__c?: boolean;
     /**
      * <h3><b>&quot;In Progress&quot; Assigned Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -789,7 +790,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    InProgressAssignedDate__c: Date;
+    InProgressAssignedDate__c?: Date;
     /**
      * <h3><b>Intention to buy date</b></h3>
      * <h4>Field Attributes</h4>
@@ -798,7 +799,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    IntentionToBuyDate__c: Date;
+    IntentionToBuyDate__c?: Date;
     /**
      * <h3><b>IS My Lead?</b></h3>
      * <h4>Field Attributes</h4>
@@ -807,8 +808,8 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( ISBLANK($User.Movex_Uer_ID__c),FALSE, CONTAINS( Account__r.DC_ETM_Code__c , $User.Movex_Uer_ID__c ))</code></td></tr>
      * </table>
      */
-    IS_My_Lead__c: boolean;
-    IsDeleted: boolean;
+    IS_My_Lead__c?: boolean;
+    IsDeleted?: boolean;
     /**
      * <h3><b>Is Owner Suggested Owner</b></h3>
      * <p>TFUS-000002725</p>
@@ -818,15 +819,15 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales_Rep__c = SuggestedOwner__c</code></td></tr>
      * </table>
      */
-    IsOwnerSuggestedOwner__c: boolean;
-    LastActivityDate: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    IsOwnerSuggestedOwner__c?: boolean;
+    LastActivityDate?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Loss Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -834,7 +835,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1000)</td></tr>
      * </table>
      */
-    Loss_Description__c: string;
+    Loss_Description__c?: string;
     /**
      * <h3><b>My lead?</b></h3>
      * <h4>Field Attributes</h4>
@@ -843,8 +844,8 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(Sales_Rep__c =  $User.Id, true, false)</code></td></tr>
      * </table>
      */
-    MyLead__c: boolean;
-    Name: string;
+    MyLead__c?: boolean;
+    Name?: string;
     /**
      * <h3><b>Name 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -856,9 +857,9 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Name2__c: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
+    Name2__c?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
     /**
      * <h3><b>Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -866,8 +867,8 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Notes__c: string;
-    NotesAndAttachments: NoteAndAttachment[];
+    Notes__c?: string;
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>OneSFid</b></h3>
      * <h4>Field Attributes</h4>
@@ -879,12 +880,12 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OneSFid__c: string;
-    OpenActivities: OpenActivity[];
+    OneSFid__c?: string;
+    OpenActivities?: OpenActivity[];
     /**
      * The reciprocal relationship for {@link Opportunity.Prospect__c}.
      */
-    Opportunities__r: Opportunity[];
+    Opportunities__r?: Opportunity[];
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -893,7 +894,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity__c: string;
+    Opportunity__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -902,7 +903,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity__r: Opportunity;
+    Opportunity__r?: Opportunity;
     /**
      * <h3><b>Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -911,7 +912,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order__c: string;
+    Order__c?: string;
     /**
      * <h3><b>Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -920,11 +921,11 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order__r: Order;
+    Order__r?: Order;
     /**
      * The reciprocal relationship for {@link Order.SalesLead__c}.
      */
-    Orders__r: Order[];
+    Orders__r?: Order[];
     /**
      * <h3><b>Owned by My Direct Report</b></h3>
      * <h4>Field Attributes</h4>
@@ -933,7 +934,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(Sales_Rep__r.ManagerId = $User.Id , True, False)</code></td></tr>
      * </table>
      */
-    OwnedByMyDirectReport__c: boolean;
+    OwnedByMyDirectReport__c?: boolean;
     /**
      * <h3><b>OwnerFullName</b></h3>
      * <p>Displays the owner full name</p>
@@ -946,7 +947,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OwnerFullName__c: string;
+    OwnerFullName__c?: string;
     /**
      * <h3><b>Owner&#39;s Manager Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -958,10 +959,10 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OwnerManagerId__c: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
+    OwnerManagerId__c?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
     /**
      * <h3><b>&quot;Parked/On Hold&quot; Assigned Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -970,9 +971,9 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ParkedOnHoldAssignedDate__c: Date;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    ParkedOnHoldAssignedDate__c?: Date;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * <h3><b>Program List Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -983,13 +984,13 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Priority__c: number;
+    Priority__c?: number;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Program List Wave</b></h3>
      * <h4>Field Attributes</h4>
@@ -1000,32 +1001,32 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Program_List_Wave__c: string;
+    Program_List_Wave__c?: string;
     /**
      * The reciprocal relationship for {@link Q_A__c.Prospect__c}.
      */
-    Q_A__r: Q_A__c[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    Q_A__r?: Q_A__c[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RecordType: RecordType;
-    RecordTypeId: string;
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>Loss Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -1048,7 +1049,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Unqualified</code></td><td>Unqualified</td><td nowrap>true</td></tr>
      * </table>
      */
-    Result__c: string;
+    Result__c?: string;
     /**
      * <h3><b>Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -1057,7 +1058,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Rep__c: string;
+    Sales_Rep__c?: string;
     /**
      * <h3><b>Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -1066,8 +1067,8 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Rep__r: User;
-    SobjectLookupValue: AIInsightValue;
+    Sales_Rep__r?: User;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -1100,7 +1101,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Webinar</code></td><td>Webinar</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Source__c: string;
+    Source__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -1127,7 +1128,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Parked</code></td><td>Parked</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Sub Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -1142,7 +1143,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Extraoral Imaging</code></td><td>Extraoral Imaging</td><td nowrap>true</td></tr>
      * </table>
      */
-    SubCategory__c: string;
+    SubCategory__c?: string;
     /**
      * <h3><b>Suggested Owner</b></h3>
      * <p>TFUS-000002725</p>
@@ -1152,7 +1153,7 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SuggestedOwner__c: string;
+    SuggestedOwner__c?: string;
     /**
      * <h3><b>Suggested Owner</b></h3>
      * <p>TFUS-000002725</p>
@@ -1162,16 +1163,16 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SuggestedOwner__r: User;
-    SystemModstamp: string;
-    Tags: Field_Sales_Project_Members__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    SuggestedOwner__r?: User;
+    SystemModstamp?: string;
+    Tags?: Field_Sales_Project_Members__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
+    Tasks?: Task[];
     /**
      * <h3><b>Territories Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -1183,9 +1184,9 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territories_Assigned__c: string;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    Territories_Assigned__c?: string;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -1270,12 +1271,12 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">UAE</code></td><td>UAE</td><td nowrap>true</td></tr>
      * </table>
      */
-    UserCountry__c: string;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    UserCountry__c?: string;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
+    VideoRelatedRecords?: VideoCall[];
     /**
      * <h3><b>Voucher Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -1286,12 +1287,12 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VoucherCode__c: string;
-    What: EventChangeEvent;
+    VoucherCode__c?: string;
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
     /**
      * <h3><b>3rd Party Source</b></h3>
      * <p>Used to indicate the source of the lead - text for flexibility of the data</p>
@@ -1303,5 +1304,5 @@ declare interface Field_Sales_Project_Members__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    X3rd_Party_Source__c: string;
+    X3rd_Party_Source__c?: string;
 }

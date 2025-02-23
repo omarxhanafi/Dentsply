@@ -2,7 +2,7 @@
 
 declare interface Questionnaire_Setup__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Country</b></h3>
      * <p>Two letters ONLY</p>
@@ -59,7 +59,7 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZA</code></td><td>ZA</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Create Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -75,11 +75,11 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IMPL GET Opp</code></td><td>IMPL GET Opp</td><td nowrap>true</td></tr>
      * </table>
      */
-    Create_Opportunity__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Create_Opportunity__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Default User</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,7 +88,7 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_User__c: string;
+    Default_User__c?: string;
     /**
      * <h3><b>Default User</b></h3>
      * <h4>Field Attributes</h4>
@@ -97,11 +97,11 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Default_User__r: User;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Default_User__r?: User;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>No manager email at assignament</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,8 +110,8 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    No_manager_email_at_assignament__c: boolean;
-    Owner: SObject;
+    No_manager_email_at_assignament__c?: boolean;
+    Owner?: SObject;
     /**
      * <h3><b>Owner Of Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -128,8 +128,8 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Based on Manual assignment ETM</code></td><td>Based on Manual assignment ETM</td><td nowrap>true</td></tr>
      * </table>
      */
-    Owner_Of_Opportunity__c: string;
-    OwnerId: string;
+    Owner_Of_Opportunity__c?: string;
+    OwnerId?: string;
     /**
      * <h3><b>Partner Assignment</b></h3>
      * <h4>Field Attributes</h4>
@@ -144,7 +144,7 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Manual</code></td><td>Manual</td><td nowrap>true</td></tr>
      * </table>
      */
-    Partner_Assignment__c: string;
+    Partner_Assignment__c?: string;
     /**
      * <h3><b>Product Line</b></h3>
      * <h4>Field Attributes</h4>
@@ -153,7 +153,7 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Line__c: string;
+    Product_Line__c?: string;
     /**
      * <h3><b>Questionnaire Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -162,8 +162,8 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Questionnaire_Type__c: string;
-    ReplayId: string;
+    Questionnaire_Type__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Show contact option?</b></h3>
      * <h4>Field Attributes</h4>
@@ -172,7 +172,7 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Show_contact_option__c: boolean;
+    Show_contact_option__c?: boolean;
     /**
      * <h3><b>Show manual assignment of owner option?</b></h3>
      * <h4>Field Attributes</h4>
@@ -181,7 +181,7 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Show_manual_assignment_of_owner_option__c: boolean;
+    Show_manual_assignment_of_owner_option__c?: boolean;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -196,5 +196,5 @@ declare interface Questionnaire_Setup__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inactive</code></td><td>Inactive</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
 }

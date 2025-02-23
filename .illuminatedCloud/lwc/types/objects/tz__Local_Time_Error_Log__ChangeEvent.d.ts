@@ -2,18 +2,18 @@
 
 declare interface tz__Local_Time_Error_Log__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Message</b></h3>
      * <p>Detailed error message.</p>
@@ -23,7 +23,7 @@ declare interface tz__Local_Time_Error_Log__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Message__c: string;
+    tz__Message__c?: string;
     /**
      * <h3><b>Quiddity</b></h3>
      * <p>Quiddity value which identifies the type of execution event associated with the current request.</p>
@@ -35,7 +35,7 @@ declare interface tz__Local_Time_Error_Log__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Quiddity__c: string;
+    tz__Quiddity__c?: string;
     /**
      * <h3><b>Record</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,7 +47,7 @@ declare interface tz__Local_Time_Error_Log__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Record__c: string;
+    tz__Record__c?: string;
     /**
      * <h3><b>Record Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface tz__Local_Time_Error_Log__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Record_Id__c: string;
+    tz__Record_Id__c?: string;
     /**
      * <h3><b>Request Id</b></h3>
      * <p>Request Id of the current Request object.</p>
@@ -70,7 +70,7 @@ declare interface tz__Local_Time_Error_Log__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Request_Id__c: string;
+    tz__Request_Id__c?: string;
     /**
      * <h3><b>Severity</b></h3>
      * <p>Severity of the log message.</p>
@@ -82,5 +82,5 @@ declare interface tz__Local_Time_Error_Log__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Severity__c: string;
+    tz__Severity__c?: string;
 }

@@ -20,7 +20,7 @@ declare interface T_E_Attachements__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Contract</code></td><td>Contract</td><td nowrap>true</td></tr>
      * </table>
      */
-    Attachment_Type__c: string;
+    Attachment_Type__c?: string;
     /**
      * <h3><b>Body</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,8 +28,8 @@ declare interface T_E_Attachements__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Body__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Body__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Contact</b></h3>
      * <p>The Linke to the Speaker Contact</p>
@@ -39,7 +39,7 @@ declare interface T_E_Attachements__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <p>The Linke to the Speaker Contact</p>
@@ -49,11 +49,11 @@ declare interface T_E_Attachements__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Contact__r?: Contact;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>KOL Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface T_E_Attachements__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Contract__c: string;
+    KOL_Contract__c?: string;
     /**
      * <h3><b>KOL Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,14 +71,14 @@ declare interface T_E_Attachements__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Contract__r: KOL_Contract__c;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    KOL_Contract__r?: KOL_Contract__c;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Speaker Engagement</b></h3>
      * <p>The link to the corresponding Speaker Engagement</p>
@@ -88,7 +88,7 @@ declare interface T_E_Attachements__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Engagement__c: string;
+    Speaker_Engagement__c?: string;
     /**
      * <h3><b>Speaker Engagement</b></h3>
      * <p>The link to the corresponding Speaker Engagement</p>
@@ -98,5 +98,5 @@ declare interface T_E_Attachements__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Engagement__r: Engagement__c;
+    Speaker_Engagement__r?: Engagement__c;
 }

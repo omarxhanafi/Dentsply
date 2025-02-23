@@ -2,20 +2,20 @@
 
 declare interface EmailRelay extends SObject 
 {
-    AuthType: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Filters: EmailDomainFilter[];
-    Host: string;
-    IsDeleted: boolean;
-    IsRequireAuth: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Password: string;
-    Port: string;
-    SystemModstamp: string;
-    TlsSetting: string;
-    Username: string;
+    AuthType?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Filters?: EmailDomainFilter[];
+    Host?: string;
+    IsDeleted?: boolean;
+    IsRequireAuth?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Password?: string;
+    Port?: string;
+    SystemModstamp?: string;
+    TlsSetting?: string;
+    Username?: string;
 }

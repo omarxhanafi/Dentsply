@@ -23,7 +23,7 @@ declare interface Sales_team_mapping__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Preventive</code></td><td>Preventive</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
+    Category__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,14 +48,14 @@ declare interface Sales_team_mapping__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">US</code></td><td>US</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Country__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>Territory role</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,5 +72,5 @@ declare interface Sales_team_mapping__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales Rep (PREV)</code></td><td>Sales Rep (PREV)</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Territory_role__c: string;
+    Territory_role__c?: string;
 }

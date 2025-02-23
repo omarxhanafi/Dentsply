@@ -12,8 +12,8 @@ declare interface GuidanceRenderer__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    CountryList__c: string;
-    DeveloperName: string;
+    CountryList__c?: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Guidance Content</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface GuidanceRenderer__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Guidance_Content__c: string;
+    Guidance_Content__c?: string;
     /**
      * <h3><b>isTest</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,11 +30,11 @@ declare interface GuidanceRenderer__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    isTest__c: boolean;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    isTest__c?: boolean;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>NextActivity</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,7 +115,7 @@ declare interface GuidanceRenderer__mdt extends SObject
      * 10. Submit Second Case</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    NextActivity__c: string;
+    NextActivity__c?: string;
     /**
      * <h3><b>PDF Link Label</b></h3>
      * <h4>Field Attributes</h4>
@@ -126,7 +126,7 @@ declare interface GuidanceRenderer__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PDFLinkLabel__c: string;
+    PDFLinkLabel__c?: string;
     /**
      * <h3><b>PDF Link URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -137,8 +137,8 @@ declare interface GuidanceRenderer__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PDFLinkURL__c: string;
-    QualifiedApiName: string;
+    PDFLinkURL__c?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Record Type Developer Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -149,6 +149,6 @@ declare interface GuidanceRenderer__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RecordTypeDeveloperName__c: string;
-    SystemModstamp: string;
+    RecordTypeDeveloperName__c?: string;
+    SystemModstamp?: string;
 }

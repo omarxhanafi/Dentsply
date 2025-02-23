@@ -2,13 +2,13 @@
 
 declare interface ActivePermSetLicenseMetric extends SObject 
 {
-    ActiveUserCount: number;
-    AssignedUserCount: number;
-    DeveloperName: string;
-    MasterLabel: string;
-    MetricsDate: Date;
-    PermissionSetLicense: PermissionSetLicense;
-    PermissionSetLicenseId: string;
-    SystemModstamp: string;
-    TotalLicenses: number;
+    ActiveUserCount?: number;
+    AssignedUserCount?: number;
+    DeveloperName?: string;
+    MasterLabel?: string;
+    MetricsDate?: Date;
+    PermissionSetLicense?: PermissionSetLicense;
+    PermissionSetLicenseId?: string;
+    SystemModstamp?: string;
+    TotalLicenses?: number;
 }

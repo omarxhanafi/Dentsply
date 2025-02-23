@@ -8,18 +8,18 @@ declare interface External_Identifier__c extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Attribute 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,7 +30,7 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attribute_1__c: string;
+    Attribute_1__c?: string;
     /**
      * <h3><b>Attribute 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,34 +41,34 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attribute_2__c: string;
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    Attribute_2__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
+    ContactRequests?: ContactRequest[];
     /**
      * The reciprocal relationship for {@link Contact.External_Identifier__c}.
      */
-    Contacts__r: Contact[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Contacts__r?: Contact[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * <h3><b>Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -79,9 +79,9 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email__c: string;
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
+    Email__c?: string;
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
     /**
      * <h3><b>External SF ID</b></h3>
      * <p>Combination of the government Id &amp; Zip code</p>
@@ -93,7 +93,7 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    External_ID_1__c: string;
+    External_ID_1__c?: string;
     /**
      * <h3><b>External ID</b></h3>
      * <p>Some countries have multiple addresses attached to one government Id, therefore this will act as the plain government Id and External ID 1 will act as the unique Id in SF</p>
@@ -105,8 +105,8 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    External_ID__c: string;
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    External_ID__c?: string;
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>First Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -117,9 +117,9 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    First_Name__c: string;
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    First_Name__c?: string;
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Full Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -131,12 +131,12 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Full_Name__c: string;
+    Full_Name__c?: string;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
     /**
      * <h3><b>Last Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -147,24 +147,24 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Name__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
+    Last_Name__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -173,47 +173,47 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Phone__c: string;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Phone__c?: string;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: External_Identifier__Share[];
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: External_Identifier__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: External_Identifier__Share[];
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: External_Identifier__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
+    VideoRelatedRecords?: VideoCall[];
     /**
      * <h3><b>Visiting City</b></h3>
      * <h4>Field Attributes</h4>
@@ -224,7 +224,7 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Visiting_City__c: string;
+    Visiting_City__c?: string;
     /**
      * <h3><b>Visiting Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -235,7 +235,7 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Visiting_Country__c: string;
+    Visiting_Country__c?: string;
     /**
      * <h3><b>Visiting Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -246,7 +246,7 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Visiting_Street__c: string;
+    Visiting_Street__c?: string;
     /**
      * <h3><b>Visiting Zip/Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -257,10 +257,10 @@ declare interface External_Identifier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Visiting_Zip_Postal_Code__c: string;
-    What: EventChangeEvent;
+    Visiting_Zip_Postal_Code__c?: string;
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

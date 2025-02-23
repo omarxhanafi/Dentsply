@@ -8,12 +8,12 @@ declare interface Market__mdt extends SObject
     /**
      * The reciprocal relationship for {@link Country_Configuration__mdt.Market__c}.
      */
-    Countries__r: Country_Configuration__mdt[];
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Countries__r?: Country_Configuration__mdt[];
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

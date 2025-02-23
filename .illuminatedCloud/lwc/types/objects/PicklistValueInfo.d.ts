@@ -2,12 +2,12 @@
 
 declare interface PicklistValueInfo extends SObject 
 {
-    DurableId: string;
-    EntityParticle: EntityParticle;
-    EntityParticleId: string;
-    IsActive: boolean;
-    IsDefaultValue: boolean;
-    Label: string;
-    ValidFor: string;
-    Value: string;
+    DurableId?: string;
+    EntityParticle?: EntityParticle;
+    EntityParticleId?: string;
+    IsActive?: boolean;
+    IsDefaultValue?: boolean;
+    Label?: string;
+    ValidFor?: string;
+    Value?: string;
 }

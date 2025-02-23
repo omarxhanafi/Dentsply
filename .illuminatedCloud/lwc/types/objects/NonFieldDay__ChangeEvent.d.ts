@@ -2,11 +2,11 @@
 
 declare interface NonFieldDay__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Date</b></h3>
      * <p>Used to set the date of the Field Day</p>
@@ -16,7 +16,7 @@ declare interface NonFieldDay__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Date__c: Date;
+    Date__c?: Date;
     /**
      * <h3><b>Day Type</b></h3>
      * <p>Concatenates Field Day Type and Reason for not having full field day in one field for Calendar visibility</p>
@@ -29,11 +29,11 @@ declare interface NonFieldDay__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Day_Type__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Day_Type__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Non Field Day (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface NonFieldDay__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NonFieldDay__c: number;
+    NonFieldDay__c?: number;
     /**
      * <h3><b>Non Field Day Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -60,9 +60,9 @@ declare interface NonFieldDay__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3/4 day</code></td><td>3/4 day</td><td nowrap>true</td></tr>
      * </table>
      */
-    NonFieldDayType__c: string;
-    Owner: SObject;
-    OwnerId: string;
+    NonFieldDayType__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,6 +82,6 @@ declare interface NonFieldDay__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vacation</code></td><td>Vacation</td><td nowrap>true</td></tr>
      * </table>
      */
-    Reason__c: string;
-    ReplayId: string;
+    Reason__c?: string;
+    ReplayId?: string;
 }

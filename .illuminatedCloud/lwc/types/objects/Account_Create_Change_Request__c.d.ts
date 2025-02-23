@@ -13,7 +13,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Fax__c: string;
+    Account_Fax__c?: string;
     /**
      * <h3><b>Account Name (Practice Name)</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Name__c: string;
+    Account_Name__c?: string;
     /**
      * <h3><b>Account Name (only if New)</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Name_only_if_New__c: string;
+    Account_Name_only_if_New__c?: string;
     /**
      * <h3><b>Account OneSF ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,7 +47,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_OneSF_ID__c: string;
+    Account_OneSF_ID__c?: string;
     /**
      * <h3><b>Account Phone Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,7 +56,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Phone_Number__c: string;
+    Account_Phone_Number__c?: string;
     /**
      * <h3><b>Account Record Type if Existing</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,7 +68,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Record_Type_if_Existing__c: string;
+    Account_Record_Type_if_Existing__c?: string;
     /**
      * <h3><b>Account Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,17 +77,18 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Type__c: string;
+    Account_Type__c?: string;
     /**
      * <h3><b>Country Code</b></h3>
      * <h4>Field Attributes</h4>
      * <table border="0" valign="top">
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Picklist</td></tr>
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CASE($User.User_Country__c, &quot;Argentina&quot;, &quot;AR&quot;, &quot;Australia&quot;, &quot;AU&quot;, &quot;Austria&quot;, &quot;AT&quot;, &quot;Belarus&quot;, &quot;BY&quot;, &quot;Belgium&quot;, &quot;BE&quot;, &quot;Bolivia&quot;, &quot;BO&quot;, &quot;Brazil&quot;, &quot;BR&quot;, &quot;Canada&quot;, &quot;CA&quot;, &quot;Chile&quot;, &quot;CL&quot;, &quot;China&quot;, &quot;CN&quot;, &quot;Costa Rica&quot;, &quot;CR&quot;, &quot;Denmark&quot;, &quot;DK&quot;, &quot;Dominican Republic&quot;, &quot;DO&quot;, &quot;Ecuador&quot;, &quot;EC&quot;, &quot;Finland&quot;, &quot;FI&quot;, &quot;France&quot;, &quot;FR&quot;, &quot;Georgia&quot;, &quot;GE&quot;, &quot;Germany&quot;, &quot;DE&quot;, &quot;Guatemala&quot;, &quot;GT&quot;, &quot;Holland&quot;, &quot;NL&quot;, &quot;Honduras&quot;, &quot;HN&quot;, &quot;Hong Kong&quot;, &quot;HK&quot;, &quot;India&quot;, &quot;IN&quot;, &quot;Indonesia&quot;, &quot;ID&quot;, &quot;Italy&quot;, &quot;IT&quot;, &quot;United Arab Emirates&quot;, &quot;AE&quot;, &quot;Kuwait&quot;, &quot;KW&quot;, &quot;Egypt&quot;, &quot;EG&quot;, &quot;Jordan&quot;, &quot;JO&quot;, &quot;Algeria&quot;, &quot;DZ&quot;, &quot;Tunisia&quot;, &quot;TN&quot;, &quot;Cameroun&quot;, &quot;CM&quot;, &quot;Senegal&quot;, &quot;SN&quot;, &quot;Oman&quot;, &quot;OM&quot;, &quot;Iran&quot;, &quot;IR&quot;, &quot;Iraq&quot;, &quot;IQ&quot;, &quot;Libya&quot;, &quot;LY&quot;, &quot;Yemen&quot;, &quot;YE&quot;, &quot;Bahrain&quot;, &quot;BH&quot;, &quot;Mauritius&quot;, &quot;MU&quot;, &quot;Maldives&quot;, &quot;MV&quot;, &quot;Japan&quot;, &quot;JP&quot;, &quot;Kazakhstan&quot;, &quot;KZ&quot;, &quot;Latvia&quot;, &quot;LV&quot;, &quot;Lithuania&quot;, &quot;LT&quot;, &quot;Estonia&quot;, &quot;EE&quot;, &quot;Lebanon&quot;, &quot;LB&quot;, &quot;Luxembourg&quot;, &quot;LU&quot;, &quot;Malaysia&quot;, &quot;MY&quot;, &quot;Mexico&quot;, &quot;MX&quot;, &quot;Morocco&quot;, &quot;MA&quot;, &quot;New Zealand&quot;, &quot;NZ&quot;, &quot;Norway&quot;, &quot;NO&quot;, &quot;Panama&quot;, &quot;PA&quot;, &quot;Philippines&quot;, &quot;PH&quot;, &quot;Pakistan&quot;, &quot;PK&quot;, &quot;Peru&quot;, &quot;PE&quot;, &quot;Portugal&quot;, &quot;PT&quot;, &quot;Poland&quot;, &quot;PL&quot;, &quot;Puerto Rico&quot;, &quot;PR&quot;, &quot;Qatar&quot;, &quot;QA&quot;, &quot;Russia&quot;, &quot;RU&quot;, &quot;Saudi Arabia&quot;, &quot;SA&quot;, &quot;Singapore&quot;, &quot;SG&quot;, &quot;Slovakia&quot;, &quot;SK&quot;, &quot;South Africa&quot;, &quot;ZA&quot;, &quot;South Korea&quot;, &quot;KR&quot;, &quot;Spain&quot;, &quot;ES&quot;, &quot;Sweden&quot;, &quot;SE&quot;, &quot;Switzerland&quot;, &quot;CH&quot;, &quot;Taiwan&quot;, &quot;TW&quot;, &quot;Thailand&quot;, &quot;TH&quot;, &quot;Turkey&quot;, &quot;TR&quot;, &quot;UK&quot;, &quot;GB&quot;, &quot;Ukraine&quot;, &quot;UA&quot;, &quot;Uruguay&quot;, &quot;UY&quot;, &quot;USA&quot;, &quot;US&quot;, &quot;Venezuela&quot;, &quot;VE&quot;, &quot;Vietnam&quot;, &quot;VN&quot;, &quot;&quot;)</code></td></tr>
      * </table>
      */
-    AccountCountry__c: string;
-    ActivityHistories: ActivityHistory[];
+    AccountCountry__c?: string;
+    ActivityHistories?: ActivityHistory[];
     /**
      * <h3><b>Approval Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,22 +100,22 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Approval_Status__c: string;
+    Approval_Status__c?: string;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Bank</b></h3>
      * <h4>Field Attributes</h4>
@@ -125,7 +126,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Bank__c: string;
+    Bank__c?: string;
     /**
      * <h3><b>Billing Account Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -136,7 +137,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BillingAccountName__c: string;
+    BillingAccountName__c?: string;
     /**
      * <h3><b>Billing City</b></h3>
      * <h4>Field Attributes</h4>
@@ -147,7 +148,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BillingCity__c: string;
+    BillingCity__c?: string;
     /**
      * <h3><b>Billing Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -158,7 +159,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BillingCountry__c: string;
+    BillingCountry__c?: string;
     /**
      * <h3><b>Billing Zip/Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -169,7 +170,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BillingPostalCode__c: string;
+    BillingPostalCode__c?: string;
     /**
      * <h3><b>Billing State/Province</b></h3>
      * <h4>Field Attributes</h4>
@@ -180,7 +181,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BillingStateProvince__c: string;
+    BillingStateProvince__c?: string;
     /**
      * <h3><b>Billing Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -191,7 +192,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BillingStreet__c: string;
+    BillingStreet__c?: string;
     /**
      * <h3><b>Certified Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -202,7 +203,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CertifiedEmail__c: string;
+    CertifiedEmail__c?: string;
     /**
      * <h3><b>Changed Account Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -211,7 +212,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">If( or(ISBLANK( Existing_Account__c ),ISBLANK(Account_Name__c )),false,if( Account_Name__c &lt;&gt;  Old_Account_Name__c ,True,False))</code></td></tr>
      * </table>
      */
-    Changed_Account_Name__c: boolean;
+    Changed_Account_Name__c?: boolean;
     /**
      * <h3><b>Changed Account Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -220,7 +221,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">If( or(ISBLANK( Existing_Account__c ),ISBLANK(text(Account_Type__c))),false, if(text(Account_Type__c) &lt;&gt; text(Existing_Account__r.OneAccount_Type__c),True,False))</code></td></tr>
      * </table>
      */
-    Changed_Account_Type__c: boolean;
+    Changed_Account_Type__c?: boolean;
     /**
      * <h3><b>Changed Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -229,7 +230,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">if( or(ISBLANK( Existing_Account__c ),CompleteVisitingAddress__c==&quot;, , , , &quot;) ,False, IF( or( Country__c &lt;&gt; Old_BillingCountry__c , Postal_Zip_Code__c&lt;&gt; Old_BillingPostalCode__c , City__c&lt;&gt; Old_BillingCity__c , StreetAddress__c &lt;&gt; Old_BillingStreet__c , State_Province__c &lt;&gt; Old_BillingState__c ), True,False))</code></td></tr>
      * </table>
      */
-    Changed_Address__c: boolean;
+    Changed_Address__c?: boolean;
     /**
      * <h3><b>Changed Parent Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -238,7 +239,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">if(or( ISBLANK( Existing_Account__c ),isblank( Parent_Account__c )),False, if( Parent_Account__r.Id &lt;&gt;  Existing_Account__r.Parent.Id  , True,False))</code></td></tr>
      * </table>
      */
-    Changed_Parent_Account__c: boolean;
+    Changed_Parent_Account__c?: boolean;
     /**
      * <h3><b>Changed Phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -247,7 +248,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">If( or(ISBLANK( Existing_Account__c ), ISBLANK( Account_Phone_Number__c  )),false, if(  Account_Phone_Number__c &lt;&gt;  Old_Phone__c  ,True,False))</code></td></tr>
      * </table>
      */
-    Changed_Phone__c: boolean;
+    Changed_Phone__c?: boolean;
     /**
      * <h3><b>Changed Specialty</b></h3>
      * <h4>Field Attributes</h4>
@@ -256,7 +257,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">If( OR(ISBLANK( Existing_Account__c ),ISBLANK(text(Specialty__c))), false, if(text(Specialty__c) &lt;&gt; Old_Specialty__c ,True,False) )</code></td></tr>
      * </table>
      */
-    Changed_Specialty__c: boolean;
+    Changed_Specialty__c?: boolean;
     /**
      * <h3><b>Changed Organisation Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -265,7 +266,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">if( or(ISBLANK( Existing_Account__c ), ISBLANK(  OrganisationNumber__c  )),false, if( OrganisationNumber__c &lt;&gt;  Old_OrganisationNumber__c  ,True,False))</code></td></tr>
      * </table>
      */
-    ChangedOrganisationNumber__c: boolean;
+    ChangedOrganisationNumber__c?: boolean;
     /**
      * <h3><b>Cim Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -277,7 +278,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CimId__c: string;
+    CimId__c?: string;
     /**
      * <h3><b>City</b></h3>
      * <h4>Field Attributes</h4>
@@ -288,8 +289,8 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    City__c: string;
-    CombinedAttachments: CombinedAttachment[];
+    City__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
     /**
      * <h3><b>Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -298,7 +299,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Comments__c: string;
+    Comments__c?: string;
     /**
      * <h3><b>Complete Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -310,17 +311,17 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CompleteVisitingAddress__c: string;
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    CompleteVisitingAddress__c?: string;
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Country</b></h3>
      * <p>To set the Country of the Account Requested</p>
@@ -332,7 +333,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Created by me</b></h3>
      * <h4>Field Attributes</h4>
@@ -341,7 +342,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedById == $User.Id, TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    Created_by_me__c: boolean;
+    Created_by_me__c?: boolean;
     /**
      * <h3><b>Created by My Direct Reports</b></h3>
      * <h4>Field Attributes</h4>
@@ -350,7 +351,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedBy.ManagerId = $User.Id, True, false)</code></td></tr>
      * </table>
      */
-    Created_by_My_Direct_Reports__c: boolean;
+    Created_by_My_Direct_Reports__c?: boolean;
     /**
      * <h3><b>Created by SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -362,7 +363,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Created_by_SBU__c: string;
+    Created_by_SBU__c?: string;
     /**
      * <h3><b>Created By TERR ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -374,10 +375,10 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Created_By_TERR_ID__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Created_By_TERR_ID__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Creator Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -389,7 +390,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Country__c: string;
+    Creator_Country__c?: string;
     /**
      * <h3><b>Creator Team</b></h3>
      * <h4>Field Attributes</h4>
@@ -401,8 +402,8 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CreatorTeam__c: string;
-    CurrencyIsoCode: string;
+    CreatorTeam__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Account Currency</b></h3>
      * <p>New currency code that the account should have</p>
@@ -412,7 +413,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CurrencyISOCode__c: string;
+    CurrencyISOCode__c?: string;
     /**
      * <h3><b>Customer Account Consent Collected</b></h3>
      * <h4>Field Attributes</h4>
@@ -421,7 +422,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Customer_Account_Consent_Collected__c: boolean;
+    Customer_Account_Consent_Collected__c?: boolean;
     /**
      * <h3><b>Customer Sub-Segment</b></h3>
      * <h4>Field Attributes</h4>
@@ -432,7 +433,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Sub_Segment__c: string;
+    Customer_Sub_Segment__c?: string;
     /**
      * <h3><b>Destination Code</b></h3>
      * <p>unique Account Verification Code - registered on the Taxes agency (by the supplier)
@@ -445,15 +446,15 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DestinationCode__c: string;
+    DestinationCode__c?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * <h3><b>Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -464,14 +465,14 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email__c: string;
+    Email__c?: string;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    Events: Event[];
+    Emails?: EmailMessage[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
     /**
      * <h3><b>Existing Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -480,7 +481,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Existing_Account__c: string;
+    Existing_Account__c?: string;
     /**
      * <h3><b>Existing Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -489,9 +490,9 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Existing_Account__r: Account;
-    Feeds: Account_Create_Change_Request__Feed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    Existing_Account__r?: Account;
+    Feeds?: Account_Create_Change_Request__Feed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>First Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -502,14 +503,14 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    First_Name__c: string;
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    First_Name__c?: string;
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: Account_Create_Change_Request__History[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: Account_Create_Change_Request__History[];
     /**
      * <h3><b>IBAN</b></h3>
      * <h4>Field Attributes</h4>
@@ -520,7 +521,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    IBAN__c: string;
+    IBAN__c?: string;
     /**
      * <h3><b>Identity Management Notes on Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -528,8 +529,8 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Identity_Management_Notes_on_Account__c: string;
-    IsDeleted: boolean;
+    Identity_Management_Notes_on_Account__c?: string;
+    IsDeleted?: boolean;
     /**
      * <h3><b>PO required on orders</b></h3>
      * <h4>Field Attributes</h4>
@@ -538,7 +539,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    isPORequired__c: boolean;
+    isPORequired__c?: boolean;
     /**
      * <h3><b>Last Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -549,13 +550,13 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Name__c: string;
-    LastActivityDate: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
+    Last_Name__c?: string;
+    LastActivityDate?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -564,7 +565,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lead__c: string;
+    Lead__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -573,9 +574,9 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lead__r: Lead;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    Lead__r?: Lead;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Main DS Contact (Sales Rep)</b></h3>
      * <p>TFUS-000006623
@@ -586,7 +587,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_DS_Contact__c: string;
+    Main_DS_Contact__c?: string;
     /**
      * <h3><b>Main DS Contact (Sales Rep)</b></h3>
      * <p>TFUS-000006623
@@ -597,7 +598,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_DS_Contact__r: User;
+    Main_DS_Contact__r?: User;
     /**
      * <h3><b>Method of Payment</b></h3>
      * <h4>Field Attributes</h4>
@@ -608,11 +609,11 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MethodofPayement__c: string;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    MethodofPayement__c?: string;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b># of Professionals</b></h3>
      * <h4>Field Attributes</h4>
@@ -623,7 +624,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofProfessionals__c: number;
+    ofProfessionals__c?: number;
     /**
      * <h3><b># of Units</b></h3>
      * <h4>Field Attributes</h4>
@@ -634,7 +635,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofUnits__c: number;
+    ofUnits__c?: number;
     /**
      * <h3><b>Old Account Name</b></h3>
      * <p>Original Account Name during creation of the Change Request. [ACR 2.0]</p>
@@ -646,7 +647,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_Account_Name__c: string;
+    Old_Account_Name__c?: string;
     /**
      * <h3><b>Old Account Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -657,7 +658,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_Account_Type__c: string;
+    Old_Account_Type__c?: string;
     /**
      * <h3><b>Old Account Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -668,7 +669,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_AccountCountry__c: string;
+    Old_AccountCountry__c?: string;
     /**
      * <h3><b>Old City</b></h3>
      * <p>Original City during creation of the Change Request. [ACR 2.0]</p>
@@ -680,7 +681,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_BillingCity__c: string;
+    Old_BillingCity__c?: string;
     /**
      * <h3><b>Old Country</b></h3>
      * <p>Original Country during creation of the Change Request. [ACR 2.0]</p>
@@ -692,7 +693,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_BillingCountry__c: string;
+    Old_BillingCountry__c?: string;
     /**
      * <h3><b>Old Zip/Postal Code</b></h3>
      * <p>Original Postal Code during creation of the Change Request. [ACR 2.0]</p>
@@ -704,7 +705,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_BillingPostalCode__c: string;
+    Old_BillingPostalCode__c?: string;
     /**
      * <h3><b>Old State/Province</b></h3>
      * <p>Original State during creation of the Change Request. [ACR 2.0]</p>
@@ -716,7 +717,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_BillingState__c: string;
+    Old_BillingState__c?: string;
     /**
      * <h3><b>Old Street</b></h3>
      * <p>Original Street during creation of the Change Request. [ACR 2.0]</p>
@@ -728,7 +729,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_BillingStreet__c: string;
+    Old_BillingStreet__c?: string;
     /**
      * <h3><b>Old CurrencyIsoCode</b></h3>
      * <p>Original CurrencyIsoCode during creation of the Change Request. [ACR 2.0]</p>
@@ -740,7 +741,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_CurrencyIsoCode__c: string;
+    Old_CurrencyIsoCode__c?: string;
     /**
      * <h3><b>Old Organisation Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -751,7 +752,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_OrganisationNumber__c: string;
+    Old_OrganisationNumber__c?: string;
     /**
      * <h3><b>Old Parent Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -760,7 +761,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_ParentAccount__c: string;
+    Old_ParentAccount__c?: string;
     /**
      * <h3><b>Old Parent Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -769,7 +770,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_ParentAccount__r: Account;
+    Old_ParentAccount__r?: Account;
     /**
      * <h3><b>Old Phone</b></h3>
      * <p>Original Phone during creation of the Change Request. [ACR 2.0]</p>
@@ -781,7 +782,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_Phone__c: string;
+    Old_Phone__c?: string;
     /**
      * <h3><b>Old Postal Code Info</b></h3>
      * <p>Original Postal Code Info during creation of the Change Request. [ACR 2.0]</p>
@@ -793,7 +794,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_Postal_Code_Info__c: string;
+    Old_Postal_Code_Info__c?: string;
     /**
      * <h3><b>TODEL_Old City</b></h3>
      * <p>Original ShippingCity during creation of the Change Request. [ACR 2.0]</p>
@@ -805,7 +806,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_ShippingCity__c: string;
+    Old_ShippingCity__c?: string;
     /**
      * <h3><b>TODEL_Old Country</b></h3>
      * <p>Original ShippingCountry during creation of the Change Request. [ACR 2.0]</p>
@@ -817,7 +818,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_ShippingCountry__c: string;
+    Old_ShippingCountry__c?: string;
     /**
      * <h3><b>TODEL_Old Zip/Postal Code</b></h3>
      * <p>Original ShippingPostalCode during creation of the Change Request. [ACR 2.0]</p>
@@ -829,7 +830,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_ShippingPostalCode__c: string;
+    Old_ShippingPostalCode__c?: string;
     /**
      * <h3><b>TODEL_Old State/Province</b></h3>
      * <p>Original ShippingState during creation of the Change Request. [ACR 2.0]</p>
@@ -841,7 +842,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_ShippingState__c: string;
+    Old_ShippingState__c?: string;
     /**
      * <h3><b>TODEL_Old Street</b></h3>
      * <p>Original ShippingStreet during creation of the Change Request. [ACR 2.0]</p>
@@ -853,7 +854,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_ShippingStreet__c: string;
+    Old_ShippingStreet__c?: string;
     /**
      * <h3><b>Old Specialty</b></h3>
      * <h4>Field Attributes</h4>
@@ -864,8 +865,8 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_Specialty__c: string;
-    OpenActivities: OpenActivity[];
+    Old_Specialty__c?: string;
+    OpenActivities?: OpenActivity[];
     /**
      * <h3><b>Organisation Number (#2)</b></h3>
      * <h4>Field Attributes</h4>
@@ -876,7 +877,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrganisationNumber2__c: string;
+    OrganisationNumber2__c?: string;
     /**
      * <h3><b>Organisation Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -887,10 +888,10 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrganisationNumber__c: string;
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
+    OrganisationNumber__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
     /**
      * <h3><b>Parent Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -899,7 +900,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Account__c: string;
+    Parent_Account__c?: string;
     /**
      * <h3><b>Parent Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -908,10 +909,10 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Account__r: Account;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
+    Parent_Account__r?: Account;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Payment Types</b></h3>
      * <h4>Field Attributes</h4>
@@ -927,7 +928,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DIRECT REMITTANCE</code></td><td>DIRECT REMITTANCE</td><td nowrap>true</td></tr>
      * </table>
      */
-    PaymentTypes__c: string;
+    PaymentTypes__c?: string;
     /**
      * <h3><b>Pending Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -936,7 +937,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Pending_Order__c: boolean;
+    Pending_Order__c?: boolean;
     /**
      * <h3><b>Place of Residency (If Resident)</b></h3>
      * <h4>Field Attributes</h4>
@@ -947,7 +948,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PlaceofResidency__c: string;
+    PlaceofResidency__c?: string;
     /**
      * <h3><b>Zip/Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -958,7 +959,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Postal_Zip_Code__c: string;
+    Postal_Zip_Code__c?: string;
     /**
      * <h3><b>Practitioner ID (NPI in US)</b></h3>
      * <h4>Field Attributes</h4>
@@ -969,14 +970,14 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Practitioner_ID_NPI_in_US__c: string;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Practitioner_ID_NPI_in_US__c?: string;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Receive a Courtesy Copy by Email ?</b></h3>
      * <h4>Field Attributes</h4>
@@ -985,7 +986,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ReceiveaCourtesyCopybyEmail__c: boolean;
+    ReceiveaCourtesyCopybyEmail__c?: boolean;
     /**
      * <h3><b>Receive the Order Summary ?</b></h3>
      * <h4>Field Attributes</h4>
@@ -994,7 +995,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ReceivetheOrderSummary__c: boolean;
+    ReceivetheOrderSummary__c?: boolean;
     /**
      * <h3><b>Receive Tracking Orders by Email ?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1003,26 +1004,26 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ReceiveTrackingOrdersbyEmail__c: boolean;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ReceiveTrackingOrdersbyEmail__c?: boolean;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>Request</b></h3>
      * <h4>Field Attributes</h4>
@@ -1037,7 +1038,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Account Creation Request</code></td><td>Account Creation Request</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    Request__c: string;
+    Request__c?: string;
     /**
      * <h3><b>Request Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1060,7 +1061,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Account Linking</code></td><td>Account Linking</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Request_Type__c: string;
+    Request_Type__c?: string;
     /**
      * <h3><b>Secondary Email</b></h3>
      * <p>EMAIL COPIA CORTESIA</p>
@@ -1072,8 +1073,8 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SecondaryEmail__c: string;
-    Shares: Account_Create_Change_Request__Share[];
+    SecondaryEmail__c?: string;
+    Shares?: Account_Create_Change_Request__Share[];
     /**
      * <h3><b>Shipping Account Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -1084,7 +1085,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShippingAccountName__c: string;
+    ShippingAccountName__c?: string;
     /**
      * <h3><b>Shipping City</b></h3>
      * <p>ACR 2.0</p>
@@ -1096,7 +1097,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShippingCity__c: string;
+    ShippingCity__c?: string;
     /**
      * <h3><b>Shipping Country</b></h3>
      * <p>ACR 2.0</p>
@@ -1108,7 +1109,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShippingCountry__c: string;
+    ShippingCountry__c?: string;
     /**
      * <h3><b>Shipping Zip/Postal Code</b></h3>
      * <p>ACR 2.0</p>
@@ -1120,7 +1121,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShippingPostalCode__c: string;
+    ShippingPostalCode__c?: string;
     /**
      * <h3><b>Shipping State/Province</b></h3>
      * <p>ACR 2.0</p>
@@ -1132,7 +1133,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShippingState__c: string;
+    ShippingState__c?: string;
     /**
      * <h3><b>Shipping Street</b></h3>
      * <p>ACR 2.0</p>
@@ -1144,8 +1145,8 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShippingStreet__c: string;
-    SobjectLookupValue: AIInsightValue;
+    ShippingStreet__c?: string;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Specialty</b></h3>
      * <h4>Field Attributes</h4>
@@ -1303,7 +1304,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zip/Postal Code</code></td><td>Zip/Postal Code</td><td nowrap>true</td></tr>
      * </table>
      */
-    Specialty__c: string;
+    Specialty__c?: string;
     /**
      * <h3><b>Start Up Practice</b></h3>
      * <h4>Field Attributes</h4>
@@ -1312,7 +1313,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartUpPractice__c: string;
+    StartUpPractice__c?: string;
     /**
      * <h3><b>Start Up Practice</b></h3>
      * <h4>Field Attributes</h4>
@@ -1321,7 +1322,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartUpPractice__r: StartUpPractice__c;
+    StartUpPractice__r?: StartUpPractice__c;
     /**
      * <h3><b>State License Number</b></h3>
      * <p>Used in North America to capture the state license number of a contact, similar to an NPI number</p>
@@ -1333,7 +1334,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    State_License_Number__c: string;
+    State_License_Number__c?: string;
     /**
      * <h3><b>State Licensure</b></h3>
      * <h4>Field Attributes</h4>
@@ -1342,7 +1343,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    State_Licensure__c: string;
+    State_Licensure__c?: string;
     /**
      * <h3><b>State/Province</b></h3>
      * <h4>Field Attributes</h4>
@@ -1353,7 +1354,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    State_Province__c: string;
+    State_Province__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -1371,7 +1372,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Rejected</code></td><td>Rejected</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -1382,7 +1383,7 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StreetAddress__c: string;
+    StreetAddress__c?: string;
     /**
      * <h3><b>Submit for Approval</b></h3>
      * <p>Submits the Change Request for Approval if checked</p>
@@ -1392,38 +1393,38 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    SubmitForApproval__c: boolean;
-    SystemModstamp: string;
-    Tags: Account_Create_Change_Request__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    SubmitForApproval__c?: boolean;
+    SystemModstamp?: string;
+    Tags?: Account_Create_Change_Request__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    Tasks?: Task[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
      * <table border="0" valign="top">
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Picklist</td></tr>
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CASE($User.User_Country__c, &quot;Argentina&quot;,&quot;Argentina&quot;, &quot;Australia&quot;,&quot;Australia&quot;, &quot;Austria&quot;,&quot;Austria&quot;, &quot;Belarus&quot;,&quot;Belarus&quot;, &quot;Belgium&quot;,&quot;Belgium&quot;, &quot;Bolivia&quot;,&quot;Bolivia&quot;, &quot;Brazil&quot;,&quot;Brazil&quot;, &quot;Canada&quot;, &quot;Canada&quot;, &quot;Chile&quot;,&quot;Chile&quot;, &quot;China&quot;,&quot;China&quot;, &quot;Columbia&quot;,&quot;Columbia&quot;, &quot;Costa Rica&quot;,&quot;Costa Rica&quot;, &quot;Denmark&quot;,&quot;Denmark&quot;, &quot;Dominican Republic&quot;,&quot;Dominican Republic&quot;, &quot;Ecuador&quot;,&quot;Ecuador&quot;, &quot;Finland&quot;,&quot;Finland&quot;, &quot;France&quot;,&quot;France&quot;, &quot;Georgia&quot;,&quot;Georgia&quot;, &quot;Germany&quot;,&quot;Germany&quot;, &quot;Guatemala&quot;,&quot;Guatemala&quot;, &quot;Holland&quot;,&quot;Holland&quot;, &quot;Honduras&quot;,&quot;Honduras&quot;, &quot;Hong Kong&quot;,&quot;Hong Kong&quot;, &quot;India&quot;,&quot;India&quot;, &quot;Indonesia&quot;,&quot;Indonesia&quot;, &quot;Italy&quot;,&quot;Italy&quot;, &quot;United Arab Emirates&quot;,&quot;United Arab Emirates&quot;, &quot;Kuwait&quot;,&quot;Kuwait&quot;, &quot;Egypt&quot;,&quot;Egypt&quot;, &quot;Jordan&quot;,&quot;Jordan&quot;, &quot;Algeria&quot;,&quot;Algeria&quot;, &quot;Tunisia&quot;,&quot;Tunisia&quot;, &quot;Cameroun&quot;,&quot;Cameroun&quot;, &quot;Senegal&quot;,&quot;Senegal&quot;, &quot;Oman&quot;,&quot;Oman&quot;, &quot;Iran&quot;,&quot;Iran&quot;, &quot;Iraq&quot;,&quot;Iraq&quot;, &quot;Libya&quot;,&quot;Libya&quot;, &quot;Yemen&quot;,&quot;Yemen&quot;, &quot;Bahrain&quot;,&quot;Bahrain&quot;, &quot;Mauritius&quot;,&quot;Mauritius&quot;, &quot;Maldives&quot;,&quot;Maldives&quot;, &quot;Japan&quot;,&quot;Japan&quot;, &quot;Kazakhstan&quot;,&quot;Kazakhstan&quot;, &quot;Latvia&quot;,&quot;Latvia&quot;, &quot;Lithuania&quot;,&quot;Lithuania&quot;, &quot;Estonia&quot;,&quot;Estonia&quot;, &quot;Lebanon&quot;,&quot;Lebanon&quot;, &quot;Luxembourg&quot;,&quot;Luxembourg&quot;, &quot;Malaysia&quot;,&quot;Malaysia&quot;, &quot;Mexico&quot;,&quot;Mexico&quot;, &quot;Morocco&quot;,&quot;Morocco&quot;, &quot;New Zealand&quot;,&quot;New Zealand&quot;, &quot;Norway&quot;,&quot;Norway&quot;, &quot;Panama&quot;,&quot;Panama&quot;, &quot;Philippines&quot;,&quot;Philippines&quot;, &quot;Pakistan&quot;,&quot;Pakistan&quot;, &quot;Peru&quot;,&quot;Peru&quot;, &quot;Portugal&quot;,&quot;Portugal&quot;, &quot;Poland&quot;,&quot;Poland&quot;, &quot;Puerto Rico&quot;,&quot;Puerto Rico&quot;, &quot;Qatar&quot;,&quot;Qatar&quot;, &quot;Russia&quot;,&quot;Russia&quot;, &quot;Saudi Arabia&quot;,&quot;Saudi Arabia&quot;, &quot;Singapore&quot;,&quot;Singapore&quot;, &quot;Slovakia&quot;,&quot;Slovakia&quot;, &quot;South Africa&quot;,&quot;South Africa&quot;, &quot;South Korea&quot;,&quot;South Korea&quot;, &quot;Spain&quot;,&quot;Spain&quot;, &quot;Sweden&quot;,&quot;Sweden&quot;, &quot;Switzerland&quot;,&quot;Switzerland&quot;, &quot;Taiwan&quot;,&quot;Taiwan&quot;, &quot;Thailand&quot;,&quot;Thailand&quot;, &quot;Turkey&quot;,&quot;Turkey&quot;, &quot;UK&quot;, &quot;UK&quot;, &quot;Ukraine&quot;, &quot;Ukraine&quot;, &quot;Uruguay&quot;,&quot;Uruguay&quot;, &quot;USA&quot;,&quot;USA&quot;, &quot;Venezuela&quot;,&quot;Venezuela&quot;, &quot;Vietnam&quot;,&quot;Vietnam&quot;, &quot;HQ: SE&quot;)</code></td></tr>
+     * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CASE($User.User_Country__c, &quot;Argentina&quot;,&quot;Argentina&quot;, &quot;Australia&quot;,&quot;Australia&quot;, &quot;Austria&quot;,&quot;Austria&quot;, &quot;Belarus&quot;,&quot;Belarus&quot;, &quot;Belgium&quot;,&quot;Belgium&quot;, &quot;Bolivia&quot;,&quot;Bolivia&quot;, &quot;Brazil&quot;,&quot;Brazil&quot;, &quot;Canada&quot;, &quot;Canada&quot;, &quot;Chile&quot;,&quot;Chile&quot;, &quot;China&quot;,&quot;China&quot;, &quot;Columbia&quot;,&quot;Columbia&quot;, &quot;Costa Rica&quot;,&quot;Costa Rica&quot;, &quot;Czech Republic&quot;,&quot;Czech Republic&quot;, &quot;Denmark&quot;,&quot;Denmark&quot;, &quot;Dominican Republic&quot;,&quot;Dominican Republic&quot;, &quot;Ecuador&quot;,&quot;Ecuador&quot;, &quot;Finland&quot;,&quot;Finland&quot;, &quot;France&quot;,&quot;France&quot;, &quot;Georgia&quot;,&quot;Georgia&quot;, &quot;Germany&quot;,&quot;Germany&quot;, &quot;Guatemala&quot;,&quot;Guatemala&quot;, &quot;Holland&quot;,&quot;Holland&quot;, &quot;Honduras&quot;,&quot;Honduras&quot;, &quot;Hong Kong&quot;,&quot;Hong Kong&quot;, &quot;India&quot;,&quot;India&quot;, &quot;Indonesia&quot;,&quot;Indonesia&quot;, &quot;Italy&quot;,&quot;Italy&quot;, &quot;United Arab Emirates&quot;,&quot;United Arab Emirates&quot;, &quot;Kuwait&quot;,&quot;Kuwait&quot;, &quot;Egypt&quot;,&quot;Egypt&quot;, &quot;Jordan&quot;,&quot;Jordan&quot;, &quot;Algeria&quot;,&quot;Algeria&quot;, &quot;Tunisia&quot;,&quot;Tunisia&quot;, &quot;Cameroun&quot;,&quot;Cameroun&quot;, &quot;Senegal&quot;,&quot;Senegal&quot;, &quot;Oman&quot;,&quot;Oman&quot;, &quot;Iran&quot;,&quot;Iran&quot;, &quot;Iraq&quot;,&quot;Iraq&quot;, &quot;Libya&quot;,&quot;Libya&quot;, &quot;Yemen&quot;,&quot;Yemen&quot;, &quot;Bahrain&quot;,&quot;Bahrain&quot;, &quot;Mauritius&quot;,&quot;Mauritius&quot;, &quot;Maldives&quot;,&quot;Maldives&quot;, &quot;Japan&quot;,&quot;Japan&quot;, &quot;Kazakhstan&quot;,&quot;Kazakhstan&quot;, &quot;Latvia&quot;,&quot;Latvia&quot;, &quot;Lithuania&quot;,&quot;Lithuania&quot;, &quot;Estonia&quot;,&quot;Estonia&quot;, &quot;Lebanon&quot;,&quot;Lebanon&quot;, &quot;Luxembourg&quot;,&quot;Luxembourg&quot;, &quot;Malaysia&quot;,&quot;Malaysia&quot;, &quot;Mexico&quot;,&quot;Mexico&quot;, &quot;Morocco&quot;,&quot;Morocco&quot;, &quot;New Zealand&quot;,&quot;New Zealand&quot;, &quot;Norway&quot;,&quot;Norway&quot;, &quot;Panama&quot;,&quot;Panama&quot;, &quot;Philippines&quot;,&quot;Philippines&quot;, &quot;Pakistan&quot;,&quot;Pakistan&quot;, &quot;Peru&quot;,&quot;Peru&quot;, &quot;Portugal&quot;,&quot;Portugal&quot;, &quot;Poland&quot;,&quot;Poland&quot;, &quot;Puerto Rico&quot;,&quot;Puerto Rico&quot;, &quot;Qatar&quot;,&quot;Qatar&quot;, &quot;Russia&quot;,&quot;Russia&quot;, &quot;Saudi Arabia&quot;,&quot;Saudi Arabia&quot;, &quot;Singapore&quot;,&quot;Singapore&quot;, &quot;Slovakia&quot;,&quot;Slovakia&quot;, &quot;South Africa&quot;,&quot;South Africa&quot;, &quot;South Korea&quot;,&quot;South Korea&quot;, &quot;Spain&quot;,&quot;Spain&quot;, &quot;Sweden&quot;,&quot;Sweden&quot;, &quot;Switzerland&quot;,&quot;Switzerland&quot;, &quot;Taiwan&quot;,&quot;Taiwan&quot;, &quot;Thailand&quot;,&quot;Thailand&quot;, &quot;Turkey&quot;,&quot;Turkey&quot;, &quot;UK&quot;, &quot;UK&quot;, &quot;Ukraine&quot;, &quot;Ukraine&quot;, &quot;Uruguay&quot;,&quot;Uruguay&quot;, &quot;USA&quot;,&quot;USA&quot;, &quot;Venezuela&quot;,&quot;Venezuela&quot;, &quot;Vietnam&quot;,&quot;Vietnam&quot;, &quot;HQ: SE&quot;)</code></td></tr>
      * </table>
      */
-    User_Country__c: string;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    User_Country__c?: string;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
     /**
      * <h3><b>Year of Graduation (Student Accts)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1434,5 +1435,5 @@ declare interface Account_Create_Change_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    YearofGraduation_studentAccts__c: string;
+    YearofGraduation_studentAccts__c?: string;
 }

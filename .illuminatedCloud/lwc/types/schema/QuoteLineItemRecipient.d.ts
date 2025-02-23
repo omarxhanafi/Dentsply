@@ -156,6 +156,18 @@ declare module "@salesforce/schema/QuoteLineItemRecipient.RelatedRecord" {
     export default RelatedRecord;
 }
 
+declare module "@salesforce/schema/QuoteLineItemRecipient.ServiceAccount" {
+    import { FieldId } from "@salesforce/schema";
+    const ServiceAccount: FieldId;
+    export default ServiceAccount;
+}
+
+declare module "@salesforce/schema/QuoteLineItemRecipient.ServiceAccountId" {
+    import { FieldId } from "@salesforce/schema";
+    const ServiceAccountId: FieldId;
+    export default ServiceAccountId;
+}
+
 declare module "@salesforce/schema/QuoteLineItemRecipient.ServiceAddrValidationDate" {
     import { FieldId } from "@salesforce/schema";
     const ServiceAddrValidationDate: FieldId;

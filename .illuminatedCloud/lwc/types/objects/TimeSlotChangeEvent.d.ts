@@ -2,13 +2,13 @@
 
 declare interface TimeSlotChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    DayOfWeek: string;
-    EndTime: Time;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    DayOfWeek?: string;
+    EndTime?: Time;
     /**
      * <h3><b>Designated Work Boolean Fields</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface TimeSlotChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">None</code></td><td>None</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__Designated_Work_Boolean_Fields__c: string;
+    FSL__Designated_Work_Boolean_Fields__c?: string;
     /**
      * <h3><b>Slot Color</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,16 +51,16 @@ declare interface TimeSlotChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Black</code></td><td>Black</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__Slot_Color__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    OperatingHours: OperatingHours;
-    OperatingHoursId: string;
-    RecordsetFilterCriteria: RecordsetFilterCriteria;
-    RecordsetFilterCriteriaId: string;
-    ReplayId: string;
-    StartTime: Time;
-    TimeSlotNumber: string;
-    Type: string;
+    FSL__Slot_Color__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    OperatingHours?: OperatingHours;
+    OperatingHoursId?: string;
+    RecordsetFilterCriteria?: RecordsetFilterCriteria;
+    RecordsetFilterCriteriaId?: string;
+    ReplayId?: string;
+    StartTime?: Time;
+    TimeSlotNumber?: string;
+    Type?: string;
 }

@@ -2,14 +2,14 @@
 
 declare interface ProductFamily__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Lifespan (in Months)</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,10 +20,10 @@ declare interface ProductFamily__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LifespanMonths__c: number;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    LifespanMonths__c?: number;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Product Family Label</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,6 +32,6 @@ declare interface ProductFamily__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductFamilyLabel__c: string;
-    ReplayId: string;
+    ProductFamilyLabel__c?: string;
+    ReplayId?: string;
 }

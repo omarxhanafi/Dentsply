@@ -2,14 +2,14 @@
 
 declare interface IframeWhiteListUrl extends SObject 
 {
-    Context: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    SystemModstamp: string;
-    Url: string;
+    Context?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    SystemModstamp?: string;
+    Url?: string;
 }

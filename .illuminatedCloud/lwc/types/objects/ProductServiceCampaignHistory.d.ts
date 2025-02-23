@@ -2,14 +2,14 @@
 
 declare interface ProductServiceCampaignHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ProductServiceCampaign: ProductServiceCampaign;
-    ProductServiceCampaignId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ProductServiceCampaign?: ProductServiceCampaign;
+    ProductServiceCampaignId?: string;
 }

@@ -2,15 +2,15 @@
 
 declare interface FieldSvcAddlMobSettings extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    FieldServiceMobileSettings: FieldServiceMobileSettings;
-    FieldServiceMobileSettingsId: string;
-    IsDeleted: boolean;
-    IsDummyChildField: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    FieldServiceMobileSettings?: FieldServiceMobileSettings;
+    FieldServiceMobileSettingsId?: string;
+    IsDeleted?: boolean;
+    IsDummyChildField?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    SystemModstamp?: string;
 }

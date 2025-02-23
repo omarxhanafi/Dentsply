@@ -2,14 +2,14 @@
 
 declare interface maps__LiveDriverAssignment__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>End Date/Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,7 +18,7 @@ declare interface maps__LiveDriverAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EndDateTime__c: string;
+    maps__EndDateTime__c?: string;
     /**
      * <h3><b>Live Asset</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface maps__LiveDriverAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveAsset__c: string;
+    maps__LiveAsset__c?: string;
     /**
      * <h3><b>Live Asset</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface maps__LiveDriverAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveAsset__r: maps__LiveAsset__c;
+    maps__LiveAsset__r?: maps__LiveAsset__c;
     /**
      * <h3><b>Live Driver</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface maps__LiveDriverAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveDriver__c: string;
+    maps__LiveDriver__c?: string;
     /**
      * <h3><b>Live Driver</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface maps__LiveDriverAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveDriver__r: maps__LiveDriver__c;
+    maps__LiveDriver__r?: maps__LiveDriver__c;
     /**
      * <h3><b>Live IoT Device</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,7 +63,7 @@ declare interface maps__LiveDriverAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveIoTDevice__c: string;
+    maps__LiveIoTDevice__c?: string;
     /**
      * <h3><b>Live IoT Device</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface maps__LiveDriverAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveIoTDevice__r: maps__LiveIoTDevice__c;
+    maps__LiveIoTDevice__r?: maps__LiveIoTDevice__c;
     /**
      * <h3><b>Start Date/Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,9 +81,9 @@ declare interface maps__LiveDriverAssignment__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__StartDateTime__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__StartDateTime__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

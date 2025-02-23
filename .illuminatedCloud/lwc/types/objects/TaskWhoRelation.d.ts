@@ -2,19 +2,19 @@
 
 declare interface TaskWhoRelation extends SObject 
 {
-    Account: Account;
-    AccountId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Relation: SObject;
-    RelationId: string;
-    SystemModstamp: string;
-    Task: Task;
-    TaskId: string;
-    Type: string;
+    Account?: Account;
+    AccountId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Relation?: SObject;
+    RelationId?: string;
+    SystemModstamp?: string;
+    Task?: Task;
+    TaskId?: string;
+    Type?: string;
 }

@@ -8,19 +8,19 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
     /**
      * The reciprocal relationship for {@link SBQQ__AttributeValue__c.SBQQ__FavoriteProduct__c}.
      */
-    AttributeValues__r: SBQQ__AttributeValue__c[];
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    AttributeValues__r?: SBQQ__AttributeValue__c[];
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__FavoriteProduct__c.SBQQ__RequiredBy__c}.
      */
-    FavoriteProduct__r: SBQQ__FavoriteProduct__c[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    FavoriteProduct__r?: SBQQ__FavoriteProduct__c[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Configuration Attributes</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ConfigurationAttributes__c: string;
+    SBQQ__ConfigurationAttributes__c?: string;
     /**
      * <h3><b>Discount Schedule</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DiscountSchedule__c: string;
+    SBQQ__DiscountSchedule__c?: string;
     /**
      * <h3><b>Discount Schedule</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DiscountSchedule__r: SBQQ__DiscountSchedule__c;
+    SBQQ__DiscountSchedule__r?: SBQQ__DiscountSchedule__c;
     /**
      * <h3><b>Dynamic Option ID</b></h3>
      * <p>Contains feature id and product id to identify the feature and optional SKU associated with this line.</p>
@@ -61,7 +61,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DynamicOptionId__c: string;
+    SBQQ__DynamicOptionId__c?: string;
     /**
      * <h3><b>Favorite</b></h3>
      * <h4>Field Attributes</h4>
@@ -70,7 +70,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Favorite__c: string;
+    SBQQ__Favorite__c?: string;
     /**
      * <h3><b>Favorite</b></h3>
      * <h4>Field Attributes</h4>
@@ -79,7 +79,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Favorite__r: SBQQ__Favorite__c;
+    SBQQ__Favorite__r?: SBQQ__Favorite__c;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,7 +89,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__c: string;
+    SBQQ__Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,7 +99,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__r: Product2;
+    SBQQ__Product__r?: Product2;
     /**
      * <h3><b>Product Option</b></h3>
      * <h4>Field Attributes</h4>
@@ -109,7 +109,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductOption__c: string;
+    SBQQ__ProductOption__c?: string;
     /**
      * <h3><b>Product Option</b></h3>
      * <h4>Field Attributes</h4>
@@ -119,7 +119,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductOption__r: SBQQ__ProductOption__c;
+    SBQQ__ProductOption__r?: SBQQ__ProductOption__c;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -130,7 +130,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Quantity__c: number;
+    SBQQ__Quantity__c?: number;
     /**
      * <h3><b>Required By</b></h3>
      * <h4>Field Attributes</h4>
@@ -140,7 +140,7 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RequiredBy__c: string;
+    SBQQ__RequiredBy__c?: string;
     /**
      * <h3><b>Required By</b></h3>
      * <h4>Field Attributes</h4>
@@ -150,5 +150,5 @@ declare interface SBQQ__FavoriteProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RequiredBy__r: SBQQ__FavoriteProduct__c;
+    SBQQ__RequiredBy__r?: SBQQ__FavoriteProduct__c;
 }

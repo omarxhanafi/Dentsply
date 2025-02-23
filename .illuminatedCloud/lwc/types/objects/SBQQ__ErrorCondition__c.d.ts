@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__ErrorCondition__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Filter Type</b></h3>
      * <p>Type of filtering used in this condition.</p>
@@ -30,7 +30,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Value</code></td><td>Value</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__FilterType__c: string;
+    SBQQ__FilterType__c?: string;
     /**
      * <h3><b>Filter Value</b></h3>
      * <p>The value you want the tested variable to be evaluated against.</p>
@@ -42,7 +42,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FilterValue__c: string;
+    SBQQ__FilterValue__c?: string;
     /**
      * <h3><b>Filter Variable</b></h3>
      * <p>The selected summary variable this rule evaluates.</p>
@@ -53,7 +53,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FilterVariable__c: string;
+    SBQQ__FilterVariable__c?: string;
     /**
      * <h3><b>Filter Variable</b></h3>
      * <p>The selected summary variable this rule evaluates.</p>
@@ -64,7 +64,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FilterVariable__r: SBQQ__SummaryVariable__c;
+    SBQQ__FilterVariable__r?: SBQQ__SummaryVariable__c;
     /**
      * <h3><b>Index</b></h3>
      * <p>Assign an unique number to this Condition to reference it in the Product Rule&#39;s Advanced Condition.</p>
@@ -76,7 +76,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Index__c: number;
+    SBQQ__Index__c?: number;
     /**
      * <h3><b>Operator</b></h3>
      * <p>The operator used when evaluating the tested selection.</p>
@@ -100,7 +100,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">contains</code></td><td>contains</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Operator__c: string;
+    SBQQ__Operator__c?: string;
     /**
      * <h3><b>ParentRuleIsActive</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ParentRuleIsActive__c: boolean;
+    SBQQ__ParentRuleIsActive__c?: boolean;
     /**
      * <h3><b>Rule</b></h3>
      * <p>Parent rule for this condition.</p>
@@ -120,7 +120,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Rule__c: string;
+    SBQQ__Rule__c?: string;
     /**
      * <h3><b>Rule</b></h3>
      * <p>Parent rule for this condition.</p>
@@ -130,7 +130,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Rule__r: SBQQ__ProductRule__c;
+    SBQQ__Rule__r?: SBQQ__ProductRule__c;
     /**
      * <h3><b>RuleTargetsQuote</b></h3>
      * <h4>Field Attributes</h4>
@@ -140,7 +140,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RuleTargetsQuote__c: boolean;
+    SBQQ__RuleTargetsQuote__c?: boolean;
     /**
      * <h3><b>Tested Attribute</b></h3>
      * <p>Used to identify the specific attribute if the Tested Field is a global Configuration Attribute field.</p>
@@ -151,7 +151,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TestedAttribute__c: string;
+    SBQQ__TestedAttribute__c?: string;
     /**
      * <h3><b>Tested Attribute</b></h3>
      * <p>Used to identify the specific attribute if the Tested Field is a global Configuration Attribute field.</p>
@@ -162,7 +162,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TestedAttribute__r: SBQQ__ProductAttribute__c;
+    SBQQ__TestedAttribute__r?: SBQQ__ProductAttribute__c;
     /**
      * <h3><b>Tested Field</b></h3>
      * <p>Field on the Quote object that should be used in testing this condition.</p>
@@ -179,7 +179,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Unit Price</code></td><td>Unit Price</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TestedField__c: string;
+    SBQQ__TestedField__c?: string;
     /**
      * <h3><b>Tested Object</b></h3>
      * <p>Object that contains the field being tested by this condition.</p>
@@ -200,7 +200,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Upgraded Asset</code></td><td>Upgraded Asset</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TestedObject__c: string;
+    SBQQ__TestedObject__c?: string;
     /**
      * <h3><b>Tested Variable</b></h3>
      * <p>The Summary Variable in which this rule will be evaluated.</p>
@@ -211,7 +211,7 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TestedVariable__c: string;
+    SBQQ__TestedVariable__c?: string;
     /**
      * <h3><b>Tested Variable</b></h3>
      * <p>The Summary Variable in which this rule will be evaluated.</p>
@@ -222,5 +222,5 @@ declare interface SBQQ__ErrorCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TestedVariable__r: SBQQ__SummaryVariable__c;
+    SBQQ__TestedVariable__r?: SBQQ__SummaryVariable__c;
 }

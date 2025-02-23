@@ -6,9 +6,9 @@
  */
 declare interface geopointe__GP_List_Tag2__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Geopointe List</b></h3>
      * <p>Geopointe list that the list tag belongs to.</p>
@@ -18,7 +18,7 @@ declare interface geopointe__GP_List_Tag2__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__GP_List2__c: string;
+    geopointe__GP_List2__c?: string;
     /**
      * <h3><b>Geopointe List</b></h3>
      * <p>Geopointe list that the list tag belongs to.</p>
@@ -28,7 +28,7 @@ declare interface geopointe__GP_List_Tag2__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__GP_List2__r: geopointe__GP_List2__c;
+    geopointe__GP_List2__r?: geopointe__GP_List2__c;
     /**
      * <h3><b>Geopointe Tag</b></h3>
      * <p>Geopointe tag that the list tag relates to.</p>
@@ -38,7 +38,7 @@ declare interface geopointe__GP_List_Tag2__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__GP_Tag__c: string;
+    geopointe__GP_Tag__c?: string;
     /**
      * <h3><b>Geopointe Tag</b></h3>
      * <p>Geopointe tag that the list tag relates to.</p>
@@ -48,10 +48,10 @@ declare interface geopointe__GP_List_Tag2__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__GP_Tag__r: geopointe__GP_Tag__c;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__GP_Tag__r?: geopointe__GP_Tag__c;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

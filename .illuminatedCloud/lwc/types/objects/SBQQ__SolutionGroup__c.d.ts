@@ -6,18 +6,18 @@
  */
 declare interface SBQQ__SolutionGroup__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLineGroup__c.SBQQ__SolutionGroup__c}.
      */
-    QuoteLineGroups__r: SBQQ__QuoteLineGroup__c[];
+    QuoteLineGroups__r?: SBQQ__QuoteLineGroup__c[];
     /**
      * <h3><b>Description</b></h3>
      * <p>Description for this SolutionGroup.</p>
@@ -27,5 +27,5 @@ declare interface SBQQ__SolutionGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Description__c: string;
+    SBQQ__Description__c?: string;
 }

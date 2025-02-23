@@ -22,11 +22,11 @@ declare interface Lightning_Component__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">TeamForce</code></td><td>TeamForce</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
+    Category__c?: string;
     /**
      * The reciprocal relationship for {@link Country_metadata__mdt.LightningComponent__c}.
      */
-    Country_metadata__r: Country_metadata__mdt[];
+    Country_metadata__r?: Country_metadata__mdt[];
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,10 +34,10 @@ declare interface Lightning_Component__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Description__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
+    Description__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
     /**
      * <h3><b>Link to documentation</b></h3>
      * <h4>Field Attributes</h4>
@@ -46,7 +46,7 @@ declare interface Lightning_Component__mdt extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Link_to_documentation__c: string;
+    Link_to_documentation__c?: string;
     /**
      * <h3><b>Managed by</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,10 +57,10 @@ declare interface Lightning_Component__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Managed_by__c: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    Managed_by__c?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,6 +77,6 @@ declare interface Lightning_Component__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Retired</code></td><td>Retired</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
-    SystemModstamp: string;
+    Status__c?: string;
+    SystemModstamp?: string;
 }

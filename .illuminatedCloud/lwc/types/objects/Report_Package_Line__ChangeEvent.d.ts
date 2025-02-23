@@ -2,11 +2,11 @@
 
 declare interface Report_Package_Line__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,10 +17,10 @@ declare interface Report_Package_Line__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Description__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Link</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,11 +29,11 @@ declare interface Report_Package_Line__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Link__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    Link__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Report Package</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface Report_Package_Line__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Report_Package__c: string;
+    Report_Package__c?: string;
     /**
      * <h3><b>Report Package</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface Report_Package_Line__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Report_Package__r: Report_Package__c;
+    Report_Package__r?: Report_Package__c;
     /**
      * <h3><b>Sort order</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,5 +62,5 @@ declare interface Report_Package_Line__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sort_order__c: number;
+    Sort_order__c?: number;
 }

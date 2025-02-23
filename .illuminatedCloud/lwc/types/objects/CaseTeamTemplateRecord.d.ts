@@ -2,12 +2,12 @@
 
 declare interface CaseTeamTemplateRecord extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Parent: Case;
-    ParentId: string;
-    SystemModstamp: string;
-    TeamTemplate: CaseTeamTemplate;
-    TeamTemplateId: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Parent?: Case;
+    ParentId?: string;
+    SystemModstamp?: string;
+    TeamTemplate?: CaseTeamTemplate;
+    TeamTemplateId?: string;
 }

@@ -9,7 +9,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(3000)</td></tr>
      * </table>
      */
-    Account_Strategy_Comments__c: string;
+    Account_Strategy_Comments__c?: string;
     /**
      * <h3><b>Account Strategy - High Potential</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(2000)</td></tr>
      * </table>
      */
-    Account_Strategy_High_Potential__c: string;
+    Account_Strategy_High_Potential__c?: string;
     /**
      * <h3><b>Account Strategy - Low Potential</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(3000)</td></tr>
      * </table>
      */
-    Account_Strategy_Low_Potential__c: string;
+    Account_Strategy_Low_Potential__c?: string;
     /**
      * <h3><b>Account Strategy - Medium Potential</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(3000)</td></tr>
      * </table>
      */
-    Account_Strategy_Medium_Potential__c: string;
+    Account_Strategy_Medium_Potential__c?: string;
     /**
      * <h3><b>Assumed CRM Data Quality</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Good</code></td><td>Not Good</td><td nowrap>true</td></tr>
      * </table>
      */
-    Assumed_CRM_Data_Quality__c: string;
+    Assumed_CRM_Data_Quality__c?: string;
     /**
      * <h3><b>Assumed Legacy System Data Quality</b></h3>
      * <h4>Field Attributes</h4>
@@ -67,8 +67,8 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Good</code></td><td>Not Good</td><td nowrap>true</td></tr>
      * </table>
      */
-    Assumed_Legacy_System_Data_Quality__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Assumed_Legacy_System_Data_Quality__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Company</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,7 +83,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sirona</code></td><td>Sirona</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Company__c: string;
+    Company__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Country__c})</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,10 +99,10 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Country__c})</td></tr>
      * </table>
      */
-    Country__r: Country__c;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__r?: Country__c;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>CRM Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,8 +110,8 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    CRM_Description__c: string;
-    CurrencyIsoCode: string;
+    CRM_Description__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Hardware Device Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -122,7 +122,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hardware_Device_Status__c: string;
+    Hardware_Device_Status__c?: string;
     /**
      * <h3><b>implant sbu</b></h3>
      * <h4>Field Attributes</h4>
@@ -131,10 +131,10 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">if(includes(SBU__c,&quot;Implants&quot;)=True,True,False)</code></td></tr>
      * </table>
      */
-    implant_sbu__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    implant_sbu__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Legacy System Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -142,7 +142,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Legacy_System_Description__c: string;
+    Legacy_System_Description__c?: string;
     /**
      * <h3><b>Market Access Modality</b></h3>
      * <h4>Field Attributes</h4>
@@ -159,8 +159,8 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Distributors</code></td><td>Distributors</td><td nowrap>true</td></tr>
      * </table>
      */
-    Market_Access_Modality__c: string;
-    Name: string;
+    Market_Access_Modality__c?: string;
+    Name?: string;
     /**
      * <h3><b>Notes about #users</b></h3>
      * <h4>Field Attributes</h4>
@@ -169,7 +169,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Notes_about_users__c: string;
+    Notes_about_users__c?: string;
     /**
      * <h3><b>ONE SFDC Marketing Modules</b></h3>
      * <h4>Field Attributes</h4>
@@ -178,7 +178,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ONE_SFDC_Marketing_Modules__c: string;
+    ONE_SFDC_Marketing_Modules__c?: string;
     /**
      * <h3><b>ONE SFDC Marketing Platform</b></h3>
      * <h4>Field Attributes</h4>
@@ -187,7 +187,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ONE_SFDC_Marketing_Platform__c: string;
+    ONE_SFDC_Marketing_Platform__c?: string;
     /**
      * <h3><b>ONE SFDC Sales Modules</b></h3>
      * <h4>Field Attributes</h4>
@@ -196,7 +196,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ONE_SFDC_Sales_Modules__c: string;
+    ONE_SFDC_Sales_Modules__c?: string;
     /**
      * <h3><b>ONE SFDC Sales Platform</b></h3>
      * <h4>Field Attributes</h4>
@@ -205,7 +205,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ONE_SFDC_Sales_Platform__c: string;
+    ONE_SFDC_Sales_Platform__c?: string;
     /**
      * <h3><b>RCO/SBU Specific</b></h3>
      * <h4>Field Attributes</h4>
@@ -214,8 +214,8 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RCO_SBU_Specific__c: string;
-    ReplayId: string;
+    RCO_SBU_Specific__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Sales Channel</b></h3>
      * <h4>Field Attributes</h4>
@@ -230,7 +230,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Indirect</code></td><td>Indirect</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_Channel__c: string;
+    Sales_Channel__c?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -257,7 +257,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
     /**
      * <h3><b>Account Business Rules</b></h3>
      * <h4>Field Attributes</h4>
@@ -265,7 +265,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(5000)</td></tr>
      * </table>
      */
-    SBU_Account_Business_Rules__c: string;
+    SBU_Account_Business_Rules__c?: string;
     /**
      * <h3><b>CFE Business Rules</b></h3>
      * <h4>Field Attributes</h4>
@@ -273,7 +273,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(5000)</td></tr>
      * </table>
      */
-    SBU_CFE_Business_Rules__c: string;
+    SBU_CFE_Business_Rules__c?: string;
     /**
      * <h3><b>Contact Business Rules</b></h3>
      * <h4>Field Attributes</h4>
@@ -281,7 +281,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(5000)</td></tr>
      * </table>
      */
-    SBU_Contact_Business_Rules__c: string;
+    SBU_Contact_Business_Rules__c?: string;
     /**
      * <h3><b>SBU CRM System</b></h3>
      * <h4>Field Attributes</h4>
@@ -292,7 +292,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_CRM_System__c: string;
+    SBU_CRM_System__c?: string;
     /**
      * <h3><b>SBU Legacy ERP System</b></h3>
      * <h4>Field Attributes</h4>
@@ -303,7 +303,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_Legacy_ERP_System__c: string;
+    SBU_Legacy_ERP_System__c?: string;
     /**
      * <h3><b>Network Business Rules</b></h3>
      * <h4>Field Attributes</h4>
@@ -311,7 +311,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(5000)</td></tr>
      * </table>
      */
-    SBU_Network_Business_Rules__c: string;
+    SBU_Network_Business_Rules__c?: string;
     /**
      * <h3><b>SBU Users Active</b></h3>
      * <h4>Field Attributes</h4>
@@ -323,7 +323,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_Users_Active_formula__c: string;
+    SBU_Users_Active_formula__c?: string;
     /**
      * <h3><b>#User Total</b></h3>
      * <h4>Field Attributes</h4>
@@ -335,7 +335,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Total__c: number;
+    User_Total__c?: number;
     /**
      * <h3><b>#Users Sales Team</b></h3>
      * <h4>Field Attributes</h4>
@@ -346,7 +346,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Users__c: number;
+    Users__c?: number;
     /**
      * <h3><b>SBU Users Active</b></h3>
      * <h4>Field Attributes</h4>
@@ -355,7 +355,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Users_Active__c: boolean;
+    Users_Active__c?: boolean;
     /**
      * <h3><b>#Users CRM Analyst</b></h3>
      * <h4>Field Attributes</h4>
@@ -366,7 +366,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    users_CRM_Analyst__c: number;
+    users_CRM_Analyst__c?: number;
     /**
      * <h3><b>#Users CS</b></h3>
      * <h4>Field Attributes</h4>
@@ -377,7 +377,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Users_CS__c: number;
+    Users_CS__c?: number;
     /**
      * <h3><b>#Users MKTG</b></h3>
      * <h4>Field Attributes</h4>
@@ -388,7 +388,7 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Users_MKTG__c: number;
+    Users_MKTG__c?: number;
     /**
      * <h3><b>#Users Sales Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -399,5 +399,5 @@ declare interface SBU_Information__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Users_Sales_Manager__c: number;
+    Users_Sales_Manager__c?: number;
 }

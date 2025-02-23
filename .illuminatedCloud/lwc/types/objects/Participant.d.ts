@@ -2,17 +2,17 @@
 
 declare interface Participant extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    ParticipantAppType: string;
-    ParticipantRole: string;
-    ParticipantSubject: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    ParticipantAppType?: string;
+    ParticipantRole?: string;
+    ParticipantSubject?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
 }

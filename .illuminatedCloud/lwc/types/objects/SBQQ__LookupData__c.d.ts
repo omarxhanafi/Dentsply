@@ -5,14 +5,14 @@
  */
 declare interface SBQQ__LookupData__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,7 +23,7 @@ declare interface SBQQ__LookupData__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Category__c: string;
+    SBQQ__Category__c?: string;
     /**
      * <h3><b>Message</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface SBQQ__LookupData__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Message__c: string;
+    SBQQ__Message__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>For use with Product Selection Rules, represents the Product to which the Product Action applies.</p>
@@ -44,7 +44,7 @@ declare interface SBQQ__LookupData__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__c: string;
+    SBQQ__Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>For use with Product Selection Rules, represents the Product to which the Product Action applies.</p>
@@ -55,7 +55,7 @@ declare interface SBQQ__LookupData__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__r: Product2;
+    SBQQ__Product__r?: Product2;
     /**
      * <h3><b>Required</b></h3>
      * <p>For Product Selection Rules, indicates that the action is required.</p>
@@ -66,7 +66,7 @@ declare interface SBQQ__LookupData__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Required__c: boolean;
+    SBQQ__Required__c?: boolean;
     /**
      * <h3><b>Type</b></h3>
      * <p>For use with Product Selection Rules, specifies the type of action to be performed on the Product.</p>
@@ -93,7 +93,7 @@ declare interface SBQQ__LookupData__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Optional Filter</code></td><td>Optional Filter</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Type__c: string;
+    SBQQ__Type__c?: string;
     /**
      * <h3><b>Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -104,5 +104,5 @@ declare interface SBQQ__LookupData__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Value__c: string;
+    SBQQ__Value__c?: string;
 }

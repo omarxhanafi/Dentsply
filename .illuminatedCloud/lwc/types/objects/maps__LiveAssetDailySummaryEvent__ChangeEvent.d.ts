@@ -2,14 +2,14 @@
 
 declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Alert Sent</b></h3>
      * <p>Denotes if this event was included in a previous email alert</p>
@@ -19,7 +19,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__AlertSent__c: boolean;
+    maps__AlertSent__c?: boolean;
     /**
      * <h3><b>Average Speed (kph)</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,7 +30,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AverageSpeed_kph__c: number;
+    maps__AverageSpeed_kph__c?: number;
     /**
      * <h3><b>Average Speed (mph)</b></h3>
      * <p>Average speed over the course of the event, in miles per hour</p>
@@ -43,7 +43,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AverageSpeed_mph__c: number;
+    maps__AverageSpeed_mph__c?: number;
     /**
      * <h3><b>City</b></h3>
      * <p>Maps Live City address field</p>
@@ -55,7 +55,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__City__c: string;
+    maps__City__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <p>Maps Live Country address field</p>
@@ -67,7 +67,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Country__c: string;
+    maps__Country__c?: string;
     /**
      * <h3><b>End Unix Time Stamp</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EndUnixTimeStamp__c: number;
+    maps__EndUnixTimeStamp__c?: number;
     /**
      * <h3><b>Event Ended</b></h3>
      * <h4>Field Attributes</h4>
@@ -87,7 +87,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EventEnded__c: string;
+    maps__EventEnded__c?: string;
     /**
      * <h3><b>Event Occurred in AM or PM</b></h3>
      * <p>AM/PM is determined based on the Timezone of the device.</p>
@@ -104,7 +104,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AM/PM</code></td><td>AM/PM</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__EventOccuredAMorPM__c: string;
+    maps__EventOccuredAMorPM__c?: string;
     /**
      * <h3><b>Event Started</b></h3>
      * <h4>Field Attributes</h4>
@@ -113,7 +113,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EventStarted__c: string;
+    maps__EventStarted__c?: string;
     /**
      * <h3><b>Event Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,7 +138,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Device Battery On</code></td><td>Device Battery On</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__EventType__c: string;
+    maps__EventType__c?: string;
     /**
      * <h3><b>Full Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -146,7 +146,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(500)</td></tr>
      * </table>
      */
-    maps__Full_Address__c: string;
+    maps__Full_Address__c?: string;
     /**
      * <h3><b>Live Asset Daily Summary</b></h3>
      * <p>Live Asset Daily Summary record to which this event relates</p>
@@ -155,7 +155,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__LiveAssetDailySummary__c})</td></tr>
      * </table>
      */
-    maps__LiveAssetDailySummary__c: string;
+    maps__LiveAssetDailySummary__c?: string;
     /**
      * <h3><b>Live Asset Daily Summary</b></h3>
      * <p>Live Asset Daily Summary record to which this event relates</p>
@@ -164,7 +164,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__LiveAssetDailySummary__c})</td></tr>
      * </table>
      */
-    maps__LiveAssetDailySummary__r: maps__LiveAssetDailySummary__c;
+    maps__LiveAssetDailySummary__r?: maps__LiveAssetDailySummary__c;
     /**
      * <h3><b>Live Daily Drive Trip</b></h3>
      * <h4>Field Attributes</h4>
@@ -173,7 +173,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveDailyDriveTrip__c: string;
+    maps__LiveDailyDriveTrip__c?: string;
     /**
      * <h3><b>Live Daily Drive Trip</b></h3>
      * <h4>Field Attributes</h4>
@@ -182,7 +182,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveDailyDriveTrip__r: maps__LiveDailyDriveTrip__c;
+    maps__LiveDailyDriveTrip__r?: maps__LiveDailyDriveTrip__c;
     /**
      * <h3><b>Number of Associations</b></h3>
      * <h4>Field Attributes</h4>
@@ -192,7 +192,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">maps__LiveEventAssociation__c.maps__LiveAssetDailySummaryEvent__c</code></td></tr>
      * </table>
      */
-    maps__Number_of_Associations__c: number;
+    maps__Number_of_Associations__c?: number;
     /**
      * <h3><b>Odometer (km)</b></h3>
      * <h4>Field Attributes</h4>
@@ -203,7 +203,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__OdometerKm__c: number;
+    maps__OdometerKm__c?: number;
     /**
      * <h3><b>Odometer (mi)</b></h3>
      * <p>Odometer value (mi) captured at the time of event</p>
@@ -216,7 +216,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__OdometerMiles__c: number;
+    maps__OdometerMiles__c?: number;
     /**
      * <h3><b>Stop Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -227,7 +227,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Order__c: number;
+    maps__Order__c?: number;
     /**
      * <h3><b>Position</b></h3>
      * <h4>Field Attributes</h4>
@@ -236,9 +236,9 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Position__c: maps__Location;
-    maps__Position__Latitude__s: number;
-    maps__Position__Longitude__s: number;
+    maps__Position__c?: maps__Location;
+    maps__Position__Latitude__s?: number;
+    maps__Position__Longitude__s?: number;
     /**
      * <h3><b>Postal Code</b></h3>
      * <p>Maps Live Postal Code address field</p>
@@ -250,7 +250,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__PostalCode__c: string;
+    maps__PostalCode__c?: string;
     /**
      * <h3><b>Posted Speed Limit (kph)</b></h3>
      * <h4>Field Attributes</h4>
@@ -261,7 +261,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__PostedSpeedLimit_KPH__c: number;
+    maps__PostedSpeedLimit_KPH__c?: number;
     /**
      * <h3><b>Posted Speed Limit (mph)</b></h3>
      * <p>This is the posted speed limit of where the event took place.</p>
@@ -274,7 +274,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__PostedSpeedLimit_MPH__c: number;
+    maps__PostedSpeedLimit_MPH__c?: number;
     /**
      * <h3><b>Start Unix Time Stamp</b></h3>
      * <h4>Field Attributes</h4>
@@ -285,7 +285,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__StartUnixTimeStamp__c: number;
+    maps__StartUnixTimeStamp__c?: number;
     /**
      * <h3><b>State</b></h3>
      * <p>Maps Live State address field</p>
@@ -297,7 +297,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__State__c: string;
+    maps__State__c?: string;
     /**
      * <h3><b>Street Address</b></h3>
      * <p>Maps Live Street Address field</p>
@@ -309,7 +309,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Street_Address__c: string;
+    maps__Street_Address__c?: string;
     /**
      * <h3><b>Event Duration (Hours)</b></h3>
      * <h4>Field Attributes</h4>
@@ -320,7 +320,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TotalEventTimeHours__c: number;
+    maps__TotalEventTimeHours__c?: number;
     /**
      * <h3><b>Event Duration (Minutes)</b></h3>
      * <h4>Field Attributes</h4>
@@ -331,7 +331,7 @@ declare interface maps__LiveAssetDailySummaryEvent__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TotalEventTimeMinutes__c: number;
-    Name: string;
-    ReplayId: string;
+    maps__TotalEventTimeMinutes__c?: number;
+    Name?: string;
+    ReplayId?: string;
 }

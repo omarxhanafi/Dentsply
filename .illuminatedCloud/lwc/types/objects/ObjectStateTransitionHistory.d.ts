@@ -2,14 +2,14 @@
 
 declare interface ObjectStateTransitionHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    ObjectStateTransition: ObjectStateTransition;
-    ObjectStateTransitionId: string;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    ObjectStateTransition?: ObjectStateTransition;
+    ObjectStateTransitionId?: string;
+    OldValue?: any;
 }

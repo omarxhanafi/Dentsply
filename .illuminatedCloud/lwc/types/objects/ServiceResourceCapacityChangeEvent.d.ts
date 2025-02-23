@@ -2,15 +2,15 @@
 
 declare interface ServiceResourceCapacityChangeEvent extends SObject 
 {
-    CapacityInHours: number;
-    CapacityInWorkItems: number;
-    CapacityNumber: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    EndDate: Date;
+    CapacityInHours?: number;
+    CapacityInWorkItems?: number;
+    CapacityNumber?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    EndDate?: Date;
     /**
      * <h3><b>Hours In Use</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface ServiceResourceCapacityChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__HoursInUse__c: number;
+    FSL__HoursInUse__c?: number;
     /**
      * <h3><b>Last Updated Epoch</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface ServiceResourceCapacityChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Last_Updated_Epoch__c: number;
+    FSL__Last_Updated_Epoch__c?: number;
     /**
      * <h3><b>Minutes Used</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface ServiceResourceCapacityChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__MinutesUsed__c: number;
+    FSL__MinutesUsed__c?: number;
     /**
      * <h3><b>Work Items Allocated</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,13 +55,13 @@ declare interface ServiceResourceCapacityChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Work_Items_Allocated__c: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    ReplayId: string;
-    ServiceResource: ServiceResource;
-    ServiceResourceId: string;
-    StartDate: Date;
-    TimePeriod: string;
+    FSL__Work_Items_Allocated__c?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    ReplayId?: string;
+    ServiceResource?: ServiceResource;
+    ServiceResourceId?: string;
+    StartDate?: Date;
+    TimePeriod?: string;
 }

@@ -2,16 +2,16 @@
 
 declare interface OmniSupervisorConfigQueue extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    OmniSupervisorConfig: OmniSupervisorConfig;
-    OmniSupervisorConfigId: string;
-    Queue: Group;
-    QueueId: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    OmniSupervisorConfig?: OmniSupervisorConfig;
+    OmniSupervisorConfigId?: string;
+    Queue?: Group;
+    QueueId?: string;
+    SystemModstamp?: string;
 }

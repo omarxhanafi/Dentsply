@@ -15,7 +15,7 @@ declare interface ERPIntegration_SH_Owner__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CompanyCode__c: string;
+    CompanyCode__c?: string;
     /**
      * <h3><b>Country Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface ERPIntegration_SH_Owner__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CountryCode__c: string;
+    CountryCode__c?: string;
     /**
      * <h3><b>Default Owner ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -37,10 +37,10 @@ declare interface ERPIntegration_SH_Owner__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DefaultOwnerID__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
+    DefaultOwnerID__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
     /**
      * <h3><b>Assign Ownership Based On ERP Ownership</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,9 +49,9 @@ declare interface ERPIntegration_SH_Owner__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    MapToERPOwnership__c: boolean;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    MapToERPOwnership__c?: boolean;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Product Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,8 +62,8 @@ declare interface ERPIntegration_SH_Owner__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductArea__c: string;
-    QualifiedApiName: string;
+    ProductArea__c?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Source ERP</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,6 +78,6 @@ declare interface ERPIntegration_SH_Owner__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td><td>Movex</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SourceErpId__c: string;
-    SystemModstamp: string;
+    SourceErpId__c?: string;
+    SystemModstamp?: string;
 }

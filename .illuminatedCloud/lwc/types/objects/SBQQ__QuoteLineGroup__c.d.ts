@@ -9,19 +9,19 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLineGroup__c.SBQQ__Source__c}.
      */
-    Clones__r: SBQQ__QuoteLineGroup__c[];
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Clones__r?: SBQQ__QuoteLineGroup__c[];
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLine__c.SBQQ__Group__c}.
      */
-    LineItems__r: SBQQ__QuoteLine__c[];
-    Name: string;
+    LineItems__r?: SBQQ__QuoteLine__c[];
+    Name?: string;
     /**
      * <h3><b>Account</b></h3>
      * <p>Account to which this Quote Line Group references.</p>
@@ -32,7 +32,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Account__c: string;
+    SBQQ__Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <p>Account to which this Quote Line Group references.</p>
@@ -43,7 +43,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Account__r: Account;
+    SBQQ__Account__r?: Account;
     /**
      * <h3><b>Additional  Disc. (%)</b></h3>
      * <p>Default additional discount rate applied to line items in this group.</p>
@@ -54,7 +54,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__AdditionalDiscountRate__c: number;
+    SBQQ__AdditionalDiscountRate__c?: number;
     /**
      * <h3><b>Billing Frequency</b></h3>
      * <p>Defines the billing frequency.</p>
@@ -65,7 +65,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__BillingFrequency__c: string;
+    SBQQ__BillingFrequency__c?: string;
     /**
      * <h3><b>Customer Total</b></h3>
      * <p>Total for this group&#39;s line items before any partner discounts are applied.</p>
@@ -76,7 +76,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__CustomerTotal__c: number;
+    SBQQ__CustomerTotal__c?: number;
     /**
      * <h3><b>Description</b></h3>
      * <p>Description for this group.</p>
@@ -86,7 +86,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Description__c: string;
+    SBQQ__Description__c?: string;
     /**
      * <h3><b>End Date</b></h3>
      * <p>End date for subscriptions in this group.</p>
@@ -97,7 +97,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__EndDate__c: Date;
+    SBQQ__EndDate__c?: Date;
     /**
      * <h3><b>Favorite</b></h3>
      * <p>Favorite to which this Quote Line Group belongs.</p>
@@ -108,7 +108,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Favorite__c: string;
+    SBQQ__Favorite__c?: string;
     /**
      * <h3><b>Favorite</b></h3>
      * <p>Favorite to which this Quote Line Group belongs.</p>
@@ -119,7 +119,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Favorite__r: SBQQ__Favorite__c;
+    SBQQ__Favorite__r?: SBQQ__Favorite__c;
     /**
      * <h3><b>List Total</b></h3>
      * <p>Total for this group&#39;s line items before any discounts are applied.</p>
@@ -130,7 +130,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ListTotal__c: number;
+    SBQQ__ListTotal__c?: number;
     /**
      * <h3><b>Markup (%)</b></h3>
      * <p>Default markup rate applied to line items in this group.</p>
@@ -141,7 +141,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__MarkupRate__c: number;
+    SBQQ__MarkupRate__c?: number;
     /**
      * <h3><b>Net Total</b></h3>
      * <p>Total for this group&#39;s line items after all discounts are applied.</p>
@@ -152,7 +152,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__NetTotal__c: number;
+    SBQQ__NetTotal__c?: number;
     /**
      * <h3><b>Number</b></h3>
      * <p>Sort order of this group within its quote.</p>
@@ -164,7 +164,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Number__c: number;
+    SBQQ__Number__c?: number;
     /**
      * <h3><b>Optional</b></h3>
      * <p>Marks the entire group as optional.</p>
@@ -175,7 +175,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Optional__c: boolean;
+    SBQQ__Optional__c?: boolean;
     /**
      * <h3><b>Quote</b></h3>
      * <p>Quote to which this group belongs.</p>
@@ -185,7 +185,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Quote__c: string;
+    SBQQ__Quote__c?: string;
     /**
      * <h3><b>Quote</b></h3>
      * <p>Quote to which this group belongs.</p>
@@ -195,7 +195,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Quote__r: SBQQ__Quote__c;
+    SBQQ__Quote__r?: SBQQ__Quote__c;
     /**
      * <h3><b>Quote Process</b></h3>
      * <p>Quote process used with this group.</p>
@@ -206,7 +206,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteProcess__c: string;
+    SBQQ__QuoteProcess__c?: string;
     /**
      * <h3><b>Quote Process</b></h3>
      * <p>Quote process used with this group.</p>
@@ -217,7 +217,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteProcess__r: SBQQ__QuoteProcess__c;
+    SBQQ__QuoteProcess__r?: SBQQ__QuoteProcess__c;
     /**
      * <h3><b>Separate Contract</b></h3>
      * <p>Flag that forces a separate contract for this group.</p>
@@ -228,7 +228,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__SeparateContract__c: boolean;
+    SBQQ__SeparateContract__c?: boolean;
     /**
      * <h3><b>Solution Group</b></h3>
      * <p>Solution group from which this quote group was generated (if any).</p>
@@ -239,7 +239,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SolutionGroup__c: string;
+    SBQQ__SolutionGroup__c?: string;
     /**
      * <h3><b>Solution Group</b></h3>
      * <p>Solution group from which this quote group was generated (if any).</p>
@@ -250,7 +250,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SolutionGroup__r: SBQQ__SolutionGroup__c;
+    SBQQ__SolutionGroup__r?: SBQQ__SolutionGroup__c;
     /**
      * <h3><b>Source</b></h3>
      * <p>Source of cloned quote line group.</p>
@@ -261,7 +261,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Source__c: string;
+    SBQQ__Source__c?: string;
     /**
      * <h3><b>Source</b></h3>
      * <p>Source of cloned quote line group.</p>
@@ -272,7 +272,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Source__r: SBQQ__QuoteLineGroup__c;
+    SBQQ__Source__r?: SBQQ__QuoteLineGroup__c;
     /**
      * <h3><b>Start Date</b></h3>
      * <p>Start date for subscriptions in this group.</p>
@@ -283,7 +283,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__StartDate__c: Date;
+    SBQQ__StartDate__c?: Date;
     /**
      * <h3><b>Subscription Term</b></h3>
      * <p>Subscription term used to prorate eligible products in this group.</p>
@@ -295,7 +295,7 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SubscriptionTerm__c: number;
+    SBQQ__SubscriptionTerm__c?: number;
     /**
      * <h3><b>Target Customer Amount</b></h3>
      * <p>Customer amount to be targeted in calculating additional discounts.</p>
@@ -306,5 +306,5 @@ declare interface SBQQ__QuoteLineGroup__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TargetCustomerAmount__c: number;
+    SBQQ__TargetCustomerAmount__c?: number;
 }

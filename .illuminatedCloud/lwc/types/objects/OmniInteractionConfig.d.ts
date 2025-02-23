@@ -2,17 +2,17 @@
 
 declare interface OmniInteractionConfig extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DeveloperName: string;
-    IsDeleted: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    SystemModstamp: string;
-    Value: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DeveloperName?: string;
+    IsDeleted?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    SystemModstamp?: string;
+    Value?: string;
 }

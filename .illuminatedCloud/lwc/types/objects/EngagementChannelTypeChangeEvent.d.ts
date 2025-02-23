@@ -2,17 +2,17 @@
 
 declare interface EngagementChannelTypeChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    ContactPointType: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: User;
-    OwnerId: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    ContactPointType?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: User;
+    OwnerId?: string;
+    ReplayId?: string;
 }

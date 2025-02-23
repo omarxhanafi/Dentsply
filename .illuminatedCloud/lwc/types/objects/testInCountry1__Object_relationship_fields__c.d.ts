@@ -8,101 +8,101 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: Object_relationship_fields__Share[];
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: Object_relationship_fields__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: Object_relationship_fields__Share[];
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: Object_relationship_fields__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -113,7 +113,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Country__c: string;
+    testInCountry1__Country__c?: string;
     /**
      * <h3><b>Field name</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Field_name__c: string;
+    testInCountry1__Field_name__c?: string;
     /**
      * <h3><b>Fixed value</b></h3>
      * <p>The value for a fixed function.</p>
@@ -136,7 +136,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__FixedValue__c: string;
+    testInCountry1__FixedValue__c?: string;
     /**
      * <h3><b>Hash Function</b></h3>
      * <h4>Field Attributes</h4>
@@ -160,7 +160,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">fixed</code></td><td>fixed</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__HashFunction__c: string;
+    testInCountry1__HashFunction__c?: string;
     /**
      * <h3><b>Is Compound</b></h3>
      * <h4>Field Attributes</h4>
@@ -169,7 +169,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    testInCountry1__IsCompound__c: boolean;
+    testInCountry1__IsCompound__c?: boolean;
     /**
      * <h3><b>Is Country field</b></h3>
      * <h4>Field Attributes</h4>
@@ -178,7 +178,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    testInCountry1__IsCountryField__c: boolean;
+    testInCountry1__IsCountryField__c?: boolean;
     /**
      * <h3><b>Is Lookup</b></h3>
      * <h4>Field Attributes</h4>
@@ -187,7 +187,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    testInCountry1__IsLookup__c: boolean;
+    testInCountry1__IsLookup__c?: boolean;
     /**
      * <h3><b>Is Saved to InCountry</b></h3>
      * <h4>Field Attributes</h4>
@@ -196,7 +196,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">NOT( OR( testInCountry1__IsCompound__c,  testInCountry1__IsCountryField__c ) )</code></td></tr>
      * </table>
      */
-    testInCountry1__IsSavedToInCountry__c: boolean;
+    testInCountry1__IsSavedToInCountry__c?: boolean;
     /**
      * <h3><b>key</b></h3>
      * <h4>Field Attributes</h4>
@@ -219,7 +219,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">key10</code></td><td>key10</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__key__c: string;
+    testInCountry1__key__c?: string;
     /**
      * <h3><b>LookupObjectApiName</b></h3>
      * <h4>Field Attributes</h4>
@@ -230,7 +230,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__LookupObjectApiName__c: string;
+    testInCountry1__LookupObjectApiName__c?: string;
     /**
      * <h3><b>Lookup Relationship Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -241,7 +241,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__LookupRelationshipName__c: string;
+    testInCountry1__LookupRelationshipName__c?: string;
     /**
      * <h3><b>Lookup Required To Select Fields</b></h3>
      * <h4>Field Attributes</h4>
@@ -259,7 +259,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Website</code></td><td>Website</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__LookupRequiredToSelectFields__c: string;
+    testInCountry1__LookupRequiredToSelectFields__c?: string;
     /**
      * <h3><b>Need to hash</b></h3>
      * <h4>Field Attributes</h4>
@@ -268,7 +268,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    testInCountry1__NeedHash__c: boolean;
+    testInCountry1__NeedHash__c?: boolean;
     /**
      * <h3><b>Object name</b></h3>
      * <h4>Field Attributes</h4>
@@ -279,7 +279,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Object_name__c: string;
+    testInCountry1__Object_name__c?: string;
     /**
      * <h3><b>Reference field</b></h3>
      * <h4>Field Attributes</h4>
@@ -290,7 +290,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Reference_field__c: string;
+    testInCountry1__Reference_field__c?: string;
     /**
      * <h3><b>Reference order</b></h3>
      * <h4>Field Attributes</h4>
@@ -302,7 +302,7 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    testInCountry1__Reference_order__c: number;
+    testInCountry1__Reference_order__c?: number;
     /**
      * <h3><b>Validation strategy</b></h3>
      * <h4>Field Attributes</h4>
@@ -313,17 +313,17 @@ declare interface testInCountry1__Object_relationship_fields__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Validation_strategy__c: string;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    testInCountry1__Validation_strategy__c?: string;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

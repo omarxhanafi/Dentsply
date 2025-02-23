@@ -10,7 +10,7 @@ declare interface Strategic_Goal__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Account_Plan__c: string;
+    Account_Plan__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,12 +19,12 @@ declare interface Strategic_Goal__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Account_Plan__r: Account_Plan__c;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Account_Plan__r?: Account_Plan__c;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Focus Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,14 +45,14 @@ declare interface Strategic_Goal__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Lab</code></td><td>DS Lab</td><td nowrap>true</td></tr>
      * </table>
      */
-    Focus_Area__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    Focus_Area__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,5 +61,5 @@ declare interface Strategic_Goal__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Start_Date__c: Date;
+    Start_Date__c?: Date;
 }

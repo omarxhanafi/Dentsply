@@ -2,16 +2,16 @@
 
 declare interface OrderItemType extends SObject 
 {
-    ApiName: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDefault: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    SortOrder: number;
-    SystemModstamp: string;
-    TypeCode: string;
+    ApiName?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDefault?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    SortOrder?: number;
+    SystemModstamp?: string;
+    TypeCode?: string;
 }

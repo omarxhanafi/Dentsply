@@ -2,18 +2,18 @@
 
 declare interface EngmtChannelTypeSettings extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DeveloperName: string;
-    EngagementChannelType: string;
-    IsDeleted: boolean;
-    IsSettingEnabled: string;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    SettingKey: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DeveloperName?: string;
+    EngagementChannelType?: string;
+    IsDeleted?: boolean;
+    IsSettingEnabled?: string;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    SettingKey?: string;
+    SystemModstamp?: string;
 }

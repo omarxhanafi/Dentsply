@@ -14,7 +14,7 @@ declare interface Rebound_Priorities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,7 +23,7 @@ declare interface Rebound_Priorities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,7 +32,7 @@ declare interface Rebound_Priorities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Comments__c: string;
+    Comments__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface Rebound_Priorities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,15 +52,15 @@ declare interface Rebound_Priorities__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Contact__r?: Contact;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b># 1 Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,7 +77,7 @@ declare interface Rebound_Priorities__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Practice Efficiencies/Technology</code></td><td>Practice Efficiencies/Technology</td><td nowrap>true</td></tr>
      * </table>
      */
-    X1_Priority__c: string;
+    X1_Priority__c?: string;
     /**
      * <h3><b>#2 Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -94,7 +94,7 @@ declare interface Rebound_Priorities__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Practice Efficiencies/Technology</code></td><td>Practice Efficiencies/Technology</td><td nowrap>true</td></tr>
      * </table>
      */
-    X2_Priority__c: string;
+    X2_Priority__c?: string;
     /**
      * <h3><b>#3 Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -111,5 +111,5 @@ declare interface Rebound_Priorities__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Practice Efficiencies/Technology</code></td><td>Practice Efficiencies/Technology</td><td nowrap>true</td></tr>
      * </table>
      */
-    X3_Priority__c: string;
+    X3_Priority__c?: string;
 }

@@ -2,18 +2,18 @@
 
 declare interface BrowserPolicyViolation extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DeveloperName: string;
-    IsDeleted: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    SystemModstamp: string;
-    UntrustedUrl: string;
-    ViolationContext: string;
-    ViolationType: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DeveloperName?: string;
+    IsDeleted?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    SystemModstamp?: string;
+    UntrustedUrl?: string;
+    ViolationContext?: string;
+    ViolationType?: string;
 }

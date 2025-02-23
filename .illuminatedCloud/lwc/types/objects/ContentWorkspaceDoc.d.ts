@@ -2,14 +2,14 @@
 
 declare interface ContentWorkspaceDoc extends SObject 
 {
-    ContentDocument: ContentDocument;
-    ContentDocumentId: string;
-    ContentWorkspace: ContentWorkspace;
-    ContentWorkspaceId: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    IsOwner: boolean;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
+    ContentDocument?: ContentDocument;
+    ContentDocumentId?: string;
+    ContentWorkspace?: ContentWorkspace;
+    ContentWorkspaceId?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    IsOwner?: boolean;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
 }

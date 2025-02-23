@@ -84,6 +84,18 @@ declare module "@salesforce/schema/Group.Email" {
     export default Email;
 }
 
+declare module "@salesforce/schema/Group.FalloutQueue" {
+    import { FieldId } from "@salesforce/schema";
+    const FalloutQueue: FieldId;
+    export default FalloutQueue;
+}
+
+declare module "@salesforce/schema/Group.FulfillmentSteps" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentSteps: FieldId;
+    export default FulfillmentSteps;
+}
+
 declare module "@salesforce/schema/Group.Group" {
     import { FieldId } from "@salesforce/schema";
     const Group: FieldId;

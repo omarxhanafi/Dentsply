@@ -9,7 +9,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,12 +17,12 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Account__r?: Account;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Est Volume Apr</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Apr__c: number;
+    Est_Volume_Apr__c?: number;
     /**
      * <h3><b>Est Volume Aug</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Aug__c: number;
+    Est_Volume_Aug__c?: number;
     /**
      * <h3><b>Est Volume Dec</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Dec__c: number;
+    Est_Volume_Dec__c?: number;
     /**
      * <h3><b>Est Volume Feb</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Feb__c: number;
+    Est_Volume_Feb__c?: number;
     /**
      * <h3><b>Est Volume (Full Year)</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Full_Year__c: number;
+    Est_Volume_Full_Year__c?: number;
     /**
      * <h3><b>Est Volume Jan</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,7 +89,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Jan__c: number;
+    Est_Volume_Jan__c?: number;
     /**
      * <h3><b>Est Volume Jul</b></h3>
      * <h4>Field Attributes</h4>
@@ -100,7 +100,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Jul__c: number;
+    Est_Volume_Jul__c?: number;
     /**
      * <h3><b>Est Volume Jun</b></h3>
      * <h4>Field Attributes</h4>
@@ -111,7 +111,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Jun__c: number;
+    Est_Volume_Jun__c?: number;
     /**
      * <h3><b>Est Volume Mar</b></h3>
      * <h4>Field Attributes</h4>
@@ -122,7 +122,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Mar__c: number;
+    Est_Volume_Mar__c?: number;
     /**
      * <h3><b>Est Volume May</b></h3>
      * <h4>Field Attributes</h4>
@@ -133,7 +133,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_May__c: number;
+    Est_Volume_May__c?: number;
     /**
      * <h3><b>Est Volume Nov</b></h3>
      * <h4>Field Attributes</h4>
@@ -144,7 +144,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Nov__c: number;
+    Est_Volume_Nov__c?: number;
     /**
      * <h3><b>Est Volume Oct</b></h3>
      * <h4>Field Attributes</h4>
@@ -155,7 +155,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Oct__c: number;
+    Est_Volume_Oct__c?: number;
     /**
      * <h3><b>Est Volume Quarter 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -166,7 +166,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Quarter_1__c: number;
+    Est_Volume_Quarter_1__c?: number;
     /**
      * <h3><b>Est Volume Quarter 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -177,7 +177,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Quarter_2__c: number;
+    Est_Volume_Quarter_2__c?: number;
     /**
      * <h3><b>Est Volume Quarter 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -188,7 +188,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Quarter_3__c: number;
+    Est_Volume_Quarter_3__c?: number;
     /**
      * <h3><b>Est Volume Quarter 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -199,7 +199,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Quarter_4__c: number;
+    Est_Volume_Quarter_4__c?: number;
     /**
      * <h3><b>Est Volume Sep</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,7 +210,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Volume_Sep__c: number;
+    Est_Volume_Sep__c?: number;
     /**
      * <h3><b>Forecasting Year</b></h3>
      * <h4>Field Attributes</h4>
@@ -227,10 +227,10 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">2018</code></td><td>2018</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    Forecasting_Year__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Forecasting_Year__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>My Territories Account?</b></h3>
      * <h4>Field Attributes</h4>
@@ -242,8 +242,8 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    My_Territories_Account__c: string;
-    Name: string;
+    My_Territories_Account__c?: string;
+    Name?: string;
     /**
      * <h3><b>Note</b></h3>
      * <h4>Field Attributes</h4>
@@ -252,7 +252,7 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Note__c: string;
+    Note__c?: string;
     /**
      * <h3><b>Product Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -269,6 +269,6 @@ declare interface Forecasting__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SIMPLANT Guides</code></td><td>SIMPLANT Guides</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Group__c: string;
-    ReplayId: string;
+    Product_Group__c?: string;
+    ReplayId?: string;
 }

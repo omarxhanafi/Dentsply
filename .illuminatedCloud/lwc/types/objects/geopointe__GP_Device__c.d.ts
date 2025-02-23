@@ -5,9 +5,9 @@
  */
 declare interface geopointe__GP_Device__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>City</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,7 +18,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__City__c: string;
+    geopointe__City__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Country__c: string;
+    geopointe__Country__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Description__c: string;
+    geopointe__Description__c?: string;
     /**
      * <h3><b>Device Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Device_Id__c: string;
+    geopointe__Device_Id__c?: string;
     /**
      * <h3><b>Device Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -67,7 +67,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">12V</code></td><td>12V</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    geopointe__Device_Type__c: string;
+    geopointe__Device_Type__c?: string;
     /**
      * <h3><b>Device Vendor</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,7 +82,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CalAmp</code></td><td>CalAmp</td><td nowrap>true</td></tr>
      * </table>
      */
-    geopointe__Device_Vendor__c: string;
+    geopointe__Device_Vendor__c?: string;
     /**
      * <h3><b>Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Location__c: Location;
+    geopointe__Location__c?: Location;
     /**
      * <h3><b>Location As Of</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,7 +102,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Location_As_Of__c: string;
+    geopointe__Location_As_Of__c?: string;
     /**
      * <h3><b>Location Data Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -113,7 +113,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Location_Data_Source__c: string;
+    geopointe__Location_Data_Source__c?: string;
     /**
      * <h3><b>Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Postal_Code__c: string;
+    geopointe__Postal_Code__c?: string;
     /**
      * <h3><b>State</b></h3>
      * <h4>Field Attributes</h4>
@@ -135,7 +135,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__State__c: string;
+    geopointe__State__c?: string;
     /**
      * <h3><b>Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -146,7 +146,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Street__c: string;
+    geopointe__Street__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -156,7 +156,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__User__c: string;
+    geopointe__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -166,7 +166,7 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__User__r: User;
+    geopointe__User__r?: User;
     /**
      * <h3><b>VIN</b></h3>
      * <h4>Field Attributes</h4>
@@ -177,22 +177,22 @@ declare interface geopointe__GP_Device__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__VIN__c: string;
+    geopointe__VIN__c?: string;
     /**
      * The reciprocal relationship for {@link geopointe__GP_Device_Daily_Summary__c.geopointe__Device__c}.
      */
-    Geopointe_Device_Daily_Summaries__r: geopointe__GP_Device_Daily_Summary__c[];
+    Geopointe_Device_Daily_Summaries__r?: geopointe__GP_Device_Daily_Summary__c[];
     /**
      * The reciprocal relationship for {@link geopointe__GP_Device_Event__c.geopointe__Device__c}.
      */
-    Geopointe_Device_Events__r: geopointe__GP_Device_Event__c[];
+    Geopointe_Device_Events__r?: geopointe__GP_Device_Event__c[];
     /**
      * The reciprocal relationship for {@link geopointe__Check_In__c.geopointe__Device__c}.
      */
-    Geopointe_Devices__r: geopointe__Check_In__c[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Geopointe_Devices__r?: geopointe__Check_In__c[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

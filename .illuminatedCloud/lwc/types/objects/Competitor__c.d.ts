@@ -16,7 +16,7 @@ declare interface Competitor__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <p>The related Account to which the Competitor is connected</p>
@@ -26,7 +26,7 @@ declare interface Competitor__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Applicable SBUs</b></h3>
      * <p>Defines for which SBUs this Competitor is valid. One or many SBUs can be chosen</p>
@@ -51,7 +51,7 @@ declare interface Competitor__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    Applicable_SBUs__c: string;
+    Applicable_SBUs__c?: string;
     /**
      * <h3><b>Competitor</b></h3>
      * <p>The Competitor to which the Account is connected</p>
@@ -62,7 +62,7 @@ declare interface Competitor__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Competitor__c: string;
+    Competitor__c?: string;
     /**
      * <h3><b>Competitor</b></h3>
      * <p>The Competitor to which the Account is connected</p>
@@ -73,10 +73,10 @@ declare interface Competitor__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Competitor__r: Account;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Competitor__r?: Account;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -85,10 +85,10 @@ declare interface Competitor__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Description__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

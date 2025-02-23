@@ -9,7 +9,7 @@ declare interface LoyaltyProgramTier__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link LoyaltyProgram__c})</td></tr>
      * </table>
      */
-    AccountProgram__c: string;
+    AccountProgram__c?: string;
     /**
      * <h3><b>Account Program</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,12 +17,12 @@ declare interface LoyaltyProgramTier__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link LoyaltyProgram__c})</td></tr>
      * </table>
      */
-    AccountProgram__r: LoyaltyProgram__c;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    AccountProgram__r?: LoyaltyProgram__c;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>DEP Record Hash</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface LoyaltyProgramTier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DEPRecordHash__c: string;
+    DEPRecordHash__c?: string;
     /**
      * <h3><b>DEP Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface LoyaltyProgramTier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    DEPUniqueKey__c: string;
+    DEPUniqueKey__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,10 +55,10 @@ declare interface LoyaltyProgramTier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    Description__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
 }

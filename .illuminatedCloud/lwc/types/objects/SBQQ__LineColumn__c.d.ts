@@ -6,18 +6,18 @@
  */
 declare interface SBQQ__LineColumn__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__Localization__c.SBQQ__LineColumn__c}.
      */
-    Localizations__r: SBQQ__Localization__c[];
-    Name: string;
+    Localizations__r?: SBQQ__Localization__c[];
+    Name?: string;
     /**
      * <h3><b>Alignment</b></h3>
      * <p>Determines how the column label and values are aligned.</p>
@@ -35,7 +35,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Right</code></td><td>Right</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Alignment__c: string;
+    SBQQ__Alignment__c?: string;
     /**
      * <h3><b>Bottom Margin (px)</b></h3>
      * <p>This is the bottom margin in pixels.</p>
@@ -48,7 +48,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3</code></td></tr>
      * </table>
      */
-    SBQQ__BottomMargin__c: number;
+    SBQQ__BottomMargin__c?: number;
     /**
      * <h3><b>Column Heading Field</b></h3>
      * <p>The API name of the field on quote object that sources value for this column&#39;s heading.</p>
@@ -64,7 +64,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Type</code></td><td>Type</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__ColumnHeadingField__c: string;
+    SBQQ__ColumnHeadingField__c?: string;
     /**
      * <h3><b>Conditional Print Field</b></h3>
      * <p>Field on quote object that controls whether this column prints on generated PDF document.</p>
@@ -80,7 +80,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Group Line Items</code></td><td>Group Line Items</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__ConditionalPrintField__c: string;
+    SBQQ__ConditionalPrintField__c?: string;
     /**
      * <h3><b>Display Order</b></h3>
      * <p>Order in which the column hosting this field is displayed.</p>
@@ -92,7 +92,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DisplayOrder__c: number;
+    SBQQ__DisplayOrder__c?: number;
     /**
      * <h3><b>Dynamic Number Scale</b></h3>
      * <p>The decimal scale for numbers in the column are set based on the largest precision in the column.</p>
@@ -103,7 +103,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__DynamicNumberScale__c: boolean;
+    SBQQ__DynamicNumberScale__c?: boolean;
     /**
      * <h3><b>Field Name</b></h3>
      * <p>Field name relative to the Quote Line object.</p>
@@ -115,7 +115,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FieldName__c: string;
+    SBQQ__FieldName__c?: string;
     /**
      * <h3><b>Font Family</b></h3>
      * <p>Font family that should be applied to text in this column.</p>
@@ -150,7 +150,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Ubuntu</code></td><td>Ubuntu</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__FontFamily__c: string;
+    SBQQ__FontFamily__c?: string;
     /**
      * <h3><b>Font Size (pt)</b></h3>
      * <p>Size of font (in points) applied to this column.</p>
@@ -162,7 +162,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FontSize__c: number;
+    SBQQ__FontSize__c?: number;
     /**
      * <h3><b>Font Weight</b></h3>
      * <p>Weight of font applied to this column.</p>
@@ -179,7 +179,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Bold</code></td><td>Bold</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__FontWeight__c: string;
+    SBQQ__FontWeight__c?: string;
     /**
      * <h3><b>Heading Text Color</b></h3>
      * <p>Color (in Hex) applied to text in the heading of this column.</p>
@@ -191,7 +191,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__HeadingTextColor__c: string;
+    SBQQ__HeadingTextColor__c?: string;
     /**
      * <h3><b>Hide On Product Options</b></h3>
      * <p>Hides value in this column if line item is a Product Option.</p>
@@ -202,7 +202,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__HideOnComponents__c: boolean;
+    SBQQ__HideOnComponents__c?: boolean;
     /**
      * <h3><b>Left Margin (px)</b></h3>
      * <p>Left margin in pixels.</p>
@@ -215,7 +215,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3</code></td></tr>
      * </table>
      */
-    SBQQ__LeftMargin__c: number;
+    SBQQ__LeftMargin__c?: number;
     /**
      * <h3><b>Right Margin (px)</b></h3>
      * <p>Right margin in pixels.</p>
@@ -228,7 +228,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3</code></td></tr>
      * </table>
      */
-    SBQQ__RightMargin__c: number;
+    SBQQ__RightMargin__c?: number;
     /**
      * <h3><b>Roll Up</b></h3>
      * <p>Indicates whether this field should be rolled up into master line. Only applicable if Roll-Up Field is specified on the template.</p>
@@ -239,7 +239,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__RollUp__c: boolean;
+    SBQQ__RollUp__c?: boolean;
     /**
      * <h3><b>Section</b></h3>
      * <p>Section to which this line column applies. No section means the column applies to all sections.</p>
@@ -250,7 +250,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Section__c: string;
+    SBQQ__Section__c?: string;
     /**
      * <h3><b>Section</b></h3>
      * <p>Section to which this line column applies. No section means the column applies to all sections.</p>
@@ -261,7 +261,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Section__r: SBQQ__TemplateSection__c;
+    SBQQ__Section__r?: SBQQ__TemplateSection__c;
     /**
      * <h3><b>Separate Line</b></h3>
      * <p>Flag that determines whether this field is printed on its own separate line.</p>
@@ -272,7 +272,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__SeparateLine__c: boolean;
+    SBQQ__SeparateLine__c?: boolean;
     /**
      * <h3><b>Sub Group Summary Label</b></h3>
      * <p>Summary label for sub Group level.</p>
@@ -284,7 +284,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SubGroupSummaryLabel__c: string;
+    SBQQ__SubGroupSummaryLabel__c?: string;
     /**
      * <h3><b>Summary Font Weight</b></h3>
      * <p>Weight of font applied to text in the summary row.</p>
@@ -301,7 +301,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Bold</code></td><td>Bold</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__SummaryFontWeight__c: string;
+    SBQQ__SummaryFontWeight__c?: string;
     /**
      * <h3><b>Summary Function</b></h3>
      * <p>Function used to summarize values in this column.</p>
@@ -317,7 +317,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SUM</code></td><td>SUM</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__SummaryFunction__c: string;
+    SBQQ__SummaryFunction__c?: string;
     /**
      * <h3><b>Summary Label</b></h3>
      * <p>Label output for this column in the summary row.</p>
@@ -329,7 +329,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SummaryLabel__c: string;
+    SBQQ__SummaryLabel__c?: string;
     /**
      * <h3><b>Summary Level</b></h3>
      * <p>Level this column should be summarized at.</p>
@@ -346,7 +346,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sub Group</code></td><td>Sub Group</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__SummaryLevel__c: string;
+    SBQQ__SummaryLevel__c?: string;
     /**
      * <h3><b>Summary Shading Color</b></h3>
      * <p>Color (in Hex) applied to cell background in the summary row for this column.</p>
@@ -358,7 +358,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SummaryShadingColor__c: string;
+    SBQQ__SummaryShadingColor__c?: string;
     /**
      * <h3><b>Summary Text Color</b></h3>
      * <p>Color (in Hex) applied to text in the summary row for this column.</p>
@@ -370,7 +370,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SummaryTextColor__c: string;
+    SBQQ__SummaryTextColor__c?: string;
     /**
      * <h3><b>Template</b></h3>
      * <p>Template on which this field is to be displayed.</p>
@@ -380,7 +380,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Template__c: string;
+    SBQQ__Template__c?: string;
     /**
      * <h3><b>Template</b></h3>
      * <p>Template on which this field is to be displayed.</p>
@@ -390,7 +390,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Template__r: SBQQ__QuoteTemplate__c;
+    SBQQ__Template__r?: SBQQ__QuoteTemplate__c;
     /**
      * <h3><b>Text Color</b></h3>
      * <p>Color (in Hex) applied to text in this column.</p>
@@ -402,7 +402,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TextColor__c: string;
+    SBQQ__TextColor__c?: string;
     /**
      * <h3><b>Top Margin (px)</b></h3>
      * <p>Top margin in pixels.</p>
@@ -415,7 +415,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3</code></td></tr>
      * </table>
      */
-    SBQQ__TopMargin__c: number;
+    SBQQ__TopMargin__c?: number;
     /**
      * <h3><b>Width</b></h3>
      * <p>Width of the column taken up by this field.</p>
@@ -427,7 +427,7 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Width__c: number;
+    SBQQ__Width__c?: number;
     /**
      * <h3><b>Discard Width When Hidden</b></h3>
      * <p>Flag that determines whether width of this column is re-allocated to another column or discarded when the column is dynamically hidden.</p>
@@ -438,5 +438,5 @@ declare interface SBQQ__LineColumn__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__WidthDiscardedWhenHidden__c: boolean;
+    SBQQ__WidthDiscardedWhenHidden__c?: boolean;
 }

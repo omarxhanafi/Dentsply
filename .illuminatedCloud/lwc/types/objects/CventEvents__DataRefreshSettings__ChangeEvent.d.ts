@@ -2,11 +2,11 @@
 
 declare interface CventEvents__DataRefreshSettings__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Frequency</b></h3>
      * <p>Stores the frequency of automatic sync.</p>
@@ -18,7 +18,7 @@ declare interface CventEvents__DataRefreshSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Frequency__c: number;
+    CventEvents__Frequency__c?: number;
     /**
      * <h3><b>Is Configured</b></h3>
      * <p>Indicates whether the automatic sync is configured.</p>
@@ -28,7 +28,7 @@ declare interface CventEvents__DataRefreshSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__IsConfigured__c: boolean;
+    CventEvents__IsConfigured__c?: boolean;
     /**
      * <h3><b>Pending Sync</b></h3>
      * <p>Indicates whether there is pending sync process.</p>
@@ -38,7 +38,7 @@ declare interface CventEvents__DataRefreshSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__IsPending__c: boolean;
+    CventEvents__IsPending__c?: boolean;
     /**
      * <h3><b>Last Synced Date</b></h3>
      * <p>The last date that the synchronization occurred.</p>
@@ -48,7 +48,7 @@ declare interface CventEvents__DataRefreshSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__LastSyncDate__c: string;
+    CventEvents__LastSyncDate__c?: string;
     /**
      * <h3><b>Run Related Sync</b></h3>
      * <p>Indicates whether the need to run the related sync right after the main sync took place.</p>
@@ -58,7 +58,7 @@ declare interface CventEvents__DataRefreshSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__RunRelatedSync__c: boolean;
+    CventEvents__RunRelatedSync__c?: boolean;
     /**
      * <h3><b>Status</b></h3>
      * <p>Last sync process status.</p>
@@ -70,7 +70,7 @@ declare interface CventEvents__DataRefreshSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Status__c: string;
+    CventEvents__Status__c?: string;
     /**
      * <h3><b>Unit</b></h3>
      * <p>Stores the unit of automatic sync.</p>
@@ -82,12 +82,12 @@ declare interface CventEvents__DataRefreshSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Unit__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    CventEvents__Unit__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__SubscribedAsset__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Active</b></h3>
      * <p>Indicates whether the subscribed asset record is active.</p>
@@ -24,7 +24,7 @@ declare interface SBQQ__SubscribedAsset__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Active__c: boolean;
+    SBQQ__Active__c?: boolean;
     /**
      * <h3><b>Asset</b></h3>
      * <p>Asset being covered by a subscription.</p>
@@ -35,7 +35,7 @@ declare interface SBQQ__SubscribedAsset__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Asset__c: string;
+    SBQQ__Asset__c?: string;
     /**
      * <h3><b>Asset</b></h3>
      * <p>Asset being covered by a subscription.</p>
@@ -46,7 +46,7 @@ declare interface SBQQ__SubscribedAsset__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Asset__r: Asset;
+    SBQQ__Asset__r?: Asset;
     /**
      * <h3><b>Asset Root Id</b></h3>
      * <p>The ID of the subscription or asset at the root of the bundle that contains the related asset</p>
@@ -59,7 +59,7 @@ declare interface SBQQ__SubscribedAsset__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__AssetRootId__c: string;
+    SBQQ__AssetRootId__c?: string;
     /**
      * <h3><b>Contract Id</b></h3>
      * <p>Identifies the contract for the subscription.</p>
@@ -72,7 +72,7 @@ declare interface SBQQ__SubscribedAsset__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ContractId__c: string;
+    SBQQ__ContractId__c?: string;
     /**
      * <h3><b>Subscription</b></h3>
      * <p>Subscription that covers the asset.</p>
@@ -82,7 +82,7 @@ declare interface SBQQ__SubscribedAsset__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Subscription__c: string;
+    SBQQ__Subscription__c?: string;
     /**
      * <h3><b>Subscription</b></h3>
      * <p>Subscription that covers the asset.</p>
@@ -92,7 +92,7 @@ declare interface SBQQ__SubscribedAsset__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Subscription__r: SBQQ__Subscription__c;
+    SBQQ__Subscription__r?: SBQQ__Subscription__c;
     /**
      * <h3><b>Asset Usage End Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -103,5 +103,5 @@ declare interface SBQQ__SubscribedAsset__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UsageEndDate__c: Date;
+    SBQQ__UsageEndDate__c?: Date;
 }

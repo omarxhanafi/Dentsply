@@ -9,33 +9,33 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Activity Stub</b></h3>
      * <h4>Field Attributes</h4>
@@ -46,7 +46,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__ActivityStub__c: string;
+    CventEvents__ActivityStub__c?: string;
     /**
      * <h3><b>Attendee</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link CventEvents__Attendee__c})</td></tr>
      * </table>
      */
-    CventEvents__Attendee__c: string;
+    CventEvents__Attendee__c?: string;
     /**
      * <h3><b>Attendee</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link CventEvents__Attendee__c})</td></tr>
      * </table>
      */
-    CventEvents__Attendee__r: CventEvents__Attendee__c;
+    CventEvents__Attendee__r?: CventEvents__Attendee__c;
     /**
      * <h3><b>Attendee Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__AttendeeName__c: string;
+    CventEvents__AttendeeName__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,7 +83,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Contact__c: string;
+    CventEvents__Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Contact__r: Contact;
+    CventEvents__Contact__r?: Contact;
     /**
      * <h3><b>Details</b></h3>
      * <h4>Field Attributes</h4>
@@ -100,7 +100,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    CventEvents__Details__c: string;
+    CventEvents__Details__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -111,7 +111,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__DisplayType__c: string;
+    CventEvents__DisplayType__c?: string;
     /**
      * <h3><b>Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -120,7 +120,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Event__c: string;
+    CventEvents__Event__c?: string;
     /**
      * <h3><b>Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -129,7 +129,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Event__r: CventEvents__Event__c;
+    CventEvents__Event__r?: CventEvents__Event__c;
     /**
      * <h3><b>Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -141,7 +141,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__EventTitle__c: string;
+    CventEvents__EventTitle__c?: string;
     /**
      * <h3><b>Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -152,7 +152,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Group__c: string;
+    CventEvents__Group__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -161,7 +161,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Lead__c: string;
+    CventEvents__Lead__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -170,7 +170,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Lead__r: Lead;
+    CventEvents__Lead__r?: Lead;
     /**
      * <h3><b>Related Object Name</b></h3>
      * <p>Contains name of the related entity.</p>
@@ -182,7 +182,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__ObjectName__c: string;
+    CventEvents__ObjectName__c?: string;
     /**
      * <h3><b>Object Stub</b></h3>
      * <p>Contains Cvent stub of the related entity.</p>
@@ -194,7 +194,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__ObjectStub__c: string;
+    CventEvents__ObjectStub__c?: string;
     /**
      * <h3><b>Related Object Type</b></h3>
      * <p>Contains type of the related entity.</p>
@@ -206,7 +206,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__ObjectType__c: string;
+    CventEvents__ObjectType__c?: string;
     /**
      * <h3><b>Activity Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -215,7 +215,7 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__Timestamp__c: string;
+    CventEvents__Timestamp__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -226,82 +226,82 @@ declare interface CventEvents__AttendeeActivity__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Type__c: string;
+    CventEvents__Type__c?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: AttendeeActivity__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: AttendeeActivity__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

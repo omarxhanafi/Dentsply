@@ -2,11 +2,11 @@
 
 declare interface Order_bundle__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Dealer price</b></h3>
      * <h4>Field Attributes</h4>
@@ -15,7 +15,7 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_price__c: number;
+    Dealer_price__c?: number;
     /**
      * <h3><b>FOC delivery</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,11 +31,11 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales rep</code></td><td>Sales rep</td><td nowrap>true</td></tr>
      * </table>
      */
-    FOC_delivery__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    FOC_delivery__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Order})</td></tr>
      * </table>
      */
-    Order__c: string;
+    Order__c?: string;
     /**
      * <h3><b>Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Order})</td></tr>
      * </table>
      */
-    Order__r: Order;
+    Order__r?: Order;
     /**
      * <h3><b>Order Bundle Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,7 +61,7 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Bundle_Discount__c: number;
+    Order_Bundle_Discount__c?: number;
     /**
      * <h3><b>Order Bundle Discount Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -70,7 +70,7 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Bundle_Discount_Amount__c: number;
+    Order_Bundle_Discount_Amount__c?: number;
     /**
      * <h3><b>Product bundle</b></h3>
      * <h4>Field Attributes</h4>
@@ -79,7 +79,7 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_bundle__c: string;
+    Product_bundle__c?: string;
     /**
      * <h3><b>Product bundle</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,7 +88,7 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_bundle__r: Product_bundle__c;
+    Product_bundle__r?: Product_bundle__c;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,8 +99,8 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity__c: number;
-    ReplayId: string;
+    Quantity__c?: number;
+    ReplayId?: string;
     /**
      * <h3><b>Total price</b></h3>
      * <h4>Field Attributes</h4>
@@ -109,5 +109,5 @@ declare interface Order_bundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_price__c: number;
+    Total_price__c?: number;
 }

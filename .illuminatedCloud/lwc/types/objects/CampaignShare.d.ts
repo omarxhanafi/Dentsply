@@ -2,14 +2,14 @@
 
 declare interface CampaignShare extends SObject 
 {
-    Campaign: Campaign;
-    CampaignAccessLevel: string;
-    CampaignId: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    RowCause: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    Campaign?: Campaign;
+    CampaignAccessLevel?: string;
+    CampaignId?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    RowCause?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

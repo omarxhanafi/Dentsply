@@ -17,7 +17,7 @@ declare interface CventEvents__Currency__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__CurrencyCode__c: string;
+    CventEvents__CurrencyCode__c?: string;
     /**
      * <h3><b>Currency Id</b></h3>
      * <p>Id of the currency in Cvent.</p>
@@ -29,7 +29,7 @@ declare interface CventEvents__Currency__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__CurrencyId__c: number;
+    CventEvents__CurrencyId__c?: number;
     /**
      * <h3><b>Currency Name</b></h3>
      * <p>Name of the currency in Cvent.</p>
@@ -41,12 +41,12 @@ declare interface CventEvents__Currency__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__CurrencyName__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    CventEvents__CurrencyName__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

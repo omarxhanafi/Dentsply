@@ -2,18 +2,18 @@
 
 declare interface CallCoachingMediaProvider extends SObject 
 {
-    ConversationVendorInfo: ConversationVendorInfo;
-    ConversationVendorInfoId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsActive: boolean;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MediaProvider: VoiceCall;
-    ProviderDescription: string;
-    ProviderName: string;
-    SystemModstamp: string;
+    ConversationVendorInfo?: ConversationVendorInfo;
+    ConversationVendorInfoId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsActive?: boolean;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MediaProvider?: VoiceCall;
+    ProviderDescription?: string;
+    ProviderName?: string;
+    SystemModstamp?: string;
 }

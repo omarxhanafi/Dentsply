@@ -2,14 +2,14 @@
 
 declare interface MaintenanceAssetHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    MaintenanceAsset: MaintenanceAsset;
-    MaintenanceAssetId: string;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    MaintenanceAsset?: MaintenanceAsset;
+    MaintenanceAssetId?: string;
+    NewValue?: any;
+    OldValue?: any;
 }

@@ -12,12 +12,12 @@ declare interface ProcedureTrackerCreationSetting__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    CountryList__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    CountryList__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Number Of Days</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface ProcedureTrackerCreationSetting__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NumberOfDays__c: number;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    NumberOfDays__c?: number;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

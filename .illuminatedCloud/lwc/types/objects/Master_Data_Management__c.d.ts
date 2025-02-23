@@ -45,10 +45,10 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">GB</code></td><td>GB</td><td nowrap>true</td></tr>
      * </table>
      */
-    Company_code__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Company_code__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Data Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,11 +64,11 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">M3</code></td><td>M3</td><td nowrap>true</td></tr>
      * </table>
      */
-    Data_Source__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Data_Source__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Master Customer Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Master_Customer_Name__c: string;
+    Master_Customer_Name__c?: string;
     /**
      * <h3><b>Master Customer Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,7 +88,7 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Master_Customer_Name__r: Account;
+    Master_Customer_Name__r?: Account;
     /**
      * <h3><b>Master Id (OneSF Id)</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,8 +99,8 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Master_Id_OneSF_Id__c: string;
-    Name: string;
+    Master_Id_OneSF_Id__c?: string;
+    Name?: string;
     /**
      * <h3><b>Non-Master Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Non_Master_Account__c: string;
+    Non_Master_Account__c?: string;
     /**
      * <h3><b>Non-Master Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -120,7 +120,7 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Non_Master_Account__r: Account;
+    Non_Master_Account__r?: Account;
     /**
      * <h3><b>Non-Master Account (OneSFId)</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,7 +132,7 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Non_Master_Account_OneSFId__c: string;
+    Non_Master_Account_OneSFId__c?: string;
     /**
      * <h3><b>Non-Master Id</b></h3>
      * <p>Exactly as it appears in the GDW</p>
@@ -144,7 +144,7 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Non_Master_Id__c: string;
+    Non_Master_Id__c?: string;
     /**
      * <h3><b>Preserved Child Record ID and Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -155,7 +155,7 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Preserved_Child_Record_ID_and_Name__c: string;
+    Preserved_Child_Record_ID_and_Name__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -176,5 +176,5 @@ declare interface Master_Data_Management__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Completed</code></td><td>Completed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
 }

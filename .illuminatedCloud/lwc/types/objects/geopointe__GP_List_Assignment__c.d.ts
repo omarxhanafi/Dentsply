@@ -6,9 +6,9 @@
  */
 declare interface geopointe__GP_List_Assignment__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Geocode ID  (Deprecated)</b></h3>
      * <p>Geocode Id of the list assignment.</p>
@@ -20,7 +20,7 @@ declare interface geopointe__GP_List_Assignment__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geocode_ID__c: string;
+    geopointe__Geocode_ID__c?: string;
     /**
      * <h3><b>Geopointe List</b></h3>
      * <p>Geopointe list that the list assignment belongs to.</p>
@@ -30,7 +30,7 @@ declare interface geopointe__GP_List_Assignment__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__GP_List__c: string;
+    geopointe__GP_List__c?: string;
     /**
      * <h3><b>Geopointe List</b></h3>
      * <p>Geopointe list that the list assignment belongs to.</p>
@@ -40,7 +40,7 @@ declare interface geopointe__GP_List_Assignment__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__GP_List__r: geopointe__GP_List__c;
+    geopointe__GP_List__r?: geopointe__GP_List__c;
     /**
      * <h3><b>Is Completed</b></h3>
      * <p>Status of the list assignment - completed or not completed.</p>
@@ -51,7 +51,7 @@ declare interface geopointe__GP_List_Assignment__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__Is_Completed__c: boolean;
+    geopointe__Is_Completed__c?: boolean;
     /**
      * <h3><b>Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface geopointe__GP_List_Assignment__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Order__c: number;
+    geopointe__Order__c?: number;
     /**
      * <h3><b>Place ID</b></h3>
      * <p>ID of the place that the list assignment belongs to.</p>
@@ -74,7 +74,7 @@ declare interface geopointe__GP_List_Assignment__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Place_ID__c: string;
+    geopointe__Place_ID__c?: string;
     /**
      * <h3><b>Record ID</b></h3>
      * <p>ID of the record that the list assignment belongs to.</p>
@@ -86,10 +86,10 @@ declare interface geopointe__GP_List_Assignment__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Record_ID__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__Record_ID__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

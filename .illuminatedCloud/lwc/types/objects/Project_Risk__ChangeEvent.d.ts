@@ -2,11 +2,11 @@
 
 declare interface Project_Risk__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,7 +14,7 @@ declare interface Project_Risk__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Description__c: string;
+    Description__c?: string;
     /**
      * <h3><b>Function Risk</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,10 +30,10 @@ declare interface Project_Risk__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">High</code></td><td>High</td><td nowrap>true</td></tr>
      * </table>
      */
-    Function_Risk__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Function_Risk__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Likelyhood</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface Project_Risk__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">High</code></td><td>High</td><td nowrap>true</td></tr>
      * </table>
      */
-    Likelyhood__c: string;
+    Likelyhood__c?: string;
     /**
      * <h3><b>Mitigation Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,8 +57,8 @@ declare interface Project_Risk__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Mitigation_Plan__c: string;
-    Name: string;
+    Mitigation_Plan__c?: string;
+    Name?: string;
     /**
      * <h3><b>Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface Project_Risk__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Notes__c: string;
+    Notes__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface Project_Risk__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__c: string;
+    Project__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,8 +82,8 @@ declare interface Project_Risk__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__r: Project__c;
-    ReplayId: string;
+    Project__r?: Project__c;
+    ReplayId?: string;
     /**
      * <h3><b>Risk Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -100,7 +100,7 @@ declare interface Project_Risk__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Eliminated - no or very low risk</code></td><td>Eliminated - no or very low risk</td><td nowrap>true</td></tr>
      * </table>
      */
-    Risk_Status__c: string;
+    Risk_Status__c?: string;
     /**
      * <h3><b>Time Risk</b></h3>
      * <h4>Field Attributes</h4>
@@ -116,5 +116,5 @@ declare interface Project_Risk__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">High</code></td><td>High</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Time_Risk__c: string;
+    Time_Risk__c?: string;
 }

@@ -2,11 +2,11 @@
 
 declare interface UserLogin extends SObject 
 {
-    IsFrozen: boolean;
-    IsPasswordLocked: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    User: User;
-    UserId: string;
+    IsFrozen?: boolean;
+    IsPasswordLocked?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    User?: User;
+    UserId?: string;
 }

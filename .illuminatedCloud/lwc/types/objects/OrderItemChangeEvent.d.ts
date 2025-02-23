@@ -10,7 +10,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_for_Sample_in_AX__c: string;
+    Account_for_Sample_in_AX__c?: string;
     /**
      * <h3><b>Account for Sample in AX</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_for_Sample_in_AX__r: Account;
+    Account_for_Sample_in_AX__r?: Account;
     /**
      * <h3><b>Amount Discounted</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Amount_Discounted__c: number;
+    Amount_Discounted__c?: number;
     /**
      * <h3><b>Approval Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ApprovalLevel__c: string;
+    ApprovalLevel__c?: string;
     /**
      * <h3><b>Approval Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ApprovalLevelInt__c: number;
+    ApprovalLevelInt__c?: number;
     /**
      * <h3><b>Article Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -67,7 +67,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article_Number__c: string;
+    Article_Number__c?: string;
     /**
      * <h3><b>Available Coupon Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -79,8 +79,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AvailableCouponCode__c: string;
-    AvailableQuantity: number;
+    AvailableCouponCode__c?: string;
+    AvailableQuantity?: number;
     /**
      * <h3><b>AX Customer Price</b></h3>
      * <p>Used to store the customer price received from the Pricing Microservice into AX.
@@ -92,7 +92,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AXCustomerPrice__c: number;
+    AXCustomerPrice__c?: number;
     /**
      * <h3><b>AX Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,7 +102,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AXDiscount__c: number;
+    AXDiscount__c?: number;
     /**
      * <h3><b>Retail Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -111,7 +111,9 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AXRetailPrice__c: number;
+    AXRetailPrice__c?: number;
+    BillingFrequency2?: string;
+    BillingReference2?: string;
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -123,8 +125,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Brand__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Brand__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Cost</b></h3>
      * <h4>Field Attributes</h4>
@@ -135,12 +137,14 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Cost__c: number;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
+    Cost__c?: number;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    CustomProductName?: string;
+    Description?: string;
+    Discount?: number;
     /**
      * <h3><b>Discount Approval Evaluation</b></h3>
      * <h4>Field Attributes</h4>
@@ -152,7 +156,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Approval_Eval__c: string;
+    Discount_Approval_Eval__c?: string;
     /**
      * <h3><b>Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -162,7 +166,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Discount_Percent__c: number;
+    Discount_Percent__c?: number;
+    DiscountAmount?: number;
     /**
      * <h3><b>Discount Approval Line Item</b></h3>
      * <h4>Field Attributes</h4>
@@ -174,7 +179,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    DiscountApproval_Line_Item__c: number;
+    DiscountApproval_Line_Item__c?: number;
     /**
      * <h3><b>Discounted Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -184,7 +189,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DiscountedAmount__c: number;
+    DiscountedAmount__c?: number;
     /**
      * <h3><b>Distributor price</b></h3>
      * <h4>Field Attributes</h4>
@@ -193,9 +198,9 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distr__c: number;
-    EndDate: Date;
-    EndQuantity: number;
+    Distr__c?: number;
+    EndDate?: Date;
+    EndQuantity?: number;
     /**
      * <h3><b>ERP Account for Sample</b></h3>
      * <h4>Field Attributes</h4>
@@ -207,7 +212,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERP_Account_for_Sample__c: string;
+    ERP_Account_for_Sample__c?: string;
     /**
      * <h3><b>Free Of Charge</b></h3>
      * <h4>Field Attributes</h4>
@@ -216,7 +221,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Free_Of_Charge__c: boolean;
+    Free_Of_Charge__c?: boolean;
     /**
      * <h3><b>Free of Charge Delivery</b></h3>
      * <p>Used to state who should deliver a free of charge item - it can be either a dealer, Dentsply Sirona Customer Service or given directly during meeting by Sales Rep</p>
@@ -233,7 +238,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales Rep</code></td><td>Sales Rep</td><td nowrap>true</td></tr>
      * </table>
      */
-    Free_of_Charge_Delivery__c: string;
+    Free_of_Charge_Delivery__c?: string;
     /**
      * <h3><b>Item at 100%?</b></h3>
      * <h4>Field Attributes</h4>
@@ -245,10 +250,12 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Item_at_100__c: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Item_at_100__c?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LegalEntity?: LegalEntity;
+    LegalEntityId?: string;
     /**
      * <h3><b>Line Approval Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -260,8 +267,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LineApprovalLevel__c: string;
-    ListPrice: number;
+    LineApprovalLevel__c?: string;
+    ListPrice?: number;
     /**
      * <h3><b>Lower Guidance (%)</b></h3>
      * <p>#5314 - Margin Guidance Calculation Process</p>
@@ -271,7 +278,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LowerGuidance__c: number;
+    LowerGuidance__c?: number;
     /**
      * <h3><b>Margin</b></h3>
      * <p>#5314 - Margin Guidance Calculation Process</p>
@@ -283,7 +290,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Margin__c: number;
+    Margin__c?: number;
     /**
      * <h3><b>Margin Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -292,7 +299,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MarginGuidance__c: string;
+    MarginGuidance__c?: string;
     /**
      * <h3><b>Margin Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -301,7 +308,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MarginGuidance__r: MarginGuidance__c;
+    MarginGuidance__r?: MarginGuidance__c;
     /**
      * <h3><b>Margin Guidance Indicator</b></h3>
      * <h4>Field Attributes</h4>
@@ -313,7 +320,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MarginGuidanceIndicator__c: string;
+    MarginGuidanceIndicator__c?: string;
     /**
      * <h3><b>MTF Evaluation</b></h3>
      * <h4>Field Attributes</h4>
@@ -325,7 +332,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MTF_Evaluation__c: number;
+    MTF_Evaluation__c?: number;
     /**
      * <h3><b>MTF Evaluation Line Item</b></h3>
      * <h4>Field Attributes</h4>
@@ -337,7 +344,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    MTF_EvaluationNumber__c: number;
+    MTF_EvaluationNumber__c?: number;
+    NetTotalPrice?: number;
     /**
      * <h3><b>Nett Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -349,7 +357,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NettPrice__c: number;
+    NettPrice__c?: number;
+    NetUnitPrice?: number;
     /**
      * <h3><b>No Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -358,7 +367,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">PricebookEntry.No_Contract__c</code></td></tr>
      * </table>
      */
-    No_Contract__c: boolean;
+    No_Contract__c?: boolean;
     /**
      * <h3><b>Non-SIMPLANT Evaluation</b></h3>
      * <h4>Field Attributes</h4>
@@ -370,7 +379,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td></tr>
      * </table>
      */
-    Non_SIMPLANT_Evaluation__c: number;
+    Non_SIMPLANT_Evaluation__c?: number;
     /**
      * <h3><b>Number of Items at 100% Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -381,7 +390,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Number_of_Items_at_100_Discount__c: number;
+    Number_of_Items_at_100_Discount__c?: number;
     /**
      * <h3><b>Offer Code Applied Number</b></h3>
      * <p>Updated by the Order Product Process Builder and used in the Roll Up Summary field on the Order</p>
@@ -393,7 +402,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Offer_Code_Applied_Number__c: number;
+    Offer_Code_Applied_Number__c?: number;
     /**
      * <h3><b>Offer Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -402,7 +411,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Offer_Code_dna__c: string;
+    Offer_Code_dna__c?: string;
     /**
      * <h3><b>Offer Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -411,7 +420,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Offer_Code_dna__r: Offer_Code__c;
+    Offer_Code_dna__r?: Offer_Code__c;
     /**
      * <h3><b>Offer Code Name</b></h3>
      * <p>Prints the name of the offer code, if one is applied</p>
@@ -424,18 +433,18 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Offer_Code_Name__c: string;
-    Order: Order;
-    OrderAction: OrderAction;
-    OrderActionId: string;
-    OrderId: string;
-    OrderItemGroup: OrderItemGroup;
-    OrderItemGroupId: string;
-    OrderItemNumber: string;
-    OrderItemRecipient: OrderItemRecipient;
-    OrderItemRecipientId: string;
-    OriginalOrderItem: OrderItem;
-    OriginalOrderItemId: string;
+    Offer_Code_Name__c?: string;
+    Order?: Order;
+    OrderAction?: OrderAction;
+    OrderActionId?: string;
+    OrderId?: string;
+    OrderItemGroup?: OrderItemGroup;
+    OrderItemGroupId?: string;
+    OrderItemNumber?: string;
+    OrderItemRecipient?: OrderItemRecipient;
+    OrderItemRecipientId?: string;
+    OriginalOrderItem?: OrderItem;
+    OriginalOrderItemId?: string;
     /**
      * <h3><b>Parent Kit</b></h3>
      * <h4>Field Attributes</h4>
@@ -444,11 +453,18 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ParentKit__c: boolean;
-    PricebookEntry: PricebookEntry;
-    PricebookEntryId: string;
-    Product2: Product2;
-    Product2Id: string;
+    ParentKit__c?: boolean;
+    PartnerDiscountPercent?: number;
+    PartnerUnitPrice?: number;
+    PeriodBoundary?: string;
+    PeriodBoundaryDay?: number;
+    PeriodBoundaryStartMonth?: string;
+    PricebookEntry?: PricebookEntry;
+    PricebookEntryId?: string;
+    PriceWaterfallIdentifier?: string;
+    PricingTermCount?: number;
+    Product2?: Product2;
+    Product2Id?: string;
     /**
      * <h3><b>Product Group</b></h3>
      * <p>Taken from Product Group Level 4 on the Product Object</p>
@@ -461,7 +477,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group__c: string;
+    Product_Group__c?: string;
     /**
      * <h3><b>Product Line</b></h3>
      * <h4>Field Attributes</h4>
@@ -473,7 +489,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Line__c: string;
+    Product_Line__c?: string;
     /**
      * <h3><b>Product Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -485,11 +501,17 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Type__c: string;
-    Quantity: number;
-    RelatedOrderItem: OrderItem;
-    RelatedOrderItemId: string;
-    ReplayId: string;
+    Product_Type__c?: string;
+    ProductSellingModel?: ProductSellingModel;
+    ProductSellingModelId?: string;
+    ProrationPolicy?: ProrationPolicy;
+    ProrationPolicyId?: string;
+    Quantity?: number;
+    QuoteLineItem?: QuoteLineItem;
+    QuoteLineItemId?: string;
+    RelatedOrderItem?: OrderItem;
+    RelatedOrderItemId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Retail Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -499,7 +521,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Retail_Price__c: number;
+    Retail_Price__c?: number;
     /**
      * <h3><b>Reward (UK)</b></h3>
      * <p>Used for tracking rewards in UK</p>
@@ -509,7 +531,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Reward__c: number;
+    Reward__c?: number;
+    RoundedLineAmount?: number;
     /**
      * <h3><b>Sales Special</b></h3>
      * <h4>Field Attributes</h4>
@@ -526,7 +549,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">***National Specials***</code></td><td>***National Specials***</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_Special__c: string;
+    Sales_Special__c?: string;
     /**
      * <h3><b>Sales Price</b></h3>
      * <p>Shows the sales price of the line item (each) - the discounted price</p>
@@ -537,7 +560,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesPrice__c: number;
+    SalesPrice__c?: number;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -549,8 +572,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__c: string;
-    ServiceDate: Date;
+    SBU__c?: string;
+    ServiceDate?: Date;
     /**
      * <h3><b>SIMPLANT Line Item</b></h3>
      * <p>Populated by a workflow rule which evaluates the formula field SIMPLANT Order and brings back a numerical value. This field will be used in a rollup summary to the Order for evaluation in an approval process for North America</p>
@@ -563,7 +586,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SIMPLANT_Line_Item__c: number;
+    SIMPLANT_Line_Item__c?: number;
     /**
      * <h3><b>SIMPLANT Software Evaluation</b></h3>
      * <h4>Field Attributes</h4>
@@ -575,7 +598,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SIMPLANT_Software_Evaluation__c: number;
+    SIMPLANT_Software_Evaluation__c?: number;
     /**
      * <h3><b>Simplant Software Flag</b></h3>
      * <h4>Field Attributes</h4>
@@ -587,7 +610,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Simplant_Software_Flag__c: string;
+    Simplant_Software_Flag__c?: string;
     /**
      * <h3><b>SIMPLANT Software Line Item</b></h3>
      * <h4>Field Attributes</h4>
@@ -598,7 +621,11 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SIMPLANT_Software_Line_Item__c: number;
+    SIMPLANT_Software_Line_Item__c?: number;
+    StartQuantity?: number;
+    Status?: string;
+    TaxTreatment?: TaxTreatment;
+    TaxTreatmentId?: string;
     /**
      * <h3><b>Total Line Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -608,7 +635,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Line_Item_Price__c: number;
+    Total_Line_Item_Price__c?: number;
+    TotalAdjustmentAmount?: number;
     /**
      * <h3><b>Total Cost</b></h3>
      * <h4>Field Attributes</h4>
@@ -619,7 +647,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalCost__c: number;
+    TotalCost__c?: number;
     /**
      * <h3><b>Total Discount</b></h3>
      * <p>Used to track the Total Discount for order items when using the Pricing Microservice.
@@ -631,7 +659,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalDiscount__c: number;
+    TotalDiscount__c?: number;
     /**
      * <h3><b>Total Discount Amount</b></h3>
      * <p>Shows the total discounted amount - difference between Retail Price and final Sales Price * Quantity. Only valid for Orders using pricing direct from ERP. Used in Order Integrations.</p>
@@ -644,8 +672,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalDiscountAmount__c: number;
-    TotalLineAmount: number;
+    TotalDiscountAmount__c?: number;
+    TotalLineAmount?: number;
     /**
      * <h3><b>Total Line Item Price PDF Butler</b></h3>
      * <p>Calculating Total Amount with TAX/VAT of &quot;Total_Line_Item_Price__c&quot;
@@ -660,7 +688,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalLineItemPricePDFButler__c: number;
+    TotalLineItemPricePDFButler__c?: number;
     /**
      * <h3><b>Total Price Net</b></h3>
      * <h4>Field Attributes</h4>
@@ -672,7 +700,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalPriceNet__c: number;
+    TotalPriceNet__c?: number;
     /**
      * <h3><b>Total Retail Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -684,9 +712,10 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalRetailPrice__c: number;
-    Type: string;
-    TypeCode: string;
+    TotalRetailPrice__c?: number;
+    TotalTaxAmount?: number;
+    Type?: string;
+    TypeCode?: string;
     /**
      * <h3><b>Unit price</b></h3>
      * <h4>Field Attributes</h4>
@@ -696,8 +725,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Unit_price_formula_c__c: number;
-    UnitPrice: number;
+    Unit_price_formula_c__c?: number;
+    UnitPrice?: number;
     /**
      * <h3><b>Upper Guidance</b></h3>
      * <p>#5314 - Margin Guidance Calculation Process</p>
@@ -707,7 +736,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UpperGuidance__c: number;
+    UpperGuidance__c?: number;
     /**
      * <h3><b>Use Coupon?</b></h3>
      * <h4>Field Attributes</h4>
@@ -716,7 +745,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    UseCoupon__c: boolean;
+    UseCoupon__c?: boolean;
     /**
      * <h3><b>Used Coupon Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -726,7 +755,8 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UsedCouponValue__c: number;
+    UsedCouponValue__c?: number;
+    ValidationResult?: string;
     /**
      * <h3><b>Value of free product</b></h3>
      * <h4>Field Attributes</h4>
@@ -735,7 +765,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Value_of_free_product__c: number;
+    Value_of_free_product__c?: number;
     /**
      * <h3><b>Value of Samples for Sales Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -744,7 +774,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Value_of_Samples_for_Sales_Rep__c: number;
+    Value_of_Samples_for_Sales_Rep__c?: number;
     /**
      * <h3><b>VAT Amount PDF Butler</b></h3>
      * <p>Calculating TAX/VAT Amount of &quot;Total_Line_Item_Price__c&quot;
@@ -757,7 +787,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VATAmountPDF__c: number;
+    VATAmountPDF__c?: number;
     /**
      * <h3><b>Weight</b></h3>
      * <p>#5314 - Margin Guidance Calculation Process</p>
@@ -769,7 +799,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Weight__c: number;
+    Weight__c?: number;
     /**
      * <h3><b>Weighted Lower Guidance</b></h3>
      * <p>#5314 - Margin Guidance Calculation Process</p>
@@ -781,7 +811,7 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WeightedLowerGuidance__c: number;
+    WeightedLowerGuidance__c?: number;
     /**
      * <h3><b>Weighted Upper Guidance</b></h3>
      * <p>#5314 - Margin Guidance Calculation Process</p>
@@ -793,5 +823,5 @@ declare interface OrderItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WeightedUpperGuidance__c: number;
+    WeightedUpperGuidance__c?: number;
 }

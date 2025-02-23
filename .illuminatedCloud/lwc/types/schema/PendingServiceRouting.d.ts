@@ -306,6 +306,18 @@ declare module "@salesforce/schema/PendingServiceRouting.TargetObject" {
     export default TargetObject;
 }
 
+declare module "@salesforce/schema/PendingServiceRouting.TransferRequester" {
+    import { FieldId } from "@salesforce/schema";
+    const TransferRequester: FieldId;
+    export default TransferRequester;
+}
+
+declare module "@salesforce/schema/PendingServiceRouting.TransferRequesterId" {
+    import { FieldId } from "@salesforce/schema";
+    const TransferRequesterId: FieldId;
+    export default TransferRequesterId;
+}
+
 declare module "@salesforce/schema/PendingServiceRouting.UserRecordAccess" {
     import { FieldId } from "@salesforce/schema";
     const UserRecordAccess: FieldId;

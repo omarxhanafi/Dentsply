@@ -2,37 +2,37 @@
 
 declare interface ProductTransferState extends SObject 
 {
-    Action: string;
+    Action?: string;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    Histories: ProductTransferStateHistory[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    ProductTransfer: ProductTransfer;
-    ProductTransferId: string;
-    RelatedRecord: FlowRecordRelation;
-    SerializedProduct: SerializedProduct;
-    SerializedProductId: string;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TransferState: string;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    Histories?: ProductTransferStateHistory[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    ProductTransfer?: ProductTransfer;
+    ProductTransferId?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SerializedProduct?: SerializedProduct;
+    SerializedProductId?: string;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TransferState?: string;
 }

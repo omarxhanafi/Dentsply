@@ -2,14 +2,14 @@
 
 declare interface WorkPlanSelectionRuleHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    WorkPlanSelectionRule: WorkPlanSelectionRule;
-    WorkPlanSelectionRuleId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    WorkPlanSelectionRule?: WorkPlanSelectionRule;
+    WorkPlanSelectionRuleId?: string;
 }

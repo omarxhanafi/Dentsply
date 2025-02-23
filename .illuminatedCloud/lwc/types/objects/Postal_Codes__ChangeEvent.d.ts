@@ -12,8 +12,8 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Change_Note__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Change_Note__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>City</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    City__c: string;
+    City__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country_Picklist</b></h3>
      * <h4>Field Attributes</h4>
@@ -300,7 +300,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZW</code></td><td>ZW</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country_Picklist__c: string;
+    Country_Picklist__c?: string;
     /**
      * <h3><b>County</b></h3>
      * <h4>Field Attributes</h4>
@@ -311,11 +311,11 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    County__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    County__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>ETM Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -326,7 +326,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DC_ETM_Code__c: string;
+    DC_ETM_Code__c?: string;
     /**
      * <h3><b>ETM Code Last Updated</b></h3>
      * <h4>Field Attributes</h4>
@@ -336,7 +336,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">null</code></td></tr>
      * </table>
      */
-    DC_ETM_Code_Last_Updated__c: string;
+    DC_ETM_Code_Last_Updated__c?: string;
     /**
      * <h3><b>UpdateCode</b></h3>
      * <h4>Field Attributes</h4>
@@ -345,14 +345,14 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">(DC_ETM_Code__c = null)||(LastModifiedDate &gt; DC_ETM_Code_Last_Updated__c)||(DC_ETM_Code_Last_Updated__c = null)</code></td></tr>
      * </table>
      */
-    DC_UpdateCode__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    DC_UpdateCode__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>US Sector - Consumables</b></h3>
      * <h4>Field Attributes</h4>
@@ -363,7 +363,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SectorConsumables__c: string;
+    SectorConsumables__c?: string;
     /**
      * <h3><b>US Sector - DS Lab</b></h3>
      * <h4>Field Attributes</h4>
@@ -374,7 +374,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SectorDSLab__c: string;
+    SectorDSLab__c?: string;
     /**
      * <h3><b>US Sector - Endodontics</b></h3>
      * <h4>Field Attributes</h4>
@@ -385,7 +385,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SectorEndodontics__c: string;
+    SectorEndodontics__c?: string;
     /**
      * <h3><b>US Sector - Implants</b></h3>
      * <h4>Field Attributes</h4>
@@ -396,7 +396,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SectorImplants__c: string;
+    SectorImplants__c?: string;
     /**
      * <h3><b>US Sector - Midwest</b></h3>
      * <h4>Field Attributes</h4>
@@ -407,7 +407,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SectorMidwest__c: string;
+    SectorMidwest__c?: string;
     /**
      * <h3><b>US Sector - Orthodontics</b></h3>
      * <h4>Field Attributes</h4>
@@ -418,7 +418,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SectorOrthodontics__c: string;
+    SectorOrthodontics__c?: string;
     /**
      * <h3><b>US Sector - Preventive</b></h3>
      * <h4>Field Attributes</h4>
@@ -429,7 +429,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SectorPreventive__c: string;
+    SectorPreventive__c?: string;
     /**
      * <h3><b>US Sector - Restorative</b></h3>
      * <h4>Field Attributes</h4>
@@ -440,7 +440,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SectorRestorative__c: string;
+    SectorRestorative__c?: string;
     /**
      * <h3><b>Source Note</b></h3>
      * <h4>Field Attributes</h4>
@@ -451,7 +451,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Source_Note__c: string;
+    Source_Note__c?: string;
     /**
      * <h3><b>State</b></h3>
      * <h4>Field Attributes</h4>
@@ -462,7 +462,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    State__c: string;
+    State__c?: string;
     /**
      * <h3><b>StateName</b></h3>
      * <h4>Field Attributes</h4>
@@ -473,7 +473,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StateName__c: string;
+    StateName__c?: string;
     /**
      * <h3><b>Territory 10 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -482,7 +482,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_10_User__c: string;
+    Territory_10_User__c?: string;
     /**
      * <h3><b>Territory 10 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -491,7 +491,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_10_User__r: User;
+    Territory_10_User__r?: User;
     /**
      * <h3><b>Territory 11 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -500,7 +500,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_11_User__c: string;
+    Territory_11_User__c?: string;
     /**
      * <h3><b>Territory 11 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -509,7 +509,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_11_User__r: User;
+    Territory_11_User__r?: User;
     /**
      * <h3><b>Territory 12 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -518,7 +518,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_12_User__c: string;
+    Territory_12_User__c?: string;
     /**
      * <h3><b>Territory 12 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -527,7 +527,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_12_User__r: User;
+    Territory_12_User__r?: User;
     /**
      * <h3><b>Territory 13 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -536,7 +536,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_13_User__c: string;
+    Territory_13_User__c?: string;
     /**
      * <h3><b>Territory 13 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -545,7 +545,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_13_User__r: User;
+    Territory_13_User__r?: User;
     /**
      * <h3><b>Territory 14 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -554,7 +554,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_14_User__c: string;
+    Territory_14_User__c?: string;
     /**
      * <h3><b>Territory 14 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -563,7 +563,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_14_User__r: User;
+    Territory_14_User__r?: User;
     /**
      * <h3><b>Territory 15 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -572,7 +572,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_15_User__c: string;
+    Territory_15_User__c?: string;
     /**
      * <h3><b>Territory 15 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -581,7 +581,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_15_User__r: User;
+    Territory_15_User__r?: User;
     /**
      * <h3><b>Territory 16 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -590,7 +590,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_16_User__c: string;
+    Territory_16_User__c?: string;
     /**
      * <h3><b>Territory 16 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -599,7 +599,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_16_User__r: User;
+    Territory_16_User__r?: User;
     /**
      * <h3><b>Territory 17 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -608,7 +608,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_17_User__c: string;
+    Territory_17_User__c?: string;
     /**
      * <h3><b>Territory 17 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -617,7 +617,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_17_User__r: User;
+    Territory_17_User__r?: User;
     /**
      * <h3><b>Territory 18 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -626,7 +626,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_18_User__c: string;
+    Territory_18_User__c?: string;
     /**
      * <h3><b>Territory 18 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -635,7 +635,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_18_User__r: User;
+    Territory_18_User__r?: User;
     /**
      * <h3><b>Territory 19 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -644,7 +644,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_19_User__c: string;
+    Territory_19_User__c?: string;
     /**
      * <h3><b>Territory 19 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -653,7 +653,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_19_User__r: User;
+    Territory_19_User__r?: User;
     /**
      * <h3><b>Territory 1 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -662,7 +662,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_1_User__c: string;
+    Territory_1_User__c?: string;
     /**
      * <h3><b>Territory 1 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -671,7 +671,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_1_User__r: User;
+    Territory_1_User__r?: User;
     /**
      * <h3><b>Territory 20 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -680,7 +680,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_20_User__c: string;
+    Territory_20_User__c?: string;
     /**
      * <h3><b>Territory 20 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -689,7 +689,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_20_User__r: User;
+    Territory_20_User__r?: User;
     /**
      * <h3><b>Territory 21 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -698,7 +698,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_21_User__c: string;
+    Territory_21_User__c?: string;
     /**
      * <h3><b>Territory 21 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -707,7 +707,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_21_User__r: User;
+    Territory_21_User__r?: User;
     /**
      * <h3><b>Territory 22 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -716,7 +716,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_22_User__c: string;
+    Territory_22_User__c?: string;
     /**
      * <h3><b>Territory 22 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -725,7 +725,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_22_User__r: User;
+    Territory_22_User__r?: User;
     /**
      * <h3><b>Territory 23 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -734,7 +734,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_23_User__c: string;
+    Territory_23_User__c?: string;
     /**
      * <h3><b>Territory 23 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -743,7 +743,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_23_User__r: User;
+    Territory_23_User__r?: User;
     /**
      * <h3><b>Territory 24 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -752,7 +752,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_24_User__c: string;
+    Territory_24_User__c?: string;
     /**
      * <h3><b>Territory 24 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -761,7 +761,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_24_User__r: User;
+    Territory_24_User__r?: User;
     /**
      * <h3><b>Territory 25 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -770,7 +770,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_25_User__c: string;
+    Territory_25_User__c?: string;
     /**
      * <h3><b>Territory 25 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -779,7 +779,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_25_User__r: User;
+    Territory_25_User__r?: User;
     /**
      * <h3><b>Territory 2 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -788,7 +788,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_2_User__c: string;
+    Territory_2_User__c?: string;
     /**
      * <h3><b>Territory 2 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -797,7 +797,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_2_User__r: User;
+    Territory_2_User__r?: User;
     /**
      * <h3><b>Territory 3 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -806,7 +806,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_3_User__c: string;
+    Territory_3_User__c?: string;
     /**
      * <h3><b>Territory 3 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -815,7 +815,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_3_User__r: User;
+    Territory_3_User__r?: User;
     /**
      * <h3><b>Territory 4 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -824,7 +824,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_4_User__c: string;
+    Territory_4_User__c?: string;
     /**
      * <h3><b>Territory 4 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -833,7 +833,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_4_User__r: User;
+    Territory_4_User__r?: User;
     /**
      * <h3><b>Territory 5 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -842,7 +842,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_5_User__c: string;
+    Territory_5_User__c?: string;
     /**
      * <h3><b>Territory 5 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -851,7 +851,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_5_User__r: User;
+    Territory_5_User__r?: User;
     /**
      * <h3><b>Territory 6 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -860,7 +860,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_6_User__c: string;
+    Territory_6_User__c?: string;
     /**
      * <h3><b>Territory 6 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -869,7 +869,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_6_User__r: User;
+    Territory_6_User__r?: User;
     /**
      * <h3><b>Territory 7 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -878,7 +878,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_7_User__c: string;
+    Territory_7_User__c?: string;
     /**
      * <h3><b>Territory 7 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -887,7 +887,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_7_User__r: User;
+    Territory_7_User__r?: User;
     /**
      * <h3><b>Territory 8 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -896,7 +896,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_8_User__c: string;
+    Territory_8_User__c?: string;
     /**
      * <h3><b>Territory 8 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -905,7 +905,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_8_User__r: User;
+    Territory_8_User__r?: User;
     /**
      * <h3><b>Territory 9 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -914,7 +914,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_9_User__c: string;
+    Territory_9_User__c?: string;
     /**
      * <h3><b>Territory 9 User</b></h3>
      * <h4>Field Attributes</h4>
@@ -923,7 +923,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_9_User__r: User;
+    Territory_9_User__r?: User;
     /**
      * <h3><b>User Territory 10</b></h3>
      * <h4>Field Attributes</h4>
@@ -934,7 +934,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_10__c: string;
+    User_Territory_10__c?: string;
     /**
      * <h3><b>User Territory 11</b></h3>
      * <h4>Field Attributes</h4>
@@ -945,7 +945,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_11__c: string;
+    User_Territory_11__c?: string;
     /**
      * <h3><b>User Territory 12</b></h3>
      * <h4>Field Attributes</h4>
@@ -956,7 +956,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_12__c: string;
+    User_Territory_12__c?: string;
     /**
      * <h3><b>User Territory 13</b></h3>
      * <h4>Field Attributes</h4>
@@ -967,7 +967,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_13__c: string;
+    User_Territory_13__c?: string;
     /**
      * <h3><b>User Territory 14</b></h3>
      * <h4>Field Attributes</h4>
@@ -978,7 +978,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_14__c: string;
+    User_Territory_14__c?: string;
     /**
      * <h3><b>User Territory 15</b></h3>
      * <h4>Field Attributes</h4>
@@ -989,7 +989,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_15__c: string;
+    User_Territory_15__c?: string;
     /**
      * <h3><b>User Territory 16</b></h3>
      * <h4>Field Attributes</h4>
@@ -1000,7 +1000,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_16__c: string;
+    User_Territory_16__c?: string;
     /**
      * <h3><b>User Territory 17</b></h3>
      * <h4>Field Attributes</h4>
@@ -1011,7 +1011,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_17__c: string;
+    User_Territory_17__c?: string;
     /**
      * <h3><b>User Territory 18</b></h3>
      * <h4>Field Attributes</h4>
@@ -1022,7 +1022,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_18__c: string;
+    User_Territory_18__c?: string;
     /**
      * <h3><b>User Territory 19</b></h3>
      * <h4>Field Attributes</h4>
@@ -1033,7 +1033,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_19__c: string;
+    User_Territory_19__c?: string;
     /**
      * <h3><b>User Territory 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -1044,7 +1044,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_1__c: string;
+    User_Territory_1__c?: string;
     /**
      * <h3><b>User Territory 20</b></h3>
      * <h4>Field Attributes</h4>
@@ -1055,7 +1055,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_20__c: string;
+    User_Territory_20__c?: string;
     /**
      * <h3><b>User Territory 21</b></h3>
      * <h4>Field Attributes</h4>
@@ -1066,7 +1066,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_21__c: string;
+    User_Territory_21__c?: string;
     /**
      * <h3><b>User Territory 22</b></h3>
      * <h4>Field Attributes</h4>
@@ -1077,7 +1077,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_22__c: string;
+    User_Territory_22__c?: string;
     /**
      * <h3><b>User Territory 23</b></h3>
      * <h4>Field Attributes</h4>
@@ -1088,7 +1088,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_23__c: string;
+    User_Territory_23__c?: string;
     /**
      * <h3><b>User Territory 24</b></h3>
      * <h4>Field Attributes</h4>
@@ -1099,7 +1099,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_24__c: string;
+    User_Territory_24__c?: string;
     /**
      * <h3><b>User Territory 25</b></h3>
      * <h4>Field Attributes</h4>
@@ -1110,7 +1110,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_25__c: string;
+    User_Territory_25__c?: string;
     /**
      * <h3><b>User Territory 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -1121,7 +1121,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_2__c: string;
+    User_Territory_2__c?: string;
     /**
      * <h3><b>User Territory 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -1132,7 +1132,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_3__c: string;
+    User_Territory_3__c?: string;
     /**
      * <h3><b>User Territory 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -1143,7 +1143,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_4__c: string;
+    User_Territory_4__c?: string;
     /**
      * <h3><b>User Territory 5</b></h3>
      * <h4>Field Attributes</h4>
@@ -1154,7 +1154,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_5__c: string;
+    User_Territory_5__c?: string;
     /**
      * <h3><b>User Territory 6</b></h3>
      * <h4>Field Attributes</h4>
@@ -1165,7 +1165,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_6__c: string;
+    User_Territory_6__c?: string;
     /**
      * <h3><b>User Territory 7</b></h3>
      * <h4>Field Attributes</h4>
@@ -1176,7 +1176,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_7__c: string;
+    User_Territory_7__c?: string;
     /**
      * <h3><b>User Territory 8</b></h3>
      * <h4>Field Attributes</h4>
@@ -1187,7 +1187,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_8__c: string;
+    User_Territory_8__c?: string;
     /**
      * <h3><b>User Territory 9</b></h3>
      * <h4>Field Attributes</h4>
@@ -1198,7 +1198,7 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Territory_9__c: string;
+    User_Territory_9__c?: string;
     /**
      * <h3><b>ZipCode external ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -1209,5 +1209,5 @@ declare interface Postal_Codes__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    ZipCode_external_ID__c: string;
+    ZipCode_external_ID__c?: string;
 }

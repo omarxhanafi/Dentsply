@@ -2,9 +2,9 @@
 
 declare interface Knowledge__VoteStat extends SObject 
 {
-    Channel: string;
-    IsDeleted: boolean;
-    NormalizedScore: number;
-    Parent: Knowledge__ka;
-    ParentId: string;
+    Channel?: string;
+    IsDeleted?: boolean;
+    NormalizedScore?: number;
+    Parent?: Knowledge__ka;
+    ParentId?: string;
 }

@@ -2,14 +2,14 @@
 
 declare interface ContentVersionHistory extends SObject 
 {
-    ContentVersion: ContentVersion;
-    ContentVersionId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    ContentVersion?: ContentVersion;
+    ContentVersionId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

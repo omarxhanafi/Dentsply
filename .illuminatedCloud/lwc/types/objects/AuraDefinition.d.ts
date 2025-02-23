@@ -2,17 +2,17 @@
 
 declare interface AuraDefinition extends SObject 
 {
-    AuraDefinitionBundle: AuraDefinitionBundle;
-    AuraDefinitionBundleId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DefType: string;
-    Format: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Source: string;
-    SystemModstamp: string;
+    AuraDefinitionBundle?: AuraDefinitionBundle;
+    AuraDefinitionBundleId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DefType?: string;
+    Format?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Source?: string;
+    SystemModstamp?: string;
 }

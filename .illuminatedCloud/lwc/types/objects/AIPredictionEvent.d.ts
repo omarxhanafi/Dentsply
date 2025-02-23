@@ -2,16 +2,16 @@
 
 declare interface AIPredictionEvent extends SObject 
 {
-    Confidence: number;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
-    FieldName: string;
-    HasError: boolean;
-    InsightId: string;
-    PredictionEntityId: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
-    TargetId: string;
+    Confidence?: number;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
+    FieldName?: string;
+    HasError?: boolean;
+    InsightId?: string;
+    PredictionEntityId?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
+    TargetId?: string;
 }

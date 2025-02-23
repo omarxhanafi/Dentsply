@@ -12,7 +12,7 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BaseDiscount__c: number;
+    BaseDiscount__c?: number;
     /**
      * <h3><b>Base Price</b></h3>
      * <p>Shows the Customer or quote specific price if any exists. This could be a price set and being pre-approved in the Product Bundle, or if later using e.g. the AX pricing microservice should have the customer price from AX. Both scenarios this is a discounted price that is already set and approved. Not a dicounted price set by the rep/user. If no pre-approved discounted price is provided this will be the same as the retail price or list price if coming from SFDC.</p>
@@ -22,7 +22,9 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BasePrice__c: number;
+    BasePrice__c?: number;
+    BillingFrequency?: string;
+    BillingReference?: string;
     /**
      * <h3><b>Can Be Deleted</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,14 +33,16 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CanBeDeleted__c: boolean;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
-    Discount: number;
+    CanBeDeleted__c?: boolean;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    CustomProductName?: string;
+    Description?: string;
+    Discount?: number;
+    DiscountAmount?: number;
     /**
      * <h3><b>Discounted Sales Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +52,10 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DiscountedUnitPrice__c: number;
+    DiscountedUnitPrice__c?: number;
+    EffectiveGrantDate?: Date;
+    EndDate?: Date;
+    EndQuantity?: number;
     /**
      * <h3><b>Extra Applied Discount</b></h3>
      * <p>Quantity * (BasePrice__c - NetPrice__c)</p>
@@ -58,12 +65,14 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ExtraAppliedDiscount__c: number;
-    IsPrimarySegment: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LineNumber: string;
+    ExtraAppliedDiscount__c?: number;
+    IsPrimarySegment?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LegalEntity?: LegalEntity;
+    LegalEntityId?: string;
+    LineNumber?: string;
     /**
      * <h3><b>Net Price</b></h3>
      * <p>Shows the final discounted price - the Net Price per Unit</p>
@@ -73,20 +82,35 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NetPrice__c: number;
-    OpportunityLineItem: OpportunityLineItem;
-    OpportunityLineItemId: string;
-    PricebookEntry: PricebookEntry;
-    PricebookEntryId: string;
-    Product2: Product2;
-    Product2Id: string;
-    Quantity: number;
-    Quote: Quote;
-    QuoteId: string;
-    QuoteLineGroup: QuoteLineGroup;
-    QuoteLineGroupId: string;
-    QuoteLineItemRecipient: QuoteLineItemRecipient;
-    QuoteLineItemRecipientId: string;
+    NetPrice__c?: number;
+    NetTotalPrice?: number;
+    NetUnitPrice?: number;
+    OpportunityLineItem?: OpportunityLineItem;
+    OpportunityLineItemId?: string;
+    PartnerDiscountPercent?: number;
+    PartnerUnitPrice?: number;
+    PeriodBoundary?: string;
+    PeriodBoundaryDay?: number;
+    PeriodBoundaryStartMonth?: string;
+    PricebookEntry?: PricebookEntry;
+    PricebookEntryId?: string;
+    PriceWaterfallIdentifier?: string;
+    PricingTermCount?: number;
+    Product2?: Product2;
+    Product2Id?: string;
+    ProductSellingModel?: ProductSellingModel;
+    ProductSellingModelId?: string;
+    ProrationPolicy?: ProrationPolicy;
+    ProrationPolicyId?: string;
+    Quantity?: number;
+    Quote?: Quote;
+    QuoteAction?: QuoteAction;
+    QuoteActionId?: string;
+    QuoteId?: string;
+    QuoteLineGroup?: QuoteLineGroup;
+    QuoteLineGroupId?: string;
+    QuoteLineItemRecipient?: QuoteLineItemRecipient;
+    QuoteLineItemRecipientId?: string;
     /**
      * <h3><b>Quote Line Bundle</b></h3>
      * <h4>Field Attributes</h4>
@@ -95,7 +119,7 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QuoteProductBundle__c: string;
+    QuoteProductBundle__c?: string;
     /**
      * <h3><b>Quote Line Bundle</b></h3>
      * <h4>Field Attributes</h4>
@@ -104,9 +128,9 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QuoteProductBundle__r: QuoteProductBundle__c;
-    RampIdentifier: string;
-    ReplayId: string;
+    QuoteProductBundle__r?: QuoteProductBundle__c;
+    RampIdentifier?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Retail Price</b></h3>
      * <p>Shows the Retail price of the Quote Line item.
@@ -117,12 +141,15 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RetailPrice__c: number;
-    SegmentIdentifier: string;
-    SegmentName: string;
-    SegmentType: string;
-    ServiceDate: Date;
-    SortOrder: number;
+    RetailPrice__c?: number;
+    SegmentIdentifier?: string;
+    SegmentName?: string;
+    SegmentType?: string;
+    ServiceDate?: Date;
+    SortOrder?: number;
+    StartDate?: Date;
+    StartQuantity?: number;
+    SubscriptionTerm?: number;
     /**
      * <h3><b>Tariff Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -134,7 +161,8 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TariffCode__c: string;
+    TariffCode__c?: string;
+    TotalAdjustmentAmount?: number;
     /**
      * <h3><b>Total Discount Amount</b></h3>
      * <p>Quantity * (RetailPrice__c - NetPrice__c)</p>
@@ -144,7 +172,7 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalDiscountAmount__c: number;
+    TotalDiscountAmount__c?: number;
     /**
      * <h3><b>Total Discount (%)</b></h3>
      * <p>(RetailPrice__c - NetPrice__c) / RetailPrice__c</p>
@@ -154,7 +182,8 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalDiscountPercentage__c: number;
+    TotalDiscountPercentage__c?: number;
+    TotalLineAmount?: number;
     /**
      * <h3><b>Total List Price</b></h3>
      * <p>PricebookEntry.UnitPrice * Quantity
@@ -165,7 +194,7 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalListPrice__c: number;
+    TotalListPrice__c?: number;
     /**
      * <h3><b>Total Price w/ VAT</b></h3>
      * <h4>Field Attributes</h4>
@@ -174,7 +203,7 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalPriceVAT__c: number;
+    TotalPriceVAT__c?: number;
     /**
      * <h3><b>Total Unit Price</b></h3>
      * <p>Quantity * UnitPrice. Calculated Total amount without discount.</p>
@@ -184,7 +213,7 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalUnitPrice__c: number;
+    TotalUnitPrice__c?: number;
     /**
      * <h3><b>Unit Discount Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -193,8 +222,9 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UnitDiscountAmount__c: number;
-    UnitPrice: number;
+    UnitDiscountAmount__c?: number;
+    UnitPrice?: number;
+    ValidationResult?: string;
     /**
      * <h3><b>VAT Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -203,7 +233,7 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VATAmount__c: number;
+    VATAmount__c?: number;
     /**
      * <h3><b>VAT Amount (Numeric)</b></h3>
      * <h4>Field Attributes</h4>
@@ -214,7 +244,7 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VATAmountNumeric__c: number;
+    VATAmountNumeric__c?: number;
     /**
      * <h3><b>VAT</b></h3>
      * <h4>Field Attributes</h4>
@@ -224,7 +254,7 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    VATRate__c: number;
+    VATRate__c?: number;
     /**
      * <h3><b>VATRateText</b></h3>
      * <h4>Field Attributes</h4>
@@ -235,5 +265,5 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VATRateText__c: string;
+    VATRateText__c?: string;
 }

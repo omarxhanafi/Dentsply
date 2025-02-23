@@ -2,19 +2,19 @@
 
 declare interface SchedulingObjective extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Description: string;
-    DeveloperName: string;
-    IsDeleted: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    SchedulingCategory: string;
-    SchedulingObjectiveParameters: SchedulingObjectiveParameter[];
-    SchedulingObjectiveType: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Description?: string;
+    DeveloperName?: string;
+    IsDeleted?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    SchedulingCategory?: string;
+    SchedulingObjectiveParameters?: SchedulingObjectiveParameter[];
+    SchedulingObjectiveType?: string;
+    SystemModstamp?: string;
 }

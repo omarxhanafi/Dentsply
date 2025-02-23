@@ -2,14 +2,14 @@
 
 declare interface maps__ScheduledJob__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Apex Class Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,7 +20,7 @@ declare interface maps__ScheduledJob__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ApexClassName__c: string;
+    maps__ApexClassName__c?: string;
     /**
      * <h3><b>Base Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface maps__ScheduledJob__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__BaseObject__c: string;
+    maps__BaseObject__c?: string;
     /**
      * <h3><b>Base Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface maps__ScheduledJob__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__BaseObject__r: maps__BaseObject__c;
+    maps__BaseObject__r?: maps__BaseObject__c;
     /**
      * <h3><b>JobId</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,9 +49,9 @@ declare interface maps__ScheduledJob__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__JobId__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__JobId__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

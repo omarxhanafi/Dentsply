@@ -10,7 +10,7 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    AdditionalProducts__c: string;
+    AdditionalProducts__c?: string;
     /**
      * <h3><b>Article (SKU)</b></h3>
      * <p>Article number from Product record</p>
@@ -23,7 +23,7 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ArticleSKU__c: string;
+    ArticleSKU__c?: string;
     /**
      * <h3><b>Batch Number</b></h3>
      * <p>Batch number of the inventory item. Populated through AX/Field Service integration</p>
@@ -35,8 +35,8 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BatchNumber__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    BatchNumber__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Controlled By Integration</b></h3>
      * <p>This field must be True for Items created and maintained by integration</p>
@@ -46,11 +46,11 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ControlledByIntegration__c: boolean;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ControlledByIntegration__c?: boolean;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>ERP Warehouse</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,21 +61,21 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERPWarehouse__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Location: Location;
-    LocationId: string;
-    Owner: User;
-    OwnerId: string;
-    Product2: Product2;
-    Product2Id: string;
-    ProductItemNumber: string;
-    QuantityOnHand: number;
-    QuantityUnitOfMeasure: string;
-    ReplayId: string;
-    SerialNumber: string;
+    ERPWarehouse__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Location?: Location;
+    LocationId?: string;
+    Owner?: User;
+    OwnerId?: string;
+    Product2?: Product2;
+    Product2Id?: string;
+    ProductItemNumber?: string;
+    QuantityOnHand?: number;
+    QuantityUnitOfMeasure?: string;
+    ReplayId?: string;
+    SerialNumber?: string;
     /**
      * <h3><b>Serial Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,7 +86,7 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SerialNumber__c: string;
+    SerialNumber__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <p>Deactivate an item instead of deleting</p>
@@ -102,7 +102,7 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inactive</code></td><td>Inactive</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>TF_Full ProductInfo</b></h3>
      * <p>Used to facilitate the selection of product items</p>
@@ -115,7 +115,7 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TF_FullProductInfo__c: string;
+    TF_FullProductInfo__c?: string;
     /**
      * <h3><b>TF_ProductName</b></h3>
      * <h4>Field Attributes</h4>
@@ -127,7 +127,7 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TF_ProductName__c: string;
+    TF_ProductName__c?: string;
     /**
      * <h3><b>Unique External ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,5 +138,5 @@ declare interface ProductItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    UniqueExternalID__c: string;
+    UniqueExternalID__c?: string;
 }

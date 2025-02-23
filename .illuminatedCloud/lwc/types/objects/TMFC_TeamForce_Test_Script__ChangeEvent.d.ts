@@ -2,11 +2,11 @@
 
 declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Device</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,13 +24,13 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">iPad</code></td><td>iPad</td><td nowrap>true</td></tr>
      * </table>
      */
-    Device__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    Device__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Platform</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Service</code></td><td>Service</td><td nowrap>true</td></tr>
      * </table>
      */
-    Platform__c: string;
+    Platform__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -67,7 +67,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Owner__c: string;
+    Product_Owner__c?: string;
     /**
      * <h3><b>Product Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,7 +76,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Owner__r: User;
+    Product_Owner__r?: User;
     /**
      * <h3><b>Remarks</b></h3>
      * <h4>Field Attributes</h4>
@@ -84,8 +84,8 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Remarks__c: string;
-    ReplayId: string;
+    Remarks__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>As...</b></h3>
      * <h4>Field Attributes</h4>
@@ -96,7 +96,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_As__c: string;
+    TMFC_As__c?: string;
     /**
      * <h3><b>Expected Result</b></h3>
      * <h4>Field Attributes</h4>
@@ -104,7 +104,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    TMFC_Expected_Result__c: string;
+    TMFC_Expected_Result__c?: string;
     /**
      * <h3><b>I want to...</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,7 +115,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_I_want_to__c: string;
+    TMFC_I_want_to__c?: string;
     /**
      * <h3><b>Persona</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Persona__c: string;
+    TMFC_Persona__c?: string;
     /**
      * <h3><b>Prerequisite</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,7 +132,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    TMFC_Prerequisite__c: string;
+    TMFC_Prerequisite__c?: string;
     /**
      * <h3><b>Scenario</b></h3>
      * <h4>Field Attributes</h4>
@@ -144,7 +144,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Scenario__c: string;
+    TMFC_Scenario__c?: string;
     /**
      * <h3><b>So that...</b></h3>
      * <h4>Field Attributes</h4>
@@ -155,7 +155,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_So_that__c: string;
+    TMFC_So_that__c?: string;
     /**
      * <h3><b>Test Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -164,7 +164,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Test_Description__c: string;
+    TMFC_Test_Description__c?: string;
     /**
      * <h3><b>Test Scenarios</b></h3>
      * <h4>Field Attributes</h4>
@@ -175,7 +175,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Test_Scenarios__c: string;
+    TMFC_Test_Scenarios__c?: string;
     /**
      * <h3><b>Test Script Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -195,7 +195,7 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">In Testing</code></td><td>In Testing</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    TMFC_Test_Script_Status__c: string;
+    TMFC_Test_Script_Status__c?: string;
     /**
      * <h3><b>Test Steps</b></h3>
      * <h4>Field Attributes</h4>
@@ -203,5 +203,5 @@ declare interface TMFC_TeamForce_Test_Script__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    TMFC_Test_Steps__c: string;
+    TMFC_Test_Steps__c?: string;
 }

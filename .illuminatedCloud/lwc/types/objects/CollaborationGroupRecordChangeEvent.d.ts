@@ -2,18 +2,18 @@
 
 declare interface CollaborationGroupRecordChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CollaborationGroup: CollaborationGroup;
-    CollaborationGroupId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Network: Network;
-    NetworkId: string;
-    Record: SObject;
-    RecordId: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CollaborationGroup?: CollaborationGroup;
+    CollaborationGroupId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Network?: Network;
+    NetworkId?: string;
+    Record?: SObject;
+    RecordId?: string;
+    ReplayId?: string;
 }

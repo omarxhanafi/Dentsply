@@ -2,18 +2,18 @@
 
 declare interface ContextParamMap extends SObject 
 {
-    ContextEntity: SObject;
-    ContextEntityId: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MapKey: string;
-    MapValue: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
+    ContextEntity?: SObject;
+    ContextEntityId?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MapKey?: string;
+    MapValue?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
 }

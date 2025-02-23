@@ -942,6 +942,24 @@ declare module "@salesforce/schema/ContractChangeEvent.Price__c" {
     export default Price__c;
 }
 
+declare module "@salesforce/schema/ContractChangeEvent.Pricebook2" {
+    import { FieldId } from "@salesforce/schema";
+    const Pricebook2: FieldId;
+    export default Pricebook2;
+}
+
+declare module "@salesforce/schema/ContractChangeEvent.Pricebook2Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Pricebook2Id: FieldId;
+    export default Pricebook2Id;
+}
+
+declare module "@salesforce/schema/ContractChangeEvent.PricingSource" {
+    import { FieldId } from "@salesforce/schema";
+    const PricingSource: FieldId;
+    export default PricingSource;
+}
+
 declare module "@salesforce/schema/ContractChangeEvent.Purchase_Contract_External_ID__c" {
     import { FieldId } from "@salesforce/schema";
     const Purchase_Contract_External_ID__c: FieldId;
@@ -1012,6 +1030,18 @@ declare module "@salesforce/schema/ContractChangeEvent.Remains_rev_material__c" 
     import { FieldId } from "@salesforce/schema";
     const Remains_rev_material__c: FieldId;
     export default Remains_rev_material__c;
+}
+
+declare module "@salesforce/schema/ContractChangeEvent.RenewalTerm2" {
+    import { FieldId } from "@salesforce/schema";
+    const RenewalTerm2: FieldId;
+    export default RenewalTerm2;
+}
+
+declare module "@salesforce/schema/ContractChangeEvent.RenewalTermUnit" {
+    import { FieldId } from "@salesforce/schema";
+    const RenewalTermUnit: FieldId;
+    export default RenewalTermUnit;
 }
 
 declare module "@salesforce/schema/ContractChangeEvent.ReplayId" {

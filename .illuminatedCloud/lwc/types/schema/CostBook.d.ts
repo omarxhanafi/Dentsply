@@ -60,6 +60,12 @@ declare module "@salesforce/schema/CostBook.ContextRecord" {
     export default ContextRecord;
 }
 
+declare module "@salesforce/schema/CostBook.CostBook" {
+    import { FieldId } from "@salesforce/schema";
+    const CostBook: FieldId;
+    export default CostBook;
+}
+
 declare module "@salesforce/schema/CostBook.CostbookName" {
     import { FieldId } from "@salesforce/schema";
     const CostbookName: FieldId;
@@ -256,6 +262,12 @@ declare module "@salesforce/schema/CostBook.ParentRecord" {
     import { FieldId } from "@salesforce/schema";
     const ParentRecord: FieldId;
     export default ParentRecord;
+}
+
+declare module "@salesforce/schema/CostBook.Pricebook2s" {
+    import { FieldId } from "@salesforce/schema";
+    const Pricebook2s: FieldId;
+    export default Pricebook2s;
 }
 
 declare module "@salesforce/schema/CostBook.ProcessInstances" {

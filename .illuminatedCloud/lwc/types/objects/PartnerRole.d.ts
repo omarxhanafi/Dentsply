@@ -2,15 +2,15 @@
 
 declare interface PartnerRole extends SObject 
 {
-    ApiName: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    ReverseRole: string;
-    SortOrder: number;
-    SystemModstamp: string;
+    ApiName?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    ReverseRole?: string;
+    SortOrder?: number;
+    SystemModstamp?: string;
 }

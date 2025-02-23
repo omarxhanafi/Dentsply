@@ -2,11 +2,11 @@
 
 declare interface CventEvents__NominationFilter__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Filter Logic</b></h3>
      * <p>Indicates what filter logic should be applied to the conditions.</p>
@@ -22,7 +22,7 @@ declare interface CventEvents__NominationFilter__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OR</code></td><td>OR</td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__FilterLogic__c: string;
+    CventEvents__FilterLogic__c?: string;
     /**
      * <h3><b>Title</b></h3>
      * <p>Stores the title of the Nomination Filter.</p>
@@ -34,12 +34,12 @@ declare interface CventEvents__NominationFilter__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Title__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    CventEvents__Title__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

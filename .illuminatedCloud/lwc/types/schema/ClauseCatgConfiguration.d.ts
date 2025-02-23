@@ -6,6 +6,12 @@ declare module "@salesforce/schema/ClauseCatgConfiguration" {
     export default ClauseCatgConfiguration;
 }
 
+declare module "@salesforce/schema/ClauseCatgConfiguration.CategoryReference" {
+    import { FieldId } from "@salesforce/schema";
+    const CategoryReference: FieldId;
+    export default CategoryReference;
+}
+
 declare module "@salesforce/schema/ClauseCatgConfiguration.CreatedBy" {
     import { FieldId } from "@salesforce/schema";
     const CreatedBy: FieldId;

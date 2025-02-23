@@ -11,9 +11,9 @@
  */
 declare interface geopointe__Check_In__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,7 +23,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Account__c: string;
+    geopointe__Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Account__r: Account;
+    geopointe__Account__r?: Account;
     /**
      * <h3><b>Accuracy - Check In (ft)</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Accuracy_Check_In_ft__c: number;
+    geopointe__Accuracy_Check_In_ft__c?: number;
     /**
      * <h3><b>Accuracy - Check In (m)</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Accuracy_Check_In_m__c: number;
+    geopointe__Accuracy_Check_In_m__c?: number;
     /**
      * <h3><b>Accuracy - Check Out (ft)</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Accuracy_Check_Out_ft__c: number;
+    geopointe__Accuracy_Check_Out_ft__c?: number;
     /**
      * <h3><b>Accuracy - Check Out (m)</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,7 +77,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Accuracy_Check_Out_m__c: number;
+    geopointe__Accuracy_Check_Out_m__c?: number;
     /**
      * <h3><b>Blank</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,7 +89,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Blank__c: string;
+    geopointe__Blank__c?: string;
     /**
      * <h3><b>Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,7 +99,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Case__c: string;
+    geopointe__Case__c?: string;
     /**
      * <h3><b>Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -109,7 +109,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Case__r: Case;
+    geopointe__Case__r?: Case;
     /**
      * <h3><b>Chatter ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -120,7 +120,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Chatter_ID__c: string;
+    geopointe__Chatter_ID__c?: string;
     /**
      * <h3><b>Chatter ID - Check Out</b></h3>
      * <h4>Field Attributes</h4>
@@ -131,7 +131,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Chatter_ID_Check_Out__c: string;
+    geopointe__Chatter_ID_Check_Out__c?: string;
     /**
      * <h3><b>Chatter This</b></h3>
      * <h4>Field Attributes</h4>
@@ -141,7 +141,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__Chatter_This__c: boolean;
+    geopointe__Chatter_This__c?: boolean;
     /**
      * <h3><b>Check Out Distance from Check In (km)</b></h3>
      * <p>Check Out Distance from Check In (kilometers)</p>
@@ -153,7 +153,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Check_Out_Distance_from_Check_In_km__c: number;
+    geopointe__Check_Out_Distance_from_Check_In_km__c?: number;
     /**
      * <h3><b>Check Out Distance from Check In (miles)</b></h3>
      * <p>The distance between the Check In and Check Out in miles.</p>
@@ -165,7 +165,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Check_Out_Distance_from_Check_In_miles__c: number;
+    geopointe__Check_Out_Distance_from_Check_In_miles__c?: number;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -175,7 +175,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Contact__c: string;
+    geopointe__Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -185,7 +185,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Contact__r: Contact;
+    geopointe__Contact__r?: Contact;
     /**
      * <h3><b>Geopointe Device</b></h3>
      * <h4>Field Attributes</h4>
@@ -195,7 +195,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Device__c: string;
+    geopointe__Device__c?: string;
     /**
      * <h3><b>Geopointe Device</b></h3>
      * <h4>Field Attributes</h4>
@@ -205,7 +205,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Device__r: geopointe__GP_Device__c;
+    geopointe__Device__r?: geopointe__GP_Device__c;
     /**
      * <h3><b>Device Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -215,7 +215,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Device_Event__c: string;
+    geopointe__Device_Event__c?: string;
     /**
      * <h3><b>Device Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -225,7 +225,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Device_Event__r: geopointe__GP_Device_Event__c;
+    geopointe__Device_Event__r?: geopointe__GP_Device_Event__c;
     /**
      * <h3><b>Device Event - Check Out</b></h3>
      * <h4>Field Attributes</h4>
@@ -235,7 +235,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Device_Event_Check_Out__c: string;
+    geopointe__Device_Event_Check_Out__c?: string;
     /**
      * <h3><b>Device Event - Check Out</b></h3>
      * <h4>Field Attributes</h4>
@@ -245,7 +245,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Device_Event_Check_Out__r: geopointe__GP_Device_Event__c;
+    geopointe__Device_Event_Check_Out__r?: geopointe__GP_Device_Event__c;
     /**
      * <h3><b>Distance from What ID (kilometers)</b></h3>
      * <h4>Field Attributes</h4>
@@ -256,7 +256,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Distance_from_What_ID_kilometers__c: number;
+    geopointe__Distance_from_What_ID_kilometers__c?: number;
     /**
      * <h3><b>Distance from What ID (miles)</b></h3>
      * <h4>Field Attributes</h4>
@@ -267,7 +267,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Distance_from_What_ID_miles__c: number;
+    geopointe__Distance_from_What_ID_miles__c?: number;
     /**
      * <h3><b>Geo Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -277,7 +277,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geo_Location__c: string;
+    geopointe__Geo_Location__c?: string;
     /**
      * <h3><b>Geo Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -287,7 +287,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geo_Location__r: geopointe__Geo_Location__c;
+    geopointe__Geo_Location__r?: geopointe__Geo_Location__c;
     /**
      * <h3><b>Geocode</b></h3>
      * <h4>Field Attributes</h4>
@@ -297,7 +297,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geocode__c: string;
+    geopointe__Geocode__c?: string;
     /**
      * <h3><b>Geocode</b></h3>
      * <h4>Field Attributes</h4>
@@ -307,7 +307,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geocode__r: geopointe__Geocode__c;
+    geopointe__Geocode__r?: geopointe__Geocode__c;
     /**
      * <h3><b>Geopointe Daily Summary</b></h3>
      * <h4>Field Attributes</h4>
@@ -317,7 +317,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geopointe_Daily_Summary__c: string;
+    geopointe__Geopointe_Daily_Summary__c?: string;
     /**
      * <h3><b>Geopointe Daily Summary</b></h3>
      * <h4>Field Attributes</h4>
@@ -327,7 +327,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geopointe_Daily_Summary__r: geopointe__GP_Daily_Report_Summary__c;
+    geopointe__Geopointe_Daily_Summary__r?: geopointe__GP_Daily_Report_Summary__c;
     /**
      * <h3><b>Headline</b></h3>
      * <h4>Field Attributes</h4>
@@ -338,7 +338,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Headline__c: string;
+    geopointe__Headline__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -348,7 +348,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Lead__c: string;
+    geopointe__Lead__c?: string;
     /**
      * <h3><b>Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -358,7 +358,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Lead__r: Lead;
+    geopointe__Lead__r?: Lead;
     /**
      * <h3><b>Map Link</b></h3>
      * <h4>Field Attributes</h4>
@@ -368,7 +368,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Map_Link__c: string;
+    geopointe__Map_Link__c?: string;
     /**
      * <h3><b>Map Link - Check Out</b></h3>
      * <h4>Field Attributes</h4>
@@ -378,7 +378,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Map_Link_Check_Out__c: string;
+    geopointe__Map_Link_Check_Out__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -388,7 +388,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Opportunity__c: string;
+    geopointe__Opportunity__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -398,7 +398,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Opportunity__r: Opportunity;
+    geopointe__Opportunity__r?: Opportunity;
     /**
      * <h3><b>Place ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -409,7 +409,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Place_ID__c: string;
+    geopointe__Place_ID__c?: string;
     /**
      * <h3><b>Task ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -420,7 +420,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Task_ID__c: string;
+    geopointe__Task_ID__c?: string;
     /**
      * <h3><b>Task ID - Check Out</b></h3>
      * <h4>Field Attributes</h4>
@@ -431,7 +431,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Task_ID_Check_Out__c: string;
+    geopointe__Task_ID_Check_Out__c?: string;
     /**
      * <h3><b>What ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -442,7 +442,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__What_ID__c: string;
+    geopointe__What_ID__c?: string;
     /**
      * <h3><b>What (Text)</b></h3>
      * <h4>Field Attributes</h4>
@@ -452,7 +452,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__What_Text__c: string;
+    geopointe__What_Text__c?: string;
     /**
      * <h3><b>When</b></h3>
      * <h4>Field Attributes</h4>
@@ -463,7 +463,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">now()</code></td></tr>
      * </table>
      */
-    geopointe__When__c: string;
+    geopointe__When__c?: string;
     /**
      * <h3><b>When - Check Out</b></h3>
      * <h4>Field Attributes</h4>
@@ -473,7 +473,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__When_Check_Out__c: string;
+    geopointe__When_Check_Out__c?: string;
     /**
      * <h3><b>Where - Check Out (Latitude)</b></h3>
      * <h4>Field Attributes</h4>
@@ -484,7 +484,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Where_Check_Out_Latitude__c: number;
+    geopointe__Where_Check_Out_Latitude__c?: number;
     /**
      * <h3><b>Where - Check Out (Longitude)</b></h3>
      * <h4>Field Attributes</h4>
@@ -495,7 +495,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Where_Check_Out_Longitude__c: number;
+    geopointe__Where_Check_Out_Longitude__c?: number;
     /**
      * <h3><b>Where (Latitude)</b></h3>
      * <h4>Field Attributes</h4>
@@ -506,7 +506,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Where_Latitude__c: number;
+    geopointe__Where_Latitude__c?: number;
     /**
      * <h3><b>Where (Longitude)</b></h3>
      * <h4>Field Attributes</h4>
@@ -517,7 +517,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Where_Longitude__c: number;
+    geopointe__Where_Longitude__c?: number;
     /**
      * <h3><b>Who</b></h3>
      * <h4>Field Attributes</h4>
@@ -527,7 +527,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Who__c: string;
+    geopointe__Who__c?: string;
     /**
      * <h3><b>Who</b></h3>
      * <h4>Field Attributes</h4>
@@ -537,7 +537,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Who__r: User;
+    geopointe__Who__r?: User;
     /**
      * <h3><b>Why (Text)</b></h3>
      * <h4>Field Attributes</h4>
@@ -546,7 +546,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Why_Text__c: string;
+    geopointe__Why_Text__c?: string;
     /**
      * <h3><b>Why - Check Out</b></h3>
      * <h4>Field Attributes</h4>
@@ -555,7 +555,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Why_Text_Check_Out__c: string;
+    geopointe__Why_Text_Check_Out__c?: string;
     /**
      * <h3><b>Check In Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -571,7 +571,7 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">geopointe.API Check-In</code></td><td>geopointe.API Check-In</td><td nowrap>true</td></tr>
      * </table>
      */
-    geopointe__Why_Type__c: string;
+    geopointe__Why_Type__c?: string;
     /**
      * <h3><b>Check Out Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -587,14 +587,14 @@ declare interface geopointe__Check_In__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">geopointe.API Check-Out</code></td><td>geopointe.API Check-Out</td><td nowrap>true</td></tr>
      * </table>
      */
-    geopointe__Why_Type_Check_Out__c: string;
+    geopointe__Why_Type_Check_Out__c?: string;
     /**
      * The reciprocal relationship for {@link geopointe__GP_Device_Event__c.geopointe__Auto_Check_In_Record__c}.
      */
-    Geopointe_Device_Events__r: geopointe__GP_Device_Event__c[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Geopointe_Device_Events__r?: geopointe__GP_Device_Event__c[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

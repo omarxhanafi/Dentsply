@@ -888,6 +888,12 @@ declare module "@salesforce/schema/User.EmployeeNumber" {
     export default EmployeeNumber;
 }
 
+declare module "@salesforce/schema/User.EndDay" {
+    import { FieldId } from "@salesforce/schema";
+    const EndDay: FieldId;
+    export default EndDay;
+}
+
 declare module "@salesforce/schema/User.EntityCreators" {
     import { FieldId } from "@salesforce/schema";
     const EntityCreators: FieldId;
@@ -1084,6 +1090,18 @@ declare module "@salesforce/schema/User.ForecastUser" {
     import { FieldId } from "@salesforce/schema";
     const ForecastUser: FieldId;
     export default ForecastUser;
+}
+
+declare module "@salesforce/schema/User.FulfillmentStepDefinitions" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentStepDefinitions: FieldId;
+    export default FulfillmentStepDefinitions;
+}
+
+declare module "@salesforce/schema/User.FulfillmentSteps" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentSteps: FieldId;
+    export default FulfillmentSteps;
 }
 
 declare module "@salesforce/schema/User.FullPhotoUrl" {
@@ -1306,6 +1324,12 @@ declare module "@salesforce/schema/User.IsExtIndicatorVisible" {
     import { FieldId } from "@salesforce/schema";
     const IsExtIndicatorVisible: FieldId;
     export default IsExtIndicatorVisible;
+}
+
+declare module "@salesforce/schema/User.IsPartner" {
+    import { FieldId } from "@salesforce/schema";
+    const IsPartner: FieldId;
+    export default IsPartner;
 }
 
 declare module "@salesforce/schema/User.IsPortalEnabled" {
@@ -1870,6 +1894,12 @@ declare module "@salesforce/schema/User.ParentRecord" {
     import { FieldId } from "@salesforce/schema";
     const ParentRecord: FieldId;
     export default ParentRecord;
+}
+
+declare module "@salesforce/schema/User.PasswordExpirationDate" {
+    import { FieldId } from "@salesforce/schema";
+    const PasswordExpirationDate: FieldId;
+    export default PasswordExpirationDate;
 }
 
 declare module "@salesforce/schema/User.PausingUser" {
@@ -2652,6 +2682,12 @@ declare module "@salesforce/schema/User.SmallPhotoUrl" {
     export default SmallPhotoUrl;
 }
 
+declare module "@salesforce/schema/User.StartDay" {
+    import { FieldId } from "@salesforce/schema";
+    const StartDay: FieldId;
+    export default StartDay;
+}
+
 declare module "@salesforce/schema/User.State" {
     import { FieldId } from "@salesforce/schema";
     const State: FieldId;
@@ -2680,6 +2716,12 @@ declare module "@salesforce/schema/User.Street" {
     import { FieldId } from "@salesforce/schema";
     const Street: FieldId;
     export default Street;
+}
+
+declare module "@salesforce/schema/User.SuAccessExpirationDate" {
+    import { FieldId } from "@salesforce/schema";
+    const SuAccessExpirationDate: FieldId;
+    export default SuAccessExpirationDate;
 }
 
 declare module "@salesforce/schema/User.Subject" {
@@ -2832,6 +2874,12 @@ declare module "@salesforce/schema/User.Title" {
     export default Title;
 }
 
+declare module "@salesforce/schema/User.TransferRequester" {
+    import { FieldId } from "@salesforce/schema";
+    const TransferRequester: FieldId;
+    export default TransferRequester;
+}
+
 declare module "@salesforce/schema/User.US_TeleSales_Team_Name__c" {
     import { FieldId } from "@salesforce/schema";
     const US_TeleSales_Team_Name__c: FieldId;
@@ -2866,6 +2914,12 @@ declare module "@salesforce/schema/User.UserFieldAccessRights" {
     import { FieldId } from "@salesforce/schema";
     const UserFieldAccessRights: FieldId;
     export default UserFieldAccessRights;
+}
+
+declare module "@salesforce/schema/User.UserLogins" {
+    import { FieldId } from "@salesforce/schema";
+    const UserLogins: FieldId;
+    export default UserLogins;
 }
 
 declare module "@salesforce/schema/User.UserOrGroup" {

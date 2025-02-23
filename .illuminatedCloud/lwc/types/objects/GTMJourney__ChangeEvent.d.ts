@@ -9,7 +9,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Account Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountCountry__c: string;
+    AccountCountry__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountPlan__c: string;
+    AccountPlan__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,8 +47,8 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountPlan__r: Account_Plan__c;
-    ChangeEventHeader: ChangeEventHeader;
+    AccountPlan__r?: Account_Plan__c;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -57,7 +57,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,11 +66,11 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Contact__r?: Contact;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Follow-Up Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,11 +78,11 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    FollowUpComments__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    FollowUpComments__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Owner__c: string;
+    Owner__c?: string;
     /**
      * <h3><b>Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -100,10 +100,10 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Owner__r: User;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    ReplayId: string;
+    Owner__r?: User;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Sales Action Step</b></h3>
      * <h4>Field Attributes</h4>
@@ -142,7 +142,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Study Club Owner</code></td><td>Study Club Owner</td><td nowrap>true</td></tr>
      * </table>
      */
-    SalesActionStep__c: string;
+    SalesActionStep__c?: string;
     /**
      * <h3><b>Stage</b></h3>
      * <h4>Field Attributes</h4>
@@ -161,7 +161,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Advocate</code></td><td>Advocate</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Stage__c: string;
+    Stage__c?: string;
     /**
      * <h3><b>Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -170,7 +170,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartDate__c: Date;
+    StartDate__c?: Date;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -185,7 +185,7 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Cancelled</code></td><td>Cancelled</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -209,5 +209,5 @@ declare interface GTMJourney__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type__c: string;
+    Type__c?: string;
 }

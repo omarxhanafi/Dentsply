@@ -2,7 +2,7 @@
 
 declare interface CaseChangeEvent extends SObject 
 {
-    Account: Account;
+    Account?: Account;
     /**
      * <h3><b>Account Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,7 +14,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Country__c: string;
+    Account_Country__c?: string;
     /**
      * <h3><b>Account Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Market__c: string;
+    Account_Market__c?: string;
     /**
      * <h3><b>Account Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Owner__c: string;
+    Account_Owner__c?: string;
     /**
      * <h3><b>Account Owner Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,8 +50,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Owner_Manager__c: string;
-    AccountId: string;
+    Account_Owner_Manager__c?: string;
+    AccountId?: string;
     /**
      * <h3><b>Address</b></h3>
      * <p>SureSmile Address HRID</p>
@@ -61,7 +61,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Address__c: string;
+    Address__c?: string;
     /**
      * <h3><b>Address</b></h3>
      * <p>SureSmile Address HRID</p>
@@ -71,7 +71,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Address__r: Address__c;
+    Address__r?: Address__c;
     /**
      * <h3><b>Address Combined Fields</b></h3>
      * <p>Used mainly to pull the combined fields field from the address to be used in the Service cloud flow directly.</p>
@@ -84,7 +84,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AddressCombinedFields__c: string;
+    AddressCombinedFields__c?: string;
     /**
      * <h3><b>Amount for Return or Exchange</b></h3>
      * <h4>Field Attributes</h4>
@@ -97,7 +97,7 @@ declare interface CaseChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Amount_for_ReturnExchange__c: number;
+    Amount_for_ReturnExchange__c?: number;
     /**
      * <h3><b>Approval Routing</b></h3>
      * <h4>Field Attributes</h4>
@@ -118,7 +118,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Customer Service Manager, Finance</code></td><td>Customer Service Manager, Finance</td><td nowrap>true</td></tr>
      * </table>
      */
-    Approval_Routing__c: string;
+    Approval_Routing__c?: string;
     /**
      * <h3><b>Area Sales Director</b></h3>
      * <h4>Field Attributes</h4>
@@ -127,7 +127,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Area_Sales_Director__c: string;
+    Area_Sales_Director__c?: string;
     /**
      * <h3><b>Area Sales Director</b></h3>
      * <h4>Field Attributes</h4>
@@ -136,7 +136,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Area_Sales_Director__r: User;
+    Area_Sales_Director__r?: User;
     /**
      * <h3><b>Article Number</b></h3>
      * <p>Used to fill in the article number related to a sevice feedback case.</p>
@@ -148,11 +148,11 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article_Number__c: string;
-    Asset: Asset;
-    AssetId: string;
-    AssetWarranty: AssetWarranty;
-    AssetWarrantyId: string;
+    Article_Number__c?: string;
+    Asset?: Asset;
+    AssetId?: string;
+    AssetWarranty?: AssetWarranty;
+    AssetWarrantyId?: string;
     /**
      * <h3><b>Assign To</b></h3>
      * <h4>Field Attributes</h4>
@@ -233,11 +233,12 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004GUcDUAW</code></td><td>Queue: SureSmile - Global Support</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004GUbyUAG</code></td><td>Queue: SureSmile - Berlin Support</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000003RXdL</code></td><td>Queue: SureSmile - Clinical Assistance</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00GKA000000MFaw</code></td><td>Queue: UK: Commercial Sales Support</td><td nowrap>true</td></tr>
      * </table>
      */
-    Assign_To__c: string;
-    BusinessHours: BusinessHours;
-    BusinessHoursId: string;
+    Assign_To__c?: string;
+    BusinessHours?: BusinessHours;
+    BusinessHoursId?: string;
     /**
      * <h3><b>Cancellation reason</b></h3>
      * <p>Add information about why you cancelled the CRM Request. - USED FOR CRM REQUESTS</p>
@@ -247,7 +248,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Cancellation_reason__c: string;
+    Cancellation_reason__c?: string;
     /**
      * <h3><b>Case Definition</b></h3>
      * <h4>Field Attributes</h4>
@@ -259,7 +260,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case_Definition__c: string;
+    Case_Definition__c?: string;
     /**
      * <h3><b>Case # (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -271,7 +272,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case_HQ__c: number;
+    Case_HQ__c?: number;
     /**
      * <h3><b>Case ID (18 Digits)</b></h3>
      * <h4>Field Attributes</h4>
@@ -283,7 +284,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case_ID_HQ__c: string;
+    Case_ID_HQ__c?: string;
     /**
      * <h3><b>case id text</b></h3>
      * <h4>Field Attributes</h4>
@@ -295,7 +296,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    case_id_text__c: string;
+    case_id_text__c?: string;
     /**
      * <h3><b>Case Initiated By</b></h3>
      * <h4>Field Attributes</h4>
@@ -314,7 +315,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Finance</code></td><td>Finance</td><td nowrap>true</td></tr>
      * </table>
      */
-    Case_Initiated_By__c: string;
+    Case_Initiated_By__c?: string;
     /**
      * <h3><b>Case Owner Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -326,7 +327,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case_Owner_Role__c: string;
+    Case_Owner_Role__c?: string;
     /**
      * <h3><b>Case Record</b></h3>
      * <h4>Field Attributes</h4>
@@ -338,7 +339,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case_Record__c: string;
+    Case_Record__c?: string;
     /**
      * <h3><b>Case Stage</b></h3>
      * <h4>Field Attributes</h4>
@@ -358,7 +359,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Closed</code></td><td>Closed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Case_Stage__c: string;
+    Case_Stage__c?: string;
     /**
      * <h3><b>Case Subtype</b></h3>
      * <h4>Field Attributes</h4>
@@ -384,7 +385,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Wrong Terms</code></td><td>Wrong Terms</td><td nowrap>true</td></tr>
      * </table>
      */
-    Case_Subtype__c: string;
+    Case_Subtype__c?: string;
     /**
      * <h3><b>Case Turnaround Time Assigned to Closed</b></h3>
      * <h4>Field Attributes</h4>
@@ -396,8 +397,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Case_Turnaround_Time_Assigned_to_Closed__c: string;
-    CaseNumber: string;
+    Case_Turnaround_Time_Assigned_to_Closed__c?: string;
+    CaseNumber?: string;
     /**
      * <h3><b>Case Type (Global)</b></h3>
      * <p>Upper level for case classification. New values introduced with June 2022 release.</p>
@@ -419,9 +420,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">General support/question</code></td><td>Customer Interaction</td><td nowrap>true</td></tr>
      * </table>
      */
-    CaseType__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    ClosedDate: string;
+    CaseType__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    ClosedDate?: string;
     /**
      * <h3><b>Complaint</b></h3>
      * <p>Used for service cloud. Is this case a complaint or not</p>
@@ -437,7 +438,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>true</td></tr>
      * </table>
      */
-    Complaint__c: string;
+    Complaint__c?: string;
     /**
      * <h3><b>Case Category</b></h3>
      * <p>We couldn&#39;t use the standard field Type since there are many limitations with standard fields.</p>
@@ -510,7 +511,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Warranty</code></td><td>Warranty</td><td nowrap>true</td></tr>
      * </table>
      */
-    Complaint_Category__c: string;
+    Complaint_Category__c?: string;
     /**
      * <h3><b>Case Reason</b></h3>
      * <p>The last level of case classification.</p>
@@ -655,9 +656,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Patient Transfer</code></td><td>Patient Transfer</td><td nowrap>true</td></tr>
      * </table>
      */
-    Complaint_Reason2__c: string;
-    Contact: Contact;
-    ContactId: string;
+    Complaint_Reason2__c?: string;
+    Contact?: Contact;
+    ContactId?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -692,9 +693,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">US</code></td><td>US</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
     /**
      * <h3><b>Created By Me?</b></h3>
      * <p>Help field used in list view to filter dynamically the cases the users has created</p>
@@ -707,8 +708,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CreatedByMe__c: string;
-    CreatedDate: string;
+    CreatedByMe__c?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Creator Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -720,7 +721,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Country__c: string;
+    Creator_Country__c?: string;
     /**
      * <h3><b>Credit Order Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -729,7 +730,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Order_Amount__c: number;
+    Credit_Order_Amount__c?: number;
     /**
      * <h3><b>Credit Order Amount Formula</b></h3>
      * <h4>Field Attributes</h4>
@@ -741,7 +742,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Order_Amount_Formula__c: number;
+    Credit_Order_Amount_Formula__c?: number;
     /**
      * <h3><b>Credit Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -752,7 +753,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Order_Number__c: string;
+    Credit_Order_Number__c?: string;
     /**
      * <h3><b>Credit Order Total</b></h3>
      * <h4>Field Attributes</h4>
@@ -761,7 +762,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Order_Total__c: number;
+    Credit_Order_Total__c?: number;
     /**
      * <h3><b>Credit/Rebill</b></h3>
      * <h4>Field Attributes</h4>
@@ -772,7 +773,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Rebill__c: string;
+    Credit_Rebill__c?: string;
     /**
      * <h3><b>CRM Analyst</b></h3>
      * <h4>Field Attributes</h4>
@@ -781,7 +782,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CRM_Analyst__c: string;
+    CRM_Analyst__c?: string;
     /**
      * <h3><b>CRM Analyst</b></h3>
      * <h4>Field Attributes</h4>
@@ -790,7 +791,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CRM_Analyst__r: User;
+    CRM_Analyst__r?: User;
     /**
      * <h3><b>CS Processing Time(Days)</b></h3>
      * <h4>Field Attributes</h4>
@@ -802,7 +803,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CS_Processing_Time__c: number;
+    CS_Processing_Time__c?: number;
     /**
      * <h3><b>CS Processing Time Rec to Closed</b></h3>
      * <h4>Field Attributes</h4>
@@ -814,8 +815,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CS_Processing_Time_Rec_to_Closed__c: string;
-    CurrencyIsoCode: string;
+    CS_Processing_Time_Rec_to_Closed__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Service Processing Completed</b></h3>
      * <h4>Field Attributes</h4>
@@ -824,7 +825,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Processing_Completed__c: string;
+    Customer_Service_Processing_Completed__c?: string;
     /**
      * <h3><b>Date Assigned to Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -833,7 +834,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Date_Assigned_to_Owner__c: string;
+    Date_Assigned_to_Owner__c?: string;
     /**
      * <h3><b>Denial Order Tracking Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -844,7 +845,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Denial_Order_Tracking_Number__c: string;
+    Denial_Order_Tracking_Number__c?: string;
     /**
      * <h3><b>Denial Ship Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -853,8 +854,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Denial_Ship_Date__c: Date;
-    Description: string;
+    Denial_Ship_Date__c?: Date;
+    Description?: string;
     /**
      * <h3><b>Dev environment sync</b></h3>
      * <p>Used to keep track of changes to production that must be synced with the development environments including git-hub that we have.</p>
@@ -870,7 +871,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dev Env Sync completed</code></td><td>Dev Env Sync completed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Dev_environment_sync__c: string;
+    Dev_environment_sync__c?: string;
     /**
      * <h3><b>Development ID</b></h3>
      * <p>Applicable only for Digital Software Support</p>
@@ -882,7 +883,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Development_ID__c: string;
+    Development_ID__c?: string;
     /**
      * <h3><b>Digital Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -968,7 +969,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Wires</code></td><td>Wires</td><td nowrap>true</td></tr>
      * </table>
      */
-    Digital_Product__c: string;
+    Digital_Product__c?: string;
     /**
      * <h3><b>Due Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -977,9 +978,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Due_Date__c: Date;
-    Entitlement: Entitlement;
-    EntitlementId: string;
+    Due_Date__c?: Date;
+    Entitlement?: Entitlement;
+    EntitlementId?: string;
     /**
      * <h3><b>ERP Status icon</b></h3>
      * <h4>Field Attributes</h4>
@@ -991,7 +992,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERP_Status_icon__c: string;
+    ERP_Status_icon__c?: string;
     /**
      * <h3><b>Exchange Order Ship Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -1000,7 +1001,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Exchange_Order_Ship_Date__c: Date;
+    Exchange_Order_Ship_Date__c?: Date;
     /**
      * <h3><b>Exchange Order Value</b></h3>
      * <p>added 2 decimals per this request
@@ -1011,7 +1012,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Exchange_Order_Value__c: number;
+    Exchange_Order_Value__c?: number;
     /**
      * <h3><b>Expected Completion Date</b></h3>
      * <p>To Be Deleted - removed all access 2019-09-13, used for CRM Requests</p>
@@ -1021,7 +1022,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Expected_Completion_Date__c: Date;
+    Expected_Completion_Date__c?: Date;
     /**
      * <h3><b>Field Approvals Completed</b></h3>
      * <h4>Field Attributes</h4>
@@ -1030,7 +1031,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Field_Approvals_Completed__c: string;
+    Field_Approvals_Completed__c?: string;
     /**
      * <h3><b>First call resolution</b></h3>
      * <h4>Field Attributes</h4>
@@ -1045,7 +1046,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    First_call_resolution__c: string;
+    First_call_resolution__c?: string;
     /**
      * <h3><b>First Call Resolution (Checkbox)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1054,7 +1055,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(ISPICKVAL(First_call_resolution__c, &#39;Yes&#39;), true, false)</code></td></tr>
      * </table>
      */
-    FirstCallResolution__c: boolean;
+    FirstCallResolution__c?: boolean;
     /**
      * <h3><b>First Real Owner</b></h3>
      * <p>Technical field used to set the first real owner Id, used to assign email2case cases to their original owner instead to to the support user TFUS-000003410</p>
@@ -1066,7 +1067,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FirstRealOwner_TF__c: string;
+    FirstRealOwner_TF__c?: string;
     /**
      * <h3><b>Flow Case</b></h3>
      * <p>This field is updated automatically from the Service cloud flow to tag this case as created by the flow</p>
@@ -1076,9 +1077,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FlowCase__c: boolean;
-    HasCommentsUnreadByOwner: boolean;
-    HasSelfServiceComments: boolean;
+    FlowCase__c?: boolean;
+    HasCommentsUnreadByOwner?: boolean;
+    HasSelfServiceComments?: boolean;
     /**
      * <h3><b>Inbound Email After Case Closed</b></h3>
      * <p>This will be True if a closed case received a new email. TFUS-000001840</p>
@@ -1088,7 +1089,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">If ( LastInboundEmailDate__c &gt;  ClosedDate ,True,False)</code></td></tr>
      * </table>
      */
-    InboundEmailAfterCaseClosed__c: boolean;
+    InboundEmailAfterCaseClosed__c?: boolean;
     /**
      * <h3><b>Internal Comment</b></h3>
      * <h4>Field Attributes</h4>
@@ -1096,7 +1097,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Internal_Comment__c: string;
+    Internal_Comment__c?: string;
     /**
      * <h3><b>Internal Email2Case</b></h3>
      * <p>TFUS-000003101 , Used to prevent sending email notifications when the email2case originated from a dentsplysirona internal email or Salesforce notification</p>
@@ -1109,7 +1110,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    InternalEmail2Case__c: string;
+    InternalEmail2Case__c?: string;
     /**
      * <h3><b>Invoice Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -1120,14 +1121,14 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Number__c: string;
-    IsClosed: boolean;
-    IsClosedOnCreate: boolean;
-    IsEscalated: boolean;
-    IsSelfServiceClosed: boolean;
-    IsStopped: boolean;
-    IsVisibleInSelfService: boolean;
-    Language: string;
+    Invoice_Number__c?: string;
+    IsClosed?: boolean;
+    IsClosedOnCreate?: boolean;
+    IsEscalated?: boolean;
+    IsSelfServiceClosed?: boolean;
+    IsStopped?: boolean;
+    IsVisibleInSelfService?: boolean;
+    Language?: string;
     /**
      * <h3><b>Last CSat</b></h3>
      * <p>Last customer satisfaction value from the last survey. Filled automatically by the mapping of getfeedback.</p>
@@ -1139,7 +1140,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_CSat__c: number;
+    Last_CSat__c?: number;
     /**
      * <h3><b>Last Csat Value</b></h3>
      * <p>Last customer satisfaction value from the last survey. Filled automatically by the mapping of getfeedback.</p>
@@ -1151,7 +1152,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Csat_Value__c: string;
+    Last_Csat_Value__c?: string;
     /**
      * <h3><b>Last NPS</b></h3>
      * <p>Last Net Promoter Score value from the last survey. Filled automatically by the mapping of getfeedback.</p>
@@ -1163,7 +1164,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_NPS__c: number;
+    Last_NPS__c?: number;
     /**
      * <h3><b>Last Survey Update</b></h3>
      * <p>Date of the last survey. Filled automatically by the mapping of getfeedback.</p>
@@ -1173,7 +1174,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Survey_Update__c: Date;
+    Last_Survey_Update__c?: Date;
     /**
      * <h3><b>Last Email Type</b></h3>
      * <p>Reflects the type of last Email Message related to this case. Updated through the EmailMessage default process. TFUS-000001840</p>
@@ -1189,7 +1190,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Outbound</code></td><td>Outbound</td><td nowrap>true</td></tr>
      * </table>
      */
-    LastEmailType__c: string;
+    LastEmailType__c?: string;
     /**
      * <h3><b>Last Inbound Email Date</b></h3>
      * <p>The date/time of the last incoming email. TFUS-000001840</p>
@@ -1199,10 +1200,10 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastInboundEmailDate__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    LastInboundEmailDate__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Latest Comments Change on</b></h3>
      * <p>to be populated with the date/time of the latest changes on Comments, this helps to update the last modified date on the case
@@ -1213,7 +1214,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Latest_Comments_Change_on__c: string;
+    Latest_Comments_Change_on__c?: string;
     /**
      * <h3><b>Lot Number</b></h3>
      * <p>Used to fill in the Lot Number related to a Service Feedback case.</p>
@@ -1225,7 +1226,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lot_Number__c: string;
+    Lot_Number__c?: string;
     /**
      * <h3><b>Main SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -1234,7 +1235,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_SBU__c: string;
+    Main_SBU__c?: string;
     /**
      * <h3><b>Main SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -1243,7 +1244,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_SBU__r: SBU_Information__c;
+    Main_SBU__r?: SBU_Information__c;
     /**
      * <h3><b>Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -1252,7 +1253,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manager__c: string;
+    Manager__c?: string;
     /**
      * <h3><b>Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -1261,7 +1262,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manager__r: User;
+    Manager__r?: User;
     /**
      * <h3><b>MD Legacy ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -1273,7 +1274,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MD_Legacy_ID__c: string;
+    MD_Legacy_ID__c?: string;
     /**
      * <h3><b>ERP Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -1285,7 +1286,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex__c: string;
+    Movex__c?: string;
     /**
      * <h3><b>Multiple Articles</b></h3>
      * <h4>Field Attributes</h4>
@@ -1297,7 +1298,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Multiple_Articles__c: string;
+    Multiple_Articles__c?: string;
     /**
      * <h3><b>My Case?</b></h3>
      * <p>Help field to filter my cases based on different criteria - CRM Requests</p>
@@ -1310,7 +1311,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    My_Case__c: string;
+    My_Case__c?: string;
     /**
      * <h3><b>NA: case edit</b></h3>
      * <p>This is a field that get checked after a case has been approved in US.
@@ -1321,7 +1322,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    NA_case_edit__c: boolean;
+    NA_case_edit__c?: boolean;
     /**
      * <h3><b>New or Replacement Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -1332,7 +1333,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    New_or_Replacement_Order__c: string;
+    New_or_Replacement_Order__c?: string;
     /**
      * <h3><b>Next Review Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -1341,7 +1342,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Next_Review_Date__c: Date;
+    Next_Review_Date__c?: Date;
     /**
      * <h3><b>No Action Age</b></h3>
      * <h4>Field Attributes</h4>
@@ -1353,7 +1354,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    No_Action_Age__c: number;
+    No_Action_Age__c?: number;
     /**
      * <h3><b>Objects missing</b></h3>
      * <h4>Field Attributes</h4>
@@ -1365,7 +1366,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Objects_missing__c: string;
+    Objects_missing__c?: string;
     /**
      * <h3><b># of Approved Article Numbers</b></h3>
      * <h4>Field Attributes</h4>
@@ -1376,7 +1377,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Article__c.of_Approved_Article_Numbers__c</code></td></tr>
      * </table>
      */
-    of_Approved_Article_Numbers__c: number;
+    of_Approved_Article_Numbers__c?: number;
     /**
      * <h3><b># of Article Numbers</b></h3>
      * <h4>Field Attributes</h4>
@@ -1386,7 +1387,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Article__c.Related_Case__c</code></td></tr>
      * </table>
      */
-    of_Article_Numbers__c: number;
+    of_Article_Numbers__c?: number;
     /**
      * <h3><b># of Salesforce Licenses Needed</b></h3>
      * <h4>Field Attributes</h4>
@@ -1397,7 +1398,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Salesforce_Licenses_Needed__c: number;
+    of_Salesforce_Licenses_Needed__c?: number;
     /**
      * <h3><b>Order Details</b></h3>
      * <h4>Field Attributes</h4>
@@ -1409,7 +1410,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Details__c: string;
+    Order_Details__c?: string;
     /**
      * <h3><b>Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -1420,7 +1421,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Number__c: string;
+    Order_Number__c?: string;
     /**
      * <h3><b>Order Origin</b></h3>
      * <p>How did the customer sent the order
@@ -1440,7 +1441,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Email</code></td><td>Email</td><td nowrap>true</td></tr>
      * </table>
      */
-    Order_Origin__c: string;
+    Order_Origin__c?: string;
     /**
      * <h3><b>Order System</b></h3>
      * <p>Select the related order system, DentalPlanit (DP), Materialise Online Ordering (MOO), PWS, or Movex</p>
@@ -1459,7 +1460,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">PWS</code></td><td>PWS</td><td nowrap>true</td></tr>
      * </table>
      */
-    Order_System__c: string;
+    Order_System__c?: string;
     /**
      * <h3><b>Order Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1477,8 +1478,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Rewards Order</code></td><td>Rewards Order</td><td nowrap>true</td></tr>
      * </table>
      */
-    Order_Type__c: string;
-    Origin: string;
+    Order_Type__c?: string;
+    Origin?: string;
     /**
      * <h3><b>Original Order Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -1487,7 +1488,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Original_Order_Date__c: Date;
+    Original_Order_Date__c?: Date;
     /**
      * <h3><b>Overall Approval Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -1499,9 +1500,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Overall_Approval_Status__c: string;
-    Owner: User;
-    OwnerId: string;
+    Overall_Approval_Status__c?: string;
+    Owner?: User;
+    OwnerId?: string;
     /**
      * <h3><b>Owner Name</b></h3>
      * <p>Used to tag the owner name in Text to make it searchable in the List views. TFUS-000003561</p>
@@ -1513,9 +1514,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OwnerName_TF__c: string;
-    Parent: Case;
-    ParentId: string;
+    OwnerName_TF__c?: string;
+    Parent?: Case;
+    ParentId?: string;
     /**
      * <h3><b>PO Number</b></h3>
      * <p>Requested by the Control Tower</p>
@@ -1527,7 +1528,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PO_Number__c: string;
+    PO_Number__c?: string;
     /**
      * <h3><b>Previous Case Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -1538,9 +1539,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Previous_Case_Owner__c: string;
-    Priority: string;
-    Product: Product2;
+    Previous_Case_Owner__c?: string;
+    Priority?: string;
+    Product?: Product2;
     /**
      * <h3><b>Product Line</b></h3>
      * <p>The major business units for Dentsply Implants</p>
@@ -1675,8 +1676,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">X-Ray</code></td><td>X-Ray</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Line__c: string;
-    ProductId: string;
+    Product_Line__c?: string;
+    ProductId?: string;
     /**
      * <h3><b>Queue assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -1685,7 +1686,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Owner:Queue.Id != &quot;&quot;</code></td></tr>
      * </table>
      */
-    Queue_assigned__c: boolean;
+    Queue_assigned__c?: boolean;
     /**
      * <h3><b>Quick Links</b></h3>
      * <p>For CRM Requests</p>
@@ -1698,7 +1699,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quick_Links2__c: string;
+    Quick_Links2__c?: string;
     /**
      * <h3><b>Assign To (Quick Links)</b></h3>
      * <p>Service Complaint Field to display the top page links</p>
@@ -1711,7 +1712,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quick_Links__c: string;
+    Quick_Links__c?: string;
     /**
      * <h3><b>Main RCO (TBD)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1720,7 +1721,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RCO__c: string;
+    RCO__c?: string;
     /**
      * <h3><b>Main RCO (TBD)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1729,8 +1730,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RCO__r: RCO_Information__c;
-    Reason: string;
+    RCO__r?: RCO_Information__c;
+    Reason?: string;
     /**
      * <h3><b>Rebill Order Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1739,7 +1740,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rebill_Order_Amount__c: number;
+    Rebill_Order_Amount__c?: number;
     /**
      * <h3><b>Rebill Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -1750,9 +1751,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rebill_Order_Number__c: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
+    Rebill_Order_Number__c?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Related Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -1761,7 +1762,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    related_Country__c: string;
+    related_Country__c?: string;
     /**
      * <h3><b>Related Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -1770,7 +1771,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    related_Country__r: Country__c;
+    related_Country__r?: Country__c;
     /**
      * <h3><b>Related Deployment Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -1779,7 +1780,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Related_Deployment_Project__c: string;
+    Related_Deployment_Project__c?: string;
     /**
      * <h3><b>Related Deployment Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -1788,7 +1789,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Related_Deployment_Project__r: Project__c;
+    Related_Deployment_Project__r?: Project__c;
     /**
      * <h3><b>Related Development Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -1797,7 +1798,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Related_Development_Project__c: string;
+    Related_Development_Project__c?: string;
     /**
      * <h3><b>Related Development Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -1806,7 +1807,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Related_Development_Project__r: Project__c;
+    Related_Development_Project__r?: Project__c;
     /**
      * <h3><b>Related Accounts</b></h3>
      * <p>Number of Related Accounts to the case</p>
@@ -1817,7 +1818,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CaseAccountRole__c.Case__c</code></td></tr>
      * </table>
      */
-    RelatedAccounts__c: number;
+    RelatedAccounts__c?: number;
     /**
      * <h3><b>Release Date</b></h3>
      * <p>CRM Request Release Date</p>
@@ -1827,7 +1828,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ReleaseDate__c: Date;
+    ReleaseDate__c?: Date;
     /**
      * <h3><b>Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -1836,7 +1837,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rep__c: string;
+    Rep__c?: string;
     /**
      * <h3><b>Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -1845,8 +1846,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rep__r: User;
-    ReplayId: string;
+    Rep__r?: User;
+    ReplayId?: string;
     /**
      * <h3><b>Request Sub-Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1909,15 +1910,16 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SFDC</code></td><td>SFDC</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Marketing Cloud</code></td><td>Marketing Cloud</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Einstein Analytics</code></td><td>Einstein Analytics</td><td nowrap>true</td></tr>
-     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">GeoPointe</code></td><td>GeoPointe</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SF Maps</code></td><td>SF Maps</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">GetFeedback</code></td><td>GetFeedback</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Demand Tools</code></td><td>Demand Tools</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">GitHub</code></td><td>GitHub</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Gearset</code></td><td>Gearset</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Data Management</code></td><td>Data Management</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">GeoPointe</code></td><td>GeoPointe</td><td nowrap>true</td></tr>
      * </table>
      */
-    Request_Sub_Type__c: string;
+    Request_Sub_Type__c?: string;
     /**
      * <h3><b>Request Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1934,6 +1936,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Enable existing functionality</code></td><td>Enable existing functionality</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Training</code></td><td>Training</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New Licenses</code></td><td>New Licenses</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">KOL Management</code></td><td>KOL Management</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Bug / General Question</code></td><td>Bug / General Question</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Data Management</code></td><td>Data Management</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Deployment Request</code></td><td>Deployment Request</td><td nowrap>true</td></tr>
@@ -1943,7 +1946,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WAVE</code></td><td>WAVE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Request_Type__c: string;
+    Request_Type__c?: string;
     /**
      * <h3><b>Responsible for Error</b></h3>
      * <h4>Field Attributes</h4>
@@ -1952,7 +1955,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Responsible_for_Error__c: string;
+    Responsible_for_Error__c?: string;
     /**
      * <h3><b>Responsible for Error</b></h3>
      * <h4>Field Attributes</h4>
@@ -1961,7 +1964,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Responsible_for_Error__r: User;
+    Responsible_for_Error__r?: User;
     /**
      * <h3><b>Responsible Function</b></h3>
      * <p>The team that responsible for error</p>
@@ -1971,7 +1974,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ResponsibleFunction__c: string;
+    ResponsibleFunction__c?: string;
     /**
      * <h3><b>Return Tracking Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -1982,7 +1985,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Return_Tracking_Number__c: string;
+    Return_Tracking_Number__c?: string;
     /**
      * <h3><b>Returned Product Received Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -1991,7 +1994,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Returned_Product_Received_Date__c: string;
+    Returned_Product_Received_Date__c?: string;
     /**
      * <h3><b>Returns Proc.Time (Days): Rec. to Closed</b></h3>
      * <h4>Field Attributes</h4>
@@ -2003,7 +2006,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Returns_Processing_Time_Rec_to_Closed__c: number;
+    Returns_Processing_Time_Rec_to_Closed__c?: number;
     /**
      * <h3><b>SiroForce Created Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -2012,7 +2015,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SAPCreatedDate__c: string;
+    SAPCreatedDate__c?: string;
     /**
      * <h3><b>SAP Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -2023,7 +2026,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    SAPId__c: string;
+    SAPId__c?: string;
     /**
      * <h3><b>Product Group</b></h3>
      * <p>Use only for Service Complaint</p>
@@ -2033,7 +2036,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
     /**
      * <h3><b>Send Survey</b></h3>
      * <h4>Field Attributes</h4>
@@ -2042,9 +2045,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Send_Survey__c: boolean;
-    ServiceContract: ServiceContract;
-    ServiceContractId: string;
+    Send_Survey__c?: boolean;
+    ServiceContract?: ServiceContract;
+    ServiceContractId?: string;
     /**
      * <h3><b>Contact Person E-Mail Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -2055,7 +2058,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SiroforceEMailAddress__c: string;
+    SiroforceEMailAddress__c?: string;
     /**
      * <h3><b>Additional Partner</b></h3>
      * <h4>Field Attributes</h4>
@@ -2064,7 +2067,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SiroforcePartner__c: string;
+    SiroforcePartner__c?: string;
     /**
      * <h3><b>Additional Partner</b></h3>
      * <h4>Field Attributes</h4>
@@ -2073,9 +2076,9 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SiroforcePartner__r: Account;
-    SlaExitDate: string;
-    SlaStartDate: string;
+    SiroforcePartner__r?: Account;
+    SlaExitDate?: string;
+    SlaStartDate?: string;
     /**
      * <h3><b>SLA Status</b></h3>
      * <p>Used to identify the milestone status, If the status is Red then this indicates that the milestone has been violated, If its Orange then the milestone is about being violated after a while and if its Green then still there is enough time for the CS agent to handle the case.</p>
@@ -2092,7 +2095,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Red</code></td><td>Red</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SLAStatus__c: string;
+    SLAStatus__c?: string;
     /**
      * <h3><b>SLA Status</b></h3>
      * <p>Used to display an image (Green,Orange or Red) flag, based on the SLA status</p>
@@ -2105,8 +2108,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SLAStatusImage__c: string;
-    Source: SObject;
+    SLAStatusImage__c?: string;
+    Source?: SObject;
     /**
      * <h3><b>Source Record</b></h3>
      * <h4>Field Attributes</h4>
@@ -2115,7 +2118,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Source_Record__c: string;
+    Source_Record__c?: string;
     /**
      * <h3><b>Source Record</b></h3>
      * <h4>Field Attributes</h4>
@@ -2124,7 +2127,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Source_Record__r: Source_Record__c;
+    Source_Record__r?: Source_Record__c;
     /**
      * <h3><b>Source Record Info</b></h3>
      * <p>Can be added to layout upon request, now it&#39;s used in the service cloud flow to pull the information directly from the case instead of the source record object</p>
@@ -2137,15 +2140,15 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Source_Record_Info__c: string;
-    SourceId: string;
-    Status: string;
-    StopStartDate: string;
-    Subject: string;
-    SuppliedCompany: string;
-    SuppliedEmail: string;
-    SuppliedName: string;
-    SuppliedPhone: string;
+    Source_Record_Info__c?: string;
+    SourceId?: string;
+    Status?: string;
+    StopStartDate?: string;
+    Subject?: string;
+    SuppliedCompany?: string;
+    SuppliedEmail?: string;
+    SuppliedName?: string;
+    SuppliedPhone?: string;
     /**
      * <h3><b>Support Case</b></h3>
      * <p>Checks if the case is created by a CRM Analyst or not, used in view lists, reports filters</p>
@@ -2155,7 +2158,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( ((Contains(CreatedBy.Profile__c,&quot;National&quot;) || Contains(CreatedBy.Profile__c,&quot;Analyst&quot;)) ||  ISPICKVAL( Origin,&quot;Support Email&quot;) ||   Owner:User.Id=&quot;00520000003K254&quot;) &amp;&amp; Not(ispickval( Request_Type__c ,&quot;Deployment Request&quot;)) ,True,False)</code></td></tr>
      * </table>
      */
-    Support_Case__c: boolean;
+    Support_Case__c?: boolean;
     /**
      * <h3><b>Support Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -2166,7 +2169,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Support_Email__c: string;
+    Support_Email__c?: string;
     /**
      * <h3><b>Support Keyword</b></h3>
      * <h4>Field Attributes</h4>
@@ -2234,7 +2237,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XIOS XG Supreme</code></td><td>XIOS XG Supreme</td><td nowrap>true</td></tr>
      * </table>
      */
-    Support_Keyword__c: string;
+    Support_Keyword__c?: string;
     /**
      * <h3><b>Teamforce Product</b></h3>
      * <p>Add to which &quot;Product&quot; offered by the CRM team the request is related to</p>
@@ -2244,7 +2247,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Teamforce_Product__c: string;
+    Teamforce_Product__c?: string;
     /**
      * <h3><b>Country field</b></h3>
      * <h4>Field Attributes</h4>
@@ -2255,7 +2258,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Country_field__c: string;
+    testInCountry1__Country_field__c?: string;
     /**
      * <h3><b>TF_Migrated</b></h3>
      * <p>Technical field to confirm the migration to new case classifications</p>
@@ -2265,7 +2268,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    TF_Migrated__c: boolean;
+    TF_Migrated__c?: boolean;
     /**
      * <h3><b>Multiple Emails</b></h3>
      * <p>If the customer sent email to case then they replied to the Auto Response and the Case Status is still &quot;New&quot;, this help field will be True.
@@ -2279,7 +2282,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TF_MultipleEmails__c: string;
+    TF_MultipleEmails__c?: string;
     /**
      * <h3><b>TF_NewOwnerNotification</b></h3>
      * <p>Updated through the Case: Create Case ver2 flow and used in the Case process builder</p>
@@ -2289,7 +2292,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    TF_NewOwnerNotification__c: boolean;
+    TF_NewOwnerNotification__c?: boolean;
     /**
      * <h3><b>Tracking Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -2300,7 +2303,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tracking_number__c: string;
+    Tracking_number__c?: string;
     /**
      * <h3><b>TrackWise Comment</b></h3>
      * <h4>Field Attributes</h4>
@@ -2309,7 +2312,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TrackWise_Comment__c: string;
+    TrackWise_Comment__c?: string;
     /**
      * <h3><b>TrackWise ID (PR ID)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2320,7 +2323,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TrackWise_ID__c: string;
+    TrackWise_ID__c?: string;
     /**
      * <h3><b>Transaction Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -2338,8 +2341,8 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Shipping Credits</code></td><td>Shipping Credits</td><td nowrap>true</td></tr>
      * </table>
      */
-    Transaction_Type__c: string;
-    Type: string;
+    Transaction_Type__c?: string;
+    Type?: string;
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -2429,7 +2432,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yemen</code></td><td>Yemen</td><td nowrap>true</td></tr>
      * </table>
      */
-    User_Country__c: string;
+    User_Country__c?: string;
     /**
      * <h3><b>Voicemail Left/Email Sent</b></h3>
      * <p>Ticked when the case status is waiting for customer feedback</p>
@@ -2439,7 +2442,7 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    VoicemailLeft__c: boolean;
+    VoicemailLeft__c?: boolean;
     /**
      * <h3><b>WeekDay</b></h3>
      * <p>A help field to tag the case with the Weekday, used in reports to show stats of cases per weekday.</p>
@@ -2452,5 +2455,5 @@ declare interface CaseChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WeekDay__c: string;
+    WeekDay__c?: string;
 }

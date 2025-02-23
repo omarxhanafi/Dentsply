@@ -2,8 +2,8 @@
 
 declare interface ContentUserSubscription extends SObject 
 {
-    SubscribedToUser: User;
-    SubscribedToUserId: string;
-    SubscriberUser: User;
-    SubscriberUserId: string;
+    SubscribedToUser?: User;
+    SubscribedToUserId?: string;
+    SubscriberUser?: User;
+    SubscriberUserId?: string;
 }

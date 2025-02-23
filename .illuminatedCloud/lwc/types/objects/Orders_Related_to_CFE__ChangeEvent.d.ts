@@ -10,7 +10,7 @@ declare interface Orders_Related_to_CFE__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Activeted_Order_Amount__c: number;
+    Activeted_Order_Amount__c?: number;
     /**
      * <h3><b>Amount of Order in the Approval Process</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,16 +19,16 @@ declare interface Orders_Related_to_CFE__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Amount_of_Order_in_the_Approval_Process__c: number;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Amount_of_Order_in_the_Approval_Process__c?: number;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Number of Activated Orders</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface Orders_Related_to_CFE__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Number_of_Activated_Orders__c: number;
+    Number_of_Activated_Orders__c?: number;
     /**
      * <h3><b>Number of Orders in the Approval Process</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface Orders_Related_to_CFE__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Number_of_Orders_in_the_Approval_Process__c: number;
+    Number_of_Orders_in_the_Approval_Process__c?: number;
     /**
      * <h3><b>Number of Created Orders</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,7 +61,7 @@ declare interface Orders_Related_to_CFE__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Numbers_of_Created_Orders__c: number;
+    Numbers_of_Created_Orders__c?: number;
     /**
      * <h3><b>Number of Deleted Orders</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,8 +72,8 @@ declare interface Orders_Related_to_CFE__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Numbers_of_Deleted_Orders__c: number;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    Numbers_of_Deleted_Orders__c?: number;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

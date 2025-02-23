@@ -318,6 +318,12 @@ declare module "@salesforce/schema/PricingAdjBatchJob.Shares" {
     export default Shares;
 }
 
+declare module "@salesforce/schema/PricingAdjBatchJob.ShouldSkipBulkRetry" {
+    import { FieldId } from "@salesforce/schema";
+    const ShouldSkipBulkRetry: FieldId;
+    export default ShouldSkipBulkRetry;
+}
+
 declare module "@salesforce/schema/PricingAdjBatchJob.SobjectLookupValue" {
     import { FieldId } from "@salesforce/schema";
     const SobjectLookupValue: FieldId;

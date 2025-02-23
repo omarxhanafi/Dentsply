@@ -2,19 +2,19 @@
 
 declare interface WorkPlanTemplateEntryChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    ExecutionOrder: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    ReplayId: string;
-    WorkPlanTemplate: WorkPlanTemplate;
-    WorkPlanTemplateEntryNumber: string;
-    WorkPlanTemplateId: string;
-    WorkStepTemplate: WorkStepTemplate;
-    WorkStepTemplateId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    ExecutionOrder?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    ReplayId?: string;
+    WorkPlanTemplate?: WorkPlanTemplate;
+    WorkPlanTemplateEntryNumber?: string;
+    WorkPlanTemplateId?: string;
+    WorkStepTemplate?: WorkStepTemplate;
+    WorkStepTemplateId?: string;
 }

@@ -2,16 +2,16 @@
 
 declare interface NetworkMemberGroup extends SObject 
 {
-    AssignmentStatus: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Network: Network;
-    NetworkId: string;
-    Parent: SObject;
-    ParentId: string;
-    SystemModstamp: string;
+    AssignmentStatus?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Network?: Network;
+    NetworkId?: string;
+    Parent?: SObject;
+    ParentId?: string;
+    SystemModstamp?: string;
 }

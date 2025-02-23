@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__PricingGuidanceTier__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Floor Discount (%)</b></h3>
      * <p>High discount for exception pricing based on past sales. If a sales rep wants to use this price, they must discount the quote line manually. This discount may require approvals based on your org&#39;s approval settings.</p>
@@ -24,7 +24,7 @@ declare interface SBQQ__PricingGuidanceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FloorDiscount__c: number;
+    SBQQ__FloorDiscount__c?: number;
     /**
      * <h3><b>Lower Bound</b></h3>
      * <p>The lowest quote line quantity that applies to this tier. This number must match the upper bound of the previous tier.</p>
@@ -36,7 +36,7 @@ declare interface SBQQ__PricingGuidanceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__LowerBound__c: number;
+    SBQQ__LowerBound__c?: number;
     /**
      * <h3><b>Norm Discount (%)</b></h3>
      * <p>Middle-range discount based on past sales. If a sales rep wants to use this price, they must discount the quote line manually. This discount may require approvals based on your org&#39;s approval settings.</p>
@@ -47,7 +47,7 @@ declare interface SBQQ__PricingGuidanceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__NormDiscount__c: number;
+    SBQQ__NormDiscount__c?: number;
     /**
      * <h3><b>Pricing Guidance</b></h3>
      * <p>The pricing guidance that contains this tier.</p>
@@ -57,7 +57,7 @@ declare interface SBQQ__PricingGuidanceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PricingGuidance__c: string;
+    SBQQ__PricingGuidance__c?: string;
     /**
      * <h3><b>Pricing Guidance</b></h3>
      * <p>The pricing guidance that contains this tier.</p>
@@ -67,7 +67,7 @@ declare interface SBQQ__PricingGuidanceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PricingGuidance__r: SBQQ__PricingGuidance__c;
+    SBQQ__PricingGuidance__r?: SBQQ__PricingGuidance__c;
     /**
      * <h3><b>Target Discount (%)</b></h3>
      * <p>Ideal low-range discount based on past sales. If sales reps accept this pricing guidance, Salesforce CPQ applies a discount to reach this price.</p>
@@ -78,7 +78,7 @@ declare interface SBQQ__PricingGuidanceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TargetDiscount__c: number;
+    SBQQ__TargetDiscount__c?: number;
     /**
      * <h3><b>Upper Bound</b></h3>
      * <p>The highest quote line quantity that applies to this tier. This number must be one above the highest quantity that you want this tier to include.</p>
@@ -90,5 +90,5 @@ declare interface SBQQ__PricingGuidanceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UpperBound__c: number;
+    SBQQ__UpperBound__c?: number;
 }

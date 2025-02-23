@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__TermCondition__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Index</b></h3>
      * <p>Assign an unique number to this Condition to reference it in the Quote Term&#39;s Advanced Condition.</p>
@@ -25,7 +25,7 @@ declare interface SBQQ__TermCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Index__c: number;
+    SBQQ__Index__c?: number;
     /**
      * <h3><b>Operator</b></h3>
      * <p>The operator for this field.</p>
@@ -49,7 +49,7 @@ declare interface SBQQ__TermCondition__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">contains</code></td><td>contains</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Operator__c: string;
+    SBQQ__Operator__c?: string;
     /**
      * <h3><b>Quote Term</b></h3>
      * <p>Parent term for this term.</p>
@@ -59,7 +59,7 @@ declare interface SBQQ__TermCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteTerm__c: string;
+    SBQQ__QuoteTerm__c?: string;
     /**
      * <h3><b>Quote Term</b></h3>
      * <p>Parent term for this term.</p>
@@ -69,7 +69,7 @@ declare interface SBQQ__TermCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteTerm__r: SBQQ__QuoteTerm__c;
+    SBQQ__QuoteTerm__r?: SBQQ__QuoteTerm__c;
     /**
      * <h3><b>Tested Field</b></h3>
      * <p>Field on quote object used for testing this condition.</p>
@@ -88,7 +88,7 @@ declare interface SBQQ__TermCondition__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Net Amount</code></td><td>Net Amount</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TestedField__c: string;
+    SBQQ__TestedField__c?: string;
     /**
      * <h3><b>Tested Variable</b></h3>
      * <p>Summary variable used in testing this condition.</p>
@@ -99,7 +99,7 @@ declare interface SBQQ__TermCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TestedVariable__c: string;
+    SBQQ__TestedVariable__c?: string;
     /**
      * <h3><b>Tested Variable</b></h3>
      * <p>Summary variable used in testing this condition.</p>
@@ -110,7 +110,7 @@ declare interface SBQQ__TermCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TestedVariable__r: SBQQ__SummaryVariable__c;
+    SBQQ__TestedVariable__r?: SBQQ__SummaryVariable__c;
     /**
      * <h3><b>Value</b></h3>
      * <p>Value to test against.</p>
@@ -122,5 +122,5 @@ declare interface SBQQ__TermCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Value__c: string;
+    SBQQ__Value__c?: string;
 }

@@ -2,14 +2,14 @@
 
 declare interface WarrantyTermHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    WarrantyTerm: WarrantyTerm;
-    WarrantyTermId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    WarrantyTerm?: WarrantyTerm;
+    WarrantyTermId?: string;
 }

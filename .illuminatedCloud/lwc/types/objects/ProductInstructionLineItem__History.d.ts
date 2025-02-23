@@ -2,14 +2,14 @@
 
 declare interface ProductInstructionLineItem__History extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    Parent: ProductInstructionLineItem__c;
-    ParentId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    Parent?: ProductInstructionLineItem__c;
+    ParentId?: string;
 }

@@ -2,21 +2,21 @@
 
 declare interface EventRecurrenceException extends SObject 
 {
-    ActivityDateOriginal: string;
-    ActivityDateTimeOriginal: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Event: Event;
-    EventId: string;
-    IsAllDayEventOriginal: boolean;
-    IsDeletion: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    RecurrenceEvent: Event;
-    RecurrenceEventId: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
+    ActivityDateOriginal?: string;
+    ActivityDateTimeOriginal?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Event?: Event;
+    EventId?: string;
+    IsAllDayEventOriginal?: boolean;
+    IsDeletion?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    RecurrenceEvent?: Event;
+    RecurrenceEventId?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
 }

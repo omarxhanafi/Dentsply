@@ -2,13 +2,13 @@
 
 declare interface FeedTrackedChange extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    CurrencyIsoCode: string;
-    FeedItem: SObject;
-    FeedItemId: string;
-    FieldName: string;
-    NewValue: any;
-    OldCurrencyIsoCode: string;
-    OldValue: any;
-    RelatedRecord: FlowRecordRelation;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CurrencyIsoCode?: string;
+    FeedItem?: SObject;
+    FeedItemId?: string;
+    FieldName?: string;
+    NewValue?: any;
+    OldCurrencyIsoCode?: string;
+    OldValue?: any;
+    RelatedRecord?: FlowRecordRelation;
 }

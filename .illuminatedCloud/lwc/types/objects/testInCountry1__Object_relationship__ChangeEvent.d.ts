@@ -2,18 +2,18 @@
 
 declare interface testInCountry1__Object_relationship__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Behaviour</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface testInCountry1__Object_relationship__ChangeEvent extends SObje
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">replication</code></td><td>replication</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__Behavior__c: string;
+    testInCountry1__Behavior__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <p>InCountryRestApiEndpoint___mdt.Country__c field must have the same values</p>
@@ -293,7 +293,7 @@ declare interface testInCountry1__Object_relationship__ChangeEvent extends SObje
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">zw</code></td><td>zw</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__Country__c: string;
+    testInCountry1__Country__c?: string;
     /**
      * <h3><b>Source Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -305,7 +305,7 @@ declare interface testInCountry1__Object_relationship__ChangeEvent extends SObje
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;Country_field__c&quot;</code></td></tr>
      * </table>
      */
-    testInCountry1__Country_field__c: string;
+    testInCountry1__Country_field__c?: string;
     /**
      * <h3><b>Source Field Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -316,7 +316,7 @@ declare interface testInCountry1__Object_relationship__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__CountryFieldValue__c: string;
+    testInCountry1__CountryFieldValue__c?: string;
     /**
      * <h3><b>InCountryStateField</b></h3>
      * <h4>Field Attributes</h4>
@@ -327,7 +327,7 @@ declare interface testInCountry1__Object_relationship__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__InCountryStateField__c: string;
+    testInCountry1__InCountryStateField__c?: string;
     /**
      * <h3><b>Object name</b></h3>
      * <h4>Field Attributes</h4>
@@ -338,7 +338,7 @@ declare interface testInCountry1__Object_relationship__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Object_name__c: string;
+    testInCountry1__Object_name__c?: string;
     /**
      * <h3><b>Precedence</b></h3>
      * <h4>Field Attributes</h4>
@@ -349,7 +349,7 @@ declare interface testInCountry1__Object_relationship__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Precedence__c: number;
+    testInCountry1__Precedence__c?: number;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -364,5 +364,5 @@ declare interface testInCountry1__Object_relationship__ChangeEvent extends SObje
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">record</code></td><td>record</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__Type__c: string;
+    testInCountry1__Type__c?: string;
 }

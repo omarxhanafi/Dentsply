@@ -5,9 +5,9 @@
  */
 declare interface MetadataDeployment__e extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>DeploymentId</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,9 +18,9 @@ declare interface MetadataDeployment__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DeploymentId__c: string;
-    EventUuid: string;
-    ReplayId: string;
+    DeploymentId__c?: string;
+    EventUuid?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Result</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,6 +28,6 @@ declare interface MetadataDeployment__e extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Result__c: string;
-    SourceEvent: AsyncOperationEvent;
+    Result__c?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

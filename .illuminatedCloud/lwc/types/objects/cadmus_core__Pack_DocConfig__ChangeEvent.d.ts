@@ -10,7 +10,7 @@ declare interface cadmus_core__Pack_DocConfig__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    cadmus_core__Doc_Config__c: string;
+    cadmus_core__Doc_Config__c?: string;
     /**
      * <h3><b>Doc Config</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface cadmus_core__Pack_DocConfig__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    cadmus_core__Doc_Config__r: cadmus_core__Doc_Config__c;
+    cadmus_core__Doc_Config__r?: cadmus_core__Doc_Config__c;
     /**
      * <h3><b>Merge Sequence</b></h3>
      * <p>Describe to which merge &quot;group&quot; it belong</p>
@@ -32,7 +32,7 @@ declare interface cadmus_core__Pack_DocConfig__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    cadmus_core__Merge_Sequence__c: number;
+    cadmus_core__Merge_Sequence__c?: number;
     /**
      * <h3><b>Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface cadmus_core__Pack_DocConfig__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    cadmus_core__Order__c: number;
+    cadmus_core__Order__c?: number;
     /**
      * <h3><b>PDF Butler Pack</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,7 +52,7 @@ declare interface cadmus_core__Pack_DocConfig__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    cadmus_core__Pack__c: string;
+    cadmus_core__Pack__c?: string;
     /**
      * <h3><b>PDF Butler Pack</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,17 +61,17 @@ declare interface cadmus_core__Pack_DocConfig__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    cadmus_core__Pack__r: cadmus_core__Pack__c;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    cadmus_core__Pack__r?: cadmus_core__Pack__c;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

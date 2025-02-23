@@ -18,7 +18,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Group__c: string;
+    Account_Group__c?: string;
     /**
      * <h3><b>Bar Code</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -29,7 +29,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Bar_Code__c: string;
+    Bar_Code__c?: string;
     /**
      * <h3><b>Class Category</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -40,10 +40,10 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Class_Category__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Class_Category__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>End Date</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -54,7 +54,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    End_Date__c: Date;
+    End_Date__c?: Date;
     /**
      * <h3><b>Handling Category</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -73,7 +73,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">FS</code></td><td>FS</td><td nowrap>true</td></tr>
      * </table>
      */
-    Handling_Category__c: string;
+    Handling_Category__c?: string;
     /**
      * <h3><b>Hidden From Users?</b></h3>
      * <p>SBU: PREP, ORTH, Country Japan, This field controls the sharing rule and makes sure records with this field ticked is not shared with all users. Example of use case is a new product that has not yet been launched but added to the system.</p>
@@ -84,8 +84,8 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Hidden_From_Users__c: boolean;
-    IsDeleted: boolean;
+    Hidden_From_Users__c?: boolean;
+    IsDeleted?: boolean;
     /**
      * <h3><b>Item</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan - Related to this Item</p>
@@ -96,7 +96,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Item__c: string;
+    Item__c?: string;
     /**
      * <h3><b>Item</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan - Related to this Item</p>
@@ -107,7 +107,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Item__r: Item__c;
+    Item__r?: Item__c;
     /**
      * <h3><b>Item Number (AX)</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -118,7 +118,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Item_Number_AX__c: string;
+    Item_Number_AX__c?: string;
     /**
      * <h3><b>Item Number (Catalogue)</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -129,7 +129,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Item_Number_Catalogue__c: string;
+    Item_Number_Catalogue__c?: string;
     /**
      * <h3><b>JAN Code</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -140,7 +140,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    JAN_Code__c: string;
+    JAN_Code__c?: string;
     /**
      * <h3><b>JMDN Code</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -151,7 +151,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    JMDN_Code__c: string;
+    JMDN_Code__c?: string;
     /**
      * <h3><b>Kana</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -162,10 +162,10 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Kana__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Kana__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Legacy ID</b></h3>
      * <p>OLD ID from the previous system.</p>
@@ -177,7 +177,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Legacy_ID__c: string;
+    Legacy_ID__c?: string;
     /**
      * <h3><b>Manufacturer Name</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -188,7 +188,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manufacturer_Name__c: string;
+    Manufacturer_Name__c?: string;
     /**
      * <h3><b>Monopoly Dealer</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -199,8 +199,8 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Monopoly_Dealer__c: string;
-    Name: string;
+    Monopoly_Dealer__c?: string;
+    Name?: string;
     /**
      * <h3><b>Non-ERP Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,7 +210,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NonERPProduct__c: string;
+    NonERPProduct__c?: string;
     /**
      * <h3><b>Non-ERP Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -220,7 +220,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NonERPProduct__r: Non_ERP_Products__c;
+    NonERPProduct__r?: Non_ERP_Products__c;
     /**
      * <h3><b>Pharmaceutical Approval Number</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -231,7 +231,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Pharmaceutical_Approval_Number__c: string;
+    Pharmaceutical_Approval_Number__c?: string;
     /**
      * <h3><b>Price</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -242,7 +242,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price__c: number;
+    Price__c?: number;
     /**
      * <h3><b>Quantity per Unit</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -254,7 +254,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity_per_Unit__c: number;
+    Quantity_per_Unit__c?: number;
     /**
      * <h3><b>Remark 1</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -265,7 +265,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remark_1__c: string;
+    Remark_1__c?: string;
     /**
      * <h3><b>Remark 2</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -276,7 +276,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remark_2__c: string;
+    Remark_2__c?: string;
     /**
      * <h3><b>Remark 3</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -287,7 +287,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remark_3__c: string;
+    Remark_3__c?: string;
     /**
      * <h3><b>Remark 4</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -298,7 +298,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remark_4__c: string;
+    Remark_4__c?: string;
     /**
      * <h3><b>Replacements</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -309,7 +309,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Replacements__c: string;
+    Replacements__c?: string;
     /**
      * <h3><b>Sales Release Date</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -320,7 +320,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Release_Date__c: Date;
+    Sales_Release_Date__c?: Date;
     /**
      * <h3><b>Shortened Code</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -331,7 +331,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Shortened_Code__c: string;
+    Shortened_Code__c?: string;
     /**
      * <h3><b>Sort Order</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan - Use to view by this order</p>
@@ -343,7 +343,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sort_Order__c: number;
+    Sort_Order__c?: number;
     /**
      * <h3><b>Specific Maintenance</b></h3>
      * <h4>Field Attributes</h4>
@@ -353,7 +353,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Specific_Maintenance__c: string;
+    Specific_Maintenance__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -369,7 +369,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not In Use</code></td><td>Not In Use</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Stock Status</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -386,7 +386,7 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">End of Sales</code></td><td>End of Sales</td><td nowrap>true</td></tr>
      * </table>
      */
-    Stock_Status__c: string;
+    Stock_Status__c?: string;
     /**
      * <h3><b>Stock Status Icon</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan - Need to update image when uploaded to salesforce</p>
@@ -399,5 +399,5 @@ declare interface Item_Specification__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stock_Status_Icon__c: string;
+    Stock_Status_Icon__c?: string;
 }

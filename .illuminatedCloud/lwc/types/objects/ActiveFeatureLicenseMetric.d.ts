@@ -2,10 +2,10 @@
 
 declare interface ActiveFeatureLicenseMetric extends SObject 
 {
-    ActiveUserCount: number;
-    AssignedUserCount: number;
-    FeatureType: string;
-    MetricsDate: Date;
-    SystemModstamp: string;
-    TotalLicenseCount: number;
+    ActiveUserCount?: number;
+    AssignedUserCount?: number;
+    FeatureType?: string;
+    MetricsDate?: Date;
+    SystemModstamp?: string;
+    TotalLicenseCount?: number;
 }

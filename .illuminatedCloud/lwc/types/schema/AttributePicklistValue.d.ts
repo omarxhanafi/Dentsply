@@ -6,6 +6,12 @@ declare module "@salesforce/schema/AttributePicklistValue" {
     export default AttributePicklistValue;
 }
 
+declare module "@salesforce/schema/AttributePicklistValue.Abbreviation" {
+    import { FieldId } from "@salesforce/schema";
+    const Abbreviation: FieldId;
+    export default Abbreviation;
+}
+
 declare module "@salesforce/schema/AttributePicklistValue.ActivityHistories" {
     import { FieldId } from "@salesforce/schema";
     const ActivityHistories: FieldId;
@@ -114,6 +120,12 @@ declare module "@salesforce/schema/AttributePicklistValue.CurrencyIsoCode" {
     export default CurrencyIsoCode;
 }
 
+declare module "@salesforce/schema/AttributePicklistValue.DisplayValue" {
+    import { FieldId } from "@salesforce/schema";
+    const DisplayValue: FieldId;
+    export default DisplayValue;
+}
+
 declare module "@salesforce/schema/AttributePicklistValue.DocEnvelopeRefObjects" {
     import { FieldId } from "@salesforce/schema";
     const DocEnvelopeRefObjects: FieldId;
@@ -162,6 +174,18 @@ declare module "@salesforce/schema/AttributePicklistValue.FlowOrchestrationWorkI
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/AttributePicklistValue.FulfillmentAssetAttributes" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentAssetAttributes: FieldId;
+    export default FulfillmentAssetAttributes;
+}
+
+declare module "@salesforce/schema/AttributePicklistValue.FulfillmentLineAttributes" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentLineAttributes: FieldId;
+    export default FulfillmentLineAttributes;
+}
+
 declare module "@salesforce/schema/AttributePicklistValue.GeneratedDocRefObjects" {
     import { FieldId } from "@salesforce/schema";
     const GeneratedDocRefObjects: FieldId;
@@ -178,6 +202,12 @@ declare module "@salesforce/schema/AttributePicklistValue.Id" {
     import { FieldId } from "@salesforce/schema";
     const Id: FieldId;
     export default Id;
+}
+
+declare module "@salesforce/schema/AttributePicklistValue.IsDefault" {
+    import { FieldId } from "@salesforce/schema";
+    const IsDefault: FieldId;
+    export default IsDefault;
 }
 
 declare module "@salesforce/schema/AttributePicklistValue.IsDeleted" {
@@ -318,10 +348,22 @@ declare module "@salesforce/schema/AttributePicklistValue.Relation" {
     export default Relation;
 }
 
+declare module "@salesforce/schema/AttributePicklistValue.Sequence" {
+    import { FieldId } from "@salesforce/schema";
+    const Sequence: FieldId;
+    export default Sequence;
+}
+
 declare module "@salesforce/schema/AttributePicklistValue.SobjectLookupValue" {
     import { FieldId } from "@salesforce/schema";
     const SobjectLookupValue: FieldId;
     export default SobjectLookupValue;
+}
+
+declare module "@salesforce/schema/AttributePicklistValue.Status" {
+    import { FieldId } from "@salesforce/schema";
+    const Status: FieldId;
+    export default Status;
 }
 
 declare module "@salesforce/schema/AttributePicklistValue.SystemModstamp" {
@@ -364,6 +406,18 @@ declare module "@salesforce/schema/AttributePicklistValue.Value" {
     import { FieldId } from "@salesforce/schema";
     const Value: FieldId;
     export default Value;
+}
+
+declare module "@salesforce/schema/AttributePicklistValue.ValueTransformInputValues" {
+    import { FieldId } from "@salesforce/schema";
+    const ValueTransformInputValues: FieldId;
+    export default ValueTransformInputValues;
+}
+
+declare module "@salesforce/schema/AttributePicklistValue.ValueTransformOutputValues" {
+    import { FieldId } from "@salesforce/schema";
+    const ValueTransformOutputValues: FieldId;
+    export default ValueTransformOutputValues;
 }
 
 declare module "@salesforce/schema/AttributePicklistValue.What" {

@@ -2,10 +2,10 @@
 
 declare interface FieldPermissions extends SObject 
 {
-    Field: string;
-    Parent: PermissionSet;
-    ParentId: string;
-    PermissionsEdit: boolean;
-    PermissionsRead: boolean;
-    SystemModstamp: string;
+    Field?: string;
+    Parent?: PermissionSet;
+    ParentId?: string;
+    PermissionsEdit?: boolean;
+    PermissionsRead?: boolean;
+    SystemModstamp?: string;
 }

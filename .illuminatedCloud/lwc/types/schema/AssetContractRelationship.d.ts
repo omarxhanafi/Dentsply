@@ -102,6 +102,12 @@ declare module "@salesforce/schema/AssetContractRelationship.DocEnvelopeRefObjec
     export default DocEnvelopeRefObjects;
 }
 
+declare module "@salesforce/schema/AssetContractRelationship.EndDate" {
+    import { FieldId } from "@salesforce/schema";
+    const EndDate: FieldId;
+    export default EndDate;
+}
+
 declare module "@salesforce/schema/AssetContractRelationship.FeedSubscriptionsForEntity" {
     import { FieldId } from "@salesforce/schema";
     const FeedSubscriptionsForEntity: FieldId;

@@ -2,14 +2,14 @@
 
 declare interface UserEsignVendorIdentifierHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    UserEsignVendorIdentifier: UserEsignVendorIdentifier;
-    UserEsignVendorIdentifierId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    UserEsignVendorIdentifier?: UserEsignVendorIdentifier;
+    UserEsignVendorIdentifierId?: string;
 }

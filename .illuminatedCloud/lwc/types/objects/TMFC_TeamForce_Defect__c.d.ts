@@ -8,75 +8,75 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    Feeds: TMFC_TeamForce_Defect__Feed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    Feeds?: TMFC_TeamForce_Defect__Feed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: TMFC_TeamForce_Defect__History[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: TMFC_TeamForce_Defect__History[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Profile</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">#SystemAdmin</code></td><td>#SystemAdmin</td><td nowrap>true</td></tr>
      * </table>
      */
-    Profile__c: string;
+    Profile__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -101,7 +101,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project__c: string;
+    Project__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project__r: Project__c;
+    Project__r?: Project__c;
     /**
      * <h3><b>QA Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -122,27 +122,27 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QAOwner__c: string;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    QAOwner__c?: string;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    SobjectLookupValue: AIInsightValue;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Solution</b></h3>
      * <h4>Field Attributes</h4>
@@ -150,12 +150,12 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Solution__c: string;
-    SystemModstamp: string;
-    Tags: TMFC_TeamForce_Defect__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    Solution__c?: string;
+    SystemModstamp?: string;
+    Tags?: TMFC_TeamForce_Defect__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * <h3><b>Defect Assignee</b></h3>
      * <h4>Field Attributes</h4>
@@ -164,7 +164,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Defect_Assignee__c: string;
+    TMFC_Defect_Assignee__c?: string;
     /**
      * <h3><b>Defect Assignee</b></h3>
      * <h4>Field Attributes</h4>
@@ -173,7 +173,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Defect_Assignee__r: User;
+    TMFC_Defect_Assignee__r?: User;
     /**
      * <h3><b>Defect Components</b></h3>
      * <h4>Field Attributes</h4>
@@ -182,7 +182,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Defect_Components__c: string;
+    TMFC_Defect_Components__c?: string;
     /**
      * <h3><b>Defect Details</b></h3>
      * <p>Expected behavior
@@ -194,7 +194,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    TMFC_Defect_Details__c: string;
+    TMFC_Defect_Details__c?: string;
     /**
      * <h3><b>Defect Severity</b></h3>
      * <h4>Field Attributes</h4>
@@ -211,7 +211,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Critical</code></td><td>Critical</td><td nowrap>true</td></tr>
      * </table>
      */
-    TMFC_Defect_Severity__c: string;
+    TMFC_Defect_Severity__c?: string;
     /**
      * <h3><b>Defect Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -245,7 +245,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">UAT to Begin</code></td><td>UAT to Begin</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    TMFC_Defect_Status__c: string;
+    TMFC_Defect_Status__c?: string;
     /**
      * <h3><b>Defect Title</b></h3>
      * <h4>Field Attributes</h4>
@@ -256,7 +256,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Defect_Title__c: string;
+    TMFC_Defect_Title__c?: string;
     /**
      * <h3><b>Environment</b></h3>
      * <h4>Field Attributes</h4>
@@ -267,7 +267,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Environment__c: string;
+    TMFC_Environment__c?: string;
     /**
      * <h3><b>TeamForce Test Script</b></h3>
      * <h4>Field Attributes</h4>
@@ -276,7 +276,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_TeamForce_Test_Script__c: string;
+    TMFC_TeamForce_Test_Script__c?: string;
     /**
      * <h3><b>TeamForce Test Script</b></h3>
      * <h4>Field Attributes</h4>
@@ -285,7 +285,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_TeamForce_Test_Script__r: TMFC_TeamForce_Test_Script__c;
+    TMFC_TeamForce_Test_Script__r?: TMFC_TeamForce_Test_Script__c;
     /**
      * <h3><b>TeamForce User Story</b></h3>
      * <h4>Field Attributes</h4>
@@ -293,7 +293,7 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link TMFC_TeamForce_User_Story__c})</td></tr>
      * </table>
      */
-    TMFC_TeamForce_User_Story__c: string;
+    TMFC_TeamForce_User_Story__c?: string;
     /**
      * <h3><b>TeamForce User Story</b></h3>
      * <h4>Field Attributes</h4>
@@ -301,17 +301,17 @@ declare interface TMFC_TeamForce_Defect__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link TMFC_TeamForce_User_Story__c})</td></tr>
      * </table>
      */
-    TMFC_TeamForce_User_Story__r: TMFC_TeamForce_User_Story__c;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    TMFC_TeamForce_User_Story__r?: TMFC_TeamForce_User_Story__c;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

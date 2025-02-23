@@ -2,21 +2,21 @@
 
 declare interface CallCenterRoutingMap extends SObject 
 {
-    CallCenter: CallCenter;
-    CallCenterId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DeveloperName: string;
-    ExternalId: string;
-    IsDeleted: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    QuickConnect: string;
-    ReferenceRecord: SObject;
-    ReferenceRecordId: string;
-    SystemModstamp: string;
+    CallCenter?: CallCenter;
+    CallCenterId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DeveloperName?: string;
+    ExternalId?: string;
+    IsDeleted?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    QuickConnect?: string;
+    ReferenceRecord?: SObject;
+    ReferenceRecordId?: string;
+    SystemModstamp?: string;
 }

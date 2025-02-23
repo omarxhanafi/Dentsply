@@ -2,14 +2,14 @@
 
 declare interface LiveChatTranscriptHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    LiveChatTranscript: LiveChatTranscript;
-    LiveChatTranscriptId: string;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    LiveChatTranscript?: LiveChatTranscript;
+    LiveChatTranscriptId?: string;
+    NewValue?: any;
+    OldValue?: any;
 }

@@ -2,18 +2,18 @@
 
 declare interface UserListViewCriterion extends SObject 
 {
-    ColumnName: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Operation: string;
-    SortOrder: number;
-    SystemModstamp: string;
-    UserListView: UserListView;
-    UserListViewId: string;
-    Value: string;
+    ColumnName?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Operation?: string;
+    SortOrder?: number;
+    SystemModstamp?: string;
+    UserListView?: UserListView;
+    UserListViewId?: string;
+    Value?: string;
 }

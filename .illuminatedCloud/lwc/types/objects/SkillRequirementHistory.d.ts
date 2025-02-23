@@ -2,14 +2,14 @@
 
 declare interface SkillRequirementHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    SkillRequirement: SkillRequirement;
-    SkillRequirementId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    SkillRequirement?: SkillRequirement;
+    SkillRequirementId?: string;
 }

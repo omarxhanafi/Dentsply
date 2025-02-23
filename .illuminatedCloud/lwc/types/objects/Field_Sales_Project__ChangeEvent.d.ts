@@ -10,7 +10,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    AllowUsersToAddNewLeads__c: boolean;
+    AllowUsersToAddNewLeads__c?: boolean;
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,6 +74,10 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Diamond Burs</code></td><td>Diamond Burs</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Digital Dentures</code></td><td>Digital Dentures</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Drufo</code></td><td>Drufo</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core</code></td><td>DS Core</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Care</code></td><td>DS Core Care</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Create</code></td><td>DS Core Create</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Enterprise</code></td><td>DS Core Enterprise</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS OmniTaper</code></td><td>DS OmniTaper</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Economy Teeth</code></td><td>Economy Teeth</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Enhance</code></td><td>Enhance</td><td nowrap>true</td></tr>
@@ -205,7 +209,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zirconia</code></td><td>Zirconia</td><td nowrap>true</td></tr>
      * </table>
      */
-    Brand__c: string;
+    Brand__c?: string;
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -503,7 +507,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XG5</code></td><td>XG5</td><td nowrap>true</td></tr>
      * </table>
      */
-    BrandPicklist__c: string;
+    BrandPicklist__c?: string;
     /**
      * <h3><b>Campaign source</b></h3>
      * <h4>Field Attributes</h4>
@@ -512,7 +516,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign__c: string;
+    Campaign__c?: string;
     /**
      * <h3><b>Campaign source</b></h3>
      * <h4>Field Attributes</h4>
@@ -521,7 +525,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign__r: Campaign;
+    Campaign__r?: Campaign;
     /**
      * <h3><b>Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -561,8 +565,8 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Category__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Convert leads to</b></h3>
      * <h4>Field Attributes</h4>
@@ -578,10 +582,10 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Order</code></td><td>Order</td><td nowrap>true</td></tr>
      * </table>
      */
-    Convert_leads_to__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Convert_leads_to__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Cross sell initiative</b></h3>
      * <h4>Field Attributes</h4>
@@ -590,8 +594,8 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Cross_sell_initiative__c: boolean;
-    CurrencyIsoCode: string;
+    Cross_sell_initiative__c?: boolean;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -600,7 +604,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
+    Description__c?: string;
     /**
      * <h3><b>End Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -609,7 +613,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    End_Date__c: Date;
+    End_Date__c?: Date;
     /**
      * <h3><b>Expire Sales Leads</b></h3>
      * <p>TFUS-000003379</p>
@@ -619,7 +623,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ExpireSalesLeads__c: boolean;
+    ExpireSalesLeads__c?: boolean;
     /**
      * <h3><b>List Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -640,16 +644,16 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Territory Initiative</code></td><td>Territory Initiative</td><td nowrap>true</td></tr>
      * </table>
      */
-    Initiative_Type__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    ReplayId: string;
+    Initiative_Type__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -676,7 +680,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Webinar</code></td><td>Webinar</td><td nowrap>true</td></tr>
      * </table>
      */
-    Source__c: string;
+    Source__c?: string;
     /**
      * <h3><b>Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -685,7 +689,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Start_Date__c: Date;
+    Start_Date__c?: Date;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -701,7 +705,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">In progress</code></td><td>In progress</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Title</b></h3>
      * <h4>Field Attributes</h4>
@@ -712,7 +716,7 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Title__c: string;
+    Title__c?: string;
     /**
      * <h3><b>User Country</b></h3>
      * <p>US #2340</p>
@@ -723,5 +727,5 @@ declare interface Field_Sales_Project__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CASE($User.User_Country__c, &quot;Australia&quot;,&quot;Australia&quot;, &quot;Austria&quot;,&quot;Austria&quot;, &quot;Belarus&quot;,&quot;Belarus&quot;, &quot;Belgium&quot;,&quot;Belgium&quot;, &quot;Brazil&quot;,&quot;Brazil&quot;, &quot;Canada&quot;, &quot;Canada&quot;, &quot;China&quot;,&quot;China&quot;, &quot;Denmark&quot;,&quot;Denmark&quot;, &quot;Finland&quot;,&quot;Finland&quot;, &quot;France&quot;,&quot;France&quot;, &quot;Egypt&quot;,&quot;Egypt&quot;, &quot;Georgia&quot;,&quot;Georgia&quot;, &quot;Germany&quot;,&quot;Germany&quot;, &quot;Holland&quot;,&quot;Holland&quot;, &quot;Hong Kong&quot;,&quot;Hong Kong&quot;, &quot;India&quot;,&quot;India&quot;, &quot;Indonesia&quot;,&quot;Indonesia&quot;, &quot;Iraq&quot;,&quot;Iraq&quot;, &quot;Italy&quot;,&quot;Italy&quot;, &quot;Japan&quot;,&quot;Japan&quot;, &quot;Kazakhstan&quot;,&quot;Kazakhstan&quot;, &quot;Lebanon&quot;,&quot;Lebanon&quot;, &quot;Latvia&quot;,&quot;Latvia&quot;, &quot;Lithuania&quot;,&quot;Lithuania&quot;, &quot;Estonia&quot;,&quot;Estonia&quot;, &quot;Luxembourg&quot;,&quot;Luxembourg&quot;, &quot;Malaysia&quot;,&quot;Malaysia&quot;, &quot;Morocco&quot;,&quot;Morocco&quot;, &quot;New Zealand&quot;,&quot;New Zealand&quot;, &quot;Norway&quot;,&quot;Norway&quot;, &quot;Pakistan&quot;,&quot;Pakistan&quot;, &quot;Philippines&quot;,&quot;Philippines&quot;, &quot;Portugal&quot;,&quot;Portugal&quot;, &quot;Poland&quot;,&quot;Poland&quot;, &quot;Russia&quot;,&quot;Russia&quot;, &quot;Saudi Arabia&quot;,&quot;Saudi Arabia&quot;, &quot;Singapore&quot;,&quot;Singapore&quot;, &quot;Slovakia&quot;,&quot;Slovakia&quot;, &quot;South Africa&quot;,&quot;South Africa&quot;, &quot;South Korea&quot;,&quot;South Korea&quot;, &quot;Spain&quot;,&quot;Spain&quot;, &quot;Sweden&quot;,&quot;Sweden&quot;, &quot;Switzerland&quot;,&quot;Switzerland&quot;, &quot;Taiwan&quot;,&quot;Taiwan&quot;, &quot;Thailand&quot;,&quot;Thailand&quot;, &quot;Turkey&quot;,&quot;Turkey&quot;, &quot;United Arab Emirates&quot;,&quot;United Arab Emirates&quot;, &quot;UK&quot;, &quot;UK&quot;, &quot;Ukraine&quot;, &quot;Ukraine&quot;, &quot;USA&quot;,&quot;USA&quot;, &quot;Vietnam&quot;,&quot;Vietnam&quot;, &quot;HQ: SE&quot;)</code></td></tr>
      * </table>
      */
-    UserCountry__c: string;
+    UserCountry__c?: string;
 }

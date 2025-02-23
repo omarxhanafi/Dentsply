@@ -7,11 +7,11 @@
  */
 declare interface AdminSetting__mdt extends SObject 
 {
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b># of Days since Last Login to Freeze</b></h3>
      * <p># of Days (based on Last Login Date) used to automatically freeze users (by Apex Batch)</p>
@@ -23,7 +23,7 @@ declare interface AdminSetting__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofDaysSinceLastLogin__c: number;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    ofDaysSinceLastLogin__c?: number;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

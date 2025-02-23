@@ -6,30 +6,30 @@
  */
 declare interface SBQQ__TemplateContent__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__Localization__c.SBQQ__TemplateContent__c}.
      */
-    Localizations__r: SBQQ__Localization__c[];
-    Name: string;
+    Localizations__r?: SBQQ__Localization__c[];
+    Name?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteTerm__c.SBQQ__TemplateContent__c}.
      */
-    Quote_Terms__r: SBQQ__QuoteTerm__c[];
+    Quote_Terms__r?: SBQQ__QuoteTerm__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteTemplate__c.SBQQ__FooterContent__c}.
      */
-    QuoteTemplatesFooter__r: SBQQ__QuoteTemplate__c[];
+    QuoteTemplatesFooter__r?: SBQQ__QuoteTemplate__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteTemplate__c.SBQQ__HeaderContent__c}.
      */
-    QuoteTemplatesHeader__r: SBQQ__QuoteTemplate__c[];
+    QuoteTemplatesHeader__r?: SBQQ__QuoteTemplate__c[];
     /**
      * <h3><b>Custom Source</b></h3>
      * <p>URL to a VisualForce page that generates content when type is set to &quot;Custom&quot;.</p>
@@ -40,7 +40,7 @@ declare interface SBQQ__TemplateContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__CustomSource__c: string;
+    SBQQ__CustomSource__c?: string;
     /**
      * <h3><b>Font Family</b></h3>
      * <p>Font family to use when rendering this content in the generated PDF quote document.</p>
@@ -75,7 +75,7 @@ declare interface SBQQ__TemplateContent__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Ubuntu</code></td><td>Ubuntu</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__FontFamily__c: string;
+    SBQQ__FontFamily__c?: string;
     /**
      * <h3><b>Font Size</b></h3>
      * <p>Font size to use when rendering this content on the generated PDF quote document.</p>
@@ -87,7 +87,7 @@ declare interface SBQQ__TemplateContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FontSize__c: number;
+    SBQQ__FontSize__c?: number;
     /**
      * <h3><b>Markup</b></h3>
      * <p>Contains the markup if this content is of type &quot;Markup&quot;.</p>
@@ -97,7 +97,7 @@ declare interface SBQQ__TemplateContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Markup__c: string;
+    SBQQ__Markup__c?: string;
     /**
      * <h3><b>Raw Markup</b></h3>
      * <p>Raw HTML markup. Rich Text field (Markup) strips out many HTML tags so this holds the original version as created by the editor.</p>
@@ -107,7 +107,7 @@ declare interface SBQQ__TemplateContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RawMarkup__c: string;
+    SBQQ__RawMarkup__c?: string;
     /**
      * <h3><b>Table Style</b></h3>
      * <p>Style of the table used for line items. Standard (default) = user-defined fields as columns with line items listed vertically.</p>
@@ -125,7 +125,7 @@ declare interface SBQQ__TemplateContent__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Price Dimensions as Rows with Summary</code></td><td>Price Dimensions as Rows with Summary</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TableStyle__c: string;
+    SBQQ__TableStyle__c?: string;
     /**
      * <h3><b>Text Color</b></h3>
      * <p>Default color (in HEX) applied to text rendered by this content.</p>
@@ -137,7 +137,7 @@ declare interface SBQQ__TemplateContent__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TextColor__c: string;
+    SBQQ__TextColor__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <p>Type of this content.</p>
@@ -156,9 +156,9 @@ declare interface SBQQ__TemplateContent__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Custom</code></td><td>Custom</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Type__c: string;
+    SBQQ__Type__c?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__TemplateSection__c.SBQQ__Content__c}.
      */
-    TemplateSections__r: SBQQ__TemplateSection__c[];
+    TemplateSections__r?: SBQQ__TemplateSection__c[];
 }

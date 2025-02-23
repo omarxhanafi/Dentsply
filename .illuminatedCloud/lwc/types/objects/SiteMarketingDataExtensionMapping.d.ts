@@ -2,25 +2,25 @@
 
 declare interface SiteMarketingDataExtensionMapping extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    IsActive: boolean;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MarketingDataExtension: string;
-    MarketingDataExtensionFieldsSchema: string;
-    MarketingMemberIdentification: string;
-    MarketingTenantSpecificAuthEndpoint: string;
-    MarketingTenantSpecificRestEndpoint: string;
-    Name: string;
-    RelatedRecord: FlowRecordRelation;
-    Site: Site;
-    SiteId: string;
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    IsActive?: boolean;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MarketingDataExtension?: string;
+    MarketingDataExtensionFieldsSchema?: string;
+    MarketingMemberIdentification?: string;
+    MarketingTenantSpecificAuthEndpoint?: string;
+    MarketingTenantSpecificRestEndpoint?: string;
+    Name?: string;
+    RelatedRecord?: FlowRecordRelation;
+    Site?: Site;
+    SiteId?: string;
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
 }

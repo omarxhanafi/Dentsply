@@ -2,11 +2,11 @@
 
 declare interface ContentVersion extends SObject 
 {
-    AuditableEntities: NetworkActivityAudit[];
+    AuditableEntities?: NetworkActivityAudit[];
     /**
      * The reciprocal relationship for {@link AuthorizationFormConsent.DocumentVersionId}.
      */
-    AuthorizationFormConsents: AuthorizationFormConsent[];
+    AuthorizationFormConsents?: AuthorizationFormConsent[];
     /**
      * <h3><b>BU Dental Contact</b></h3>
      * <p>Who to contact when you have questions about a material</p>
@@ -43,82 +43,82 @@ declare interface ContentVersion extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Market Company AT Nordic</code></td><td>Market Company AT Nordic</td><td nowrap>true</td></tr>
      * </table>
      */
-    BU_Dental_Contact__c: string;
-    Checksum: string;
-    ContentBody: ContentBody;
-    ContentBodyId: string;
-    ContentDocument: ContentDocument;
-    ContentDocumentId: string;
-    ContentLocation: string;
-    ContentModifiedBy: User;
-    ContentModifiedById: string;
-    ContentModifiedDate: string;
-    ContentSize: number;
-    ContentUrl: string;
-    ContentVersion: ContentDistribution;
-    ContentVersionDocument: QuoteDocument;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
+    BU_Dental_Contact__c?: string;
+    Checksum?: string;
+    ContentBody?: ContentBody;
+    ContentBodyId?: string;
+    ContentDocument?: ContentDocument;
+    ContentDocumentId?: string;
+    ContentLocation?: string;
+    ContentModifiedBy?: User;
+    ContentModifiedById?: string;
+    ContentModifiedDate?: string;
+    ContentSize?: number;
+    ContentUrl?: string;
+    ContentVersion?: ContentDistribution;
+    ContentVersionDocument?: QuoteDocument;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
     /**
      * The reciprocal relationship for {@link AuthorizationFormConsent.DocumentVersionId}.
      */
-    DocumentVersion: AuthorizationFormConsent;
-    EntityIdentifier: ContentNotification;
-    ExternalDataSource: ExternalDataSource;
-    ExternalDataSourceId: string;
-    ExternalDocumentInfo1: string;
-    ExternalDocumentInfo2: string;
-    FeaturedContentBoost: number;
-    FeaturedContentDate: Date;
-    FileExtension: string;
-    FileType: string;
-    FirstPublishLocation: SObject;
-    FirstPublishLocationId: string;
+    DocumentVersion?: AuthorizationFormConsent;
+    EntityIdentifier?: ContentNotification;
+    ExternalDataSource?: ExternalDataSource;
+    ExternalDataSourceId?: string;
+    ExternalDocumentInfo1?: string;
+    ExternalDocumentInfo2?: string;
+    FeaturedContentBoost?: number;
+    FeaturedContentDate?: Date;
+    FileExtension?: string;
+    FileType?: string;
+    FirstPublishLocation?: SObject;
+    FirstPublishLocationId?: string;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ContentVersionId}.
      */
-    GeneratedDocContentVersions: GeneratedDocument[];
-    Histories: ContentVersionHistory[];
-    IsAssetEnabled: boolean;
-    IsDeleted: boolean;
-    IsLatest: boolean;
-    IsMajorVersion: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    GeneratedDocContentVersions?: GeneratedDocument[];
+    Histories?: ContentVersionHistory[];
+    IsAssetEnabled?: boolean;
+    IsDeleted?: boolean;
+    IsLatest?: boolean;
+    IsMajorVersion?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * The reciprocal relationship for {@link DocumentTemplateContentDoc.LatestContentVersionId}.
      */
-    LatestContentVersion: DocumentTemplateContentDoc;
-    LatestPublishedVersion: ContentDocument;
-    NegativeRatingCount: number;
-    Network: Network;
-    NetworkId: string;
-    Origin: string;
-    Owner: User;
-    OwnerId: string;
-    PathOnClient: string;
-    PositiveRatingCount: number;
-    PublishStatus: string;
-    RatingCount: number;
-    ReasonForChange: string;
-    Record: FeedAttachment;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    RelatedRecord: AccountFeed;
-    SharingPrivacy: string;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    TagCsv: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TextPreview: string;
-    Title: string;
+    LatestContentVersion?: DocumentTemplateContentDoc;
+    LatestPublishedVersion?: ContentDocument;
+    NegativeRatingCount?: number;
+    Network?: Network;
+    NetworkId?: string;
+    Origin?: string;
+    Owner?: User;
+    OwnerId?: string;
+    PathOnClient?: string;
+    PositiveRatingCount?: number;
+    PublishStatus?: string;
+    RatingCount?: number;
+    ReasonForChange?: string;
+    Record?: FeedAttachment;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    RelatedRecord?: AccountFeed;
+    SharingPrivacy?: string;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    TagCsv?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TextPreview?: string;
+    Title?: string;
     /**
      * <h3><b>Type of Material</b></h3>
      * <h4>Field Attributes</h4>
@@ -147,7 +147,7 @@ declare interface ContentVersion extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DP Digital Presentation</code></td><td>DP Digital Presentation</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type_of_Material__c: string;
+    Type_of_Material__c?: string;
     /**
      * <h3><b>Type of Use</b></h3>
      * <h4>Field Attributes</h4>
@@ -162,8 +162,8 @@ declare interface ContentVersion extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">For INTERNAL use</code></td><td>For INTERNAL use</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type_of_Use__c: string;
-    VersionData: string;
-    VersionDataUrl: string;
-    VersionNumber: string;
+    Type_of_Use__c?: string;
+    VersionData?: string;
+    VersionDataUrl?: string;
+    VersionNumber?: string;
 }

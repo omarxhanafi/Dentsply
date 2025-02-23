@@ -5,11 +5,11 @@
  */
 declare interface Inside_Sales_Campaign_Picklist__mdt extends SObject 
 {
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Picklist Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,7 +34,7 @@ declare interface Inside_Sales_Campaign_Picklist__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Canceled</code></td><td>Canceled</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Picklist_Value__c: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Picklist_Value__c?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

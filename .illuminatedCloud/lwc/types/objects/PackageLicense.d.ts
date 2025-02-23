@@ -2,15 +2,15 @@
 
 declare interface PackageLicense extends SObject 
 {
-    AllowedLicenses: number;
-    CreatedDate: string;
-    ExpirationDate: string;
-    IsAvailableForIntegrations: boolean;
-    IsProvisioned: boolean;
-    LastModifiedDate: string;
-    NamespacePrefix: string;
-    PackageLicense: UserPackageLicense;
-    Status: string;
-    SystemModstamp: string;
-    UsedLicenses: number;
+    AllowedLicenses?: number;
+    CreatedDate?: string;
+    ExpirationDate?: string;
+    IsAvailableForIntegrations?: boolean;
+    IsProvisioned?: boolean;
+    LastModifiedDate?: string;
+    NamespacePrefix?: string;
+    PackageLicense?: UserPackageLicense;
+    Status?: string;
+    SystemModstamp?: string;
+    UsedLicenses?: number;
 }

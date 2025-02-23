@@ -13,7 +13,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Abutment_commitment__c: number;
+    Abutment_commitment__c?: number;
     /**
      * <h3><b>Abutment commitment</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Abutment_commitment_formula__c: number;
+    Abutment_commitment_formula__c?: number;
     /**
      * <h3><b>Abutment commitment (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Abutment_commitment_perc__c: number;
+    Abutment_commitment_perc__c?: number;
     /**
      * <h3><b>Abutment commitment</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,8 +50,8 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">>80% of implants commitment</code></td><td>≥80% of implants commitment</td><td nowrap>true</td></tr>
      * </table>
      */
-    Abutment_commitment_pick__c: string;
-    Account: Account;
+    Abutment_commitment_pick__c?: string;
+    Account?: Account;
     /**
      * <h3><b>Account Movex#</b></h3>
      * <p>Used as help field in reports etc</p>
@@ -64,7 +64,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Movex__c: string;
+    Account_Movex__c?: string;
     /**
      * <h3><b>Account Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,11 +76,11 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountCountry__c: string;
-    AccountId: string;
-    ActivatedBy: User;
-    ActivatedById: string;
-    ActivatedDate: string;
+    AccountCountry__c?: string;
+    AccountId?: string;
+    ActivatedBy?: User;
+    ActivatedById?: string;
+    ActivatedDate?: string;
     /**
      * <h3><b>Actual commitment, Implants</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,7 +90,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Actual_commitment_materials__c: number;
+    Actual_commitment_materials__c?: number;
     /**
      * <h3><b>Additional Discount (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -107,7 +107,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">20</code></td><td>20</td><td nowrap>true</td></tr>
      * </table>
      */
-    AdditionalDiscount__c: string;
+    AdditionalDiscount__c?: string;
     /**
      * <h3><b>Allowed discount abutment: equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -116,7 +116,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_abutment_equipment__c: number;
+    Allowed_discount_abutment_equipment__c?: number;
     /**
      * <h3><b>Allowed discount abutments: equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -126,7 +126,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_abutment_equipment_form__c: number;
+    Allowed_discount_abutment_equipment_form__c?: number;
     /**
      * <h3><b>Allowed discount abutment: materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -135,7 +135,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_abutment_materials__c: number;
+    Allowed_discount_abutment_materials__c?: number;
     /**
      * <h3><b>Allowed discount abutments: materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -145,7 +145,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_abutments_material_form__c: number;
+    Allowed_discount_abutments_material_form__c?: number;
     /**
      * <h3><b>Allowed discount, equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -155,7 +155,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_equipment__c: number;
+    Allowed_discount_equipment__c?: number;
     /**
      * <h3><b>Allowed discount Implants: equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -164,7 +164,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_Implants_equipment__c: number;
+    Allowed_discount_Implants_equipment__c?: number;
     /**
      * <h3><b>Allowed discount Implants: equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -174,7 +174,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_Implants_equipment_form__c: number;
+    Allowed_discount_Implants_equipment_form__c?: number;
     /**
      * <h3><b>Allowed discount Implants: materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -183,7 +183,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_Implants_materials__c: number;
+    Allowed_discount_Implants_materials__c?: number;
     /**
      * <h3><b>Allowed discount Implants: materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -193,7 +193,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_Implants_materials_form__c: number;
+    Allowed_discount_Implants_materials_form__c?: number;
     /**
      * <h3><b>Allowed discount, materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -203,7 +203,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_materials__c: number;
+    Allowed_discount_materials__c?: number;
     /**
      * <h3><b>Allowed discount matrix</b></h3>
      * <h4>Field Attributes</h4>
@@ -215,7 +215,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_matrix__c: string;
+    Allowed_discount_matrix__c?: string;
     /**
      * <h3><b>Allowed discount pooling, equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -224,7 +224,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_pooling_equipment__c: number;
+    Allowed_discount_pooling_equipment__c?: number;
     /**
      * <h3><b>Allowed discount pooling, equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -234,7 +234,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_pooling_equipment_form__c: number;
+    Allowed_discount_pooling_equipment_form__c?: number;
     /**
      * <h3><b>Allowed discount pooling, materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -243,7 +243,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_pooling_materials__c: number;
+    Allowed_discount_pooling_materials__c?: number;
     /**
      * <h3><b>Allowed discount pooling, materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -253,7 +253,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_pooling_materials_form__c: number;
+    Allowed_discount_pooling_materials_form__c?: number;
     /**
      * <h3><b>Allowed discount, materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -265,7 +265,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_revenue__c: string;
+    Allowed_discount_revenue__c?: string;
     /**
      * <h3><b>Allowed discount revenue: equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -275,7 +275,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_revenue_equipment_form__c: number;
+    Allowed_discount_revenue_equipment_form__c?: number;
     /**
      * <h3><b>Allowed discount revenue: equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -284,7 +284,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_revenue_equipments__c: number;
+    Allowed_discount_revenue_equipments__c?: number;
     /**
      * <h3><b>Allowed discount revenue: materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -293,7 +293,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_revenue_materials__c: number;
+    Allowed_discount_revenue_materials__c?: number;
     /**
      * <h3><b>Allowed discount revenue: materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -303,7 +303,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Allowed_discount_revenue_materials_form__c: number;
+    Allowed_discount_revenue_materials_form__c?: number;
     /**
      * <h3><b>Approval needed?</b></h3>
      * <h4>Field Attributes</h4>
@@ -315,7 +315,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Approval_needed__c: string;
+    Approval_needed__c?: string;
     /**
      * <h3><b>Approval percentage, equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -325,7 +325,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Approval_percentage_equipment__c: number;
+    Approval_percentage_equipment__c?: number;
     /**
      * <h3><b>Approval percentage, materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -335,7 +335,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Approval_percentage_materials__c: number;
+    Approval_percentage_materials__c?: number;
     /**
      * <h3><b>Approval Status</b></h3>
      * <p>This field is used in reporting (for Contract history). It is used as a workaround to track approvals in reports &amp; Dashboards</p>
@@ -354,7 +354,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Recalled</code></td><td>Recalled</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Approval_Status__c: string;
+    Approval_Status__c?: string;
     /**
      * <h3><b>Area manager (DE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -363,7 +363,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Area_manager_DE__c: string;
+    Area_manager_DE__c?: string;
     /**
      * <h3><b>Area manager (DE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -372,16 +372,16 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Area_manager_DE__r: User;
-    BillingAddress: Address;
-    BillingCity: string;
-    BillingCountry: string;
-    BillingGeocodeAccuracy: string;
-    BillingLatitude: number;
-    BillingLongitude: number;
-    BillingPostalCode: string;
-    BillingState: string;
-    BillingStreet: string;
+    Area_manager_DE__r?: User;
+    BillingAddress?: Address;
+    BillingCity?: string;
+    BillingCountry?: string;
+    BillingGeocodeAccuracy?: string;
+    BillingLatitude?: number;
+    BillingLongitude?: number;
+    BillingPostalCode?: string;
+    BillingState?: string;
+    BillingStreet?: string;
     /**
      * <h3><b>Brand (UK)</b></h3>
      * <p>Use to filter out the right implant system on one-click link for UK. this fields should be temporary as from 2013 the Contract should not be by brand but instead count towards all implant systems - and also be better integrated</p>
@@ -398,7 +398,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XiVE</code></td><td>XiVE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Brand_UK__c: string;
+    Brand_UK__c?: string;
     /**
      * <h3><b>Brand (UK-temp)</b></h3>
      * <p>Use to filter out the right implant system on one-click link for UK. this fields should be temporary as from 2013 the Contract should not be by brand but instead count towards all implant systems - and also be better integrated</p>
@@ -410,11 +410,11 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Brand_UK_temp__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CompanySigned: User;
-    CompanySignedDate: Date;
-    CompanySignedId: string;
+    Brand_UK_temp__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CompanySigned?: User;
+    CompanySignedDate?: Date;
+    CompanySignedId?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <p>TFUS-000003033</p>
@@ -424,7 +424,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <p>TFUS-000003033</p>
@@ -434,7 +434,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * <h3><b>Contract agreed value</b></h3>
      * <h4>Field Attributes</h4>
@@ -443,7 +443,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_agreed_value__c: number;
+    Contract_agreed_value__c?: number;
     /**
      * <h3><b>Contract Discount (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -657,7 +657,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">99.5</code></td><td>99.5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contract_Discount__c: string;
+    Contract_Discount__c?: string;
     /**
      * <h3><b>Contract discount, equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -667,7 +667,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Contract_discount_equipment__c: number;
+    Contract_discount_equipment__c?: number;
     /**
      * <h3><b>Contract discount, equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -741,7 +741,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">62</code></td><td>62</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contract_discount_equipment_picklist__c: string;
+    Contract_discount_equipment_picklist__c?: string;
     /**
      * <h3><b>Contract discount, materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -797,7 +797,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">44</code></td><td>44</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contract_discount_materials_picklist__c: string;
+    Contract_discount_materials_picklist__c?: string;
     /**
      * <h3><b>Contract discount, materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -807,7 +807,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Contract_discount_pricing_materials__c: number;
+    Contract_discount_pricing_materials__c?: number;
     /**
      * <h3><b>Contract Duration (Days)</b></h3>
      * <p>Shows how long (in days) the Contract is</p>
@@ -820,7 +820,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Duration_Days__c: number;
+    Contract_Duration_Days__c?: number;
     /**
      * <h3><b>Contract End Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -829,7 +829,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_End_Date__c: Date;
+    Contract_End_Date__c?: Date;
     /**
      * <h3><b>Contract External ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -840,7 +840,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Contract_External_ID__c: string;
+    Contract_External_ID__c?: string;
     /**
      * <h3><b>Contract Fulfilment (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -850,7 +850,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Fulfilment__c: number;
+    Contract_Fulfilment__c?: number;
     /**
      * <h3><b>Contract Fulfilment_old</b></h3>
      * <h4>Field Attributes</h4>
@@ -860,7 +860,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Fulfilment_old__c: number;
+    Contract_Fulfilment_old__c?: number;
     /**
      * <h3><b>Contract length (months)</b></h3>
      * <p>Contract length in months</p>
@@ -876,7 +876,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">24</code></td><td>24</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contract_length__c: string;
+    Contract_length__c?: string;
     /**
      * <h3><b>Contract Migrated from SAP? (DE)</b></h3>
      * <p>If this field is checked, the contract is migrated from SAP. the field will be removed when all migrated contracts are expired</p>
@@ -886,7 +886,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Contract_Migrated_from_SAP__c: boolean;
+    Contract_Migrated_from_SAP__c?: boolean;
     /**
      * <h3><b>Contract Model</b></h3>
      * <p>This field shows all pre-approved contract models. If the contract agreement is not pre-approved choose Custom (Needs Management Approval) and add information in the description field.</p>
@@ -1004,7 +1004,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Fixed price NEW Customer PrimeTaper EUR 217,00</code></td><td>Fixed price NEW Customer PrimeTaper EUR 217,00</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contract_Model__c: string;
+    Contract_Model__c?: string;
     /**
      * <h3><b>Contract Owner Country</b></h3>
      * <p>User Country of Owner. Used in validation rules.</p>
@@ -1017,7 +1017,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Owner_Country__c: string;
+    Contract_Owner_Country__c?: string;
     /**
      * <h3><b>Contract SBU</b></h3>
      * <p>Used to set for which SBU the contract is valid. Requirements is only to set one SBU since each contract can only be valid for one SBU.</p>
@@ -1027,7 +1027,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_SBU__c: string;
+    Contract_SBU__c?: string;
     /**
      * <h3><b>Contract Size</b></h3>
      * <h4>Field Attributes</h4>
@@ -1039,7 +1039,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Size__c: string;
+    Contract_Size__c?: string;
     /**
      * <h3><b>Contract Status in the ERP</b></h3>
      * <h4>Field Attributes</h4>
@@ -1059,7 +1059,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">7</code></td><td>ToProcess</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contract_Status_in_the_ERP__c: string;
+    Contract_Status_in_the_ERP__c?: string;
     /**
      * <h3><b>Contract Time Elapsed (%)</b></h3>
      * <p>Shows how much time has has elapsed in % of total time on Contract</p>
@@ -1070,7 +1070,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Time_Elapsed__c: number;
+    Contract_Time_Elapsed__c?: number;
     /**
      * <h3><b>Contract Type</b></h3>
      * <p>Note, be careful when changing these picklist values as workflows rely on them!</p>
@@ -1097,7 +1097,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DSO</code></td><td>DSO</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contract_Type__c: string;
+    Contract_Type__c?: string;
     /**
      * <h3><b>Contract Unit</b></h3>
      * <h4>Field Attributes</h4>
@@ -1109,7 +1109,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Unit__c: string;
+    Contract_Unit__c?: string;
     /**
      * <h3><b>Contract Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -1120,8 +1120,8 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Value_D__c: number;
-    ContractNumber: string;
+    Contract_Value_D__c?: number;
+    ContractNumber?: string;
     /**
      * <h3><b>Contract#</b></h3>
      * <p>Contract#</p>
@@ -1134,8 +1134,8 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ContractNumberCustom__c: number;
-    ContractTerm: number;
+    ContractNumberCustom__c?: number;
+    ContractTerm?: number;
     /**
      * <h3><b>Correction of sales needed?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1144,7 +1144,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Correction_of_sales_needed__c: boolean;
+    Correction_of_sales_needed__c?: boolean;
     /**
      * <h3><b>Costumer Level on Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -1155,15 +1155,15 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Costumer_Level_on_Contract__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    CustomerSigned: Contact;
-    CustomerSignedDate: Date;
-    CustomerSignedId: string;
-    CustomerSignedTitle: string;
+    Costumer_Level_on_Contract__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    CustomerSigned?: Contact;
+    CustomerSignedDate?: Date;
+    CustomerSignedId?: string;
+    CustomerSignedTitle?: string;
     /**
      * <h3><b>Days until Expiration</b></h3>
      * <p>Shows the number of days until the Contract end Date. If the contract is in Draft or Expired, the number is set to blank</p>
@@ -1176,8 +1176,8 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Days_until_Expiration__c: number;
-    Description: string;
+    Days_until_Expiration__c?: number;
+    Description?: string;
     /**
      * <h3><b>Deserved discount, equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -1186,7 +1186,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Deserved_discount_equipment__c: number;
+    Deserved_discount_equipment__c?: number;
     /**
      * <h3><b>Deserved discount, materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -1195,7 +1195,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Deserved_discount_materials__c: number;
+    Deserved_discount_materials__c?: number;
     /**
      * <h3><b>Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1204,7 +1204,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount__c: number;
+    Discount__c?: number;
     /**
      * <h3><b>Discount End Year</b></h3>
      * <h4>Field Attributes</h4>
@@ -1213,7 +1213,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_End_year__c: number;
+    Discount_End_year__c?: number;
     /**
      * <h3><b>Discount model</b></h3>
      * <h4>Field Attributes</h4>
@@ -1222,7 +1222,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_model__c: string;
+    Discount_model__c?: string;
     /**
      * <h3><b>Discount model</b></h3>
      * <h4>Field Attributes</h4>
@@ -1231,7 +1231,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_model__r: Discount_model__c;
+    Discount_model__r?: Discount_model__c;
     /**
      * <h3><b>Discount to Approve</b></h3>
      * <p>The Discount that needs to be approved. Depending on the value in this field, different individuals might need to approve</p>
@@ -1242,7 +1242,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_to_Approve__c: number;
+    Discount_to_Approve__c?: number;
     /**
      * <h3><b>Discount Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1251,7 +1251,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Type__c: string;
+    Discount_Type__c?: string;
     /**
      * <h3><b>Distributor</b></h3>
      * <p>TFUS-000003033</p>
@@ -1261,7 +1261,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor__c: string;
+    Distributor__c?: string;
     /**
      * <h3><b>Distributor</b></h3>
      * <p>TFUS-000003033</p>
@@ -1271,8 +1271,8 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor__r: Account;
-    EndDate: Date;
+    Distributor__r?: Account;
+    EndDate?: Date;
     /**
      * <h3><b>ERP Contract Number</b></h3>
      * <p>Used to enter the Contract ERP Number manually. Needed for contracts that is not integrated and will contain mainly the same information as Movex Contract Number which is today integrated from Movex. The two should be aligned potentially in the future</p>
@@ -1284,7 +1284,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERP_Contract_Number__c: string;
+    ERP_Contract_Number__c?: string;
     /**
      * <h3><b>ERP Account Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -1295,7 +1295,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERP_Number__c: string;
+    ERP_Number__c?: string;
     /**
      * <h3><b>follow-on contract</b></h3>
      * <p>used to divide between first pricing contract and follow-on contracts (DE)</p>
@@ -1305,7 +1305,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    follow_on_contract__c: boolean;
+    follow_on_contract__c?: boolean;
     /**
      * <h3><b>Fulfillment/Time Elapsed Ratio (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1315,7 +1315,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FulfillmentTime_Elapsed_Ratio__c: number;
+    FulfillmentTime_Elapsed_Ratio__c?: number;
     /**
      * <h3><b>General practitioner?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1324,7 +1324,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    General_practitioner__c: boolean;
+    General_practitioner__c?: boolean;
     /**
      * <h3><b>Implant commitment</b></h3>
      * <h4>Field Attributes</h4>
@@ -1336,7 +1336,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Implant_commitment__c: number;
+    Implant_commitment__c?: number;
     /**
      * <h3><b>Implant commitment (#)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1348,7 +1348,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_commitment_abs__c: number;
+    Implant_commitment_abs__c?: number;
     /**
      * <h3><b>Implant commitment (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1358,7 +1358,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_commitment_perc__c: number;
+    Implant_commitment_perc__c?: number;
     /**
      * <h3><b>Implant commitment (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1377,7 +1377,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">80</code></td><td>80</td><td nowrap>true</td></tr>
      * </table>
      */
-    Implant_commitment_perc_input__c: string;
+    Implant_commitment_perc_input__c?: string;
     /**
      * <h3><b>Implant estimation/correction</b></h3>
      * <h4>Field Attributes</h4>
@@ -1388,7 +1388,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_forecast__c: number;
+    Implant_forecast__c?: number;
     /**
      * <h3><b>Implant volume L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -1399,7 +1399,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_volume_L12M__c: number;
+    Implant_volume_L12M__c?: number;
     /**
      * <h3><b>Implant volume L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -1411,7 +1411,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_volume_L12M_form__c: number;
+    Implant_volume_L12M_form__c?: number;
     /**
      * <h3><b>Implants sold first 14 days</b></h3>
      * <h4>Field Attributes</h4>
@@ -1423,7 +1423,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Implants_sold_first_14_days__c: number;
+    Implants_sold_first_14_days__c?: number;
     /**
      * <h3><b>Invoiced Within Ageement</b></h3>
      * <p>Shows what has been invoiced within Agreement</p>
@@ -1435,7 +1435,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoiced_Within_Ageement__c: number;
+    Invoiced_Within_Ageement__c?: number;
     /**
      * <h3><b>Invoiced within agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -1447,7 +1447,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoiced_within_agreement_formula__c: number;
+    Invoiced_within_agreement_formula__c?: number;
     /**
      * <h3><b>Is pooled order commitment fulfilled?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1456,7 +1456,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Pooling_period_ended__c</code></td></tr>
      * </table>
      */
-    Is_pooled_order_commitment_fulfilled_for__c: boolean;
+    Is_pooled_order_commitment_fulfilled_for__c?: boolean;
     /**
      * <h3><b>SureSmile Customer</b></h3>
      * <p>TFUS-000003033</p>
@@ -1472,7 +1472,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>true</td></tr>
      * </table>
      */
-    IsSureSmileCustomer__c: string;
+    IsSureSmileCustomer__c?: string;
     /**
      * <h3><b>Last Approval Change Date</b></h3>
      * <p>The date when the Approval Status last changed</p>
@@ -1482,11 +1482,11 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Approval_Change_Date__c: Date;
-    LastApprovedDate: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Last_Approval_Change_Date__c?: Date;
+    LastApprovedDate?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Max Approved Discount (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1495,7 +1495,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Max_Approved_Discount__c: number;
+    Max_Approved_Discount__c?: number;
     /**
      * <h3><b>Movex Contract No</b></h3>
      * <p>This field shows the Contract No coming from Movex.</p>
@@ -1507,7 +1507,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Contract_No__c: string;
+    Movex_Contract_No__c?: string;
     /**
      * <h3><b>Movex Contract Type</b></h3>
      * <p>The Contract Type stated in Movex</p>
@@ -1519,7 +1519,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Contract_Type__c: string;
+    Movex_Contract_Type__c?: string;
     /**
      * <h3><b>Movex template</b></h3>
      * <p>Used for identifying the corresponding template in Movex based on the contract discount values</p>
@@ -1531,8 +1531,8 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_template__c: string;
-    Name: string;
+    Movex_template__c?: string;
+    Name?: string;
     /**
      * <h3><b>Negative discount, equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -1542,7 +1542,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Negative_discount_equipment__c: number;
+    Negative_discount_equipment__c?: number;
     /**
      * <h3><b>Negative discount, materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -1552,7 +1552,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Negative_discount_materials__c: number;
+    Negative_discount_materials__c?: number;
     /**
      * <h3><b>Network</b></h3>
      * <h4>Field Attributes</h4>
@@ -1561,7 +1561,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Network__c: string;
+    Network__c?: string;
     /**
      * <h3><b>Network</b></h3>
      * <h4>Field Attributes</h4>
@@ -1570,7 +1570,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Network__r: Network__c;
+    Network__r?: Network__c;
     /**
      * <h3><b>New customer?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1579,7 +1579,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    New_customer__c: boolean;
+    New_customer__c?: boolean;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -1588,7 +1588,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity__c: string;
+    Opportunity__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -1597,7 +1597,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity__r: Opportunity;
+    Opportunity__r?: Opportunity;
     /**
      * <h3><b>Ordered vs Projected Target (Value)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1609,7 +1609,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Ordered_vs_Projected_Target_Value__c: number;
+    Ordered_vs_Projected_Target_Value__c?: number;
     /**
      * <h3><b>Ordered Within Agreement</b></h3>
      * <p>The Quantity/Value that has been ordered within the Purchasing Agreement</p>
@@ -1621,7 +1621,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Ordered_Within_Agreement__c: number;
+    Ordered_Within_Agreement__c?: number;
     /**
      * <h3><b>Ordered within agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -1633,7 +1633,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Ordered_within_agreement_formula__c: number;
+    Ordered_within_agreement_formula__c?: number;
     /**
      * <h3><b>Owned by My Direct Reports</b></h3>
      * <h4>Field Attributes</h4>
@@ -1642,10 +1642,10 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( Owner.ManagerId = $User.Id , True , False )</code></td></tr>
      * </table>
      */
-    Owned_by_My_Direct_Reports__c: boolean;
-    Owner: User;
-    OwnerExpirationNotice: string;
-    OwnerId: string;
+    Owned_by_My_Direct_Reports__c?: boolean;
+    Owner?: User;
+    OwnerExpirationNotice?: string;
+    OwnerId?: string;
     /**
      * <h3><b>Owners Managers Email (DE)</b></h3>
      * <p>Sets the owners manager according to the Manager field on the user record. Used for DE 95% contract fulfillment emails. Should not be visible on Page Layout.</p>
@@ -1657,7 +1657,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Owners_Managers_Email_DE__c: string;
+    Owners_Managers_Email_DE__c?: string;
     /**
      * <h3><b>Payment discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1675,7 +1675,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">5</code></td><td>5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Payment_discount__c: string;
+    Payment_discount__c?: string;
     /**
      * <h3><b>Payment terms</b></h3>
      * <h4>Field Attributes</h4>
@@ -1687,7 +1687,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payment_terms__c: string;
+    Payment_terms__c?: string;
     /**
      * <h3><b>Pooled order commitment?</b></h3>
      * <p>If the customer agrees to commit to place a pooled order during the contract period</p>
@@ -1700,7 +1700,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Pooled_order_commitment__c: number;
+    Pooled_order_commitment__c?: number;
     /**
      * <h3><b>Pooled order commitment</b></h3>
      * <h4>Field Attributes</h4>
@@ -1712,7 +1712,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Pooled_order_commitment_formula__c: number;
+    Pooled_order_commitment_formula__c?: number;
     /**
      * <h3><b>Pooled order commitment (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1722,7 +1722,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Pooled_order_commitment_perc__c: number;
+    Pooled_order_commitment_perc__c?: number;
     /**
      * <h3><b>Pooled order commitment (#)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1746,7 +1746,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">≥90%</code></td><td>≥90%</td><td nowrap>true</td></tr>
      * </table>
      */
-    Pooled_order_commitment_perc_input__c: string;
+    Pooled_order_commitment_perc_input__c?: string;
     /**
      * <h3><b>Is pooled order commitment fulfilled?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1755,7 +1755,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Pooling_period_ended__c: boolean;
+    Pooling_period_ended__c?: boolean;
     /**
      * <h3><b>Previous contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -1764,7 +1764,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Previous_contract__c: string;
+    Previous_contract__c?: string;
     /**
      * <h3><b>Previous contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -1773,7 +1773,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Previous_contract__r: Contract;
+    Previous_contract__r?: Contract;
     /**
      * <h3><b>Price</b></h3>
      * <p>The value of the Contract. Used in Vouchers</p>
@@ -1783,7 +1783,10 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price__c: number;
+    Price__c?: number;
+    Pricebook2?: Pricebook2;
+    Pricebook2Id?: string;
+    PricingSource?: string;
     /**
      * <h3><b>Purchase Contract External ID</b></h3>
      * <p>This is the primary contract external id. If there is a match between Movex and SFDC in this field the contract or voucher is updated. If not it the other Contract external ID is checked. This is used to cater for the scenario that a Contract (not a Voucher) should never be inserted, while the Voucher can be inserted.</p>
@@ -1795,7 +1798,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Purchase_Contract_External_ID__c: string;
+    Purchase_Contract_External_ID__c?: string;
     /**
      * <h3><b>Quarterly Case Minimum</b></h3>
      * <p>TFUS-000003033</p>
@@ -1808,9 +1811,9 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    QuarterlyCaseMinimum__c: number;
-    RecordType: RecordType;
-    RecordTypeId: string;
+    QuarterlyCaseMinimum__c?: number;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Remaning Invoiced within Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -1822,7 +1825,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rem_Invoiced_within_Agreement_formula__c: number;
+    Rem_Invoiced_within_Agreement_formula__c?: number;
     /**
      * <h3><b>Remaning Ordered within Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -1834,7 +1837,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rem_Ordered_within_Agreement_formula__c: number;
+    Rem_Ordered_within_Agreement_formula__c?: number;
     /**
      * <h3><b>Remaining Invoiced Within Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -1845,7 +1848,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remaining_Invoiced_within_Agreement__c: number;
+    Remaining_Invoiced_within_Agreement__c?: number;
     /**
      * <h3><b>Remaining Ordered within Agreement</b></h3>
      * <p>Shows how much is remaining to be ordered within the Agreement</p>
@@ -1857,7 +1860,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remaining_Ordered_within_Agreement__c: number;
+    Remaining_Ordered_within_Agreement__c?: number;
     /**
      * <h3><b>Remaining Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -1866,7 +1869,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remaining_Value__c: number;
+    Remaining_Value__c?: number;
     /**
      * <h3><b>Remaining within Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -1877,7 +1880,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remaining_within_Agreement__c: number;
+    Remaining_within_Agreement__c?: number;
     /**
      * <h3><b>Remains to next level of discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1889,7 +1892,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remains_impl_material__c: number;
+    Remains_impl_material__c?: number;
     /**
      * <h3><b>Remains to next level of discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1899,8 +1902,10 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Remains_rev_material__c: number;
-    ReplayId: string;
+    Remains_rev_material__c?: number;
+    RenewalTerm2?: number;
+    RenewalTermUnit?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Revenue: basis for allowance</b></h3>
      * <h4>Field Attributes</h4>
@@ -1910,7 +1915,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Revenue_basis_for_allowance__c: number;
+    Revenue_basis_for_allowance__c?: number;
     /**
      * <h3><b>Sales estimation/correction</b></h3>
      * <h4>Field Attributes</h4>
@@ -1919,7 +1924,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Revenue_forecast__c: number;
+    Revenue_forecast__c?: number;
     /**
      * <h3><b>Row discount impl mat</b></h3>
      * <h4>Field Attributes</h4>
@@ -1928,7 +1933,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Row_discount_impl_mat__c: string;
+    Row_discount_impl_mat__c?: string;
     /**
      * <h3><b>Row discount impl mat</b></h3>
      * <h4>Field Attributes</h4>
@@ -1937,7 +1942,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Row_discount_impl_mat__r: Discount_row__c;
+    Row_discount_impl_mat__r?: Discount_row__c;
     /**
      * <h3><b>Row discount rev mat</b></h3>
      * <h4>Field Attributes</h4>
@@ -1946,7 +1951,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Row_discount_rev_mat__c: string;
+    Row_discount_rev_mat__c?: string;
     /**
      * <h3><b>Row discount rev mat</b></h3>
      * <h4>Field Attributes</h4>
@@ -1955,7 +1960,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Row_discount_rev_mat__r: Discount_row__c;
+    Row_discount_rev_mat__r?: Discount_row__c;
     /**
      * <h3><b>Sales Correction</b></h3>
      * <h4>Field Attributes</h4>
@@ -1964,7 +1969,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Sales_Correction__c: boolean;
+    Sales_Correction__c?: boolean;
     /**
      * <h3><b>Sales L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -1973,7 +1978,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_L12M__c: number;
+    Sales_L12M__c?: number;
     /**
      * <h3><b>Sales L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -1983,7 +1988,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_L12M_form__c: number;
+    Sales_L12M_form__c?: number;
     /**
      * <h3><b>Sales L24M</b></h3>
      * <h4>Field Attributes</h4>
@@ -1992,7 +1997,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_L24M__c: number;
+    Sales_L24M__c?: number;
     /**
      * <h3><b>Sales starter package</b></h3>
      * <h4>Field Attributes</h4>
@@ -2003,7 +2008,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_starter_package__c: number;
+    Sales_starter_package__c?: number;
     /**
      * <h3><b>Asset</b></h3>
      * <h4>Field Attributes</h4>
@@ -2012,7 +2017,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SAP_Asset__c: string;
+    SAP_Asset__c?: string;
     /**
      * <h3><b>Asset</b></h3>
      * <h4>Field Attributes</h4>
@@ -2021,7 +2026,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SAP_Asset__r: Asset;
+    SAP_Asset__r?: Asset;
     /**
      * <h3><b>SAP ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -2032,7 +2037,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    SAP_ID__c: string;
+    SAP_ID__c?: string;
     /**
      * <h3><b>Template Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -2043,7 +2048,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SAPTemplateDescription__c: string;
+    SAPTemplateDescription__c?: string;
     /**
      * <h3><b>Template ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -2054,7 +2059,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SAPTemplateID__c: string;
+    SAPTemplateID__c?: string;
     /**
      * <h3><b>Several Customer numbers</b></h3>
      * <h4>Field Attributes</h4>
@@ -2063,7 +2068,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( Several_Customer_numbers_text__c  &lt;&gt;  &quot;&quot;, true, false)</code></td></tr>
      * </table>
      */
-    Several_Customer_numbers__c: boolean;
+    Several_Customer_numbers__c?: boolean;
     /**
      * <h3><b>Several Customer numbers (text)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2074,16 +2079,16 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Several_Customer_numbers_text__c: string;
-    ShippingAddress: Address;
-    ShippingCity: string;
-    ShippingCountry: string;
-    ShippingGeocodeAccuracy: string;
-    ShippingLatitude: number;
-    ShippingLongitude: number;
-    ShippingPostalCode: string;
-    ShippingState: string;
-    ShippingStreet: string;
+    Several_Customer_numbers_text__c?: string;
+    ShippingAddress?: Address;
+    ShippingCity?: string;
+    ShippingCountry?: string;
+    ShippingGeocodeAccuracy?: string;
+    ShippingLatitude?: number;
+    ShippingLongitude?: number;
+    ShippingPostalCode?: string;
+    ShippingState?: string;
+    ShippingStreet?: string;
     /**
      * <h3><b>signed contract sent back</b></h3>
      * <p>used to track if the contract was sent back from customer</p>
@@ -2093,7 +2098,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    signed_contract_sent_back__c: boolean;
+    signed_contract_sent_back__c?: boolean;
     /**
      * <h3><b>Siroforce Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -2108,7 +2113,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inactive</code></td><td>Inactive</td><td nowrap>true</td></tr>
      * </table>
      */
-    Siroforce_Status__c: string;
+    Siroforce_Status__c?: string;
     /**
      * <h3><b>Sold Implants During Contract Period</b></h3>
      * <h4>Field Attributes</h4>
@@ -2119,7 +2124,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_During_Contract_Period__c: number;
+    Sold_Implants_During_Contract_Period__c?: number;
     /**
      * <h3><b>Source Record</b></h3>
      * <h4>Field Attributes</h4>
@@ -2128,7 +2133,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceRecord__c: string;
+    SourceRecord__c?: string;
     /**
      * <h3><b>Source Record</b></h3>
      * <h4>Field Attributes</h4>
@@ -2137,7 +2142,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceRecord__r: Source_Record__c;
+    SourceRecord__r?: Source_Record__c;
     /**
      * <h3><b>Source Record Customer Id</b></h3>
      * <p>Used for Mail Merge templates</p>
@@ -2150,7 +2155,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceRecordCustomerId__c: string;
+    SourceRecordCustomerId__c?: string;
     /**
      * <h3><b>SourceSystemName</b></h3>
      * <p>Source System Name</p>
@@ -2162,11 +2167,11 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceSystemName__c: string;
-    SpecialTerms: string;
-    StartDate: Date;
-    Status: string;
-    StatusCode: string;
+    SourceSystemName__c?: string;
+    SpecialTerms?: string;
+    StartDate?: Date;
+    Status?: string;
+    StatusCode?: string;
     /**
      * <h3><b>SureSmile Practice Id</b></h3>
      * <p>TFUS-000003033</p>
@@ -2178,7 +2183,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SureSmileCustomerNumber__c: string;
+    SureSmileCustomerNumber__c?: string;
     /**
      * <h3><b>Projected Target Value</b></h3>
      * <p>The Value that should have been ordered to keep in line with the target.
@@ -2192,7 +2197,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Target_Value__c: number;
+    Target_Value__c?: number;
     /**
      * <h3><b>Total Sales During Contract Period</b></h3>
      * <h4>Field Attributes</h4>
@@ -2203,7 +2208,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Sales_During_Contract_Period__c: number;
+    Total_Sales_During_Contract_Period__c?: number;
     /**
      * <h3><b>Type of Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -2221,7 +2226,7 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Activate</code></td><td>DS Activate</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type_of_Contract__c: string;
+    Type_of_Contract__c?: string;
     /**
      * <h3><b>Voucher Type</b></h3>
      * <p>The Type of Voucher. Based on information from Movex. Read only field for all profiles</p>
@@ -2241,5 +2246,5 @@ declare interface ContractChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Voucher - Wafers</code></td><td>Voucher - Wafers</td><td nowrap>true</td></tr>
      * </table>
      */
-    Voucher_Type__c: string;
+    Voucher_Type__c?: string;
 }

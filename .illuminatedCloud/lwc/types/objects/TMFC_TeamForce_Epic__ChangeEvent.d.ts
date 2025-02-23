@@ -2,17 +2,17 @@
 
 declare interface TMFC_TeamForce_Epic__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Project Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface TMFC_TeamForce_Epic__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project_Name__c: string;
+    Project_Name__c?: string;
     /**
      * <h3><b>Project Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,8 +30,8 @@ declare interface TMFC_TeamForce_Epic__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project_Name__r: Project__c;
-    ReplayId: string;
+    Project_Name__r?: Project__c;
+    ReplayId?: string;
     /**
      * <h3><b>Data Requirements</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface TMFC_TeamForce_Epic__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Data_Requirements__c: string;
+    TMFC_Data_Requirements__c?: string;
     /**
      * <h3><b>Epic Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,7 +56,7 @@ declare interface TMFC_TeamForce_Epic__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Complete</code></td><td>Complete</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    TMFC_Epic_Status__c: string;
+    TMFC_Epic_Status__c?: string;
     /**
      * <h3><b>Expected Audience</b></h3>
      * <h4>Field Attributes</h4>
@@ -65,7 +65,7 @@ declare interface TMFC_TeamForce_Epic__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Expected_Audience__c: string;
+    TMFC_Expected_Audience__c?: string;
     /**
      * <h3><b>Solution Business Objectives</b></h3>
      * <h4>Field Attributes</h4>
@@ -73,7 +73,7 @@ declare interface TMFC_TeamForce_Epic__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(5000)</td></tr>
      * </table>
      */
-    TMFC_Solution_Business_Objectives__c: string;
+    TMFC_Solution_Business_Objectives__c?: string;
     /**
      * <h3><b>Solution Technical Design</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface TMFC_TeamForce_Epic__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    TMFC_Solution_Technical_Design__c: string;
+    TMFC_Solution_Technical_Design__c?: string;
     /**
      * <h3><b>User Journey</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,5 +89,5 @@ declare interface TMFC_TeamForce_Epic__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    TMFC_User_Journey__c: string;
+    TMFC_User_Journey__c?: string;
 }

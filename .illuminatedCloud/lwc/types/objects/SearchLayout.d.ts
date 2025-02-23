@@ -2,17 +2,17 @@
 
 declare interface SearchLayout extends SObject 
 {
-    ButtonsDisplayed: Object;
-    DurableId: string;
-    EntityDefinition: EntityDefinition;
-    EntityDefinitionId: string;
-    FieldsDisplayed: Object;
-    Label: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LayoutType: string;
-    ListLayout: string;
-    Profile: string;
-    ProfileName: string;
+    ButtonsDisplayed?: Object;
+    DurableId?: string;
+    EntityDefinition?: EntityDefinition;
+    EntityDefinitionId?: string;
+    FieldsDisplayed?: Object;
+    Label?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LayoutType?: string;
+    ListLayout?: string;
+    Profile?: string;
+    ProfileName?: string;
 }

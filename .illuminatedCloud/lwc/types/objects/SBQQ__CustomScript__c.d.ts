@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__CustomScript__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Code</b></h3>
      * <p>Script code</p>
@@ -23,7 +23,7 @@ declare interface SBQQ__CustomScript__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Code__c: string;
+    SBQQ__Code__c?: string;
     /**
      * <h3><b>Consumption Rate Fields</b></h3>
      * <p>Fields on the ConsumptionRate object referenced by this plugin</p>
@@ -33,7 +33,7 @@ declare interface SBQQ__CustomScript__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ConsumptionRateFields__c: string;
+    SBQQ__ConsumptionRateFields__c?: string;
     /**
      * <h3><b>Consumption Schedule Fields</b></h3>
      * <p>Fields on the ConsumptionSchedule object referenced by this plugin</p>
@@ -43,7 +43,7 @@ declare interface SBQQ__CustomScript__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ConsumptionScheduleFields__c: string;
+    SBQQ__ConsumptionScheduleFields__c?: string;
     /**
      * <h3><b>Quote Line Group Fields</b></h3>
      * <p>Fields on the QuoteLineGroup__c object referenced by this plugin</p>
@@ -53,7 +53,7 @@ declare interface SBQQ__CustomScript__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__GroupFields__c: string;
+    SBQQ__GroupFields__c?: string;
     /**
      * <h3><b>Quote Fields</b></h3>
      * <p>Fields on the Quote__c object referenced by this plugin</p>
@@ -63,7 +63,7 @@ declare interface SBQQ__CustomScript__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteFields__c: string;
+    SBQQ__QuoteFields__c?: string;
     /**
      * <h3><b>Quote Line Fields</b></h3>
      * <p>QuoteLine__c fields referenced by the plugin</p>
@@ -73,7 +73,7 @@ declare interface SBQQ__CustomScript__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteLineFields__c: string;
+    SBQQ__QuoteLineFields__c?: string;
     /**
      * <h3><b>Transpiled Code</b></h3>
      * <p>Script Code transpiled to ES5</p>
@@ -83,5 +83,5 @@ declare interface SBQQ__CustomScript__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TranspiledCode__c: string;
+    SBQQ__TranspiledCode__c?: string;
 }

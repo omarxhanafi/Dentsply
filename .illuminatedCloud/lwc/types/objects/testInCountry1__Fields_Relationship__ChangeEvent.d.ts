@@ -2,18 +2,18 @@
 
 declare interface testInCountry1__Fields_Relationship__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Field Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface testInCountry1__Fields_Relationship__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Field_Name__c: string;
+    testInCountry1__Field_Name__c?: string;
     /**
      * <h3><b>Object type</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,5 +39,5 @@ declare interface testInCountry1__Fields_Relationship__ChangeEvent extends SObje
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Contact</code></td><td>Contact</td><td nowrap>true</td></tr>
      * </table>
      */
-    testInCountry1__Object_type__c: string;
+    testInCountry1__Object_type__c?: string;
 }

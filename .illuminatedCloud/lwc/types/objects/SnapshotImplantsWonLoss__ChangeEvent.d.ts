@@ -10,7 +10,7 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,12 +19,12 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Account__r?: Account;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Implants Loss Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsLossType__c: string;
+    ImplantsLossType__c?: string;
     /**
      * <h3><b>Implants Lost Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsLostDate__c: Date;
+    ImplantsLostDate__c?: Date;
     /**
      * <h3><b>Implants Potential</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsPotential__c: number;
+    ImplantsPotential__c?: number;
     /**
      * <h3><b>Implants Potential Net</b></h3>
      * <h4>Field Attributes</h4>
@@ -67,7 +67,7 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsPotentialNet__c: number;
+    ImplantsPotentialNet__c?: number;
     /**
      * <h3><b>Implants Win Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsWinType__c: string;
+    ImplantsWinType__c?: string;
     /**
      * <h3><b>Implants Won Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -87,14 +87,14 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsWonDate__c: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    ImplantsWonDate__c?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Update date</b></h3>
      * <h4>Field Attributes</h4>
@@ -103,7 +103,7 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Update_date__c: Date;
+    Update_date__c?: Date;
     /**
      * <h3><b>Won/Lost Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -114,5 +114,5 @@ declare interface SnapshotImplantsWonLoss__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WonLostCode__c: number;
+    WonLostCode__c?: number;
 }

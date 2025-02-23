@@ -15,7 +15,7 @@ declare interface SSIS_Cost_Revenue_Mapping__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Code__c: string;
+    Account_Code__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <p>This field indicates that this translation is for a specific Market. If this field is blank, the translation is valid for ALL markets</p>
@@ -27,14 +27,14 @@ declare interface SSIS_Cost_Revenue_Mapping__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Map To</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,6 +62,6 @@ declare interface SSIS_Cost_Revenue_Mapping__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Venue Expenses</code></td><td>Venue Expenses</td><td nowrap>true</td></tr>
      * </table>
      */
-    Map_To__c: string;
-    Name: string;
+    Map_To__c?: string;
+    Name?: string;
 }

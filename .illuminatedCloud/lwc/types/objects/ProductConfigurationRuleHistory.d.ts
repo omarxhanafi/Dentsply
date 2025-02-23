@@ -2,14 +2,14 @@
 
 declare interface ProductConfigurationRuleHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ProductConfigurationRule: ProductConfigurationRule;
-    ProductConfigurationRuleId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ProductConfigurationRule?: ProductConfigurationRule;
+    ProductConfigurationRuleId?: string;
 }

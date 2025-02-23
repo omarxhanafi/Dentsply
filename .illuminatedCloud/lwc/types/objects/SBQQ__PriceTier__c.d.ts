@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__PriceTier__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Discount ({0})</b></h3>
      * <p>Discount amount applied when quantity falls in this tier.</p>
@@ -24,7 +24,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DiscountAmount__c: number;
+    SBQQ__DiscountAmount__c?: number;
     /**
      * <h3><b>Discount (%)</b></h3>
      * <p>Discount percentage applied when quantity falls in this tier.</p>
@@ -35,7 +35,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DiscountPercentage__c: number;
+    SBQQ__DiscountPercentage__c?: number;
     /**
      * <h3><b>Lower Bound</b></h3>
      * <p>Lower bound of the quantity range for this tier</p>
@@ -47,7 +47,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__LowerBound__c: number;
+    SBQQ__LowerBound__c?: number;
     /**
      * <h3><b>Number</b></h3>
      * <p>Number indicating this tier&#39;s position within the schedule.</p>
@@ -59,7 +59,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Number__c: number;
+    SBQQ__Number__c?: number;
     /**
      * <h3><b>Original Block Price</b></h3>
      * <p>The block price where this price tier is originated from.</p>
@@ -70,7 +70,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OriginalBlockPrice__c: string;
+    SBQQ__OriginalBlockPrice__c?: string;
     /**
      * <h3><b>Original Block Price</b></h3>
      * <p>The block price where this price tier is originated from.</p>
@@ -81,7 +81,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OriginalBlockPrice__r: SBQQ__BlockPrice__c;
+    SBQQ__OriginalBlockPrice__r?: SBQQ__BlockPrice__c;
     /**
      * <h3><b>Original Discount Tier</b></h3>
      * <p>The discount tier where this price tier is originated from.</p>
@@ -92,7 +92,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OriginalDiscountTier__c: string;
+    SBQQ__OriginalDiscountTier__c?: string;
     /**
      * <h3><b>Original Discount Tier</b></h3>
      * <p>The discount tier where this price tier is originated from.</p>
@@ -103,7 +103,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OriginalDiscountTier__r: SBQQ__DiscountTier__c;
+    SBQQ__OriginalDiscountTier__r?: SBQQ__DiscountTier__c;
     /**
      * <h3><b>Price</b></h3>
      * <p>The actual price of this Price Tier. This field will be populated when a new set of Price Schedules are created for a new Order record.</p>
@@ -114,7 +114,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Price__c: number;
+    SBQQ__Price__c?: number;
     /**
      * <h3><b>Price Model</b></h3>
      * <p>The price model that determines how the prices are calculated.</p>
@@ -125,7 +125,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PriceModel__c: string;
+    SBQQ__PriceModel__c?: string;
     /**
      * <h3><b>Schedule</b></h3>
      * <p>Price Schedule to which this tier belongs.</p>
@@ -135,7 +135,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PriceSchedule__c: string;
+    SBQQ__PriceSchedule__c?: string;
     /**
      * <h3><b>Schedule</b></h3>
      * <p>Price Schedule to which this tier belongs.</p>
@@ -145,7 +145,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PriceSchedule__r: SBQQ__PriceSchedule__c;
+    SBQQ__PriceSchedule__r?: SBQQ__PriceSchedule__c;
     /**
      * <h3><b>Term Discount</b></h3>
      * <p>The total term discount taken for this tier.</p>
@@ -156,7 +156,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TermDiscount__c: number;
+    SBQQ__TermDiscount__c?: number;
     /**
      * <h3><b>Upper Bound</b></h3>
      * <p>Upper bound of the quantity range for this tier.</p>
@@ -168,7 +168,7 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UpperBound__c: number;
+    SBQQ__UpperBound__c?: number;
     /**
      * <h3><b>Volume Discount</b></h3>
      * <p>The total volume discount taken for this tier.</p>
@@ -179,5 +179,5 @@ declare interface SBQQ__PriceTier__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__VolumnDiscount__c: number;
+    SBQQ__VolumnDiscount__c?: number;
 }

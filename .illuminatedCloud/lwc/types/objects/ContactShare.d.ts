@@ -2,14 +2,14 @@
 
 declare interface ContactShare extends SObject 
 {
-    Contact: Contact;
-    ContactAccessLevel: string;
-    ContactId: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    RowCause: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    Contact?: Contact;
+    ContactAccessLevel?: string;
+    ContactId?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    RowCause?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

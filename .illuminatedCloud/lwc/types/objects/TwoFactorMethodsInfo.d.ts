@@ -2,16 +2,16 @@
 
 declare interface TwoFactorMethodsInfo extends SObject 
 {
-    ExternalId: string;
-    HasBuiltInAuthenticator: boolean;
-    HasSalesforceAuthenticator: boolean;
-    HasSecurityKey: boolean;
-    HasTempCode: boolean;
-    HasTotp: boolean;
-    HasU2F: boolean;
-    HasUserVerifiedEmailAddress: boolean;
-    HasUserVerifiedMobileNumber: boolean;
-    HasVerifiedMobileNumber: boolean;
-    User: User;
-    UserId: string;
+    ExternalId?: string;
+    HasBuiltInAuthenticator?: boolean;
+    HasSalesforceAuthenticator?: boolean;
+    HasSecurityKey?: boolean;
+    HasTempCode?: boolean;
+    HasTotp?: boolean;
+    HasU2F?: boolean;
+    HasUserVerifiedEmailAddress?: boolean;
+    HasUserVerifiedMobileNumber?: boolean;
+    HasVerifiedMobileNumber?: boolean;
+    User?: User;
+    UserId?: string;
 }

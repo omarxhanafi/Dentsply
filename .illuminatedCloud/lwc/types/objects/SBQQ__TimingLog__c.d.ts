@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__TimingLog__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Element</b></h3>
      * <p>Element name</p>
@@ -25,7 +25,7 @@ declare interface SBQQ__TimingLog__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Element__c: string;
+    SBQQ__Element__c?: string;
     /**
      * <h3><b>Finish</b></h3>
      * <p>Finishing CPU time</p>
@@ -37,7 +37,7 @@ declare interface SBQQ__TimingLog__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Finish__c: number;
+    SBQQ__Finish__c?: number;
     /**
      * <h3><b>Log</b></h3>
      * <p>Log entry</p>
@@ -47,7 +47,7 @@ declare interface SBQQ__TimingLog__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Log__c: string;
+    SBQQ__Log__c?: string;
     /**
      * <h3><b>Start</b></h3>
      * <p>Starting CPU time</p>
@@ -59,7 +59,7 @@ declare interface SBQQ__TimingLog__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Start__c: number;
+    SBQQ__Start__c?: number;
     /**
      * <h3><b>Total CPU Time</b></h3>
      * <p>Total CPU time consumed.</p>
@@ -71,7 +71,7 @@ declare interface SBQQ__TimingLog__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Total__c: number;
+    SBQQ__Total__c?: number;
     /**
      * <h3><b>URL</b></h3>
      * <p>Target of the request</p>
@@ -83,5 +83,5 @@ declare interface SBQQ__TimingLog__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__URL__c: string;
+    SBQQ__URL__c?: string;
 }

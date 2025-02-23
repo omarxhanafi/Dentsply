@@ -2,14 +2,14 @@
 
 declare interface ApexTestSuite extends SObject 
 {
-    ApexClassJunctions: TestSuiteMembership[];
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    SystemModstamp: string;
-    TestSuiteName: string;
+    ApexClassJunctions?: TestSuiteMembership[];
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    SystemModstamp?: string;
+    TestSuiteName?: string;
 }

@@ -60,10 +60,34 @@ declare module "@salesforce/schema/IntegrationProviderDef.ExternalServiceOperati
     export default ExternalServiceOperationName;
 }
 
+declare module "@salesforce/schema/IntegrationProviderDef.FalloutRules" {
+    import { FieldId } from "@salesforce/schema";
+    const FalloutRules: FieldId;
+    export default FalloutRules;
+}
+
 declare module "@salesforce/schema/IntegrationProviderDef.FileBasedApexClass" {
     import { FieldId } from "@salesforce/schema";
     const FileBasedApexClass: FieldId;
     export default FileBasedApexClass;
+}
+
+declare module "@salesforce/schema/IntegrationProviderDef.FulfillmentStepDefinitions" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentStepDefinitions: FieldId;
+    export default FulfillmentStepDefinitions;
+}
+
+declare module "@salesforce/schema/IntegrationProviderDef.FulfillmentStepJeopardyRules" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentStepJeopardyRules: FieldId;
+    export default FulfillmentStepJeopardyRules;
+}
+
+declare module "@salesforce/schema/IntegrationProviderDef.FulfillmentSteps" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentSteps: FieldId;
+    export default FulfillmentSteps;
 }
 
 declare module "@salesforce/schema/IntegrationProviderDef.Id" {
@@ -82,6 +106,12 @@ declare module "@salesforce/schema/IntegrationProviderDef.InputDataProcessorId" 
     import { FieldId } from "@salesforce/schema";
     const InputDataProcessorId: FieldId;
     export default InputDataProcessorId;
+}
+
+declare module "@salesforce/schema/IntegrationProviderDef.IntegrationDefinitionName" {
+    import { FieldId } from "@salesforce/schema";
+    const IntegrationDefinitionName: FieldId;
+    export default IntegrationDefinitionName;
 }
 
 declare module "@salesforce/schema/IntegrationProviderDef.IntegrationProviderAttrs" {

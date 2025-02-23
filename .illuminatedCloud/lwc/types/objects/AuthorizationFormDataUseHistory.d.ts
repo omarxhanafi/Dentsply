@@ -2,14 +2,14 @@
 
 declare interface AuthorizationFormDataUseHistory extends SObject 
 {
-    AuthorizationFormDataUse: AuthorizationFormDataUse;
-    AuthorizationFormDataUseId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    AuthorizationFormDataUse?: AuthorizationFormDataUse;
+    AuthorizationFormDataUseId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

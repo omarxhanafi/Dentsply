@@ -9,7 +9,7 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account_Plan__c})</td></tr>
      * </table>
      */
-    AccountPlan__c: string;
+    AccountPlan__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account_Plan__c})</td></tr>
      * </table>
      */
-    AccountPlan__r: Account_Plan__c;
+    AccountPlan__r?: Account_Plan__c;
     /**
      * <h3><b>Business Unit</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,12 +39,12 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    BusinessUnit__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    BusinessUnit__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Goals</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,7 +52,7 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(300)</td></tr>
      * </table>
      */
-    Goals__c: string;
+    Goals__c?: string;
     /**
      * <h3><b>Action Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -60,7 +60,7 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(300)</td></tr>
      * </table>
      */
-    IndicatedActions__c: string;
+    IndicatedActions__c?: string;
     /**
      * <h3><b>Strategies &amp; Initiatives</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,10 +68,10 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(300)</td></tr>
      * </table>
      */
-    Initiatives__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Initiatives__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Measures</b></h3>
      * <h4>Field Attributes</h4>
@@ -79,8 +79,8 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(300)</td></tr>
      * </table>
      */
-    Measures__c: string;
-    Name: string;
+    Measures__c?: string;
+    Name?: string;
     /**
      * <h3><b>Objective</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,8 +88,8 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(300)</td></tr>
      * </table>
      */
-    Objective__c: string;
-    ReplayId: string;
+    Objective__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -107,7 +107,7 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Achieved</code></td><td>Achieved</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Status Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,5 +115,5 @@ declare interface Objective__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(300)</td></tr>
      * </table>
      */
-    StatusNotes__c: string;
+    StatusNotes__c?: string;
 }

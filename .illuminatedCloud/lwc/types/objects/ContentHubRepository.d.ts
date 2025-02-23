@@ -2,16 +2,16 @@
 
 declare interface ContentHubRepository extends SObject 
 {
-    ContentHubRepository: ContentHubItem;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DeveloperName: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    SystemModstamp: string;
-    Type: string;
+    ContentHubRepository?: ContentHubItem;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DeveloperName?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    SystemModstamp?: string;
+    Type?: string;
 }

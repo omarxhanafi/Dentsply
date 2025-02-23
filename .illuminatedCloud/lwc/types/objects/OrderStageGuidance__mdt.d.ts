@@ -6,7 +6,7 @@
  */
 declare interface OrderStageGuidance__mdt extends SObject 
 {
-    DeveloperName: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Key Fields</b></h3>
      * <p>List of key fields that are required to submit the order for approval. Example: [&quot;Order_Source__c&quot;,&quot;Distributor__c&quot;,&quot;ShippingAddress&quot;]</p>
@@ -18,7 +18,7 @@ declare interface OrderStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KeyFields__c: string;
+    KeyFields__c?: string;
     /**
      * <h3><b>Key Fields Optional</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface OrderStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KeyFieldsOptional__c: string;
+    KeyFieldsOptional__c?: string;
     /**
      * <h3><b>Key Fields (ReadOnly)</b></h3>
      * <p>Fields that are required to submit for approval, but read only in the Key Fields section. Can be left blank.</p>
@@ -41,7 +41,7 @@ declare interface OrderStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KeyFieldsReadOnly__c: string;
+    KeyFieldsReadOnly__c?: string;
     /**
      * <h3><b>Key Fields Title</b></h3>
      * <p>Displayed directly to the user.</p>
@@ -54,11 +54,11 @@ declare interface OrderStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;Key Fields&quot;</code></td></tr>
      * </table>
      */
-    KeyFieldsTitle__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    KeyFieldsTitle__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Order Status</b></h3>
      * <p>This is used to provide the right guidance depending on the Order.Status field.</p>
@@ -78,7 +78,7 @@ declare interface OrderStageGuidance__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ON HOLD</code></td><td>ON HOLD</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    OrderStatus__c: string;
+    OrderStatus__c?: string;
     /**
      * <h3><b>Price Book</b></h3>
      * <p>Used to query the right guidance depending on Order.Pricebook2Id. If left blank, this record becomes the default global configuration.</p>
@@ -90,8 +90,8 @@ declare interface OrderStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Pricebook2Id__c: string;
-    QualifiedApiName: string;
+    Pricebook2Id__c?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Stage Guidance</b></h3>
      * <p>Displayed directly to the user. This is the guidance text shown in the Stage Guidance section.</p>
@@ -100,7 +100,7 @@ declare interface OrderStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    StageGuidance__c: string;
+    StageGuidance__c?: string;
     /**
      * <h3><b>Stage Guidance Title</b></h3>
      * <p>Displayed directly to the user. Title of the Stage Guidance section.</p>
@@ -113,6 +113,6 @@ declare interface OrderStageGuidance__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;Stage Guidance&quot;</code></td></tr>
      * </table>
      */
-    StageGuidanceTitle__c: string;
-    SystemModstamp: string;
+    StageGuidanceTitle__c?: string;
+    SystemModstamp?: string;
 }

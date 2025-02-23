@@ -22,11 +22,11 @@ declare interface Team_setup__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Canada</code></td><td>Canada</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * The reciprocal relationship for {@link Country_metadata__mdt.Team_setup__c}.
      */
-    Country_metadata__r: Country_metadata__mdt[];
+    Country_metadata__r?: Country_metadata__mdt[];
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,13 +35,13 @@ declare interface Team_setup__mdt extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    Description__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,7 +56,7 @@ declare interface Team_setup__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">PREP</code></td><td>PREP</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,6 +71,6 @@ declare interface Team_setup__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Retired</code></td><td>Retired</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
-    SystemModstamp: string;
+    Status__c?: string;
+    SystemModstamp?: string;
 }

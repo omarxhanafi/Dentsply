@@ -2,13 +2,13 @@
 
 declare interface DataType extends SObject 
 {
-    ContextServiceDataType: SObject;
-    ContextServiceDataTypeId: string;
-    ContextWsdlDataType: SObject;
-    ContextWsdlDataTypeId: string;
-    DeveloperName: string;
-    DurableId: string;
-    IsComplex: boolean;
-    ServiceDataType: EntityParticle;
-    ValueType: EntityParticle;
+    ContextServiceDataType?: SObject;
+    ContextServiceDataTypeId?: string;
+    ContextWsdlDataType?: SObject;
+    ContextWsdlDataTypeId?: string;
+    DeveloperName?: string;
+    DurableId?: string;
+    IsComplex?: boolean;
+    ServiceDataType?: EntityParticle;
+    ValueType?: EntityParticle;
 }

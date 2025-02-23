@@ -2,12 +2,12 @@
 
 declare interface ContentFolderLink extends SObject 
 {
-    ContentFolder: ContentFolder;
-    ContentFolderId: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    EnableFolderStatus: string;
-    IsDeleted: boolean;
-    ParentEntity: ContentWorkspace;
-    ParentEntityId: string;
-    RelatedRecord: FlowRecordRelation;
+    ContentFolder?: ContentFolder;
+    ContentFolderId?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    EnableFolderStatus?: string;
+    IsDeleted?: boolean;
+    ParentEntity?: ContentWorkspace;
+    ParentEntityId?: string;
+    RelatedRecord?: FlowRecordRelation;
 }

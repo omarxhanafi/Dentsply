@@ -2,15 +2,15 @@
 
 declare interface ContentNotification extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedDate: string;
-    EntityIdentifier: SObject;
-    EntityIdentifierId: string;
-    EntityType: string;
-    Nature: string;
-    RelatedRecord: FlowRecordRelation;
-    Subject: string;
-    Text: string;
-    Users: User;
-    UsersId: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedDate?: string;
+    EntityIdentifier?: SObject;
+    EntityIdentifierId?: string;
+    EntityType?: string;
+    Nature?: string;
+    RelatedRecord?: FlowRecordRelation;
+    Subject?: string;
+    Text?: string;
+    Users?: User;
+    UsersId?: string;
 }

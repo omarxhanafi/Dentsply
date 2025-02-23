@@ -2,8 +2,8 @@
 
 declare interface EmbeddedServiceLabel extends SObject 
 {
-    CustomLabelName: string;
-    DurableId: string;
-    EmbeddedServiceConfigDeveloperName: string;
-    LabelKey: string;
+    CustomLabelName?: string;
+    DurableId?: string;
+    EmbeddedServiceConfigDeveloperName?: string;
+    LabelKey?: string;
 }

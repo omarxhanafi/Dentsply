@@ -30,6 +30,24 @@ declare module "@salesforce/schema/OrderItemRelationship.AssociatedOrderItemId" 
     export default AssociatedOrderItemId;
 }
 
+declare module "@salesforce/schema/OrderItemRelationship.AssociatedOrderItemPricing" {
+    import { FieldId } from "@salesforce/schema";
+    const AssociatedOrderItemPricing: FieldId;
+    export default AssociatedOrderItemPricing;
+}
+
+declare module "@salesforce/schema/OrderItemRelationship.AssociatedOrderItemRole" {
+    import { FieldId } from "@salesforce/schema";
+    const AssociatedOrderItemRole: FieldId;
+    export default AssociatedOrderItemRole;
+}
+
+declare module "@salesforce/schema/OrderItemRelationship.AssociatedQuantScaleMethod" {
+    import { FieldId } from "@salesforce/schema";
+    const AssociatedQuantScaleMethod: FieldId;
+    export default AssociatedQuantScaleMethod;
+}
+
 declare module "@salesforce/schema/OrderItemRelationship.AttachedContentDocuments" {
     import { FieldId } from "@salesforce/schema";
     const AttachedContentDocuments: FieldId;
@@ -172,6 +190,12 @@ declare module "@salesforce/schema/OrderItemRelationship.MainOrderItemId" {
     import { FieldId } from "@salesforce/schema";
     const MainOrderItemId: FieldId;
     export default MainOrderItemId;
+}
+
+declare module "@salesforce/schema/OrderItemRelationship.MainOrderItemRole" {
+    import { FieldId } from "@salesforce/schema";
+    const MainOrderItemRole: FieldId;
+    export default MainOrderItemRole;
 }
 
 declare module "@salesforce/schema/OrderItemRelationship.Name" {

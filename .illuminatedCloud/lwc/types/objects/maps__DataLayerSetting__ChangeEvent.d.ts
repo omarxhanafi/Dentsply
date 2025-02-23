@@ -2,14 +2,14 @@
 
 declare interface maps__DataLayerSetting__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Settings</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface maps__DataLayerSetting__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131000)</td></tr>
      * </table>
      */
-    maps__Settings__c: string;
+    maps__Settings__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,9 +35,9 @@ declare interface maps__DataLayerSetting__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">business</code></td><td>business</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Type__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__Type__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

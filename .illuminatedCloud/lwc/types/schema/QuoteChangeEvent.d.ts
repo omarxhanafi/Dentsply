@@ -84,10 +84,34 @@ declare module "@salesforce/schema/QuoteChangeEvent.Approval_Submission_DateTime
     export default Approval_Submission_DateTime__c;
 }
 
+declare module "@salesforce/schema/QuoteChangeEvent.BillToContact" {
+    import { FieldId } from "@salesforce/schema";
+    const BillToContact: FieldId;
+    export default BillToContact;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.BillToContactId" {
+    import { FieldId } from "@salesforce/schema";
+    const BillToContactId: FieldId;
+    export default BillToContactId;
+}
+
 declare module "@salesforce/schema/QuoteChangeEvent.BillingAddress" {
     import { FieldId } from "@salesforce/schema";
     const BillingAddress: FieldId;
     export default BillingAddress;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.BillingAddress__c" {
+    import { FieldId } from "@salesforce/schema";
+    const BillingAddress__c: FieldId;
+    export default BillingAddress__c;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.BillingAddress__r" {
+    import { FieldId } from "@salesforce/schema";
+    const BillingAddress__r: FieldId;
+    export default BillingAddress__r;
 }
 
 declare module "@salesforce/schema/QuoteChangeEvent.BillingCity" {
@@ -148,6 +172,12 @@ declare module "@salesforce/schema/QuoteChangeEvent.Brand__c" {
     import { FieldId } from "@salesforce/schema";
     const Brand__c: FieldId;
     export default Brand__c;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.CalculationStatus" {
+    import { FieldId } from "@salesforce/schema";
+    const CalculationStatus: FieldId;
+    export default CalculationStatus;
 }
 
 declare module "@salesforce/schema/QuoteChangeEvent.ChangeEventHeader" {
@@ -312,6 +342,12 @@ declare module "@salesforce/schema/QuoteChangeEvent.LastModifiedDate" {
     export default LastModifiedDate;
 }
 
+declare module "@salesforce/schema/QuoteChangeEvent.LastPricedDate" {
+    import { FieldId } from "@salesforce/schema";
+    const LastPricedDate: FieldId;
+    export default LastPricedDate;
+}
+
 declare module "@salesforce/schema/QuoteChangeEvent.Last_Approval_Action_DateTime__c" {
     import { FieldId } from "@salesforce/schema";
     const Last_Approval_Action_DateTime__c: FieldId;
@@ -328,6 +364,18 @@ declare module "@salesforce/schema/QuoteChangeEvent.LeasingAccount__r" {
     import { FieldId } from "@salesforce/schema";
     const LeasingAccount__r: FieldId;
     export default LeasingAccount__r;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.LegalEntity" {
+    import { FieldId } from "@salesforce/schema";
+    const LegalEntity: FieldId;
+    export default LegalEntity;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.LegalEntityId" {
+    import { FieldId } from "@salesforce/schema";
+    const LegalEntityId: FieldId;
+    export default LegalEntityId;
 }
 
 declare module "@salesforce/schema/QuoteChangeEvent.LineItemCount" {
@@ -378,6 +426,12 @@ declare module "@salesforce/schema/QuoteChangeEvent.Origin__c" {
     export default Origin__c;
 }
 
+declare module "@salesforce/schema/QuoteChangeEvent.OriginalActionType" {
+    import { FieldId } from "@salesforce/schema";
+    const OriginalActionType: FieldId;
+    export default OriginalActionType;
+}
+
 declare module "@salesforce/schema/QuoteChangeEvent.Owner" {
     import { FieldId } from "@salesforce/schema";
     const Owner: FieldId;
@@ -400,6 +454,18 @@ declare module "@salesforce/schema/QuoteChangeEvent.PDFBulterTemplate__c" {
     import { FieldId } from "@salesforce/schema";
     const PDFBulterTemplate__c: FieldId;
     export default PDFBulterTemplate__c;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.PartnerAccount" {
+    import { FieldId } from "@salesforce/schema";
+    const PartnerAccount: FieldId;
+    export default PartnerAccount;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.PartnerAccountId" {
+    import { FieldId } from "@salesforce/schema";
+    const PartnerAccountId: FieldId;
+    export default PartnerAccountId;
 }
 
 declare module "@salesforce/schema/QuoteChangeEvent.PaymentTerms__c" {
@@ -552,6 +618,18 @@ declare module "@salesforce/schema/QuoteChangeEvent.ShippingAddress" {
     export default ShippingAddress;
 }
 
+declare module "@salesforce/schema/QuoteChangeEvent.ShippingAddress__c" {
+    import { FieldId } from "@salesforce/schema";
+    const ShippingAddress__c: FieldId;
+    export default ShippingAddress__c;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.ShippingAddress__r" {
+    import { FieldId } from "@salesforce/schema";
+    const ShippingAddress__r: FieldId;
+    export default ShippingAddress__r;
+}
+
 declare module "@salesforce/schema/QuoteChangeEvent.ShippingCity" {
     import { FieldId } from "@salesforce/schema";
     const ShippingCity: FieldId;
@@ -612,6 +690,24 @@ declare module "@salesforce/schema/QuoteChangeEvent.ShippingStreet" {
     export default ShippingStreet;
 }
 
+declare module "@salesforce/schema/QuoteChangeEvent.SourceRecord__c" {
+    import { FieldId } from "@salesforce/schema";
+    const SourceRecord__c: FieldId;
+    export default SourceRecord__c;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.SourceRecord__r" {
+    import { FieldId } from "@salesforce/schema";
+    const SourceRecord__r: FieldId;
+    export default SourceRecord__r;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.StartDate" {
+    import { FieldId } from "@salesforce/schema";
+    const StartDate: FieldId;
+    export default StartDate;
+}
+
 declare module "@salesforce/schema/QuoteChangeEvent.Status" {
     import { FieldId } from "@salesforce/schema";
     const Status: FieldId;
@@ -652,6 +748,12 @@ declare module "@salesforce/schema/QuoteChangeEvent.UserRecordAccess" {
     import { FieldId } from "@salesforce/schema";
     const UserRecordAccess: FieldId;
     export default UserRecordAccess;
+}
+
+declare module "@salesforce/schema/QuoteChangeEvent.ValidationResult" {
+    import { FieldId } from "@salesforce/schema";
+    const ValidationResult: FieldId;
+    export default ValidationResult;
 }
 
 declare module "@salesforce/schema/QuoteChangeEvent.WarrantyPeriod__c" {

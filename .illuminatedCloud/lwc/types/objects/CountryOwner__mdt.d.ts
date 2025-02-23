@@ -15,12 +15,12 @@ declare interface CountryOwner__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    Country__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>OwnerId</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface CountryOwner__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OwnerId__c: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    OwnerId__c?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

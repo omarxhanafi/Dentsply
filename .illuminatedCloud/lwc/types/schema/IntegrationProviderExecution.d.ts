@@ -120,6 +120,18 @@ declare module "@salesforce/schema/IntegrationProviderExecution.ExecutionDateTim
     export default ExecutionDateTime;
 }
 
+declare module "@salesforce/schema/IntegrationProviderExecution.ExecutionStepInstance" {
+    import { FieldId } from "@salesforce/schema";
+    const ExecutionStepInstance: FieldId;
+    export default ExecutionStepInstance;
+}
+
+declare module "@salesforce/schema/IntegrationProviderExecution.ExecutionStepInstanceId" {
+    import { FieldId } from "@salesforce/schema";
+    const ExecutionStepInstanceId: FieldId;
+    export default ExecutionStepInstanceId;
+}
+
 declare module "@salesforce/schema/IntegrationProviderExecution.FeedSubscriptionsForEntity" {
     import { FieldId } from "@salesforce/schema";
     const FeedSubscriptionsForEntity: FieldId;

@@ -42,6 +42,12 @@ declare module "@salesforce/schema/AssetRelationship.AssetRelationshipNumber" {
     export default AssetRelationshipNumber;
 }
 
+declare module "@salesforce/schema/AssetRelationship.AssetRole" {
+    import { FieldId } from "@salesforce/schema";
+    const AssetRole: FieldId;
+    export default AssetRole;
+}
+
 declare module "@salesforce/schema/AssetRelationship.AttachedContentDocuments" {
     import { FieldId } from "@salesforce/schema";
     const AttachedContentDocuments: FieldId;
@@ -154,6 +160,12 @@ declare module "@salesforce/schema/AssetRelationship.GeneratedDocRefObjects" {
     import { FieldId } from "@salesforce/schema";
     const GeneratedDocRefObjects: FieldId;
     export default GeneratedDocRefObjects;
+}
+
+declare module "@salesforce/schema/AssetRelationship.GroupingKey" {
+    import { FieldId } from "@salesforce/schema";
+    const GroupingKey: FieldId;
+    export default GroupingKey;
 }
 
 declare module "@salesforce/schema/AssetRelationship.Histories" {

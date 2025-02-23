@@ -2,11 +2,11 @@
 
 declare interface echosign_dev1__Environment_Settings__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Config API URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -15,7 +15,7 @@ declare interface echosign_dev1__Environment_Settings__ChangeEvent extends SObje
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Config_API_URL__c: string;
+    echosign_dev1__Config_API_URL__c?: string;
     /**
      * <h3><b>Config Oauth API URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface echosign_dev1__Environment_Settings__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Config_Oauth_API_URL__c: string;
+    echosign_dev1__Config_Oauth_API_URL__c?: string;
     /**
      * <h3><b>Config URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface echosign_dev1__Environment_Settings__ChangeEvent extends SObje
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Config_URL__c: string;
+    echosign_dev1__Config_URL__c?: string;
     /**
      * <h3><b>Environment Name</b></h3>
      * <p>Set to Production, Stage, AWSPreview, Preview or Demo. Leave blank to stay on production.</p>
@@ -47,12 +47,12 @@ declare interface echosign_dev1__Environment_Settings__ChangeEvent extends SObje
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Environment_Name__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    echosign_dev1__Environment_Name__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

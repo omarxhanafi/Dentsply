@@ -2,14 +2,14 @@
 
 declare interface ChannelProgramLevelHistory extends SObject 
 {
-    ChannelProgramLevel: ChannelProgramLevel;
-    ChannelProgramLevelId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    ChannelProgramLevel?: ChannelProgramLevel;
+    ChannelProgramLevelId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

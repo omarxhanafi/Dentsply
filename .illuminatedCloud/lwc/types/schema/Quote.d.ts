@@ -144,10 +144,34 @@ declare module "@salesforce/schema/Quote.Attachments" {
     export default Attachments;
 }
 
+declare module "@salesforce/schema/Quote.BillToContact" {
+    import { FieldId } from "@salesforce/schema";
+    const BillToContact: FieldId;
+    export default BillToContact;
+}
+
+declare module "@salesforce/schema/Quote.BillToContactId" {
+    import { FieldId } from "@salesforce/schema";
+    const BillToContactId: FieldId;
+    export default BillToContactId;
+}
+
 declare module "@salesforce/schema/Quote.BillingAddress" {
     import { FieldId } from "@salesforce/schema";
     const BillingAddress: FieldId;
     export default BillingAddress;
+}
+
+declare module "@salesforce/schema/Quote.BillingAddress__c" {
+    import { FieldId } from "@salesforce/schema";
+    const BillingAddress__c: FieldId;
+    export default BillingAddress__c;
+}
+
+declare module "@salesforce/schema/Quote.BillingAddress__r" {
+    import { FieldId } from "@salesforce/schema";
+    const BillingAddress__r: FieldId;
+    export default BillingAddress__r;
 }
 
 declare module "@salesforce/schema/Quote.BillingCity" {
@@ -208,6 +232,12 @@ declare module "@salesforce/schema/Quote.Brand__c" {
     import { FieldId } from "@salesforce/schema";
     const Brand__c: FieldId;
     export default Brand__c;
+}
+
+declare module "@salesforce/schema/Quote.CalculationStatus" {
+    import { FieldId } from "@salesforce/schema";
+    const CalculationStatus: FieldId;
+    export default CalculationStatus;
 }
 
 declare module "@salesforce/schema/Quote.CanCreateQuoteLineItems" {
@@ -480,6 +510,12 @@ declare module "@salesforce/schema/Quote.LastModifiedDate" {
     export default LastModifiedDate;
 }
 
+declare module "@salesforce/schema/Quote.LastPricedDate" {
+    import { FieldId } from "@salesforce/schema";
+    const LastPricedDate: FieldId;
+    export default LastPricedDate;
+}
+
 declare module "@salesforce/schema/Quote.LastReferencedDate" {
     import { FieldId } from "@salesforce/schema";
     const LastReferencedDate: FieldId;
@@ -508,6 +544,18 @@ declare module "@salesforce/schema/Quote.LeasingAccount__r" {
     import { FieldId } from "@salesforce/schema";
     const LeasingAccount__r: FieldId;
     export default LeasingAccount__r;
+}
+
+declare module "@salesforce/schema/Quote.LegalEntity" {
+    import { FieldId } from "@salesforce/schema";
+    const LegalEntity: FieldId;
+    export default LegalEntity;
+}
+
+declare module "@salesforce/schema/Quote.LegalEntityId" {
+    import { FieldId } from "@salesforce/schema";
+    const LegalEntityId: FieldId;
+    export default LegalEntityId;
 }
 
 declare module "@salesforce/schema/Quote.LineItemCount" {
@@ -576,10 +624,22 @@ declare module "@salesforce/schema/Quote.OpportunityId" {
     export default OpportunityId;
 }
 
+declare module "@salesforce/schema/Quote.Orders" {
+    import { FieldId } from "@salesforce/schema";
+    const Orders: FieldId;
+    export default Orders;
+}
+
 declare module "@salesforce/schema/Quote.Origin__c" {
     import { FieldId } from "@salesforce/schema";
     const Origin__c: FieldId;
     export default Origin__c;
+}
+
+declare module "@salesforce/schema/Quote.OriginalActionType" {
+    import { FieldId } from "@salesforce/schema";
+    const OriginalActionType: FieldId;
+    export default OriginalActionType;
 }
 
 declare module "@salesforce/schema/Quote.Owner" {
@@ -624,6 +684,18 @@ declare module "@salesforce/schema/Quote.ParentRecord" {
     export default ParentRecord;
 }
 
+declare module "@salesforce/schema/Quote.PartnerAccount" {
+    import { FieldId } from "@salesforce/schema";
+    const PartnerAccount: FieldId;
+    export default PartnerAccount;
+}
+
+declare module "@salesforce/schema/Quote.PartnerAccountId" {
+    import { FieldId } from "@salesforce/schema";
+    const PartnerAccountId: FieldId;
+    export default PartnerAccountId;
+}
+
 declare module "@salesforce/schema/Quote.PaymentTerms__c" {
     import { FieldId } from "@salesforce/schema";
     const PaymentTerms__c: FieldId;
@@ -652,6 +724,12 @@ declare module "@salesforce/schema/Quote.Pricebook2Id" {
     import { FieldId } from "@salesforce/schema";
     const Pricebook2Id: FieldId;
     export default Pricebook2Id;
+}
+
+declare module "@salesforce/schema/Quote.PrimaryRecord" {
+    import { FieldId } from "@salesforce/schema";
+    const PrimaryRecord: FieldId;
+    export default PrimaryRecord;
 }
 
 declare module "@salesforce/schema/Quote.PrimaryRevenueTransactionErrorLogs" {
@@ -834,6 +912,12 @@ declare module "@salesforce/schema/Quote.ReferenceEntityRevenueAsyncOperations" 
     export default ReferenceEntityRevenueAsyncOperations;
 }
 
+declare module "@salesforce/schema/Quote.ReferenceObject" {
+    import { FieldId } from "@salesforce/schema";
+    const ReferenceObject: FieldId;
+    export default ReferenceObject;
+}
+
 declare module "@salesforce/schema/Quote.RelatedRecord" {
     import { FieldId } from "@salesforce/schema";
     const RelatedRecord: FieldId;
@@ -880,6 +964,18 @@ declare module "@salesforce/schema/Quote.ShippingAddress" {
     import { FieldId } from "@salesforce/schema";
     const ShippingAddress: FieldId;
     export default ShippingAddress;
+}
+
+declare module "@salesforce/schema/Quote.ShippingAddress__c" {
+    import { FieldId } from "@salesforce/schema";
+    const ShippingAddress__c: FieldId;
+    export default ShippingAddress__c;
+}
+
+declare module "@salesforce/schema/Quote.ShippingAddress__r" {
+    import { FieldId } from "@salesforce/schema";
+    const ShippingAddress__r: FieldId;
+    export default ShippingAddress__r;
 }
 
 declare module "@salesforce/schema/Quote.ShippingCity" {
@@ -946,6 +1042,24 @@ declare module "@salesforce/schema/Quote.SobjectLookupValue" {
     import { FieldId } from "@salesforce/schema";
     const SobjectLookupValue: FieldId;
     export default SobjectLookupValue;
+}
+
+declare module "@salesforce/schema/Quote.SourceRecord__c" {
+    import { FieldId } from "@salesforce/schema";
+    const SourceRecord__c: FieldId;
+    export default SourceRecord__c;
+}
+
+declare module "@salesforce/schema/Quote.SourceRecord__r" {
+    import { FieldId } from "@salesforce/schema";
+    const SourceRecord__r: FieldId;
+    export default SourceRecord__r;
+}
+
+declare module "@salesforce/schema/Quote.StartDate" {
+    import { FieldId } from "@salesforce/schema";
+    const StartDate: FieldId;
+    export default StartDate;
 }
 
 declare module "@salesforce/schema/Quote.Status" {
@@ -1030,6 +1144,12 @@ declare module "@salesforce/schema/Quote.UserRecordAccess" {
     import { FieldId } from "@salesforce/schema";
     const UserRecordAccess: FieldId;
     export default UserRecordAccess;
+}
+
+declare module "@salesforce/schema/Quote.ValidationResult" {
+    import { FieldId } from "@salesforce/schema";
+    const ValidationResult: FieldId;
+    export default ValidationResult;
 }
 
 declare module "@salesforce/schema/Quote.WarrantyPeriod__c" {

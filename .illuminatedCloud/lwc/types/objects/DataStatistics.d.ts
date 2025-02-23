@@ -2,10 +2,10 @@
 
 declare interface DataStatistics extends SObject 
 {
-    ExternalId: string;
-    StatType: string;
-    StatValue: number;
-    Type: string;
-    User: User;
-    UserId: string;
+    ExternalId?: string;
+    StatType?: string;
+    StatValue?: number;
+    Type?: string;
+    User?: User;
+    UserId?: string;
 }

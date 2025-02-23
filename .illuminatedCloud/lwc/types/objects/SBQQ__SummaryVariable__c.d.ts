@@ -9,23 +9,23 @@ declare interface SBQQ__SummaryVariable__c extends SObject
     /**
      * The reciprocal relationship for {@link SBQQ__SummaryVariable__c.SBQQ__CombineWith__c}.
      */
-    CombinedBy__r: SBQQ__SummaryVariable__c[];
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CombinedBy__r?: SBQQ__SummaryVariable__c[];
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__ErrorCondition__c.SBQQ__FilterVariable__c}.
      */
-    FilteredConditions__r: SBQQ__ErrorCondition__c[];
+    FilteredConditions__r?: SBQQ__ErrorCondition__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__PriceCondition__c.SBQQ__FilterVariable__c}.
      */
-    FilteredPriceConditions__r: SBQQ__PriceCondition__c[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    FilteredPriceConditions__r?: SBQQ__PriceCondition__c[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Aggregate Field</b></h3>
      * <p>Quote Line field that&#39;s acted upon by the aggregate function.</p>
@@ -41,7 +41,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quantity</code></td><td>Quantity</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__AggregateField__c: string;
+    SBQQ__AggregateField__c?: string;
     /**
      * <h3><b>Aggregate Function</b></h3>
      * <p>Aggregate function used to calculate this variable.</p>
@@ -61,7 +61,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Max</code></td><td>Max</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__AggregateFunction__c: string;
+    SBQQ__AggregateFunction__c?: string;
     /**
      * <h3><b>Variable Element</b></h3>
      * <p>Another variable to compose with this variable to produce the final result.</p>
@@ -72,7 +72,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__CombineWith__c: string;
+    SBQQ__CombineWith__c?: string;
     /**
      * <h3><b>Variable Element</b></h3>
      * <p>Another variable to compose with this variable to produce the final result.</p>
@@ -83,7 +83,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__CombineWith__r: SBQQ__SummaryVariable__c;
+    SBQQ__CombineWith__r?: SBQQ__SummaryVariable__c;
     /**
      * <h3><b>Composite Operator</b></h3>
      * <p>Operator to use in composing this variable with another variable or value to produce final result used in rules.</p>
@@ -102,7 +102,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Divide</code></td><td>Divide</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__CompositeOperator__c: string;
+    SBQQ__CompositeOperator__c?: string;
     /**
      * <h3><b>Constraint Field</b></h3>
      * <p>The field that will limit records further based on a quote field.</p>
@@ -119,7 +119,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Status</code></td><td>Status</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__ConstraintField__c: string;
+    SBQQ__ConstraintField__c?: string;
     /**
      * <h3><b>Filter Field</b></h3>
      * <p>Items that are filtered for inclusion in this summary variable.</p>
@@ -136,7 +136,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product Family</code></td><td>Product Family</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__FilterField__c: string;
+    SBQQ__FilterField__c?: string;
     /**
      * <h3><b>Filter Value</b></h3>
      * <p>The value that matches this filter.</p>
@@ -148,7 +148,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FilterValue__c: string;
+    SBQQ__FilterValue__c?: string;
     /**
      * <h3><b>Operator</b></h3>
      * <p>The operator being used in the filter.</p>
@@ -172,7 +172,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">contains</code></td><td>contains</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Operator__c: string;
+    SBQQ__Operator__c?: string;
     /**
      * <h3><b>Scope</b></h3>
      * <p>The scope of your summary variable.</p>
@@ -189,7 +189,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Assets</code></td><td>Assets</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Scope__c: string;
+    SBQQ__Scope__c?: string;
     /**
      * <h3><b>Target Object</b></h3>
      * <p>Name of object being summarized.</p>
@@ -208,7 +208,7 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Subscription</code></td><td>Subscription</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TargetObject__c: string;
+    SBQQ__TargetObject__c?: string;
     /**
      * <h3><b>Value Element</b></h3>
      * <p>Value used by Composite Operator in composing final result for this variable.</p>
@@ -220,21 +220,21 @@ declare interface SBQQ__SummaryVariable__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ValueElement__c: number;
+    SBQQ__ValueElement__c?: number;
     /**
      * The reciprocal relationship for {@link SBQQ__PriceAction__c.SBQQ__SourceVariable__c}.
      */
-    SourcePriceActions__r: SBQQ__PriceAction__c[];
+    SourcePriceActions__r?: SBQQ__PriceAction__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__TermCondition__c.SBQQ__TestedVariable__c}.
      */
-    TermConditions__r: SBQQ__TermCondition__c[];
+    TermConditions__r?: SBQQ__TermCondition__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__ErrorCondition__c.SBQQ__TestedVariable__c}.
      */
-    TestedConditions__r: SBQQ__ErrorCondition__c[];
+    TestedConditions__r?: SBQQ__ErrorCondition__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__PriceCondition__c.SBQQ__TestedVariable__c}.
      */
-    TestedPriceConditions__r: SBQQ__PriceCondition__c[];
+    TestedPriceConditions__r?: SBQQ__PriceCondition__c[];
 }

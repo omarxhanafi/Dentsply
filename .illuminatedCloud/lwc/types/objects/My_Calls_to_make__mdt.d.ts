@@ -17,8 +17,8 @@ declare interface My_Calls_to_make__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    DeveloperName: string;
+    Country__c?: string;
+    DeveloperName?: string;
     /**
      * <h3><b>isTest</b></h3>
      * <p>Used for test classes</p>
@@ -28,9 +28,9 @@ declare interface My_Calls_to_make__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    isTest__c: boolean;
-    Label: string;
-    Language: string;
+    isTest__c?: boolean;
+    Label?: string;
+    Language?: string;
     /**
      * <h3><b>Link text</b></h3>
      * <p>text to be displayed on the link of redirection</p>
@@ -42,10 +42,10 @@ declare interface My_Calls_to_make__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Link_text__c: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    Link_text__c?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Report Id</b></h3>
      * <p>Id of the report to display</p>
@@ -57,6 +57,6 @@ declare interface My_Calls_to_make__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Report_Id__c: string;
-    SystemModstamp: string;
+    Report_Id__c?: string;
+    SystemModstamp?: string;
 }

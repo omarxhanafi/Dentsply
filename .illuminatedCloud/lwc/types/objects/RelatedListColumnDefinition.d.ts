@@ -2,16 +2,16 @@
 
 declare interface RelatedListColumnDefinition extends SObject 
 {
-    Alias: string;
-    ColumnSoql: string;
-    DataType: string;
-    DurableId: string;
-    FieldDefinition: FieldDefinition;
-    FieldDefinitionId: string;
-    IsDefault: boolean;
-    IsDescribable: boolean;
-    Label: string;
-    LookupId: string;
-    RelatedListDefinition: RelatedListDefinition;
-    RelatedListDefinitionId: string;
+    Alias?: string;
+    ColumnSoql?: string;
+    DataType?: string;
+    DurableId?: string;
+    FieldDefinition?: FieldDefinition;
+    FieldDefinitionId?: string;
+    IsDefault?: boolean;
+    IsDescribable?: boolean;
+    Label?: string;
+    LookupId?: string;
+    RelatedListDefinition?: RelatedListDefinition;
+    RelatedListDefinitionId?: string;
 }

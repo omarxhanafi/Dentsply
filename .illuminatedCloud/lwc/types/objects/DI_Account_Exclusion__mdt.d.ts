@@ -5,7 +5,7 @@
  */
 declare interface DI_Account_Exclusion__mdt extends SObject 
 {
-    DeveloperName: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Exclusion</b></h3>
      * <h4>Field Attributes</h4>
@@ -16,11 +16,11 @@ declare interface DI_Account_Exclusion__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Exclusion__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Exclusion__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

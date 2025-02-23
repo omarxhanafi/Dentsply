@@ -348,10 +348,16 @@ declare module "@salesforce/schema/Address__c.NotesAndAttachments" {
     export default NotesAndAttachments;
 }
 
-declare module "@salesforce/schema/Address__c.Orders__r" {
+declare module "@salesforce/schema/Address__c.OrdersBillingAddress__r" {
     import { FieldId } from "@salesforce/schema";
-    const Orders__r: FieldId;
-    export default Orders__r;
+    const OrdersBillingAddress__r: FieldId;
+    export default OrdersBillingAddress__r;
+}
+
+declare module "@salesforce/schema/Address__c.OrdersShippingAddress__r" {
+    import { FieldId } from "@salesforce/schema";
+    const OrdersShippingAddress__r: FieldId;
+    export default OrdersShippingAddress__r;
 }
 
 declare module "@salesforce/schema/Address__c.Parent" {
@@ -436,6 +442,18 @@ declare module "@salesforce/schema/Address__c.ProcessSteps" {
     import { FieldId } from "@salesforce/schema";
     const ProcessSteps: FieldId;
     export default ProcessSteps;
+}
+
+declare module "@salesforce/schema/Address__c.Quotes1__r" {
+    import { FieldId } from "@salesforce/schema";
+    const Quotes1__r: FieldId;
+    export default Quotes1__r;
+}
+
+declare module "@salesforce/schema/Address__c.Quotes_Billing_Address__r" {
+    import { FieldId } from "@salesforce/schema";
+    const Quotes_Billing_Address__r: FieldId;
+    export default Quotes_Billing_Address__r;
 }
 
 declare module "@salesforce/schema/Address__c.Record" {

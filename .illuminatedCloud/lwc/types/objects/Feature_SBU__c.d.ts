@@ -5,9 +5,9 @@
  */
 declare interface Feature_SBU__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Feature</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface Feature_SBU__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Feature__c: string;
+    Feature__c?: string;
     /**
      * <h3><b>Feature</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface Feature_SBU__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Feature__r: Object_Usage__c;
+    Feature__r?: Object_Usage__c;
     /**
      * <h3><b>Feature Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,12 +39,12 @@ declare interface Feature_SBU__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Feature_Type__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Feature_Type__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface Feature_SBU__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,5 +64,5 @@ declare interface Feature_SBU__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__r: SBU_Information__c;
+    SBU__r?: SBU_Information__c;
 }

@@ -2,14 +2,14 @@
 
 declare interface maps__TPDataSet__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Config</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface maps__TPDataSet__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__Config__c: string;
+    maps__Config__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface maps__TPDataSet__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Description__c: string;
+    maps__Description__c?: string;
     /**
      * <h3><b>Last Error</b></h3>
      * <p>Additional detail to help explain the latest error</p>
@@ -38,7 +38,7 @@ declare interface maps__TPDataSet__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LastError__c: string;
+    maps__LastError__c?: string;
     /**
      * <h3><b>Sharing Access Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface maps__TPDataSet__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Editor</code></td><td>Editor</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__SharingAccessLevel__c: string;
+    maps__SharingAccessLevel__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,9 +69,9 @@ declare interface maps__TPDataSet__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Archived</code></td><td>Archived</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Status__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__Status__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

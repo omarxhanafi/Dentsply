@@ -2,15 +2,15 @@
 
 declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Profile</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">#SystemAdmin</code></td><td>#SystemAdmin</td><td nowrap>true</td></tr>
      * </table>
      */
-    Profile__c: string;
+    Profile__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project__c: string;
+    Project__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project__r: Project__c;
+    Project__r?: Project__c;
     /**
      * <h3><b>QA Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,8 +56,8 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QAOwner__c: string;
-    ReplayId: string;
+    QAOwner__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Solution</b></h3>
      * <h4>Field Attributes</h4>
@@ -65,7 +65,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Solution__c: string;
+    Solution__c?: string;
     /**
      * <h3><b>Defect Assignee</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Defect_Assignee__c: string;
+    TMFC_Defect_Assignee__c?: string;
     /**
      * <h3><b>Defect Assignee</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,7 +83,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Defect_Assignee__r: User;
+    TMFC_Defect_Assignee__r?: User;
     /**
      * <h3><b>Defect Components</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Defect_Components__c: string;
+    TMFC_Defect_Components__c?: string;
     /**
      * <h3><b>Defect Details</b></h3>
      * <p>Expected behavior
@@ -104,7 +104,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    TMFC_Defect_Details__c: string;
+    TMFC_Defect_Details__c?: string;
     /**
      * <h3><b>Defect Severity</b></h3>
      * <h4>Field Attributes</h4>
@@ -121,7 +121,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Critical</code></td><td>Critical</td><td nowrap>true</td></tr>
      * </table>
      */
-    TMFC_Defect_Severity__c: string;
+    TMFC_Defect_Severity__c?: string;
     /**
      * <h3><b>Defect Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -155,7 +155,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">UAT to Begin</code></td><td>UAT to Begin</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    TMFC_Defect_Status__c: string;
+    TMFC_Defect_Status__c?: string;
     /**
      * <h3><b>Defect Title</b></h3>
      * <h4>Field Attributes</h4>
@@ -166,7 +166,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Defect_Title__c: string;
+    TMFC_Defect_Title__c?: string;
     /**
      * <h3><b>Environment</b></h3>
      * <h4>Field Attributes</h4>
@@ -177,7 +177,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_Environment__c: string;
+    TMFC_Environment__c?: string;
     /**
      * <h3><b>TeamForce Test Script</b></h3>
      * <h4>Field Attributes</h4>
@@ -186,7 +186,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_TeamForce_Test_Script__c: string;
+    TMFC_TeamForce_Test_Script__c?: string;
     /**
      * <h3><b>TeamForce Test Script</b></h3>
      * <h4>Field Attributes</h4>
@@ -195,7 +195,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_TeamForce_Test_Script__r: TMFC_TeamForce_Test_Script__c;
+    TMFC_TeamForce_Test_Script__r?: TMFC_TeamForce_Test_Script__c;
     /**
      * <h3><b>TeamForce User Story</b></h3>
      * <h4>Field Attributes</h4>
@@ -203,7 +203,7 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link TMFC_TeamForce_User_Story__c})</td></tr>
      * </table>
      */
-    TMFC_TeamForce_User_Story__c: string;
+    TMFC_TeamForce_User_Story__c?: string;
     /**
      * <h3><b>TeamForce User Story</b></h3>
      * <h4>Field Attributes</h4>
@@ -211,5 +211,5 @@ declare interface TMFC_TeamForce_Defect__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link TMFC_TeamForce_User_Story__c})</td></tr>
      * </table>
      */
-    TMFC_TeamForce_User_Story__r: TMFC_TeamForce_User_Story__c;
+    TMFC_TeamForce_User_Story__r?: TMFC_TeamForce_User_Story__c;
 }

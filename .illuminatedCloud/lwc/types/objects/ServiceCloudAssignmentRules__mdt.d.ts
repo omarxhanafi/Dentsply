@@ -17,7 +17,7 @@ declare interface ServiceCloudAssignmentRules__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountCountry__c: string;
+    AccountCountry__c?: string;
     /**
      * <h3><b>Assigned Queue</b></h3>
      * <p>Assigned Queue Id</p>
@@ -29,12 +29,12 @@ declare interface ServiceCloudAssignmentRules__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AssignedQueue__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    AssignedQueue__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Product Group</b></h3>
      * <p>Product Group Values</p>
@@ -46,7 +46,7 @@ declare interface ServiceCloudAssignmentRules__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductGroup__c: string;
+    ProductGroup__c?: string;
     /**
      * <h3><b>Product Line</b></h3>
      * <p>Product Line Values</p>
@@ -58,7 +58,7 @@ declare interface ServiceCloudAssignmentRules__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductLine__c: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    ProductLine__c?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

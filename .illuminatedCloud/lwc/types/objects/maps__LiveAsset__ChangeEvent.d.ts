@@ -2,14 +2,14 @@
 
 declare interface maps__LiveAsset__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Active</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,7 +18,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    maps__Active__c: boolean;
+    maps__Active__c?: boolean;
     /**
      * <h3><b>Asset Id</b></h3>
      * <p>Proprietary Id for identifying assets within the company</p>
@@ -30,7 +30,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssetId__c: string;
+    maps__AssetId__c?: string;
     /**
      * <h3><b>Live IoT Device</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveIoTDevice__c: string;
+    maps__LiveIoTDevice__c?: string;
     /**
      * <h3><b>Live IoT Device</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveIoTDevice__r: maps__LiveIoTDevice__c;
+    maps__LiveIoTDevice__r?: maps__LiveIoTDevice__c;
     /**
      * <h3><b>Make</b></h3>
      * <p>Make of Vehicle or Non-Vehicle</p>
@@ -60,7 +60,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Make__c: string;
+    maps__Make__c?: string;
     /**
      * <h3><b>Model</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,7 +71,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Model__c: string;
+    maps__Model__c?: string;
     /**
      * <h3><b>Odometer (km)</b></h3>
      * <p>Last available odometer reading, in kilometers</p>
@@ -83,7 +83,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__OdometerKm__c: number;
+    maps__OdometerKm__c?: number;
     /**
      * <h3><b>Odometer (mi)</b></h3>
      * <p>Last available odometer reading, in miles</p>
@@ -96,7 +96,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__OdometerMiles__c: number;
+    maps__OdometerMiles__c?: number;
     /**
      * <h3><b>Serial Number</b></h3>
      * <p>A unique identifier for non-motorized and off-road assets</p>
@@ -108,7 +108,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__SerialNumber__c: string;
+    maps__SerialNumber__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -123,7 +123,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other Equipment</code></td><td>Other Equipment</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Type__c: string;
+    maps__Type__c?: string;
     /**
      * <h3><b>VIN</b></h3>
      * <p>The Vehicle Identification Number of vehicle-type assets</p>
@@ -135,7 +135,7 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__VIN__c: string;
+    maps__VIN__c?: string;
     /**
      * <h3><b>Year</b></h3>
      * <h4>Field Attributes</h4>
@@ -146,9 +146,9 @@ declare interface maps__LiveAsset__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Year__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__Year__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

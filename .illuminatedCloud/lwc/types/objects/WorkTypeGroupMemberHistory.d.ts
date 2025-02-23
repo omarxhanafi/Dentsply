@@ -2,14 +2,14 @@
 
 declare interface WorkTypeGroupMemberHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    WorkTypeGroupMember: WorkTypeGroupMember;
-    WorkTypeGroupMemberId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    WorkTypeGroupMember?: WorkTypeGroupMember;
+    WorkTypeGroupMemberId?: string;
 }

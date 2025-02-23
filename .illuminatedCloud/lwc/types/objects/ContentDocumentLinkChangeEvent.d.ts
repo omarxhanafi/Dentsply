@@ -2,12 +2,12 @@
 
 declare interface ContentDocumentLinkChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    ContentDocument: ContentDocument;
-    ContentDocumentId: string;
-    LinkedEntity: SObject;
-    LinkedEntityId: string;
-    ReplayId: string;
-    ShareType: string;
-    Visibility: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    ContentDocument?: ContentDocument;
+    ContentDocumentId?: string;
+    LinkedEntity?: SObject;
+    LinkedEntityId?: string;
+    ReplayId?: string;
+    ShareType?: string;
+    Visibility?: string;
 }

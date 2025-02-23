@@ -2,18 +2,18 @@
 
 declare interface ContentFolderMember extends SObject 
 {
-    ChildRecord: ContentDocument;
-    ChildRecordId: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    ParentContentFolder: ContentFolder;
-    ParentContentFolderId: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
+    ChildRecord?: ContentDocument;
+    ChildRecordId?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    ParentContentFolder?: ContentFolder;
+    ParentContentFolderId?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
 }

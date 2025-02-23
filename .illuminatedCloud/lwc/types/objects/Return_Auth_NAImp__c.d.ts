@@ -15,7 +15,7 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Clinical District Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,10 +36,10 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Clinical_District_Manager__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Clinical_District_Manager__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Customer Service Agent Completed Return</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Agent_Completed_Return__c: string;
+    Customer_Service_Agent_Completed_Return__c?: string;
     /**
      * <h3><b>Customer Service Agent Completed Return</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,7 +59,7 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Agent_Completed_Return__r: User;
+    Customer_Service_Agent_Completed_Return__r?: User;
     /**
      * <h3><b>Date/Time Completed</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Date_Time_Completed__c: string;
+    Date_Time_Completed__c?: string;
     /**
      * <h3><b>Date/Time Opened</b></h3>
      * <h4>Field Attributes</h4>
@@ -80,7 +80,7 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">$System.OriginDateTime</code></td></tr>
      * </table>
      */
-    Date_Time_Opened__c: string;
+    Date_Time_Opened__c?: string;
     /**
      * <h3><b>Description/Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,12 +89,12 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description_Notes__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Description_Notes__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Region</b></h3>
      * <h4>Field Attributes</h4>
@@ -106,7 +106,7 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Region__c: string;
+    Region__c?: string;
     /**
      * <h3><b>Return to Customer Tracking Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -117,7 +117,7 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Return_to_Customer_Tracking_Number__c: string;
+    Return_to_Customer_Tracking_Number__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -135,5 +135,5 @@ declare interface Return_Auth_NAImp__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">4 - Completed</code></td><td>4 - Completed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
 }

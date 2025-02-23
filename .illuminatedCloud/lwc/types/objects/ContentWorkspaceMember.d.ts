@@ -2,14 +2,14 @@
 
 declare interface ContentWorkspaceMember extends SObject 
 {
-    ContentWorkspace: ContentWorkspace;
-    ContentWorkspaceId: string;
-    ContentWorkspacePermission: ContentWorkspacePermission;
-    ContentWorkspacePermissionId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Member: SObject;
-    MemberId: string;
-    MemberType: string;
+    ContentWorkspace?: ContentWorkspace;
+    ContentWorkspaceId?: string;
+    ContentWorkspacePermission?: ContentWorkspacePermission;
+    ContentWorkspacePermissionId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Member?: SObject;
+    MemberId?: string;
+    MemberType?: string;
 }

@@ -14,8 +14,8 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Active__c: boolean;
-    DeveloperName: string;
+    Active__c?: boolean;
+    DeveloperName?: string;
     /**
      * <h3><b>Fields to Show</b></h3>
      * <p>Fields to show separated by comma. Maximum Three fields.</p>
@@ -27,7 +27,7 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FieldsToShow__c: string;
+    FieldsToShow__c?: string;
     /**
      * <h3><b>Icon</b></h3>
      * <p>Icon of the attention point tile.</p>
@@ -39,11 +39,11 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Icon__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    Icon__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Object Type</b></h3>
      * <p>Object type of the attention point.</p>
@@ -67,6 +67,7 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Event</code></td><td>Event</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Field_Sales_Project_Members__c</code></td><td>Field_Sales_Project_Members__c</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">LoyaltyProgramParticipant__c</code></td><td>LoyaltyProgramParticipant__c</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OpenOrderLine__c</code></td><td>OpenOrderLine__c</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Opportunity</code></td><td>Opportunity</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Order</code></td><td>Order</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ProcedureTracker__c</code></td><td>ProcedureTracker__c</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
@@ -79,8 +80,8 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WorkOrder</code></td><td>WorkOrder</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    ObjectType__c: string;
-    QualifiedApiName: string;
+    ObjectType__c?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Relationship Field</b></h3>
      * <p>Relationship field api name to use in order to find related records.</p>
@@ -92,7 +93,7 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RelationshipField__c: string;
+    RelationshipField__c?: string;
     /**
      * <h3><b>Relevance</b></h3>
      * <p>Determines the order in which the tiles will be displayed, with the most relevant appearing first.</p>
@@ -104,7 +105,7 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Relevance__c: number;
+    Relevance__c?: number;
     /**
      * <h3><b>SOQL Query</b></h3>
      * <p>SOQL query filter to use in order to find key attention points</p>
@@ -113,8 +114,8 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    SOQLQuery__c: string;
-    SystemModstamp: string;
+    SOQLQuery__c?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>Technical Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -122,7 +123,7 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    TechnicalComments__c: string;
+    TechnicalComments__c?: string;
     /**
      * <h3><b>Title</b></h3>
      * <p>Custom label full name to display a Title of the attention point.</p>
@@ -134,5 +135,5 @@ declare interface AttentionPoint__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Title__c: string;
+    Title__c?: string;
 }

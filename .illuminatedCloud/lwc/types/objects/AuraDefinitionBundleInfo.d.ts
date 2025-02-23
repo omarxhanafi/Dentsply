@@ -2,10 +2,10 @@
 
 declare interface AuraDefinitionBundleInfo extends SObject 
 {
-    ApiVersion: number;
-    AuraDefinitionBundleId: string;
-    Bundle: AuraDefinitionInfo[];
-    DeveloperName: string;
-    DurableId: string;
-    NamespacePrefix: string;
+    ApiVersion?: number;
+    AuraDefinitionBundleId?: string;
+    Bundle?: AuraDefinitionInfo[];
+    DeveloperName?: string;
+    DurableId?: string;
+    NamespacePrefix?: string;
 }

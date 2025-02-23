@@ -13,7 +13,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Acc_Strategy_Icons_HQ__c: string;
+    Acc_Strategy_Icons_HQ__c?: string;
     /**
      * <h3><b>Competitor Information</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Competitor_Information__c: string;
+    Account_Competitor_Information__c?: string;
     /**
      * <h3><b>Account # (HQ)</b></h3>
      * <p>This field is only for analysis. Examples are &quot;give me the number of Accounts with sales history records&quot;. Should not appear on any page layouts</p>
@@ -35,9 +35,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_for_analysis_only__c: number;
-    Account_OneSF_Number__pc: string;
-    Account_Record_Type__pc: string;
+    Account_for_analysis_only__c?: number;
+    Account_OneSF_Number__pc?: string;
+    Account_Record_Type__pc?: string;
     /**
      * <h3><b>Account Strategy (ATL Abut)</b></h3>
      * <p>The Account Strategy for ATLANTIS Abutments, applicable only for Lab Accounts, refer to the training material for more info.</p>
@@ -50,7 +50,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_ATL_Abut__c: string;
+    Account_Strategy_ATL_Abut__c?: string;
     /**
      * <h3><b>Account Strategy (ATL Abut) (Text) HQ</b></h3>
      * <p>Temp help field until we dedicate different strategy fields for ATL Abut and Implants</p>
@@ -62,7 +62,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_ATL_Abut_Text_HQ__c: string;
+    Account_Strategy_ATL_Abut_Text_HQ__c?: string;
     /**
      * <h3><b>Account Strategy (ATL Suprast)</b></h3>
      * <p>The Account Strategy for ATLANTIS ISUS, applicable only for Lab Accounts, refer to the training material for more info.</p>
@@ -75,7 +75,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_ATL_ISUS__c: string;
+    Account_Strategy_ATL_ISUS__c?: string;
     /**
      * <h3><b>Account Strategy End LY (Implants)</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,7 +86,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_End_LY_Implants__c: string;
+    Account_Strategy_End_LY_Implants__c?: string;
     /**
      * <h3><b>Account Strategy Icons</b></h3>
      * <p>Multi Strategy Icons</p>
@@ -99,7 +99,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_Icons__c: string;
+    Account_Strategy_Icons__c?: string;
     /**
      * <h3><b>Account Strategy (Implants)</b></h3>
      * <p>The Account Strategy for Implants, applicable only for Clinical Accounts, refer to the training material for more info.</p>
@@ -112,7 +112,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_Implants__c: string;
+    Account_Strategy_Implants__c?: string;
     /**
      * <h3><b>Account Strategy (Implants Basic)</b></h3>
      * <p>Alternative field for account Strategy to be used only for countries who select Loyalty manually (No Movex sales)</p>
@@ -125,7 +125,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_Implants_Basic__c: string;
+    Account_Strategy_Implants_Basic__c?: string;
     /**
      * <h3><b>Account Strategy (SBU: ENDO)</b></h3>
      * <h4>Field Attributes</h4>
@@ -137,7 +137,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_SBU_ENDO__c: string;
+    Account_Strategy_SBU_ENDO__c?: string;
     /**
      * <h3><b>Account Strategy (SBU: ORTH)</b></h3>
      * <h4>Field Attributes</h4>
@@ -149,7 +149,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_SBU_ORTH__c: string;
+    Account_Strategy_SBU_ORTH__c?: string;
     /**
      * <h3><b>Account Strategy (SBU: PREV)</b></h3>
      * <h4>Field Attributes</h4>
@@ -161,7 +161,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_SBU_PREV__c: string;
+    Account_Strategy_SBU_PREV__c?: string;
     /**
      * <h3><b>Account Strategy (SBU: PROS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -173,7 +173,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_SBU_PROS__c: string;
+    Account_Strategy_SBU_PROS__c?: string;
     /**
      * <h3><b>Account Strategy (SBU: REST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -185,7 +185,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_SBU_REST__c: string;
+    Account_Strategy_SBU_REST__c?: string;
     /**
      * <h3><b>Account Strategy (SIMPLANT)</b></h3>
      * <p>Based on SP Guides Volume &amp; Loyalty. If this segmentation is not applicable for this accounts, please tick SIMPLANT Segmentation N/A checkbox.</p>
@@ -198,7 +198,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Strategy_Simplant__c: string;
+    Account_Strategy_Simplant__c?: string;
     /**
      * <h3><b>Account Type &amp; Specialty</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,8 +210,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Type_Specialty__c: string;
-    Account_Website__pc: string;
+    Account_Type_Specialty__c?: string;
+    Account_Website__pc?: string;
     /**
      * <h3><b>Account ID (18 Digit)</b></h3>
      * <h4>Field Attributes</h4>
@@ -223,10 +223,10 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountID18Digit__c: string;
-    AccountNumber: string;
-    AccountSource: string;
-    Active_KOL__pc: boolean;
+    AccountID18Digit__c?: string;
+    AccountNumber?: string;
+    AccountSource?: string;
+    Active_KOL__pc?: boolean;
     /**
      * <h3><b>Active Purchasing Contract?</b></h3>
      * <p>Will be updated via Workflow. Is enabled if a PA contract is active</p>
@@ -236,7 +236,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Active_Purhasing_Contract__c: boolean;
+    Active_Purhasing_Contract__c?: boolean;
     /**
      * <h3><b>Actual DI Volume CY</b></h3>
      * <p>Grouping of Volume based on actual sold implants LY (Actual Low, Actual Medium, Actual High). Based on Sold implants CY.</p>
@@ -249,7 +249,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Actual_DI_Volume_CY_D__c: string;
+    Actual_DI_Volume_CY_D__c?: string;
     /**
      * <h3><b>Actual DI Volume LY</b></h3>
      * <p>Grouping of Volume based on actual sold implants LY (Actual Low, Actual Medium, Actual High). Based on Sold implants LY</p>
@@ -262,7 +262,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Actual_DI_Volume_LY_D__c: string;
+    Actual_DI_Volume_LY_D__c?: string;
     /**
      * <h3><b>Advanced Profiling</b></h3>
      * <h4>Field Attributes</h4>
@@ -271,7 +271,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AdvancedProfiling__c: string;
+    AdvancedProfiling__c?: string;
     /**
      * <h3><b>Advanced Profiling</b></h3>
      * <h4>Field Attributes</h4>
@@ -280,12 +280,12 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AdvancedProfiling__r: AdvancedProfiling__c;
-    Advisory_Board_Article_Summaries__pc: boolean;
-    Advisory_Board_Member__pc: boolean;
-    Ankylos_User__pc: boolean;
-    AnnualRevenue: number;
-    Approval_Date__pc: Date;
+    AdvancedProfiling__r?: AdvancedProfiling__c;
+    Advisory_Board_Article_Summaries__pc?: boolean;
+    Advisory_Board_Member__pc?: boolean;
+    Ankylos_User__pc?: boolean;
+    AnnualRevenue?: number;
+    Approval_Date__pc?: Date;
     /**
      * <h3><b>Assigned User(s)</b></h3>
      * <p>Shows the ERP User IDs if ETM is in use, or the Account Owner Name is ETM is not yet in use. Used in serach layouts to allow for users with both ETM and Ownership to see information about the owners. Needed because only 10 fields available on global search layouts and not possible to remove one. This will replace the Owner field shown before.</p>
@@ -298,8 +298,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Assigned_User_s__c: string;
-    Astra_Tech_User__pc: boolean;
+    Assigned_User_s__c?: string;
+    Astra_Tech_User__pc?: boolean;
     /**
      * <h3><b>ATIS EV Conversion Completed?</b></h3>
      * <p>To be updated by a workflow when all criterias for EV Conversion is completed. Also used to find converted customers that again starts buying &quot;non ATIS-EV&quot; implants.</p>
@@ -315,7 +315,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    ATIS_EV_Conversion_Completed__c: string;
+    ATIS_EV_Conversion_Completed__c?: string;
     /**
      * <h3><b>ATIS EV Training Completed?</b></h3>
      * <p>Updated using Workflow based on ATIS EV Training Completed Date.</p>
@@ -331,7 +331,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    ATIS_EV_Training_Completed__c: string;
+    ATIS_EV_Training_Completed__c?: string;
     /**
      * <h3><b>ATIS EV Training Completion Date</b></h3>
      * <p>Used during EV Launch Tracking Campaign.</p>
@@ -341,7 +341,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ATIS_EV_Training_Completion_Date__c: Date;
+    ATIS_EV_Training_Completion_Date__c?: Date;
     /**
      * <h3><b>ATL Abut Potential/Year</b></h3>
      * <p>Potential ATL abutments per year.
@@ -355,7 +355,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    ATL_Abut_Potential_Year__c: number;
+    ATL_Abut_Potential_Year__c?: number;
     /**
      * <h3><b>ATL Suprast Potential/Year</b></h3>
      * <p>Number of bars, bridges and hybrids (Number of Cases) produced per Year ( New!! we used to add the monthly potential but now directly add the yearly potential)</p>
@@ -368,7 +368,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    ATL_ISUS_Potential_Year__c: number;
+    ATL_ISUS_Potential_Year__c?: number;
     /**
      * <h3><b>ATL Suprast Won/Loss Code CY (HQ)</b></h3>
      * <p>Used to calculate the net # of new ATL ISUS customers // Don&#39;t Delete used in Reports</p>
@@ -381,7 +381,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ATL_ISUS_Won_Loss_Code_CY_HQ__c: number;
+    ATL_ISUS_Won_Loss_Code_CY_HQ__c?: number;
     /**
      * <h3><b>ATL Suprast Won/Loss Code LY (HQ)</b></h3>
      * <p>Used to calculate the net # of new ATL ISUS customers // Don&#39;t Delete used in Reports</p>
@@ -394,7 +394,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ATL_ISUS_Won_Loss_Code_LY_HQ__c: number;
+    ATL_ISUS_Won_Loss_Code_LY_HQ__c?: number;
     /**
      * <h3><b>ATL Abut Customer (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -406,8 +406,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Atlantis_Customer__c: number;
-    Atlantis_User__pc: boolean;
+    Atlantis_Customer__c?: number;
+    Atlantis_User__pc?: boolean;
     /**
      * <h3><b>ATLANTIS Web Order Customer</b></h3>
      * <p>This field is checked when a customer is an Atlantis Web Order customer. This does not mean that the customer has placed an order in AWO, but that he is able to.</p>
@@ -417,8 +417,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Atlantis_Web_Order_Customer__c: boolean;
-    Atlantis_WebOrder_user_D__pc: boolean;
+    Atlantis_Web_Order_Customer__c?: boolean;
+    Atlantis_WebOrder_user_D__pc?: boolean;
     /**
      * <h3><b>ATL Abut Won/Loss Code CY (HQ)</b></h3>
      * <p>Used to calculate the net # of new ATL Abut customers</p>
@@ -431,7 +431,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Atlantis_Won_Loss_Code_CY__c: number;
+    Atlantis_Won_Loss_Code_CY__c?: number;
     /**
      * <h3><b>ATL Abut Won/Lost Code LY (HQ)</b></h3>
      * <p>Used to calculate the net # of new ATL Abut customers</p>
@@ -444,7 +444,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Atlantis_Won_Lost_Code_LY__c: number;
+    Atlantis_Won_Lost_Code_LY__c?: number;
     /**
      * <h3><b>Auto Maintenance Renewal</b></h3>
      * <h4>Field Attributes</h4>
@@ -453,7 +453,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Auto_Maintenance_Renewal__c: boolean;
+    Auto_Maintenance_Renewal__c?: boolean;
     /**
      * <h3><b>AWO Approval Date</b></h3>
      * <p>The Date when the Account was approved as an AWO-customer. This equals the date when it was entered on the customer in Movex</p>
@@ -463,8 +463,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AWO_Approval_Date__c: Date;
-    Azento_Startup_Kit_Sales_Date__pc: Date;
+    AWO_Approval_Date__c?: Date;
+    Azento_Startup_Kit_Sales_Date__pc?: Date;
     /**
      * <h3><b>Big Fish Account (Implants)</b></h3>
      * <p>Part of Implants Segmentation. Ticked automatically by the system when Implants Potential is 300 and more.</p>
@@ -474,7 +474,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF ( Implants_Potential_Year__c &gt;= 300 || Sold_Implants_L12M__c &gt;= 300 , True, False)</code></td></tr>
      * </table>
      */
-    Big_Fish_Account_Implants__c: boolean;
+    Big_Fish_Account_Implants__c?: boolean;
     /**
      * <h3><b>Billing State/Province</b></h3>
      * <p>Picklist dependent on Country</p>
@@ -780,18 +780,18 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WY</code></td><td>WY</td><td nowrap>true</td></tr>
      * </table>
      */
-    Billing_State_Province__c: string;
-    Billing_State_Province__pc: string;
-    BillingAddress: Address;
-    BillingCity: string;
-    BillingCountry: string;
-    BillingGeocodeAccuracy: string;
-    BillingLatitude: number;
-    BillingLongitude: number;
-    BillingPostalCode: string;
-    BillingState: string;
-    BillingStreet: string;
-    Capitalized_Middle_Name__pc: string;
+    Billing_State_Province__c?: string;
+    Billing_State_Province__pc?: string;
+    BillingAddress?: Address;
+    BillingCity?: string;
+    BillingCountry?: string;
+    BillingGeocodeAccuracy?: string;
+    BillingLatitude?: number;
+    BillingLongitude?: number;
+    BillingPostalCode?: string;
+    BillingState?: string;
+    BillingStreet?: string;
+    Capitalized_Middle_Name__pc?: string;
     /**
      * <h3><b># of CBCT referred out per month</b></h3>
      * <p>Number to determine how many CBCT (Cone-beam computed tomography, Xray cases) are referred out per month</p>
@@ -803,8 +803,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CBCTReferralsMonth__c: number;
-    Ceram_x_Spectra_ST_Seeding__pc: boolean;
+    CBCTReferralsMonth__c?: number;
+    Ceram_x_Spectra_ST_Seeding__pc?: boolean;
     /**
      * <h3><b>CFEs Current Month (All SBUs)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -816,8 +816,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_All_CM__c: number;
-    CFEs_All_CM__pc: number;
+    CFEs_All_CM__c?: number;
+    CFEs_All_CM__pc?: number;
     /**
      * <h3><b>CFEs Last Year (All SBUs)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -829,8 +829,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_All_CY_1__c: number;
-    CFEs_All_CY_1__pc: number;
+    CFEs_All_CY_1__c?: number;
+    CFEs_All_CY_1__pc?: number;
     /**
      * <h3><b>CFEs Current Year (All SBUs)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -842,8 +842,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_All_CY__c: number;
-    CFEs_All_CY__pc: number;
+    CFEs_All_CY__c?: number;
+    CFEs_All_CY__pc?: number;
     /**
      * <h3><b>CFEs Last 12 Months (All SBUs)</b></h3>
      * <p>SBU: All SBUs. NOTE: Not the same as sum of all SBUs since one CFE can target multiple SBUs. Summarized by Cloud Jobs.</p>
@@ -855,8 +855,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_All_Last_12__c: number;
-    CFEs_All_Last_12__pc: number;
+    CFEs_All_Last_12__c?: number;
+    CFEs_All_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (All SBUs)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -868,8 +868,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_All_Last_6__c: number;
-    CFEs_All_Last_6__pc: number;
+    CFEs_All_Last_6__c?: number;
+    CFEs_All_Last_6__pc?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (All SBUs)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -881,8 +881,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_All_Last_7_12__c: number;
-    CFEs_All_Last_7_12__pc: number;
+    CFEs_All_Last_7_12__c?: number;
+    CFEs_All_Last_7_12__pc?: number;
     /**
      * <h3><b>Last CFE Date (All SBUs)</b></h3>
      * <p>SBU: Any, All Countries - last CFE date populated by Cloud Job together with CFE roll-up summaries</p>
@@ -892,8 +892,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_All_Last_CFE_Date__c: Date;
-    CFEs_All_Last_CFE_Date__pc: Date;
+    CFEs_All_Last_CFE_Date__c?: Date;
+    CFEs_All_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (All SBUs)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -905,8 +905,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_All_LM__c: number;
-    CFEs_All_LM__pc: number;
+    CFEs_All_LM__c?: number;
+    CFEs_All_LM__pc?: number;
     /**
      * <h3><b>CFEs Next 6 Months (ALL SBUs)</b></h3>
      * <p>Planned Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -918,8 +918,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_All_Next_6__c: number;
-    CFEs_All_Next_6__pc: number;
+    CFEs_All_Next_6__c?: number;
+    CFEs_All_Next_6__pc?: number;
     /**
      * <h3><b>CFEs Current Month (CDCM)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -931,7 +931,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_CAD_CAM_CM__c: number;
+    CFEs_CAD_CAM_CM__c?: number;
     /**
      * <h3><b>CFEs Last Year (CDCM)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -943,7 +943,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_CAD_CAM_CY_1__c: number;
+    CFEs_CAD_CAM_CY_1__c?: number;
     /**
      * <h3><b>CFEs Current Year (CDCM)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -955,8 +955,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_CAD_CAM_CY__c: number;
-    CFEs_CAD_CAM_Last_12__pc: number;
+    CFEs_CAD_CAM_CY__c?: number;
+    CFEs_CAD_CAM_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (CDCM)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -968,7 +968,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_CAD_CAM_Last_6__c: number;
+    CFEs_CAD_CAM_Last_6__c?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (CDCM)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -980,7 +980,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_CAD_CAM_Last_7_12__c: number;
+    CFEs_CAD_CAM_Last_7_12__c?: number;
     /**
      * <h3><b>Last CFE Date (CDCM)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -990,8 +990,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_CAD_CAM_Last_CFE_Date__c: Date;
-    CFEs_CAD_CAM_Last_CFE_Date__pc: Date;
+    CFEs_CAD_CAM_Last_CFE_Date__c?: Date;
+    CFEs_CAD_CAM_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (CDCM)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1003,7 +1003,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_CAD_CAM_LM__c: number;
+    CFEs_CAD_CAM_LM__c?: number;
     /**
      * <h3><b>CFEs Next 6 Months (CDCM)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1015,7 +1015,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_CAD_CAM_Next_6__c: number;
+    CFEs_CAD_CAM_Next_6__c?: number;
     /**
      * <h3><b>CFEs Current Month (ENDO)</b></h3>
      * <p>SBU: ENDO, All Countries</p>
@@ -1027,8 +1027,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Endodontics_CM__c: number;
-    CFEs_Endodontics_CM__pc: number;
+    CFEs_Endodontics_CM__c?: number;
+    CFEs_Endodontics_CM__pc?: number;
     /**
      * <h3><b>CFEs Current Year (ENDO)</b></h3>
      * <p>SBU: ENDO, All Countries</p>
@@ -1040,8 +1040,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Endodontics_CY__c: number;
-    CFEs_Endodontics_CY__pc: number;
+    CFEs_Endodontics_CY__c?: number;
+    CFEs_Endodontics_CY__pc?: number;
     /**
      * <h3><b>CFEs Last 12 Months (ENDO)</b></h3>
      * <p>SBU: Endodontics, All Countries. Summarized by Cloud Jobs.</p>
@@ -1053,8 +1053,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Endodontics_Last_12__c: number;
-    CFEs_Endodontics_Last_12__pc: number;
+    CFEs_Endodontics_Last_12__c?: number;
+    CFEs_Endodontics_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (ENDO)</b></h3>
      * <p>SBU: Endo, all countries</p>
@@ -1066,8 +1066,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Endodontics_Last_6__c: number;
-    CFEs_Endodontics_Last_6__pc: number;
+    CFEs_Endodontics_Last_6__c?: number;
+    CFEs_Endodontics_Last_6__pc?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (ENDO)</b></h3>
      * <p>SBU: ENDO, All countries</p>
@@ -1079,8 +1079,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Endodontics_Last_7_12__c: number;
-    CFEs_Endodontics_Last_7_12__pc: number;
+    CFEs_Endodontics_Last_7_12__c?: number;
+    CFEs_Endodontics_Last_7_12__pc?: number;
     /**
      * <h3><b>Last CFE Date (ENDO)</b></h3>
      * <p>SBU: ENDO, All Countries - last CFE date populated by Cloud Job together with CFE roll-up summaries</p>
@@ -1090,8 +1090,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Endodontics_Last_CFE_Date__c: Date;
-    CFEs_Endodontics_Last_CFE_Date__pc: Date;
+    CFEs_Endodontics_Last_CFE_Date__c?: Date;
+    CFEs_Endodontics_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (ENDO)</b></h3>
      * <p>SBU: ENDO, All countries</p>
@@ -1103,8 +1103,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Endodontics_LM__c: number;
-    CFEs_Endodontics_LM__pc: number;
+    CFEs_Endodontics_LM__c?: number;
+    CFEs_Endodontics_LM__pc?: number;
     /**
      * <h3><b>CFEs Next 6 Months (ENDO)</b></h3>
      * <p>SBU: ENDO, All Countries</p>
@@ -1116,8 +1116,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Endodontics_Next_6__c: number;
-    CFEs_Endodontics_Next_6__pc: number;
+    CFEs_Endodontics_Next_6__c?: number;
+    CFEs_Endodontics_Next_6__pc?: number;
     /**
      * <h3><b>CFEs Current Month (IMAG)</b></h3>
      * <p>Updated via Daniel batch jobs</p>
@@ -1129,7 +1129,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Imaging_Systems_CM__c: number;
+    CFEs_Imaging_Systems_CM__c?: number;
     /**
      * <h3><b>CFEs Last Year (IMAG)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1141,7 +1141,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Imaging_Systems_CY_1__c: number;
+    CFEs_Imaging_Systems_CY_1__c?: number;
     /**
      * <h3><b>CFEs Current Year (IMAG)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1153,8 +1153,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Imaging_Systems_CY__c: number;
-    CFEs_Imaging_Systems_Last_12__pc: number;
+    CFEs_Imaging_Systems_CY__c?: number;
+    CFEs_Imaging_Systems_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (IMAG)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1166,7 +1166,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Imaging_Systems_Last_6__c: number;
+    CFEs_Imaging_Systems_Last_6__c?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (IMAG)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1178,7 +1178,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Imaging_Systems_Last_7_12__c: number;
+    CFEs_Imaging_Systems_Last_7_12__c?: number;
     /**
      * <h3><b>Last CFE Date (IMAG)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1188,8 +1188,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Imaging_Systems_Last_CFE_Date__c: Date;
-    CFEs_Imaging_Systems_Last_CFE_Date__pc: Date;
+    CFEs_Imaging_Systems_Last_CFE_Date__c?: Date;
+    CFEs_Imaging_Systems_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (IMAG)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1201,7 +1201,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Imaging_Systems_LM__c: number;
+    CFEs_Imaging_Systems_LM__c?: number;
     /**
      * <h3><b>CFEs Next 6 Months (IMAG)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1213,7 +1213,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Imaging_Systems_Next_6__c: number;
+    CFEs_Imaging_Systems_Next_6__c?: number;
     /**
      * <h3><b>CFEs Current Month (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1224,8 +1224,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_CM__c: number;
-    CFEs_Implants_CM__pc: number;
+    CFEs_Implants_CM__c?: number;
+    CFEs_Implants_CM__pc?: number;
     /**
      * <h3><b>CFEs Last Year (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1236,8 +1236,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_CY_1__c: number;
-    CFEs_Implants_CY_1__pc: number;
+    CFEs_Implants_CY_1__c?: number;
+    CFEs_Implants_CY_1__pc?: number;
     /**
      * <h3><b>CFEs 2020 (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1248,8 +1248,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_CY_2__c: number;
-    CFEs_Implants_CY_2__pc: number;
+    CFEs_Implants_CY_2__c?: number;
+    CFEs_Implants_CY_2__pc?: number;
     /**
      * <h3><b>CFEs 2018 (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1260,9 +1260,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_CY_3__c: number;
-    CFEs_Implants_CY_3__pc: number;
-    CFEs_Implants_CY_4__pc: number;
+    CFEs_Implants_CY_3__c?: number;
+    CFEs_Implants_CY_3__pc?: number;
+    CFEs_Implants_CY_4__pc?: number;
     /**
      * <h3><b>CFEs Current Year (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1273,8 +1273,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_CY__c: number;
-    CFEs_Implants_CY__pc: number;
+    CFEs_Implants_CY__c?: number;
+    CFEs_Implants_CY__pc?: number;
     /**
      * <h3><b>CFEs Last 12 Months (IMPL)</b></h3>
      * <p>SBU: Implants, All Countries. Summarized by Cloud Jobs.</p>
@@ -1286,8 +1286,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_Last_12__c: number;
-    CFEs_Implants_Last_12__pc: number;
+    CFEs_Implants_Last_12__c?: number;
+    CFEs_Implants_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1298,8 +1298,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_Last_6__c: number;
-    CFEs_Implants_Last_6__pc: number;
+    CFEs_Implants_Last_6__c?: number;
+    CFEs_Implants_Last_6__pc?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1310,8 +1310,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_Last_7_12__c: number;
-    CFEs_Implants_Last_7_12__pc: number;
+    CFEs_Implants_Last_7_12__c?: number;
+    CFEs_Implants_Last_7_12__pc?: number;
     /**
      * <h3><b>Last CFE Date (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1320,8 +1320,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_Last_CFE_Date__c: Date;
-    CFEs_Implants_Last_CFE_Date__pc: Date;
+    CFEs_Implants_Last_CFE_Date__c?: Date;
+    CFEs_Implants_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1332,8 +1332,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_LM__c: number;
-    CFEs_Implants_LM__pc: number;
+    CFEs_Implants_LM__c?: number;
+    CFEs_Implants_LM__pc?: number;
     /**
      * <h3><b>CFEs Next 6 Months (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1344,8 +1344,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Implants_Next_6__c: number;
-    CFEs_Implants_Next_6__pc: number;
+    CFEs_Implants_Next_6__c?: number;
+    CFEs_Implants_Next_6__pc?: number;
     /**
      * <h3><b>CFEs Current Month (INST)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1357,7 +1357,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Instruments_CM__c: number;
+    CFEs_Instruments_CM__c?: number;
     /**
      * <h3><b>CFEs Last Year (INST)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1369,7 +1369,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Instruments_CY_1__c: number;
+    CFEs_Instruments_CY_1__c?: number;
     /**
      * <h3><b>CFEs Current Year (INST)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1381,8 +1381,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Instruments_CY__c: number;
-    CFEs_Instruments_Last_12__pc: number;
+    CFEs_Instruments_CY__c?: number;
+    CFEs_Instruments_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (INST)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1394,7 +1394,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Instruments_Last_6__c: number;
+    CFEs_Instruments_Last_6__c?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (INST)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1406,7 +1406,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Instruments_Last_7_12__c: number;
+    CFEs_Instruments_Last_7_12__c?: number;
     /**
      * <h3><b>Last CFE Date (INST)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1416,8 +1416,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Instruments_Last_CFE_Date__c: Date;
-    CFEs_Instruments_Last_CFE_Date__pc: Date;
+    CFEs_Instruments_Last_CFE_Date__c?: Date;
+    CFEs_Instruments_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (INST)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1429,7 +1429,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Instruments_LM__c: number;
+    CFEs_Instruments_LM__c?: number;
     /**
      * <h3><b>CFEs Next 6 Months (INST)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -1441,7 +1441,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Instruments_Next_6__c: number;
+    CFEs_Instruments_Next_6__c?: number;
     /**
      * <h3><b>CFEs Current Month (ORTH)</b></h3>
      * <p>SBU: Orthodontics, All Countries</p>
@@ -1453,8 +1453,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Orthodontics_CM__c: number;
-    CFEs_Orthodontics_CM__pc: number;
+    CFEs_Orthodontics_CM__c?: number;
+    CFEs_Orthodontics_CM__pc?: number;
     /**
      * <h3><b>CFEs Current Year (ORTH)</b></h3>
      * <p>SBU: Orthodontics, All Countries</p>
@@ -1466,9 +1466,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Orthodontics_CY__c: number;
-    CFEs_Orthodontics_CY__pc: number;
-    CFEs_Orthodontics_Last_12__pc: number;
+    CFEs_Orthodontics_CY__c?: number;
+    CFEs_Orthodontics_CY__pc?: number;
+    CFEs_Orthodontics_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (ORTH)</b></h3>
      * <p>SBU: Orthodontics, All Countries</p>
@@ -1480,8 +1480,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Orthodontics_Last_6__c: number;
-    CFEs_Orthodontics_Last_6__pc: number;
+    CFEs_Orthodontics_Last_6__c?: number;
+    CFEs_Orthodontics_Last_6__pc?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (ORTH)</b></h3>
      * <p>SBU: Orthodontics, All Countries</p>
@@ -1493,8 +1493,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Orthodontics_Last_7_12__c: number;
-    CFEs_Orthodontics_Last_7_12__pc: number;
+    CFEs_Orthodontics_Last_7_12__c?: number;
+    CFEs_Orthodontics_Last_7_12__pc?: number;
     /**
      * <h3><b>Last CFE Date (ORTH)</b></h3>
      * <p>SBU: Orthodontics, All Countries</p>
@@ -1504,8 +1504,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Orthodontics_Last_CFE_Date__c: Date;
-    CFEs_Orthodontics_Last_CFE_Date__pc: Date;
+    CFEs_Orthodontics_Last_CFE_Date__c?: Date;
+    CFEs_Orthodontics_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (ORTH)</b></h3>
      * <p>SBU: Orthodontics, All Countries</p>
@@ -1517,8 +1517,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Orthodontics_LM__c: number;
-    CFEs_Orthodontics_LM__pc: number;
+    CFEs_Orthodontics_LM__c?: number;
+    CFEs_Orthodontics_LM__pc?: number;
     /**
      * <h3><b>CFEs Next 6 Months (ORTH)</b></h3>
      * <p>SBU: Orthodontics, All Countries</p>
@@ -1530,8 +1530,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Orthodontics_Next_6__c: number;
-    CFEs_Orthodontics_Next_6__pc: number;
+    CFEs_Orthodontics_Next_6__c?: number;
+    CFEs_Orthodontics_Next_6__pc?: number;
     /**
      * <h3><b>CFEs Last 12 Months (ORTH)</b></h3>
      * <p>SBU: Orthodontics, All Countries. Summarized by Cloud Jobs.</p>
@@ -1543,7 +1543,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Othodontics_Last_12__c: number;
+    CFEs_Othodontics_Last_12__c?: number;
     /**
      * <h3><b>CFEs Current Month (P-R-E)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1555,7 +1555,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Pre_CM__c: number;
+    CFEs_Pre_CM__c?: number;
     /**
      * <h3><b>CFEs Last Year (P-R-E)</b></h3>
      * <p>Coverage by Preventive , Restorative and Endodontics SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1567,7 +1567,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Pre_CY_1__c: number;
+    CFEs_Pre_CY_1__c?: number;
     /**
      * <h3><b>CFEs Current Year (P-R-E)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1579,7 +1579,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Pre_CY__c: number;
+    CFEs_Pre_CY__c?: number;
     /**
      * <h3><b>CFEs Last 12 Months (P-R-E)</b></h3>
      * <p>SBU: All in P-R-E. NOTE: Not the same as sum of all SBUs since one CFE can target multiple SBUs. Summarized by Cloud Jobs.</p>
@@ -1591,7 +1591,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Pre_Last_12__c: number;
+    CFEs_Pre_Last_12__c?: number;
     /**
      * <h3><b>CFEs Last 6 Months (P-R-E)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1603,7 +1603,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Pre_Last_6__c: number;
+    CFEs_Pre_Last_6__c?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (P-R-E)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1615,7 +1615,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Pre_Last_7_12__c: number;
+    CFEs_Pre_Last_7_12__c?: number;
     /**
      * <h3><b>CFEs Last Month (P-R-E)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1627,7 +1627,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Pre_LM__c: number;
+    CFEs_Pre_LM__c?: number;
     /**
      * <h3><b>CFEs Next 6 Months (P-R-E)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1639,7 +1639,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Pre_Next_6__c: number;
+    CFEs_Pre_Next_6__c?: number;
     /**
      * <h3><b>CFEs Current Month (P-R-E-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1651,7 +1651,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prep_CM__c: number;
+    CFEs_Prep_CM__c?: number;
     /**
      * <h3><b>CFEs Last Year (P-R-E-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1663,7 +1663,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prep_CY_1__c: number;
+    CFEs_Prep_CY_1__c?: number;
     /**
      * <h3><b>CFEs Current Year (P-R-E-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1675,7 +1675,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prep_CY__c: number;
+    CFEs_Prep_CY__c?: number;
     /**
      * <h3><b>CFEs Last 6 Months (P-R-E-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1687,7 +1687,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prep_Last_6__c: number;
+    CFEs_Prep_Last_6__c?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (P-R-E-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1699,7 +1699,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prep_Last_7_12__c: number;
+    CFEs_Prep_Last_7_12__c?: number;
     /**
      * <h3><b>CFEs Last Month (P-R-E-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1711,7 +1711,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prep_LM__c: number;
+    CFEs_Prep_LM__c?: number;
     /**
      * <h3><b>CFEs Next 6 Months (P-R-E-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1723,7 +1723,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prep_Next_6__c: number;
+    CFEs_Prep_Next_6__c?: number;
     /**
      * <h3><b>CFEs Current Month (PREV)</b></h3>
      * <p>SBU: Preventive, All Countries</p>
@@ -1735,8 +1735,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Preventive_CM__c: number;
-    CFEs_Preventive_CM__pc: number;
+    CFEs_Preventive_CM__c?: number;
+    CFEs_Preventive_CM__pc?: number;
     /**
      * <h3><b>CFEs Current Year (PREV)</b></h3>
      * <p>SBU: Preventive, All Countries</p>
@@ -1748,9 +1748,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Preventive_CY__c: number;
-    CFEs_Preventive_CY__pc: number;
-    CFEs_Preventive_Last_12__pc: number;
+    CFEs_Preventive_CY__c?: number;
+    CFEs_Preventive_CY__pc?: number;
+    CFEs_Preventive_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (PREV)</b></h3>
      * <p>SBU: Preventive, All Countries</p>
@@ -1762,8 +1762,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Preventive_Last_6__c: number;
-    CFEs_Preventive_Last_6__pc: number;
+    CFEs_Preventive_Last_6__c?: number;
+    CFEs_Preventive_Last_6__pc?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (PREV)</b></h3>
      * <p>SBU: Preventive, All Countries</p>
@@ -1775,8 +1775,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Preventive_Last_7_12__c: number;
-    CFEs_Preventive_Last_7_12__pc: number;
+    CFEs_Preventive_Last_7_12__c?: number;
+    CFEs_Preventive_Last_7_12__pc?: number;
     /**
      * <h3><b>Last CFE Date (PREV)</b></h3>
      * <p>SBU: Preventive, All Countries</p>
@@ -1786,8 +1786,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Preventive_Last_CFE_Date__c: Date;
-    CFEs_Preventive_Last_CFE_Date__pc: Date;
+    CFEs_Preventive_Last_CFE_Date__c?: Date;
+    CFEs_Preventive_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (PREV)</b></h3>
      * <p>SBU: Preventive, All Countries</p>
@@ -1799,8 +1799,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Preventive_LM__c: number;
-    CFEs_Preventive_LM__pc: number;
+    CFEs_Preventive_LM__c?: number;
+    CFEs_Preventive_LM__pc?: number;
     /**
      * <h3><b>CFEs Next 6 Months (PREV)</b></h3>
      * <p>SBU: Preventive, All Countries</p>
@@ -1812,8 +1812,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Preventive_Next_6__c: number;
-    CFEs_Preventive_Next_6__pc: number;
+    CFEs_Preventive_Next_6__c?: number;
+    CFEs_Preventive_Next_6__pc?: number;
     /**
      * <h3><b>CFEs Current Month (PROS)</b></h3>
      * <p>SBU: Prosthetics, All Countries</p>
@@ -1825,8 +1825,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prosthetics_CM__c: number;
-    CFEs_Prosthetics_CM__pc: number;
+    CFEs_Prosthetics_CM__c?: number;
+    CFEs_Prosthetics_CM__pc?: number;
     /**
      * <h3><b>CFEs Last Year (PROS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1837,7 +1837,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prosthetics_CY_1__c: number;
+    CFEs_Prosthetics_CY_1__c?: number;
     /**
      * <h3><b>CFEs Current Year (PROS)</b></h3>
      * <p>SBU: Prosthetics, All Countries</p>
@@ -1849,8 +1849,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prosthetics_CY__c: number;
-    CFEs_Prosthetics_CY__pc: number;
+    CFEs_Prosthetics_CY__c?: number;
+    CFEs_Prosthetics_CY__pc?: number;
     /**
      * <h3><b>CFEs Last 12 Months (PROS)</b></h3>
      * <p>SBU: Prosthetics, All Countries. Summarized by Cloud Jobs.</p>
@@ -1862,8 +1862,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prosthetics_Last_12__c: number;
-    CFEs_Prosthetics_Last_12__pc: number;
+    CFEs_Prosthetics_Last_12__c?: number;
+    CFEs_Prosthetics_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (PROS)</b></h3>
      * <p>SBU: Prosthetics, All Countries</p>
@@ -1875,8 +1875,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prosthetics_Last_6__c: number;
-    CFEs_Prosthetics_Last_6__pc: number;
+    CFEs_Prosthetics_Last_6__c?: number;
+    CFEs_Prosthetics_Last_6__pc?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (PROS)</b></h3>
      * <p>SBU: Prosthetics, All Countries</p>
@@ -1888,8 +1888,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prosthetics_Last_7_12__c: number;
-    CFEs_Prosthetics_Last_7_12__pc: number;
+    CFEs_Prosthetics_Last_7_12__c?: number;
+    CFEs_Prosthetics_Last_7_12__pc?: number;
     /**
      * <h3><b>Last CFE Date (PROS)</b></h3>
      * <p>SBU: Prosthetics, All Countries</p>
@@ -1899,8 +1899,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prosthetics_Last_CFE_Date__c: Date;
-    CFEs_Prosthetics_Last_CFE_Date__pc: Date;
+    CFEs_Prosthetics_Last_CFE_Date__c?: Date;
+    CFEs_Prosthetics_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (PROS)</b></h3>
      * <p>SBU: Prosthetics, All Countries</p>
@@ -1912,8 +1912,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prosthetics_LM__c: number;
-    CFEs_Prosthetics_LM__pc: number;
+    CFEs_Prosthetics_LM__c?: number;
+    CFEs_Prosthetics_LM__pc?: number;
     /**
      * <h3><b>CFEs Next 6 months (PROS)</b></h3>
      * <p>SBU: Prosthetics, All Countries</p>
@@ -1925,8 +1925,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prosthetics_Next_6__c: number;
-    CFEs_Prosthetics_Next_6__pc: number;
+    CFEs_Prosthetics_Next_6__c?: number;
+    CFEs_Prosthetics_Next_6__pc?: number;
     /**
      * <h3><b>CFEs Current Month (P-R-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1938,7 +1938,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prp_CM__c: number;
+    CFEs_Prp_CM__c?: number;
     /**
      * <h3><b>CFEs Last Year (P-R-P)</b></h3>
      * <p>Coverage by Prosthetics, Restorative and Preventive SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1950,7 +1950,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prp_CY_1__c: number;
+    CFEs_Prp_CY_1__c?: number;
     /**
      * <h3><b>CFEs Current Year (P-R-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1962,7 +1962,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prp_CY__c: number;
+    CFEs_Prp_CY__c?: number;
     /**
      * <h3><b>CFEs Last 6 Months (P-R-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1974,7 +1974,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prp_Last_6__c: number;
+    CFEs_Prp_Last_6__c?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (P-R-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1986,7 +1986,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prp_Last_7_12__c: number;
+    CFEs_Prp_Last_7_12__c?: number;
     /**
      * <h3><b>CFEs Last Month (P-R-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -1998,7 +1998,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prp_LM__c: number;
+    CFEs_Prp_LM__c?: number;
     /**
      * <h3><b>CFEs Next 6 Months (P-R-P)</b></h3>
      * <p>Coverage by all SBUs - Note not the same as the summary of each SBU coverage since one CFE can target multiple SBU. Populated by Azure jobs</p>
@@ -2010,7 +2010,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Prp_Next_6__c: number;
+    CFEs_Prp_Next_6__c?: number;
     /**
      * <h3><b>CFEs Current Month (REST)</b></h3>
      * <p>SBU: Restorative, All Countries</p>
@@ -2022,8 +2022,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Restorative_CM__c: number;
-    CFEs_Restorative_CM__pc: number;
+    CFEs_Restorative_CM__c?: number;
+    CFEs_Restorative_CM__pc?: number;
     /**
      * <h3><b>CFEs Current Year (REST)</b></h3>
      * <p>SBU: Restorative, All Countries</p>
@@ -2035,9 +2035,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Restorative_CY__c: number;
-    CFEs_Restorative_CY__pc: number;
-    CFEs_Restorative_Last_12__pc: number;
+    CFEs_Restorative_CY__c?: number;
+    CFEs_Restorative_CY__pc?: number;
+    CFEs_Restorative_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (REST)</b></h3>
      * <p>SBU: Restorative, All Countries</p>
@@ -2049,8 +2049,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Restorative_Last_6__c: number;
-    CFEs_Restorative_Last_6__pc: number;
+    CFEs_Restorative_Last_6__c?: number;
+    CFEs_Restorative_Last_6__pc?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (REST)</b></h3>
      * <p>SBU: Restorative, All Countries</p>
@@ -2062,8 +2062,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Restorative_Last_7_12__c: number;
-    CFEs_Restorative_Last_7_12__pc: number;
+    CFEs_Restorative_Last_7_12__c?: number;
+    CFEs_Restorative_Last_7_12__pc?: number;
     /**
      * <h3><b>Last CFE Date (REST)</b></h3>
      * <p>SBU: Restorative, All Countries</p>
@@ -2073,8 +2073,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Restorative_Last_CFE_Date__c: Date;
-    CFEs_Restorative_Last_CFE_Date__pc: Date;
+    CFEs_Restorative_Last_CFE_Date__c?: Date;
+    CFEs_Restorative_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (REST)</b></h3>
      * <p>SBU: Restorative, All Countries</p>
@@ -2086,8 +2086,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Restorative_LM__c: number;
-    CFEs_Restorative_LM__pc: number;
+    CFEs_Restorative_LM__c?: number;
+    CFEs_Restorative_LM__pc?: number;
     /**
      * <h3><b>CFEs Next 6 Months (REST)</b></h3>
      * <p>SBU: Restorative, All Countries</p>
@@ -2099,8 +2099,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Restorative_Next_6__c: number;
-    CFEs_Restorative_Next_6__pc: number;
+    CFEs_Restorative_Next_6__c?: number;
+    CFEs_Restorative_Next_6__pc?: number;
     /**
      * <h3><b>CFEs Current Month (M-A-N-T)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2112,7 +2112,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Sirona_CM__c: number;
+    CFEs_Sirona_CM__c?: number;
     /**
      * <h3><b>CFEs Last Year (M-A-N-T)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2124,7 +2124,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Sirona_CY_1__c: number;
+    CFEs_Sirona_CY_1__c?: number;
     /**
      * <h3><b>CFEs Current Year (M-A-N-T)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2136,7 +2136,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Sirona_CY__c: number;
+    CFEs_Sirona_CY__c?: number;
     /**
      * <h3><b>CFEs Last 12 Months (M-A-N-T)</b></h3>
      * <p>SBU: Equipment (Imaging, Cad/Cam, Instruments, Treatment Centers), All Countries. Summarized by Cloud Jobs.</p>
@@ -2148,7 +2148,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Sirona_Last_12__c: number;
+    CFEs_Sirona_Last_12__c?: number;
     /**
      * <h3><b>CFEs Last 6 Months (M-A-N-T)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2160,7 +2160,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Sirona_Last_6__c: number;
+    CFEs_Sirona_Last_6__c?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (M-A-N-T)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2172,7 +2172,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Sirona_Last_7_12__c: number;
+    CFEs_Sirona_Last_7_12__c?: number;
     /**
      * <h3><b>Last CFE Date (M-A-N-T)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2182,7 +2182,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Sirona_Last_CFE_Date__c: Date;
+    CFEs_Sirona_Last_CFE_Date__c?: Date;
     /**
      * <h3><b>CFEs Last Month (M-A-N-T)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2194,7 +2194,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Sirona_LM__c: number;
+    CFEs_Sirona_LM__c?: number;
     /**
      * <h3><b>CFEs Next 6 Months (M-A-N-T)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2206,7 +2206,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Sirona_Next_6__c: number;
+    CFEs_Sirona_Next_6__c?: number;
     /**
      * <h3><b>CFEs Current Month (TRCE)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2218,7 +2218,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Treatment_Centers_CM__c: number;
+    CFEs_Treatment_Centers_CM__c?: number;
     /**
      * <h3><b>CFEs Last Year (TRCE)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2230,7 +2230,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Treatment_Centers_CY_1__c: number;
+    CFEs_Treatment_Centers_CY_1__c?: number;
     /**
      * <h3><b>CFEs Current Year (TRCE)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2242,8 +2242,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Treatment_Centers_CY__c: number;
-    CFEs_Treatment_Centers_Last_12__pc: number;
+    CFEs_Treatment_Centers_CY__c?: number;
+    CFEs_Treatment_Centers_Last_12__pc?: number;
     /**
      * <h3><b>CFEs Last 6 Months (TRCE)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2255,7 +2255,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Treatment_Centers_Last_6__c: number;
+    CFEs_Treatment_Centers_Last_6__c?: number;
     /**
      * <h3><b>CFEs Last 7-12 Months (TRCE)</b></h3>
      * <p>Set by Daniel Batch jobs</p>
@@ -2267,7 +2267,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Treatment_Centers_Last_7_12__c: number;
+    CFEs_Treatment_Centers_Last_7_12__c?: number;
     /**
      * <h3><b>Last CFE Date (TRCE)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2277,8 +2277,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Treatment_Centers_Last_CFE_Date__c: Date;
-    CFEs_Treatment_Centers_Last_CFE_Date__pc: Date;
+    CFEs_Treatment_Centers_Last_CFE_Date__c?: Date;
+    CFEs_Treatment_Centers_Last_CFE_Date__pc?: Date;
     /**
      * <h3><b>CFEs Last Month (TRCE)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2290,7 +2290,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Treatment_Centers_LM__c: number;
+    CFEs_Treatment_Centers_LM__c?: number;
     /**
      * <h3><b>CFEs Next 6 Months (TRCE)</b></h3>
      * <p>Set By Daniel Batch jobs</p>
@@ -2302,8 +2302,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFEs_Treatment_Centers_Next_6__c: number;
-    ChangeEventHeader: ChangeEventHeader;
+    CFEs_Treatment_Centers_Next_6__c?: number;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Child Accounts Count</b></h3>
      * <p>This field represents the count of child accounts associated with the current account. It is automatically updated to reflect the number of direct and indirect child accounts in the account hierarchy. The count is used for reporting and analytical purposes to understand the size and structure of the account hierarchy.</p>
@@ -2316,7 +2316,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    ChildAccountsCount__c: number;
+    ChildAccountsCount__c?: number;
     /**
      * <h3><b>Account Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -2333,7 +2333,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inactive</code></td><td>Inactive</td><td nowrap>true</td></tr>
      * </table>
      */
-    CIM360_Status__c: string;
+    CIM360_Status__c?: string;
     /**
      * <h3><b>CIM360Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -2344,7 +2344,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CIM360Id__c: number;
+    CIM360Id__c?: number;
     /**
      * <h3><b>CIM Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -2356,7 +2356,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CIM_Key__c: string;
+    CIM_Key__c?: string;
     /**
      * <h3><b>CimId</b></h3>
      * <h4>Field Attributes</h4>
@@ -2367,7 +2367,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CimId__c: string;
+    CimId__c?: string;
     /**
      * <h3><b># of Clear Aligners per month</b></h3>
      * <p>Customer Profiling field used for SFE/Lightning model</p>
@@ -2379,7 +2379,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ClearAlignersMonth__c: number;
+    ClearAlignersMonth__c?: number;
     /**
      * <h3><b>Treatment Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -2422,11 +2422,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Veterinary</code></td><td>Veterinary</td><td nowrap>true</td></tr>
      * </table>
      */
-    Clinic_Treatment_Focus__c: string;
-    Clinical_Studies_Involvement_Area__pc: string;
-    Comminucation_By_Phone__pc: boolean;
-    Communication_via_Email__pc: boolean;
-    Communication_via_Sales_Reps_Visit__pc: boolean;
+    Clinic_Treatment_Focus__c?: string;
+    Clinical_Studies_Involvement_Area__pc?: string;
+    Comminucation_By_Phone__pc?: boolean;
+    Communication_via_Email__pc?: boolean;
+    Communication_via_Sales_Reps_Visit__pc?: boolean;
     /**
      * <h3><b>Company Type</b></h3>
      * <p>Type of Account (Dependent on Product Area)</p>
@@ -2464,9 +2464,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Non Dental</code></td><td>Non Dental</td><td nowrap>true</td></tr>
      * </table>
      */
-    Company_Type__c: string;
-    CompleteContact__pc: boolean;
-    Consent_to_store_data_obtained__pc: string;
+    Company_Type__c?: string;
+    CompleteContact__pc?: boolean;
+    Consent_to_store_data_obtained__pc?: string;
     /**
      * <h3><b>Consignment Stock Customer</b></h3>
      * <p>If this is checked, the Customer has a Consignment Stock</p>
@@ -2476,7 +2476,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Consigment_Stock__c: boolean;
+    Consigment_Stock__c?: boolean;
     /**
      * <h3><b>Consignment Stock Implant Balance</b></h3>
      * <h4>Field Attributes</h4>
@@ -2489,7 +2489,7 @@ declare interface AccountChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Consignment_Stock_Implant_Balance__c: number;
+    Consignment_Stock_Implant_Balance__c?: number;
     /**
      * <h3><b>Consignment Stock Stock Abut&#39;s Balance</b></h3>
      * <h4>Field Attributes</h4>
@@ -2502,16 +2502,16 @@ declare interface AccountChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Consignment_Stock_Stock_Abut_s_Balance__c: number;
-    Contact_Assigned_Territories__pc: string;
-    Contact_Card_link__pc: string;
-    Contact_Consent_Date__pc: Date;
-    Contact_Data_Quality_Score_D__pc: number;
-    Contact_HQ__pc: number;
-    contact_role_ORTHO__pc: string;
-    Contact_s_Account_ID__pc: string;
-    Contact_Status_icon__pc: string;
-    Contact_Type__pc: string;
+    Consignment_Stock_Stock_Abut_s_Balance__c?: number;
+    Contact_Assigned_Territories__pc?: string;
+    Contact_Card_link__pc?: string;
+    Contact_Consent_Date__pc?: Date;
+    Contact_Data_Quality_Score_D__pc?: number;
+    Contact_HQ__pc?: number;
+    contact_role_ORTHO__pc?: string;
+    Contact_s_Account_ID__pc?: string;
+    Contact_Status_icon__pc?: string;
+    Contact_Type__pc?: string;
     /**
      * <h3><b>Contact Campaign ID List</b></h3>
      * <p>A comma-separated list of campaign IDs for all account contacts.</p>
@@ -2520,8 +2520,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(65535)</td></tr>
      * </table>
      */
-    ContactCampaignIdList__c: string;
-    ContactID18Digit__pc: string;
+    ContactCampaignIdList__c?: string;
+    ContactID18Digit__pc?: string;
     /**
      * <h3><b>Continent</b></h3>
      * <p>Grouping Markets into Continent
@@ -2537,8 +2537,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Continent__c: string;
-    Continent__pc: string;
+    Continent__c?: string;
+    Continent__pc?: string;
     /**
      * <h3><b>Copy Visiting to Billing Automatically</b></h3>
      * <p>Used in France to det</p>
@@ -2548,7 +2548,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Copy_Visiting_to_Billing__c: boolean;
+    Copy_Visiting_to_Billing__c?: boolean;
     /**
      * <h3><b>Corporation Name</b></h3>
      * <p>The group name of the account. Requested by and very important for Japan 2019-12-01</p>
@@ -2560,8 +2560,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CorporationName__c: string;
-    Count__pc: number;
+    CorporationName__c?: string;
+    Count__pc?: number;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -2570,8 +2570,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    Country__pc: string;
+    Country__c?: string;
+    Country__pc?: string;
     /**
      * <h3><b>COVID Rebound Point of Contact</b></h3>
      * <p>Sales Representative that will take the lead in having the Rebound Initial Conversation with the Account, and will identify the Rebound Priorities for this account.</p>
@@ -2581,7 +2581,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    COVID_Rebound_Point_of_Contact__c: string;
+    COVID_Rebound_Point_of_Contact__c?: string;
     /**
      * <h3><b>COVID Rebound Point of Contact</b></h3>
      * <p>Sales Representative that will take the lead in having the Rebound Initial Conversation with the Account, and will identify the Rebound Priorities for this account.</p>
@@ -2591,7 +2591,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    COVID_Rebound_Point_of_Contact__r: User;
+    COVID_Rebound_Point_of_Contact__r?: User;
     /**
      * <h3><b>Create Account Plan</b></h3>
      * <p>Check this field to create an account plan</p>
@@ -2601,11 +2601,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Create_Account_Plan__c: boolean;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Credentials__pc: string;
+    Create_Account_Plan__c?: boolean;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Credentials__pc?: string;
     /**
      * <h3><b>Credit Limit 1</b></h3>
      * <p>Shows the Credit Limit 1. From the field OKCRLM in Movex.</p>
@@ -2617,7 +2617,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Limit_1__c: number;
+    Credit_Limit_1__c?: number;
     /**
      * <h3><b>Credit Limit 2</b></h3>
      * <p>Only M3 integration
@@ -2630,7 +2630,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Limit_2__c: number;
+    Credit_Limit_2__c?: number;
     /**
      * <h3><b>Credit Limit 3</b></h3>
      * <p>Only M3 integration
@@ -2643,7 +2643,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Limit_3__c: number;
+    Credit_Limit_3__c?: number;
     /**
      * <h3><b>Overdue Days of Oldest Unpaid Invoice</b></h3>
      * <p>Credit Limit 4 = OKDUE in Movex</p>
@@ -2655,7 +2655,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Limit_4__c: number;
+    Credit_Limit_4__c?: number;
     /**
      * <h3><b>Credit Limit Type</b></h3>
      * <p>Values from AX
@@ -2672,7 +2672,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Limit_Type__c: string;
+    Credit_Limit_Type__c?: string;
     /**
      * <h3><b>Cross-Sell Opportunity Exist?</b></h3>
      * <p>Used in relation with Implants Loss Type, to identify cross-sell opportunities beyond Implants, which could help wining back Implants business. If  Loss Type is added in combination with &quot;No&quot;, monthly CFEs &amp; GROW/KEEP AP&#39;s are not required.</p>
@@ -2688,7 +2688,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>true</td></tr>
      * </table>
      */
-    Cross_Sell_Opportunity_Exist__c: string;
+    Cross_Sell_Opportunity_Exist__c?: string;
     /**
      * <h3><b>CT Application Specialist</b></h3>
      * <p>This field is needed by Japan, to be able to look-up the respective users on Account</p>
@@ -2698,7 +2698,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CT_Application_Specialist__c: string;
+    CT_Application_Specialist__c?: string;
     /**
      * <h3><b>CT Application Specialist</b></h3>
      * <p>This field is needed by Japan, to be able to look-up the respective users on Account</p>
@@ -2708,7 +2708,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CT_Application_Specialist__r: User;
+    CT_Application_Specialist__r?: User;
     /**
      * <h3><b>Currency</b></h3>
      * <h4>Field Attributes</h4>
@@ -2720,9 +2720,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Currency__c: string;
-    CurrencyIsoCode: string;
-    Current_Clinical_Studies_Ref__pc: string;
+    Currency__c?: string;
+    CurrencyIsoCode?: string;
+    Current_Clinical_Studies_Ref__pc?: string;
     /**
      * <h3><b>ETM2 Custom Owner (Generalist)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2732,7 +2732,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Custom_Owner_Generalist__c: string;
+    Custom_ETM2_Custom_Owner_Generalist__c?: string;
     /**
      * <h3><b>ETM2 Custom Owner (Generalist)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2742,7 +2742,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Custom_Owner_Generalist__r: User;
+    Custom_ETM2_Custom_Owner_Generalist__r?: User;
     /**
      * <h3><b>ETM2 Custom Owner (Combined)</b></h3>
      * <p>Brings the username for the custom owners, used in the ETM criteria. To avoid using the users&#39; names. 18 digit id exceeded the formula compile size.</p>
@@ -2755,7 +2755,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_Combined__c: string;
+    Custom_ETM2_Owner_Combined__c?: string;
     /**
      * <h3><b>ETM2 Custom Owner (Equipment)</b></h3>
      * <p>IMPORTANT: THIS FIELD IS NOT INCLUDED in &quot;ETM2 Custom Owner (Combined)&quot; due to system limitations // Adding user id here will override the territory rule and grant this user access.</p>
@@ -2765,7 +2765,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_Equipment__c: string;
+    Custom_ETM2_Owner_Equipment__c?: string;
     /**
      * <h3><b>ETM2 Custom Owner (Equipment)</b></h3>
      * <p>IMPORTANT: THIS FIELD IS NOT INCLUDED in &quot;ETM2 Custom Owner (Combined)&quot; due to system limitations // Adding user id here will override the territory rule and grant this user access.</p>
@@ -2775,7 +2775,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_Equipment__r: User;
+    Custom_ETM2_Owner_Equipment__r?: User;
     /**
      * <h3><b>ETM2 Custom Owner (IMPL)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2785,7 +2785,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_IMPL__c: string;
+    Custom_ETM2_Owner_IMPL__c?: string;
     /**
      * <h3><b>ETM2 Custom Owner (IMPL)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2795,7 +2795,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_IMPL__r: User;
+    Custom_ETM2_Owner_IMPL__r?: User;
     /**
      * <h3><b>ETM2 Custom Owner (LAB)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access</p>
@@ -2805,7 +2805,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_LAB__c: string;
+    Custom_ETM2_Owner_LAB__c?: string;
     /**
      * <h3><b>ETM2 Custom Owner (LAB)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access</p>
@@ -2815,7 +2815,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_LAB__r: User;
+    Custom_ETM2_Owner_LAB__r?: User;
     /**
      * <h3><b>ETM2 Custom Owner (ORTH)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2825,7 +2825,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_ORTH__c: string;
+    Custom_ETM2_Owner_ORTH__c?: string;
     /**
      * <h3><b>ETM2 Custom Owner (ORTH)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2835,7 +2835,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_ORTH__r: User;
+    Custom_ETM2_Owner_ORTH__r?: User;
     /**
      * <h3><b>ETM2 Custom Owner (PREP)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2845,7 +2845,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_PREP__c: string;
+    Custom_ETM2_Owner_PREP__c?: string;
     /**
      * <h3><b>ETM2 Custom Owner (PREP)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2855,7 +2855,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_PREP__r: User;
+    Custom_ETM2_Owner_PREP__r?: User;
     /**
      * <h3><b>ETM2 Custom Owner (SIMPLANT)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2865,7 +2865,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_SIMPLANT__c: string;
+    Custom_ETM2_Owner_SIMPLANT__c?: string;
     /**
      * <h3><b>ETM2 Custom Owner (SIMPLANT)</b></h3>
      * <p>Adding user id here will override the territory rule and grant this user access.</p>
@@ -2875,7 +2875,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_ETM2_Owner_SIMPLANT__r: User;
+    Custom_ETM2_Owner_SIMPLANT__r?: User;
     /**
      * <h3><b>Custom Segmentation (Implants)</b></h3>
      * <p>Custom segmentation to override the default logic :
@@ -2897,7 +2897,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Segmentation N/A</code></td><td>Segmentation N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    Custom_Segmentation__c: string;
+    Custom_Segmentation__c?: string;
     /**
      * <h3><b>Customer Blocked in ERP</b></h3>
      * <p>The field indicates whether customer order entry and printing of picking lists should be blocked for a customer with this associated payer.
@@ -2914,7 +2914,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Customer_Blocked_in_Movex__c: number;
+    Customer_Blocked_in_Movex__c?: number;
     /**
      * <h3><b>Customer Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -2925,7 +2925,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Group__c: string;
+    Customer_Group__c?: string;
     /**
      * <h3><b>Customer Group Description</b></h3>
      * <p>Shows the explanation description of the Customr Group. Linked in Movex to the Customer Group field (which is a code)</p>
@@ -2937,7 +2937,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Group_Description__c: string;
+    Customer_Group_Description__c?: string;
     /**
      * <h3><b>Customer Group Description (JP)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2953,7 +2953,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SASAKI</code></td><td>SASAKI</td><td nowrap>true</td></tr>
      * </table>
      */
-    Customer_Group_Description_D_JP__c: string;
+    Customer_Group_Description_D_JP__c?: string;
     /**
      * <h3><b>Customer Sub-Segment</b></h3>
      * <p>used manually in UK and France wants this integrated from AX. (Note that how it&#39;s used in UK and how France wants to use it might not be the same)</p>
@@ -2965,8 +2965,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Sub_segment__c: string;
-    Customized_Course_ES__pc: boolean;
+    Customer_Sub_segment__c?: string;
+    Customized_Course_ES__pc?: boolean;
     /**
      * <h3><b>Custom Tier</b></h3>
      * <h4>Field Attributes</h4>
@@ -3014,11 +3014,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Preventive - Tier 5</code></td><td>Preventive - Tier 5</td><td nowrap>true</td></tr>
      * </table>
      */
-    CustomTierLightning__c: string;
-    CventEvents__ContactStub__pc: string;
-    CventId__pc: string;
-    Data_Quality_Description__pc: string;
-    Data_Quality_Score__pc: number;
+    CustomTierLightning__c?: string;
+    CventEvents__ContactStub__pc?: string;
+    CventId__pc?: string;
+    Data_Quality_Description__pc?: string;
+    Data_Quality_Score__pc?: number;
     /**
      * <h3><b>ETM Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -3029,11 +3029,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DC_ETM_Code__c: string;
-    Degree__pc: string;
-    Deletion__pc: boolean;
-    DeletionPrevention__pc: boolean;
-    Dental_School_D_JP__pc: string;
+    DC_ETM_Code__c?: string;
+    Degree__pc?: string;
+    Deletion__pc?: boolean;
+    DeletionPrevention__pc?: boolean;
+    Dental_School_D_JP__pc?: string;
     /**
      * <h3><b>Loyalty programs</b></h3>
      * <p>This field is used in JP to spot Accounts that are &quot;members&quot; and pay a membership fee. By doing that they could get discounts. This field is a multi-select field as more loyalty programs might be incuded in the future</p>
@@ -3048,7 +3048,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Our Member (ORTHO)</code></td><td>Our Member (ORTHO)</td><td nowrap>true</td></tr>
      * </table>
      */
-    DentsplySirona_Member_Ortho__c: string;
+    DentsplySirona_Member_Ortho__c?: string;
     /**
      * <h3><b>DEPUniqueKey_CustomerMaster</b></h3>
      * <p>DEPUniqueKey_CustomerMaster</p>
@@ -3060,10 +3060,10 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DEPUniqueKey_CustomerMaster__c: string;
-    Description: string;
-    Description_Sirona__pc: string;
-    DI_D4I__pc: boolean;
+    DEPUniqueKey_CustomerMaster__c?: string;
+    Description?: string;
+    Description_Sirona__pc?: string;
+    DI_D4I__pc?: boolean;
     /**
      * <h3><b>DI-Magazine (DE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3074,7 +3074,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DI_Magazine_DE__c: number;
+    DI_Magazine_DE__c?: number;
     /**
      * <h3><b># DI Scanners</b></h3>
      * <h4>Field Attributes</h4>
@@ -3085,7 +3085,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DI_Scanners__c: number;
+    DI_Scanners__c?: number;
     /**
      * <h3><b>Digital Rep</b></h3>
      * <p>Links the lab rep responsible to the account. Used for report purposes, by UK &amp; France.</p>
@@ -3095,7 +3095,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Digital_Rep__c: string;
+    Digital_Rep__c?: string;
     /**
      * <h3><b>Digital Rep</b></h3>
      * <p>Links the lab rep responsible to the account. Used for report purposes, by UK &amp; France.</p>
@@ -3105,8 +3105,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Digital_Rep__r: User;
-    Direct_Dial__pc: string;
+    Digital_Rep__r?: User;
+    Direct_Dial__pc?: string;
     /**
      * <h3><b>Direct Mailing?</b></h3>
      * <p>Requested by Japan as part of the Lightning project. used to keep track of Direct Mailings from marketing to Accounts.</p>
@@ -3123,7 +3123,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Require Confirmation</code></td><td>Require Confirmation</td><td nowrap>true</td></tr>
      * </table>
      */
-    Direct_Mailing__c: string;
+    Direct_Mailing__c?: string;
     /**
      * <h3><b>Discount Model</b></h3>
      * <p>Only for M3 Integration.</p>
@@ -3135,7 +3135,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Model__c: string;
+    Discount_Model__c?: string;
     /**
      * <h3><b>Discount Model Description</b></h3>
      * <p>M3 integration only
@@ -3148,8 +3148,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Model_Description__c: string;
-    Distributor__pc: Account;
+    Discount_Model_Description__c?: string;
+    Distributor__pc?: Account;
     /**
      * <h3><b>Distributor Categories</b></h3>
      * <h4>Field Attributes</h4>
@@ -3160,7 +3160,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DistributorCategories__c: string;
+    DistributorCategories__c?: string;
     /**
      * <h3><b>Dealer Not Allowed To Sell</b></h3>
      * <h4>Field Attributes</h4>
@@ -3187,7 +3187,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CAD/CAM</code></td><td>CAD/CAM</td><td nowrap>true</td></tr>
      * </table>
      */
-    DistributorCategorisation__c: string;
+    DistributorCategorisation__c?: string;
     /**
      * <h3><b>Do Not Call</b></h3>
      * <h4>Field Attributes</h4>
@@ -3196,7 +3196,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Do_Not_Call__c: boolean;
+    Do_Not_Call__c?: boolean;
     /**
      * <h3><b>Do Not Fax</b></h3>
      * <p>If this field is checked, the Account has asked that it should not be communicated to via Fax</p>
@@ -3206,8 +3206,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Do_Not_Fax__c: boolean;
-    Do_Not_Mail__pc: boolean;
+    Do_Not_Fax__c?: boolean;
+    Do_Not_Mail__pc?: boolean;
     /**
      * <h3><b>Do Not Mail Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -3216,7 +3216,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Do_Not_Mail_Account__c: boolean;
+    Do_Not_Mail_Account__c?: boolean;
     /**
      * <h3><b>Double Room Rate</b></h3>
      * <h4>Field Attributes</h4>
@@ -3225,9 +3225,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Double_Room__c: number;
-    DScomUrlParam__pc: string;
-    Dup_flow_info__pc: string;
+    Double_Room__c?: number;
+    DScomUrlParam__pc?: string;
+    Dup_flow_info__pc?: string;
     /**
      * <h3><b>Duplicate Check ID (HQ)</b></h3>
      * <p>This field should not be shown on any page layouts. It is used to track the master Account ID when performing duplicate checks.</p>
@@ -3239,8 +3239,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Duplicate_Check_ID__c: string;
-    Duplicate_Check_ID__pc: string;
+    Duplicate_Check_ID__c?: string;
+    Duplicate_Check_ID__pc?: string;
     /**
      * <h3><b>Duplicate check Master? (HQ)</b></h3>
      * <p>This field should not be shown on any page layouts. It is used to track if this account is considered as Master when the merge is performed.</p>
@@ -3252,19 +3252,19 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Duplicate_check_Master__c: number;
-    Duplicate_check_Master__pc: number;
-    Duplicate_Id__pc: string;
-    E_business_Contact__pc: boolean;
-    e_commerce_id__pc: string;
-    EAO_2015__pc: boolean;
-    Email_2_NA__pc: string;
-    Email_Consent_collected__pc: string;
-    Email_Consent_Date__pc: Date;
-    Email_is_Populated__pc: number;
-    Email_Last_Modified_By__pc: string;
-    Email_Last_Modified_Date__pc: string;
-    Email_Opt_In__pc: Date;
+    Duplicate_check_Master__c?: number;
+    Duplicate_check_Master__pc?: number;
+    Duplicate_Id__pc?: string;
+    E_business_Contact__pc?: boolean;
+    e_commerce_id__pc?: string;
+    EAO_2015__pc?: boolean;
+    Email_2_NA__pc?: string;
+    Email_Consent_collected__pc?: string;
+    Email_Consent_Date__pc?: Date;
+    Email_is_Populated__pc?: number;
+    Email_Last_Modified_By__pc?: string;
+    Email_Last_Modified_Date__pc?: string;
+    Email_Opt_In__pc?: Date;
     /**
      * <h3><b>End Date of Active Contract</b></h3>
      * <p>The End date of the currently active contract. If the Customers doesn&#39;t have any purchasing contract this field should be blank</p>
@@ -3274,7 +3274,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    End_Date_of_Active_Contract__c: Date;
+    End_Date_of_Active_Contract__c?: Date;
     /**
      * <h3><b># of Endo Cases referred out per month</b></h3>
      * <h4>Field Attributes</h4>
@@ -3285,7 +3285,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EndoReferralsMonth__c: number;
+    EndoReferralsMonth__c?: number;
     /**
      * <h3><b>ERP# (Ortho)</b></h3>
      * <p>Used in the Ortho implementation (approved by Michael)</p>
@@ -3297,7 +3297,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERP_Ortho__c: string;
+    ERP_Ortho__c?: string;
     /**
      * <h3><b>ERP Reg Date</b></h3>
      * <p>AX registration date, M3 registration date will go to the filed &quot;Movex Reg&#39;s Date&quot;.
@@ -3308,7 +3308,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERP_Reg_Date__c: Date;
+    ERP_Reg_Date__c?: Date;
     /**
      * <h3><b>Est ATL Growth CY &gt;5000€?</b></h3>
      * <h4>Field Attributes</h4>
@@ -3320,7 +3320,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_ATL_Growth_CY_5000__c: string;
+    Est_ATL_Growth_CY_5000__c?: string;
     /**
      * <h3><b>Est Growth CY (ATL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3332,7 +3332,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_ATL_Growth_CY__c: number;
+    Est_ATL_Growth_CY__c?: number;
     /**
      * <h3><b>Est ATL Growth CY EUR</b></h3>
      * <h4>Field Attributes</h4>
@@ -3344,7 +3344,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_ATL_Growth_CY_EUR__c: number;
+    Est_ATL_Growth_CY_EUR__c?: number;
     /**
      * <h3><b>Est Sales LY (ATL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3355,7 +3355,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_ATL_Sales_2010__c: number;
+    Est_ATL_Sales_2010__c?: number;
     /**
      * <h3><b>Est Sales CY (ATL)</b></h3>
      * <p>Estimated total Dental ATLANTIS Sales for Account current year (CY).</p>
@@ -3367,7 +3367,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_ATL_Sales_CY__c: number;
+    Est_ATL_Sales_CY__c?: number;
     /**
      * <h3><b>Est Growth CY &gt;5000 €?</b></h3>
      * <h4>Field Attributes</h4>
@@ -3379,7 +3379,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Growth_CY_5000_Euro__c: string;
+    Est_Growth_CY_5000_Euro__c?: string;
     /**
      * <h3><b>Est Growth CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -3391,7 +3391,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Growth_CY_D__c: number;
+    Est_Growth_CY_D__c?: number;
     /**
      * <h3><b>Est Growth CY EURO</b></h3>
      * <p>Calculated Est Growth CY to EURO using 2012 years budget rate.</p>
@@ -3404,7 +3404,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Growth_CY_D_EURO__c: number;
+    Est_Growth_CY_D_EURO__c?: number;
     /**
      * <h3><b>Est Growth CY EUR</b></h3>
      * <h4>Field Attributes</h4>
@@ -3416,7 +3416,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Growth_CY_EUR__c: number;
+    Est_Growth_CY_EUR__c?: number;
     /**
      * <h3><b>Est Implant Growth CY &gt;20?</b></h3>
      * <h4>Field Attributes</h4>
@@ -3428,7 +3428,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Implant_Growth_CY_20__c: string;
+    Est_Implant_Growth_CY_20__c?: string;
     /**
      * <h3><b>Est Implant Growth CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -3440,7 +3440,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Implant_Growth_CY__c: number;
+    Est_Implant_Growth_CY__c?: number;
     /**
      * <h3><b>Est Implant Volume CY</b></h3>
      * <p>Used in Japan to conduct Forecast.</p>
@@ -3452,7 +3452,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Implant_Volume_CY_D__c: number;
+    Est_Implant_Volume_CY_D__c?: number;
     /**
      * <h3><b>Est Implant Volume LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -3463,7 +3463,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Implant_Volume_LY_D__c: number;
+    Est_Implant_Volume_LY_D__c?: number;
     /**
      * <h3><b>Est Sales CY</b></h3>
      * <p>Used to define Est Sales CY in order to be able to do a Territory Forecast. Also used in the COS Pilot i US.</p>
@@ -3475,7 +3475,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Sales_CY__c: number;
+    Est_Sales_CY__c?: number;
     /**
      * <h3><b>Est Sales LY</b></h3>
      * <p>Est Sales LY is a read only field with value copied from Est Sales CY in the end of each year</p>
@@ -3487,7 +3487,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Sales_LY_D__c: number;
+    Est_Sales_LY_D__c?: number;
     /**
      * <h3><b>ETM2 Custom Address</b></h3>
      * <p>A new global field to replace old District/Territory picklist fields</p>
@@ -3665,7 +3665,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">近畿</code></td><td>近畿</td><td nowrap>true</td></tr>
      * </table>
      */
-    ETM2_Custom_Address__c: string;
+    ETM2_Custom_Address__c?: string;
     /**
      * <h3><b>ETM2 State&amp;City</b></h3>
      * <p>Don&#39;t add to layout used for Territory Management alignment</p>
@@ -3678,7 +3678,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ETM2_State_City__c: string;
+    ETM2_State_City__c?: string;
     /**
      * <h3><b>ETM2 Street Address</b></h3>
      * <p>To bring the street addresses in one field, used for ETM2</p>
@@ -3691,7 +3691,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ETM2_Street_Address__c: string;
+    ETM2_Street_Address__c?: string;
     /**
      * <h3><b>ETM2 Zip Code</b></h3>
      * <p>To bring the zip codes in one field, used for ETM2,  MGS - Edited to take left 5 of Billing or Visiting Zip for USA - For US And CA ShippingPostalCode should be first due to this value being integrated from CIM. TFUS-000001508
@@ -3708,7 +3708,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ETM2_Zip_Code__c: string;
+    ETM2_Zip_Code__c?: string;
     /**
      * <h3><b>ETM2 ZipCode (Numeric)</b></h3>
      * <p>Same formula as ETM2 ZipCode but with a numeric representation. Works for Zip-code ranges</p>
@@ -3721,7 +3721,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ETM2_ZipCode_Numeric__c: number;
+    ETM2_ZipCode_Numeric__c?: number;
     /**
      * <h3><b>Sold ATIS EV All</b></h3>
      * <p>NOTE: This field aggregates ALL sold ATIS EV products regardless of time, whereas the other EvLaunch_* fields aggregate only sold ATIS EV and ATIS TX Implants since the first ATIS EV tray sales date.</p>
@@ -3733,7 +3733,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EvLaunch_SoldAtisEvAll__c: number;
+    EvLaunch_SoldAtisEvAll__c?: number;
     /**
      * <h3><b>Sold ATIS EV Implants (EV Launch)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3744,7 +3744,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EvLaunch_SoldAtisEvImplants__c: number;
+    EvLaunch_SoldAtisEvImplants__c?: number;
     /**
      * <h3><b>Sold ATIS TX Implants (EV Launch)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3755,10 +3755,10 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EvLaunch_SoldAtisImplants__c: number;
-    Exhibition_CH__pc: string;
-    External_Identifier__pc: External_Identifier__c;
-    Fax: string;
+    EvLaunch_SoldAtisImplants__c?: number;
+    Exhibition_CH__pc?: string;
+    External_Identifier__pc?: External_Identifier__c;
+    Fax?: string;
     /**
      * <h3><b>First Sales Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -3767,7 +3767,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    First_Sales_Date__c: Date;
+    First_Sales_Date__c?: Date;
     /**
      * <h3><b>First Sales Date Before Movex</b></h3>
      * <p>Field to be set during initial Data Load of JP Accounts to acknowledge when Customer first bought from Astra Tech also before Movex. Also, used by DE.</p>
@@ -3777,12 +3777,12 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    First_Sales_Date_Before_Movex_D_JP__c: Date;
-    First_Year_of_Practive__pc: string;
-    FirstName: string;
-    Flight_Requirement_Overseas__pc: string;
-    Follow_up_More_information__pc: string;
-    Former_Employer__pc: string;
+    First_Sales_Date_Before_Movex_D_JP__c?: Date;
+    First_Year_of_Practive__pc?: string;
+    FirstName?: string;
+    Flight_Requirement_Overseas__pc?: string;
+    Follow_up_More_information__pc?: string;
+    Former_Employer__pc?: string;
     /**
      * <h3><b>Free/Insurance Medical Care</b></h3>
      * <p>This is a field, requested from Japan - Needed to determine, if this clinic is mainly doing business for private or insuranced patients.</p>
@@ -3792,8 +3792,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Free_Insurance_Medical_Care__c: number;
-    Full_Name__pc: string;
+    Free_Insurance_Medical_Care__c?: number;
+    Full_Name__pc?: string;
     /**
      * <h3><b>GDW Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -3804,7 +3804,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    GDWUniqueKey__c: string;
+    GDWUniqueKey__c?: string;
     /**
      * <h3><b>GDW Unique Key (Customer Master)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3815,8 +3815,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GDWUniqueKey_CustomerMaster__c: string;
-    Gender__pc: string;
+    GDWUniqueKey_CustomerMaster__c?: string;
+    Gender__pc?: string;
     /**
      * <h3><b>General Info Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -3827,14 +3827,14 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    General_Info_Email__c: string;
-    Government_Practitioner_Type__pc: string;
-    Graduation_year__pc: string;
-    Greeting__pc: string;
-    Greeting_Benelux__pc: string;
-    Greeting_CH__pc: string;
-    Greetings_DI_AT__pc: string;
-    Health_Check__pc: Date;
+    General_Info_Email__c?: string;
+    Government_Practitioner_Type__pc?: string;
+    Graduation_year__pc?: string;
+    Greeting__pc?: string;
+    Greeting_Benelux__pc?: string;
+    Greeting_CH__pc?: string;
+    Greetings_DI_AT__pc?: string;
+    Health_Check__pc?: Date;
     /**
      * <h3><b>Hidden</b></h3>
      * <h4>Field Attributes</h4>
@@ -3843,9 +3843,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Hidden__c: boolean;
-    Honorarium_Comments__pc: string;
-    HowCollected__pc: string;
+    Hidden__c?: boolean;
+    Honorarium_Comments__pc?: string;
+    HowCollected__pc?: string;
     /**
      * <h3><b>Hyperion Customer Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -3856,7 +3856,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hyperion_Customer_Group__c: string;
+    Hyperion_Customer_Group__c?: string;
     /**
      * <h3><b>I am Main Contact</b></h3>
      * <p>Dynamic Checkbox - checkbox ticked if logged in user is the main owner of the account. To allow reports and list views based on this.</p>
@@ -3866,7 +3866,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( $User.Id ==  Main_DS_Contact__c , TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    IamMainContact__c: boolean;
+    IamMainContact__c?: boolean;
     /**
      * <h3><b>Implant Brand Mix</b></h3>
      * <p>Pia Test</p>
@@ -3879,7 +3879,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_Brand_Mix__c: string;
+    Implant_Brand_Mix__c?: string;
     /**
      * <h3><b># Approved Open Implant GROW AP/Opps</b></h3>
      * <p>Shows the number of OPEN Implant Grow APs</p>
@@ -3894,7 +3894,7 @@ declare interface AccountChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Implant_GROW_AP_Opps__c: number;
+    Implant_GROW_AP_Opps__c?: number;
     /**
      * <h3><b>Implant Won/Loss Code CY</b></h3>
      * <p>Used in Reports/Dashboards to calculate the new won customers</p>
@@ -3907,7 +3907,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_Won_Loss_Code_CY__c: number;
+    Implant_Won_Loss_Code_CY__c?: number;
     /**
      * <h3><b>Implant Won/Lost Code LY</b></h3>
      * <p>This field adds a &quot;1&quot; if the customer has its Won customer date Last Year, and a &quot;-1&quot; if the customer has a Lost customer date Last Year. Otherwhise this field is null</p>
@@ -3920,7 +3920,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_WonLost_Code_LY__c: number;
+    Implant_WonLost_Code_LY__c?: number;
     /**
      * <h3><b>Implants KPI &quot;+30&quot; ACC</b></h3>
      * <h4>Field Attributes</h4>
@@ -3929,7 +3929,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ISPICKVAL(Status__c, &quot;20&quot;) &amp;&amp; ( MAX(Sold_Implants_L12M__c, TQ_CY_1_D_DI_Implants_AllBrands__c ) &gt;= 30 || ( Account_Strategy_Implants__c = &quot;GROW&quot; &amp;&amp; ISPICKVAL(Volume_Implants__c, &quot;High Usage&quot;) ) ) &amp;&amp; BLANKVALUE(Open_Account_Plan_Relations__c, 0) = 0 &amp;&amp; NOT( ISPICKVAL(Loss_Type_D__c, &quot;Surgeon retired/Left the clinic&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Solvency Issues - Product supply stopped&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Low ROI - Customer focus stopped&quot;) ) &amp;&amp; NOT ( ( ISPICKVAL(Loss_Type_D__c, &quot;Former steady DI user – lost due to product complaints&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Former steady DI user – lost on price to other Premium Brand&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Former steady DI user – lost on price to Low Cost Brand&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Former steady DI user – lost to competition&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Starter – chose another system after trialing DI&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Mature implantologist – trialed DI, but did not continue&quot;)|| ISPICKVAL(Loss_Type_D__c, &quot;Administrative Reason&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Other&quot;) ) &amp;&amp; ISPICKVAL(Cross_Sell_Opportunity_Exist__c, &quot;No&quot;) ) &#47;&#42; Old version, changed 13.7.2016 by Lisa IF (  ISPICKVAL( Status__c,&quot;20&quot;) &amp;&amp; NOT(ISPICKVAL( Loss_Type_D__c , &quot;Surgeon retired/Left the clinic&quot;)) &amp;&amp; NOT(ISPICKVAL( Loss_Type_D__c , &quot;Solvency Issues - Product supply stopped&quot;))  &amp;&amp; NOT(ISPICKVAL( Loss_Type_D__c , &quot;Low ROI - Customer focus stopped&quot;) )  &amp;&amp; BLANKVALUE(Open_Account_Plan_Relations__c, 0)=0   &amp;&amp; ( ( MAX(Sold_Implants_L12M__c, TQ_CY_1_D_DI_Implants_AllBrands_RUS_OLD__c )  &gt;=   30 &amp;&amp; MAX(Sold_Implants_L12M__c, TQ_CY_1_D_DI_Implants_AllBrands_RUS_OLD__c )  &gt;=   30 ) ) &amp;&amp; ( TEXT(Loss_Type_D__c)= &quot;&quot;|| ( ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost due to product complaints&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost on price to other Premium Brand&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost on price to Low Cost Brand&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost to competition&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Starter – chose another system after trialing DI&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Mature implantologist – trialed DI, but did not continue&quot;)|| ISPICKVAL( Loss_Type_D__c , &quot;Administrative Reason&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Other&quot;) &amp;&amp; TEXT(Cross_Sell_Opportunity_Exist__c) &lt;&gt; &quot;No&quot;)) , TRUE, FALSE ) &#42;&#47;</code></td></tr>
      * </table>
      */
-    Implants_KPI_30_ACC__c: boolean;
+    Implants_KPI_30_ACC__c?: boolean;
     /**
      * <h3><b>Implants KPI +50/High Volume Grow ACC</b></h3>
      * <h4>Field Attributes</h4>
@@ -3938,8 +3938,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ISPICKVAL(Status__c, &quot;20&quot;) &amp;&amp; ( MAX(Sold_Implants_L12M__c, TQ_CY_1_D_DI_Implants_AllBrands__c ) &gt;= 50 || ( Account_Strategy_Implants__c = &quot;GROW&quot; &amp;&amp; ISPICKVAL(Volume_Implants__c, &quot;High Usage&quot;) ) ) &amp;&amp; BLANKVALUE(Open_Account_Plan_Relations__c, 0) = 0 &amp;&amp; NOT( ISPICKVAL(Loss_Type_D__c, &quot;Surgeon retired/Left the clinic&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Solvency Issues - Product supply stopped&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Low ROI - Customer focus stopped&quot;) ) &amp;&amp; NOT ( ( ISPICKVAL(Loss_Type_D__c, &quot;Former steady DI user – lost due to product complaints&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Former steady DI user – lost on price to other Premium Brand&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Former steady DI user – lost on price to Low Cost Brand&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Former steady DI user – lost to competition&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Starter – chose another system after trialing DI&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Mature implantologist – trialed DI, but did not continue&quot;)|| ISPICKVAL(Loss_Type_D__c, &quot;Administrative Reason&quot;) || ISPICKVAL(Loss_Type_D__c, &quot;Other&quot;) ) &amp;&amp; ISPICKVAL(Cross_Sell_Opportunity_Exist__c, &quot;No&quot;) ) &#47;&#42; OLD Formulas IF (  ISPICKVAL( Status__c,&quot;20&quot;) &amp;&amp; NOT(ISPICKVAL( Loss_Type_D__c , &quot;Surgeon retired/Left the clinic&quot;)) &amp;&amp; NOT(ISPICKVAL( Loss_Type_D__c , &quot;Solvency Issues - Product supply stopped&quot;))  &amp;&amp; NOT(ISPICKVAL( Loss_Type_D__c , &quot;Low ROI - Customer focus stopped&quot;) )  &amp;&amp; BLANKVALUE(Open_Account_Plan_Relations__c, 0)=0   &amp;&amp; ( MAX(Sold_Implants_L12M__c, TQ_CY_1_D_DI_Implants_AllBrands_RUS__c )  &gt;=   50  || ( ISPICKVAL(Volume_Implants__c, &quot;High Usage&quot;) &amp;&amp; Account_Strategy_Implants__c = &quot;GROW&quot; ) ) &amp;&amp; ( TEXT(Loss_Type_D__c)= &quot;&quot;|| ( ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost due to product complaints&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost on price to other Premium Brand&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost on price to Low Cost Brand&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost to competition&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Starter – chose another system after trialing DI&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Mature implantologist – trialed DI, but did not continue&quot;)|| ISPICKVAL( Loss_Type_D__c , &quot;Administrative Reason&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Other&quot;) &amp;&amp; TEXT(Cross_Sell_Opportunity_Exist__c) &lt;&gt; &quot;No&quot;)) , TRUE, FALSE ) &#47;&#42; IF ( BLANKVALUE(Open_Account_Plan_Relations__c, 0)&gt;0 || NOT(ISPICKVAL( Status__c,&quot;20&quot;)) || ISPICKVAL( Loss_Type_D__c , &quot;Surgeon retired/Left the clinic&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Solvency Issues - Product supply stopped&quot;)  || ISPICKVAL( Loss_Type_D__c , &quot;Low ROI - Customer focus stopped&quot;)  || ( MAX(Sold_Implants_L12M__c, TQ_CY_1_D_DI_Implants_AllBrands_RUS__c )  &lt;  50  &amp;&amp; ( NOT(ISPICKVAL(Volume_Implants__c, &quot;High Usage&quot;))  || Account_Strategy_Implants__c &lt;&gt; &quot;GROW&quot; ) ) &amp;&amp; ( ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost due to product complaints&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost on price to other Premium Brand&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost on price to Low Cost Brand&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Former steady DI user – lost to competition&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Starter – chose another system after trialing DI&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Mature implantologist – trialed DI, but did not continue&quot;)|| ISPICKVAL( Loss_Type_D__c , &quot;Administrative Reason&quot;) || ISPICKVAL( Loss_Type_D__c , &quot;Other&quot;) &amp;&amp; TEXT(Cross_Sell_Opportunity_Exist__c) &lt;&gt; &quot;Yes&quot; ) , FALSE, TRUE ) &#42;&#47;</code></td></tr>
      * </table>
      */
-    Implants_KPI_50High_Volume_Grow_ACC__c: boolean;
-    Implants_Management_Notes__pc: string;
+    Implants_KPI_50High_Volume_Grow_ACC__c?: boolean;
+    Implants_Management_Notes__pc?: string;
     /**
      * <h3><b>Implants Potential / Year</b></h3>
      * <p>Part of Implants Segmentation . The maximum number of implants that account might purchase from DI and other competitors within 12-months period (Year).</p>
@@ -3952,7 +3952,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Implants_Potential_Year__c: number;
+    Implants_Potential_Year__c?: number;
     /**
      * <h3><b>Implants Potential / Year Modified By</b></h3>
      * <h4>Field Attributes</h4>
@@ -3963,7 +3963,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implants_Potential_Year_Last_Changed__c: string;
+    Implants_Potential_Year_Last_Changed__c?: string;
     /**
      * <h3><b>Implants Potential / Year Last Modified</b></h3>
      * <p>Updated by a Workflow</p>
@@ -3973,7 +3973,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implants_Potential_Year_Last_Updated__c: string;
+    Implants_Potential_Year_Last_Updated__c?: string;
     /**
      * <h3><b>Important Note</b></h3>
      * <p>&quot;Don&#39;t use this new section for the new Implants segmentation unless you have received directions from the National Administrator in your country&quot;</p>
@@ -3986,13 +3986,13 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Important_Note__c: string;
-    Inactive__pc: boolean;
-    inactive_dedupe_HQ__pc: string;
-    Industry: string;
-    Industry_Sector__pc: string;
-    Initials__pc: string;
-    InsertEmailMarketingConsentCollected__pc: string;
+    Important_Note__c?: string;
+    Inactive__pc?: boolean;
+    inactive_dedupe_HQ__pc?: string;
+    Industry?: string;
+    Industry_Sector__pc?: string;
+    Initials__pc?: string;
+    InsertEmailMarketingConsentCollected__pc?: string;
     /**
      * <h3><b>Insurance Code (FR)</b></h3>
      * <p>Used by France to report on Mutual Insurances</p>
@@ -4004,12 +4004,12 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Insurance_Code_FR__c: string;
-    Interested_in_Cerec__pc: boolean;
-    Interested_in_Imaging__pc: boolean;
-    Interested_in_Treatment_Centres__pc: boolean;
-    Internal_Contact__pc: boolean;
-    International_Speaker__pc: boolean;
+    Insurance_Code_FR__c?: string;
+    Interested_in_Cerec__pc?: boolean;
+    Interested_in_Imaging__pc?: boolean;
+    Interested_in_Treatment_Centres__pc?: boolean;
+    Internal_Contact__pc?: boolean;
+    International_Speaker__pc?: boolean;
     /**
      * <h3><b>Invoice Account #</b></h3>
      * <p>Field Invoice Receiver from Movex.</p>
@@ -4021,8 +4021,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Movex__c: string;
-    IsExcludedFromRealign: boolean;
+    Invoice_Movex__c?: string;
+    IsExcludedFromRealign?: boolean;
     /**
      * <h3><b>is Main DS Contact my Direct Report ?</b></h3>
      * <h4>Field Attributes</h4>
@@ -4031,8 +4031,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Main_DS_Contact__c = $User.ManagerId</code></td></tr>
      * </table>
      */
-    isMainDScontactmydirectreport__c: boolean;
-    IsMaster__pc: number;
+    isMainDScontactmydirectreport__c?: boolean;
+    IsMaster__pc?: number;
     /**
      * <h3><b>ISUS Connection Potential / Year</b></h3>
      * <p>Number of potential ISUS connection based on the yearly forecasting multiplied by 3 (The average number of implant connection)</p>
@@ -4045,7 +4045,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ISUS_Connection_potential_Year__c: number;
+    ISUS_Connection_potential_Year__c?: number;
     /**
      * <h3><b>is Zuora Customer?</b></h3>
      * <p>Roll-up summary field showing if an account has Zuora source records.
@@ -4059,9 +4059,9 @@ declare interface AccountChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    isZuoraCustomer__c: number;
-    Jigsaw: string;
-    JigsawCompanyId: string;
+    isZuoraCustomer__c?: number;
+    Jigsaw?: string;
+    JigsawCompanyId?: string;
     /**
      * <h3><b>Key Account</b></h3>
      * <p>Identify important Accounts</p>
@@ -4071,7 +4071,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Key_Account__c: boolean;
+    Key_Account__c?: boolean;
     /**
      * <h3><b>Key Account Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -4088,9 +4088,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Surgical GROW</code></td><td>Surgical GROW</td><td nowrap>true</td></tr>
      * </table>
      */
-    Key_Account_Type__c: string;
-    Key_Opinion_Leader_D_JP__pc: boolean;
-    KOL_UK_IE__pc: boolean;
+    Key_Account_Type__c?: string;
+    Key_Opinion_Leader_D_JP__pc?: boolean;
+    KOL_UK_IE__pc?: boolean;
     /**
      * <h3><b>KOL Account</b></h3>
      * <p>Used to track the accounts that has KOLs associated.
@@ -4102,14 +4102,14 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    KOLAccount__c: boolean;
-    KOLs__pc: number;
-    Last_CSat__pc: number;
-    Last_Csat_Value__pc: string;
-    Last_Modified_User_Name__pc: string;
-    Last_NPS__pc: number;
-    Last_Qualtrics_Survey_Date__pc: Date;
-    Last_Survey_Update__pc: Date;
+    KOLAccount__c?: boolean;
+    KOLs__pc?: number;
+    Last_CSat__pc?: number;
+    Last_Csat_Value__pc?: string;
+    Last_Modified_User_Name__pc?: string;
+    Last_NPS__pc?: number;
+    Last_Qualtrics_Survey_Date__pc?: Date;
+    Last_Survey_Update__pc?: Date;
     /**
      * <h3><b>LastLostEvent YearMonth Abutments</b></h3>
      * <p>Set by Apex to the year/month when the last LostEvent occurred on the Account.</p>
@@ -4119,7 +4119,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastLostEventYearMonth_Abutments__c: Date;
+    LastLostEventYearMonth_Abutments__c?: Date;
     /**
      * <h3><b>LastLostEvent YearMonth Implants</b></h3>
      * <p>Set by Apex to the year/month when the last LostEvent occurred on the Account.</p>
@@ -4129,7 +4129,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastLostEventYearMonth_Implants__c: Date;
+    LastLostEventYearMonth_Implants__c?: Date;
     /**
      * <h3><b>ATL Suprast Lost Date</b></h3>
      * <p>Set by Apex to the year/month when the last LostEvent occurred on the Account.</p>
@@ -4139,11 +4139,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastLostEventYearMonth_ISUS__c: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastName: string;
+    LastLostEventYearMonth_ISUS__c?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastName?: string;
     /**
      * <h3><b>LastNullEvent YearMonth Abutments</b></h3>
      * <p>Set by Apex to the year/month when the last NullEvent occurred on the Account.</p>
@@ -4153,7 +4153,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastNullEventYearMonth_Abutments__c: Date;
+    LastNullEventYearMonth_Abutments__c?: Date;
     /**
      * <h3><b>LastNullEvent YearMonth Implants</b></h3>
      * <p>Set by Apex to the year/month when the last NullEvent occurred on the Account</p>
@@ -4163,7 +4163,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastNullEventYearMonth_Implants__c: Date;
+    LastNullEventYearMonth_Implants__c?: Date;
     /**
      * <h3><b>LastNullEventYearMonth_ISUS</b></h3>
      * <p>Used in ISUS Win/Lost kogic</p>
@@ -4173,8 +4173,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastNullEventYearMonth_ISUS__c: Date;
-    LastSurveySentDate__pc: Date;
+    LastNullEventYearMonth_ISUS__c?: Date;
+    LastSurveySentDate__pc?: Date;
     /**
      * <h3><b>ATL Abut Won Date</b></h3>
      * <p>Set by Apex to the year/month when the last WonEvent occurred on the Account.</p>
@@ -4184,7 +4184,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastWonEventYearMonth_Abutments__c: Date;
+    LastWonEventYearMonth_Abutments__c?: Date;
     /**
      * <h3><b>LastWonEvent YearMonth Abutments Brands</b></h3>
      * <p>Set by Apex to a string containing the brands for which the last WonEvent occurred on the Account. Example: &quot;Ankylos;AstraTech;Xive&quot;</p>
@@ -4196,7 +4196,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastWonEventYearMonth_Abutments_Brands__c: string;
+    LastWonEventYearMonth_Abutments_Brands__c?: string;
     /**
      * <h3><b>Implants Won Date</b></h3>
      * <p>Set by Apex to the year/month when the last WonEvent occurred on the Account.</p>
@@ -4206,7 +4206,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastWonEventYearMonth_Implants__c: Date;
+    LastWonEventYearMonth_Implants__c?: Date;
     /**
      * <h3><b>Implants When Won</b></h3>
      * <p>Set by Apex to a string containing the brands for which the last WonEvent occurred on the Account. Example: &quot;Ankylos;AstraTech;Xive&quot;</p>
@@ -4218,7 +4218,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastWonEventYearMonth_Implants_Brands__c: string;
+    LastWonEventYearMonth_Implants_Brands__c?: string;
     /**
      * <h3><b>ATL Suprast Won Date</b></h3>
      * <p>Set by Apex to the year/month when the last WonEvent occurred on the Account.</p>
@@ -4228,7 +4228,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastWonEventYearMonth_ISUS__c: Date;
+    LastWonEventYearMonth_ISUS__c?: Date;
     /**
      * <h3><b>LastWonEventYearMonth_ISUS_Brands</b></h3>
      * <p>This field is created just to maintaine the Apex code,  so we might have no other practical use for it.</p>
@@ -4240,8 +4240,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastWonEventYearMonth_ISUS_Brands__c: string;
-    Launch_Qual__pc: boolean;
+    LastWonEventYearMonth_ISUS_Brands__c?: string;
+    Launch_Qual__pc?: boolean;
     /**
      * <h3><b>Legacy System Id (IMPLANTS)</b></h3>
      * <p>This field shows the legacy Customer number if the Customer was migrated from  legacy ERP to new ERP
@@ -4255,8 +4255,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Legacy_ERP_Customer_Number__c: string;
-    Legacy_ID__pc: string;
+    Legacy_ERP_Customer_Number__c?: string;
+    Legacy_ID__pc?: string;
     /**
      * <h3><b>Legacy System Id&#39;s (Others)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4267,7 +4267,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Legacy_System_Id_Others__c: string;
+    Legacy_System_Id_Others__c?: string;
     /**
      * <h3><b>Links</b></h3>
      * <p>TFUS-000003510 and TFUS-000003878 and TFUS-000005265 and TFUS-000005880</p>
@@ -4280,9 +4280,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Links__c: string;
-    Links__pc: string;
-    Local_Speaker__pc: boolean;
+    Links__c?: string;
+    Links__pc?: string;
+    Local_Speaker__pc?: boolean;
     /**
      * <h3><b>Implants Loss Type</b></h3>
      * <p>Use this field to state the &quot;Loss Type&quot; of this Customer. If not considered a &quot;lost&quot; customer, instead only replaced by another Movex #, please select &quot;Administrative Reason&quot;. This will from Mars -10 also be set already in Movex by CS.</p>
@@ -4310,7 +4310,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Surgeon retired/Left the clinic</code></td><td>Surgeon retired/Left the clinic</td><td nowrap>true</td></tr>
      * </table>
      */
-    Loss_Type_D__c: string;
+    Loss_Type_D__c?: string;
     /**
      * <h3><b>ATL Abut Lost Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -4320,7 +4320,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lost_Atlantis_Customer_Date__c: Date;
+    Lost_Atlantis_Customer_Date__c?: Date;
     /**
      * <h3><b>Implants Lost Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -4330,7 +4330,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lost_date_D__c: Date;
+    Lost_date_D__c?: Date;
     /**
      * <h3><b>Lost Implant Period</b></h3>
      * <p>Shows the period when the Account was lost (IMPLANTS), The period is L12M, L13-24M or &quot;Older than 24 Months&quot;. if the field is blank, the Account is not yet lost.</p>
@@ -4343,7 +4343,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lost_Implant_Period__c: string;
+    Lost_Implant_Period__c?: string;
     /**
      * <h3><b>Share of Potential (ATL Abut)</b></h3>
      * <p>Automatically calculated.
@@ -4358,7 +4358,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Loyalty_ATL_Abut__c: string;
+    Loyalty_ATL_Abut__c?: string;
     /**
      * <h3><b>Share of Potential (ATL Suprast)</b></h3>
      * <p>Automatically calculated.
@@ -4372,7 +4372,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Loyalty_ATL_ISUS__c: string;
+    Loyalty_ATL_ISUS__c?: string;
     /**
      * <h3><b>Share Of Potential (Implants Basic)</b></h3>
      * <p>Loyalty selected manually, not part of the new Implants segmentation, but used mainly for Russia or countries with no Movex integration.</p>
@@ -4390,7 +4390,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">25% to 75%</code></td><td>25% to 75%</td><td nowrap>true</td></tr>
      * </table>
      */
-    Loyalty_Implants_Basic__c: string;
+    Loyalty_Implants_Basic__c?: string;
     /**
      * <h3><b>Share of Potential Implants Text (HQ)</b></h3>
      * <p>This is a help field for the Implants Segmentation logic, don&#39;t add to layouts or use in reports</p>
@@ -4403,7 +4403,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Loyalty_Implants_Text__c: number;
+    Loyalty_Implants_Text__c?: number;
     /**
      * <h3><b>Loyalty (SP Guides)</b></h3>
      * <p>Hidden field to be used in the Strategy logic, this will makeSimplant strategy consistent with other strategy logic but the Loyalty is defined automatically based on Sold Guides in the last 365 days</p>
@@ -4416,9 +4416,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Loyalty_SP_Guides__c: string;
-    Mail_to__pc: boolean;
-    Mailing_Address_Other_Address__pc: boolean;
+    Loyalty_SP_Guides__c?: string;
+    Mail_to__pc?: boolean;
+    Mailing_Address_Other_Address__pc?: boolean;
     /**
      * <h3><b>Main Competitor</b></h3>
      * <h4>Field Attributes</h4>
@@ -4427,7 +4427,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_Competitor_D__c: string;
+    Main_Competitor_D__c?: string;
     /**
      * <h3><b>Main Competitor</b></h3>
      * <h4>Field Attributes</h4>
@@ -4436,7 +4436,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_Competitor_D__r: Account;
+    Main_Competitor_D__r?: Account;
     /**
      * <h3><b>Main Competitor (Text)</b></h3>
      * <p>Used as a &quot;help field&quot; in order to be able to set the Account Tags field to a combiationof Specialty, Main Competitor (look-up to Competitor (D) Record Type) and Account Strategy. takes the value in &quot;Main Competitor (D)&quot; and inputs the value as text into this field to be able to use it in a Workflow/Field Update.</p>
@@ -4449,8 +4449,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_Competitor_D_Text__c: string;
-    Main_Contact__pc: boolean;
+    Main_Competitor_D_Text__c?: string;
+    Main_Contact__pc?: boolean;
     /**
      * <h3><b>Main DS Contact (Sales Rep)</b></h3>
      * <p>Used to set who is main responsible for the customer from DentsplySirona</p>
@@ -4460,7 +4460,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_DS_Contact__c: string;
+    Main_DS_Contact__c?: string;
     /**
      * <h3><b>Main DS Contact (Sales Rep)</b></h3>
      * <p>Used to set who is main responsible for the customer from DentsplySirona</p>
@@ -4470,7 +4470,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_DS_Contact__r: User;
+    Main_DS_Contact__r?: User;
     /**
      * <h3><b>Main DS Contact (Sales Rep) Team</b></h3>
      * <p>he USA Sales Team will begin to use the &quot;MAIN DS CONTACT&quot; on the Account such that the team can use prescriptive selling metrics and track KPIs regarding those metrics.</p>
@@ -4483,8 +4483,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MainDSContactTeam__c: string;
-    Majored_in_D_JP__pc: string;
+    MainDSContactTeam__c?: string;
+    Majored_in_D_JP__pc?: string;
     /**
      * <h3><b>Maps Assignment Rule</b></h3>
      * <h4>Field Attributes</h4>
@@ -4493,7 +4493,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssignmentRule__c: string;
+    maps__AssignmentRule__c?: string;
     /**
      * <h3><b>Maps Assignment Rule</b></h3>
      * <h4>Field Attributes</h4>
@@ -4502,7 +4502,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AssignmentRule__r: maps__AssignmentRule__c;
+    maps__AssignmentRule__r?: maps__AssignmentRule__c;
     /**
      * <h3><b>Marked for Training</b></h3>
      * <h4>Field Attributes</h4>
@@ -4511,7 +4511,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Marked_for_Training__c: boolean;
+    Marked_for_Training__c?: boolean;
     /**
      * <h3><b>Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -4549,10 +4549,10 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">UK</code></td><td>UK</td><td nowrap>true</td></tr>
      * </table>
      */
-    Market__c: string;
-    Market__pc: string;
-    MasterContactID__pc: string;
-    MasterID__pc: string;
+    Market__c?: string;
+    Market__pc?: string;
+    MasterContactID__pc?: string;
+    MasterID__pc?: string;
     /**
      * <h3><b>Legacy System Id (Materialise)</b></h3>
      * <p>This SoftAdmin ID. In Movex it&#39;s called PIN-Code, it can&#39;t be Unique, because in SoftAdmin they don&#39;t give different ID&#39;s for Accounts with different sites, also we have some accounts with status 90 and another one with 20</p>
@@ -4564,10 +4564,10 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    MD_ERP_Legacy_ID__c: string;
-    MDMStatus__pc: string;
-    Middle_Name__pc: string;
-    Mobile_2__pc: string;
+    MD_ERP_Legacy_ID__c?: string;
+    MDMStatus__pc?: string;
+    Middle_Name__pc?: string;
+    Mobile_2__pc?: string;
     /**
      * <h3><b>Monthly Lab Spendings</b></h3>
      * <p>Amount of money that a clinic spends on Lab Services per month</p>
@@ -4577,8 +4577,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Monthly_Lab_Spendings__c: number;
-    More_Information__pc: string;
+    Monthly_Lab_Spendings__c?: number;
+    More_Information__pc?: string;
     /**
      * <h3><b>ERP Number (Current)</b></h3>
      * <p>The current ERP number, AX or M3</p>
@@ -4590,9 +4590,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Movex__c: string;
-    Movex__pc: string;
-    Movex_Contact__pc: string;
+    Movex__c?: string;
+    Movex__pc?: string;
+    Movex_Contact__pc?: string;
     /**
      * <h3><b>ERP District Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -4603,7 +4603,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_District_Code__c: string;
+    Movex_District_Code__c?: string;
     /**
      * <h3><b>ERP District Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -4614,7 +4614,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_District_Name__c: string;
+    Movex_District_Name__c?: string;
     /**
      * <h3><b>ERP District Name (Long)</b></h3>
      * <p>Used by AX integration to populate the district name</p>
@@ -4626,7 +4626,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_District_Name_Long__c: string;
+    Movex_District_Name_Long__c?: string;
     /**
      * <h3><b>ERP Email</b></h3>
      * <p>Email Address as stated on Customer in ERP.</p>
@@ -4638,7 +4638,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Email__c: string;
+    Movex_Email__c?: string;
     /**
      * <h3><b>ERP# - Name</b></h3>
      * <p>Concatenation of Movex - Name like &quot;US12345 - Black Dental Lab&quot;. To be used in reports, should not appear in any page layouts</p>
@@ -4651,7 +4651,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Name__c: string;
+    Movex_Name__c?: string;
     /**
      * <h3><b>ERP Product Area (HQ)</b></h3>
      * <p>The value in the Product Area field in Movex (OKHAFE), or CHAIN from AX</p>
@@ -4663,7 +4663,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Product_Area_OKHAFE__c: string;
+    Movex_Product_Area_OKHAFE__c?: string;
     /**
      * <h3><b>Movex# Reference</b></h3>
      * <p>The Referenced Movex#. This field is linked to Movex# Reference Reason, to track which account is replacing which.</p>
@@ -4675,7 +4675,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Reference__c: string;
+    Movex_Reference__c?: string;
     /**
      * <h3><b>Movex# Reference Reason</b></h3>
      * <p>States if this customer is replacing/is a replacement of an old Movex#.
@@ -4690,7 +4690,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Reference_Reason__c: number;
+    Movex_Reference_Reason__c?: number;
     /**
      * <h3><b>Movex Reg&#39;n Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -4699,7 +4699,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Registration_Date__c: Date;
+    Movex_Registration_Date__c?: Date;
     /**
      * <h3><b>ERP User ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -4710,7 +4710,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_SalesmanID__c: string;
+    Movex_SalesmanID__c?: string;
     /**
      * <h3><b>ERP Status Icon</b></h3>
      * <h4>Field Attributes</h4>
@@ -4722,8 +4722,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Status_indicator__c: string;
-    MSP_Participant__pc: boolean;
+    Movex_Status_indicator__c?: string;
+    MSP_Participant__pc?: boolean;
     /**
      * <h3><b>My Account?</b></h3>
      * <p>This formula field checks if the Account owner equals the current user and provides the values &quot;True&quot; or &quot;False&quot;. This field is created to cater for specific limitations in reports and views regarding &quot;My Accounts&quot;. Should not appear in any page layouts</p>
@@ -4736,8 +4736,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    My_Account__c: string;
-    My_Contact__pc: boolean;
+    My_Account__c?: string;
+    My_Contact__pc?: boolean;
     /**
      * <h3><b>My Territories Account?</b></h3>
      * <p>This formula field checks if the Account is assigned to the territory of the user who is currently looking at the report and provides the values &quot;True&quot; or &quot;False&quot;. This field is created to cater for specific limitations in reports and views regarding &quot;My Accounts&quot; in ETM context. Should not appear in any page layouts.</p>
@@ -4750,7 +4750,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    My_Territories_Account__c: string;
+    My_Territories_Account__c?: string;
     /**
      * <h3><b>NA: Account Specialty</b></h3>
      * <h4>Field Attributes</h4>
@@ -4783,7 +4783,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">University</code></td><td>University</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    NA_Account_Specialty__c: string;
+    NA_Account_Specialty__c?: string;
     /**
      * <h3><b>NA Lab  Gain or Loss Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -4809,22 +4809,22 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Third party stock / custom cast</code></td><td>Third party stock / custom cast</td><td nowrap>true</td></tr>
      * </table>
      */
-    NA_Lab_Gain_Loss_Reason__c: string;
-    NA_MKTG_Address_Line_1__pc: string;
-    NA_MKTG_Address_Line_2__pc: string;
-    NA_MKTG_Address_Line_3__pc: string;
-    NA_MKTG_City__pc: string;
-    NA_MKTG_Country__pc: string;
-    NA_MKTG_Do_Not_Mail__pc: boolean;
-    NA_MKTG_State_Province__pc: string;
-    NA_MKTG_Zip_Postal_Code__pc: string;
-    NA_NorthWest_Focus__pc: boolean;
-    NA_reGET_Blitz__pc: boolean;
-    NA_State_License_Number__pc: string;
-    NA_State_Licensure__pc: string;
-    Name: string;
-    NameLocal: string;
-    National_Speaker__pc: boolean;
+    NA_Lab_Gain_Loss_Reason__c?: string;
+    NA_MKTG_Address_Line_1__pc?: string;
+    NA_MKTG_Address_Line_2__pc?: string;
+    NA_MKTG_Address_Line_3__pc?: string;
+    NA_MKTG_City__pc?: string;
+    NA_MKTG_Country__pc?: string;
+    NA_MKTG_Do_Not_Mail__pc?: boolean;
+    NA_MKTG_State_Province__pc?: string;
+    NA_MKTG_Zip_Postal_Code__pc?: string;
+    NA_NorthWest_Focus__pc?: boolean;
+    NA_reGET_Blitz__pc?: boolean;
+    NA_State_License_Number__pc?: string;
+    NA_State_Licensure__pc?: string;
+    Name?: string;
+    NameLocal?: string;
+    National_Speaker__pc?: boolean;
     /**
      * <h3><b># of Abutments per month</b></h3>
      * <p>Track # of CAD CAM Abutments per month - (Manually entered)</p>
@@ -4836,7 +4836,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NrOfAbutments__c: number;
+    NrOfAbutments__c?: number;
     /**
      * <h3><b># of CAD CAM abutments</b></h3>
      * <p>Track # of CAD CAM Abutments per month - (Manually entered)</p>
@@ -4848,8 +4848,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NrOfCADCAMabutments__c: number;
-    NumberOfEmployees: number;
+    NrOfCADCAMabutments__c?: number;
+    NumberOfEmployees?: number;
     /**
      * <h3><b># of BUYDS Accounts</b></h3>
      * <p>Roll-up summary field from Source Records, showing the number of BUY DS (the new Digital Transformation e-commerce) an account has.
@@ -4863,7 +4863,7 @@ declare interface AccountChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    of_BUYDS_Accounts__c: number;
+    of_BUYDS_Accounts__c?: number;
     /**
      * <h3><b># of Cad/Cam blocks per month</b></h3>
      * <h4>Field Attributes</h4>
@@ -4874,7 +4874,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_cad_cam_blocks_per_month__c: number;
+    of_cad_cam_blocks_per_month__c?: number;
     /**
      * <h3><b># of CBCTs taken per month</b></h3>
      * <p>Number to determine how many CBCT (Cone-beam computed tomography, Xray cases) are taken per month</p>
@@ -4886,7 +4886,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_CBCTs_month__c: number;
+    of_CBCTs_month__c?: number;
     /**
      * <h3><b># of Dental Hygienists</b></h3>
      * <h4>Field Attributes</h4>
@@ -4897,7 +4897,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Dental_Hygienists__c: number;
+    of_Dental_Hygienists__c?: number;
     /**
      * <h3><b># of Dental Professionals</b></h3>
      * <h4>Field Attributes</h4>
@@ -4908,7 +4908,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Dental_Professionals__c: number;
+    of_Dental_Professionals__c?: number;
     /**
      * <h3><b># of Dental Students/Year</b></h3>
      * <h4>Field Attributes</h4>
@@ -4919,7 +4919,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Dental_Students_Year__c: number;
+    of_Dental_Students_Year__c?: number;
     /**
      * <h3><b># of Technicians</b></h3>
      * <p>Requested by Asia (Benny) for Clinics, added also for Labs. Japan wanted to remove from ERP Account Page layout but decision for now to keep it for all.</p>
@@ -4931,7 +4931,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Dental_Technicians__c: number;
+    of_Dental_Technicians__c?: number;
     /**
      * <h3><b># of Dentists</b></h3>
      * <h4>Field Attributes</h4>
@@ -4942,7 +4942,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Dentists__c: number;
+    of_Dentists__c?: number;
     /**
      * <h3><b># of Denturists</b></h3>
      * <h4>Field Attributes</h4>
@@ -4953,7 +4953,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Denturists__c: number;
+    of_Denturists__c?: number;
     /**
      * <h3><b># of Endo Cases per month</b></h3>
      * <h4>Field Attributes</h4>
@@ -4964,7 +4964,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Endo_Cases__c: number;
+    of_Endo_Cases__c?: number;
     /**
      * <h3><b># of Implants placed per month</b></h3>
      * <p>Note the API name is not in line with label due to label change.</p>
@@ -4976,7 +4976,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Implant_Procedures__c: number;
+    of_Implant_Procedures__c?: number;
     /**
      * <h3><b># of Implants Referred out per month</b></h3>
      * <p>Used to profile the customer with how many  referral procedure for Implants the clinic generates per month</p>
@@ -4988,7 +4988,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Implants_Referrals_month__c: number;
+    of_Implants_Referrals_month__c?: number;
     /**
      * <h3><b># of Lab cases per month</b></h3>
      * <p>This field is used to record the number of lab cases. It can be used differently from country to country. In Japan, it will be used for their SFE efforts</p>
@@ -5000,7 +5000,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Lab_cases_month__c: number;
+    of_Lab_cases_month__c?: number;
     /**
      * <h3><b># of open Opportunities</b></h3>
      * <p>Summarize the number of open opportunities for the account</p>
@@ -5013,7 +5013,7 @@ declare interface AccountChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    of_open_Opportunities__c: number;
+    of_open_Opportunities__c?: number;
     /**
      * <h3><b># of Other Staffs</b></h3>
      * <h4>Field Attributes</h4>
@@ -5024,7 +5024,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Other__c: number;
+    of_Other__c?: number;
     /**
      * <h3><b># of Preventive Patients per month</b></h3>
      * <p>Indicates the number of preventive (hygiene) patients that the practices sees per month</p>
@@ -5036,7 +5036,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Preventive_PatientsMonth__c: number;
+    of_Preventive_PatientsMonth__c?: number;
     /**
      * <h3><b># of Prophylaxis Chairs</b></h3>
      * <h4>Field Attributes</h4>
@@ -5047,7 +5047,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Prophylaxis_Chairs__c: number;
+    of_Prophylaxis_Chairs__c?: number;
     /**
      * <h3><b># of Restorative Cases per month</b></h3>
      * <p>Used to profile the Customer and understand the size of the clinic and the amount of restoration they do</p>
@@ -5059,7 +5059,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Restorative_Cases_month__c: number;
+    of_Restorative_Cases_month__c?: number;
     /**
      * <h3><b># of Treatment Chairs</b></h3>
      * <h4>Field Attributes</h4>
@@ -5070,7 +5070,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_treatment_Chairs__c: number;
+    of_treatment_Chairs__c?: number;
     /**
      * <h3><b># of Metal crowns/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -5081,7 +5081,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OfMetalCrownsMonth__c: number;
+    OfMetalCrownsMonth__c?: number;
     /**
      * <h3><b># of Metal free crowns/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -5092,7 +5092,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OfMetalFreeCrownsMonth__c: number;
+    OfMetalFreeCrownsMonth__c?: number;
     /**
      * <h3><b># of Premium implants placed/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -5103,7 +5103,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OfPremiumImplantsPlacedMonth__c: number;
+    OfPremiumImplantsPlacedMonth__c?: number;
     /**
      * <h3><b># of Value implants placed/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -5114,7 +5114,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OfValueImplantsPlacedMonth__c: number;
+    OfValueImplantsPlacedMonth__c?: number;
     /**
      * <h3><b>Account Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -5162,7 +5162,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Single_Dentist_Clinic</code></td><td>Single_Dentist_Clinic</td><td nowrap>true</td></tr>
      * </table>
      */
-    OneAccount_Type__c: string;
+    OneAccount_Type__c?: string;
     /**
      * <h3><b>OneSF Id</b></h3>
      * <p>This will be the main id to map accounts in SFDC with different integrations.</p>
@@ -5173,8 +5173,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    OneSF_Id__c: string;
-    OneSF_Id__pc: string;
+    OneSF_Id__c?: string;
+    OneSF_Id__pc?: string;
     /**
      * <h3><b>Open Account Plan Relations</b></h3>
      * <p>Shows the number of open (in progress) Account Plan Relations for the account. Used to know which accounts to exclude from monthly CFEs and GROW/KEEP APs. This field is updated every hour by a cloud job.</p>
@@ -5186,7 +5186,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Open_Account_Plan_Relations__c: number;
+    Open_Account_Plan_Relations__c?: number;
     /**
      * <h3><b># Approved Open Implant GET APs</b></h3>
      * <h4>Field Attributes</h4>
@@ -5196,7 +5196,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Opportunity.AccountId</code></td></tr>
      * </table>
      */
-    Open_Implant_GET_AP_Opps__c: number;
+    Open_Implant_GET_AP_Opps__c?: number;
     /**
      * <h3><b>Open Invoices</b></h3>
      * <p>Sum of open amounts</p>
@@ -5206,7 +5206,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Open_Invoices__c: number;
+    Open_Invoices__c?: number;
     /**
      * <h3><b>Opening Times</b></h3>
      * <h4>Field Attributes</h4>
@@ -5214,9 +5214,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(280)</td></tr>
      * </table>
      */
-    Opening_Times__c: string;
-    OperatingHours: OperatingHours;
-    OperatingHoursId: string;
+    Opening_Times__c?: string;
+    OperatingHours?: OperatingHours;
+    OperatingHoursId?: string;
     /**
      * <h3><b>Order Value Not Invoiced</b></h3>
      * <p>Integrated from field OKTBLG in Movex</p>
@@ -5228,7 +5228,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_value_not_invoiced__c: number;
+    Order_value_not_invoiced__c?: number;
     /**
      * <h3><b># of Orders CY w/o this month</b></h3>
      * <p>Number of unique order numbers during the current calendar year not including current month</p>
@@ -5240,7 +5240,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrdersCY__c: number;
+    OrdersCY__c?: number;
     /**
      * <h3><b># of Orders LM</b></h3>
      * <p>Number of unique order numbers during the previous calendar month.</p>
@@ -5252,11 +5252,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrdersLM__c: number;
+    OrdersLM__c?: number;
     /**
      * <h3><b>Organisation Number</b></h3>
-     * <p>AX Integration : populate org number
-     * M3 Integration: populate CORG - Used in Sweden for Organisation Number</p>
+     * <p>Follwing TFUS-000007224 this now reads
+     * Legal Entity Id</p>
      * <h4>Field Attributes</h4>
      * <table border="0" valign="top">
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(32)</td></tr>
@@ -5265,7 +5265,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Organisation_Number__c: string;
+    Organisation_Number__c?: string;
     /**
      * <h3><b>Ortho Case Starts perX year</b></h3>
      * <h4>Field Attributes</h4>
@@ -5276,7 +5276,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Ortho_Case_Starts_Year__c: number;
+    Ortho_Case_Starts_Year__c?: number;
     /**
      * <h3><b># of Ortho case starts per month</b></h3>
      * <p>There is a duplicate field for this Ortho case Starts per year - that field is in use by US/CA but intention is to have US/CA move to this field in 2020 and the other one be deleted.</p>
@@ -5288,7 +5288,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrthoCaseStartsMonth__c: number;
+    OrthoCaseStartsMonth__c?: number;
     /**
      * <h3><b>Other Phone</b></h3>
      * <p>Secondary phone used in France, mainly to be integrated with CTI</p>
@@ -5298,7 +5298,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_Phone__c: string;
+    Other_Phone__c?: string;
     /**
      * <h3><b>Outstanding Invoice Amount</b></h3>
      * <p>The oustanding inovice amount.
@@ -5312,7 +5312,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Outstanding_Invoice_Amount__c: number;
+    Outstanding_Invoice_Amount__c?: number;
     /**
      * <h3><b>Outstanding Invoice Amount IF Payer (JP)</b></h3>
      * <p>If this Account is Payer for one or several other Movex #, this field shows the total outstanding invoice Amount for all Accounts for which this Account is the Payer.</p>
@@ -5324,7 +5324,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Outstanding_Invoice_Amount_Payer_D_JP__c: number;
+    Outstanding_Invoice_Amount_Payer_D_JP__c?: number;
     /**
      * <h3><b>Overdue Invoice Amount</b></h3>
      * <p>The oustanding inovice amount.
@@ -5338,7 +5338,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Overdue_Invoice_Amount__c: number;
+    Overdue_Invoice_Amount__c?: number;
     /**
      * <h3><b>Override ATL Abut Potential</b></h3>
      * <p>Override the ATL Abut potential in case the actual sold Abut in the last 12 months exceeded the potential</p>
@@ -5351,7 +5351,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Override_ATL_Abut_Potential__c: string;
+    Override_ATL_Abut_Potential__c?: string;
     /**
      * <h3><b>Override ATL Suprast Potential</b></h3>
      * <p>Override the ATL ISUS potential in case the actual sold ISUS in the last 12 months exceeded the potential</p>
@@ -5364,7 +5364,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Override_ATL_ISUS_Potential__c: string;
+    Override_ATL_ISUS_Potential__c?: string;
     /**
      * <h3><b>Override Simplant Potential</b></h3>
      * <h4>Field Attributes</h4>
@@ -5376,7 +5376,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Override_Simplant_Potential__c: string;
+    Override_Simplant_Potential__c?: string;
     /**
      * <h3><b>Overwrite Implants Potential Text (HQ)</b></h3>
      * <p>This is a help field for the Implants Segmentation logic, (Trigger a workflow) don&#39;t add to layouts or use in reports</p>
@@ -5389,7 +5389,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Overwrite_Implants_Potential__c: string;
+    Overwrite_Implants_Potential__c?: string;
     /**
      * <h3><b>Overwritten Implants Potential</b></h3>
      * <p>If Sold Implants L12M &gt; Implants Potential / Year, then   the system will overwrite current potential with the Sold Implants L12M value. And this checkbox will be ticked to mark this customer for review. Only on Customers layout.</p>
@@ -5399,11 +5399,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( ISPICKval(Status__c,&quot;20&quot;),IF (ispickval(Custom_Segmentation__c,&quot;Long Purchasing Cycle &gt;1 Year&quot;), IF ((round((Sold_Implants_L12M__c + Sold_Implants_L13_24M__c)/2,0) = IF (ISBLANK(Implants_Potential_Year__c),0,Implants_Potential_Year__c)) &amp;&amp; Implants_Potential_Year__c!=0 ,True,False), IF ((Sold_Implants_L12M__c = IF (ISBLANK(Implants_Potential_Year__c),0,Implants_Potential_Year__c))&amp;&amp;Implants_Potential_Year__c!=0,True,False)),False)</code></td></tr>
      * </table>
      */
-    Overwritten_Implants_Potential__c: boolean;
-    Owner: User;
-    OwnerId: string;
-    Ownership: string;
-    p3_Participant__pc: boolean;
+    Overwritten_Implants_Potential__c?: boolean;
+    Owner?: User;
+    OwnerId?: string;
+    Ownership?: string;
+    p3_Participant__pc?: boolean;
     /**
      * <h3><b>PAR-ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -5414,8 +5414,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    PAR_ID__c: string;
-    Parent: Account;
+    PAR_ID__c?: string;
+    Parent?: Account;
     /**
      * <h3><b>Parent Account ERP#</b></h3>
      * <p>Shows the Parent Account Movex number. Used for analysis only, should not appear in any page layouts</p>
@@ -5428,7 +5428,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Account_Movex__c: string;
+    Parent_Account_Movex__c?: string;
     /**
      * <h3><b>Parent Account OneSF #</b></h3>
      * <h4>Field Attributes</h4>
@@ -5440,7 +5440,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Account_OneSF__c: string;
+    Parent_Account_OneSF__c?: string;
     /**
      * <h3><b>Parent Account Type</b></h3>
      * <p>Used to show the type of Parent Account associated. Important when parent is a DSO, Corporate account to notify about that</p>
@@ -5453,7 +5453,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Account_Type__c: string;
+    Parent_Account_Type__c?: string;
     /**
      * <h3><b>Parent Geographical Area</b></h3>
      * <p>The parent Geographical Area of the Account</p>
@@ -5463,7 +5463,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Geographical_Area__c: string;
+    Parent_Geographical_Area__c?: string;
     /**
      * <h3><b>Parent Geographical Area</b></h3>
      * <p>The parent Geographical Area of the Account</p>
@@ -5473,7 +5473,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Geographical_Area__r: Account;
+    Parent_Geographical_Area__r?: Account;
     /**
      * <h3><b>Parent Account Information</b></h3>
      * <p>TFUS-000002871
@@ -5487,8 +5487,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ParentAccountInformation__c: string;
-    ParentId: string;
+    ParentAccountInformation__c?: string;
+    ParentId?: string;
     /**
      * <h3><b>Partner Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -5506,8 +5506,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Venue</code></td><td>Venue</td><td nowrap>true</td></tr>
      * </table>
      */
-    Partner_Type__c: string;
-    Patients_per_Week__pc: number;
+    Partner_Type__c?: string;
+    Patients_per_Week__pc?: number;
     /**
      * <h3><b># of Patients per month</b></h3>
      * <p>Used to track how many patients an Accounts serves a month - requested first by Japan</p>
@@ -5519,7 +5519,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PatientsMonth__c: number;
+    PatientsMonth__c?: number;
     /**
      * <h3><b>Payer Customer Group (JP)</b></h3>
      * <p>Sets Customer Group to the Customer Group of the Payer Lookup-Account. If Payer Lookup is empty, Customer Group from Account itself is used. For Japan only. To mark Account with SASAKI, Direct or Other Dealer.</p>
@@ -5532,7 +5532,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payer_Customer_Group_D_JP__c: string;
+    Payer_Customer_Group_D_JP__c?: string;
     /**
      * <h3><b>Payer Lookup</b></h3>
      * <h4>Field Attributes</h4>
@@ -5541,7 +5541,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payer_Lookup__c: string;
+    Payer_Lookup__c?: string;
     /**
      * <h3><b>Payer Lookup</b></h3>
      * <h4>Field Attributes</h4>
@@ -5550,7 +5550,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payer_Lookup__r: Account;
+    Payer_Lookup__r?: Account;
     /**
      * <h3><b>Payer Account #</b></h3>
      * <p>Field Payer from Movex.</p>
@@ -5562,7 +5562,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payer_Movex__c: string;
+    Payer_Movex__c?: string;
     /**
      * <h3><b>Payment Terms</b></h3>
      * <p>Payment Terms coming from OKTEPY from Movex. Shows a code corresponding to the payment terms for the customer</p>
@@ -5574,7 +5574,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payment_Terms_D_JP__c: string;
+    Payment_Terms_D_JP__c?: string;
     /**
      * <h3><b>Payment Terms Description</b></h3>
      * <p>CSYtab.tepy</p>
@@ -5586,52 +5586,52 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payment_Terms_Desrciption__c: string;
-    PEERS_Member__pc: boolean;
-    PersonAssistantName: string;
-    PersonAssistantPhone: string;
-    PersonBirthdate: Date;
-    PersonContact: Contact;
-    PersonContactId: string;
-    PersonDepartment: string;
-    PersonDoNotCall: boolean;
-    PersonEmail: string;
-    PersonEmailBouncedDate: string;
-    PersonEmailBouncedReason: string;
-    PersonFirstNameLocal: string;
-    PersonHasOptedOutOfEmail: boolean;
-    PersonHasOptedOutOfFax: boolean;
-    PersonHomePhone: string;
-    PersonIndividual: Individual;
-    PersonIndividualId: string;
-    PersonLastCURequestDate: string;
-    PersonLastCUUpdateDate: string;
-    PersonLastNameLocal: string;
-    PersonLeadSource: string;
-    PersonMailingAddress: Address;
-    PersonMailingCity: string;
-    PersonMailingCountry: string;
-    PersonMailingGeocodeAccuracy: string;
-    PersonMailingLatitude: number;
-    PersonMailingLongitude: number;
-    PersonMailingPostalCode: string;
-    PersonMailingState: string;
-    PersonMailingStreet: string;
-    PersonMobilePhone: string;
-    PersonOtherAddress: Address;
-    PersonOtherCity: string;
-    PersonOtherCountry: string;
-    PersonOtherGeocodeAccuracy: string;
-    PersonOtherLatitude: number;
-    PersonOtherLongitude: number;
-    PersonOtherPhone: string;
-    PersonOtherPostalCode: string;
-    PersonOtherState: string;
-    PersonOtherStreet: string;
-    PersonTitle: string;
-    Phone: string;
-    Phone_and_mobile_is_populated__pc: boolean;
-    PhoneAndMobile__pc: string;
+    Payment_Terms_Desrciption__c?: string;
+    PEERS_Member__pc?: boolean;
+    PersonAssistantName?: string;
+    PersonAssistantPhone?: string;
+    PersonBirthdate?: Date;
+    PersonContact?: Contact;
+    PersonContactId?: string;
+    PersonDepartment?: string;
+    PersonDoNotCall?: boolean;
+    PersonEmail?: string;
+    PersonEmailBouncedDate?: string;
+    PersonEmailBouncedReason?: string;
+    PersonFirstNameLocal?: string;
+    PersonHasOptedOutOfEmail?: boolean;
+    PersonHasOptedOutOfFax?: boolean;
+    PersonHomePhone?: string;
+    PersonIndividual?: Individual;
+    PersonIndividualId?: string;
+    PersonLastCURequestDate?: string;
+    PersonLastCUUpdateDate?: string;
+    PersonLastNameLocal?: string;
+    PersonLeadSource?: string;
+    PersonMailingAddress?: Address;
+    PersonMailingCity?: string;
+    PersonMailingCountry?: string;
+    PersonMailingGeocodeAccuracy?: string;
+    PersonMailingLatitude?: number;
+    PersonMailingLongitude?: number;
+    PersonMailingPostalCode?: string;
+    PersonMailingState?: string;
+    PersonMailingStreet?: string;
+    PersonMobilePhone?: string;
+    PersonOtherAddress?: Address;
+    PersonOtherCity?: string;
+    PersonOtherCountry?: string;
+    PersonOtherGeocodeAccuracy?: string;
+    PersonOtherLatitude?: number;
+    PersonOtherLongitude?: number;
+    PersonOtherPhone?: string;
+    PersonOtherPostalCode?: string;
+    PersonOtherState?: string;
+    PersonOtherStreet?: string;
+    PersonTitle?: string;
+    Phone?: string;
+    Phone_and_mobile_is_populated__pc?: boolean;
+    PhoneAndMobile__pc?: string;
     /**
      * <h3><b>Postal Code Info</b></h3>
      * <h4>Field Attributes</h4>
@@ -5640,7 +5640,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Postal_Code_Info__c: string;
+    Postal_Code_Info__c?: string;
     /**
      * <h3><b>Postal Code Info</b></h3>
      * <h4>Field Attributes</h4>
@@ -5649,7 +5649,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Postal_Code_Info__r: Postal_Codes__c;
+    Postal_Code_Info__r?: Postal_Codes__c;
     /**
      * <h3><b>Potential (SBU: ENDO)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5666,7 +5666,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Potential</code></td><td>No Potential</td><td nowrap>true</td></tr>
      * </table>
      */
-    Potential_SBU_ENDO__c: string;
+    Potential_SBU_ENDO__c?: string;
     /**
      * <h3><b>Potential (SBU: ORTH)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5683,7 +5683,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Potential</code></td><td>No Potential</td><td nowrap>true</td></tr>
      * </table>
      */
-    Potential_SBU_ORTHO__c: string;
+    Potential_SBU_ORTHO__c?: string;
     /**
      * <h3><b>Potential (SBU: PREV)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5700,7 +5700,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Potential</code></td><td>No Potential</td><td nowrap>true</td></tr>
      * </table>
      */
-    Potential_SBU_PREV__c: string;
+    Potential_SBU_PREV__c?: string;
     /**
      * <h3><b>Potential (SBU: PROS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5717,7 +5717,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Potential</code></td><td>No Potential</td><td nowrap>true</td></tr>
      * </table>
      */
-    Potential_SBU_PROS__c: string;
+    Potential_SBU_PROS__c?: string;
     /**
      * <h3><b>Potential (SBU: REST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5734,7 +5734,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Potential</code></td><td>No Potential</td><td nowrap>true</td></tr>
      * </table>
      */
-    Potential_SBU_RESTO__c: string;
+    Potential_SBU_RESTO__c?: string;
     /**
      * <h3><b>Practice HRID</b></h3>
      * <p>SureSmile PracticeHRID from AX.</p>
@@ -5746,7 +5746,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeHRID__c: string;
+    PracticeHRID__c?: string;
     /**
      * <h3><b>Practice Id</b></h3>
      * <p>SureSmile Practice Id from AX.</p>
@@ -5758,9 +5758,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeId__c: string;
-    Practitioner_ID_NPI_in_US__pc: string;
-    Practitioner_ID_Populated__pc: string;
+    PracticeId__c?: string;
+    Practitioner_ID_NPI_in_US__pc?: string;
+    Practitioner_ID_Populated__pc?: string;
     /**
      * <h3><b>Preferred Communication Channel</b></h3>
      * <p>What is the customer&#39;s preferred communication channel to be contacted?</p>
@@ -5778,11 +5778,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Phone</code></td><td>Phone</td><td nowrap>true</td></tr>
      * </table>
      */
-    Preferred_Communication_Channel__c: string;
-    Preferred_Days__pc: string;
-    Preferred_Hours__pc: string;
-    Preferred_Language__pc: string;
-    Preferred_Language_CH__pc: string;
+    Preferred_Communication_Channel__c?: string;
+    Preferred_Days__pc?: string;
+    Preferred_Hours__pc?: string;
+    Preferred_Language__pc?: string;
+    Preferred_Language_CH__pc?: string;
     /**
      * <h3><b>Price List</b></h3>
      * <h4>Field Attributes</h4>
@@ -5793,11 +5793,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price_List__c: string;
-    Primary_Contact__pc: boolean;
-    Primary_Lecture_Language__pc: string;
-    PrimaryAccountVisitingAddress__pc: string;
-    PrimaryMethodOfContact__pc: string;
+    Price_List__c?: string;
+    Primary_Contact__pc?: boolean;
+    Primary_Lecture_Language__pc?: string;
+    PrimaryAccountVisitingAddress__pc?: string;
+    PrimaryMethodOfContact__pc?: string;
     /**
      * <h3><b>Privacy (IT)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5812,10 +5812,10 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>true</td></tr>
      * </table>
      */
-    Privacy__c: string;
-    Privacy__pc: string;
-    Privacy_Consent__pc: boolean;
-    Private_NPD__pc: string;
+    Privacy__c?: string;
+    Privacy__pc?: string;
+    Privacy_Consent__pc?: boolean;
+    Private_NPD__pc?: string;
     /**
      * <h3><b>Product Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -5829,13 +5829,13 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental</code></td><td>Dental</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
-    Product_Area__pc: string;
-    Profession__pc: string;
-    Profession_CA__pc: string;
-    Profession_D_CH__pc: string;
-    Profession_DEX__pc: string;
-    Profile__pc: string;
+    Product_Area__c?: string;
+    Product_Area__pc?: string;
+    Profession__pc?: string;
+    Profession_CA__pc?: string;
+    Profession_D_CH__pc?: string;
+    Profession_DEX__pc?: string;
+    Profile__pc?: string;
     /**
      * <h3><b>Provider Sector</b></h3>
      * <p>Displays the sector of the Account - if it&#39;s state funded or public or both.</p>
@@ -5852,9 +5852,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Public</code></td><td>Public</td><td nowrap>true</td></tr>
      * </table>
      */
-    Provider_Sector__c: string;
-    Publications__pc: string;
-    Qualtrics_Survey__pc: string;
+    Provider_Sector__c?: string;
+    Publications__pc?: string;
+    Qualtrics_Survey__pc?: string;
     /**
      * <h3><b>Questionnaire Link</b></h3>
      * <p>TBD soon - Majdi</p>
@@ -5867,7 +5867,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Questionnaire_Link__c: string;
+    Questionnaire_Link__c?: string;
     /**
      * <h3><b>Quick Links IMPL reports</b></h3>
      * <h4>Field Attributes</h4>
@@ -5879,7 +5879,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quick_Links_IMPL_reports__c: string;
+    Quick_Links_IMPL_reports__c?: string;
     /**
      * <h3><b>Quick Links</b></h3>
      * <p>Used in the Global layouts to replace the &quot;Useful Links&quot; header/. Dynamic formula to accommodate Basic profiles and Lab/Clinical Accounts</p>
@@ -5892,8 +5892,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quick_Report_Links__c: string;
-    Rating: string;
+    Quick_Report_Links__c?: string;
+    Rating?: string;
     /**
      * <h3><b>Reason for Do Not Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -5911,9 +5911,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Low ROI</code></td><td>Low ROI</td><td nowrap>true</td></tr>
      * </table>
      */
-    Reason_for_Do_Not_Contact__c: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
+    Reason_for_Do_Not_Contact__c?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Red Flag Candidate CM</b></h3>
      * <p>Updated by cloud job AggregateRedFlag.</p>
@@ -5923,7 +5923,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    RedFlag_Candidate_CM__c: boolean;
+    RedFlag_Candidate_CM__c?: boolean;
     /**
      * <h3><b>Red Flag Candidate LM</b></h3>
      * <p>Updated by cloud job AggregateRedFlag.</p>
@@ -5933,7 +5933,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    RedFlag_Candidate_LM__c: boolean;
+    RedFlag_Candidate_LM__c?: boolean;
     /**
      * <h3><b>Implants To Green Flag CM</b></h3>
      * <p>Updated by cloud job AggregateRedFlag.</p>
@@ -5945,7 +5945,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RedFlag_ImplantsToGreen_CM__c: number;
+    RedFlag_ImplantsToGreen_CM__c?: number;
     /**
      * <h3><b>Referral Potential /Last Modified By</b></h3>
      * <p>updated by workflow</p>
@@ -5957,7 +5957,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Referral_Potential_Last_Modified_By__c: string;
+    Referral_Potential_Last_Modified_By__c?: string;
     /**
      * <h3><b>Referral Potential / Year</b></h3>
      * <p>Part of Implants Segmentation . The maximum number of implants that this account might refer (including competitors systems) in 12 months period</p>
@@ -5970,7 +5970,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Referral_Potential_Year__c: number;
+    Referral_Potential_Year__c?: number;
     /**
      * <h3><b>Referral Potential / Year Last Modified</b></h3>
      * <h4>Field Attributes</h4>
@@ -5979,7 +5979,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Referral_Potential_Year_Last_Modified__c: string;
+    Referral_Potential_Year_Last_Modified__c?: string;
     /**
      * <h3><b>Region</b></h3>
      * <h4>Field Attributes</h4>
@@ -6110,7 +6110,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zachodniopomorskie</code></td><td>Zachodniopomorskie</td><td nowrap>true</td></tr>
      * </table>
      */
-    Region__c: string;
+    Region__c?: string;
     /**
      * <h3><b>Region (DE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6138,8 +6138,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DE DI Region 34</code></td><td>DE DI Region 34</td><td nowrap>true</td></tr>
      * </table>
      */
-    Region_D_DE__c: string;
-    ReplayId: string;
+    Region_D_DE__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Resistance Comment</b></h3>
      * <h4>Field Attributes</h4>
@@ -6148,7 +6148,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Resistance_Comment__c: string;
+    Resistance_Comment__c?: string;
     /**
      * <h3><b>Resistance Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -6164,7 +6164,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Medium Resistance</code></td><td>Medium Resistance</td><td nowrap>true</td></tr>
      * </table>
      */
-    Resistance_Level__c: string;
+    Resistance_Level__c?: string;
     /**
      * <h3><b># of Resto Cases referred out per month</b></h3>
      * <h4>Field Attributes</h4>
@@ -6175,8 +6175,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RestoReferralsMonth__c: number;
-    RoleProfessionSpecialty__pc: string;
+    RestoReferralsMonth__c?: number;
+    RoleProfessionSpecialty__pc?: string;
     /**
      * <h3><b>Sales CY vs LYTD (Atlantis)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6188,7 +6188,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_CY_vs_LYTD_Atlantis__c: number;
+    Sales_CY_vs_LYTD_Atlantis__c?: number;
     /**
      * <h3><b>Sales CY vs LYTD (Atlantis) UP DOWN</b></h3>
      * <h4>Field Attributes</h4>
@@ -6200,7 +6200,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_CY_vs_LYTD_Atlantis_UP_DOWN__c: string;
+    Sales_CY_vs_LYTD_Atlantis_UP_DOWN__c?: string;
     /**
      * <h3><b>Sales Delta LY</b></h3>
      * <p>Shows Sales CY (D) - Sales LYTD (D). If positive, we have sold more to this customer this year, if negative sales CY is lower than LYTD.</p>
@@ -6213,7 +6213,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Delta_LY_D__c: number;
+    Sales_Delta_LY_D__c?: number;
     /**
      * <h3><b>Sales Dental Trend</b></h3>
      * <h4>Field Attributes</h4>
@@ -6223,7 +6223,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Dental_Trend__c: number;
+    Sales_Dental_Trend__c?: number;
     /**
      * <h3><b>Sales Flag</b></h3>
      * <p>If RED: Sales CY To Date compared with LY To Date is &lt;80%
@@ -6238,7 +6238,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Flag_D__c: string;
+    Sales_Flag_D__c?: string;
     /**
      * <h3><b>Sales Flag Picklist</b></h3>
      * <h4>Field Attributes</h4>
@@ -6254,7 +6254,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yellow Flag</code></td><td>Yellow Flag</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_Flag_Picklist_D__c: string;
+    Sales_Flag_Picklist_D__c?: string;
     /**
      * <h3><b>Sales Flag Tag</b></h3>
      * <p>If RED: Sales CY To Date compared with LY To Date is &lt;80%
@@ -6269,7 +6269,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Flag_Tag_D__c: string;
+    Sales_Flag_Tag_D__c?: string;
     /**
      * <h3><b>Sales ILY %</b></h3>
      * <p>Shows an index comparing Sales CY To Date and LY To Date.</p>
@@ -6280,7 +6280,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_ILY_D__c: number;
+    Sales_ILY_D__c?: number;
     /**
      * <h3><b>Sales ILY % (ATL)</b></h3>
      * <p>Shows an index comparing Sales ATL CY andSales ATL  LY To Date.</p>
@@ -6291,7 +6291,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_ILY_D_ATL__c: number;
+    Sales_ILY_D_ATL__c?: number;
     /**
      * <h3><b>Sales in Payer hierarchy</b></h3>
      * <p>Views one-click report that shows alla sales in the Payer Hierarchy. It is linked via the Payer Account field. The Sales on the payer is also included</p>
@@ -6304,7 +6304,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_in_Payer_hierarchy__c: string;
+    Sales_in_Payer_hierarchy__c?: string;
     /**
      * <h3><b>Sales IR12M%</b></h3>
      * <p>Shows an index comparing Sales L12M and Sales 13-24M.</p>
@@ -6315,7 +6315,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_IR12M__c: number;
+    Sales_IR12M__c?: number;
     /**
      * <h3><b>Sales L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -6327,7 +6327,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_L12M_D__c: number;
+    Sales_L12M_D__c?: number;
     /**
      * <h3><b>Sales L13-24M</b></h3>
      * <h4>Field Attributes</h4>
@@ -6339,8 +6339,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_L13_24M_D__c: number;
-    Sales_Unit_B2B_project__pc: boolean;
+    Sales_L13_24M_D__c?: number;
+    Sales_Unit_B2B_project__pc?: boolean;
     /**
      * <h3><b>Sales History Count (Processed Abuts)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6351,7 +6351,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesHistoryCountWonLostPrc_Abutments__c: number;
+    SalesHistoryCountWonLostPrc_Abutments__c?: number;
     /**
      * <h3><b>Sales History Count (Processed Implants)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6362,7 +6362,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesHistoryCountWonLostPrc_Implants__c: number;
+    SalesHistoryCountWonLostPrc_Implants__c?: number;
     /**
      * <h3><b>Sales History Count (Processed ISUS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6373,10 +6373,10 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesHistoryCountWonLostPrc_ISUS__c: number;
-    Salutation: string;
-    Salutation_CH__pc: string;
-    Same_Account_Owner_HQ__pc: string;
+    SalesHistoryCountWonLostPrc_ISUS__c?: number;
+    Salutation?: string;
+    Salutation_CH__pc?: string;
+    Same_Account_Owner_HQ__pc?: string;
     /**
      * <h3><b>SASAKI Branch Code (JP)</b></h3>
      * <p>Field taken from OKCFC4 in Movex. Includes the code of the SASAKI branch office.</p>
@@ -6388,7 +6388,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SASAKI_Branch_Code_D_JP__c: string;
+    SASAKI_Branch_Code_D_JP__c?: string;
     /**
      * <h3><b>SASAKI Customer Code (JP)</b></h3>
      * <p>Field taken from OKCFC9 in Movex. Contains SASAKI Customer Code.</p>
@@ -6400,7 +6400,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SASAKI_Customer_Code_D_JP__c: string;
+    SASAKI_Customer_Code_D_JP__c?: string;
     /**
      * <h3><b>Scientific Marketing Account (IT)</b></h3>
      * <p>Used by Italy to mark Accounts which have Contacts included in Scientific Marketing-activities.</p>
@@ -6410,8 +6410,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Scientific_Marketing_Account_D_IT__c: boolean;
-    Scientific_Marketing_D_IT__pc: boolean;
+    Scientific_Marketing_Account_D_IT__c?: boolean;
+    Scientific_Marketing_D_IT__pc?: boolean;
     /**
      * <h3><b>Scientific Marketing Hub Account (IT)</b></h3>
      * <p>Used by IT to set check which Accounts are Hub Accounts in specific Networks for which the Hub Account should be shared with all Regional Managers.</p>
@@ -6421,9 +6421,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Scientific_Marketing_Hub_Account_D_IT__c: boolean;
-    Secondary_Lecture_Language__pc: string;
-    Secondary_Specialty__pc: string;
+    Scientific_Marketing_Hub_Account_D_IT__c?: boolean;
+    Secondary_Lecture_Language__pc?: string;
+    Secondary_Specialty__pc?: string;
     /**
      * <h3><b>Segment</b></h3>
      * <p>The Segment of the Account from an overall DentsplySirona level - value should be fed to us from CDW based on algortithm</p>
@@ -6441,7 +6441,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    Segment__c: string;
+    Segment__c?: string;
     /**
      * <h3><b>Segment - Ortho Clear Aligners</b></h3>
      * <p>Sub Segmentation - for SFE and Lightning model</p>
@@ -6459,7 +6459,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    Segment_Ortho_Clear_Aligners__c: string;
+    Segment_Ortho_Clear_Aligners__c?: string;
     /**
      * <h3><b>Segment - CAD/CAM</b></h3>
      * <p>Sub Segment - for SFE and lightning model</p>
@@ -6477,7 +6477,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentCADCAMmanual__c: string;
+    SegmentCADCAMmanual__c?: string;
     /**
      * <h3><b>Segment - Consumables</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6495,7 +6495,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentConsumables__c: string;
+    SegmentConsumables__c?: string;
     /**
      * <h3><b>Segment - Digital</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6513,7 +6513,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentDigital__c: string;
+    SegmentDigital__c?: string;
     /**
      * <h3><b>Segment - Endodontics</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6531,7 +6531,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentEndodontics__c: string;
+    SegmentEndodontics__c?: string;
     /**
      * <h3><b>Segment - Equipment</b></h3>
      * <p>Sub Segmentation for SFE and Lightning Model.</p>
@@ -6549,7 +6549,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentEquipment__c: string;
+    SegmentEquipment__c?: string;
     /**
      * <h3><b>Segment - Imaging</b></h3>
      * <p>Sub Segment - for SFE and Lighting model</p>
@@ -6567,7 +6567,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentImaging__c: string;
+    SegmentImaging__c?: string;
     /**
      * <h3><b>Segment - Implants</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6585,7 +6585,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentImplants__c: string;
+    SegmentImplants__c?: string;
     /**
      * <h3><b>Segment - Implants Digital</b></h3>
      * <p>Sub Segmentation - for SFE and Lightning model</p>
@@ -6603,7 +6603,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentImplantsDigital__c: string;
+    SegmentImplantsDigital__c?: string;
     /**
      * <h3><b>Segment - Instruments</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6621,7 +6621,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentInstruments__c: string;
+    SegmentInstruments__c?: string;
     /**
      * <h3><b>Segment - Lab</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6639,7 +6639,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentLab__c: string;
+    SegmentLab__c?: string;
     /**
      * <h3><b>Segment - Orthodontics</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6657,7 +6657,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentOrthodontics__c: string;
+    SegmentOrthodontics__c?: string;
     /**
      * <h3><b>Segment - Preventive</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6675,7 +6675,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentPreventive__c: string;
+    SegmentPreventive__c?: string;
     /**
      * <h3><b>Segment - Restorative</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6693,7 +6693,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentRestorative__c: string;
+    SegmentRestorative__c?: string;
     /**
      * <h3><b>Segment - Treatment Centers</b></h3>
      * <p>Sub Segment - for SFE and Lightning model</p>
@@ -6711,8 +6711,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">N/A</code></td><td>N/A</td><td nowrap>true</td></tr>
      * </table>
      */
-    SegmentTreatmentCenters__c: string;
-    Send_Survey__pc: string;
+    SegmentTreatmentCenters__c?: string;
+    Send_Survey__pc?: string;
     /**
      * <h3><b>Share Of Potential (Implants)</b></h3>
      * <p>Automatically calculated based on Implants Potential / Year and Actual Sold implants in the last 12 months (L12M), refer to the training material for more details.</p>
@@ -6725,7 +6725,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    share_of_potential_implants__c: string;
+    share_of_potential_implants__c?: string;
     /**
      * <h3><b>Share of Potential (SBU: ENDO)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6742,7 +6742,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">26% to 75%</code></td><td>26% to 75%</td><td nowrap>true</td></tr>
      * </table>
      */
-    Share_of_Potential_SBU_ENDO__c: string;
+    Share_of_Potential_SBU_ENDO__c?: string;
     /**
      * <h3><b>Share of Potential (SBU: ORTH)</b></h3>
      * <p>Selected manually edited by ORTH reps and viewed by others.</p>
@@ -6760,7 +6760,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">26% to 75%</code></td><td>26% to 75%</td><td nowrap>true</td></tr>
      * </table>
      */
-    Share_of_Potential_SBU_ORTHO__c: string;
+    Share_of_Potential_SBU_ORTHO__c?: string;
     /**
      * <h3><b>Share of Potential (SBU: PREV)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6777,7 +6777,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">26% to 75%</code></td><td>26% to 75%</td><td nowrap>true</td></tr>
      * </table>
      */
-    Share_of_Potential_SBU_PREV__c: string;
+    Share_of_Potential_SBU_PREV__c?: string;
     /**
      * <h3><b>Share of Potential (SBU: PROS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6794,7 +6794,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">26% to 75%</code></td><td>26% to 75%</td><td nowrap>true</td></tr>
      * </table>
      */
-    Share_of_Potential_SBU_PROS__c: string;
+    Share_of_Potential_SBU_PROS__c?: string;
     /**
      * <h3><b>Share of Potential (SBU: REST)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6811,7 +6811,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">26% to 75%</code></td><td>26% to 75%</td><td nowrap>true</td></tr>
      * </table>
      */
-    Share_of_Potential_SBU_RESTO__c: string;
+    Share_of_Potential_SBU_RESTO__c?: string;
     /**
      * <h3><b>Sharing Access</b></h3>
      * <p>To replace the Standard Sharing button (Global Field for sys Admins)</p>
@@ -6824,23 +6824,23 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sharing_Access__c: string;
-    ShippingAddress: Address;
-    ShippingCity: string;
-    ShippingCountry: string;
-    ShippingGeocodeAccuracy: string;
-    ShippingLatitude: number;
-    ShippingLongitude: number;
-    ShippingPostalCode: string;
-    ShippingState: string;
-    ShippingStreet: string;
-    ShowpadForSF__Showpad_Activity_Count__pc: number;
-    ShowpadForSF__Showpad_Last_Activity_Date__pc: string;
-    ShowpadForSF__Showpad_Last_View_Date__pc: string;
-    ShowpadForSF__Showpad_Last_Viewed_Content__pc: ShowpadForSF__Showpad_Content__c;
-    ShowpadForSF__Showpad_View_Count__pc: number;
-    Sic: string;
-    SicDesc: string;
+    Sharing_Access__c?: string;
+    ShippingAddress?: Address;
+    ShippingCity?: string;
+    ShippingCountry?: string;
+    ShippingGeocodeAccuracy?: string;
+    ShippingLatitude?: number;
+    ShippingLongitude?: number;
+    ShippingPostalCode?: string;
+    ShippingState?: string;
+    ShippingStreet?: string;
+    ShowpadForSF__Showpad_Activity_Count__pc?: number;
+    ShowpadForSF__Showpad_Last_Activity_Date__pc?: string;
+    ShowpadForSF__Showpad_Last_View_Date__pc?: string;
+    ShowpadForSF__Showpad_Last_Viewed_Content__pc?: ShowpadForSF__Showpad_Content__c;
+    ShowpadForSF__Showpad_View_Count__pc?: number;
+    Sic?: string;
+    SicDesc?: string;
     /**
      * <h3><b>SimPlant Category</b></h3>
      * <p>Is it set by the Rep or Calculated based on Actual Sales?  Do you mean by SurgiGuide as Simplant product or all surgical guides including competitors. Wouldn’t be more accurate to have it on the contact level?</p>
@@ -6858,7 +6858,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Starting SurgiGuide user</code></td><td>Starting SurgiGuide user</td><td nowrap>true</td></tr>
      * </table>
      */
-    SimPlant_Category__c: string;
+    SimPlant_Category__c?: string;
     /**
      * <h3><b>SIMPLANT Key Account (US)</b></h3>
      * <p>For SIMPLANT Specialists (North America) - to identify Key Accounts related to SIMPLANT</p>
@@ -6868,7 +6868,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SIMPLANT_Key_Account__c: boolean;
+    SIMPLANT_Key_Account__c?: boolean;
     /**
      * <h3><b>SIMPLANT Segmentation N/A</b></h3>
      * <h4>Field Attributes</h4>
@@ -6877,8 +6877,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Simplant_Segmentation_NA__c: boolean;
-    SIMPLANT_User__pc: boolean;
+    Simplant_Segmentation_NA__c?: boolean;
+    SIMPLANT_User__pc?: boolean;
     /**
      * <h3><b>Single Room Rate</b></h3>
      * <h4>Field Attributes</h4>
@@ -6887,9 +6887,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Single_Room_Rate__c: number;
-    Sirona_Lead_Verification_Date__pc: Date;
-    Site: string;
+    Single_Room_Rate__c?: number;
+    Sirona_Lead_Verification_Date__pc?: Date;
+    Site?: string;
     /**
      * <h3><b>Sold ATL Abut&#39;s L12M (DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -6901,7 +6901,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_Abut_s_L12M_DI_Systems__c: number;
+    Sold_ATL_Abut_s_L12M_DI_Systems__c?: number;
     /**
      * <h3><b>Sold ATL Suprast Flag</b></h3>
      * <h4>Field Attributes</h4>
@@ -6913,7 +6913,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_ISUS_Flag__c: string;
+    Sold_ATL_ISUS_Flag__c?: string;
     /**
      * <h3><b>Sold ATL Suprast Flag Tag</b></h3>
      * <h4>Field Attributes</h4>
@@ -6925,7 +6925,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_ISUS_Flag_Tag__c: string;
+    Sold_ATL_ISUS_Flag_Tag__c?: string;
     /**
      * <h3><b>Sold ATL Suprast L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -6937,7 +6937,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_ISUS_L12M__c: number;
+    Sold_ATL_ISUS_L12M__c?: number;
     /**
      * <h3><b>Sold Atlantis Abut&#39;s CY vs LYTD</b></h3>
      * <h4>Field Attributes</h4>
@@ -6949,7 +6949,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Atlantis_Abut_CY_vs_LYTD__c: number;
+    Sold_Atlantis_Abut_CY_vs_LYTD__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s Flag</b></h3>
      * <h4>Field Attributes</h4>
@@ -6961,7 +6961,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Atlantis_Abut_Flag__c: string;
+    Sold_Atlantis_Abut_Flag__c?: string;
     /**
      * <h3><b>Sold ATL Abut&#39;s L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -6973,7 +6973,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Atlantis_Abut_s_L12M__c: number;
+    Sold_Atlantis_Abut_s_L12M__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s L13-24M</b></h3>
      * <h4>Field Attributes</h4>
@@ -6985,7 +6985,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Atlantis_Abut_s_L13_24M__c: number;
+    Sold_Atlantis_Abut_s_L13_24M__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s LY &amp; CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -6997,7 +6997,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Atlantis_Abut_s_LY_CY__c: number;
+    Sold_Atlantis_Abut_s_LY_CY__c?: number;
     /**
      * <h3><b>Sold Guides L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -7009,7 +7009,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Guides_L12M__c: number;
+    Sold_Guides_L12M__c?: number;
     /**
      * <h3><b>Sold Implant Delta L12M - L13-24M</b></h3>
      * <p>Used to set the Implant Deviation comparing L12M with L13-24. Used for a specific report requested by Matthias Kühner. Contact Pia before deleting.</p>
@@ -7022,7 +7022,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implant_L12M_L13_24__c: number;
+    Sold_Implant_L12M_L13_24__c?: number;
     /**
      * <h3><b>Sold Implants CM</b></h3>
      * <p>Updated by cloud job AggregateRedFlag.</p>
@@ -7034,7 +7034,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_CM__c: number;
+    Sold_Implants_CM__c?: number;
     /**
      * <h3><b>Sold Implants Flag</b></h3>
      * <p>If RED: Sold Implants CY compared with LY To Date is &lt;80%
@@ -7049,7 +7049,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_Flag__c: string;
+    Sold_Implants_Flag__c?: string;
     /**
      * <h3><b>Sold Implants Flag Tag</b></h3>
      * <p>If RED: Sold Implants CY compared with LY To Date is &lt;80%
@@ -7064,7 +7064,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_Flag_Tag__c: string;
+    Sold_Implants_Flag_Tag__c?: string;
     /**
      * <h3><b>Sold Implants ILY%</b></h3>
      * <p>Shows an index comparing Sold Implants CY and LY To Date.</p>
@@ -7075,7 +7075,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_ILY__c: number;
+    Sold_Implants_ILY__c?: number;
     /**
      * <h3><b>Sold Implants IR12M%</b></h3>
      * <p>Shows an index comparing Sold Implants L12M and L13-24M.</p>
@@ -7086,7 +7086,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_IR12M__c: number;
+    Sold_Implants_IR12M__c?: number;
     /**
      * <h3><b>Sold Implants L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -7098,7 +7098,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_L12M__c: number;
+    Sold_Implants_L12M__c?: number;
     /**
      * <h3><b>Sold Implants L12M (Ankylos)</b></h3>
      * <h4>Field Attributes</h4>
@@ -7110,7 +7110,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_L12M_Ankylos__c: number;
+    Sold_Implants_L12M_Ankylos__c?: number;
     /**
      * <h3><b>Sold Implants L12M (ATIS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -7122,7 +7122,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_L12M_ATIS__c: number;
+    Sold_Implants_L12M_ATIS__c?: number;
     /**
      * <h3><b>Sold Implants L12M (XiVE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -7134,7 +7134,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_L12M_XiVE__c: number;
+    Sold_Implants_L12M_XiVE__c?: number;
     /**
      * <h3><b>Sold Implants L13-24M</b></h3>
      * <h4>Field Attributes</h4>
@@ -7146,7 +7146,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_L13_24M__c: number;
+    Sold_Implants_L13_24M__c?: number;
     /**
      * <h3><b>Sold Implants L13-24M (Ankylos)</b></h3>
      * <h4>Field Attributes</h4>
@@ -7158,7 +7158,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_L13_24M_Ankylos__c: number;
+    Sold_Implants_L13_24M_Ankylos__c?: number;
     /**
      * <h3><b>Sold Implants L13-24M (ATIS)</b></h3>
      * <h4>Field Attributes</h4>
@@ -7170,7 +7170,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_L13_24M_ATIS__c: number;
+    Sold_Implants_L13_24M_ATIS__c?: number;
     /**
      * <h3><b>Sold Implants L13-24M (XiVE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -7182,7 +7182,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_L13_24M_XiVE__c: number;
+    Sold_Implants_L13_24M_XiVE__c?: number;
     /**
      * <h3><b>Sold Implants LY &amp; CY</b></h3>
      * <p>Summarizes sold implants from CY and LY. Used on Opportunities.</p>
@@ -7195,7 +7195,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_LY_CY__c: number;
+    Sold_Implants_LY_CY__c?: number;
     /**
      * <h3><b>Sold Implants R12M Flag Tag</b></h3>
      * <p>If RED: Sold Implants L12M compared with L13-24M is &lt;80%
@@ -7210,7 +7210,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_R12M_Flag_Tag__c: string;
+    Sold_Implants_R12M_Flag_Tag__c?: string;
     /**
      * <h3><b>Sold Stock Abut&#39;s Flag</b></h3>
      * <p>If RED: Sold Stock Abuts CY To Date compared with LY To Date is &lt;80%
@@ -7225,7 +7225,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abut_s_Flag__c: string;
+    Sold_Stock_Abut_s_Flag__c?: string;
     /**
      * <h3><b>Sold Stock Abut&#39;s ILY%</b></h3>
      * <p>Shows an index of Sold Stock Abutments comparing CY with LYTD.</p>
@@ -7236,7 +7236,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abut_s_ILY__c: number;
+    Sold_Stock_Abut_s_ILY__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s L12M</b></h3>
      * <h4>Field Attributes</h4>
@@ -7248,7 +7248,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abut_s_L12M__c: number;
+    Sold_Stock_Abut_s_L12M__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s L13-24M</b></h3>
      * <h4>Field Attributes</h4>
@@ -7260,7 +7260,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abut_s_L13_24M__c: number;
+    Sold_Stock_Abut_s_L13_24M__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LY &amp; CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -7272,7 +7272,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abut_s_LY_CY__c: number;
+    Sold_Stock_Abut_s_LY_CY__c?: number;
+    SourceSystemIdentifier?: string;
     /**
      * <h3><b>SourceSystemName</b></h3>
      * <p>Source System Name</p>
@@ -7284,7 +7285,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceSystemName__c: string;
+    SourceSystemName__c?: string;
     /**
      * <h3><b>SP Guides Potential / Year</b></h3>
      * <p>Possible number of Simplant guides per year. The hidden field &quot;Volume&quot; (high, Medium, Low, No usage) depends on this number. High=&gt;15 , Medium=5-15 , Low &lt;5</p>
@@ -7297,14 +7298,14 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SP_Guides_Potential_Year__c: number;
-    Speaker__pc: boolean;
-    Speaker_Biography__pc: string;
-    Speaker_Email__pc: string;
-    Speaker_Phone__pc: string;
-    Speaker_Type__pc: string;
-    Special_Information__pc: string;
-    Specialty__pc: string;
+    SP_Guides_Potential_Year__c?: number;
+    Speaker__pc?: boolean;
+    Speaker_Biography__pc?: string;
+    Speaker_Email__pc?: string;
+    Speaker_Phone__pc?: string;
+    Speaker_Type__pc?: string;
+    Special_Information__pc?: string;
+    Specialty__pc?: string;
     /**
      * <h3><b>Specialty (Implants)</b></h3>
      * <h4>Field Attributes</h4>
@@ -7321,11 +7322,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Surgery & Restorative</code></td><td>Surgery &amp; Restorative</td><td nowrap>true</td></tr>
      * </table>
      */
-    Specialty_Dental__c: string;
-    Spoken_Languages__pc: string;
-    Standard_Honorarium_1_2_Day__pc: number;
-    Standard_Honorarium_1_4_Day__pc: number;
-    Standard_Honorarium_Full_Day__pc: number;
+    Specialty_Dental__c?: string;
+    Spoken_Languages__pc?: string;
+    Standard_Honorarium_1_2_Day__pc?: number;
+    Standard_Honorarium_1_4_Day__pc?: number;
+    Standard_Honorarium_Full_Day__pc?: number;
     /**
      * <h3><b>Start Date of Active Contract</b></h3>
      * <p>The Start Date of the Active Purhasing Contract</p>
@@ -7335,7 +7336,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Start_Date_of_Active_Contract__c: Date;
+    Start_Date_of_Active_Contract__c?: Date;
     /**
      * <h3><b>StartingEvent Quantity Abutments</b></h3>
      * <p>Set by Apex to the type, date and quantity of the first event that occurred on the Account within the retrospective sales horizon.
@@ -7349,7 +7350,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartingEventQuantity_Abutments__c: number;
+    StartingEventQuantity_Abutments__c?: number;
     /**
      * <h3><b>StartingEvent Quantity Implants</b></h3>
      * <h4>Field Attributes</h4>
@@ -7360,7 +7361,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartingEventQuantity_Implants__c: number;
+    StartingEventQuantity_Implants__c?: number;
     /**
      * <h3><b>StartingEventQuantity_ISUS</b></h3>
      * <p>Used in ISUS won Lost Logic</p>
@@ -7372,7 +7373,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartingEventQuantity_ISUS__c: number;
+    StartingEventQuantity_ISUS__c?: number;
     /**
      * <h3><b>StartingEvent Type Abutments</b></h3>
      * <p>Set by Apex to the type, date and quantity of the first event that occurred on the Account within the retrospective sales horizon.
@@ -7390,7 +7391,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WonEvent</code></td><td>WonEvent</td><td nowrap>true</td></tr>
      * </table>
      */
-    StartingEventType_Abutments__c: string;
+    StartingEventType_Abutments__c?: string;
     /**
      * <h3><b>StartingEvent Type Implants</b></h3>
      * <p>Set by Apex to the type, date and quantity of the first event that occurred on the Account within the retrospective sales horizon.
@@ -7409,7 +7410,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WonEvent</code></td><td>WonEvent</td><td nowrap>true</td></tr>
      * </table>
      */
-    StartingEventType_Implants__c: string;
+    StartingEventType_Implants__c?: string;
     /**
      * <h3><b>StartingEventType_ISUS</b></h3>
      * <p>Used in ISUS WON/LOST Logic</p>
@@ -7426,7 +7427,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WonEvent</code></td><td>WonEvent</td><td nowrap>true</td></tr>
      * </table>
      */
-    StartingEventType_ISUS__c: string;
+    StartingEventType_ISUS__c?: string;
     /**
      * <h3><b>StartingEvent Year Month Abutments</b></h3>
      * <p>Set by Apex to the type, date and quantity of the first event that occurred on the Account within the retrospective sales horizon.
@@ -7438,7 +7439,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartingEventYearMonth_Abutments__c: Date;
+    StartingEventYearMonth_Abutments__c?: Date;
     /**
      * <h3><b>StartingEvent Year Month Implants</b></h3>
      * <p>Set by Apex to the type, date and quantity of the first event that occurred on the Account within the retrospective sales horizon.
@@ -7450,7 +7451,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartingEventYearMonth_Implants__c: Date;
+    StartingEventYearMonth_Implants__c?: Date;
     /**
      * <h3><b>StartingEventYearMonth_ISUS</b></h3>
      * <p>Used in ISUS Won/Lost Logic</p>
@@ -7460,7 +7461,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StartingEventYearMonth_ISUS__c: Date;
+    StartingEventYearMonth_ISUS__c?: Date;
     /**
      * <h3><b>State</b></h3>
      * <h4>Field Attributes</h4>
@@ -7472,7 +7473,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    State__c: string;
+    State__c?: string;
     /**
      * <h3><b>Statistical Customer</b></h3>
      * <p>From the Field Statistical Customer in Movex. Used for instance to link Movex End Users to Clinics or Prescribers</p>
@@ -7484,7 +7485,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Statistical_Customer__c: string;
+    Statistical_Customer__c?: string;
     /**
      * <h3><b>ERP Status</b></h3>
      * <p>Used in Integration.</p>
@@ -7504,7 +7505,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inactive</code></td><td>Inactive</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Status Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -7521,7 +7522,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Office Closure</code></td><td>Office Closure</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status_Reason__c: string;
+    Status_Reason__c?: string;
     /**
      * <h3><b>ATL Abut Sold Last 10-40 Days</b></h3>
      * <h4>Field Attributes</h4>
@@ -7532,7 +7533,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    STST_TOT_L10_40_D_DD_Abut_Atlantis__c: number;
+    STST_TOT_L10_40_D_DD_Abut_Atlantis__c?: number;
     /**
      * <h3><b>ATL Abut Sold Last 30 Days</b></h3>
      * <h4>Field Attributes</h4>
@@ -7543,7 +7544,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    STST_TOT_L30_D_DD_Abut_Atlantis__c: number;
+    STST_TOT_L30_D_DD_Abut_Atlantis__c?: number;
     /**
      * <h3><b>ATL Abut Sold Last 31-120 Days</b></h3>
      * <h4>Field Attributes</h4>
@@ -7554,8 +7555,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    STST_TOT_L31_120_D_DD_Abut_Atlantis__c: number;
-    Study_Group_Organiser_D_JP__pc: boolean;
+    STST_TOT_L31_120_D_DD_Abut_Atlantis__c?: number;
+    Study_Group_Organiser_D_JP__pc?: boolean;
     /**
      * <h3><b>Specialty</b></h3>
      * <h4>Field Attributes</h4>
@@ -7715,9 +7716,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zip/Postal Code</code></td><td>Zip/Postal Code</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sub_Account_Type__c: string;
-    Sub_Contact_Type__pc: string;
-    Suffix__pc: string;
+    Sub_Account_Type__c?: string;
+    Sub_Contact_Type__pc?: string;
+    Suffix__pc?: string;
     /**
      * <h3><b>Support Level</b></h3>
      * <p>Used to define how we need to take care of the customer - if the customer requires extra attention or similar. Requested by Japan as part of their Lightning Project - mainly used for Equipment</p>
@@ -7735,7 +7736,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">D</code></td><td>D</td><td nowrap>true</td></tr>
      * </table>
      */
-    Support_Level__c: string;
+    Support_Level__c?: string;
     /**
      * <h3><b>Suresmile Advanced Platform</b></h3>
      * <p>Information collected from Customer Interfaces table in AX (related table to Accounts) - set to true if an active record exists as Suresmile Advanced</p>
@@ -7745,7 +7746,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SuresmileAdvancedPlatform__c: boolean;
+    SuresmileAdvancedPlatform__c?: boolean;
     /**
      * <h3><b>Suresmile Aligner Platform</b></h3>
      * <p>Information collected from Customer Interfaces table in AX (related table to Accounts) - set to true if an active record exists as Suresmile Aligner</p>
@@ -7755,10 +7756,10 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SuresmileAlignerPlatform__c: boolean;
-    SuresmileClassificationColor__pc: string;
-    SuresmileClassificationDate__pc: Date;
-    SuresmileClassificationSalesRep__pc: User;
+    SuresmileAlignerPlatform__c?: boolean;
+    SuresmileClassificationColor__pc?: string;
+    SuresmileClassificationDate__pc?: Date;
+    SuresmileClassificationSalesRep__pc?: User;
     /**
      * <h3><b>Suresmile Ortho Platform</b></h3>
      * <p>Information collected from Customer Interfaces table in AX (related table to Accounts) - set to true if an active record exists as Suresmile Ortho</p>
@@ -7768,9 +7769,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SuresmileOrthoPlatform__c: boolean;
-    Symbios_User__pc: boolean;
-    Target_Type__pc: string;
+    SuresmileOrthoPlatform__c?: boolean;
+    Symbios_User__pc?: boolean;
+    Target_Type__pc?: string;
     /**
      * <h3><b>ETM2 Assigned Users</b></h3>
      * <p>Semicolon-separated list of all ERP User IDs associated with this account through territory assignment.</p>
@@ -7782,8 +7783,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TerritoryUsers__c: string;
-    TerritoryUsers__pc: string;
+    TerritoryUsers__c?: string;
+    TerritoryUsers__pc?: string;
     /**
      * <h3><b>Country field</b></h3>
      * <h4>Field Attributes</h4>
@@ -7794,11 +7795,11 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Country_field__c: string;
-    testInCountry1__Country_field__pc: string;
-    TickerSymbol: string;
-    Title_AT__pc: string;
-    Title_BeNeLux__pc: string;
+    testInCountry1__Country_field__c?: string;
+    testInCountry1__Country_field__pc?: string;
+    TickerSymbol?: string;
+    Title_AT__pc?: string;
+    Title_BeNeLux__pc?: string;
     /**
      * <h3><b>Total Sales CY, LY, LY-1, LY-2</b></h3>
      * <p>Total Sales for all product groups CY, LY, LY-1 and LY-2. DO NOT DELETE. USED IN SALES DIFF REPORTS. CHECK WITH PIA FIRST.</p>
@@ -7811,7 +7812,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Sales_All_Years__c: number;
+    Total_Sales_All_Years__c?: number;
     /**
      * <h3><b>Total Sales CY</b></h3>
      * <p>Total Sales CY for Dental</p>
@@ -7824,7 +7825,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Sales_CY__c: number;
+    Total_Sales_CY__c?: number;
     /**
      * <h3><b>Total Sales LY</b></h3>
      * <p>Total Sales LY for all product areas</p>
@@ -7837,7 +7838,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Sales_LY__c: number;
+    Total_Sales_LY__c?: number;
     /**
      * <h3><b>Total Sales LYTD</b></h3>
      * <p>Total Sales LYTD for Dental products</p>
@@ -7850,7 +7851,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Sales_LYTD__c: number;
+    Total_Sales_LYTD__c?: number;
     /**
      * <h3><b>Sales LY (ATL) CURRENCY</b></h3>
      * <h4>Field Attributes</h4>
@@ -7860,7 +7861,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalSales_CY_1_D_ATL_CURRENCY__c: number;
+    TotalSales_CY_1_D_ATL_CURRENCY__c?: number;
     /**
      * <h3><b>Sales LY CURRENCY</b></h3>
      * <h4>Field Attributes</h4>
@@ -7870,7 +7871,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalSales_CY_1_D_CURRENCY__c: number;
+    TotalSales_CY_1_D_CURRENCY__c?: number;
     /**
      * <h3><b>Sales LY EUR</b></h3>
      * <p>For analysis only</p>
@@ -7883,7 +7884,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalSales_CY_1_D_EUR__c: number;
+    TotalSales_CY_1_D_EUR__c?: number;
     /**
      * <h3><b>Sales 2020 (ATL) CURRENCY</b></h3>
      * <h4>Field Attributes</h4>
@@ -7893,7 +7894,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalSales_CY_2_D_ATL_CURRENCY__c: number;
+    TotalSales_CY_2_D_ATL_CURRENCY__c?: number;
     /**
      * <h3><b>Sales 2020 CURRENCY</b></h3>
      * <h4>Field Attributes</h4>
@@ -7903,7 +7904,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalSales_CY_2_D_CURRENCY__c: number;
+    TotalSales_CY_2_D_CURRENCY__c?: number;
     /**
      * <h3><b>Sales 2020 USD</b></h3>
      * <h4>Field Attributes</h4>
@@ -7915,7 +7916,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalSales_CY_2_D_USD__c: number;
+    TotalSales_CY_2_D_USD__c?: number;
     /**
      * <h3><b>Sales 2019 (ATL) CURRENCY</b></h3>
      * <h4>Field Attributes</h4>
@@ -7925,7 +7926,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalSales_CY_3_D_ATL_CURRENCY__c: number;
+    TotalSales_CY_3_D_ATL_CURRENCY__c?: number;
     /**
      * <h3><b>Sales 2019 CURRENCY</b></h3>
      * <h4>Field Attributes</h4>
@@ -7935,7 +7936,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalSales_CY_3_D_CURRENCY__c: number;
+    TotalSales_CY_3_D_CURRENCY__c?: number;
     /**
      * <h3><b>Sales CY USD</b></h3>
      * <p>2012 budget rate</p>
@@ -7948,7 +7949,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalSales_CY_D_USD__c: number;
+    TotalSales_CY_D_USD__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -7959,7 +7960,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DD_Abuts_Atlantis__c: number;
+    TQ_CY_1_D_DD_Abuts_Atlantis__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s LY (Comp Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -7970,7 +7971,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DD_Abuts_Atlantis_Comp__c: number;
+    TQ_CY_1_D_DD_Abuts_Atlantis_Comp__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s LY (DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -7981,7 +7982,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DD_Abuts_Atlantis_DI__c: number;
+    TQ_CY_1_D_DD_Abuts_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sold SP Guides LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -7992,7 +7993,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DD_Guides_Simplant__c: number;
+    TQ_CY_1_D_DD_Guides_Simplant__c?: number;
     /**
      * <h3><b>Sold ATL Suprast LY</b></h3>
      * <p>APEX field</p>
@@ -8004,7 +8005,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DD_IsusProsth_Isus__c: number;
+    TQ_CY_1_D_DD_IsusProsth_Isus__c?: number;
     /**
      * <h3><b>Sold Implants LY</b></h3>
      * <p>This field is a rollup summary field and used by many reports and included in many layouts</p>
@@ -8016,7 +8017,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DI_Implants_AllBrands__c: number;
+    TQ_CY_1_D_DI_Implants_AllBrands__c?: number;
     /**
      * <h3><b>Sold Implants LY (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8028,7 +8029,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DI_Implants_Ankylos__c: number;
+    TQ_CY_1_D_DI_Implants_Ankylos__c?: number;
     /**
      * <h3><b>Sold Implants LY (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8040,7 +8041,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DI_Implants_AstraTech__c: number;
+    TQ_CY_1_D_DI_Implants_AstraTech__c?: number;
     /**
      * <h3><b>Sold Implants LY (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8052,7 +8053,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DI_Implants_Xive__c: number;
+    TQ_CY_1_D_DI_Implants_Xive__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -8063,7 +8064,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DI_StockAbuts_AllBrands__c: number;
+    TQ_CY_1_D_DI_StockAbuts_AllBrands__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LY (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8075,7 +8076,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DI_StockAbuts_Ankylos__c: number;
+    TQ_CY_1_D_DI_StockAbuts_Ankylos__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LY (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8087,7 +8088,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DI_StockAbuts_AstraTech__c: number;
+    TQ_CY_1_D_DI_StockAbuts_AstraTech__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LY (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8099,7 +8100,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_D_DI_StockAbuts_Xive__c: number;
+    TQ_CY_1_D_DI_StockAbuts_Xive__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s LYTD</b></h3>
      * <p>APEX field</p>
@@ -8111,7 +8112,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DD_Abuts_Atlantis__c: number;
+    TQ_CY_1_TD_D_DD_Abuts_Atlantis__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s LYTD (Comp Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8122,7 +8123,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DD_Abuts_Atlantis_Comp__c: number;
+    TQ_CY_1_TD_D_DD_Abuts_Atlantis_Comp__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s LYTD (DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8133,7 +8134,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DD_Abuts_Atlantis_DI__c: number;
+    TQ_CY_1_TD_D_DD_Abuts_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sold SP Guides LYTD</b></h3>
      * <h4>Field Attributes</h4>
@@ -8144,7 +8145,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DD_Guides_Simplant__c: number;
+    TQ_CY_1_TD_D_DD_Guides_Simplant__c?: number;
     /**
      * <h3><b>Sold ATL Suprast LYTD</b></h3>
      * <p>APEX field</p>
@@ -8156,7 +8157,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DD_IsusProsth_Isus__c: number;
+    TQ_CY_1_TD_D_DD_IsusProsth_Isus__c?: number;
     /**
      * <h3><b>Sold Implants LYTD</b></h3>
      * <p>Updated nightly by batch. APEX field</p>
@@ -8168,7 +8169,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DI_Implants_AllBrands__c: number;
+    TQ_CY_1_TD_D_DI_Implants_AllBrands__c?: number;
     /**
      * <h3><b>Sold Implants LYTD (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8180,7 +8181,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DI_Implants_Ankylos__c: number;
+    TQ_CY_1_TD_D_DI_Implants_Ankylos__c?: number;
     /**
      * <h3><b>Sold Implants LYTD (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8192,7 +8193,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DI_Implants_AstraTech__c: number;
+    TQ_CY_1_TD_D_DI_Implants_AstraTech__c?: number;
     /**
      * <h3><b>Sold Implants LYTD (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8204,7 +8205,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DI_Implants_Xive__c: number;
+    TQ_CY_1_TD_D_DI_Implants_Xive__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LYTD</b></h3>
      * <p>Updated nightly by batch. APEX field</p>
@@ -8216,7 +8217,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DI_StockAbuts_AllBrands__c: number;
+    TQ_CY_1_TD_D_DI_StockAbuts_AllBrands__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LYTD (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8228,7 +8229,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DI_StockAbuts_Ankylos__c: number;
+    TQ_CY_1_TD_D_DI_StockAbuts_Ankylos__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LYTD (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8240,7 +8241,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DI_StockAbuts_AstraTech__c: number;
+    TQ_CY_1_TD_D_DI_StockAbuts_AstraTech__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LYTD (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8252,7 +8253,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_1_TD_D_DI_StockAbuts_Xive__c: number;
+    TQ_CY_1_TD_D_DI_StockAbuts_Xive__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s 2020</b></h3>
      * <p>APEX field</p>
@@ -8264,7 +8265,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DD_Abuts_Atlantis__c: number;
+    TQ_CY_2_D_DD_Abuts_Atlantis__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s 2020 (Comp Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8275,7 +8276,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DD_Abuts_Atlantis_Comp__c: number;
+    TQ_CY_2_D_DD_Abuts_Atlantis_Comp__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s 2020 (DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8286,7 +8287,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DD_Abuts_Atlantis_DI__c: number;
+    TQ_CY_2_D_DD_Abuts_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sold SP Guides 2020</b></h3>
      * <h4>Field Attributes</h4>
@@ -8297,7 +8298,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DD_Guides_Simplant__c: number;
+    TQ_CY_2_D_DD_Guides_Simplant__c?: number;
     /**
      * <h3><b>Sold ATL Suprast 2020</b></h3>
      * <p>APEX field</p>
@@ -8309,7 +8310,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DD_IsusProsth_Isus__c: number;
+    TQ_CY_2_D_DD_IsusProsth_Isus__c?: number;
     /**
      * <h3><b>Sold Implants 2020</b></h3>
      * <h4>Field Attributes</h4>
@@ -8320,7 +8321,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DI_Implants_AllBrands__c: number;
+    TQ_CY_2_D_DI_Implants_AllBrands__c?: number;
     /**
      * <h3><b>Sold Implants 2020 (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8332,7 +8333,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DI_Implants_Ankylos__c: number;
+    TQ_CY_2_D_DI_Implants_Ankylos__c?: number;
     /**
      * <h3><b>Sold Implants 2020 (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8344,7 +8345,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DI_Implants_AstraTech__c: number;
+    TQ_CY_2_D_DI_Implants_AstraTech__c?: number;
     /**
      * <h3><b>Sold Implants 2020 (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8356,7 +8357,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DI_Implants_Xive__c: number;
+    TQ_CY_2_D_DI_Implants_Xive__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s 2020</b></h3>
      * <p>To be updated by batch job nightly. APEX field</p>
@@ -8368,7 +8369,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DI_StockAbuts_AllBrands__c: number;
+    TQ_CY_2_D_DI_StockAbuts_AllBrands__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s 2020 (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8380,7 +8381,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DI_StockAbuts_Ankylos__c: number;
+    TQ_CY_2_D_DI_StockAbuts_Ankylos__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s 2020 (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8392,7 +8393,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DI_StockAbuts_AstraTech__c: number;
+    TQ_CY_2_D_DI_StockAbuts_AstraTech__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s 2020 (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8404,7 +8405,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_D_DI_StockAbuts_Xive__c: number;
+    TQ_CY_2_D_DI_StockAbuts_Xive__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s 2020TD</b></h3>
      * <p>Updated nightly by batch. APEX field</p>
@@ -8416,7 +8417,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_TD_D_DD_Abuts_Atlantis__c: number;
+    TQ_CY_2_TD_D_DD_Abuts_Atlantis__c?: number;
     /**
      * <h3><b>Sold Implants 2020TD</b></h3>
      * <p>Updated nightly by batch. APEX field</p>
@@ -8428,7 +8429,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_TD_D_DI_Implants_AllBrands__c: number;
+    TQ_CY_2_TD_D_DI_Implants_AllBrands__c?: number;
     /**
      * <h3><b>Sold Implants 2020TD (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8440,7 +8441,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_TD_D_DI_Implants_Ankylos__c: number;
+    TQ_CY_2_TD_D_DI_Implants_Ankylos__c?: number;
     /**
      * <h3><b>Sold Implants 2020TD (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8452,7 +8453,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_TD_D_DI_Implants_AstraTech__c: number;
+    TQ_CY_2_TD_D_DI_Implants_AstraTech__c?: number;
     /**
      * <h3><b>Sold Implants 2020TD (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8464,7 +8465,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_TD_D_DI_Implants_Xive__c: number;
+    TQ_CY_2_TD_D_DI_Implants_Xive__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s 2020TD</b></h3>
      * <p>Update nightly by batch APEX field</p>
@@ -8476,7 +8477,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_TD_D_DI_StockAbuts_AllBrands__c: number;
+    TQ_CY_2_TD_D_DI_StockAbuts_AllBrands__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s 2020TD (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8488,7 +8489,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_2_TD_D_DI_StockAbuts_Ankylos__c: number;
+    TQ_CY_2_TD_D_DI_StockAbuts_Ankylos__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s 2019</b></h3>
      * <p>Updated by batch nightly. APEX field</p>
@@ -8500,7 +8501,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_D_DD_Abuts_Atlantis__c: number;
+    TQ_CY_3_D_DD_Abuts_Atlantis__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s 2019 (Comp Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8511,7 +8512,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_D_DD_Abuts_Atlantis_Comp__c: number;
+    TQ_CY_3_D_DD_Abuts_Atlantis_Comp__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s 2019 (DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8522,7 +8523,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_D_DD_Abuts_Atlantis_DI__c: number;
+    TQ_CY_3_D_DD_Abuts_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sold ATL Suprast 2019</b></h3>
      * <p>APEX field</p>
@@ -8534,7 +8535,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_D_DD_IsusProsth_Isus__c: number;
+    TQ_CY_3_D_DD_IsusProsth_Isus__c?: number;
     /**
      * <h3><b>Sold Implants 2019</b></h3>
      * <h4>Field Attributes</h4>
@@ -8545,7 +8546,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_D_DI_Implants_AllBrands__c: number;
+    TQ_CY_3_D_DI_Implants_AllBrands__c?: number;
     /**
      * <h3><b>Sold Implants 2019 (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8557,7 +8558,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_D_DI_Implants_Ankylos__c: number;
+    TQ_CY_3_D_DI_Implants_Ankylos__c?: number;
     /**
      * <h3><b>Sold Implants 2019 (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8569,7 +8570,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_D_DI_Implants_AstraTech__c: number;
+    TQ_CY_3_D_DI_Implants_AstraTech__c?: number;
     /**
      * <h3><b>Sold Implants 2019 (XiVe)</b></h3>
      * <p>APEX field</p>
@@ -8581,7 +8582,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_D_DI_Implants_Xive__c: number;
+    TQ_CY_3_D_DI_Implants_Xive__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s 2019</b></h3>
      * <p>To be updated by batch job nightly. APEX field</p>
@@ -8593,7 +8594,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_D_DI_StockAbuts_AllBrands__c: number;
+    TQ_CY_3_D_DI_StockAbuts_AllBrands__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s 2019TD (DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8604,7 +8605,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_TD_D_DD_Abuts_Atlantis_DI__c: number;
+    TQ_CY_3_TD_D_DD_Abuts_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sold Implants 2019TD</b></h3>
      * <p>Updated nightly by batch. APEX field</p>
@@ -8616,7 +8617,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_TD_D_DI_Implants_AllBrands__c: number;
+    TQ_CY_3_TD_D_DI_Implants_AllBrands__c?: number;
     /**
      * <h3><b>Sold Implants 2019TD (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8628,7 +8629,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_TD_D_DI_Implants_Ankylos__c: number;
+    TQ_CY_3_TD_D_DI_Implants_Ankylos__c?: number;
     /**
      * <h3><b>Sold Implants 2019TD (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8640,7 +8641,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_TD_D_DI_Implants_AstraTech__c: number;
+    TQ_CY_3_TD_D_DI_Implants_AstraTech__c?: number;
     /**
      * <h3><b>Sold Implants 2019TD (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8652,7 +8653,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_3_TD_D_DI_Implants_Xive__c: number;
+    TQ_CY_3_TD_D_DI_Implants_Xive__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -8663,7 +8664,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DD_Abuts_Atlantis__c: number;
+    TQ_CY_D_DD_Abuts_Atlantis__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s CY (Comp Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8674,7 +8675,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DD_Abuts_Atlantis_Comp__c: number;
+    TQ_CY_D_DD_Abuts_Atlantis_Comp__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s CY (DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8685,7 +8686,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DD_Abuts_Atlantis_DI__c: number;
+    TQ_CY_D_DD_Abuts_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sold SP Guides CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -8696,7 +8697,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DD_Guides_Simplant__c: number;
+    TQ_CY_D_DD_Guides_Simplant__c?: number;
     /**
      * <h3><b>Sold ATL Suprast CY</b></h3>
      * <p>APEX field</p>
@@ -8708,7 +8709,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DD_IsusProsth_Isus__c: number;
+    TQ_CY_D_DD_IsusProsth_Isus__c?: number;
     /**
      * <h3><b>Sold Implants CY</b></h3>
      * <p>Updated by the Azure jobs</p>
@@ -8720,7 +8721,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DI_Implants_AllBrands__c: number;
+    TQ_CY_D_DI_Implants_AllBrands__c?: number;
     /**
      * <h3><b>Sold Implants CY (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8732,7 +8733,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DI_Implants_Ankylos__c: number;
+    TQ_CY_D_DI_Implants_Ankylos__c?: number;
     /**
      * <h3><b>Sold Implants CY (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8744,7 +8745,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DI_Implants_AstraTech__c: number;
+    TQ_CY_D_DI_Implants_AstraTech__c?: number;
     /**
      * <h3><b>Sold Implants CY (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8756,7 +8757,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DI_Implants_Xive__c: number;
+    TQ_CY_D_DI_Implants_Xive__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -8767,7 +8768,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DI_StockAbuts_AllBrands__c: number;
+    TQ_CY_D_DI_StockAbuts_AllBrands__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s CY (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8779,7 +8780,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DI_StockAbuts_Ankylos__c: number;
+    TQ_CY_D_DI_StockAbuts_Ankylos__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s CY (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8791,7 +8792,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DI_StockAbuts_AstraTech__c: number;
+    TQ_CY_D_DI_StockAbuts_AstraTech__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s CY (XiVE)</b></h3>
      * <p>APEX field</p>
@@ -8803,9 +8804,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TQ_CY_D_DI_StockAbuts_Xive__c: number;
-    Travel_Day_Honorarium__pc: number;
-    Treatment_Procedure_Knowledge__pc: string;
+    TQ_CY_D_DI_StockAbuts_Xive__c?: number;
+    Travel_Day_Honorarium__pc?: number;
+    Treatment_Procedure_Knowledge__pc?: string;
     /**
      * <h3><b>Sales LY (D)</b></h3>
      * <p>APEX field</p>
@@ -8817,7 +8818,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_AllPLs_AllPCs_AllBrands__c: number;
+    TS_CY_1_D_AllPLs_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales LY (DD)</b></h3>
      * <p>APEX field</p>
@@ -8829,7 +8830,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DD_AllPCs_AllBrands__c: number;
+    TS_CY_1_D_DD_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales LY (ATL Abut)</b></h3>
      * <p>APEX field</p>
@@ -8841,7 +8842,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DD_AllPCs_Atlantis__c: number;
+    TS_CY_1_D_DD_AllPCs_Atlantis__c?: number;
     /**
      * <h3><b>Sales LY (ATL Abut Comp Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8852,7 +8853,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DD_AllPCs_Atlantis_Comp__c: number;
+    TS_CY_1_D_DD_AllPCs_Atlantis_Comp__c?: number;
     /**
      * <h3><b>Sales LY (ATL Abut DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8863,7 +8864,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DD_AllPCs_Atlantis_DI__c: number;
+    TS_CY_1_D_DD_AllPCs_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sales LY (ATL Suprast)</b></h3>
      * <p>APEX field</p>
@@ -8875,7 +8876,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DD_AllPCs_Isus__c: number;
+    TS_CY_1_D_DD_AllPCs_Isus__c?: number;
     /**
      * <h3><b>Sales LY (SIMPLANT)</b></h3>
      * <p>APEX field</p>
@@ -8887,7 +8888,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DD_AllPCs_Simplant__c: number;
+    TS_CY_1_D_DD_AllPCs_Simplant__c?: number;
     /**
      * <h3><b>Sales LY (SP Guides)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8898,7 +8899,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DD_Guides_Simplant__c: number;
+    TS_CY_1_D_DD_Guides_Simplant__c?: number;
     /**
      * <h3><b>Sales LY (DI)</b></h3>
      * <p>APEX field</p>
@@ -8910,7 +8911,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DI_AllPCs_AllBrands__c: number;
+    TS_CY_1_D_DI_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales LY (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -8922,7 +8923,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DI_AllPCs_Ankylos__c: number;
+    TS_CY_1_D_DI_AllPCs_Ankylos__c?: number;
     /**
      * <h3><b>Sales LY (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -8934,7 +8935,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DI_AllPCs_AstraTech__c: number;
+    TS_CY_1_D_DI_AllPCs_AstraTech__c?: number;
     /**
      * <h3><b>Sales LY (XiVe)</b></h3>
      * <p>APEX field</p>
@@ -8946,7 +8947,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DI_AllPCs_Xive__c: number;
+    TS_CY_1_D_DI_AllPCs_Xive__c?: number;
     /**
      * <h3><b>Sales LY (Stock Abutments)</b></h3>
      * <h4>Field Attributes</h4>
@@ -8957,7 +8958,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DI_StockAbuts_AllBrands__c: number;
+    TS_CY_1_D_DI_StockAbuts_AllBrands__c?: number;
     /**
      * <h3><b>Sales LY (DR)</b></h3>
      * <p>APEX field</p>
@@ -8969,7 +8970,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_D_DR_AllPCs_AllBrands__c: number;
+    TS_CY_1_D_DR_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales LYTD (D)</b></h3>
      * <p>APEX field</p>
@@ -8981,7 +8982,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_AllPLs_AllPCs_AllBrands__c: number;
+    TS_CY_1_TD_D_AllPLs_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales LYTD (DD)</b></h3>
      * <p>APEX field</p>
@@ -8993,7 +8994,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DD_AllPCs_AllBrands__c: number;
+    TS_CY_1_TD_D_DD_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales LYTD (ATL Abut)</b></h3>
      * <p>Total Atlantis Abutment sales (Business area code DD1 ).. APEX field</p>
@@ -9005,7 +9006,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DD_AllPCs_Atlantis__c: number;
+    TS_CY_1_TD_D_DD_AllPCs_Atlantis__c?: number;
     /**
      * <h3><b>Sales LYTD (ATL Abut Comp Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9016,7 +9017,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DD_AllPCs_Atlantis_Comp__c: number;
+    TS_CY_1_TD_D_DD_AllPCs_Atlantis_Comp__c?: number;
     /**
      * <h3><b>Sales LYTD (ATL Abut DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9027,7 +9028,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DD_AllPCs_Atlantis_DI__c: number;
+    TS_CY_1_TD_D_DD_AllPCs_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sales LYTD (ATL Suprast)</b></h3>
      * <p>APEX field</p>
@@ -9039,7 +9040,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DD_AllPCs_Isus__c: number;
+    TS_CY_1_TD_D_DD_AllPCs_Isus__c?: number;
     /**
      * <h3><b>Sales LYTD (SIMPLANT)</b></h3>
      * <p>APEX field</p>
@@ -9051,7 +9052,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DD_AllPCs_Simplant__c: number;
+    TS_CY_1_TD_D_DD_AllPCs_Simplant__c?: number;
     /**
      * <h3><b>Sales LYTD (SP Guides)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9062,7 +9063,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DD_Guides_Simplant__c: number;
+    TS_CY_1_TD_D_DD_Guides_Simplant__c?: number;
     /**
      * <h3><b>Sales LYTD (DI)</b></h3>
      * <p>APEX field</p>
@@ -9074,7 +9075,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DI_AllPCs_AllBrands__c: number;
+    TS_CY_1_TD_D_DI_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales LYTD (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -9086,7 +9087,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DI_AllPCs_Ankylos__c: number;
+    TS_CY_1_TD_D_DI_AllPCs_Ankylos__c?: number;
     /**
      * <h3><b>Sales LYTD (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -9098,7 +9099,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DI_AllPCs_AstraTech__c: number;
+    TS_CY_1_TD_D_DI_AllPCs_AstraTech__c?: number;
     /**
      * <h3><b>Sales LYTD (XiVe)</b></h3>
      * <p>APEX field</p>
@@ -9110,7 +9111,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DI_AllPCs_Xive__c: number;
+    TS_CY_1_TD_D_DI_AllPCs_Xive__c?: number;
     /**
      * <h3><b>Sales LYTD (DR)</b></h3>
      * <p>APEX field</p>
@@ -9122,7 +9123,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_1_TD_D_DR_AllPCs_AllBrands__c: number;
+    TS_CY_1_TD_D_DR_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2020 (D)</b></h3>
      * <p>APEX field</p>
@@ -9134,7 +9135,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_AllPLs_AllPCs_AllBrands__c: number;
+    TS_CY_2_D_AllPLs_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2020 (DD)</b></h3>
      * <p>APEX field</p>
@@ -9146,7 +9147,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DD_AllPCs_AllBrands__c: number;
+    TS_CY_2_D_DD_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2020 (ATL Abut)</b></h3>
      * <p>APEX field</p>
@@ -9158,7 +9159,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DD_AllPCs_Atlantis__c: number;
+    TS_CY_2_D_DD_AllPCs_Atlantis__c?: number;
     /**
      * <h3><b>Sales 2020 (ATL Abut Comp Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9169,7 +9170,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DD_AllPCs_Atlantis_Comp__c: number;
+    TS_CY_2_D_DD_AllPCs_Atlantis_Comp__c?: number;
     /**
      * <h3><b>Sales 2020 (ATL Abut DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9180,7 +9181,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DD_AllPCs_Atlantis_DI__c: number;
+    TS_CY_2_D_DD_AllPCs_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sales 2020 (ATL Suprast)</b></h3>
      * <p>APEX field</p>
@@ -9192,7 +9193,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DD_AllPCs_Isus__c: number;
+    TS_CY_2_D_DD_AllPCs_Isus__c?: number;
     /**
      * <h3><b>Sales 2020 (SIMPLANT)</b></h3>
      * <p>APEX field</p>
@@ -9204,7 +9205,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DD_AllPCs_Simplant__c: number;
+    TS_CY_2_D_DD_AllPCs_Simplant__c?: number;
     /**
      * <h3><b>Sales 2020 (SP Guides)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9215,7 +9216,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DD_Guides_Simplant__c: number;
+    TS_CY_2_D_DD_Guides_Simplant__c?: number;
     /**
      * <h3><b>Sales 2020 (DI)</b></h3>
      * <p>APEX field</p>
@@ -9227,7 +9228,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DI_AllPCs_AllBrands__c: number;
+    TS_CY_2_D_DI_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2020 (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -9239,7 +9240,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DI_AllPCs_Ankylos__c: number;
+    TS_CY_2_D_DI_AllPCs_Ankylos__c?: number;
     /**
      * <h3><b>Sales 2020 (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -9251,7 +9252,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DI_AllPCs_AstraTech__c: number;
+    TS_CY_2_D_DI_AllPCs_AstraTech__c?: number;
     /**
      * <h3><b>Sales 2020 (XiVe)</b></h3>
      * <p>APEX field</p>
@@ -9263,7 +9264,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DI_AllPCs_Xive__c: number;
+    TS_CY_2_D_DI_AllPCs_Xive__c?: number;
     /**
      * <h3><b>Sales 2020 (Stock Abutments)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9274,7 +9275,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DI_StockAbuts_AllBrands__c: number;
+    TS_CY_2_D_DI_StockAbuts_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2020 (DR)</b></h3>
      * <p>APEX field</p>
@@ -9286,7 +9287,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_D_DR_AllPCs_AllBrands__c: number;
+    TS_CY_2_D_DR_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2020TD (D)</b></h3>
      * <p>APEX field</p>
@@ -9298,7 +9299,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_TD_D_AllPLs_AllPCs_AllBrands__c: number;
+    TS_CY_2_TD_D_AllPLs_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2020TD (ATL Abut)</b></h3>
      * <p>Total Atlantis Abutment sales (Business area code DD1 ).. APEX field</p>
@@ -9310,7 +9311,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_TD_D_DD_AllPCs_Atlantis__c: number;
+    TS_CY_2_TD_D_DD_AllPCs_Atlantis__c?: number;
     /**
      * <h3><b>Sales 2020TD (ATL Suprast)</b></h3>
      * <p>APEX field</p>
@@ -9322,7 +9323,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_TD_D_DD_AllPs_Isus__c: number;
+    TS_CY_2_TD_D_DD_AllPs_Isus__c?: number;
     /**
      * <h3><b>Sales 2020TD (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -9334,7 +9335,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_TD_D_DI_AllPCs_Ankylos__c: number;
+    TS_CY_2_TD_D_DI_AllPCs_Ankylos__c?: number;
     /**
      * <h3><b>Sales 2020TD (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -9346,7 +9347,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_TD_D_DI_AllPCs_AstraTech__c: number;
+    TS_CY_2_TD_D_DI_AllPCs_AstraTech__c?: number;
     /**
      * <h3><b>Sales 2020TD (XiVe)</b></h3>
      * <p>APEX field</p>
@@ -9358,7 +9359,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_2_TD_D_DI_AllPCs_Xive__c: number;
+    TS_CY_2_TD_D_DI_AllPCs_Xive__c?: number;
     /**
      * <h3><b>Sales 2019 (D)</b></h3>
      * <p>APEX field</p>
@@ -9370,7 +9371,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_D_AllPLs_AllPCs_AllBrands__c: number;
+    TS_CY_3_D_AllPLs_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2019 (DD)</b></h3>
      * <p>APEX field</p>
@@ -9382,7 +9383,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_D_DD_AllPCs_AllBrands__c: number;
+    TS_CY_3_D_DD_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2019 (ATL Abut)</b></h3>
      * <p>Total Atlantis Abutment sales (Business area code DD1 ). APEX field</p>
@@ -9394,7 +9395,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_D_DD_AllPCs_Atlantis__c: number;
+    TS_CY_3_D_DD_AllPCs_Atlantis__c?: number;
     /**
      * <h3><b>Sales 2019 (ATL Suprast)</b></h3>
      * <p>APEX field</p>
@@ -9406,7 +9407,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_D_DD_AllPCs_Isus__c: number;
+    TS_CY_3_D_DD_AllPCs_Isus__c?: number;
     /**
      * <h3><b>Sales 2019 (SIMPLANT)</b></h3>
      * <p>APEX field</p>
@@ -9418,7 +9419,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_D_DD_AllPCs_Simplant__c: number;
+    TS_CY_3_D_DD_AllPCs_Simplant__c?: number;
     /**
      * <h3><b>Sales 2019 (DI)</b></h3>
      * <p>APEX field</p>
@@ -9430,7 +9431,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_D_DI_AllPCs_AllBrands__c: number;
+    TS_CY_3_D_DI_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2019 (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -9442,7 +9443,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_D_DI_AllPCs_Ankylos__c: number;
+    TS_CY_3_D_DI_AllPCs_Ankylos__c?: number;
     /**
      * <h3><b>Sales 2019 (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -9454,7 +9455,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_D_DI_AllPCs_AstraTech__c: number;
+    TS_CY_3_D_DI_AllPCs_AstraTech__c?: number;
     /**
      * <h3><b>Sales 2019 (XiVe)</b></h3>
      * <p>APEX field</p>
@@ -9466,7 +9467,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_D_DI_AllPCs_Xive__c: number;
+    TS_CY_3_D_DI_AllPCs_Xive__c?: number;
     /**
      * <h3><b>Sales 2019TD</b></h3>
      * <p>APEX field</p>
@@ -9478,7 +9479,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_TD_D_AllPLs_AllPCs_AllBrands__c: number;
+    TS_CY_3_TD_D_AllPLs_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales 2019TD (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -9490,7 +9491,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_TD_D_DI_AllPCs_Ankylos__c: number;
+    TS_CY_3_TD_D_DI_AllPCs_Ankylos__c?: number;
     /**
      * <h3><b>Sales 2019TD (XiVe)</b></h3>
      * <p>APEX field</p>
@@ -9502,7 +9503,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_3_TD_D_DI_AllPCs_Xive__c: number;
+    TS_CY_3_TD_D_DI_AllPCs_Xive__c?: number;
     /**
      * <h3><b>Sales CY (D)</b></h3>
      * <p>APEX field</p>
@@ -9514,7 +9515,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_AllPLs_AllPCs_AllBrands__c: number;
+    TS_CY_D_AllPLs_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales CY  (DD)</b></h3>
      * <p>APEX field</p>
@@ -9526,7 +9527,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DD_AllPCs_AllBrands__c: number;
+    TS_CY_D_DD_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales CY (ATL Abut)</b></h3>
      * <p>APEX field</p>
@@ -9538,7 +9539,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DD_AllPCs_Atlantis__c: number;
+    TS_CY_D_DD_AllPCs_Atlantis__c?: number;
     /**
      * <h3><b>Sales CY (ATL Abut Comp Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9549,7 +9550,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DD_AllPCs_Atlantis_Comp__c: number;
+    TS_CY_D_DD_AllPCs_Atlantis_Comp__c?: number;
     /**
      * <h3><b>Sales CY (ATL Abut DI Systems)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9560,7 +9561,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DD_AllPCs_Atlantis_DI__c: number;
+    TS_CY_D_DD_AllPCs_Atlantis_DI__c?: number;
     /**
      * <h3><b>Sales CY (ATL Suprast)</b></h3>
      * <p>APEX field</p>
@@ -9572,7 +9573,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DD_AllPCs_Isus__c: number;
+    TS_CY_D_DD_AllPCs_Isus__c?: number;
     /**
      * <h3><b>Sales CY (SIMPLANT)</b></h3>
      * <p>APEX field</p>
@@ -9584,7 +9585,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DD_AllPCs_Simplant__c: number;
+    TS_CY_D_DD_AllPCs_Simplant__c?: number;
     /**
      * <h3><b>Sales CY (SP Guides)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9595,7 +9596,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DD_Guides_Simplant__c: number;
+    TS_CY_D_DD_Guides_Simplant__c?: number;
     /**
      * <h3><b>Sales CY (DI)</b></h3>
      * <p>APEX field</p>
@@ -9607,7 +9608,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DI_AllPCs_AllBrands__c: number;
+    TS_CY_D_DI_AllPCs_AllBrands__c?: number;
     /**
      * <h3><b>Sales CY  (Ankylos)</b></h3>
      * <p>APEX field</p>
@@ -9619,7 +9620,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DI_AllPCs_Ankylos__c: number;
+    TS_CY_D_DI_AllPCs_Ankylos__c?: number;
     /**
      * <h3><b>Sales CY (ATIS)</b></h3>
      * <p>APEX field</p>
@@ -9631,7 +9632,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DI_AllPCs_AstraTech__c: number;
+    TS_CY_D_DI_AllPCs_AstraTech__c?: number;
     /**
      * <h3><b>Sales CY (XiVe)</b></h3>
      * <p>APEX field</p>
@@ -9643,7 +9644,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DI_AllPCs_Xive__c: number;
+    TS_CY_D_DI_AllPCs_Xive__c?: number;
     /**
      * <h3><b>Sales CY (Stock Abutments)</b></h3>
      * <h4>Field Attributes</h4>
@@ -9654,7 +9655,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DI_StockAbuts_AllBrands__c: number;
+    TS_CY_D_DI_StockAbuts_AllBrands__c?: number;
     /**
      * <h3><b>Sales CY (DR)</b></h3>
      * <p>APEX field</p>
@@ -9666,9 +9667,9 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TS_CY_D_DR_AllPCs_AllBrands__c: number;
-    TTT_UK_IE__pc: boolean;
-    Type: string;
+    TS_CY_D_DR_AllPCs_AllBrands__c?: number;
+    TTT_UK_IE__pc?: boolean;
+    Type?: string;
     /**
      * <h3><b>DST Setting</b></h3>
      * <p>This is a hidden field and should not be added to the page layouts.</p>
@@ -9678,8 +9679,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__DST_Setting__c: string;
-    tz__DST_Setting__pc: tz__DST_Setting__c;
+    tz__DST_Setting__c?: string;
+    tz__DST_Setting__pc?: tz__DST_Setting__c;
     /**
      * <h3><b>DST Setting</b></h3>
      * <p>This is a hidden field and should not be added to the page layouts.</p>
@@ -9689,7 +9690,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__DST_Setting__r: tz__DST_Setting__c;
+    tz__DST_Setting__r?: tz__DST_Setting__c;
     /**
      * <h3><b>Local Time</b></h3>
      * <p>Shows the current local time for the Account in 24-hr format.</p>
@@ -9702,8 +9703,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Local_Time_24__c: string;
-    tz__Local_Time_24__pc: string;
+    tz__Local_Time_24__c?: string;
+    tz__Local_Time_24__pc?: string;
     /**
      * <h3><b>Local Time</b></h3>
      * <p>Shows the current local time (without date) for the Account in 24-hr format.</p>
@@ -9716,8 +9717,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Local_Time_24_Short__c: string;
-    tz__Local_Time_24_Short__pc: string;
+    tz__Local_Time_24_Short__c?: string;
+    tz__Local_Time_24_Short__pc?: string;
     /**
      * <h3><b>Local Time</b></h3>
      * <p>Shows the current local time for the Account.</p>
@@ -9730,8 +9731,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Local_Time__c: string;
-    tz__Local_Time__pc: string;
+    tz__Local_Time__c?: string;
+    tz__Local_Time__pc?: string;
     /**
      * <h3><b>Local Time</b></h3>
      * <p>Shows the current local time (without date) for the Account.</p>
@@ -9744,8 +9745,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Local_Time_Short__c: string;
-    tz__Local_Time_Short__pc: string;
+    tz__Local_Time_Short__c?: string;
+    tz__Local_Time_Short__pc?: string;
     /**
      * <h3><b>Timezone Standard</b></h3>
      * <p>Timezone abbreviation when DST is off (PST, EST, etc.). This is a hidden field and should not be added to the page layouts.</p>
@@ -9757,8 +9758,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone__c: string;
-    tz__Timezone__pc: string;
+    tz__Timezone__c?: string;
+    tz__Timezone__pc?: string;
     /**
      * <h3><b>Timezone DST</b></h3>
      * <p>Timezone abbreviation when DST is on (PDT, EDT, etc.). This is a hidden field and should not be added to the page layouts.</p>
@@ -9770,8 +9771,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_DST__c: string;
-    tz__Timezone_DST__pc: string;
+    tz__Timezone_DST__c?: string;
+    tz__Timezone_DST__pc?: string;
     /**
      * <h3><b>Timezone DST (Full)</b></h3>
      * <p>Full timezone name when the DST is on. This is a hidden field and should not be added to the page layouts.</p>
@@ -9783,8 +9784,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_DST_Full__c: string;
-    tz__Timezone_DST_Full__pc: string;
+    tz__Timezone_DST_Full__c?: string;
+    tz__Timezone_DST_Full__pc?: string;
     /**
      * <h3><b>Timezone</b></h3>
      * <p>Current timezone abbreviation (PST, EST,etc..)</p>
@@ -9797,8 +9798,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_F__c: string;
-    tz__Timezone_F__pc: string;
+    tz__Timezone_F__c?: string;
+    tz__Timezone_F__pc?: string;
     /**
      * <h3><b>Timezone Standard (Full)</b></h3>
      * <p>Full timezone name when the DST is off. This is a hidden field and should not be added to the page layouts.</p>
@@ -9810,8 +9811,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_Full__c: string;
-    tz__Timezone_Full__pc: string;
+    tz__Timezone_Full__c?: string;
+    tz__Timezone_Full__pc?: string;
     /**
      * <h3><b>Timezone (Full)</b></h3>
      * <p>Current timezone full name.</p>
@@ -9824,8 +9825,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_Full_F__c: string;
-    tz__Timezone_Full_F__pc: string;
+    tz__Timezone_Full_F__c?: string;
+    tz__Timezone_Full_F__pc?: string;
     /**
      * <h3><b>Timezone (IANA)</b></h3>
      * <p>Timezone as defined by Internet Assigned Numbers Authority (IANA).</p>
@@ -9837,8 +9838,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_IANA__c: string;
-    tz__Timezone_IANA__pc: string;
+    tz__Timezone_IANA__c?: string;
+    tz__Timezone_IANA__pc?: string;
     /**
      * <h3><b>Timezone SFDC</b></h3>
      * <p>Salesforce IANA timezone.</p>
@@ -9850,8 +9851,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone_SFDC__c: string;
-    tz__Timezone_SFDC__pc: string;
+    tz__Timezone_SFDC__c?: string;
+    tz__Timezone_SFDC__pc?: string;
     /**
      * <h3><b>UTC Offset DST</b></h3>
      * <p>UTC Offset when the DST is on. This is a hidden field and should not be added to the page layouts.</p>
@@ -9863,8 +9864,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__UTC_Offset_DST__c: number;
-    tz__UTC_Offset_DST__pc: number;
+    tz__UTC_Offset_DST__c?: number;
+    tz__UTC_Offset_DST__pc?: number;
     /**
      * <h3><b>UTC Offset</b></h3>
      * <p>Current UTC timezone offset.</p>
@@ -9877,8 +9878,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__UTC_Offset_F__c: number;
-    tz__UTC_Offset_F__pc: number;
+    tz__UTC_Offset_F__c?: number;
+    tz__UTC_Offset_F__pc?: number;
     /**
      * <h3><b>UTC Offset Standard</b></h3>
      * <p>UTC Offset when the DST is off. This is a hidden field and should not be added to the page layouts.</p>
@@ -9890,8 +9891,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__UTF_Offset__c: number;
-    tz__UTF_Offset__pc: number;
+    tz__UTF_Offset__c?: number;
+    tz__UTF_Offset__pc?: number;
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -9912,6 +9913,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Brazil</code></td><td>Brazil</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Cameroun</code></td><td>Cameroun</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Canada</code></td><td>Canada</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Czech Republic</code></td><td>Czech Republic</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Denmark</code></td><td>Denmark</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DEX</code></td><td>DEX</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Egypt</code></td><td>Egypt</td><td nowrap>true</td></tr>
@@ -9960,8 +9962,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yemen</code></td><td>Yemen</td><td nowrap>true</td></tr>
      * </table>
      */
-    User_Country__c: string;
-    User_Country__pc: string;
+    User_Country__c?: string;
+    User_Country__pc?: string;
     /**
      * <h3><b>User&#39;s Region</b></h3>
      * <h4>Field Attributes</h4>
@@ -9973,7 +9975,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_s_Region__c: string;
+    User_s_Region__c?: string;
     /**
      * <h3><b>Order Value Delivered not invoiced</b></h3>
      * <p>The Order value not invoiced with the order status = 66 (Delivered not invoiced)</p>
@@ -9985,7 +9987,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Value_Delivered_not_invoiced__c: number;
+    Value_Delivered_not_invoiced__c?: number;
     /**
      * <h3><b>VAT Number</b></h3>
      * <p>filled by CIM integration</p>
@@ -9997,7 +9999,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VAT_Number__c: string;
+    VAT_Number__c?: string;
     /**
      * <h3><b>VAT Registration No</b></h3>
      * <p>VRNO</p>
@@ -10009,8 +10011,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Vat_Registration_No__c: string;
-    VIP__pc: boolean;
+    Vat_Registration_No__c?: string;
+    VIP__pc?: boolean;
     /**
      * <h3><b>Visited Last 12 months?</b></h3>
      * <h4>Field Attributes</h4>
@@ -10022,7 +10024,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Visiter_Last_12_months_D__c: string;
+    Visiter_Last_12_months_D__c?: string;
     /**
      * <h3><b>Volume (ATL Abut)</b></h3>
      * <p>Automatically updated by SFDC based on ATL Abut Potential / Year and the Volume definition for your country.</p>
@@ -10040,7 +10042,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Usage</code></td><td>No Usage</td><td nowrap>true</td></tr>
      * </table>
      */
-    Volume_ATL_Abut__c: string;
+    Volume_ATL_Abut__c?: string;
     /**
      * <h3><b>Volume (ATL Suprast)</b></h3>
      * <p>Automatically updated by SFDC based on ISUS Connection Potential / Year and the Volume definition of your country.
@@ -10060,7 +10062,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Usage</code></td><td>No Usage</td><td nowrap>true</td></tr>
      * </table>
      */
-    Volume_ATL_ISUS__c: string;
+    Volume_ATL_ISUS__c?: string;
     /**
      * <h3><b>Volume (Implants)</b></h3>
      * <p>Automatically calculated based on Implants Potential / Year and Actual Sold implants in the last 12 months (L12M), refer to the training material for more details.</p>
@@ -10078,7 +10080,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Usage</code></td><td>No Usage</td><td nowrap>true</td></tr>
      * </table>
      */
-    Volume_Implants__c: string;
+    Volume_Implants__c?: string;
     /**
      * <h3><b>Volume (SP Guides)</b></h3>
      * <p>Not to be shown on layoutAutomatically updated based on SP Guides Potential / Year.
@@ -10100,10 +10102,10 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Usage</code></td><td>No Usage</td><td nowrap>true</td></tr>
      * </table>
      */
-    Volume_Simplant__c: string;
-    Website: string;
-    WhenCollected__pc: string;
-    WhereCollected__pc: string;
+    Volume_Simplant__c?: string;
+    Website?: string;
+    WhenCollected__pc?: string;
+    WhereCollected__pc?: string;
     /**
      * <h3><b>Implants Win Type</b></h3>
      * <p>Use this field to state the &quot;Win Type&quot; of this Customer. If not considered a &quot;new&quot; customer, but merely a replacement for an already existing customer, please select &quot;Administrative Reason&quot;.</p>
@@ -10122,7 +10124,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Win_Type_D__c: string;
+    Win_Type_D__c?: string;
     /**
      * <h3><b>Won Implant Period</b></h3>
      * <p>Shows the period when the Account was won (IMPLANTS), The period is L12M, L13-24M or &quot;Older than 24 Months&quot;. if the field is blank, the Account is not yet won.</p>
@@ -10135,7 +10137,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Won_Implant_Period__c: string;
+    Won_Implant_Period__c?: string;
     /**
      * <h3><b>Won/Lost Code</b></h3>
      * <p>If the customer is Won Current Year, it gets a &quot;1&quot; in this field. If it is Lost this year, it gets a &quot;-1&quot;. For analysis only, should not appear in any page layout.</p>
@@ -10148,7 +10150,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Won_Lost_Code__c: number;
+    Won_Lost_Code__c?: number;
     /**
      * <h3><b>WonLostDump_Abutments</b></h3>
      * <h4>Field Attributes</h4>
@@ -10156,7 +10158,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    WonLostDump_Abutments__c: string;
+    WonLostDump_Abutments__c?: string;
     /**
      * <h3><b>WonLostDump_Implants</b></h3>
      * <h4>Field Attributes</h4>
@@ -10164,7 +10166,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(33768)</td></tr>
      * </table>
      */
-    WonLostDump_Implants__c: string;
+    WonLostDump_Implants__c?: string;
     /**
      * <h3><b>WonLostDump_ISUS</b></h3>
      * <p>To dump Apex calculation</p>
@@ -10173,7 +10175,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    WonLostDump_ISUS__c: string;
+    WonLostDump_ISUS__c?: string;
     /**
      * <h3><b>WonLostStatus_Abutments</b></h3>
      * <h4>Field Attributes</h4>
@@ -10184,7 +10186,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WonLostStatus_Abutments__c: string;
+    WonLostStatus_Abutments__c?: string;
     /**
      * <h3><b>ATL Abut Won/Lost Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -10196,7 +10198,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WonLostStatus_Abutments_EndField__c: string;
+    WonLostStatus_Abutments_EndField__c?: string;
     /**
      * <h3><b>WonLostStatus_Implants</b></h3>
      * <h4>Field Attributes</h4>
@@ -10207,7 +10209,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WonLostStatus_Implants__c: string;
+    WonLostStatus_Implants__c?: string;
     /**
      * <h3><b>Implants Won/Lost Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -10219,7 +10221,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WonLostStatus_Implants_EndField__c: string;
+    WonLostStatus_Implants_EndField__c?: string;
     /**
      * <h3><b>WonLostStatus_ISUS</b></h3>
      * <p>Possible values : &quot;Blank&quot;, WON, REWON, LOST
@@ -10232,7 +10234,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WonLostStatus_ISUS__c: string;
+    WonLostStatus_ISUS__c?: string;
     /**
      * <h3><b>ATL Suprast Won/Lost Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -10244,7 +10246,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WonLostStatus_ISUS_EndField__c: string;
+    WonLostStatus_ISUS_EndField__c?: string;
     /**
      * <h3><b>WonLostStatus_Simplant</b></h3>
      * <p>Possible values : &quot;Blank&quot;, WON, REWON, LOST
@@ -10257,8 +10259,8 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WonLostStatus_Simplant__c: string;
-    World_Congress_2012__pc: boolean;
+    WonLostStatus_Simplant__c?: string;
+    World_Congress_2012__pc?: boolean;
     /**
      * <h3><b>%Est ATL Abut Growth</b></h3>
      * <h4>Field Attributes</h4>
@@ -10268,7 +10270,7 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    XEst_ATL_Growth__c: number;
+    XEst_ATL_Growth__c?: number;
     /**
      * <h3><b>%Est Growth</b></h3>
      * <h4>Field Attributes</h4>
@@ -10278,6 +10280,6 @@ declare interface AccountChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    XEst_Growth__c: number;
-    XiVE_User__pc: boolean;
+    XEst_Growth__c?: number;
+    XiVE_User__pc?: boolean;
 }

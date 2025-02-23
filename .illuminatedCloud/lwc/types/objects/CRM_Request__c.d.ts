@@ -14,7 +14,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,10 +23,10 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__r: Country__c;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__r?: Country__c;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Due Date</b></h3>
      * <p>Deadline, Dependencey</p>
@@ -37,7 +37,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Due_Date__c: Date;
+    Due_Date__c?: Date;
     /**
      * <h3><b>GSD Case Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,11 +48,11 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GSD_Case_Number__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    GSD_Case_Number__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Meeting Minutes</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Meeting_Minutes__c: string;
+    Meeting_Minutes__c?: string;
     /**
      * <h3><b>Meeting Minutes</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,8 +72,8 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Meeting_Minutes__r: PM_Meeting_Minutes__c;
-    Name: string;
+    Meeting_Minutes__r?: PM_Meeting_Minutes__c;
+    Name?: string;
     /**
      * <h3><b>RCO</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,7 +83,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RCO__c: string;
+    RCO__c?: string;
     /**
      * <h3><b>RCO</b></h3>
      * <h4>Field Attributes</h4>
@@ -93,7 +93,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RCO__r: RCO_Information__c;
+    RCO__r?: RCO_Information__c;
     /**
      * <h3><b>Request Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -103,7 +103,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Request_Date__c: Date;
+    Request_Date__c?: Date;
     /**
      * <h3><b>Request Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Request_Description__c: string;
+    Request_Description__c?: string;
     /**
      * <h3><b>Request Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,7 +132,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New APEX / Integration Request</code></td><td>New APEX / Integration Request</td><td nowrap>true</td></tr>
      * </table>
      */
-    Request_Type__c: string;
+    Request_Type__c?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -142,7 +142,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_Information__c: string;
+    SBU_Information__c?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -152,7 +152,7 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_Information__r: SBU_Information__c;
+    SBU_Information__r?: SBU_Information__c;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -169,5 +169,5 @@ declare interface CRM_Request__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Completed</code></td><td>Completed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
 }

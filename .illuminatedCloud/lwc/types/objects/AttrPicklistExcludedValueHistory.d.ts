@@ -2,14 +2,14 @@
 
 declare interface AttrPicklistExcludedValueHistory extends SObject 
 {
-    AttrPicklistExcludedValue: AttrPicklistExcludedValue;
-    AttrPicklistExcludedValueId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    AttrPicklistExcludedValue?: AttrPicklistExcludedValue;
+    AttrPicklistExcludedValueId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

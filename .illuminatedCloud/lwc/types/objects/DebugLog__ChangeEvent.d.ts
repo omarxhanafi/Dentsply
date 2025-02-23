@@ -9,8 +9,8 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Cause__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Cause__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,11 +18,11 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Comments__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Comments__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Date Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DateTime__c: string;
+    DateTime__c?: string;
     /**
      * <h3><b>Debug URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DebugUrl__c: string;
+    DebugUrl__c?: string;
     /**
      * <h3><b>Error Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,10 +54,10 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ErrorType__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ErrorType__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Line Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,7 +68,7 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LineNumber__c: string;
+    LineNumber__c?: string;
     /**
      * <h3><b>Message</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,8 +76,8 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Message__c: string;
-    Name: string;
+    Message__c?: string;
+    Name?: string;
     /**
      * <h3><b>Object ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,10 +88,10 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    ObjectId__c: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    ObjectId__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Segment</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,7 +102,7 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Segment__c: string;
+    Segment__c?: string;
     /**
      * <h3><b>Severity</b></h3>
      * <h4>Field Attributes</h4>
@@ -118,7 +118,7 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Fatal</code></td><td>Fatal</td><td nowrap>true</td></tr>
      * </table>
      */
-    Severity__c: string;
+    Severity__c?: string;
     /**
      * <h3><b>Stack Trace</b></h3>
      * <h4>Field Attributes</h4>
@@ -126,7 +126,7 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    StackTrace__c: string;
+    StackTrace__c?: string;
     /**
      * <h3><b>Stack Trace String</b></h3>
      * <h4>Field Attributes</h4>
@@ -134,7 +134,7 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    StackTraceString__c: string;
+    StackTraceString__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -151,7 +151,7 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Closed</code></td><td>Closed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Type Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -159,5 +159,5 @@ declare interface DebugLog__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    TypeName__c: string;
+    TypeName__c?: string;
 }

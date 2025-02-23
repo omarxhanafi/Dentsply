@@ -14,18 +14,18 @@ declare interface ProductConsumedChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ArticleSKU__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    PricebookEntry: PricebookEntry;
-    PricebookEntryId: string;
+    ArticleSKU__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    PricebookEntry?: PricebookEntry;
+    PricebookEntryId?: string;
     /**
      * <h3><b>Part Number</b></h3>
      * <p>This field will be used as a reference in DS Service Report</p>
@@ -38,10 +38,10 @@ declare interface ProductConsumedChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductArticle__c: string;
-    ProductConsumedNumber: string;
-    ProductItem: ProductItem;
-    ProductItemId: string;
+    ProductArticle__c?: string;
+    ProductConsumedNumber?: string;
+    ProductItem?: ProductItem;
+    ProductItemId?: string;
     /**
      * <h3><b>Product Name</b></h3>
      * <p>Custom field to bring the product name from the Product Item. This should be placed in the layout and not the standard one, which allows the users to add products from the price book instead of the Product Item</p>
@@ -54,9 +54,9 @@ declare interface ProductConsumedChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductName__c: string;
-    QuantityConsumed: number;
-    ReplayId: string;
+    ProductName__c?: string;
+    QuantityConsumed?: number;
+    ReplayId?: string;
     /**
      * <h3><b>Serial Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,10 +68,10 @@ declare interface ProductConsumedChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SerialNumber__c: string;
-    UnitPrice: number;
-    WorkOrder: WorkOrder;
-    WorkOrderId: string;
-    WorkOrderLineItem: WorkOrderLineItem;
-    WorkOrderLineItemId: string;
+    SerialNumber__c?: string;
+    UnitPrice?: number;
+    WorkOrder?: WorkOrder;
+    WorkOrderId?: string;
+    WorkOrderLineItem?: WorkOrderLineItem;
+    WorkOrderLineItemId?: string;
 }

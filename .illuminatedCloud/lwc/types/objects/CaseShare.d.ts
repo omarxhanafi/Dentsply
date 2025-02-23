@@ -2,14 +2,14 @@
 
 declare interface CaseShare extends SObject 
 {
-    Case: Case;
-    CaseAccessLevel: string;
-    CaseId: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    RowCause: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    Case?: Case;
+    CaseAccessLevel?: string;
+    CaseId?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    RowCause?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

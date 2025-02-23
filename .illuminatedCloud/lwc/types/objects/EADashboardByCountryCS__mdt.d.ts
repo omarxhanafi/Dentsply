@@ -15,7 +15,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountDashboardName__c: string;
+    AccountDashboardName__c?: string;
     /**
      * <h3><b>Account Inside Sales Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountInsideSalesDashboard__c: string;
+    AccountInsideSalesDashboard__c?: string;
     /**
      * <h3><b>Account Inside Sales Dashboard Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,7 +34,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    AccountInsideSalesDashboardFilter__c: string;
+    AccountInsideSalesDashboardFilter__c?: string;
     /**
      * <h3><b>Account Marketing Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountMarketingDashboard__c: string;
+    AccountMarketingDashboard__c?: string;
     /**
      * <h3><b>Account Marketing Dashboard Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    AccountMarketingDashboardFilter__c: string;
+    AccountMarketingDashboardFilter__c?: string;
     /**
      * <h3><b>Account Outside Sales Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,7 +64,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountOutsideSalesDashboard__c: string;
+    AccountOutsideSalesDashboard__c?: string;
     /**
      * <h3><b>Account Outside Sales Dashboard Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    AccountOutsideSalesDashboardFilter__c: string;
+    AccountOutsideSalesDashboardFilter__c?: string;
     /**
      * <h3><b>Account Plan Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,7 +83,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountPlanDashboard__c: string;
+    AccountPlanDashboard__c?: string;
     /**
      * <h3><b>Account Plan Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    AccountPlanFilter__c: string;
+    AccountPlanFilter__c?: string;
     /**
      * <h3><b>Account Plan Member Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,7 +102,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountPlanMemberDashboard__c: string;
+    AccountPlanMemberDashboard__c?: string;
     /**
      * <h3><b>Account Plan Member Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    AccountPlanMemberFilter__c: string;
+    AccountPlanMemberFilter__c?: string;
     /**
      * <h3><b>Account Service Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -121,7 +121,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountServiceDashboard__c: string;
+    AccountServiceDashboard__c?: string;
     /**
      * <h3><b>Account Service Dashboard Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -129,7 +129,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    AccountServiceDashboardFilter__c: string;
+    AccountServiceDashboardFilter__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -144,7 +144,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Default</code></td><td>Default</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -411,7 +411,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZW</code></td><td>ZW</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    CountryCode__c: string;
+    CountryCode__c?: string;
     /**
      * <h3><b>Country Full Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -460,6 +460,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Lithuania</code></td><td>Lithuania</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Luxembourg</code></td><td>Luxembourg</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Malaysia</code></td><td>Malaysia</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Mexico</code></td><td>Mexico</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Morocco</code></td><td>Morocco</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New Zealand</code></td><td>New Zealand</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Norway</code></td><td>Norway</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
@@ -488,8 +489,8 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vietnam</code></td><td>Vietnam</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    CountryFullName__c: string;
-    DeveloperName: string;
+    CountryFullName__c?: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Home Dashboard Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -500,7 +501,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HomeDashboardName__c: string;
+    HomeDashboardName__c?: string;
     /**
      * <h3><b>Home Inside Sales Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -511,7 +512,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HomeInsideSalesDashboard__c: string;
+    HomeInsideSalesDashboard__c?: string;
     /**
      * <h3><b>Home Inside Sales Dashboard Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -519,7 +520,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    HomeInsideSalesDashboardFilter__c: string;
+    HomeInsideSalesDashboardFilter__c?: string;
     /**
      * <h3><b>Home Marketing Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -530,7 +531,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HomeMarketingDashboard__c: string;
+    HomeMarketingDashboard__c?: string;
     /**
      * <h3><b>Home Marketing Dashboard Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -538,7 +539,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    HomeMarketingDashboardFilter__c: string;
+    HomeMarketingDashboardFilter__c?: string;
     /**
      * <h3><b>Home Outside Sales Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -549,7 +550,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HomeOutsideSalesDashboard__c: string;
+    HomeOutsideSalesDashboard__c?: string;
     /**
      * <h3><b>Home Outside Sales Dashboard Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -557,7 +558,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    HomeOutsideSalesDashboardFilter__c: string;
+    HomeOutsideSalesDashboardFilter__c?: string;
     /**
      * <h3><b>Home Service Dashboard</b></h3>
      * <h4>Field Attributes</h4>
@@ -568,7 +569,7 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HomeServiceDashboard__c: string;
+    HomeServiceDashboard__c?: string;
     /**
      * <h3><b>Home Service Dashboard Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -576,11 +577,11 @@ declare interface EADashboardByCountryCS__mdt extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    HomeServiceDashboardFilter__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    HomeServiceDashboardFilter__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

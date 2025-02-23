@@ -22,7 +22,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Meeting</code></td><td>Meeting</td><td nowrap>true</td></tr>
      * </table>
      */
-    Channel__c: string;
+    Channel__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,10 +34,10 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Deployment Status Report</b></h3>
      * <p>Objcet for describe all the steps and milestones of the deployment process</p>
@@ -48,7 +48,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Deployment_Status_Report__c: string;
+    Deployment_Status_Report__c?: string;
     /**
      * <h3><b>Deployment Status Report</b></h3>
      * <p>Objcet for describe all the steps and milestones of the deployment process</p>
@@ -59,7 +59,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Deployment_Status_Report__r: Deployment_Status_Report__c;
+    Deployment_Status_Report__r?: Deployment_Status_Report__c;
     /**
      * <h3><b>Due Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,11 +69,11 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Due_Date__c: Date;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Due_Date__c?: Date;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Main Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,7 +83,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_Contact__c: string;
+    Main_Contact__c?: string;
     /**
      * <h3><b>Main Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -93,7 +93,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_Contact__r: User_Role__c;
+    Main_Contact__r?: User_Role__c;
     /**
      * <h3><b>Main Contact Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -105,7 +105,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_Contact_Name__c: string;
+    Main_Contact_Name__c?: string;
     /**
      * <h3><b>Milestone Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,7 +115,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Meeting_Date__c: Date;
+    Meeting_Date__c?: Date;
     /**
      * <h3><b>Milestone Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Meeting_Description__c: string;
+    Meeting_Description__c?: string;
     /**
      * <h3><b>Milestone Detail</b></h3>
      * <h4>Field Attributes</h4>
@@ -169,8 +169,8 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Project meeting 7</code></td><td>Project meeting 7</td><td nowrap>true</td></tr>
      * </table>
      */
-    Milestone_Detail__c: string;
-    Name: string;
+    Milestone_Detail__c?: string;
+    Name?: string;
     /**
      * <h3><b>Participants</b></h3>
      * <h4>Field Attributes</h4>
@@ -181,7 +181,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Participants__c: string;
+    Participants__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -190,7 +190,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project__c: string;
+    Project__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -199,7 +199,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project__r: Project__c;
+    Project__r?: Project__c;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -217,7 +217,7 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Done/Passed</code></td><td>Done/Passed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Topics</b></h3>
      * <h4>Field Attributes</h4>
@@ -290,5 +290,5 @@ declare interface Deployment_Status_Phase__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">X-SBU Prospecting</code></td><td>X-SBU Prospecting</td><td nowrap>true</td></tr>
      * </table>
      */
-    Topics__c: string;
+    Topics__c?: string;
 }

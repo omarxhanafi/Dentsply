@@ -84,6 +84,12 @@ declare module "@salesforce/schema/Address.DrivingDirections" {
     export default DrivingDirections;
 }
 
+declare module "@salesforce/schema/Address.DuplicateRecordItems" {
+    import { FieldId } from "@salesforce/schema";
+    const DuplicateRecordItems: FieldId;
+    export default DuplicateRecordItems;
+}
+
 declare module "@salesforce/schema/Address.FlowOrchestrationWorkItems" {
     import { FieldId } from "@salesforce/schema";
     const FlowOrchestrationWorkItems: FieldId;
@@ -94,6 +100,12 @@ declare module "@salesforce/schema/Address.GeocodeAccuracy" {
     import { FieldId } from "@salesforce/schema";
     const GeocodeAccuracy: FieldId;
     export default GeocodeAccuracy;
+}
+
+declare module "@salesforce/schema/Address.Histories" {
+    import { FieldId } from "@salesforce/schema";
+    const Histories: FieldId;
+    export default Histories;
 }
 
 declare module "@salesforce/schema/Address.Id" {

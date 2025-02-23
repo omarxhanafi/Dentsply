@@ -14,7 +14,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Billing_Address__c: string;
+    Account_Billing_Address__c?: string;
     /**
      * <h3><b>Account Name</b></h3>
      * <p>Used to display Account Name to Approval</p>
@@ -27,7 +27,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Name__c: string;
+    Account_Name__c?: string;
     /**
      * <h3><b>Account OneSF Id</b></h3>
      * <p>Used to display OneSF ID to Approval Processes</p>
@@ -40,7 +40,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_OneSF_Id__c: string;
+    Account_OneSF_Id__c?: string;
     /**
      * <h3><b>Account Phone Number</b></h3>
      * <p>Used to display Phone number to Approval Processes</p>
@@ -53,7 +53,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Phone_Number__c: string;
+    Account_Phone_Number__c?: string;
     /**
      * <h3><b>Amount(each)</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Amount_Paid_each__c: number;
+    Amount_Paid_each__c?: number;
     /**
      * <h3><b>Article Approval Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Denied</code></td><td>Denied</td><td nowrap>true</td></tr>
      * </table>
      */
-    Article_Approval_Status__c: string;
+    Article_Approval_Status__c?: string;
     /**
      * <h3><b>Article Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article_Description__c: string;
+    Article_Description__c?: string;
     /**
      * <h3><b>Article Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -103,11 +103,11 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article_Number__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Article_Number__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>CS Agent Processing Return</b></h3>
      * <h4>Field Attributes</h4>
@@ -116,7 +116,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CS_Agent_Processing_Return__c: string;
+    CS_Agent_Processing_Return__c?: string;
     /**
      * <h3><b>CS Agent Processing Return</b></h3>
      * <h4>Field Attributes</h4>
@@ -125,8 +125,8 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CS_Agent_Processing_Return__r: User;
-    CurrencyIsoCode: string;
+    CS_Agent_Processing_Return__r?: User;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Name and Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,7 +138,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Name_and_Number__c: string;
+    Customer_Name_and_Number__c?: string;
     /**
      * <h3><b>Finance Approved</b></h3>
      * <h4>Field Attributes</h4>
@@ -153,7 +153,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Rejected</code></td><td>Rejected</td><td nowrap>true</td></tr>
      * </table>
      */
-    Finance_Approved__c: string;
+    Finance_Approved__c?: string;
     /**
      * <h3><b>Last Modified Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -163,10 +163,10 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Modified_Time__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Last_Modified_Time__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Lot Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -177,7 +177,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lot_Number__c: string;
+    Lot_Number__c?: string;
     /**
      * <h3><b>Manager Approval Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -192,7 +192,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Rejected</code></td><td>Rejected</td><td nowrap>true</td></tr>
      * </table>
      */
-    Manager_Approval_Status__c: string;
+    Manager_Approval_Status__c?: string;
     /**
      * <h3><b>Manager Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -201,7 +201,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manager_Assigned__c: string;
+    Manager_Assigned__c?: string;
     /**
      * <h3><b>Manager Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,8 +210,8 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manager_Assigned__r: User;
-    Name: string;
+    Manager_Assigned__r?: User;
+    Name?: string;
     /**
      * <h3><b>Note (Optional)</b></h3>
      * <h4>Field Attributes</h4>
@@ -220,7 +220,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Note_Optional__c: string;
+    Note_Optional__c?: string;
     /**
      * <h3><b># of Completed Article Numbers</b></h3>
      * <h4>Field Attributes</h4>
@@ -232,7 +232,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Approved_Article_Numbers__c: number;
+    of_Approved_Article_Numbers__c?: number;
     /**
      * <h3><b>Original Order Discount Percent</b></h3>
      * <h4>Field Attributes</h4>
@@ -242,7 +242,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Original_Order_Discount_Percent__c: number;
+    Original_Order_Discount_Percent__c?: number;
     /**
      * <h3><b>Original Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -253,7 +253,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Original_Order_Number__c: string;
+    Original_Order_Number__c?: string;
     /**
      * <h3><b>Product Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -262,7 +262,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Name__c: string;
+    Product_Name__c?: string;
     /**
      * <h3><b>Product Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -271,7 +271,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Name__r: Product2;
+    Product_Name__r?: Product2;
     /**
      * <h3><b>Purchase Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -280,7 +280,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Purchase_Date__c: Date;
+    Purchase_Date__c?: Date;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -291,9 +291,9 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity__c: number;
-    RecordType: RecordType;
-    RecordTypeId: string;
+    Quantity__c?: number;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Related Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -301,7 +301,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Case})</td></tr>
      * </table>
      */
-    Related_Case__c: string;
+    Related_Case__c?: string;
     /**
      * <h3><b>Related Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -309,7 +309,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Case})</td></tr>
      * </table>
      */
-    Related_Case__r: Case;
+    Related_Case__r?: Case;
     /**
      * <h3><b>Rep Approval Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -324,7 +324,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Rejected</code></td><td>Rejected</td><td nowrap>true</td></tr>
      * </table>
      */
-    Rep_Approval_Status__c: string;
+    Rep_Approval_Status__c?: string;
     /**
      * <h3><b>Rep Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -333,7 +333,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rep_Assigned__c: string;
+    Rep_Assigned__c?: string;
     /**
      * <h3><b>Rep Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -342,8 +342,8 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Rep_Assigned__r: User;
-    ReplayId: string;
+    Rep_Assigned__r?: User;
+    ReplayId?: string;
     /**
      * <h3><b>Return Exception Requested</b></h3>
      * <h4>Field Attributes</h4>
@@ -376,7 +376,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Writing on Product</code></td><td>Writing on Product</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Return_Exception_Requested__c: string;
+    Return_Exception_Requested__c?: string;
     /**
      * <h3><b>Sales Director</b></h3>
      * <h4>Field Attributes</h4>
@@ -385,7 +385,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Director__c: string;
+    Sales_Director__c?: string;
     /**
      * <h3><b>Sales Director</b></h3>
      * <h4>Field Attributes</h4>
@@ -394,7 +394,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Director__r: User;
+    Sales_Director__r?: User;
     /**
      * <h3><b>Submit For Approval</b></h3>
      * <p>Used by the Articles:Default process to submit specific articles for approvals through the Update Return Case flow TFUS-000003107</p>
@@ -404,7 +404,7 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SubmitForApproval__c: boolean;
+    SubmitForApproval__c?: boolean;
     /**
      * <h3><b>Total Original Purchase Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -414,5 +414,5 @@ declare interface Article__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Original_Purchase_Amount__c: number;
+    Total_Original_Purchase_Amount__c?: number;
 }

@@ -264,6 +264,12 @@ declare module "@salesforce/schema/FulfillmentOrder.FulfilledToStreet" {
     export default FulfilledToStreet;
 }
 
+declare module "@salesforce/schema/FulfillmentOrder.FulfillmentLineRelationships" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentLineRelationships: FieldId;
+    export default FulfillmentLineRelationships;
+}
+
 declare module "@salesforce/schema/FulfillmentOrder.FulfillmentOrder" {
     import { FieldId } from "@salesforce/schema";
     const FulfillmentOrder: FieldId;

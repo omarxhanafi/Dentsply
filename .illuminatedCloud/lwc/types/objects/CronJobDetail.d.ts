@@ -2,7 +2,7 @@
 
 declare interface CronJobDetail extends SObject 
 {
-    CronJobDetail: CronTrigger;
-    JobType: string;
-    Name: string;
+    CronJobDetail?: CronTrigger;
+    JobType?: string;
+    Name?: string;
 }

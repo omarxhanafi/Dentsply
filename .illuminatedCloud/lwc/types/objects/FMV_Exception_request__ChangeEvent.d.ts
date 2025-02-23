@@ -10,12 +10,12 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Bona_fide_work_description__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Bona_fide_work_description__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Exception End Date</b></h3>
      * <p>States the date when the exception is ending.</p>
@@ -25,7 +25,7 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Exception_End_Date__c: Date;
+    Exception_End_Date__c?: Date;
     /**
      * <h3><b>Exception Rationale</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Exception_Rationale__c: string;
+    Exception_Rationale__c?: string;
     /**
      * <h3><b>Exception Start Date</b></h3>
      * <p>Used to track the start of the exception period</p>
@@ -43,7 +43,7 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Exception_Start_Date__c: Date;
+    Exception_Start_Date__c?: Date;
     /**
      * <h3><b>Exception Type</b></h3>
      * <p>Defines if the exception is intended to allow a higher rate or a lower rate than defined in the FMV model.</p>
@@ -56,7 +56,7 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Exception_Type__c: string;
+    Exception_Type__c?: string;
     /**
      * <h3><b>KOL information</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,7 +64,7 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Expert__c})</td></tr>
      * </table>
      */
-    KOL_information__c: string;
+    KOL_information__c?: string;
     /**
      * <h3><b>KOL information</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,10 +72,10 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Expert__c})</td></tr>
      * </table>
      */
-    KOL_information__r: Expert__c;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    KOL_information__r?: Expert__c;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Maximum allowed hourly rate</b></h3>
      * <h4>Field Attributes</h4>
@@ -85,7 +85,7 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Max_rate__c: number;
+    Max_rate__c?: number;
     /**
      * <h3><b>Minimum allowed hourly rate</b></h3>
      * <p>Checks the minimum allwoed rate according to FMV - brought in from FMV model thorugh the FMV exception flow.</p>
@@ -95,9 +95,9 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Min_rate__c: number;
-    Name: string;
-    ReplayId: string;
+    Min_rate__c?: number;
+    Name?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Requested Rate</b></h3>
      * <h4>Field Attributes</h4>
@@ -106,7 +106,7 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Requested_Rate__c: number;
+    Requested_Rate__c?: number;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Expired</code></td><td>Expired</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Uniquely qualified?</b></h3>
      * <p>Is this KOL uniquely qualified to perform the work?</p>
@@ -140,7 +140,7 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Uniquely_qualified__c: string;
+    Uniquely_qualified__c?: string;
     /**
      * <h3><b>Uniquely qualified reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -148,5 +148,5 @@ declare interface FMV_Exception_request__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(25000)</td></tr>
      * </table>
      */
-    Uniquely_qualified_reason__c: string;
+    Uniquely_qualified_reason__c?: string;
 }

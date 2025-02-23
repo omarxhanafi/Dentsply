@@ -2,16 +2,16 @@
 
 declare interface CustomBrandAsset extends SObject 
 {
-    AssetCategory: string;
-    AssetSource: SObject;
-    AssetSourceId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CustomBrand: CustomBrand;
-    CustomBrandId: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    TextAsset: string;
+    AssetCategory?: string;
+    AssetSource?: SObject;
+    AssetSourceId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CustomBrand?: CustomBrand;
+    CustomBrandId?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    TextAsset?: string;
 }

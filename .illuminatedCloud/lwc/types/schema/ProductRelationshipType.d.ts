@@ -36,6 +36,18 @@ declare module "@salesforce/schema/ProductRelationshipType.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/ProductRelationshipType.FulfillmentAssetRelationships" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentAssetRelationships: FieldId;
+    export default FulfillmentAssetRelationships;
+}
+
+declare module "@salesforce/schema/ProductRelationshipType.FulfillmentLineRelationships" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentLineRelationships: FieldId;
+    export default FulfillmentLineRelationships;
+}
+
 declare module "@salesforce/schema/ProductRelationshipType.Id" {
     import { FieldId } from "@salesforce/schema";
     const Id: FieldId;

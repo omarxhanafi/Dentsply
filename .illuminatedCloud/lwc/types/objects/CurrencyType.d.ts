@@ -2,16 +2,16 @@
 
 declare interface CurrencyType extends SObject 
 {
-    ConversionRate: number;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DecimalPlaces: number;
-    IsActive: boolean;
-    IsCorporate: boolean;
-    IsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    SystemModstamp: string;
+    ConversionRate?: number;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DecimalPlaces?: number;
+    IsActive?: boolean;
+    IsCorporate?: boolean;
+    IsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    SystemModstamp?: string;
 }

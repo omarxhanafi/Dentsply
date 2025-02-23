@@ -16,7 +16,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Account_No__c: string;
+    Account_Account_No__c?: string;
     /**
      * <h3><b>Adress Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Adress_Number__c: string;
+    Adress_Number__c?: string;
     /**
      * <h3><b>ATL Abut Implant Manufacturer Grouped</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ATL_Abut_Implant_Manufacturer_Grouped__c: string;
+    ATL_Abut_Implant_Manufacturer_Grouped__c?: string;
     /**
      * <h3><b>ATL Scanner Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ATL_Scanner_Brand__c: string;
+    ATL_Scanner_Brand__c?: string;
     /**
      * <h3><b>ATLANTIS Interface</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,7 +61,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ATLANTIS_Interface__c: string;
+    ATLANTIS_Interface__c?: string;
     /**
      * <h3><b>AWO Case No</b></h3>
      * <h4>Field Attributes</h4>
@@ -73,7 +73,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AWO_Case_No__c: string;
+    AWO_Case_No__c?: string;
     /**
      * <h3><b>AWO Link</b></h3>
      * <h4>Field Attributes</h4>
@@ -85,7 +85,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AWO_Link__c: string;
+    AWO_Link__c?: string;
     /**
      * <h3><b>Campaign Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -96,7 +96,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Code__c: string;
+    Campaign_Code__c?: string;
     /**
      * <h3><b>Continent</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,7 +108,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Continent__c: string;
+    Continent__c?: string;
     /**
      * <h3><b>Contract/Voucher ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -119,7 +119,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Voucher__c: string;
+    Contract_Voucher__c?: string;
     /**
      * <h3><b>Country Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -131,10 +131,10 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Code__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country_Code__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Customer Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -145,7 +145,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Order_Number__c: string;
+    Customer_Order_Number__c?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -156,7 +156,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__c: string;
+    Dealer__c?: string;
     /**
      * <h3><b>Discount Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -166,7 +166,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Amount__c: number;
+    Discount_Amount__c?: number;
     /**
      * <h3><b>Discount Model</b></h3>
      * <h4>Field Attributes</h4>
@@ -177,7 +177,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Model__c: string;
+    Discount_Model__c?: string;
     /**
      * <h3><b>GlobalSKU From Source (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -188,7 +188,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GlobalSKU_From_Source_HQ__c: string;
+    GlobalSKU_From_Source_HQ__c?: string;
     /**
      * <h3><b>Guide Payment Method (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -199,7 +199,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Guide_Payment_Method_HQ__c: string;
+    Guide_Payment_Method_HQ__c?: string;
     /**
      * <h3><b>ATL Implant Manufacturer</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,7 +210,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Implant_system__c: string;
+    Implant_system__c?: string;
     /**
      * <h3><b>Invoice Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -220,7 +220,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Date__c: Date;
+    Invoice_Date__c?: Date;
     /**
      * <h3><b>Invoice Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -231,8 +231,8 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice_Number__c: string;
-    IsDeleted: boolean;
+    Invoice_Number__c?: string;
+    IsDeleted?: boolean;
     /**
      * <h3><b>ATL Lab-based scanning</b></h3>
      * <h4>Field Attributes</h4>
@@ -242,10 +242,10 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lab_based_scanning__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Lab_based_scanning__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Maintenance Expiry Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -255,8 +255,8 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Maintenance_Expiry_Date__c: Date;
-    Name: string;
+    Maintenance_Expiry_Date__c?: Date;
+    Name?: string;
     /**
      * <h3><b>Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -267,7 +267,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Number__c: string;
+    Order_Number__c?: string;
     /**
      * <h3><b>Order Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -278,7 +278,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Type__c: string;
+    Order_Type__c?: string;
     /**
      * <h3><b>Our Reference</b></h3>
      * <h4>Field Attributes</h4>
@@ -289,7 +289,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Our_Reference__c: string;
+    Our_Reference__c?: string;
     /**
      * <h3><b>Payer ERP # (D-JP)</b></h3>
      * <h4>Field Attributes</h4>
@@ -300,7 +300,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payer_ERP_D_JP__c: string;
+    Payer_ERP_D_JP__c?: string;
     /**
      * <h3><b>Payer ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -311,7 +311,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payer_ID__c: string;
+    Payer_ID__c?: string;
     /**
      * <h3><b>Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -321,7 +321,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price__c: number;
+    Price__c?: number;
     /**
      * <h3><b>Price List Code (D-JP)</b></h3>
      * <h4>Field Attributes</h4>
@@ -332,7 +332,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price_List_Code_D_JP__c: string;
+    Price_List_Code_D_JP__c?: string;
     /**
      * <h3><b>Price List Description (D-JP)</b></h3>
      * <h4>Field Attributes</h4>
@@ -349,7 +349,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other Dealer</code></td><td>Other Dealer</td><td nowrap>true</td></tr>
      * </table>
      */
-    Price_List_Description_D_JP__c: string;
+    Price_List_Description_D_JP__c?: string;
     /**
      * <h3><b>Product Group 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -360,7 +360,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_1__c: string;
+    Product_Group_1__c?: string;
     /**
      * <h3><b>Product Group 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -371,7 +371,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_2__c: string;
+    Product_Group_2__c?: string;
     /**
      * <h3><b>Product Group 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -382,7 +382,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_3__c: string;
+    Product_Group_3__c?: string;
     /**
      * <h3><b>Product Group 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -393,7 +393,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_4__c: string;
+    Product_Group_4__c?: string;
     /**
      * <h3><b>Product Group 4 Code (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -404,7 +404,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Group_HQ__c: string;
+    Product_Group_HQ__c?: string;
     /**
      * <h3><b>Product ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -415,7 +415,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_ID__c: string;
+    Product_ID__c?: string;
     /**
      * <h3><b>Project Element</b></h3>
      * <h4>Field Attributes</h4>
@@ -426,7 +426,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project_Element__c: string;
+    Project_Element__c?: string;
     /**
      * <h3><b>Purchasing Contract External ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -437,7 +437,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Purchasing_Contract_External_ID__c: string;
+    Purchasing_Contract_External_ID__c?: string;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -448,7 +448,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity__c: number;
+    Quantity__c?: number;
     /**
      * <h3><b>Sales Attribute 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -459,7 +459,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Attribute_1__c: string;
+    Sales_Attribute_1__c?: string;
     /**
      * <h3><b>Sales Attribute 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -470,7 +470,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Attribute_2__c: string;
+    Sales_Attribute_2__c?: string;
     /**
      * <h3><b>Sales Attribute 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -481,7 +481,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Attribute_3__c: string;
+    Sales_Attribute_3__c?: string;
     /**
      * <h3><b>Sales Attribute 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -492,7 +492,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Attribute_4__c: string;
+    Sales_Attribute_4__c?: string;
     /**
      * <h3><b>Sales Attribute 5</b></h3>
      * <h4>Field Attributes</h4>
@@ -503,7 +503,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Attribute_5__c: string;
+    Sales_Attribute_5__c?: string;
     /**
      * <h3><b>Sales History External ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -514,7 +514,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Sales_History_External_ID__c: string;
+    Sales_History_External_ID__c?: string;
     /**
      * <h3><b>Sales Owner Salesman ID (HQ)</b></h3>
      * <h4>Field Attributes</h4>
@@ -525,7 +525,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Owner_Salesman_ID_HQ__c: string;
+    Sales_Owner_Salesman_ID_HQ__c?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -536,7 +536,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
     /**
      * <h3><b>SIMPLANT Guide Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -547,7 +547,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SIMPLANT_Guide_Type__c: string;
+    SIMPLANT_Guide_Type__c?: string;
     /**
      * <h3><b>Total Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -558,7 +558,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Price__c: number;
+    Total_Price__c?: number;
     /**
      * <h3><b>Total Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -570,7 +570,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Value__c: number;
+    Total_Value__c?: number;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -587,7 +587,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Internal</code></td><td>Internal</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type__c: string;
+    Type__c?: string;
     /**
      * <h3><b>Unearned Revenue</b></h3>
      * <h4>Field Attributes</h4>
@@ -597,7 +597,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Unearned_Revenue__c: number;
+    Unearned_Revenue__c?: number;
     /**
      * <h3><b>Universal Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -608,7 +608,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Universal_Id__c: string;
+    Universal_Id__c?: string;
     /**
      * <h3><b>ATL Implant Use Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -620,7 +620,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Use_Case__c: string;
+    Use_Case__c?: string;
     /**
      * <h3><b>Voucher Expiry Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -630,7 +630,7 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Voucher_Expiry_Date__c: Date;
+    Voucher_Expiry_Date__c?: Date;
     /**
      * <h3><b>Voucher Validity</b></h3>
      * <h4>Field Attributes</h4>
@@ -641,5 +641,5 @@ declare interface TBDAnalytics_Sales_History__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Voucher_Validity__c: string;
+    Voucher_Validity__c?: string;
 }

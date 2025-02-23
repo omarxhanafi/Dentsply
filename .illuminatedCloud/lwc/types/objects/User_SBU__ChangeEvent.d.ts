@@ -2,16 +2,16 @@
 
 declare interface User_SBU__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
     /**
      * <h3><b>SBU Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,9 +22,9 @@ declare interface User_SBU__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_Name__c: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    SBU_Name__c?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
     /**
      * <h3><b>User Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,5 +35,5 @@ declare interface User_SBU__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Type__c: string;
+    User_Type__c?: string;
 }

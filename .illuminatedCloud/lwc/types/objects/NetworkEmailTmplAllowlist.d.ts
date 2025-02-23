@@ -2,16 +2,16 @@
 
 declare interface NetworkEmailTmplAllowlist extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EmailTemplate: EmailTemplate;
-    EmailTemplateId: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Network: Network;
-    NetworkId: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EmailTemplate?: EmailTemplate;
+    EmailTemplateId?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Network?: Network;
+    NetworkId?: string;
+    SystemModstamp?: string;
 }

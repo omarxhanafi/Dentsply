@@ -2,14 +2,14 @@
 
 declare interface maps__ArcGISBatchPushTest__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>ObjectName</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,7 +20,7 @@ declare interface maps__ArcGISBatchPushTest__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ObjectName__c: string;
+    maps__ObjectName__c?: string;
     /**
      * <h3><b>RecordId</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface maps__ArcGISBatchPushTest__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RecordId__c: string;
+    maps__RecordId__c?: string;
     /**
      * <h3><b>Result</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,9 +42,9 @@ declare interface maps__ArcGISBatchPushTest__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Result__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__Result__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

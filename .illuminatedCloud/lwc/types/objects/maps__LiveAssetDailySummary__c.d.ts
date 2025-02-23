@@ -5,68 +5,68 @@
  */
 declare interface maps__LiveAssetDailySummary__c extends SObject 
 {
-    ActivityHistories: ActivityHistory[];
+    ActivityHistories?: ActivityHistory[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    Events: Event[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    Emails?: EmailMessage[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastActivityDate: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastActivityDate?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Average Stop Time (Hours)</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,7 +77,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AverageStopTimeHours__c: number;
+    maps__AverageStopTimeHours__c?: number;
     /**
      * <h3><b>Average Stop Time (Minutes)</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,7 +88,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AverageStopTimeMinutes__c: number;
+    maps__AverageStopTimeMinutes__c?: number;
     /**
      * <h3><b>Count of Events - Device Battery On</b></h3>
      * <p>Count of the device battery on events recorded that day, as defined in the daily summary configuration</p>
@@ -101,7 +101,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__CountOfEventsDeviceBatteryOn__c: number;
+    maps__CountOfEventsDeviceBatteryOn__c?: number;
     /**
      * <h3><b>Count of Events - Speed Threshold</b></h3>
      * <p>Count of the speed threshold events recorded that day, as defined in the daily summary configuration</p>
@@ -114,7 +114,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__CountOfEventsSpeedThreshold__c: number;
+    maps__CountOfEventsSpeedThreshold__c?: number;
     /**
      * <h3><b>Count of Events - Speeding</b></h3>
      * <h4>Field Attributes</h4>
@@ -126,7 +126,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__CountOfSummaryEventsSpeeding__c: number;
+    maps__CountOfSummaryEventsSpeeding__c?: number;
     /**
      * <h3><b>Count of Events - Stops</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,7 +138,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__CountOfSummaryEventsStops__c: number;
+    maps__CountOfSummaryEventsStops__c?: number;
     /**
      * <h3><b>Summary Date</b></h3>
      * <p>Date and time report generated</p>
@@ -148,7 +148,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Date__c: Date;
+    maps__Date__c?: Date;
     /**
      * <h3><b>Device Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -159,7 +159,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__DeviceId__c: string;
+    maps__DeviceId__c?: string;
     /**
      * <h3><b>Drive Time (Hours)</b></h3>
      * <h4>Field Attributes</h4>
@@ -170,7 +170,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DriveTimeHours__c: number;
+    maps__DriveTimeHours__c?: number;
     /**
      * <h3><b>Drive Time (Minutes)</b></h3>
      * <h4>Field Attributes</h4>
@@ -181,7 +181,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DriveTimeMinutes__c: number;
+    maps__DriveTimeMinutes__c?: number;
     /**
      * <h3><b>Driving During Holiday Off</b></h3>
      * <p>Indication if a trip took place within denoted holiday off</p>
@@ -191,7 +191,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__DrivingDuringHolidayOff__c: boolean;
+    maps__DrivingDuringHolidayOff__c?: boolean;
     /**
      * <h3><b>Driving Outside Working Hours</b></h3>
      * <p>Indication if a trip took place outside of denoted working hours</p>
@@ -201,7 +201,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__DrivingOutsideWorkingHours__c: boolean;
+    maps__DrivingOutsideWorkingHours__c?: boolean;
     /**
      * <h3><b>First Message Content</b></h3>
      * <p>This field represents the full data content of the first point received by aws for the day.</p>
@@ -210,7 +210,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__FirstMessageContent__c: string;
+    maps__FirstMessageContent__c?: string;
     /**
      * <h3><b>First Message Timestamp</b></h3>
      * <p>This field represents the date and time of the first point received by aws for the day.</p>
@@ -220,7 +220,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__FirstMessageTimestamp__c: string;
+    maps__FirstMessageTimestamp__c?: string;
     /**
      * <h3><b>Number of Hard Acceleration Events</b></h3>
      * <p>Number of Quick Acceleration message count</p>
@@ -232,7 +232,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__HardAccelerationCount__c: number;
+    maps__HardAccelerationCount__c?: number;
     /**
      * <h3><b>Number of Hard Braking Events</b></h3>
      * <h4>Field Attributes</h4>
@@ -243,7 +243,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__HardBrakingCount__c: number;
+    maps__HardBrakingCount__c?: number;
     /**
      * <h3><b>Last Message Content</b></h3>
      * <p>This field represents the full data content of the last point received by aws for the day.</p>
@@ -252,7 +252,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__LastMessageContent__c: string;
+    maps__LastMessageContent__c?: string;
     /**
      * <h3><b>Last Message Timestamp</b></h3>
      * <p>This field represents the date and time of the last point received by aws for the day.</p>
@@ -262,7 +262,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LastMessageTimestamp__c: string;
+    maps__LastMessageTimestamp__c?: string;
     /**
      * <h3><b>Live Asset</b></h3>
      * <h4>Field Attributes</h4>
@@ -271,7 +271,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveAsset__c: string;
+    maps__LiveAsset__c?: string;
     /**
      * <h3><b>Live Asset</b></h3>
      * <h4>Field Attributes</h4>
@@ -280,8 +280,8 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveAsset__r: maps__LiveAsset__c;
-    maps__LiveAssetDailySummaryEvents__r: LiveAssetDailySummaryEvent__c[];
+    maps__LiveAsset__r?: maps__LiveAsset__c;
+    maps__LiveAssetDailySummaryEvents__r?: LiveAssetDailySummaryEvent__c[];
     /**
      * <h3><b>Live Daily Summary Configuration</b></h3>
      * <h4>Field Attributes</h4>
@@ -290,7 +290,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveDailySummaryConfig__c: string;
+    maps__LiveDailySummaryConfig__c?: string;
     /**
      * <h3><b>Live Daily Summary Configuration</b></h3>
      * <h4>Field Attributes</h4>
@@ -299,8 +299,8 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveDailySummaryConfig__r: maps__LiveDailySummaryConfig__c;
-    maps__LiveDailyTrips__r: LiveDailyDriveTrip__c[];
+    maps__LiveDailySummaryConfig__r?: maps__LiveDailySummaryConfig__c;
+    maps__LiveDailyTrips__r?: LiveDailyDriveTrip__c[];
     /**
      * <h3><b>Driver</b></h3>
      * <h4>Field Attributes</h4>
@@ -309,7 +309,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveDriver__c: string;
+    maps__LiveDriver__c?: string;
     /**
      * <h3><b>Driver</b></h3>
      * <h4>Field Attributes</h4>
@@ -318,7 +318,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveDriver__r: maps__LiveDriver__c;
+    maps__LiveDriver__r?: maps__LiveDriver__c;
     /**
      * <h3><b>Live IoT Device</b></h3>
      * <p>Lookup to the Live IoT Device object</p>
@@ -328,7 +328,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveIoTDevice__c: string;
+    maps__LiveIoTDevice__c?: string;
     /**
      * <h3><b>Live IoT Device</b></h3>
      * <p>Lookup to the Live IoT Device object</p>
@@ -338,9 +338,9 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LiveIoTDevice__r: maps__LiveIoTDevice__c;
-    maps__LiveIoTDevices__r: LiveIoTDevice__c[];
-    maps__LiveSummaryStateMileages__r: LiveSummaryStateMileage__c[];
+    maps__LiveIoTDevice__r?: maps__LiveIoTDevice__c;
+    maps__LiveIoTDevices__r?: LiveIoTDevice__c[];
+    maps__LiveSummaryStateMileages__r?: LiveSummaryStateMileage__c[];
     /**
      * <h3><b>Maximum Speed (KPH)</b></h3>
      * <h4>Field Attributes</h4>
@@ -351,7 +351,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MaximumSpeedKPH__c: number;
+    maps__MaximumSpeedKPH__c?: number;
     /**
      * <h3><b>Maximum Speed (MPH)</b></h3>
      * <p>Top speed traveled</p>
@@ -364,7 +364,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MaximumSpeedMPH__c: number;
+    maps__MaximumSpeedMPH__c?: number;
     /**
      * <h3><b>Odometer (km)</b></h3>
      * <h4>Field Attributes</h4>
@@ -375,7 +375,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__OdometerKm__c: number;
+    maps__OdometerKm__c?: number;
     /**
      * <h3><b>Odometer (mi)</b></h3>
      * <p>Last available odometer reading of the day, in miles</p>
@@ -388,7 +388,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__OdometerMiles__c: number;
+    maps__OdometerMiles__c?: number;
     /**
      * <h3><b>Total Distance (km)</b></h3>
      * <h4>Field Attributes</h4>
@@ -399,7 +399,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TripDistanceKm__c: number;
+    maps__TripDistanceKm__c?: number;
     /**
      * <h3><b>Total Distance (mi)</b></h3>
      * <p>This is the value &#39;distance&#39; from the AWS response</p>
@@ -412,7 +412,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TripDistanceMiles__c: number;
+    maps__TripDistanceMiles__c?: number;
     /**
      * <h3><b>User</b></h3>
      * <p>The User that is assigned to the associated Device at the time that the Summary was created</p>
@@ -422,7 +422,7 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__User__c: string;
+    maps__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <p>The User that is assigned to the associated Device at the time that the Summary was created</p>
@@ -432,65 +432,65 @@ declare interface maps__LiveAssetDailySummary__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__User__r: User;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    OpenActivities: OpenActivity[];
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    maps__User__r?: User;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    OpenActivities?: OpenActivity[];
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: LiveAssetDailySummary__Share[];
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: LiveAssetDailySummary__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: LiveAssetDailySummary__Share[];
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: LiveAssetDailySummary__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    Tasks?: Task[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

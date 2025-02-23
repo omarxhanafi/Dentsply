@@ -96,6 +96,12 @@ declare module "@salesforce/schema/ProcedurePlanDefinition.ProcedurePlanVersionC
     export default ProcedurePlanVersionCanonicalMappings;
 }
 
+declare module "@salesforce/schema/ProcedurePlanDefinition.ProcessType" {
+    import { FieldId } from "@salesforce/schema";
+    const ProcessType: FieldId;
+    export default ProcessType;
+}
+
 declare module "@salesforce/schema/ProcedurePlanDefinition.SystemModstamp" {
     import { FieldId } from "@salesforce/schema";
     const SystemModstamp: FieldId;

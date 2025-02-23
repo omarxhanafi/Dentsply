@@ -9,7 +9,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Attendee #10</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee10__c: string;
+    Attendee10__c?: string;
     /**
      * <h3><b>Attendee #1</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee1__c: string;
+    Attendee1__c?: string;
     /**
      * <h3><b>Attendee #2</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee2__c: string;
+    Attendee2__c?: string;
     /**
      * <h3><b>Attendee #3</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,7 +61,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee3__c: string;
+    Attendee3__c?: string;
     /**
      * <h3><b>Attendee #4</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee4__c: string;
+    Attendee4__c?: string;
     /**
      * <h3><b>Attendee #5</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,7 +83,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee5__c: string;
+    Attendee5__c?: string;
     /**
      * <h3><b>Attendee #6</b></h3>
      * <h4>Field Attributes</h4>
@@ -94,7 +94,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee6__c: string;
+    Attendee6__c?: string;
     /**
      * <h3><b>Attendee #7</b></h3>
      * <h4>Field Attributes</h4>
@@ -105,7 +105,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee7__c: string;
+    Attendee7__c?: string;
     /**
      * <h3><b>Attendee #8</b></h3>
      * <h4>Field Attributes</h4>
@@ -116,7 +116,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee8__c: string;
+    Attendee8__c?: string;
     /**
      * <h3><b>Attendee #9</b></h3>
      * <h4>Field Attributes</h4>
@@ -127,8 +127,8 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attendee9__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Attendee9__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Content</b></h3>
      * <h4>Field Attributes</h4>
@@ -170,7 +170,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">VDW.CONNECT App</code></td><td>VDW.CONNECT App</td><td nowrap>true</td></tr>
      * </table>
      */
-    Content__c: string;
+    Content__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -179,11 +179,11 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Delivery Complete (Incl. DFU)</b></h3>
      * <h4>Field Attributes</h4>
@@ -192,7 +192,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    DeliveryComplete__c: boolean;
+    DeliveryComplete__c?: boolean;
     /**
      * <h3><b>Document Language</b></h3>
      * <h4>Field Attributes</h4>
@@ -208,7 +208,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">German</code></td><td>German</td><td nowrap>true</td></tr>
      * </table>
      */
-    Document_Language__c: string;
+    Document_Language__c?: string;
     /**
      * <h3><b>Document Locale</b></h3>
      * <h4>Field Attributes</h4>
@@ -220,7 +220,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Document_Locale__c: string;
+    Document_Locale__c?: string;
     /**
      * <h3><b>EDDY Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -231,7 +231,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EDDYComments__c: string;
+    EDDYComments__c?: string;
     /**
      * <h3><b>Email Dental Office</b></h3>
      * <h4>Field Attributes</h4>
@@ -242,7 +242,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EmailDentalOffice__c: string;
+    EmailDentalOffice__c?: string;
     /**
      * <h3><b>Follow-Up?</b></h3>
      * <h4>Field Attributes</h4>
@@ -260,7 +260,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inside Sales 8W</code></td><td>Inside Sales (After 8W)</td><td nowrap>true</td></tr>
      * </table>
      */
-    Follow_Up__c: string;
+    Follow_Up__c?: string;
     /**
      * <h3><b>Instruction Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -270,11 +270,11 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Today()</code></td></tr>
      * </table>
      */
-    InstructionDate__c: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    InstructionDate__c?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Other Details</b></h3>
      * <h4>Field Attributes</h4>
@@ -285,7 +285,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OtherDetails__c: string;
+    OtherDetails__c?: string;
     /**
      * <h3><b>Product Area</b></h3>
      * <p>Controlling products being available to be picked</p>
@@ -301,7 +301,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CAS</code></td><td>CAS</td><td nowrap>true</td></tr>
      * </table>
      */
-    ProductArea__c: string;
+    ProductArea__c?: string;
     /**
      * <h3><b>Product Instructor</b></h3>
      * <h4>Field Attributes</h4>
@@ -310,7 +310,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductInstructor__c: string;
+    ProductInstructor__c?: string;
     /**
      * <h3><b>Product Instructor</b></h3>
      * <h4>Field Attributes</h4>
@@ -319,7 +319,7 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductInstructor__r: User;
+    ProductInstructor__r?: User;
     /**
      * <h3><b>Registered in Siroforce</b></h3>
      * <h4>Field Attributes</h4>
@@ -328,6 +328,6 @@ declare interface ProductInstruction__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Registered_in_SIroforce__c: boolean;
-    ReplayId: string;
+    Registered_in_SIroforce__c?: boolean;
+    ReplayId?: string;
 }

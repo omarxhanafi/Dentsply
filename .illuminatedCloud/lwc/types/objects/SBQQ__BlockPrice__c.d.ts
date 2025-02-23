@@ -6,22 +6,22 @@
  */
 declare interface SBQQ__BlockPrice__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__PriceTier__c.SBQQ__OriginalBlockPrice__c}.
      */
-    PriceTiers__r: SBQQ__PriceTier__c[];
+    PriceTiers__r?: SBQQ__PriceTier__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__QuoteLine__c.SBQQ__BlockPrice__c}.
      */
-    QuoteLines__r: SBQQ__QuoteLine__c[];
+    QuoteLines__r?: SBQQ__QuoteLine__c[];
     /**
      * <h3><b>Effective Date</b></h3>
      * <p>The date when this block price is effective.  The value is taken when a block price snapshot is taken at order creation time.</p>
@@ -32,7 +32,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__EffectiveDate__c: Date;
+    SBQQ__EffectiveDate__c?: Date;
     /**
      * <h3><b>Lower Bound</b></h3>
      * <p>Lower bound of the quantity range for this block price.</p>
@@ -44,7 +44,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__LowerBound__c: number;
+    SBQQ__LowerBound__c?: number;
     /**
      * <h3><b>Order Product</b></h3>
      * <p>The order product this Block Price applies to when the order product is created.</p>
@@ -55,7 +55,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OrderProduct__c: string;
+    SBQQ__OrderProduct__c?: string;
     /**
      * <h3><b>Order Product</b></h3>
      * <p>The order product this Block Price applies to when the order product is created.</p>
@@ -66,7 +66,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OrderProduct__r: OrderItem;
+    SBQQ__OrderProduct__r?: OrderItem;
     /**
      * <h3><b>Original Block Price</b></h3>
      * <p>The original product block price where this block price is snapshotted from.</p>
@@ -77,7 +77,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OriginalBlockPrice__c: string;
+    SBQQ__OriginalBlockPrice__c?: string;
     /**
      * <h3><b>Original Block Price</b></h3>
      * <p>The original product block price where this block price is snapshotted from.</p>
@@ -88,7 +88,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__OriginalBlockPrice__r: SBQQ__BlockPrice__c;
+    SBQQ__OriginalBlockPrice__r?: SBQQ__BlockPrice__c;
     /**
      * <h3><b>Price</b></h3>
      * <p>Price for the parent product in specified quantity range.</p>
@@ -99,7 +99,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Price__c: number;
+    SBQQ__Price__c?: number;
     /**
      * <h3><b>Price Book</b></h3>
      * <p>Price Book to which block pricing applies.</p>
@@ -110,7 +110,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PriceBook2__c: string;
+    SBQQ__PriceBook2__c?: string;
     /**
      * <h3><b>Price Book</b></h3>
      * <p>Price Book to which block pricing applies.</p>
@@ -121,7 +121,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PriceBook2__r: Pricebook2;
+    SBQQ__PriceBook2__r?: Pricebook2;
     /**
      * <h3><b>Product</b></h3>
      * <p>Product to which block pricing applies.</p>
@@ -132,7 +132,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__c: string;
+    SBQQ__Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>Product to which block pricing applies.</p>
@@ -143,7 +143,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__r: Product2;
+    SBQQ__Product__r?: Product2;
     /**
      * <h3><b>Quote Line</b></h3>
      * <p>The quote line where this block price applies to when an order product is created.</p>
@@ -154,7 +154,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteLine__c: string;
+    SBQQ__QuoteLine__c?: string;
     /**
      * <h3><b>Quote Line</b></h3>
      * <p>The quote line where this block price applies to when an order product is created.</p>
@@ -165,7 +165,7 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__QuoteLine__r: SBQQ__QuoteLine__c;
+    SBQQ__QuoteLine__r?: SBQQ__QuoteLine__c;
     /**
      * <h3><b>Upper Bound</b></h3>
      * <p>Upper bound of the quantity range for this block price.</p>
@@ -177,13 +177,13 @@ declare interface SBQQ__BlockPrice__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UpperBound__c: number;
+    SBQQ__UpperBound__c?: number;
     /**
      * The reciprocal relationship for {@link SBQQ__BlockPrice__c.SBQQ__OriginalBlockPrice__c}.
      */
-    SnapshotBlockPrices__r: SBQQ__BlockPrice__c[];
+    SnapshotBlockPrices__r?: SBQQ__BlockPrice__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__WebQuoteLine__c.SBQQ__BlockPrice__c}.
      */
-    WebQuoteLines__r: SBQQ__WebQuoteLine__c[];
+    WebQuoteLines__r?: SBQQ__WebQuoteLine__c[];
 }

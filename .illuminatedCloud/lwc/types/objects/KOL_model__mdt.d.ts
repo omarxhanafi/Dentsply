@@ -90,7 +90,7 @@ declare interface KOL_model__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZA</code></td><td>ZA</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Currency</b></h3>
      * <h4>Field Attributes</h4>
@@ -164,11 +164,11 @@ declare interface KOL_model__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZAR</code></td><td>ZAR</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Currency__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
+    Currency__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
     /**
      * <h3><b>Max</b></h3>
      * <h4>Field Attributes</h4>
@@ -179,7 +179,7 @@ declare interface KOL_model__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Max__c: number;
+    Max__c?: number;
     /**
      * <h3><b>Min</b></h3>
      * <h4>Field Attributes</h4>
@@ -190,8 +190,8 @@ declare interface KOL_model__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Min__c: number;
-    NamespacePrefix: string;
+    Min__c?: number;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Profession Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -212,7 +212,7 @@ declare interface KOL_model__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Support Group 4</code></td><td>Support Group 4</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    ProfessionGroup__c: string;
+    ProfessionGroup__c?: string;
     /**
      * <h3><b>Professor required</b></h3>
      * <p>Currently used for NL where we need to separate FMV rates between professors and &quot;non-professors&quot;</p>
@@ -222,9 +222,9 @@ declare interface KOL_model__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Professor__c: boolean;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Professor__c?: boolean;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>Tier</b></h3>
      * <h4>Field Attributes</h4>
@@ -240,5 +240,5 @@ declare interface KOL_model__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">TIER 3</code></td><td>TIER 3</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Tier__c: string;
+    Tier__c?: string;
 }

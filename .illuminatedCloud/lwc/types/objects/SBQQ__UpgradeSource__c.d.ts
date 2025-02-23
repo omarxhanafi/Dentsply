@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__UpgradeSource__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Source Product</b></h3>
      * <p>Product being upgraded.</p>
@@ -24,7 +24,7 @@ declare interface SBQQ__UpgradeSource__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SourceProduct__c: string;
+    SBQQ__SourceProduct__c?: string;
     /**
      * <h3><b>Source Product</b></h3>
      * <p>Product being upgraded.</p>
@@ -35,7 +35,7 @@ declare interface SBQQ__UpgradeSource__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SourceProduct__r: Product2;
+    SBQQ__SourceProduct__r?: Product2;
     /**
      * <h3><b>Upgrade Conversion Rate</b></h3>
      * <p>The conversion rate between the upgrade product and the source product.</p>
@@ -47,7 +47,7 @@ declare interface SBQQ__UpgradeSource__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UpgradeConversionRate__c: string;
+    SBQQ__UpgradeConversionRate__c?: string;
     /**
      * <h3><b>Upgrade Product</b></h3>
      * <p>Upgrade product.</p>
@@ -58,7 +58,7 @@ declare interface SBQQ__UpgradeSource__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UpgradeProduct__c: string;
+    SBQQ__UpgradeProduct__c?: string;
     /**
      * <h3><b>Upgrade Product</b></h3>
      * <p>Upgrade product.</p>
@@ -69,5 +69,5 @@ declare interface SBQQ__UpgradeSource__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UpgradeProduct__r: Product2;
+    SBQQ__UpgradeProduct__r?: Product2;
 }

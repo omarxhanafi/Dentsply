@@ -2,12 +2,12 @@
 
 declare interface ProcessNode extends SObject 
 {
-    Description: string;
-    DeveloperName: string;
-    Name: string;
-    ProcessDefinition: ProcessDefinition;
-    ProcessDefinitionId: string;
-    ProcessNode: ProcessInstanceHistory;
-    StepNode: ProcessInstanceStep;
-    SystemModstamp: string;
+    Description?: string;
+    DeveloperName?: string;
+    Name?: string;
+    ProcessDefinition?: ProcessDefinition;
+    ProcessDefinitionId?: string;
+    ProcessNode?: ProcessInstanceHistory;
+    StepNode?: ProcessInstanceStep;
+    SystemModstamp?: string;
 }

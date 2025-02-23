@@ -2,11 +2,11 @@
 
 declare interface AppTabMember extends SObject 
 {
-    AppDefinition: AppDefinition;
-    AppDefinitionId: string;
-    DurableId: string;
-    SortOrder: number;
-    TabDefinition: TabDefinition;
-    TabDefinitionId: string;
-    WorkspaceDriverField: string;
+    AppDefinition?: AppDefinition;
+    AppDefinitionId?: string;
+    DurableId?: string;
+    SortOrder?: number;
+    TabDefinition?: TabDefinition;
+    TabDefinitionId?: string;
+    WorkspaceDriverField?: string;
 }

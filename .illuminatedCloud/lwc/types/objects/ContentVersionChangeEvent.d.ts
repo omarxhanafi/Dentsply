@@ -38,55 +38,55 @@ declare interface ContentVersionChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Market Company AT Nordic</code></td><td>Market Company AT Nordic</td><td nowrap>true</td></tr>
      * </table>
      */
-    BU_Dental_Contact__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    ContentBody: ContentBody;
-    ContentBodyId: string;
-    ContentDocument: ContentDocument;
-    ContentDocumentId: string;
-    ContentLocation: string;
-    ContentModifiedBy: User;
-    ContentModifiedById: string;
-    ContentModifiedDate: string;
-    ContentSize: number;
-    ContentUrl: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
-    ExternalDataSource: ExternalDataSource;
-    ExternalDataSourceId: string;
-    ExternalDocumentInfo1: string;
-    ExternalDocumentInfo2: string;
-    FeaturedContentBoost: number;
-    FeaturedContentDate: Date;
-    FileType: string;
-    FirstPublishLocation: SObject;
-    FirstPublishLocationId: string;
-    IsLatest: boolean;
-    IsMajorVersion: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    NegativeRatingCount: number;
-    Network: Network;
-    NetworkId: string;
-    Origin: string;
-    Owner: User;
-    OwnerId: string;
-    PathOnClient: string;
-    PositiveRatingCount: number;
-    PublishStatus: string;
-    RatingCount: number;
-    ReasonForChange: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    ReplayId: string;
-    SharingPrivacy: string;
-    TextPreview: string;
-    Title: string;
+    BU_Dental_Contact__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    ContentBody?: ContentBody;
+    ContentBodyId?: string;
+    ContentDocument?: ContentDocument;
+    ContentDocumentId?: string;
+    ContentLocation?: string;
+    ContentModifiedBy?: User;
+    ContentModifiedById?: string;
+    ContentModifiedDate?: string;
+    ContentSize?: number;
+    ContentUrl?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
+    ExternalDataSource?: ExternalDataSource;
+    ExternalDataSourceId?: string;
+    ExternalDocumentInfo1?: string;
+    ExternalDocumentInfo2?: string;
+    FeaturedContentBoost?: number;
+    FeaturedContentDate?: Date;
+    FileType?: string;
+    FirstPublishLocation?: SObject;
+    FirstPublishLocationId?: string;
+    IsLatest?: boolean;
+    IsMajorVersion?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    NegativeRatingCount?: number;
+    Network?: Network;
+    NetworkId?: string;
+    Origin?: string;
+    Owner?: User;
+    OwnerId?: string;
+    PathOnClient?: string;
+    PositiveRatingCount?: number;
+    PublishStatus?: string;
+    RatingCount?: number;
+    ReasonForChange?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    ReplayId?: string;
+    SharingPrivacy?: string;
+    TextPreview?: string;
+    Title?: string;
     /**
      * <h3><b>Type of Material</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,7 +115,7 @@ declare interface ContentVersionChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DP Digital Presentation</code></td><td>DP Digital Presentation</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type_of_Material__c: string;
+    Type_of_Material__c?: string;
     /**
      * <h3><b>Type of Use</b></h3>
      * <h4>Field Attributes</h4>
@@ -130,6 +130,6 @@ declare interface ContentVersionChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">For INTERNAL use</code></td><td>For INTERNAL use</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type_of_Use__c: string;
-    VersionNumber: string;
+    Type_of_Use__c?: string;
+    VersionNumber?: string;
 }

@@ -2,14 +2,14 @@
 
 declare interface RecordsetFltrCritMonitorHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    RecordsetFltrCritMonitor: RecordsetFltrCritMonitor;
-    RecordsetFltrCritMonitorId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    RecordsetFltrCritMonitor?: RecordsetFltrCritMonitor;
+    RecordsetFltrCritMonitorId?: string;
 }

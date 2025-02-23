@@ -74,10 +74,10 @@ declare interface Integration_Market_Country_Mapping__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZA</code></td><td>ZA</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Customer Group Exception</b></h3>
      * <p>Add customer group, when ownership should be overwritten based on Customer Group. Created to handle DEX-customers who has SE numbers but can be differentiated from Swedish customers by customer group</p>
@@ -88,11 +88,11 @@ declare interface Integration_Market_Country_Mapping__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Group_Exception__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Customer_Group_Exception__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -130,7 +130,7 @@ declare interface Integration_Market_Country_Mapping__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZA</code></td><td>ZA</td><td nowrap>true</td></tr>
      * </table>
      */
-    Market__c: string;
+    Market__c?: string;
     /**
      * <h3><b>Movex # Prefix</b></h3>
      * <h4>Field Attributes</h4>
@@ -202,6 +202,6 @@ declare interface Integration_Market_Country_Mapping__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZA</code></td><td>ZA</td><td nowrap>true</td></tr>
      * </table>
      */
-    Movex_Prefix__c: string;
-    Name: string;
+    Movex_Prefix__c?: string;
+    Name?: string;
 }

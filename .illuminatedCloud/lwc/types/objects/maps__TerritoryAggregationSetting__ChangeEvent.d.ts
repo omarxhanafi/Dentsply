@@ -2,14 +2,14 @@
 
 declare interface maps__TerritoryAggregationSetting__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Maps Marker Layer</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,7 +18,7 @@ declare interface maps__TerritoryAggregationSetting__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MarkerLayer__c: string;
+    maps__MarkerLayer__c?: string;
     /**
      * <h3><b>Maps Marker Layer</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface maps__TerritoryAggregationSetting__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MarkerLayer__r: maps__MarkerLayer__c;
+    maps__MarkerLayer__r?: maps__MarkerLayer__c;
     /**
      * <h3><b>Maps Territory Layer</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface maps__TerritoryAggregationSetting__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__Layer__c})</td></tr>
      * </table>
      */
-    maps__TerritoryLayer__c: string;
+    maps__TerritoryLayer__c?: string;
     /**
      * <h3><b>Maps Territory Layer</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface maps__TerritoryAggregationSetting__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__Layer__c})</td></tr>
      * </table>
      */
-    maps__TerritoryLayer__r: maps__Layer__c;
+    maps__TerritoryLayer__r?: maps__Layer__c;
     /**
      * <h3><b>Value Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface maps__TerritoryAggregationSetting__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ValueField__c: string;
-    Name: string;
-    ReplayId: string;
+    maps__ValueField__c?: string;
+    Name?: string;
+    ReplayId?: string;
 }

@@ -14,7 +14,7 @@ declare interface Integration_Progress__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Actual_Finished_Date__c: string;
+    Actual_Finished_Date__c?: string;
     /**
      * <h3><b>Actual Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,10 +24,10 @@ declare interface Integration_Progress__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Actual_Start_Date__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Actual_Start_Date__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Estimated Finished Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -37,7 +37,7 @@ declare interface Integration_Progress__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Estimated_Finished_Date__c: string;
+    Estimated_Finished_Date__c?: string;
     /**
      * <h3><b>Estimated Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,7 +47,7 @@ declare interface Integration_Progress__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Estimated_Start_Date__c: string;
+    Estimated_Start_Date__c?: string;
     /**
      * <h3><b>External Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,12 +58,12 @@ declare interface Integration_Progress__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    External_Id__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    External_Id__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -80,7 +80,7 @@ declare interface Integration_Progress__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AU</code></td><td>AU</td><td nowrap>true</td></tr>
      * </table>
      */
-    Source__c: string;
+    Source__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface Integration_Progress__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Step</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,5 +108,5 @@ declare interface Integration_Progress__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Einstein Analytics</code></td><td>Einstein Analytics</td><td nowrap>true</td></tr>
      * </table>
      */
-    Step__c: string;
+    Step__c?: string;
 }

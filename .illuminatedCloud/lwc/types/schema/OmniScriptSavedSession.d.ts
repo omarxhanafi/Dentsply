@@ -6,6 +6,12 @@ declare module "@salesforce/schema/OmniScriptSavedSession" {
     export default OmniScriptSavedSession;
 }
 
+declare module "@salesforce/schema/OmniScriptSavedSession.ActivityHistories" {
+    import { FieldId } from "@salesforce/schema";
+    const ActivityHistories: FieldId;
+    export default ActivityHistories;
+}
+
 declare module "@salesforce/schema/OmniScriptSavedSession.AttachedContentDocuments" {
     import { FieldId } from "@salesforce/schema";
     const AttachedContentDocuments: FieldId;
@@ -70,6 +76,24 @@ declare module "@salesforce/schema/OmniScriptSavedSession.DocEnvelopeRefObjects"
     import { FieldId } from "@salesforce/schema";
     const DocEnvelopeRefObjects: FieldId;
     export default DocEnvelopeRefObjects;
+}
+
+declare module "@salesforce/schema/OmniScriptSavedSession.Emails" {
+    import { FieldId } from "@salesforce/schema";
+    const Emails: FieldId;
+    export default Emails;
+}
+
+declare module "@salesforce/schema/OmniScriptSavedSession.EventRelations" {
+    import { FieldId } from "@salesforce/schema";
+    const EventRelations: FieldId;
+    export default EventRelations;
+}
+
+declare module "@salesforce/schema/OmniScriptSavedSession.Events" {
+    import { FieldId } from "@salesforce/schema";
+    const Events: FieldId;
+    export default Events;
 }
 
 declare module "@salesforce/schema/OmniScriptSavedSession.FeedSubscriptionsForEntity" {
@@ -228,6 +252,12 @@ declare module "@salesforce/schema/OmniScriptSavedSession.OmniScriptVersionNumbe
     export default OmniScriptVersionNumber;
 }
 
+declare module "@salesforce/schema/OmniScriptSavedSession.OpenActivities" {
+    import { FieldId } from "@salesforce/schema";
+    const OpenActivities: FieldId;
+    export default OpenActivities;
+}
+
 declare module "@salesforce/schema/OmniScriptSavedSession.Owner" {
     import { FieldId } from "@salesforce/schema";
     const Owner: FieldId;
@@ -258,6 +288,12 @@ declare module "@salesforce/schema/OmniScriptSavedSession.ParentRecord" {
     export default ParentRecord;
 }
 
+declare module "@salesforce/schema/OmniScriptSavedSession.RecordAlertWhat" {
+    import { FieldId } from "@salesforce/schema";
+    const RecordAlertWhat: FieldId;
+    export default RecordAlertWhat;
+}
+
 declare module "@salesforce/schema/OmniScriptSavedSession.RelatedLabel" {
     import { FieldId } from "@salesforce/schema";
     const RelatedLabel: FieldId;
@@ -282,10 +318,22 @@ declare module "@salesforce/schema/OmniScriptSavedSession.RelatedRecordIdentifie
     export default RelatedRecordIdentifier;
 }
 
+declare module "@salesforce/schema/OmniScriptSavedSession.RelatedTo" {
+    import { FieldId } from "@salesforce/schema";
+    const RelatedTo: FieldId;
+    export default RelatedTo;
+}
+
 declare module "@salesforce/schema/OmniScriptSavedSession.RelatedType" {
     import { FieldId } from "@salesforce/schema";
     const RelatedType: FieldId;
     export default RelatedType;
+}
+
+declare module "@salesforce/schema/OmniScriptSavedSession.Relation" {
+    import { FieldId } from "@salesforce/schema";
+    const Relation: FieldId;
+    export default Relation;
 }
 
 declare module "@salesforce/schema/OmniScriptSavedSession.RelativeResumeUrl" {
@@ -348,8 +396,26 @@ declare module "@salesforce/schema/OmniScriptSavedSession.TargetObject" {
     export default TargetObject;
 }
 
+declare module "@salesforce/schema/OmniScriptSavedSession.TaskRelations" {
+    import { FieldId } from "@salesforce/schema";
+    const TaskRelations: FieldId;
+    export default TaskRelations;
+}
+
+declare module "@salesforce/schema/OmniScriptSavedSession.Tasks" {
+    import { FieldId } from "@salesforce/schema";
+    const Tasks: FieldId;
+    export default Tasks;
+}
+
 declare module "@salesforce/schema/OmniScriptSavedSession.UserRecordAccess" {
     import { FieldId } from "@salesforce/schema";
     const UserRecordAccess: FieldId;
     export default UserRecordAccess;
+}
+
+declare module "@salesforce/schema/OmniScriptSavedSession.What" {
+    import { FieldId } from "@salesforce/schema";
+    const What: FieldId;
+    export default What;
 }

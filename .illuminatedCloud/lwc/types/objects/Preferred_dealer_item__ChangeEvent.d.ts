@@ -10,7 +10,7 @@ declare interface Preferred_dealer_item__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,12 +19,12 @@ declare interface Preferred_dealer_item__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Account__r?: Account;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface Preferred_dealer_item__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__c: string;
+    Dealer__c?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface Preferred_dealer_item__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__r: Account;
+    Dealer__r?: Account;
     /**
      * <h3><b>Dealer email</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface Preferred_dealer_item__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_email__c: string;
+    Dealer_email__c?: string;
     /**
      * <h3><b>Default dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,13 +63,13 @@ declare interface Preferred_dealer_item__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Default_dealer__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    Default_dealer__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Product Categories</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,6 +89,6 @@ declare interface Preferred_dealer_item__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Prosthetics</code></td><td>Prosthetics</td><td nowrap>true</td></tr>
      * </table>
      */
-    ProductCategories__c: string;
-    ReplayId: string;
+    ProductCategories__c?: string;
+    ReplayId?: string;
 }

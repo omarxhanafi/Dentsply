@@ -2,18 +2,18 @@
 
 declare interface Prompt extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DeveloperName: string;
-    IsDeleted: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Localization: PromptLocalization[];
-    MasterLabel: string;
-    NamespacePrefix: string;
-    Parent: PromptVersion;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DeveloperName?: string;
+    IsDeleted?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Localization?: PromptLocalization[];
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    Parent?: PromptVersion;
+    SystemModstamp?: string;
 }

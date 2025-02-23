@@ -2,19 +2,19 @@
 
 declare interface DatasetExportPart extends SObject 
 {
-    CompressedDataFileLength: number;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DataFile: string;
-    DataFileLength: number;
-    DatasetExport: DatasetExport;
-    DatasetExportId: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Owner: string;
-    PartNumber: number;
-    SystemModstamp: string;
+    CompressedDataFileLength?: number;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataFile?: string;
+    DataFileLength?: number;
+    DatasetExport?: DatasetExport;
+    DatasetExportId?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Owner?: string;
+    PartNumber?: number;
+    SystemModstamp?: string;
 }

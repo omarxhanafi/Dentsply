@@ -2,13 +2,13 @@
 
 declare interface TagDefinition extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    Name: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
-    TagDefinition: AccountInvoiceSalesSummary__Tag;
-    Type: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    Name?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
+    TagDefinition?: AccountInvoiceSalesSummary__Tag;
+    Type?: string;
 }

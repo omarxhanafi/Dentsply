@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__ColumnMetadata__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Column Validation</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface SBQQ__ColumnMetadata__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ColumnValidation__c: string;
+    SBQQ__ColumnValidation__c?: string;
     /**
      * <h3><b>Field Column Size</b></h3>
      * <p>The column size for the field</p>
@@ -36,7 +36,7 @@ declare interface SBQQ__ColumnMetadata__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FieldColumnSize__c: number;
+    SBQQ__FieldColumnSize__c?: number;
     /**
      * <h3><b>Field Name</b></h3>
      * <p>The API Name of the field you would like to use.</p>
@@ -48,7 +48,7 @@ declare interface SBQQ__ColumnMetadata__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FieldName__c: string;
+    SBQQ__FieldName__c?: string;
     /**
      * <h3><b>FieldSet Metadata</b></h3>
      * <p>Master detail to FieldSet Metadata.</p>
@@ -58,7 +58,7 @@ declare interface SBQQ__ColumnMetadata__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FieldSetMetadata__c: string;
+    SBQQ__FieldSetMetadata__c?: string;
     /**
      * <h3><b>FieldSet Metadata</b></h3>
      * <p>Master detail to FieldSet Metadata.</p>
@@ -68,5 +68,5 @@ declare interface SBQQ__ColumnMetadata__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FieldSetMetadata__r: SBQQ__FieldSetMetadata__c;
+    SBQQ__FieldSetMetadata__r?: SBQQ__FieldSetMetadata__c;
 }

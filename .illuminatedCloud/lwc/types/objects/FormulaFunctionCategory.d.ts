@@ -2,8 +2,8 @@
 
 declare interface FormulaFunctionCategory extends SObject 
 {
-    DurableId: string;
-    Functions: FormulaFunction[];
-    Label: string;
-    Name: string;
+    DurableId?: string;
+    Functions?: FormulaFunction[];
+    Label?: string;
+    Name?: string;
 }

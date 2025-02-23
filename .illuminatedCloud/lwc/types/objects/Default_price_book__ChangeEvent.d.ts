@@ -2,17 +2,17 @@
 
 declare interface Default_price_book__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Price Book</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface Default_price_book__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price_Book__c: string;
+    Price_Book__c?: string;
     /**
      * <h3><b>Price Book</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,8 +30,8 @@ declare interface Default_price_book__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price_Book__r: Pricebook2;
-    ReplayId: string;
+    Price_Book__r?: Pricebook2;
+    ReplayId?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface Default_price_book__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User__c: string;
+    User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,5 +49,5 @@ declare interface Default_price_book__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User__r: User;
+    User__r?: User;
 }

@@ -2,14 +2,14 @@
 
 declare interface maps__TPArea__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Assignment Rules 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface maps__TPArea__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__AssignmentRules1__c: string;
+    maps__AssignmentRules1__c?: string;
     /**
      * <h3><b>Assignment Rules 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface maps__TPArea__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__AssignmentRules2__c: string;
+    maps__AssignmentRules2__c?: string;
     /**
      * <h3><b>Config</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface maps__TPArea__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__Config__c: string;
+    maps__Config__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface maps__TPArea__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Description__c: string;
+    maps__Description__c?: string;
     /**
      * <h3><b>Metadata</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface maps__TPArea__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    maps__Metadata__c: string;
+    maps__Metadata__c?: string;
     /**
      * <h3><b>Parent</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,7 +59,7 @@ declare interface maps__TPArea__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Parent__c: string;
+    maps__Parent__c?: string;
     /**
      * <h3><b>Parent</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,7 +68,7 @@ declare interface maps__TPArea__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Parent__r: maps__TPArea__c;
+    maps__Parent__r?: maps__TPArea__c;
     /**
      * <h3><b>Sort Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -79,9 +79,9 @@ declare interface maps__TPArea__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__SortOrder__c: number;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__SortOrder__c?: number;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

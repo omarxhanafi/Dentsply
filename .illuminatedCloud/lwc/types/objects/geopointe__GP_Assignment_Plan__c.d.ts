@@ -6,9 +6,9 @@
  */
 declare interface geopointe__GP_Assignment_Plan__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>HP Batch Size - Records</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Batch_Size_HP_Records__c: number;
+    geopointe__Batch_Size_HP_Records__c?: number;
     /**
      * <h3><b>Custom Assignment Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,7 +30,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Custom_Assignment_Field__c: string;
+    geopointe__Custom_Assignment_Field__c?: string;
     /**
      * <h3><b>Custom Assignment Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,7 +41,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Custom_Assignment_Object__c: string;
+    geopointe__Custom_Assignment_Object__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Description__c: string;
+    geopointe__Description__c?: string;
     /**
      * <h3><b>Geocode Quality Exclusion Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geocode_Quality_Exclusion_Level__c: string;
+    geopointe__Geocode_Quality_Exclusion_Level__c?: string;
     /**
      * <h3><b>High Performance</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__High_Performance__c: boolean;
+    geopointe__High_Performance__c?: boolean;
     /**
      * <h3><b>Last Batch Run Completed Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,7 +82,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Last_Batch_Run_Complete_Date__c: string;
+    geopointe__Last_Batch_Run_Complete_Date__c?: string;
     /**
      * <h3><b>Last Batch Run Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Last_Batch_Run_Date__c: string;
+    geopointe__Last_Batch_Run_Date__c?: string;
     /**
      * <h3><b>Last Cleanup Batch Run Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,7 +102,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Last_Cleanup_Batch_Run_Date__c: string;
+    geopointe__Last_Cleanup_Batch_Run_Date__c?: string;
     /**
      * <h3><b>Last Inactive Batch Run Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Last_Inactive_Batch_Run_Date__c: string;
+    geopointe__Last_Inactive_Batch_Run_Date__c?: string;
     /**
      * <h3><b>Last Unassigned Run Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -122,7 +122,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Last_Unassigned_Run_Date__c: string;
+    geopointe__Last_Unassigned_Run_Date__c?: string;
     /**
      * <h3><b>Map Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -133,7 +133,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Map_Object__c: string;
+    geopointe__Map_Object__c?: string;
     /**
      * <h3><b>Number of Areas</b></h3>
      * <h4>Field Attributes</h4>
@@ -144,7 +144,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Number_of_Areas__c: string;
+    geopointe__Number_of_Areas__c?: string;
     /**
      * <h3><b>Reassign Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -154,7 +154,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__Reassign_Owner__c: boolean;
+    geopointe__Reassign_Owner__c?: boolean;
     /**
      * <h3><b>Run Assignment Rule</b></h3>
      * <h4>Field Attributes</h4>
@@ -164,7 +164,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__Run_Assignment_Rule__c: boolean;
+    geopointe__Run_Assignment_Rule__c?: boolean;
     /**
      * <h3><b>SOQL Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -173,7 +173,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__SOQL_Filter__c: string;
+    geopointe__SOQL_Filter__c?: string;
     /**
      * <h3><b>Grandfather Records</b></h3>
      * <h4>Field Attributes</h4>
@@ -183,7 +183,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__SOQL_Filter_Grandfather_Records__c: boolean;
+    geopointe__SOQL_Filter_Grandfather_Records__c?: boolean;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -199,7 +199,7 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Active</code></td><td>Active</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    geopointe__Status__c: string;
+    geopointe__Status__c?: string;
     /**
      * <h3><b>Territory Plan Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,14 +210,14 @@ declare interface geopointe__GP_Assignment_Plan__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    geopointe__Territory_Plan_ID__c: string;
+    geopointe__Territory_Plan_ID__c?: string;
     /**
      * The reciprocal relationship for {@link geopointe__GP_Assignment_Area__c.geopointe__Assignment_Plan__c}.
      */
-    Geopointe_Assignment_Areas__r: geopointe__GP_Assignment_Area__c[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Geopointe_Assignment_Areas__r?: geopointe__GP_Assignment_Area__c[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

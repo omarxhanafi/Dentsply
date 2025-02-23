@@ -2,8 +2,8 @@
 
 declare interface ContentWorkspaceSubscription extends SObject 
 {
-    ContentWorkspace: ContentWorkspace;
-    ContentWorkspaceId: string;
-    User: User;
-    UserId: string;
+    ContentWorkspace?: ContentWorkspace;
+    ContentWorkspaceId?: string;
+    User?: User;
+    UserId?: string;
 }

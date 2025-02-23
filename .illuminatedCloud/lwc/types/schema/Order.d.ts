@@ -216,10 +216,34 @@ declare module "@salesforce/schema/Order.Backorder_Notes__c" {
     export default Backorder_Notes__c;
 }
 
+declare module "@salesforce/schema/Order.BillToContact" {
+    import { FieldId } from "@salesforce/schema";
+    const BillToContact: FieldId;
+    export default BillToContact;
+}
+
+declare module "@salesforce/schema/Order.BillToContactId" {
+    import { FieldId } from "@salesforce/schema";
+    const BillToContactId: FieldId;
+    export default BillToContactId;
+}
+
 declare module "@salesforce/schema/Order.BillingAddress" {
     import { FieldId } from "@salesforce/schema";
     const BillingAddress: FieldId;
     export default BillingAddress;
+}
+
+declare module "@salesforce/schema/Order.BillingAddress__c" {
+    import { FieldId } from "@salesforce/schema";
+    const BillingAddress__c: FieldId;
+    export default BillingAddress__c;
+}
+
+declare module "@salesforce/schema/Order.BillingAddress__r" {
+    import { FieldId } from "@salesforce/schema";
+    const BillingAddress__r: FieldId;
+    export default BillingAddress__r;
 }
 
 declare module "@salesforce/schema/Order.BillingCity" {
@@ -298,6 +322,12 @@ declare module "@salesforce/schema/Order.CS_Project_Team_Member_Assigned__r" {
     import { FieldId } from "@salesforce/schema";
     const CS_Project_Team_Member_Assigned__r: FieldId;
     export default CS_Project_Team_Member_Assigned__r;
+}
+
+declare module "@salesforce/schema/Order.CalculationStatus" {
+    import { FieldId } from "@salesforce/schema";
+    const CalculationStatus: FieldId;
+    export default CalculationStatus;
 }
 
 declare module "@salesforce/schema/Order.Campaign__c" {
@@ -606,6 +636,12 @@ declare module "@salesforce/schema/Order.Direct_Manager__c" {
     export default Direct_Manager__c;
 }
 
+declare module "@salesforce/schema/Order.DiscountPercent" {
+    import { FieldId } from "@salesforce/schema";
+    const DiscountPercent: FieldId;
+    export default DiscountPercent;
+}
+
 declare module "@salesforce/schema/Order.DiscountReasonCheck__c" {
     import { FieldId } from "@salesforce/schema";
     const DiscountReasonCheck__c: FieldId;
@@ -852,6 +888,18 @@ declare module "@salesforce/schema/Order.FulfillmentOrders" {
     export default FulfillmentOrders;
 }
 
+declare module "@salesforce/schema/Order.FulfillmentPlan" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentPlan: FieldId;
+    export default FulfillmentPlan;
+}
+
+declare module "@salesforce/schema/Order.FulfillmentPlanId" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentPlanId: FieldId;
+    export default FulfillmentPlanId;
+}
+
 declare module "@salesforce/schema/Order.GeneratedDocRefObjects" {
     import { FieldId } from "@salesforce/schema";
     const GeneratedDocRefObjects: FieldId;
@@ -862,6 +910,12 @@ declare module "@salesforce/schema/Order.Global_SFDC_Order__c" {
     import { FieldId } from "@salesforce/schema";
     const Global_SFDC_Order__c: FieldId;
     export default Global_SFDC_Order__c;
+}
+
+declare module "@salesforce/schema/Order.GrandTotalAmount" {
+    import { FieldId } from "@salesforce/schema";
+    const GrandTotalAmount: FieldId;
+    export default GrandTotalAmount;
 }
 
 declare module "@salesforce/schema/Order.Histories" {
@@ -924,6 +978,12 @@ declare module "@salesforce/schema/Order.LastModifiedDate" {
     export default LastModifiedDate;
 }
 
+declare module "@salesforce/schema/Order.LastPricedDate" {
+    import { FieldId } from "@salesforce/schema";
+    const LastPricedDate: FieldId;
+    export default LastPricedDate;
+}
+
 declare module "@salesforce/schema/Order.LastReferencedDate" {
     import { FieldId } from "@salesforce/schema";
     const LastReferencedDate: FieldId;
@@ -934,6 +994,18 @@ declare module "@salesforce/schema/Order.LastViewedDate" {
     import { FieldId } from "@salesforce/schema";
     const LastViewedDate: FieldId;
     export default LastViewedDate;
+}
+
+declare module "@salesforce/schema/Order.LegalEntity" {
+    import { FieldId } from "@salesforce/schema";
+    const LegalEntity: FieldId;
+    export default LegalEntity;
+}
+
+declare module "@salesforce/schema/Order.LegalEntityId" {
+    import { FieldId } from "@salesforce/schema";
+    const LegalEntityId: FieldId;
+    export default LegalEntityId;
 }
 
 declare module "@salesforce/schema/Order.LinkedEntity" {
@@ -1272,6 +1344,12 @@ declare module "@salesforce/schema/Order.Orders_Related_to_CFE__r" {
     export default Orders_Related_to_CFE__r;
 }
 
+declare module "@salesforce/schema/Order.OriginalActionType" {
+    import { FieldId } from "@salesforce/schema";
+    const OriginalActionType: FieldId;
+    export default OriginalActionType;
+}
+
 declare module "@salesforce/schema/Order.OriginalOrder" {
     import { FieldId } from "@salesforce/schema";
     const OriginalOrder: FieldId;
@@ -1360,6 +1438,18 @@ declare module "@salesforce/schema/Order.ParentRecord" {
     import { FieldId } from "@salesforce/schema";
     const ParentRecord: FieldId;
     export default ParentRecord;
+}
+
+declare module "@salesforce/schema/Order.PaymentTerm" {
+    import { FieldId } from "@salesforce/schema";
+    const PaymentTerm: FieldId;
+    export default PaymentTerm;
+}
+
+declare module "@salesforce/schema/Order.PaymentTermId" {
+    import { FieldId } from "@salesforce/schema";
+    const PaymentTermId: FieldId;
+    export default PaymentTermId;
 }
 
 declare module "@salesforce/schema/Order.Payment_Period__c" {
@@ -1500,6 +1590,18 @@ declare module "@salesforce/schema/Order.Prospect_at_the_point_of_order_entry__c
     export default Prospect_at_the_point_of_order_entry__c;
 }
 
+declare module "@salesforce/schema/Order.Quote" {
+    import { FieldId } from "@salesforce/schema";
+    const Quote: FieldId;
+    export default Quote;
+}
+
+declare module "@salesforce/schema/Order.QuoteId" {
+    import { FieldId } from "@salesforce/schema";
+    const QuoteId: FieldId;
+    export default QuoteId;
+}
+
 declare module "@salesforce/schema/Order.Quote_Status__c" {
     import { FieldId } from "@salesforce/schema";
     const Quote_Status__c: FieldId;
@@ -1516,6 +1618,12 @@ declare module "@salesforce/schema/Order.RecordActions" {
     import { FieldId } from "@salesforce/schema";
     const RecordActions: FieldId;
     export default RecordActions;
+}
+
+declare module "@salesforce/schema/Order.RecordAlertWhat" {
+    import { FieldId } from "@salesforce/schema";
+    const RecordAlertWhat: FieldId;
+    export default RecordAlertWhat;
 }
 
 declare module "@salesforce/schema/Order.RecordType" {
@@ -1540,6 +1648,12 @@ declare module "@salesforce/schema/Order.ReferenceEntityRevenueAsyncOperations" 
     import { FieldId } from "@salesforce/schema";
     const ReferenceEntityRevenueAsyncOperations: FieldId;
     export default ReferenceEntityRevenueAsyncOperations;
+}
+
+declare module "@salesforce/schema/Order.ReferenceObject" {
+    import { FieldId } from "@salesforce/schema";
+    const ReferenceObject: FieldId;
+    export default ReferenceObject;
 }
 
 declare module "@salesforce/schema/Order.Regional_Manager_Approval_Required__c" {
@@ -1672,6 +1786,18 @@ declare module "@salesforce/schema/Order.SalesOrigin__c" {
     import { FieldId } from "@salesforce/schema";
     const SalesOrigin__c: FieldId;
     export default SalesOrigin__c;
+}
+
+declare module "@salesforce/schema/Order.SalesTransactionType" {
+    import { FieldId } from "@salesforce/schema";
+    const SalesTransactionType: FieldId;
+    export default SalesTransactionType;
+}
+
+declare module "@salesforce/schema/Order.SalesTransactionTypeId" {
+    import { FieldId } from "@salesforce/schema";
+    const SalesTransactionTypeId: FieldId;
+    export default SalesTransactionTypeId;
 }
 
 declare module "@salesforce/schema/Order.Sales_Leads__r" {
@@ -1920,6 +2046,18 @@ declare module "@salesforce/schema/Order.TotalCost__c" {
     export default TotalCost__c;
 }
 
+declare module "@salesforce/schema/Order.TotalRoundedLineAmount" {
+    import { FieldId } from "@salesforce/schema";
+    const TotalRoundedLineAmount: FieldId;
+    export default TotalRoundedLineAmount;
+}
+
+declare module "@salesforce/schema/Order.TotalTaxAmount" {
+    import { FieldId } from "@salesforce/schema";
+    const TotalTaxAmount: FieldId;
+    export default TotalTaxAmount;
+}
+
 declare module "@salesforce/schema/Order.Total_After_PPN__c" {
     import { FieldId } from "@salesforce/schema";
     const Total_After_PPN__c: FieldId;
@@ -2020,6 +2158,12 @@ declare module "@salesforce/schema/Order.VAT_Number__c" {
     import { FieldId } from "@salesforce/schema";
     const VAT_Number__c: FieldId;
     export default VAT_Number__c;
+}
+
+declare module "@salesforce/schema/Order.ValidationResult" {
+    import { FieldId } from "@salesforce/schema";
+    const ValidationResult: FieldId;
+    export default ValidationResult;
 }
 
 declare module "@salesforce/schema/Order.Waive_Shipping_Charges__c" {

@@ -2,16 +2,16 @@
 
 declare interface FeedLike extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    FeedEntity: SObject;
-    FeedEntityId: string;
-    FeedItem: SObject;
-    FeedItemId: string;
-    InsertedBy: User;
-    InsertedById: string;
-    IsDeleted: boolean;
-    RelatedRecord: FlowRecordRelation;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    FeedEntity?: SObject;
+    FeedEntityId?: string;
+    FeedItem?: SObject;
+    FeedItemId?: string;
+    InsertedBy?: User;
+    InsertedById?: string;
+    IsDeleted?: boolean;
+    RelatedRecord?: FlowRecordRelation;
 }

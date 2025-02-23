@@ -6,10 +6,10 @@
  */
 declare interface KOL_Territory__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
     /**
      * <h3><b>Key Opinion Leader (D-.JP)</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface KOL_Territory__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Key_Opinion_Leader_D_JP__c: string;
+    Key_Opinion_Leader_D_JP__c?: string;
     /**
      * <h3><b>KOL</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface KOL_Territory__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL__c: string;
+    KOL__c?: string;
     /**
      * <h3><b>KOL</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,7 +41,7 @@ declare interface KOL_Territory__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL__r: Contact;
+    KOL__r?: Contact;
     /**
      * <h3><b>KOL Specialty Areas</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface KOL_Territory__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Area__c: string;
+    KOL_Area__c?: string;
     /**
      * <h3><b>KOL Plan</b></h3>
      * <p>Plan for this KOL</p>
@@ -60,7 +60,7 @@ declare interface KOL_Territory__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Plan__c: string;
+    KOL_Plan__c?: string;
     /**
      * <h3><b>KOL Profession</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface KOL_Territory__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Profession__c: string;
+    KOL_Profession__c?: string;
     /**
      * <h3><b>KOL Profession (CH)</b></h3>
      * <h4>Field Attributes</h4>
@@ -84,7 +84,7 @@ declare interface KOL_Territory__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Profession_CH__c: string;
+    KOL_Profession_CH__c?: string;
     /**
      * <h3><b>KOL Profession (DEX)</b></h3>
      * <h4>Field Attributes</h4>
@@ -96,11 +96,11 @@ declare interface KOL_Territory__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Profession_DEX__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    KOL_Profession_DEX__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Study Group Organizer (D-JP)</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,5 +112,5 @@ declare interface KOL_Territory__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Study_Group_Organizer_D_JP__c: string;
+    Study_Group_Organizer_D_JP__c?: string;
 }

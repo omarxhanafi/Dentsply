@@ -14,7 +14,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,10 +23,10 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__r: Country__c;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__r?: Country__c;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Date for sending out LMS password</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Date_for_sending_out_LMS_password__c: Date;
+    Date_for_sending_out_LMS_password__c?: Date;
     /**
      * <h3><b>Willing to buy Data.com info</b></h3>
      * <h4>Field Attributes</h4>
@@ -46,7 +46,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Decide_to_buy_Data_com_Info__c: boolean;
+    Decide_to_buy_Data_com_Info__c?: boolean;
     /**
      * <h3><b>Deployment level</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Deployment_Level__c: number;
+    Deployment_Level__c?: number;
     /**
      * <h3><b>Deployment status</b></h3>
      * <h4>Field Attributes</h4>
@@ -70,7 +70,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Deployment_Status__c: string;
+    Deployment_Status__c?: string;
     /**
      * <h3><b>Deployment status description</b></h3>
      * <h4>Field Attributes</h4>
@@ -79,11 +79,11 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Deployment_Status_Description__c: string;
+    Deployment_Status_Description__c?: string;
     /**
      * The reciprocal relationship for {@link Deployment_Status_Phase__c.Deployment_Status_Report__c}.
      */
-    Deployment_Status_Phases__r: Deployment_Status_Phase__c[];
+    Deployment_Status_Phases__r?: Deployment_Status_Phase__c[];
     /**
      * <h3><b>For management attention &amp; support</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    For_Management_Attention_Support__c: string;
+    For_Management_Attention_Support__c?: string;
     /**
      * <h3><b>GO LIVE date</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,11 +102,11 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Go_Live_Date__c: Date;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Go_Live_Date__c?: Date;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Advanced</code></td><td>Advanced</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Level__c: string;
+    Level__c?: string;
     /**
      * <h3><b>LMS Translation Cost in €</b></h3>
      * <h4>Field Attributes</h4>
@@ -135,8 +135,8 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LM_Translation_Cost__c: number;
-    Name: string;
+    LM_Translation_Cost__c?: number;
+    Name?: string;
     /**
      * <h3><b>Next Steps/On-going Activities</b></h3>
      * <h4>Field Attributes</h4>
@@ -168,7 +168,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Follow-up</code></td><td>Follow-up</td><td nowrap>true</td></tr>
      * </table>
      */
-    Next_Steps_Ongoing_Activities__c: string;
+    Next_Steps_Ongoing_Activities__c?: string;
     /**
      * <h3><b>Platform</b></h3>
      * <h4>Field Attributes</h4>
@@ -187,7 +187,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IOT</code></td><td>IOT</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Platform__c: string;
+    Platform__c?: string;
     /**
      * <h3><b>Project health</b></h3>
      * <h4>Field Attributes</h4>
@@ -204,7 +204,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">RED/OVERDUE</code></td><td>RED/OVERDUE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Project_Health__c: string;
+    Project_Health__c?: string;
     /**
      * <h3><b>Requests</b></h3>
      * <p>Requests from country</p>
@@ -215,7 +215,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Requests__c: string;
+    Requests__c?: string;
     /**
      * <h3><b>SalesBasicLevel_copy</b></h3>
      * <h4>Field Attributes</h4>
@@ -226,7 +226,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesBasicLevel_copy__c: number;
+    SalesBasicLevel_copy__c?: number;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -247,7 +247,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Postponed</code></td><td>Postponed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Project health</b></h3>
      * <h4>Field Attributes</h4>
@@ -259,7 +259,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Status_Health__c: string;
+    Status_Health__c?: string;
     /**
      * <h3><b>Status report date</b></h3>
      * <h4>Field Attributes</h4>
@@ -269,7 +269,7 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Status_Report_Date__c: Date;
+    Status_Report_Date__c?: Date;
     /**
      * <h3><b>Willing to  take LMS translation cost</b></h3>
      * <h4>Field Attributes</h4>
@@ -279,5 +279,5 @@ declare interface Deployment_Status_Report__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Willing_to_take_LMS_Translation_Cost__c: boolean;
+    Willing_to_take_LMS_Translation_Cost__c?: boolean;
 }

@@ -2,16 +2,16 @@
 
 declare interface AuthConfigProviders extends SObject 
 {
-    AuthConfig: AuthConfig;
-    AuthConfigId: string;
-    AuthProvider: SObject;
-    AuthProviderId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    SystemModstamp: string;
+    AuthConfig?: AuthConfig;
+    AuthConfigId?: string;
+    AuthProvider?: SObject;
+    AuthProviderId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    SystemModstamp?: string;
 }

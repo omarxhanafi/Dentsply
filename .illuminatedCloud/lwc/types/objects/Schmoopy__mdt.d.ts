@@ -5,10 +5,10 @@
  */
 declare interface Schmoopy__mdt extends SObject 
 {
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
     /**
      * <h3><b>Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,8 +19,8 @@ declare interface Schmoopy__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Name__c: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    Name__c?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

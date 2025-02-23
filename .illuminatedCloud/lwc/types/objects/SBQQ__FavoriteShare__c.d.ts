@@ -5,14 +5,14 @@
  */
 declare interface SBQQ__FavoriteShare__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Favorite</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface SBQQ__FavoriteShare__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Favorite__c: string;
+    SBQQ__Favorite__c?: string;
     /**
      * <h3><b>Favorite</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,7 +30,7 @@ declare interface SBQQ__FavoriteShare__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Favorite__r: SBQQ__Favorite__c;
+    SBQQ__Favorite__r?: SBQQ__Favorite__c;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface SBQQ__FavoriteShare__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__User__c: string;
+    SBQQ__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,5 +50,5 @@ declare interface SBQQ__FavoriteShare__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__User__r: User;
+    SBQQ__User__r?: User;
 }

@@ -2,14 +2,14 @@
 
 declare interface UserShare extends SObject 
 {
-    IsActive: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    RowCause: string;
-    User: User;
-    UserAccessLevel: string;
-    UserId: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    IsActive?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    RowCause?: string;
+    User?: User;
+    UserAccessLevel?: string;
+    UserId?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

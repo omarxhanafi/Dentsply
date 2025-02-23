@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__ConfigurationRule__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Active</b></h3>
      * <p>Indicates whether this rule should be used in validating configurations.</p>
@@ -24,7 +24,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Active__c: boolean;
+    SBQQ__Active__c?: boolean;
     /**
      * <h3><b>Parent Bundle Condition Level</b></h3>
      * <p>Include parent bundle configuration with the specified level when evaluating this rule&#39;s conditions in the configurator for alert, validation and selection rules.</p>
@@ -40,7 +40,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td><td>1</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__AscendingNestedLevel__c: string;
+    SBQQ__AscendingNestedLevel__c?: string;
     /**
      * <h3><b>Child Bundle Action Level</b></h3>
      * <p>Allow child bundle configurations up to the specified level to be targeted by this rule&#39;s actions when executing in the configurator for selection rules only.</p>
@@ -56,7 +56,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td><td>1</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__DescendingActionNesting__c: string;
+    SBQQ__DescendingActionNesting__c?: string;
     /**
      * <h3><b>Child Bundle Condition Level</b></h3>
      * <p>Include child bundle configurations to the specified level when evaluating this rule&#39;s conditions in the configurator for alert, validation and selection rules.</p>
@@ -72,7 +72,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td><td>1</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__DescendingNestedLevel__c: string;
+    SBQQ__DescendingNestedLevel__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>Configured product to be validated by this rule.</p>
@@ -83,7 +83,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__c: string;
+    SBQQ__Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>Configured product to be validated by this rule.</p>
@@ -94,7 +94,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__r: Product2;
+    SBQQ__Product__r?: Product2;
     /**
      * <h3><b>Product Feature</b></h3>
      * <p>Product feature validated by this rule.</p>
@@ -105,7 +105,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductFeature__c: string;
+    SBQQ__ProductFeature__c?: string;
     /**
      * <h3><b>Product Feature</b></h3>
      * <p>Product feature validated by this rule.</p>
@@ -116,7 +116,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductFeature__r: SBQQ__ProductFeature__c;
+    SBQQ__ProductFeature__r?: SBQQ__ProductFeature__c;
     /**
      * <h3><b>Product Rule</b></h3>
      * <p>The actual rule that defines logic used to validate product configuration.</p>
@@ -126,7 +126,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductRule__c: string;
+    SBQQ__ProductRule__c?: string;
     /**
      * <h3><b>Product Rule</b></h3>
      * <p>The actual rule that defines logic used to validate product configuration.</p>
@@ -136,7 +136,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductRule__r: SBQQ__ProductRule__c;
+    SBQQ__ProductRule__r?: SBQQ__ProductRule__c;
     /**
      * <h3><b>Rule Evaluation Event</b></h3>
      * <p>Evaluation event of referenced rule.</p>
@@ -149,7 +149,7 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RuleEvaluationEvent__c: string;
+    SBQQ__RuleEvaluationEvent__c?: string;
     /**
      * <h3><b>Rule Type</b></h3>
      * <p>Type of referenced rule. Convenience field to avoid querying related rule record.</p>
@@ -162,5 +162,5 @@ declare interface SBQQ__ConfigurationRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RuleType__c: string;
+    SBQQ__RuleType__c?: string;
 }

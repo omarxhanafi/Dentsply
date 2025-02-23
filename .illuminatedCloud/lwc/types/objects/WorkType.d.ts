@@ -5,20 +5,20 @@ declare interface WorkType extends SObject
     /**
      * The reciprocal relationship for {@link AppointmentTopicTimeSlot.WorkTypeId}.
      */
-    AppointmentTopicTimeSlots: AppointmentTopicTimeSlot[];
+    AppointmentTopicTimeSlots?: AppointmentTopicTimeSlot[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
-    CombinedAttachments: CombinedAttachment[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
+    CombinedAttachments?: CombinedAttachment[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,23 +27,23 @@ declare interface WorkType extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
-    DurationInMinutes: number;
-    DurationType: string;
-    EstimatedDuration: number;
-    Feeds: WorkTypeFeed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
+    DurationInMinutes?: number;
+    DurationType?: string;
+    EstimatedDuration?: number;
+    Feeds?: WorkTypeFeed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Due Date Offset</b></h3>
      * <p>Minutes</p>
@@ -55,7 +55,7 @@ declare interface WorkType extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Due_Date_Offset__c: number;
+    FSL__Due_Date_Offset__c?: number;
     /**
      * <h3><b>Exact Appointments</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,86 +64,86 @@ declare interface WorkType extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__Exact_Appointments__c: boolean;
+    FSL__Exact_Appointments__c?: boolean;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: WorkTypeHistory[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: WorkTypeHistory[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
     /**
      * The reciprocal relationship for {@link LinkedArticle.LinkedEntityId}.
      */
-    LinkedArticles: LinkedArticle[];
-    LinkedEntity: ContentDocumentLinkChangeEvent;
+    LinkedArticles?: LinkedArticle[];
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
     /**
      * The reciprocal relationship for {@link MaintenanceAsset.WorkTypeId}.
      */
-    MaintenanceAssets: MaintenanceAsset[];
+    MaintenanceAssets?: MaintenanceAsset[];
     /**
      * The reciprocal relationship for {@link MaintenancePlan.WorkTypeId}.
      */
-    MaintenancePlans: MaintenancePlan[];
+    MaintenancePlans?: MaintenancePlan[];
     /**
      * The reciprocal relationship for {@link MaintenanceWorkRule.WorkTypeId}.
      */
-    MaintenanceWorkRules: MaintenanceWorkRule[];
-    MinimumCrewSize: number;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    Parent: FeedComment;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    MaintenanceWorkRules?: MaintenanceWorkRule[];
+    MinimumCrewSize?: number;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: FeedComment;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * The reciprocal relationship for {@link ProductServiceCampaign.WorkTypeId}.
      */
-    ProductServiceCampaignWorkTypes: ProductServiceCampaign[];
+    ProductServiceCampaignWorkTypes?: ProductServiceCampaign[];
     /**
      * The reciprocal relationship for {@link ProductRequired.ParentRecordId}.
      */
-    ProductsRequired: ProductRequired[];
-    RecommendedCrewSize: number;
-    RecordActionHistories: RecordActionHistory[];
+    ProductsRequired?: ProductRequired[];
+    RecommendedCrewSize?: number;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RelatedRecord: FlowRecordRelation;
-    ServiceReportTemplate: ServiceReportLayout;
-    ServiceReportTemplateId: string;
-    Shares: WorkTypeShare[];
-    ShouldAutoCreateSvcAppt: boolean;
+    RecordActions?: RecordAction[];
+    RelatedRecord?: FlowRecordRelation;
+    ServiceReportTemplate?: ServiceReportLayout;
+    ServiceReportTemplateId?: string;
+    Shares?: WorkTypeShare[];
+    ShouldAutoCreateSvcAppt?: boolean;
     /**
      * The reciprocal relationship for {@link SkillRequirement.RelatedRecordId}.
      */
-    SkillRequirements: SkillRequirement[];
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    SkillRequirements?: SkillRequirement[];
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link WorkOrderLineItem.WorkTypeId}.
      */
-    WorkOrderLineItems: WorkOrderLineItem[];
-    WorkOrders: WorkOrder[];
+    WorkOrderLineItems?: WorkOrderLineItem[];
+    WorkOrders?: WorkOrder[];
     /**
      * The reciprocal relationship for {@link WorkPlanSelectionRule.WorkTypeId}.
      */
-    WorkPlanSelectionRules: WorkPlanSelectionRule[];
+    WorkPlanSelectionRules?: WorkPlanSelectionRule[];
     /**
      * The reciprocal relationship for {@link MaintenanceAsset.WorkTypeId}.
      */
-    WorkType: MaintenanceAsset;
+    WorkType?: MaintenanceAsset;
     /**
      * The reciprocal relationship for {@link WorkTypeGroupMember.WorkTypeId}.
      */
-    WorkTypeGroupMembers: WorkTypeGroupMember[];
+    WorkTypeGroupMembers?: WorkTypeGroupMember[];
 }

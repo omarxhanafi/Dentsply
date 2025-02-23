@@ -2,14 +2,14 @@
 
 declare interface CalculationProcedureVersionHistory extends SObject 
 {
-    CalculationProcedureVersion: CalculationProcedureVersion;
-    CalculationProcedureVersionId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CalculationProcedureVersion?: CalculationProcedureVersion;
+    CalculationProcedureVersionId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

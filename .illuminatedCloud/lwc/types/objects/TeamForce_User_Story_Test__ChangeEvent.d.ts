@@ -2,11 +2,11 @@
 
 declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Development Sandbox</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,11 +18,11 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Development_Sandbox__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Development_Sandbox__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>QA Test Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,8 +31,8 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QA_Test_Date__c: Date;
-    ReplayId: string;
+    QA_Test_Date__c?: Date;
+    ReplayId?: string;
     /**
      * <h3><b>TeamForce Test Sandbox</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,7 +41,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TeamForce_Test_Sandbox__c: string;
+    TeamForce_Test_Sandbox__c?: string;
     /**
      * <h3><b>TeamForce Test Sandbox</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TeamForce_Test_Sandbox__r: TeamForce_Sandbox__c;
+    TeamForce_Test_Sandbox__r?: TeamForce_Sandbox__c;
     /**
      * <h3><b>TeamForce Test Script</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link TMFC_TeamForce_Test_Script__c})</td></tr>
      * </table>
      */
-    TeamForce_Test_Script__c: string;
+    TeamForce_Test_Script__c?: string;
     /**
      * <h3><b>TeamForce Test Script</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link TMFC_TeamForce_Test_Script__c})</td></tr>
      * </table>
      */
-    TeamForce_Test_Script__r: TMFC_TeamForce_Test_Script__c;
+    TeamForce_Test_Script__r?: TMFC_TeamForce_Test_Script__c;
     /**
      * <h3><b>TeamForce User Story</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link TMFC_TeamForce_User_Story__c})</td></tr>
      * </table>
      */
-    TeamForce_User_Story__c: string;
+    TeamForce_User_Story__c?: string;
     /**
      * <h3><b>TeamForce User Story</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,7 +82,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link TMFC_TeamForce_User_Story__c})</td></tr>
      * </table>
      */
-    TeamForce_User_Story__r: TMFC_TeamForce_User_Story__c;
+    TeamForce_User_Story__r?: TMFC_TeamForce_User_Story__c;
     /**
      * <h3><b>Test Outcome</b></h3>
      * <h4>Field Attributes</h4>
@@ -97,7 +97,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Failed</code></td><td>Failed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Test_Outcome__c: string;
+    Test_Outcome__c?: string;
     /**
      * <h3><b>Test Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,7 +115,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Nice to have</code></td><td>Nice to have</td><td nowrap>true</td></tr>
      * </table>
      */
-    Test_Priority__c: string;
+    Test_Priority__c?: string;
     /**
      * <h3><b>Test Requirement</b></h3>
      * <h4>Field Attributes</h4>
@@ -123,7 +123,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Test_Requirement__c: string;
+    Test_Requirement__c?: string;
     /**
      * <h3><b>Test Result</b></h3>
      * <h4>Field Attributes</h4>
@@ -131,7 +131,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Test_Result__c: string;
+    Test_Result__c?: string;
     /**
      * <h3><b>Test Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -151,7 +151,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Test Completed</code></td><td>Test Completed</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Test_Status__c: string;
+    Test_Status__c?: string;
     /**
      * <h3><b>Tester</b></h3>
      * <h4>Field Attributes</h4>
@@ -160,7 +160,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tester__c: string;
+    Tester__c?: string;
     /**
      * <h3><b>Tester</b></h3>
      * <h4>Field Attributes</h4>
@@ -169,7 +169,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tester__r: User;
+    Tester__r?: User;
     /**
      * <h3><b>Tester&#39;s Log</b></h3>
      * <h4>Field Attributes</h4>
@@ -177,7 +177,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Testers_Log__c: string;
+    Testers_Log__c?: string;
     /**
      * <h3><b>As...</b></h3>
      * <h4>Field Attributes</h4>
@@ -188,7 +188,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_As__c: string;
+    TMFC_As__c?: string;
     /**
      * <h3><b>I want to...</b></h3>
      * <h4>Field Attributes</h4>
@@ -199,7 +199,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_I_want_to__c: string;
+    TMFC_I_want_to__c?: string;
     /**
      * <h3><b>So that...</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,7 +210,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_So_that__c: string;
+    TMFC_So_that__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -226,7 +226,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">QA_UAT</code></td><td>QA/UAT</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type__c: string;
+    Type__c?: string;
     /**
      * <h3><b>UAT Test Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -235,7 +235,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UAT_Test_Date__c: Date;
+    UAT_Test_Date__c?: Date;
     /**
      * <h3><b>User Story Test Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -244,7 +244,7 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Story_Test_Owner__c: string;
+    User_Story_Test_Owner__c?: string;
     /**
      * <h3><b>User Story Test Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -253,5 +253,5 @@ declare interface TeamForce_User_Story_Test__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Story_Test_Owner__r: User;
+    User_Story_Test_Owner__r?: User;
 }

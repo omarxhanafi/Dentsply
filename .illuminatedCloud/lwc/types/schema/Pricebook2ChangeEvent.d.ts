@@ -42,6 +42,18 @@ declare module "@salesforce/schema/Pricebook2ChangeEvent.ConversionRate__c" {
     export default ConversionRate__c;
 }
 
+declare module "@salesforce/schema/Pricebook2ChangeEvent.CostBook" {
+    import { FieldId } from "@salesforce/schema";
+    const CostBook: FieldId;
+    export default CostBook;
+}
+
+declare module "@salesforce/schema/Pricebook2ChangeEvent.CostBookId" {
+    import { FieldId } from "@salesforce/schema";
+    const CostBookId: FieldId;
+    export default CostBookId;
+}
+
 declare module "@salesforce/schema/Pricebook2ChangeEvent.CreatedBy" {
     import { FieldId } from "@salesforce/schema";
     const CreatedBy: FieldId;

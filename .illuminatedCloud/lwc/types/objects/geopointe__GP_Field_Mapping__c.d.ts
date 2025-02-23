@@ -6,9 +6,9 @@
  */
 declare interface geopointe__GP_Field_Mapping__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Geopointe Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface geopointe__GP_Field_Mapping__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geopointe_Field__c: string;
+    geopointe__Geopointe_Field__c?: string;
     /**
      * <h3><b>Geopointe Field Label</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,7 +30,7 @@ declare interface geopointe__GP_Field_Mapping__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geopointe_Field_Label__c: string;
+    geopointe__Geopointe_Field_Label__c?: string;
     /**
      * <h3><b>Geopointe Object Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface geopointe__GP_Field_Mapping__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geopointe_Object_Mapping__c: string;
+    geopointe__Geopointe_Object_Mapping__c?: string;
     /**
      * <h3><b>Geopointe Object Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface geopointe__GP_Field_Mapping__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geopointe_Object_Mapping__r: geopointe__GP_Object_Mapping__c;
+    geopointe__Geopointe_Object_Mapping__r?: geopointe__GP_Object_Mapping__c;
     /**
      * <h3><b>Required</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface geopointe__GP_Field_Mapping__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__Required__c: boolean;
+    geopointe__Required__c?: boolean;
     /**
      * <h3><b>Sfdc Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,10 +69,10 @@ declare interface geopointe__GP_Field_Mapping__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Sfdc_Field__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__Sfdc_Field__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

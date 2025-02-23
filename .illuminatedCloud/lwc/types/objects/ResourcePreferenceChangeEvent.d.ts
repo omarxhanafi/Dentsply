@@ -2,19 +2,19 @@
 
 declare interface ResourcePreferenceChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    PreferenceType: string;
-    RelatedRecord: SObject;
-    RelatedRecordId: string;
-    ReplayId: string;
-    ResourcePreferenceNumber: string;
-    ServiceResource: ServiceResource;
-    ServiceResourceId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    PreferenceType?: string;
+    RelatedRecord?: SObject;
+    RelatedRecordId?: string;
+    ReplayId?: string;
+    ResourcePreferenceNumber?: string;
+    ServiceResource?: ServiceResource;
+    ServiceResourceId?: string;
 }

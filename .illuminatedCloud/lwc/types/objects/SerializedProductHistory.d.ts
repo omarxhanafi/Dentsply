@@ -2,14 +2,14 @@
 
 declare interface SerializedProductHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    SerializedProduct: SerializedProduct;
-    SerializedProductId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    SerializedProduct?: SerializedProduct;
+    SerializedProductId?: string;
 }

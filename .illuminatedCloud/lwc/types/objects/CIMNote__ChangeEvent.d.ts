@@ -9,7 +9,7 @@ declare interface CIMNote__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,8 +17,8 @@ declare interface CIMNote__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
-    ChangeEventHeader: ChangeEventHeader;
+    Account__r?: Account;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>CIM ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,9 +29,9 @@ declare interface CIMNote__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CIMID__c: string;
-    CreatedBy: User;
-    CreatedById: string;
+    CIMID__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
     /**
      * <h3><b>Created by in CIM</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,8 +39,8 @@ declare interface CIMNote__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1000)</td></tr>
      * </table>
      */
-    CreatedByInCIM__c: string;
-    CreatedDate: string;
+    CreatedByInCIM__c?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Created date in CIM</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,12 +49,12 @@ declare interface CIMNote__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CreatedDateInCIM__c: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedDateInCIM__c?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Note</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,6 +62,6 @@ declare interface CIMNote__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Note__c: string;
-    ReplayId: string;
+    Note__c?: string;
+    ReplayId?: string;
 }

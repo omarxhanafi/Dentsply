@@ -2,14 +2,14 @@
 
 declare interface FeedAttachment extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    FeedEntity: SObject;
-    FeedEntityId: string;
-    IsDeleted: boolean;
-    Record: SObject;
-    RecordId: string;
-    RelatedRecord: FlowRecordRelation;
-    Title: string;
-    Type: string;
-    Value: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    FeedEntity?: SObject;
+    FeedEntityId?: string;
+    IsDeleted?: boolean;
+    Record?: SObject;
+    RecordId?: string;
+    RelatedRecord?: FlowRecordRelation;
+    Title?: string;
+    Type?: string;
+    Value?: string;
 }

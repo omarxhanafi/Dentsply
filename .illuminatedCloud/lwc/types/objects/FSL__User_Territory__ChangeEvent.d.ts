@@ -2,11 +2,11 @@
 
 declare interface FSL__User_Territory__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Service Territory</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,7 +14,7 @@ declare interface FSL__User_Territory__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link ServiceTerritory})</td></tr>
      * </table>
      */
-    FSL__ServiceTerritory__c: string;
+    FSL__ServiceTerritory__c?: string;
     /**
      * <h3><b>Service Territory</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface FSL__User_Territory__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link ServiceTerritory})</td></tr>
      * </table>
      */
-    FSL__ServiceTerritory__r: ServiceTerritory;
+    FSL__ServiceTerritory__r?: ServiceTerritory;
     /**
      * <h3><b>Territory Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,7 +34,7 @@ declare interface FSL__User_Territory__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Territory_Name__c: string;
+    FSL__Territory_Name__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface FSL__User_Territory__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__User__c: string;
+    FSL__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,10 +52,10 @@ declare interface FSL__User_Territory__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__User__r: User;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    FSL__User__r?: User;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
 }

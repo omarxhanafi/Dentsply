@@ -2,10 +2,10 @@
 
 declare interface KnowledgeArticleViewStat extends SObject 
 {
-    Channel: string;
-    IsDeleted: boolean;
-    NormalizedScore: number;
-    Parent: KnowledgeArticle;
-    ParentId: string;
-    ViewCount: number;
+    Channel?: string;
+    IsDeleted?: boolean;
+    NormalizedScore?: number;
+    Parent?: KnowledgeArticle;
+    ParentId?: string;
+    ViewCount?: number;
 }

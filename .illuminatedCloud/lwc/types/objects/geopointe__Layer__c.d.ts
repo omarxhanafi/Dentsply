@@ -6,9 +6,9 @@
  */
 declare interface geopointe__Layer__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Active</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,7 +18,7 @@ declare interface geopointe__Layer__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__Active__c: boolean;
+    geopointe__Active__c?: boolean;
     /**
      * <h3><b>Auto Load</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface geopointe__Layer__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__Auto_Load__c: boolean;
+    geopointe__Auto_Load__c?: boolean;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface geopointe__Layer__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Description__c: string;
+    geopointe__Description__c?: string;
     /**
      * <h3><b>File Extension</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface geopointe__Layer__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__File_Extension__c: string;
+    geopointe__File_Extension__c?: string;
     /**
      * <h3><b>Folder</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,7 +59,7 @@ declare interface geopointe__Layer__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Folder__c: string;
+    geopointe__Folder__c?: string;
     /**
      * <h3><b>Folder</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface geopointe__Layer__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Folder__r: geopointe__GP_Folder__c;
+    geopointe__Folder__r?: geopointe__GP_Folder__c;
     /**
      * <h3><b>Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -80,7 +80,7 @@ declare interface geopointe__Layer__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Key__c: string;
+    geopointe__Key__c?: string;
     /**
      * <h3><b>Personal</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,7 +90,7 @@ declare interface geopointe__Layer__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    geopointe__Personal__c: boolean;
+    geopointe__Personal__c?: boolean;
     /**
      * <h3><b>URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,10 +99,10 @@ declare interface geopointe__Layer__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__URL__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__URL__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

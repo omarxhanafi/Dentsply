@@ -14,7 +14,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_ONESFID__c: string;
+    Account_ONESFID__c?: string;
     /**
      * <h3><b>Advisors</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,7 +23,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Advisors__c: boolean;
+    Advisors__c?: boolean;
     /**
      * <h3><b>Ambassador</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,7 +32,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Ambassador__c: boolean;
+    Ambassador__c?: boolean;
     /**
      * <h3><b>Approved Higher Exception Value</b></h3>
      * <p>The maximum value of approved exceptions</p>
@@ -47,7 +47,7 @@ declare interface Expert__ChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Approved_Exception_Value__c: number;
+    Approved_Exception_Value__c?: number;
     /**
      * <h3><b>Approved Lower Exception Value</b></h3>
      * <p>Shows the lowest approved value existing for this KOL</p>
@@ -62,7 +62,7 @@ declare interface Expert__ChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Approved_Lower_Exception_Value__c: number;
+    Approved_Lower_Exception_Value__c?: number;
     /**
      * <h3><b>Associate or Assistant Professor</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,7 +71,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Associate_or_Assistant_Professor__c: boolean;
+    Associate_or_Assistant_Professor__c?: boolean;
     /**
      * <h3><b>Board of directors of a Fortune 500</b></h3>
      * <h4>Field Attributes</h4>
@@ -80,7 +80,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Board_of_directors_of_a_Fortune_500__c: boolean;
+    Board_of_directors_of_a_Fortune_500__c?: boolean;
     /**
      * <h3><b>Cad Cam</b></h3>
      * <h4>Field Attributes</h4>
@@ -111,6 +111,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CEREC Zirconia + / MTL</code></td><td>CEREC Zirconia + / MTL</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CEREC Guide 2</code></td><td>CEREC Guide 2</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CEREC Guide 3</code></td><td>CEREC Guide 3</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Primescan 2</code></td><td>Primescan 2</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CEREC Milling Units  PP / MC X</code></td><td>CEREC Milling Units  PP / MC X</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CEREC Milling Units  XL  / MC X</code></td><td>CEREC Milling Units  XL  / MC X</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CEREC Omnciam AF</code></td><td>CEREC Omnciam AF</td><td nowrap>true</td></tr>
@@ -121,7 +122,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Hub</code></td><td>DS Hub</td><td nowrap>true</td></tr>
      * </table>
      */
-    Cad_Cam__c: string;
+    Cad_Cam__c?: string;
     /**
      * <h3><b>CAD CAM Beta Tester</b></h3>
      * <h4>Field Attributes</h4>
@@ -130,7 +131,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CadCamBetaTester__c: boolean;
+    CadCamBetaTester__c?: boolean;
     /**
      * <h3><b>Certified dental technician</b></h3>
      * <h4>Field Attributes</h4>
@@ -139,8 +140,8 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Certified_dental_technician__c: boolean;
-    ChangeEventHeader: ChangeEventHeader;
+    Certified_dental_technician__c?: boolean;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Clinical decision maker</b></h3>
      * <h4>Field Attributes</h4>
@@ -149,7 +150,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Clinical_decision_maker__c: boolean;
+    Clinical_decision_maker__c?: boolean;
     /**
      * <h3><b>Clinical Technical Expert</b></h3>
      * <h4>Field Attributes</h4>
@@ -158,7 +159,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Clinical_Technical_Expert__c: boolean;
+    Clinical_Technical_Expert__c?: boolean;
     /**
      * <h3><b>2 to 5 years experience</b></h3>
      * <h4>Field Attributes</h4>
@@ -167,7 +168,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Clinician_or_scientist_with_2_to_5_years__c: boolean;
+    Clinician_or_scientist_with_2_to_5_years__c?: boolean;
     /**
      * <h3><b>Committee Chair of a prof. org. of assoc</b></h3>
      * <h4>Field Attributes</h4>
@@ -176,7 +177,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Committee_Chair_of_a_prof_org__c: boolean;
+    Committee_Chair_of_a_prof_org__c?: boolean;
     /**
      * <h3><b>Company</b></h3>
      * <h4>Field Attributes</h4>
@@ -188,7 +189,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Company__c: string;
+    Company__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -196,7 +197,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Contact})</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -204,7 +205,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Contact})</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * <h3><b>Content Provider</b></h3>
      * <h4>Field Attributes</h4>
@@ -213,7 +214,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Content_Provider__c: boolean;
+    Content_Provider__c?: boolean;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -225,11 +226,11 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Dean, senior administator or  professor</b></h3>
      * <h4>Field Attributes</h4>
@@ -238,7 +239,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Dean_senior_university_administator_or__c: boolean;
+    Dean_senior_university_administator_or__c?: boolean;
     /**
      * <h3><b>Dental Hygiene Faculty Position</b></h3>
      * <h4>Field Attributes</h4>
@@ -247,7 +248,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Dental_Hygiene_Faculty_Position__c: boolean;
+    Dental_Hygiene_Faculty_Position__c?: boolean;
     /**
      * <h3><b>Dental Hygiene Faculty Position</b></h3>
      * <h4>Field Attributes</h4>
@@ -256,7 +257,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Dental_Hygiene_Faculty_Position_Natiojna__c: boolean;
+    Dental_Hygiene_Faculty_Position_Natiojna__c?: boolean;
     /**
      * <h3><b>Designer</b></h3>
      * <h4>Field Attributes</h4>
@@ -265,7 +266,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Designer__c: boolean;
+    Designer__c?: boolean;
     /**
      * <h3><b>Digital Experience</b></h3>
      * <h4>Field Attributes</h4>
@@ -274,7 +275,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Digital_Experience__c: boolean;
+    Digital_Experience__c?: boolean;
     /**
      * <h3><b>Digital Experience - Advanced</b></h3>
      * <h4>Field Attributes</h4>
@@ -283,7 +284,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Digital_Experience_Advanced__c: boolean;
+    Digital_Experience_Advanced__c?: boolean;
     /**
      * <h3><b>Digital Experience - Trainer</b></h3>
      * <h4>Field Attributes</h4>
@@ -292,7 +293,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Digital_Experience_Trainer__c: boolean;
+    Digital_Experience_Trainer__c?: boolean;
     /**
      * <h3><b>Director or similar in area of expertise</b></h3>
      * <h4>Field Attributes</h4>
@@ -301,7 +302,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Director_or_similar_in_area_of_expertise__c: boolean;
+    Director_or_similar_in_area_of_expertise__c?: boolean;
     /**
      * <h3><b>E &amp; I Beta Tester</b></h3>
      * <h4>Field Attributes</h4>
@@ -310,7 +311,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    EIBetaTester__c: boolean;
+    EIBetaTester__c?: boolean;
     /**
      * <h3><b>Contact Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -322,7 +323,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email__c: string;
+    Email__c?: string;
     /**
      * <h3><b>Email opt out</b></h3>
      * <h4>Field Attributes</h4>
@@ -331,7 +332,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Contact__r.HasOptedOutOfEmail</code></td></tr>
      * </table>
      */
-    Email_opt_out__c: boolean;
+    Email_opt_out__c?: boolean;
     /**
      * <h3><b>Emerging Researcher</b></h3>
      * <h4>Field Attributes</h4>
@@ -340,7 +341,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Emerging_Researcher__c: boolean;
+    Emerging_Researcher__c?: boolean;
     /**
      * <h3><b>Emerging Speaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -349,7 +350,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Emerging_Speaker__c: boolean;
+    Emerging_Speaker__c?: boolean;
     /**
      * <h3><b>Endodontics specialties</b></h3>
      * <h4>Field Attributes</h4>
@@ -390,7 +391,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">VDW.Ultra</code></td><td>VDW.Ultra</td><td nowrap>true</td></tr>
      * </table>
      */
-    Endodontics_specialties__c: string;
+    Endodontics_specialties__c?: string;
     /**
      * <h3><b>Expert Bio (English)</b></h3>
      * <h4>Field Attributes</h4>
@@ -398,7 +399,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Expert_Bio_english__c: string;
+    Expert_Bio_english__c?: string;
     /**
      * <h3><b>Expert Bio (local)</b></h3>
      * <h4>Field Attributes</h4>
@@ -406,7 +407,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Expert_Bio_local__c: string;
+    Expert_Bio_local__c?: string;
     /**
      * <h3><b>Expert Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -445,7 +446,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Trainer the Trainer Program Participant</code></td><td>Trainer the Trainer Program Participant</td><td nowrap>true</td></tr>
      * </table>
      */
-    Expert_Role__c: string;
+    Expert_Role__c?: string;
     /**
      * <h3><b>FMV exception approved</b></h3>
      * <p>Used in approval process and will be checked if approved for exception to FMV</p>
@@ -455,7 +456,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FMV_exception_approved__c: boolean;
+    FMV_exception_approved__c?: boolean;
     /**
      * <h3><b>Gender</b></h3>
      * <h4>Field Attributes</h4>
@@ -472,7 +473,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Prefer not to say</code></td><td>Prefer not to say</td><td nowrap>true</td></tr>
      * </table>
      */
-    Gender__c: string;
+    Gender__c?: string;
     /**
      * <h3><b>Global KOL</b></h3>
      * <p>Used to identify if a KOL is a global KOL.
@@ -483,7 +484,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(OR( International_Speaker__c , Thought_Leader__c , Inventor__c ), TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    GlobalKOL__c: boolean;
+    GlobalKOL__c?: boolean;
     /**
      * <h3><b>Hygienist with &gt;5 years experience</b></h3>
      * <h4>Field Attributes</h4>
@@ -492,7 +493,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Hygienist_with_5_years_experience__c: boolean;
+    Hygienist_with_5_years_experience__c?: boolean;
     /**
      * <h3><b>Hygienist with director level experience</b></h3>
      * <h4>Field Attributes</h4>
@@ -501,7 +502,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Hygienist_with_director_level_experience__c: boolean;
+    Hygienist_with_director_level_experience__c?: boolean;
     /**
      * <h3><b>Imaging</b></h3>
      * <h4>Field Attributes</h4>
@@ -541,7 +542,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SiroLaser AdvancePlus</code></td><td>SiroLaser AdvancePlus</td><td nowrap>true</td></tr>
      * </table>
      */
-    Imaging__c: string;
+    Imaging__c?: string;
     /**
      * <h3><b>Implants Specialties</b></h3>
      * <h4>Field Attributes</h4>
@@ -581,7 +582,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Astra Tech Implant SystemTX</code></td><td>Astra Tech Implant SystemTX</td><td nowrap>true</td></tr>
      * </table>
      */
-    Implants_Specialties__c: string;
+    Implants_Specialties__c?: string;
     /**
      * <h3><b>Inactive</b></h3>
      * <p>Checked if the KOL is no longer active as KOL but we still want to keep information if re-activated again.</p>
@@ -591,7 +592,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Inactive__c: boolean;
+    Inactive__c?: boolean;
     /**
      * <h3><b>Instruments</b></h3>
      * <h4>Field Attributes</h4>
@@ -614,7 +615,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Midwest Mini</code></td><td>Midwest Mini</td><td nowrap>true</td></tr>
      * </table>
      */
-    Instruments__c: string;
+    Instruments__c?: string;
     /**
      * <h3><b>Supports Integrated Digital Workflows</b></h3>
      * <h4>Field Attributes</h4>
@@ -623,7 +624,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    IntegratedDigitalWorkflows__c: boolean;
+    IntegratedDigitalWorkflows__c?: boolean;
     /**
      * <h3><b>International Speaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -632,7 +633,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    International_Speaker__c: boolean;
+    International_Speaker__c?: boolean;
     /**
      * <h3><b>Inventor</b></h3>
      * <h4>Field Attributes</h4>
@@ -641,7 +642,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Inventor__c: boolean;
+    Inventor__c?: boolean;
     /**
      * <h3><b>is my KOL</b></h3>
      * <p>Shows True if KOL is owned by the user looking at it - intended to be used in List view filters etc.</p>
@@ -651,7 +652,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( Other_Contact_Point__c =  $User.Id , TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    isMyKOL__c: boolean;
+    isMyKOL__c?: boolean;
     /**
      * <h3><b>KOL Email (PRIMARY)</b></h3>
      * <h4>Field Attributes</h4>
@@ -662,7 +663,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KOL_Email__c: string;
+    KOL_Email__c?: string;
     /**
      * <h3><b>Lab Expert</b></h3>
      * <h4>Field Attributes</h4>
@@ -671,7 +672,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Lab_Expert__c: boolean;
+    Lab_Expert__c?: boolean;
     /**
      * <h3><b>Lab Messenger</b></h3>
      * <h4>Field Attributes</h4>
@@ -680,10 +681,10 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Lab_Messenger__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Lab_Messenger__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Lectured 5+ times in prior 5 years</b></h3>
      * <h4>Field Attributes</h4>
@@ -692,7 +693,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Lectured_10_times_in_prior_5_years__c: boolean;
+    Lectured_10_times_in_prior_5_years__c?: boolean;
     /**
      * <h3><b>Lectured 5+ at dental meetings</b></h3>
      * <h4>Field Attributes</h4>
@@ -701,7 +702,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Lectured_5_at_dental_meetings__c: boolean;
+    Lectured_5_at_dental_meetings__c?: boolean;
     /**
      * <h3><b>Lectured &lt;5 times in prior 5 years</b></h3>
      * <h4>Field Attributes</h4>
@@ -710,7 +711,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Lectured_5_times_in_prior_5_years__c: boolean;
+    Lectured_5_times_in_prior_5_years__c?: boolean;
     /**
      * <h3><b>Master Technician/Lab Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -719,7 +720,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Master_Technician_Lab_Owne__c: boolean;
+    Master_Technician_Lab_Owne__c?: boolean;
     /**
      * <h3><b>Member national/international think tank</b></h3>
      * <h4>Field Attributes</h4>
@@ -728,7 +729,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Member_national_international_think_tank__c: boolean;
+    Member_national_international_think_tank__c?: boolean;
     /**
      * <h3><b>Mobile Phone</b></h3>
      * <p>Required by clinical affairs to capture mobile phone only accessible to them but not other users.</p>
@@ -738,7 +739,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Mobile_Phone__c: string;
+    Mobile_Phone__c?: string;
     /**
      * <h3><b>More than 5 years experience</b></h3>
      * <h4>Field Attributes</h4>
@@ -747,7 +748,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    More_than_5_years_experience__c: boolean;
+    More_than_5_years_experience__c?: boolean;
     /**
      * <h3><b>NA: State License # 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -758,7 +759,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_State_License_1__c: string;
+    NA_State_License_1__c?: string;
     /**
      * <h3><b>NA: State License # 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -769,7 +770,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_State_License_2__c: string;
+    NA_State_License_2__c?: string;
     /**
      * <h3><b>NA: State License # 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -780,7 +781,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_State_License_3__c: string;
+    NA_State_License_3__c?: string;
     /**
      * <h3><b>NA: State License # 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -791,7 +792,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_State_License_4__c: string;
+    NA_State_License_4__c?: string;
     /**
      * <h3><b>NA: State Licensure 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -800,7 +801,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_State_Licensure_1__c: string;
+    NA_State_Licensure_1__c?: string;
     /**
      * <h3><b>NA: State Licensure 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -809,7 +810,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_State_Licensure_2__c: string;
+    NA_State_Licensure_2__c?: string;
     /**
      * <h3><b>NA: State Licensure 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -818,7 +819,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_State_Licensure_3__c: string;
+    NA_State_Licensure_3__c?: string;
     /**
      * <h3><b>NA: State Licensure 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -827,8 +828,8 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_State_Licensure_4__c: string;
-    Name: string;
+    NA_State_Licensure_4__c?: string;
+    Name?: string;
     /**
      * <h3><b>Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -840,7 +841,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Name__c: string;
+    Name__c?: string;
     /**
      * <h3><b>Name (English)</b></h3>
      * <h4>Field Attributes</h4>
@@ -851,7 +852,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NameEnglish__c: string;
+    NameEnglish__c?: string;
     /**
      * <h3><b>Not a Healthcare Professional</b></h3>
      * <p>This field should be ticked if this KOL is not a healthcare professional and therefor not part of/included in the Fair Market Value (FMV) regulations. If this is ticked contracts etc. will not enforce a specific payment range.</p>
@@ -861,7 +862,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Not_a_Healthcare_Professional__c: boolean;
+    Not_a_Healthcare_Professional__c?: boolean;
     /**
      * <h3><b>Orthodontics Specialties</b></h3>
      * <h4>Field Attributes</h4>
@@ -892,7 +893,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">InOvation Brackets (R, X & C)</code></td><td>InOvation Brackets (R, X &amp; C)</td><td nowrap>true</td></tr>
      * </table>
      */
-    Orthodontics_Specialties__c: string;
+    Orthodontics_Specialties__c?: string;
     /**
      * <h3><b>KOL Information Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -901,7 +902,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_Contact_Point__c: string;
+    Other_Contact_Point__c?: string;
     /**
      * <h3><b>KOL Information Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -910,7 +911,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_Contact_Point__r: User;
+    Other_Contact_Point__r?: User;
     /**
      * <h3><b>Owner/Director Practice, Lab, Consulting</b></h3>
      * <h4>Field Attributes</h4>
@@ -919,7 +920,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Owner_dental_company_Tier2__c: boolean;
+    Owner_dental_company_Tier2__c?: boolean;
     /**
      * <h3><b>Owner/Director Practice, Consulting Co.</b></h3>
      * <h4>Field Attributes</h4>
@@ -928,7 +929,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Owner_Director_Practice_Consulting_Co__c: boolean;
+    Owner_Director_Practice_Consulting_Co__c?: boolean;
     /**
      * <h3><b>Owner/Director Practice, Lab, Consulting</b></h3>
      * <h4>Field Attributes</h4>
@@ -937,7 +938,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Owner_Practice_Tier3__c: boolean;
+    Owner_Practice_Tier3__c?: boolean;
     /**
      * <h3><b>Phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -949,7 +950,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Phone__c: string;
+    Phone__c?: string;
     /**
      * <h3><b>President or member of a board of direct</b></h3>
      * <h4>Field Attributes</h4>
@@ -958,7 +959,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    President_or_member_of_a_board_of_direct__c: boolean;
+    President_or_member_of_a_board_of_direct__c?: boolean;
     /**
      * <h3><b>Preventive Specialties</b></h3>
      * <h4>Field Attributes</h4>
@@ -977,7 +978,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">X-Ray</code></td><td>X-Ray</td><td nowrap>true</td></tr>
      * </table>
      */
-    Preventive_Specialties__c: string;
+    Preventive_Specialties__c?: string;
     /**
      * <h3><b>Primary SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -1004,7 +1005,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Primary_SBU__c: string;
+    Primary_SBU__c?: string;
     /**
      * <h3><b>Product Evaluator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1013,7 +1014,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Product_Evaluator__c: boolean;
+    Product_Evaluator__c?: boolean;
     /**
      * <h3><b>Product Trainer</b></h3>
      * <h4>Field Attributes</h4>
@@ -1022,7 +1023,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Product_Trainer__c: boolean;
+    Product_Trainer__c?: boolean;
     /**
      * <h3><b>Profession</b></h3>
      * <p>Used by Clinical Affairs - also included in some logic for the Fair Market Value calculations so needed a sepaareta list. Ultimate solution would be to merge this with global profession/contcat subtype valueas.</p>
@@ -1064,7 +1065,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Non-Healthcare Provider</code></td><td>Non-Healthcare Provider</td><td nowrap>true</td></tr>
      * </table>
      */
-    Profession__c: string;
+    Profession__c?: string;
     /**
      * <h3><b>Profession Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -1076,7 +1077,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Profession_Group__c: string;
+    Profession_Group__c?: string;
     /**
      * <h3><b>Professor at university</b></h3>
      * <h4>Field Attributes</h4>
@@ -1085,7 +1086,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Professor_Assoc_Professor_at_distinguish__c: boolean;
+    Professor_Assoc_Professor_at_distinguish__c?: boolean;
     /**
      * <h3><b>Lab Specialties</b></h3>
      * <h4>Field Attributes</h4>
@@ -1145,7 +1146,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">inFire Sinter Furnace</code></td><td>inFire Sinter Furnace</td><td nowrap>true</td></tr>
      * </table>
      */
-    Prosthetics_Specialties__c: string;
+    Prosthetics_Specialties__c?: string;
     /**
      * <h3><b>Published 2-5 articles in past 10 years</b></h3>
      * <h4>Field Attributes</h4>
@@ -1154,7 +1155,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Published_2_5_articles_in_past_10_years__c: boolean;
+    Published_2_5_articles_in_past_10_years__c?: boolean;
     /**
      * <h3><b>Published 6+ in peer reviewed journals</b></h3>
      * <h4>Field Attributes</h4>
@@ -1163,7 +1164,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Published_6_in_peer_reviewed_or_Lab_Te__c: boolean;
+    Published_6_in_peer_reviewed_or_Lab_Te__c?: boolean;
     /**
      * <h3><b>RCO Level</b></h3>
      * <p>TFUS-000005227</p>
@@ -1173,10 +1174,10 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RCOLevel__c: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    ReplayId: string;
+    RCOLevel__c?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Researcher</b></h3>
      * <h4>Field Attributes</h4>
@@ -1185,7 +1186,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Researcher__c: boolean;
+    Researcher__c?: boolean;
     /**
      * <h3><b>Responsible of Education</b></h3>
      * <h4>Field Attributes</h4>
@@ -1194,7 +1195,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Responsible_of_Education__c: boolean;
+    Responsible_of_Education__c?: boolean;
     /**
      * <h3><b>Restorative</b></h3>
      * <h4>Field Attributes</h4>
@@ -1218,7 +1219,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Burs</code></td><td>Burs</td><td nowrap>true</td></tr>
      * </table>
      */
-    Restorative__c: string;
+    Restorative__c?: string;
     /**
      * <h3><b>Sales Trainer</b></h3>
      * <h4>Field Attributes</h4>
@@ -1227,7 +1228,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Sales_Trainer__c: boolean;
+    Sales_Trainer__c?: boolean;
     /**
      * <h3><b>Science and technology/product dev</b></h3>
      * <h4>Field Attributes</h4>
@@ -1236,7 +1237,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    science_and_technology_product_dev__c: boolean;
+    science_and_technology_product_dev__c?: boolean;
     /**
      * <h3><b>Secondary SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -1263,7 +1264,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    SecondarySBU__c: string;
+    SecondarySBU__c?: string;
     /**
      * <h3><b>Senior Leader with &gt;10 years experience</b></h3>
      * <h4>Field Attributes</h4>
@@ -1272,7 +1273,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Senior_Leader_with_10_years_experience__c: boolean;
+    Senior_Leader_with_10_years_experience__c?: boolean;
     /**
      * <h3><b>Social Media Influencer</b></h3>
      * <h4>Field Attributes</h4>
@@ -1281,7 +1282,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SocialMediaInfluencer__c: boolean;
+    SocialMediaInfluencer__c?: boolean;
     /**
      * <h3><b>Speaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -1290,7 +1291,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Speaker__c: boolean;
+    Speaker__c?: boolean;
     /**
      * <h3><b>Thought Leader</b></h3>
      * <h4>Field Attributes</h4>
@@ -1299,7 +1300,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Thought_Leader__c: boolean;
+    Thought_Leader__c?: boolean;
     /**
      * <h3><b>Tier1 Criteria</b></h3>
      * <h4>Field Attributes</h4>
@@ -1311,7 +1312,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tier1_Criteria__c: number;
+    Tier1_Criteria__c?: number;
     /**
      * <h3><b>Tier2 Criteria</b></h3>
      * <h4>Field Attributes</h4>
@@ -1323,7 +1324,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tier2_Criteria__c: number;
+    Tier2_Criteria__c?: number;
     /**
      * <h3><b>Tier3 Criteria</b></h3>
      * <h4>Field Attributes</h4>
@@ -1335,7 +1336,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tier3_Criteria__c: number;
+    Tier3_Criteria__c?: number;
     /**
      * <h3><b>Tier</b></h3>
      * <h4>Field Attributes</h4>
@@ -1347,7 +1348,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tier__c: string;
+    Tier__c?: string;
     /**
      * <h3><b>Tier Help</b></h3>
      * <p>A field used to copy information from formula field &quot;Tier__c&quot; to a text field upon modification or creation of record. This field is needed to be used when pre-setting values in Quick Actions for related Expert Contract</p>
@@ -1359,7 +1360,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tier_Help__c: string;
+    Tier_Help__c?: string;
     /**
      * <h3><b>TtT Educator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1368,7 +1369,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Train_the_Trainer_Educator__c: boolean;
+    Train_the_Trainer_Educator__c?: boolean;
     /**
      * <h3><b>Treatment Centers</b></h3>
      * <h4>Field Attributes</h4>
@@ -1394,7 +1395,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">M-Generation</code></td><td>M-Generation</td><td nowrap>true</td></tr>
      * </table>
      */
-    Treatment_Center__c: string;
+    Treatment_Center__c?: string;
     /**
      * <h3><b>TtT trained speaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -1403,7 +1404,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    TtT_trained_speaker__c: boolean;
+    TtT_trained_speaker__c?: boolean;
     /**
      * <h3><b>Unique Identifier</b></h3>
      * <h4>Field Attributes</h4>
@@ -1432,7 +1433,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">US: NPI</code></td><td>US: NPI</td><td nowrap>true</td></tr>
      * </table>
      */
-    Unique_Identifier__c: string;
+    Unique_Identifier__c?: string;
     /**
      * <h3><b># Valid  FMV Exceptions</b></h3>
      * <h4>Field Attributes</h4>
@@ -1444,7 +1445,7 @@ declare interface Expert__ChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Valid_FMV_Exception__c: number;
+    Valid_FMV_Exception__c?: number;
     /**
      * <h3><b>VDW Specialties</b></h3>
      * <h4>Field Attributes</h4>
@@ -1470,7 +1471,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">VDW Ultra</code></td><td>VDW Ultra</td><td nowrap>true</td></tr>
      * </table>
      */
-    VDW_Specialties__c: string;
+    VDW_Specialties__c?: string;
     /**
      * <h3><b>VDW KOL</b></h3>
      * <h4>Field Attributes</h4>
@@ -1479,7 +1480,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    VdwKol__c: boolean;
+    VdwKol__c?: boolean;
     /**
      * <h3><b>1+ patents in a related field</b></h3>
      * <h4>Field Attributes</h4>
@@ -1488,7 +1489,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    X1_patents_in_a_related_field__c: boolean;
+    X1_patents_in_a_related_field__c?: boolean;
     /**
      * <h3><b>Zhermack Clinical</b></h3>
      * <h4>Field Attributes</h4>
@@ -1522,7 +1523,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Elite Soft Relining</code></td><td>Elite Soft Relining</td><td nowrap>true</td></tr>
      * </table>
      */
-    ZhermackClinical__c: string;
+    ZhermackClinical__c?: string;
     /**
      * <h3><b>Zhermack Hygiene</b></h3>
      * <h4>Field Attributes</h4>
@@ -1551,7 +1552,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Safemix</code></td><td>Safemix</td><td nowrap>true</td></tr>
      * </table>
      */
-    ZhermackHygiene__c: string;
+    ZhermackHygiene__c?: string;
     /**
      * <h3><b>Zhermack KOL</b></h3>
      * <h4>Field Attributes</h4>
@@ -1560,7 +1561,7 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ZhermackKOL__c: boolean;
+    ZhermackKOL__c?: boolean;
     /**
      * <h3><b>Zhermack Lab</b></h3>
      * <h4>Field Attributes</h4>
@@ -1591,5 +1592,5 @@ declare interface Expert__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zeta 1 Ultra</code></td><td>Zeta 1 Ultra</td><td nowrap>true</td></tr>
      * </table>
      */
-    ZhermackLab__c: string;
+    ZhermackLab__c?: string;
 }

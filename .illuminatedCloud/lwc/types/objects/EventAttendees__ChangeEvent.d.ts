@@ -2,11 +2,11 @@
 
 declare interface EventAttendees__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>EventId</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface EventAttendees__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EventId__c: string;
+    EventId__c?: string;
     /**
      * <h3><b>IsParent</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,13 +26,13 @@ declare interface EventAttendees__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    IsParent__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    IsParent__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>RelationId</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,7 +41,7 @@ declare interface EventAttendees__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RelationId__c: string;
+    RelationId__c?: string;
     /**
      * <h3><b>RelationId</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,8 +50,8 @@ declare interface EventAttendees__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RelationId__r: User;
-    ReplayId: string;
+    RelationId__r?: User;
+    ReplayId?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -65,5 +65,5 @@ declare interface EventAttendees__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not_Invited</code></td><td>Not_Invited</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
 }

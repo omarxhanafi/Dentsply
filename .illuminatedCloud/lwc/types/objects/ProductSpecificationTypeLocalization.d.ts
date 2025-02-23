@@ -2,16 +2,16 @@
 
 declare interface ProductSpecificationTypeLocalization extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    NamespacePrefix: string;
-    Parent: ProductSpecificationType;
-    ParentId: string;
-    SystemModstamp: string;
-    Value: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    NamespacePrefix?: string;
+    Parent?: ProductSpecificationType;
+    ParentId?: string;
+    SystemModstamp?: string;
+    Value?: string;
 }

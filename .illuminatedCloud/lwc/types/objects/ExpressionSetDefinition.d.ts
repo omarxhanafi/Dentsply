@@ -2,22 +2,23 @@
 
 declare interface ExpressionSetDefinition extends SObject 
 {
-    Action: AIInsightAction;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DefaultPricingProcedureForRecipe: PricingRecipe[];
-    DeveloperName: string;
-    ExecutionScale: string;
-    ExpressionSetDefinition: ExpressionSetDefinitionContextDefinition;
-    ExpressionSetDefinitions: ExpressionSet[];
-    IsDeleted: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    ProcedurePlanOptionExpSetDefinition: ProcedurePlanOption[];
-    SystemModstamp: string;
+    Action?: AIInsightAction;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DefaultPricingProcedureForRecipe?: PricingRecipe[];
+    DeveloperName?: string;
+    ExecutionScale?: string;
+    ExpressionSetDefinition?: ExpressionSetDefinitionContextDefinition;
+    ExpressionSetDefinitions?: ExpressionSet[];
+    IsDeleted?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    ProcedurePlanOptionExpSetDefinition?: ProcedurePlanOption[];
+    SalesTransactionTypes?: SalesTransactionType[];
+    SystemModstamp?: string;
 }

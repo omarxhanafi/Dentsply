@@ -2,11 +2,11 @@
 
 declare interface echosign_dev1__Sign_Workflow__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Workflow Content</b></h3>
      * <p>Sign Workflow Content in JSON String Format</p>
@@ -15,7 +15,7 @@ declare interface echosign_dev1__Sign_Workflow__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    echosign_dev1__Workflow_Content__c: string;
+    echosign_dev1__Workflow_Content__c?: string;
     /**
      * <h3><b>Workflow Created Time</b></h3>
      * <p>Sign Workflow Creation Time and Date</p>
@@ -25,7 +25,7 @@ declare interface echosign_dev1__Sign_Workflow__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Workflow_Created_Time__c: string;
+    echosign_dev1__Workflow_Created_Time__c?: string;
     /**
      * <h3><b>Workflow Display Name</b></h3>
      * <p>Workflow Display Name</p>
@@ -37,7 +37,7 @@ declare interface echosign_dev1__Sign_Workflow__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Workflow_Display_Name__c: string;
+    echosign_dev1__Workflow_Display_Name__c?: string;
     /**
      * <h3><b>Workflow Id</b></h3>
      * <p>Sign Workflow Id</p>
@@ -49,7 +49,7 @@ declare interface echosign_dev1__Sign_Workflow__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Workflow_Id__c: string;
+    echosign_dev1__Workflow_Id__c?: string;
     /**
      * <h3><b>Workflow Modified Time</b></h3>
      * <p>Sign Workflow Modification Time and Date</p>
@@ -59,7 +59,7 @@ declare interface echosign_dev1__Sign_Workflow__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Workflow_Modified_Time__c: string;
+    echosign_dev1__Workflow_Modified_Time__c?: string;
     /**
      * <h3><b>Workflow Status</b></h3>
      * <p>Sign Workflow Status</p>
@@ -76,12 +76,12 @@ declare interface echosign_dev1__Sign_Workflow__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">HIDDEN</code></td><td>HIDDEN</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Workflow_Status__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    echosign_dev1__Workflow_Status__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

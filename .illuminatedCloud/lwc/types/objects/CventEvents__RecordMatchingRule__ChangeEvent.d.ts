@@ -2,11 +2,11 @@
 
 declare interface CventEvents__RecordMatchingRule__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Action</b></h3>
      * <p>Type of action to be performed.</p>
@@ -18,7 +18,7 @@ declare interface CventEvents__RecordMatchingRule__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Action__c: string;
+    CventEvents__Action__c?: string;
     /**
      * <h3><b>Assignment Rule</b></h3>
      * <p>Indicates the assignment rule to be applied in case of &quot;No Action&quot; scenario.</p>
@@ -30,7 +30,7 @@ declare interface CventEvents__RecordMatchingRule__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__AssignmentRule__c: string;
+    CventEvents__AssignmentRule__c?: string;
     /**
      * <h3><b>Record Id To Assign</b></h3>
      * <p>Account/User record Id used to assign to in case of &quot;No Action&quot; scenario.</p>
@@ -42,12 +42,12 @@ declare interface CventEvents__RecordMatchingRule__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__RecordIdToAssign__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    CventEvents__RecordIdToAssign__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

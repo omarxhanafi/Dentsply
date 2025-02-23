@@ -5,7 +5,7 @@
  */
 declare interface TMFC_TeamForce_User_Story__c extends SObject 
 {
-    ActivityHistories: ActivityHistory[];
+    ActivityHistories?: ActivityHistory[];
     /**
      * <h3><b>Affected Personas</b></h3>
      * <p>Please specify the affected personas by this user story</p>
@@ -28,15 +28,15 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Lightning - Sales</code></td><td>Lightning - Sales</td><td nowrap>true</td></tr>
      * </table>
      */
-    Affected_Personas__c: string;
+    Affected_Personas__c?: string;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
     /**
      * <h3><b>Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Engagement</code></td><td>Engagement</td><td nowrap>true</td></tr>
      * </table>
      */
-    Area__c: string;
+    Area__c?: string;
     /**
      * <h3><b>Assigned Sandbox</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,14 +64,14 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Assigned_Sandbox__c: string;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    Assigned_Sandbox__c?: string;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Business Doc ready</b></h3>
      * <h4>Field Attributes</h4>
@@ -80,7 +80,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Business_Doc_ready__c: boolean;
+    Business_Doc_ready__c?: boolean;
     /**
      * <h3><b>Cancellation reason</b></h3>
      * <p>Used to capture decision/reason behind cancelling a user story</p>
@@ -90,8 +90,8 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Cancellation_reason__c: string;
-    CombinedAttachments: CombinedAttachment[];
+    Cancellation_reason__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
     /**
      * <h3><b>Communication Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -101,20 +101,20 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CommunicationDate__c: Date;
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    CommunicationDate__c?: Date;
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>CRM Request</b></h3>
      * <h4>Field Attributes</h4>
@@ -123,7 +123,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CRM_Request__c: string;
+    CRM_Request__c?: string;
     /**
      * <h3><b>CRM Request</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,8 +132,8 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CRM_Request__r: Case;
-    CurrencyIsoCode: string;
+    CRM_Request__r?: Case;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Development Freeze Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -143,7 +143,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DevelopmentFreezeDate__c: Date;
+    DevelopmentFreezeDate__c?: Date;
     /**
      * <h3><b>DevOps Work Item Number</b></h3>
      * <p>The number of an Azure DevOps work item if this user story is linked to one.</p>
@@ -155,7 +155,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DevOpsWorkItemNumber__c: string;
+    DevOpsWorkItemNumber__c?: string;
     /**
      * <h3><b>DevOps Work Item Link</b></h3>
      * <h4>Field Attributes</h4>
@@ -167,11 +167,11 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DevOpsWorkItemUrl__c: string;
+    DevOpsWorkItemUrl__c?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * <h3><b>Due Date</b></h3>
      * <p>Add the planned due date - due date is when it should be available in production so not when development is done, make sure room exist for testing, documentation and training</p>
@@ -181,22 +181,22 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Due_Date__c: Date;
+    Due_Date__c?: Date;
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    Events: Event[];
-    Feeds: TMFC_TeamForce_User_Story__Feed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    Emails?: EmailMessage[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
+    Feeds?: TMFC_TeamForce_User_Story__Feed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Future Reminder</b></h3>
      * <h4>Field Attributes</h4>
@@ -205,12 +205,12 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Future_Reminder__c: Date;
+    Future_Reminder__c?: Date;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: TMFC_TeamForce_User_Story__History[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: TMFC_TeamForce_User_Story__History[];
     /**
      * <h3><b>Result Notes</b></h3>
      * <p>Developer, please document here what you have done in the system</p>
@@ -219,27 +219,27 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    internal_comment__c: string;
-    IsDeleted: boolean;
-    LastActivityDate: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    OpenActivities: OpenActivity[];
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
+    internal_comment__c?: string;
+    IsDeleted?: boolean;
+    LastActivityDate?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    OpenActivities?: OpenActivity[];
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Platform</b></h3>
      * <p>This field is used to assign User Stories to the right Product Owner</p>
@@ -260,14 +260,14 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Service</code></td><td>Service</td><td nowrap>true</td></tr>
      * </table>
      */
-    Platform__c: string;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Platform__c?: string;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Product</b></h3>
      * <p>Used to track for which &quot;product&quot; we offer we have development activities etc.  - allows for keeping track of backlog and identify &quot;problem areas&quot;</p>
@@ -277,7 +277,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <p>Relationship field to be able to link user stories to projects.</p>
@@ -287,7 +287,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project__c: string;
+    Project__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <p>Relationship field to be able to link user stories to projects.</p>
@@ -297,7 +297,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project__r: Project__c;
+    Project__r?: Project__c;
     /**
      * <h3><b>Test Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -306,7 +306,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QAOwner__c: string;
+    QAOwner__c?: string;
     /**
      * <h3><b>Test Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -315,26 +315,26 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QAOwner__r: User;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    QAOwner__r?: User;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>Release</b></h3>
      * <h4>Field Attributes</h4>
@@ -346,7 +346,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Release__c: string;
+    Release__c?: string;
     /**
      * <h3><b>Release Notes</b></h3>
      * <p>Please add here the notes to be taken to the release communication</p>
@@ -355,7 +355,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Release_Notes__c: string;
+    Release_Notes__c?: string;
     /**
      * <h3><b>Released to production</b></h3>
      * <p>This field is used and automatically set once a user story reaches the stage in production / closed</p>
@@ -365,7 +365,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Released_to_production__c: Date;
+    Released_to_production__c?: Date;
     /**
      * <h3><b>Release Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -375,7 +375,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ReleaseDate__c: Date;
+    ReleaseDate__c?: Date;
     /**
      * <h3><b>Release Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -387,7 +387,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ReleaseStatus__c: string;
+    ReleaseStatus__c?: string;
     /**
      * <h3><b>Requester Country</b></h3>
      * <p>The country that submitted the CRM request - brought over from CRM Request</p>
@@ -397,7 +397,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Requester_Country__c: string;
+    Requester_Country__c?: string;
     /**
      * <h3><b>Requester Country</b></h3>
      * <p>The country that submitted the CRM request - brought over from CRM Request</p>
@@ -407,7 +407,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Requester_Country__r: Country__c;
+    Requester_Country__r?: Country__c;
     /**
      * <h3><b>Requestor</b></h3>
      * <h4>Field Attributes</h4>
@@ -416,7 +416,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Requestor__c: string;
+    Requestor__c?: string;
     /**
      * <h3><b>Requestor</b></h3>
      * <h4>Field Attributes</h4>
@@ -425,7 +425,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Requestor__r: User;
+    Requestor__r?: User;
     /**
      * <h3><b>Reviewed by EU Team</b></h3>
      * <h4>Field Attributes</h4>
@@ -434,7 +434,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Reviewed_by_EU_Team__c: boolean;
+    Reviewed_by_EU_Team__c?: boolean;
     /**
      * <h3><b>Roadblock Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -453,7 +453,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Temporarily Paused</code></td><td>Temporarily Paused</td><td nowrap>true</td></tr>
      * </table>
      */
-    RoadblockReason__c: string;
+    RoadblockReason__c?: string;
     /**
      * <h3><b>Sandbox</b></h3>
      * <p>Add the sandbox where the development will take place</p>
@@ -463,7 +463,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sandbox__c: string;
+    Sandbox__c?: string;
     /**
      * <h3><b>Sandbox</b></h3>
      * <p>Add the sandbox where the development will take place</p>
@@ -473,9 +473,9 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sandbox__r: TeamForce_Sandbox__c;
-    Shares: TMFC_TeamForce_User_Story__Share[];
-    SobjectLookupValue: AIInsightValue;
+    Sandbox__r?: TeamForce_Sandbox__c;
+    Shares?: TMFC_TeamForce_User_Story__Share[];
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Staging Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -485,7 +485,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StagingStartDate__c: Date;
+    StagingStartDate__c?: Date;
     /**
      * <h3><b>Submitted for Approval</b></h3>
      * <p>This box is checked only when the approval process has been enabled. This is to create a validation rule, such that only the approval process can change the User Story Status</p>
@@ -495,7 +495,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Submitted_for_Approval__c: boolean;
+    Submitted_for_Approval__c?: boolean;
     /**
      * <h3><b>System of Origin</b></h3>
      * <p>Please determine here in which system this issue/bug was detected</p>
@@ -507,20 +507,20 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    System_of_Origin__c: string;
-    SystemModstamp: string;
-    Tags: TMFC_TeamForce_User_Story__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    System_of_Origin__c?: string;
+    SystemModstamp?: string;
+    Tags?: TMFC_TeamForce_User_Story__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
+    Tasks?: Task[];
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_Defect__c.TMFC_TeamForce_User_Story__c}.
      */
-    TeamForce_Defects__r: TMFC_TeamForce_Defect__c[];
+    TeamForce_Defects__r?: TMFC_TeamForce_Defect__c[];
     /**
      * <h3><b>TeamForce Release Documentation Required</b></h3>
      * <h4>Field Attributes</h4>
@@ -529,15 +529,15 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    TeamForce_Release_Documentation_Required__c: boolean;
+    TeamForce_Release_Documentation_Required__c?: boolean;
     /**
      * The reciprocal relationship for {@link TeamForce_User_Story_Test__c.TeamForce_User_Story__c}.
      */
-    TeamForce_User_Story_Tests__r: TeamForce_User_Story_Test__c[];
+    TeamForce_User_Story_Tests__r?: TeamForce_User_Story_Test__c[];
     /**
      * The reciprocal relationship for {@link TMFC_TeamForce_Work_Task__c.TMFC_TeamForce_User_Story__c}.
      */
-    TeamForce_Work_Tasks__r: TMFC_TeamForce_Work_Task__c[];
+    TeamForce_Work_Tasks__r?: TMFC_TeamForce_Work_Task__c[];
     /**
      * <h3><b>Tech Doc ready</b></h3>
      * <h4>Field Attributes</h4>
@@ -546,7 +546,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Tech_Doc_ready__c: boolean;
+    Tech_Doc_ready__c?: boolean;
     /**
      * <h3><b>Test Date</b></h3>
      * <p>TFUS-000005545 This field track the date when Tests are conducted</p>
@@ -556,7 +556,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Test_Date__c: Date;
+    Test_Date__c?: Date;
     /**
      * <h3><b>Test Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -574,7 +574,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Failed</code></td><td>Failed</td><td nowrap>true</td></tr>
      * </table>
      */
-    TestStatus__c: string;
+    TestStatus__c?: string;
     /**
      * <h3><b>Acceptance Criteria / Test Results</b></h3>
      * <h4>Field Attributes</h4>
@@ -582,7 +582,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    TMFC_Acceptance_Criteria__c: string;
+    TMFC_Acceptance_Criteria__c?: string;
     /**
      * <h3><b>As...</b></h3>
      * <h4>Field Attributes</h4>
@@ -593,7 +593,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_As__c: string;
+    TMFC_As__c?: string;
     /**
      * <h3><b>I want to...</b></h3>
      * <h4>Field Attributes</h4>
@@ -604,7 +604,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_I_want_to__c: string;
+    TMFC_I_want_to__c?: string;
     /**
      * <h3><b>Manual Steps: Post-Deployment</b></h3>
      * <h4>Field Attributes</h4>
@@ -612,7 +612,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(5000)</td></tr>
      * </table>
      */
-    TMFC_Manual_Steps_Post_Deployment__c: string;
+    TMFC_Manual_Steps_Post_Deployment__c?: string;
     /**
      * <h3><b>Manual Steps: Pre-Deployment</b></h3>
      * <h4>Field Attributes</h4>
@@ -620,7 +620,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(5000)</td></tr>
      * </table>
      */
-    TMFC_Manual_Steps_Pre_Deployment__c: string;
+    TMFC_Manual_Steps_Pre_Deployment__c?: string;
     /**
      * <h3><b>So that...</b></h3>
      * <h4>Field Attributes</h4>
@@ -631,7 +631,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_So_that__c: string;
+    TMFC_So_that__c?: string;
     /**
      * <h3><b>T-Shirt Size</b></h3>
      * <h4>Field Attributes</h4>
@@ -649,7 +649,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XL</code></td><td>XL</td><td nowrap>true</td></tr>
      * </table>
      */
-    TMFC_Story_Points__c: string;
+    TMFC_Story_Points__c?: string;
     /**
      * <h3><b>TeamForce Epic</b></h3>
      * <h4>Field Attributes</h4>
@@ -658,7 +658,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_TeamForce_Epic__c: string;
+    TMFC_TeamForce_Epic__c?: string;
     /**
      * <h3><b>TeamForce Epic</b></h3>
      * <h4>Field Attributes</h4>
@@ -667,7 +667,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_TeamForce_Epic__r: TMFC_TeamForce_Epic__c;
+    TMFC_TeamForce_Epic__r?: TMFC_TeamForce_Epic__c;
     /**
      * <h3><b>TeamForce Sprint</b></h3>
      * <h4>Field Attributes</h4>
@@ -676,7 +676,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_TeamForce_Sprint__c: string;
+    TMFC_TeamForce_Sprint__c?: string;
     /**
      * <h3><b>TeamForce Sprint</b></h3>
      * <h4>Field Attributes</h4>
@@ -685,7 +685,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_TeamForce_Sprint__r: TMFC_TeamForce_Sprint__c;
+    TMFC_TeamForce_Sprint__r?: TMFC_TeamForce_Sprint__c;
     /**
      * <h3><b>User Story Design Sign-Off</b></h3>
      * <h4>Field Attributes</h4>
@@ -694,7 +694,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_User_Story_Design_Sign_Off__c: string;
+    TMFC_User_Story_Design_Sign_Off__c?: string;
     /**
      * <h3><b>User Story Design Sign-Off</b></h3>
      * <h4>Field Attributes</h4>
@@ -703,7 +703,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_User_Story_Design_Sign_Off__r: User;
+    TMFC_User_Story_Design_Sign_Off__r?: User;
     /**
      * <h3><b>User Story Design Sign-Off Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -712,7 +712,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_User_Story_Design_Sign_Off_Date__c: Date;
+    TMFC_User_Story_Design_Sign_Off_Date__c?: Date;
     /**
      * <h3><b>User Story Dev Sign-Off</b></h3>
      * <h4>Field Attributes</h4>
@@ -721,7 +721,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_User_Story_Dev_Sign_Off__c: string;
+    TMFC_User_Story_Dev_Sign_Off__c?: string;
     /**
      * <h3><b>User Story Dev Sign-Off</b></h3>
      * <h4>Field Attributes</h4>
@@ -730,7 +730,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_User_Story_Dev_Sign_Off__r: User;
+    TMFC_User_Story_Dev_Sign_Off__r?: User;
     /**
      * <h3><b>User Story Dev Sign-Off Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -739,7 +739,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_User_Story_Dev_Sign_Off_Date__c: Date;
+    TMFC_User_Story_Dev_Sign_Off_Date__c?: Date;
     /**
      * <h3><b>User Story Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -747,7 +747,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    TMFC_User_Story_Notes__c: string;
+    TMFC_User_Story_Notes__c?: string;
     /**
      * <h3><b>User Story Priority</b></h3>
      * <h4>Field Attributes</h4>
@@ -763,7 +763,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Low</code></td><td>Low</td><td nowrap>true</td></tr>
      * </table>
      */
-    TMFC_User_Story_Priority__c: string;
+    TMFC_User_Story_Priority__c?: string;
     /**
      * <h3><b>User Story Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -804,7 +804,7 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">UAT to Begin</code></td><td>UAT to Begin</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    TMFC_User_Story_Status__c: string;
+    TMFC_User_Story_Status__c?: string;
     /**
      * <h3><b>User Story Text</b></h3>
      * <h4>Field Attributes</h4>
@@ -816,9 +816,9 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TMFC_User_Story_Text__c: string;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    TMFC_User_Story_Text__c?: string;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -836,15 +836,15 @@ declare interface TMFC_TeamForce_User_Story__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type__c: string;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    Type__c?: string;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

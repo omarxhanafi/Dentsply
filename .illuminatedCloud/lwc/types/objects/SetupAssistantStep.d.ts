@@ -2,19 +2,19 @@
 
 declare interface SetupAssistantStep extends SObject 
 {
-    AssistantType: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    IsComplete: boolean;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    AssistantType?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    IsComplete?: boolean;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
 }

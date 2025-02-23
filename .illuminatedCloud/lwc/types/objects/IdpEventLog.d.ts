@@ -2,17 +2,17 @@
 
 declare interface IdpEventLog extends SObject 
 {
-    App: ConnectedApplication;
-    AppId: string;
-    AuthSession: AuthSession;
-    AuthSessionId: string;
-    ErrorCode: string;
-    IdentityUsed: string;
-    InitiatedBy: string;
-    OptionsHasLogoutUrl: boolean;
-    SamlEntityUrl: string;
-    SsoType: string;
-    Timestamp: string;
-    User: User;
-    UserId: string;
+    App?: ConnectedApplication;
+    AppId?: string;
+    AuthSession?: AuthSession;
+    AuthSessionId?: string;
+    ErrorCode?: string;
+    IdentityUsed?: string;
+    InitiatedBy?: string;
+    OptionsHasLogoutUrl?: boolean;
+    SamlEntityUrl?: string;
+    SsoType?: string;
+    Timestamp?: string;
+    User?: User;
+    UserId?: string;
 }

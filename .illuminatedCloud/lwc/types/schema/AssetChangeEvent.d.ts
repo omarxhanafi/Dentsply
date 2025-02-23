@@ -162,6 +162,12 @@ declare module "@salesforce/schema/AssetChangeEvent.GeocodeAccuracy" {
     export default GeocodeAccuracy;
 }
 
+declare module "@salesforce/schema/AssetChangeEvent.HasLifecycleManagement" {
+    import { FieldId } from "@salesforce/schema";
+    const HasLifecycleManagement: FieldId;
+    export default HasLifecycleManagement;
+}
+
 declare module "@salesforce/schema/AssetChangeEvent.Id" {
     import { FieldId } from "@salesforce/schema";
     const Id: FieldId;
@@ -220,6 +226,18 @@ declare module "@salesforce/schema/AssetChangeEvent.Latitude" {
     import { FieldId } from "@salesforce/schema";
     const Latitude: FieldId;
     export default Latitude;
+}
+
+declare module "@salesforce/schema/AssetChangeEvent.LifecycleEndDate" {
+    import { FieldId } from "@salesforce/schema";
+    const LifecycleEndDate: FieldId;
+    export default LifecycleEndDate;
+}
+
+declare module "@salesforce/schema/AssetChangeEvent.LifecycleStartDate" {
+    import { FieldId } from "@salesforce/schema";
+    const LifecycleStartDate: FieldId;
+    export default LifecycleStartDate;
 }
 
 declare module "@salesforce/schema/AssetChangeEvent.Location" {
@@ -306,6 +324,12 @@ declare module "@salesforce/schema/AssetChangeEvent.Price" {
     export default Price;
 }
 
+declare module "@salesforce/schema/AssetChangeEvent.PricingSource" {
+    import { FieldId } from "@salesforce/schema";
+    const PricingSource: FieldId;
+    export default PricingSource;
+}
+
 declare module "@salesforce/schema/AssetChangeEvent.Product2" {
     import { FieldId } from "@salesforce/schema";
     const Product2: FieldId;
@@ -370,6 +394,18 @@ declare module "@salesforce/schema/AssetChangeEvent.RegistrationDate__c" {
     import { FieldId } from "@salesforce/schema";
     const RegistrationDate__c: FieldId;
     export default RegistrationDate__c;
+}
+
+declare module "@salesforce/schema/AssetChangeEvent.RenewalTerm" {
+    import { FieldId } from "@salesforce/schema";
+    const RenewalTerm: FieldId;
+    export default RenewalTerm;
+}
+
+declare module "@salesforce/schema/AssetChangeEvent.RenewalTermUnit" {
+    import { FieldId } from "@salesforce/schema";
+    const RenewalTermUnit: FieldId;
+    export default RenewalTermUnit;
 }
 
 declare module "@salesforce/schema/AssetChangeEvent.ReplayId" {

@@ -2,12 +2,12 @@
 
 declare interface IconDefinition extends SObject 
 {
-    ContentType: string;
-    DurableId: string;
-    Height: number;
-    TabDefinition: TabDefinition;
-    TabDefinitionId: string;
-    Theme: string;
-    Url: string;
-    Width: number;
+    ContentType?: string;
+    DurableId?: string;
+    Height?: number;
+    TabDefinition?: TabDefinition;
+    TabDefinitionId?: string;
+    Theme?: string;
+    Url?: string;
+    Width?: number;
 }

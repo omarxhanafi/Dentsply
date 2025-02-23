@@ -2,11 +2,11 @@
 
 declare interface FSL__SLR_Cache__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Distance</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface FSL__SLR_Cache__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Distance__c: number;
+    FSL__Distance__c?: number;
     /**
      * <h3><b>From</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,9 +26,9 @@ declare interface FSL__SLR_Cache__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__From__c: Location;
-    FSL__From__Latitude__s: number;
-    FSL__From__Longitude__s: number;
+    FSL__From__c?: Location;
+    FSL__From__Latitude__s?: number;
+    FSL__From__Longitude__s?: number;
     /**
      * <h3><b>Identifier</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface FSL__SLR_Cache__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Identifier__c: string;
+    FSL__Identifier__c?: string;
     /**
      * <h3><b>Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface FSL__SLR_Cache__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Time__c: number;
+    FSL__Time__c?: number;
     /**
      * <h3><b>To</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,14 +59,14 @@ declare interface FSL__SLR_Cache__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__To__c: Location;
-    FSL__To__Latitude__s: number;
-    FSL__To__Longitude__s: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    FSL__To__c?: Location;
+    FSL__To__Latitude__s?: number;
+    FSL__To__Longitude__s?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

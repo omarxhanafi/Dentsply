@@ -2,39 +2,39 @@
 
 declare interface Scorecard extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    RecordActionHistories: RecordActionHistory[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RelatedRecord: FlowRecordRelation;
+    RecordActions?: RecordAction[];
+    RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link ScorecardAssociation.ScorecardId}.
      */
-    ScorecardAssociations: ScorecardAssociation[];
+    ScorecardAssociations?: ScorecardAssociation[];
     /**
      * The reciprocal relationship for {@link ScorecardMetric.ScorecardId}.
      */
-    ScorecardMetrics: ScorecardMetric[];
-    Shares: ScorecardShare[];
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetEntity: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    ScorecardMetrics?: ScorecardMetric[];
+    Shares?: ScorecardShare[];
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetEntity?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
 }

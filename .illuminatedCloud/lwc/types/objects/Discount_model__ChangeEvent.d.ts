@@ -10,7 +10,7 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ActivationDate__c: Date;
+    ActivationDate__c?: Date;
     /**
      * <h3><b>Active</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,8 +19,8 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">TODAY() &gt;=  ActivationDate__c &amp;&amp; (( ISBLANK( DeActivationDate__c ) ) || TODAY() &lt; DeActivationDate__c )</code></td></tr>
      * </table>
      */
-    Active__c: boolean;
-    ChangeEventHeader: ChangeEventHeader;
+    Active__c?: boolean;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Company Codes</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CompanyCodes__c: string;
+    CompanyCodes__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,11 +42,11 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>De-Activation Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DeActivationDate__c: Date;
+    DeActivationDate__c?: Date;
     /**
      * <h3><b>First Level Approval</b></h3>
      * <p>First Level Approval number over recommended discount</p>
@@ -67,10 +67,10 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FirstLevelApproval__c: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    FirstLevelApproval__c?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Max Discount To Offer</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,10 +81,10 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MaxDiscountToOffer__c: number;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    MaxDiscountToOffer__c?: number;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -95,8 +95,8 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
-    ReplayId: string;
+    Product__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>SAQL Query</b></h3>
      * <h4>Field Attributes</h4>
@@ -104,7 +104,7 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(31000)</td></tr>
      * </table>
      */
-    SAQLQuery__c: string;
+    SAQLQuery__c?: string;
     /**
      * <h3><b>Second Level Approval</b></h3>
      * <p>Second Level Approval number over recommended discount</p>
@@ -116,7 +116,7 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SecondLevelApproval__c: number;
+    SecondLevelApproval__c?: number;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,7 +132,7 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quote</code></td><td>Quote</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type__c: string;
+    Type__c?: string;
     /**
      * <h3><b>Webshop discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -141,5 +141,5 @@ declare interface Discount_model__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Webshop_discount__c: number;
+    Webshop_discount__c?: number;
 }

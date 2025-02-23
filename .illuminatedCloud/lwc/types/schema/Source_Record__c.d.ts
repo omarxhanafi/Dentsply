@@ -492,6 +492,12 @@ declare module "@salesforce/schema/Source_Record__c.ProcessSteps" {
     export default ProcessSteps;
 }
 
+declare module "@salesforce/schema/Source_Record__c.Quotes__r" {
+    import { FieldId } from "@salesforce/schema";
+    const Quotes__r: FieldId;
+    export default Quotes__r;
+}
+
 declare module "@salesforce/schema/Source_Record__c.Record" {
     import { FieldId } from "@salesforce/schema";
     const Record: FieldId;

@@ -2,18 +2,18 @@
 
 declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Account__c: string;
+    ShowpadForSF__Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Account__r: Account;
+    ShowpadForSF__Account__r?: Account;
     /**
      * <h3><b>Activity Time</b></h3>
      * <p>The time when the activity was created in Showpad.</p>
@@ -41,7 +41,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Activity_Time__c: string;
+    ShowpadForSF__Activity_Time__c?: string;
     /**
      * <h3><b>Next Opportunity Probability</b></h3>
      * <p>The next probability of the opportunity after the activity happened.</p>
@@ -51,7 +51,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Next_Opportunity_Probability__c: number;
+    ShowpadForSF__Next_Opportunity_Probability__c?: number;
     /**
      * <h3><b>Next Opportunity Stage</b></h3>
      * <p>The next stage of the opportunity after the activity happened.</p>
@@ -63,7 +63,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Next_Opportunity_Stage__c: string;
+    ShowpadForSF__Next_Opportunity_Stage__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Opportunity__c: string;
+    ShowpadForSF__Opportunity__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Opportunity__r: Opportunity;
+    ShowpadForSF__Opportunity__r?: Opportunity;
     /**
      * <h3><b>Opportunity Probability</b></h3>
      * <p>The probability of the opportunity when the activity happened.</p>
@@ -91,7 +91,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Opportunity_Probability__c: number;
+    ShowpadForSF__Opportunity_Probability__c?: number;
     /**
      * <h3><b>Opportunity Stage</b></h3>
      * <p>The stage of the opportunity when the activity happened.</p>
@@ -103,7 +103,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Opportunity_Stage__c: string;
+    ShowpadForSF__Opportunity_Stage__c?: string;
     /**
      * <h3><b>Showpad ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -114,7 +114,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_ID__c: string;
+    ShowpadForSF__Showpad_ID__c?: string;
     /**
      * <h3><b>Subject</b></h3>
      * <h4>Field Attributes</h4>
@@ -125,7 +125,7 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Subject__c: string;
+    ShowpadForSF__Subject__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -141,5 +141,5 @@ declare interface ShowpadForSF__Showpad_Activity__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Link</code></td><td>Link</td><td nowrap>true</td></tr>
      * </table>
      */
-    ShowpadForSF__Type__c: string;
+    ShowpadForSF__Type__c?: string;
 }

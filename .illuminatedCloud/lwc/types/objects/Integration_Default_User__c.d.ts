@@ -80,10 +80,10 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZA</code></td><td>ZA</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Customer Group Exception</b></h3>
      * <p>Add customer group, when ownership should be overwritten based on Customer Group. Created to handle DEX-customers who has SE numbers but can be differentiated from Swedish customers by customer group</p>
@@ -95,7 +95,7 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Group_Exception__c: string;
+    Customer_Group_Exception__c?: string;
     /**
      * <h3><b>Email: Failed Person Acc&#39;t Conversion</b></h3>
      * <h4>Field Attributes</h4>
@@ -107,7 +107,7 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email__c: string;
+    Email__c?: string;
     /**
      * <h3><b>ID:Failed Person Acc&#39;t Conversion User</b></h3>
      * <h4>Field Attributes</h4>
@@ -117,7 +117,7 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Id_Failed_Person_Acc_t_Conversion_User__c: string;
+    Id_Failed_Person_Acc_t_Conversion_User__c?: string;
     /**
      * <h3><b>ID:Failed Person Acc&#39;t Conversion User</b></h3>
      * <h4>Field Attributes</h4>
@@ -127,12 +127,12 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Id_Failed_Person_Acc_t_Conversion_User__r: User;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Id_Failed_Person_Acc_t_Conversion_User__r?: User;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Name:Failed Person Acc&#39;t Conversion User</b></h3>
      * <h4>Field Attributes</h4>
@@ -144,7 +144,7 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Name_Failed_Person_Acc_t_Conversion_User__c: string;
+    Name_Failed_Person_Acc_t_Conversion_User__c?: string;
     /**
      * <h3><b>Product Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -161,7 +161,7 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Surgery</code></td><td>Surgery</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
+    Product_Area__c?: string;
     /**
      * <h3><b>ID: Default User</b></h3>
      * <p>Used to store the user ID of the default user per country and product area.</p>
@@ -173,7 +173,7 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SFDC_User_ID__c: string;
+    SFDC_User_ID__c?: string;
     /**
      * <h3><b>xName:Failed Person Acc&#39;t Conversion Usr</b></h3>
      * <p>Person that will receive notification about failed person account converstion.</p>
@@ -184,7 +184,7 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    xame_Failed_Person_Acc_t_Conversion_User__c: string;
+    xame_Failed_Person_Acc_t_Conversion_User__c?: string;
     /**
      * <h3><b>xName:Failed Person Acc&#39;t Conversion Usr</b></h3>
      * <p>Person that will receive notification about failed person account converstion.</p>
@@ -195,7 +195,7 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    xame_Failed_Person_Acc_t_Conversion_User__r: User;
+    xame_Failed_Person_Acc_t_Conversion_User__r?: User;
     /**
      * <h3><b>xID:Failed Person Acc&#39;t Conversion User</b></h3>
      * <p>Salesforce ID for person to receive notification about failed Person Account Conversion.</p>
@@ -207,5 +207,5 @@ declare interface Integration_Default_User__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    xId_Failed_Person_Acc_t_Conversion_User__c: string;
+    xId_Failed_Person_Acc_t_Conversion_User__c?: string;
 }

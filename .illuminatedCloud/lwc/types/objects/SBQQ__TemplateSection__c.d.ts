@@ -6,22 +6,22 @@
  */
 declare interface SBQQ__TemplateSection__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__LineColumn__c.SBQQ__Section__c}.
      */
-    LineColumns__r: SBQQ__LineColumn__c[];
-    Name: string;
+    LineColumns__r?: SBQQ__LineColumn__c[];
+    Name?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__RelatedContent__c.SBQQ__TemplateSection__c}.
      */
-    RelatedContent__r: SBQQ__RelatedContent__c[];
+    RelatedContent__r?: SBQQ__RelatedContent__c[];
     /**
      * <h3><b>Border Color</b></h3>
      * <p>Color of table borders expressed as a hexadecimal value.</p>
@@ -33,7 +33,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__BorderColor__c: string;
+    SBQQ__BorderColor__c?: string;
     /**
      * <h3><b>Bottom Margin</b></h3>
      * <p>Margin left at the bottom of this section.</p>
@@ -46,7 +46,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBQQ__BottomMargin__c: number;
+    SBQQ__BottomMargin__c?: number;
     /**
      * <h3><b>Hide Column Header</b></h3>
      * <p>Flag that determines whether column header is displayed or not. Only applies to sections pointing to template content of type &quot;Line Items&quot;.</p>
@@ -57,7 +57,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__ColumnHeaderHidden__c: boolean;
+    SBQQ__ColumnHeaderHidden__c?: boolean;
     /**
      * <h3><b>Conditional Print Field</b></h3>
      * <p>Field on quote object that controls whether this section prints on generated PDF documents.</p>
@@ -74,7 +74,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Primary</code></td><td>Primary</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__ConditionalPrintField__c: string;
+    SBQQ__ConditionalPrintField__c?: string;
     /**
      * <h3><b>Content</b></h3>
      * <p>Source of content for this section.</p>
@@ -85,7 +85,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Content__c: string;
+    SBQQ__Content__c?: string;
     /**
      * <h3><b>Content</b></h3>
      * <p>Source of content for this section.</p>
@@ -96,7 +96,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Content__r: SBQQ__TemplateContent__c;
+    SBQQ__Content__r?: SBQQ__TemplateContent__c;
     /**
      * <h3><b>Display Order</b></h3>
      * <p>Order in which this section is rendered relative to other sections on the template.</p>
@@ -108,7 +108,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DisplayOrder__c: number;
+    SBQQ__DisplayOrder__c?: number;
     /**
      * <h3><b>Filter Field</b></h3>
      * <p>Field used to filter records rendered by this section.</p>
@@ -124,7 +124,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Optional</code></td><td>Optional</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__FilterField__c: string;
+    SBQQ__FilterField__c?: string;
     /**
      * <h3><b>Filter Operator</b></h3>
      * <p>Operator used for filtering records rendered by this section.</p>
@@ -148,7 +148,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">contains</code></td><td>contains</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__FilterOperator__c: string;
+    SBQQ__FilterOperator__c?: string;
     /**
      * <h3><b>Filter Value</b></h3>
      * <p>Value used in filtering records rendered by this section.</p>
@@ -160,7 +160,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FilterValue__c: string;
+    SBQQ__FilterValue__c?: string;
     /**
      * <h3><b>Group Field</b></h3>
      * <p>Field used in grouping lines rendered by this section. Only applicable to Line Items section.</p>
@@ -177,7 +177,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Subscription Category</code></td><td>Subscription Category</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__GroupField__c: string;
+    SBQQ__GroupField__c?: string;
     /**
      * <h3><b>Keep Together</b></h3>
      * <p>Imposes &quot;keep-together.within-page&quot; condition on this block of content.</p>
@@ -194,7 +194,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Always</code></td><td>Always</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__KeepTogether__c: string;
+    SBQQ__KeepTogether__c?: string;
     /**
      * <h3><b>Keep With Next</b></h3>
      * <p>Imposes &quot;keep-with-next.within-page&quot; condition on this block of content.</p>
@@ -211,7 +211,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Always</code></td><td>Always</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__KeepWithNext__c: string;
+    SBQQ__KeepWithNext__c?: string;
     /**
      * <h3><b>Keep With Previous</b></h3>
      * <p>Imposes &quot;keep-with-previous.within-page&quot; condition on this block of content.</p>
@@ -228,7 +228,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Always</code></td><td>Always</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__KeepWithPrevious__c: string;
+    SBQQ__KeepWithPrevious__c?: string;
     /**
      * <h3><b>Page Break</b></h3>
      * <p>Specifies page breaking behavior for this content.</p>
@@ -246,7 +246,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Both</code></td><td>Both</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__PageBreak__c: string;
+    SBQQ__PageBreak__c?: string;
     /**
      * <h3><b>Print Quote Totals</b></h3>
      * <p>Forces quote totals to print after line items rendered by this section.</p>
@@ -257,7 +257,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__QuoteTotalsPrinted__c: boolean;
+    SBQQ__QuoteTotalsPrinted__c?: boolean;
     /**
      * <h3><b>Roll-Up Field</b></h3>
      * <p>Field on quote line object that&#39;s used to rollup lines.</p>
@@ -273,7 +273,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product</code></td><td>Product</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__RollUpField__c: string;
+    SBQQ__RollUpField__c?: string;
     /**
      * <h3><b>Summary Display</b></h3>
      * <p>Specifies how line items rendered by this section are summarized.</p>
@@ -290,7 +290,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Never</code></td><td>Never</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__SummaryDisplay__c: string;
+    SBQQ__SummaryDisplay__c?: string;
     /**
      * <h3><b>Template</b></h3>
      * <p>Quote template that uses this template section.</p>
@@ -300,7 +300,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Template__c: string;
+    SBQQ__Template__c?: string;
     /**
      * <h3><b>Template</b></h3>
      * <p>Quote template that uses this template section.</p>
@@ -310,7 +310,7 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Template__r: SBQQ__QuoteTemplate__c;
+    SBQQ__Template__r?: SBQQ__QuoteTemplate__c;
     /**
      * <h3><b>Top Margin</b></h3>
      * <p>Margin left at the top of this section.</p>
@@ -323,5 +323,5 @@ declare interface SBQQ__TemplateSection__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    SBQQ__TopMargin__c: number;
+    SBQQ__TopMargin__c?: number;
 }

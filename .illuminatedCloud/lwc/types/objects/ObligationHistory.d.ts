@@ -2,14 +2,14 @@
 
 declare interface ObligationHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    Obligation: Obligation;
-    ObligationId: string;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    Obligation?: Obligation;
+    ObligationId?: string;
+    OldValue?: any;
 }

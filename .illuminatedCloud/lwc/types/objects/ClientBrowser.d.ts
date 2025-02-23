@@ -2,10 +2,10 @@
 
 declare interface ClientBrowser extends SObject 
 {
-    CreatedDate: string;
-    FullUserAgent: string;
-    LastUpdate: string;
-    ProxyInfo: string;
-    Users: User;
-    UsersId: string;
+    CreatedDate?: string;
+    FullUserAgent?: string;
+    LastUpdate?: string;
+    ProxyInfo?: string;
+    Users?: User;
+    UsersId?: string;
 }

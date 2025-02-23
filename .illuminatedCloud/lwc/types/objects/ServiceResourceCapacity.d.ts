@@ -5,32 +5,32 @@ declare interface ServiceResourceCapacity extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
-    CapacityInHours: number;
-    CapacityInWorkItems: number;
-    CapacityNumber: string;
-    CombinedAttachments: CombinedAttachment[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
+    CapacityInHours?: number;
+    CapacityInWorkItems?: number;
+    CapacityNumber?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
-    EndDate: Date;
-    Feeds: ServiceResourceCapacityFeed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
+    EndDate?: Date;
+    Feeds?: ServiceResourceCapacityFeed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Hours In Use</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface ServiceResourceCapacity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__HoursInUse__c: number;
+    FSL__HoursInUse__c?: number;
     /**
      * <h3><b>Last Updated Epoch</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface ServiceResourceCapacity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Last_Updated_Epoch__c: number;
+    FSL__Last_Updated_Epoch__c?: number;
     /**
      * <h3><b>Minutes Used</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,7 +64,7 @@ declare interface ServiceResourceCapacity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__MinutesUsed__c: number;
+    FSL__MinutesUsed__c?: number;
     /**
      * <h3><b>Work Items Allocated</b></h3>
      * <h4>Field Attributes</h4>
@@ -75,32 +75,32 @@ declare interface ServiceResourceCapacity extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Work_Items_Allocated__c: number;
+    FSL__Work_Items_Allocated__c?: number;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: ServiceResourceCapacityHistory[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    Parent: FeedComment;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    RelatedRecord: FlowRecordRelation;
-    ServiceResource: ServiceResource;
-    ServiceResourceId: string;
-    SobjectLookupValue: AIInsightValue;
-    StartDate: Date;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TimePeriod: string;
-    TopicAssignments: TopicAssignment[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: ServiceResourceCapacityHistory[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    Parent?: FeedComment;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    RelatedRecord?: FlowRecordRelation;
+    ServiceResource?: ServiceResource;
+    ServiceResourceId?: string;
+    SobjectLookupValue?: AIInsightValue;
+    StartDate?: Date;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TimePeriod?: string;
+    TopicAssignments?: TopicAssignment[];
 }

@@ -10,7 +10,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <p>The Account the addresses belong to - e..g the account in ERP where you can find the addresses</p>
@@ -19,8 +19,8 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
-    ChangeEventHeader: ChangeEventHeader;
+    Account__r?: Account;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>CIM Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CIMId__c: number;
+    CIMId__c?: number;
     /**
      * <h3><b>City</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    City__c: string;
+    City__c?: string;
     /**
      * <h3><b>Combined Fields</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CombinedFields__c: string;
+    CombinedFields__c?: string;
     /**
      * <h3><b>Combined Fields Order</b></h3>
      * <p>Used in Order Management to select the Shipping Address</p>
@@ -67,7 +67,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CombinedFieldsOrder__c: string;
+    CombinedFieldsOrder__c?: string;
     /**
      * <h3><b>CompanyCode</b></h3>
      * <p>Company Code or other relevant source system description</p>
@@ -79,7 +79,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CompanyCode__c: string;
+    CompanyCode__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,11 +88,11 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Flag</b></h3>
      * <h4>Field Attributes</h4>
@@ -101,7 +101,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CustomerFlag__c: boolean;
+    CustomerFlag__c?: boolean;
     /**
      * <h3><b>Customer Master Unique Key</b></h3>
      * <p>The GDW unique key for the Customer Master (Account)</p>
@@ -113,7 +113,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerMasterUniqueKey__c: string;
+    CustomerMasterUniqueKey__c?: string;
     /**
      * <h3><b>Customer Number</b></h3>
      * <p>The customer number identifier - e.g. ERP number in ERP</p>
@@ -125,7 +125,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerNumber__c: string;
+    CustomerNumber__c?: string;
     /**
      * <h3><b>Fax</b></h3>
      * <h4>Field Attributes</h4>
@@ -134,7 +134,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Fax__c: string;
+    Fax__c?: string;
     /**
      * <h3><b>GDW Unique Key</b></h3>
      * <p>GDW Unique Key for the address</p>
@@ -146,7 +146,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    GdwUniqueKey__c: string;
+    GdwUniqueKey__c?: string;
     /**
      * <h3><b>GLAM Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -157,7 +157,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GLAMId__c: number;
+    GLAMId__c?: number;
     /**
      * <h3><b>Is Deleted</b></h3>
      * <h4>Field Attributes</h4>
@@ -166,10 +166,10 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    IsDeleted__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    IsDeleted__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Location Code</b></h3>
      * <p>The location code/Id that represents the specific address/location on the account</p>
@@ -181,8 +181,8 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LocationCode__c: string;
-    Name: string;
+    LocationCode__c?: string;
+    Name?: string;
     /**
      * <h3><b>Phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -191,7 +191,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Phone__c: string;
+    Phone__c?: string;
     /**
      * <h3><b>Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -202,7 +202,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PostalCode__c: string;
+    PostalCode__c?: string;
     /**
      * <h3><b>Practice HRID</b></h3>
      * <p>Practice HRID for SureSmile - usually located on the Account/CustomerMaster but in certain occasions especially with DSOs/Dental Chains it may reside here on the address level.</p>
@@ -214,7 +214,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeHRID__c: string;
+    PracticeHRID__c?: string;
     /**
      * <h3><b>Practice Id</b></h3>
      * <p>PracticeId for SureSmile - usually located on the Account/CustomerMaster but in certain occasions especially with DSOs/Dental Chains it may reside here on the address level.</p>
@@ -226,7 +226,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeId__c: string;
+    PracticeId__c?: string;
     /**
      * <h3><b>Practice Site Id</b></h3>
      * <p>Site Id identifying the specific location/site for SureSmile</p>
@@ -238,7 +238,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeSiteId__c: string;
+    PracticeSiteId__c?: string;
     /**
      * <h3><b>Primary Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -247,8 +247,8 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    PrimaryAddress__c: boolean;
-    ReplayId: string;
+    PrimaryAddress__c?: boolean;
+    ReplayId?: string;
     /**
      * <h3><b>Sales Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -259,7 +259,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesGroup__c: string;
+    SalesGroup__c?: string;
     /**
      * <h3><b>Sales Group Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -270,7 +270,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesGroupCode__c: string;
+    SalesGroupCode__c?: string;
     /**
      * <h3><b>SourceId</b></h3>
      * <p>SourceId of the system the address comes from</p>
@@ -282,7 +282,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceId__c: string;
+    SourceId__c?: string;
     /**
      * <h3><b>State/Province</b></h3>
      * <h4>Field Attributes</h4>
@@ -293,7 +293,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    StateProvince__c: string;
+    StateProvince__c?: string;
     /**
      * <h3><b>Stopped</b></h3>
      * <h4>Field Attributes</h4>
@@ -302,7 +302,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Stopped__c: boolean;
+    Stopped__c?: boolean;
     /**
      * <h3><b>Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -313,7 +313,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Street__c: string;
+    Street__c?: string;
     /**
      * <h3><b>Suresmile Advanced Platform</b></h3>
      * <p>Information collected from Customer Interfaces table in AX (related table to Accounts) - set to true if an active record exists as Suresmile Advanced</p>
@@ -323,7 +323,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SuresmileAdvancedPlatform__c: boolean;
+    SuresmileAdvancedPlatform__c?: boolean;
     /**
      * <h3><b>Suresmile Aligner Platform</b></h3>
      * <p>Information collected from Customer Interfaces table in AX (related table to Accounts) - set to true if an active record exists as Suresmile Aligner</p>
@@ -333,7 +333,7 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SuresmileAlignerPlatform__c: boolean;
+    SuresmileAlignerPlatform__c?: boolean;
     /**
      * <h3><b>Suresmile Ortho Platform</b></h3>
      * <p>Information collected from Customer Interfaces table in AX (related table to Accounts) - set to true if an active record exists as Suresmile Ortho</p>
@@ -343,5 +343,5 @@ declare interface Address__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SuresmileOrthoPlatform__c: boolean;
+    SuresmileOrthoPlatform__c?: boolean;
 }

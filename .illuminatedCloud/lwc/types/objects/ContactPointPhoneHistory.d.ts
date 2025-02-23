@@ -2,14 +2,14 @@
 
 declare interface ContactPointPhoneHistory extends SObject 
 {
-    ContactPointPhone: ContactPointPhone;
-    ContactPointPhoneId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    ContactPointPhone?: ContactPointPhone;
+    ContactPointPhoneId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

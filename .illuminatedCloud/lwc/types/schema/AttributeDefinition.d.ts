@@ -162,6 +162,18 @@ declare module "@salesforce/schema/AttributeDefinition.Emails" {
     export default Emails;
 }
 
+declare module "@salesforce/schema/AttributeDefinition.EnrichmentDestinations" {
+    import { FieldId } from "@salesforce/schema";
+    const EnrichmentDestinations: FieldId;
+    export default EnrichmentDestinations;
+}
+
+declare module "@salesforce/schema/AttributeDefinition.EnrichmentSources" {
+    import { FieldId } from "@salesforce/schema";
+    const EnrichmentSources: FieldId;
+    export default EnrichmentSources;
+}
+
 declare module "@salesforce/schema/AttributeDefinition.EventRelations" {
     import { FieldId } from "@salesforce/schema";
     const EventRelations: FieldId;
@@ -198,6 +210,18 @@ declare module "@salesforce/schema/AttributeDefinition.FlowOrchestrationWorkItem
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/AttributeDefinition.FulfillmentAssetAttributes" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentAssetAttributes: FieldId;
+    export default FulfillmentAssetAttributes;
+}
+
+declare module "@salesforce/schema/AttributeDefinition.FulfillmentLineAttributes" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentLineAttributes: FieldId;
+    export default FulfillmentLineAttributes;
+}
+
 declare module "@salesforce/schema/AttributeDefinition.GeneratedDocRefObjects" {
     import { FieldId } from "@salesforce/schema";
     const GeneratedDocRefObjects: FieldId;
@@ -216,10 +240,22 @@ declare module "@salesforce/schema/AttributeDefinition.Id" {
     export default Id;
 }
 
+declare module "@salesforce/schema/AttributeDefinition.IsActive" {
+    import { FieldId } from "@salesforce/schema";
+    const IsActive: FieldId;
+    export default IsActive;
+}
+
 declare module "@salesforce/schema/AttributeDefinition.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;
     export default IsDeleted;
+}
+
+declare module "@salesforce/schema/AttributeDefinition.IsRequired" {
+    import { FieldId } from "@salesforce/schema";
+    const IsRequired: FieldId;
+    export default IsRequired;
 }
 
 declare module "@salesforce/schema/AttributeDefinition.Label" {

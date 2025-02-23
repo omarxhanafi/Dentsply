@@ -23,7 +23,7 @@ declare interface QuoteCountrySetting__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quote Template: Switzerland (IT)</code></td><td>Quote Template: Switzerland (IT)</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    AlternateQuoteTemplate__c: string;
+    AlternateQuoteTemplate__c?: string;
     /**
      * <h3><b>Country Code</b></h3>
      * <p>The quote&#39;s Account country code.</p>
@@ -290,13 +290,13 @@ declare interface QuoteCountrySetting__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZW</code></td><td>ZW</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    CountryCode__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    CountryCode__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Quote Template</b></h3>
      * <p>References the default Quote Template value</p>
@@ -327,6 +327,6 @@ declare interface QuoteCountrySetting__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quote Template: UK</code></td><td>Quote Template: UK</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    QuoteTemplate__c: string;
-    SystemModstamp: string;
+    QuoteTemplate__c?: string;
+    SystemModstamp?: string;
 }

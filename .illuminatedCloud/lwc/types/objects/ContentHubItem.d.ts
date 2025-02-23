@@ -2,23 +2,23 @@
 
 declare interface ContentHubItem extends SObject 
 {
-    ContentHubRepository: ContentHubRepository;
-    ContentHubRepositoryId: string;
-    ContentModifiedDate: string;
-    ContentSize: number;
-    CreatedDate: string;
-    Description: string;
-    ExternalContentUrl: string;
-    ExternalDocumentUrl: string;
-    ExternalId: string;
-    FileExtension: string;
-    FileType: string;
-    IsFolder: boolean;
-    LastModifiedDate: string;
-    MimeType: string;
-    Name: string;
-    Owner: string;
-    ParentId: string;
-    Title: string;
-    UpdatedBy: string;
+    ContentHubRepository?: ContentHubRepository;
+    ContentHubRepositoryId?: string;
+    ContentModifiedDate?: string;
+    ContentSize?: number;
+    CreatedDate?: string;
+    Description?: string;
+    ExternalContentUrl?: string;
+    ExternalDocumentUrl?: string;
+    ExternalId?: string;
+    FileExtension?: string;
+    FileType?: string;
+    IsFolder?: boolean;
+    LastModifiedDate?: string;
+    MimeType?: string;
+    Name?: string;
+    Owner?: string;
+    ParentId?: string;
+    Title?: string;
+    UpdatedBy?: string;
 }

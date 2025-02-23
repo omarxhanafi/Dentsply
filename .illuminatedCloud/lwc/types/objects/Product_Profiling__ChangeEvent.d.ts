@@ -9,7 +9,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,8 +17,8 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
-    ChangeEventHeader: ChangeEventHeader;
+    Account__r?: Account;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Competitor Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product_Name__r.Competitor_Product__c</code></td></tr>
      * </table>
      */
-    Competitor_Product__c: boolean;
+    Competitor_Product__c?: boolean;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * <h3><b>Created by me</b></h3>
      * <p>Create as per this request
@@ -57,7 +57,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedById == $User.Id, TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    Created_by_me__c: boolean;
+    Created_by_me__c?: boolean;
     /**
      * <h3><b>Created by My Direct Reports</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,11 +66,11 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedBy.ManagerId = $User.Id, True, false)</code></td></tr>
      * </table>
      */
-    Created_by_My_Direct_Reports__c: boolean;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Created_by_My_Direct_Reports__c?: boolean;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Date</b></h3>
      * <p>Requested in case 00144434.</p>
@@ -80,7 +80,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Date_of_purchase__c: Date;
+    Date_of_purchase__c?: Date;
     /**
      * <h3><b>DEP Record Hash</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DEPRecordHash__c: string;
+    DEPRecordHash__c?: string;
     /**
      * <h3><b>DEP Unique Key</b></h3>
      * <p>(String) record.Account__c + (String) record.Contact__c + (String) record.Non_Erp_Product_ID__c;</p>
@@ -103,7 +103,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    DEPUniqueKey__c: string;
+    DEPUniqueKey__c?: string;
     /**
      * <h3><b>Do Not Delete</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AND( Integrated__c, NOT( OR( $Profile.Name = &quot;System Administrator&quot;, $Profile.Name = &quot;#System: System Administrator&quot;, $Profile.Name = &quot;#System: Integration User&quot; ) ) )</code></td></tr>
      * </table>
      */
-    DoNotDelete__c: boolean;
+    DoNotDelete__c?: boolean;
     /**
      * <h3><b>Inactive</b></h3>
      * <h4>Field Attributes</h4>
@@ -121,7 +121,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Inactive__c: boolean;
+    Inactive__c?: boolean;
     /**
      * <h3><b>Integrated ?</b></h3>
      * <p>To identify if a record was created by integration.</p>
@@ -131,7 +131,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Integrated__c: boolean;
+    Integrated__c?: boolean;
     /**
      * <h3><b>Intention to buy date</b></h3>
      * <h4>Field Attributes</h4>
@@ -140,7 +140,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Intention_to_buy_date__c: Date;
+    Intention_to_buy_date__c?: Date;
     /**
      * <h3><b>In Use Since?</b></h3>
      * <h4>Field Attributes</h4>
@@ -151,10 +151,10 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    InUseSince__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    InUseSince__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Manufacturer</b></h3>
      * <h4>Field Attributes</h4>
@@ -166,8 +166,8 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manufacturer__c: string;
-    Name: string;
+    Manufacturer__c?: string;
+    Name?: string;
     /**
      * <h3><b>Non Erp Product ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -179,7 +179,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Non_Erp_Product_ID__c: string;
+    Non_Erp_Product_ID__c?: string;
     /**
      * <h3><b>Notes</b></h3>
      * <p>Add notes about any specifics about this product usage.</p>
@@ -189,7 +189,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Notes__c: string;
+    Notes__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -198,7 +198,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity__c: string;
+    Opportunity__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -207,7 +207,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opportunity__r: Opportunity;
+    Opportunity__r?: Opportunity;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -219,7 +219,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -231,7 +231,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Category__c: string;
+    Product_Category__c?: string;
     /**
      * <h3><b>Non-ERP Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -239,7 +239,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Non_ERP_Products__c})</td></tr>
      * </table>
      */
-    Product_Name__c: string;
+    Product_Name__c?: string;
     /**
      * <h3><b>Non-ERP Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -247,7 +247,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Non_ERP_Products__c})</td></tr>
      * </table>
      */
-    Product_Name__r: Non_ERP_Products__c;
+    Product_Name__r?: Non_ERP_Products__c;
     /**
      * <h3><b>Product Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -259,7 +259,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductName__c: string;
+    ProductName__c?: string;
     /**
      * <h3><b>Quantity</b></h3>
      * <p>This has been requested in case 00144434.</p>
@@ -271,7 +271,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity__c: number;
+    Quantity__c?: number;
     /**
      * <h3><b>Remote Service</b></h3>
      * <p>Requested by Japan as part of Lightning project to track Cerec and CT remote - requested on Account bu suggested solution here on product profiling instead.</p>
@@ -281,8 +281,8 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Remote__c: boolean;
-    ReplayId: string;
+    Remote__c?: boolean;
+    ReplayId?: string;
     /**
      * <h3><b>Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -300,7 +300,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Service Contracts</code></td><td>Service Contracts</td><td nowrap>true</td></tr>
      * </table>
      */
-    Source__c: string;
+    Source__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -320,7 +320,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Lapsed Usage</code></td><td>Lapsed Usage</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>T35 Name (UK)</b></h3>
      * <h4>Field Attributes</h4>
@@ -332,7 +332,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    T35_Name_UK__c: string;
+    T35_Name_UK__c?: string;
     /**
      * <h3><b>Unique Key Product Contact</b></h3>
      * <p>Unique Key for avoiding duplicates</p>
@@ -344,7 +344,7 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Unique_Key_Product_Contact__c: string;
+    Unique_Key_Product_Contact__c?: string;
     /**
      * <h3><b>Value</b></h3>
      * <p>TFUS-000001248</p>
@@ -356,5 +356,5 @@ declare interface Product_Profiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Value__c: number;
+    Value__c?: number;
 }

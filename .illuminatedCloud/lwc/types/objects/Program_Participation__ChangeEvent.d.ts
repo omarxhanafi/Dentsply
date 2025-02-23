@@ -11,8 +11,8 @@ declare interface Program_Participation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Active__c: boolean;
-    ChangeEventHeader: ChangeEventHeader;
+    Active__c?: boolean;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface Program_Participation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,17 +30,17 @@ declare interface Program_Participation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Contact__r: Contact;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    Contact__r?: Contact;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Participation Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,7 +56,7 @@ declare interface Program_Participation__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Chair/Leader</code></td><td>Chair/Leader</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Participation_Type__c: string;
+    Participation_Type__c?: string;
     /**
      * <h3><b>Program</b></h3>
      * <h4>Field Attributes</h4>
@@ -65,7 +65,7 @@ declare interface Program_Participation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Program__c: string;
+    Program__c?: string;
     /**
      * <h3><b>Program</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface Program_Participation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Program__r: Program__c;
+    Program__r?: Program__c;
     /**
      * <h3><b>Program Reach</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface Program_Participation__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">International</code></td><td>International</td><td nowrap>true</td></tr>
      * </table>
      */
-    Program_Reach__c: string;
+    Program_Reach__c?: string;
     /**
      * <h3><b>Program Reach Detail</b></h3>
      * <h4>Field Attributes</h4>
@@ -359,8 +359,8 @@ declare interface Program_Participation__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">APAC</code></td><td>APAC</td><td nowrap>true</td></tr>
      * </table>
      */
-    Program_Reach_Detail__c: string;
-    ReplayId: string;
+    Program_Reach_Detail__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -369,5 +369,5 @@ declare interface Program_Participation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
 }

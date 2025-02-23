@@ -2,22 +2,22 @@
 
 declare interface AccountContactRelation extends SObject 
 {
-    Account: Account;
-    AccountId: string;
-    Contact: Contact;
-    ContactId: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    EndDate: Date;
-    IsActive: boolean;
-    IsDeleted: boolean;
-    IsDirect: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Account?: Account;
+    AccountId?: string;
+    Contact?: Contact;
+    ContactId?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    EndDate?: Date;
+    IsActive?: boolean;
+    IsDeleted?: boolean;
+    IsDirect?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Opening Times</b></h3>
      * <p>TFUS-000004689</p>
@@ -27,10 +27,10 @@ declare interface AccountContactRelation extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Opening_Times__c: string;
-    RelatedRecord: FlowRecordRelation;
-    Roles: string;
-    SobjectLookupValue: AIInsightValue;
+    Opening_Times__c?: string;
+    RelatedRecord?: FlowRecordRelation;
+    Roles?: string;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Specialty</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,8 +54,8 @@ declare interface AccountContactRelation extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Prosthetics</code></td><td>Prosthetics</td><td nowrap>true</td></tr>
      * </table>
      */
-    Specialty__c: string;
-    StartDate: Date;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
+    Specialty__c?: string;
+    StartDate?: Date;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
 }

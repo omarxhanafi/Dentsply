@@ -2,14 +2,14 @@
 
 declare interface QuoteLineItemHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    QuoteLineItem: QuoteLineItem;
-    QuoteLineItemId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    QuoteLineItem?: QuoteLineItem;
+    QuoteLineItemId?: string;
 }

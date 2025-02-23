@@ -2,14 +2,14 @@
 
 declare interface maps__LiveSummaryStateMileage__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Country</b></h3>
      * <p>The 3 character country code</p>
@@ -26,7 +26,7 @@ declare interface maps__LiveSummaryStateMileage__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not_Specified</code></td><td>Not Specified</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Country__c: string;
+    maps__Country__c?: string;
     /**
      * <h3><b>Live Asset Daily Summary</b></h3>
      * <p>Live Asset Daily Summary record to which this mileage relates</p>
@@ -35,7 +35,7 @@ declare interface maps__LiveSummaryStateMileage__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__LiveAssetDailySummary__c})</td></tr>
      * </table>
      */
-    maps__LiveAssetDailySummary__c: string;
+    maps__LiveAssetDailySummary__c?: string;
     /**
      * <h3><b>Live Asset Daily Summary</b></h3>
      * <p>Live Asset Daily Summary record to which this mileage relates</p>
@@ -44,7 +44,7 @@ declare interface maps__LiveSummaryStateMileage__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__LiveAssetDailySummary__c})</td></tr>
      * </table>
      */
-    maps__LiveAssetDailySummary__r: maps__LiveAssetDailySummary__c;
+    maps__LiveAssetDailySummary__r?: maps__LiveAssetDailySummary__c;
     /**
      * <h3><b>Report Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface maps__LiveSummaryStateMileage__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ReportDate__c: Date;
+    maps__ReportDate__c?: Date;
     /**
      * <h3><b>State or Province</b></h3>
      * <p>The associated state or province for this record</p>
@@ -65,7 +65,7 @@ declare interface maps__LiveSummaryStateMileage__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__StateProvince__c: string;
+    maps__StateProvince__c?: string;
     /**
      * <h3><b>Total Distance Traveled (km)</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,7 +76,7 @@ declare interface maps__LiveSummaryStateMileage__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TotalDistanceTraveledKm__c: number;
+    maps__TotalDistanceTraveledKm__c?: number;
     /**
      * <h3><b>Total Distance Traveled (mi)</b></h3>
      * <p>Total distance traveled in miles within this state.</p>
@@ -89,7 +89,7 @@ declare interface maps__LiveSummaryStateMileage__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TotalDistanceTraveledMiles__c: number;
-    Name: string;
-    ReplayId: string;
+    maps__TotalDistanceTraveledMiles__c?: number;
+    Name?: string;
+    ReplayId?: string;
 }

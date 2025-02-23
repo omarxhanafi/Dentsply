@@ -5,14 +5,14 @@
  */
 declare interface SBQQ__SubscriptionConsumptionRate__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface SBQQ__SubscriptionConsumptionRate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Description__c: string;
+    SBQQ__Description__c?: string;
     /**
      * <h3><b>Lower Bound</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,7 +32,7 @@ declare interface SBQQ__SubscriptionConsumptionRate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__LowerBound__c: number;
+    SBQQ__LowerBound__c?: number;
     /**
      * <h3><b>Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface SBQQ__SubscriptionConsumptionRate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Price__c: number;
+    SBQQ__Price__c?: number;
     /**
      * <h3><b>Pricing Method</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface SBQQ__SubscriptionConsumptionRate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">FlatFee</code></td><td>Flat Fee</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__PricingMethod__c: string;
+    SBQQ__PricingMethod__c?: string;
     /**
      * <h3><b>Processing Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface SBQQ__SubscriptionConsumptionRate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProcessingOrder__c: number;
+    SBQQ__ProcessingOrder__c?: number;
     /**
      * <h3><b>Subscription Consumption Schedule</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface SBQQ__SubscriptionConsumptionRate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SubscriptionConsumptionSchedule__c: string;
+    SBQQ__SubscriptionConsumptionSchedule__c?: string;
     /**
      * <h3><b>Subscription Consumption Schedule</b></h3>
      * <h4>Field Attributes</h4>
@@ -87,7 +87,7 @@ declare interface SBQQ__SubscriptionConsumptionRate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__SubscriptionConsumptionSchedule__r: SBQQ__SubscriptionConsumptionSchedule__c;
+    SBQQ__SubscriptionConsumptionSchedule__r?: SBQQ__SubscriptionConsumptionSchedule__c;
     /**
      * <h3><b>Upper Bound</b></h3>
      * <h4>Field Attributes</h4>
@@ -98,5 +98,5 @@ declare interface SBQQ__SubscriptionConsumptionRate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__UpperBound__c: number;
+    SBQQ__UpperBound__c?: number;
 }

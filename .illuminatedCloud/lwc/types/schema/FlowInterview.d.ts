@@ -36,12 +36,6 @@ declare module "@salesforce/schema/FlowInterview.CurrentFlowVersion" {
     export default CurrentFlowVersion;
 }
 
-declare module "@salesforce/schema/FlowInterview.DynamicDataCaptures" {
-    import { FieldId } from "@salesforce/schema";
-    const DynamicDataCaptures: FieldId;
-    export default DynamicDataCaptures;
-}
-
 declare module "@salesforce/schema/FlowInterview.EngineType" {
     import { FieldId } from "@salesforce/schema";
     const EngineType: FieldId;
@@ -54,6 +48,12 @@ declare module "@salesforce/schema/FlowInterview.Error" {
     export default Error;
 }
 
+declare module "@salesforce/schema/FlowInterview.FlowInterview" {
+    import { FieldId } from "@salesforce/schema";
+    const FlowInterview: FieldId;
+    export default FlowInterview;
+}
+
 declare module "@salesforce/schema/FlowInterview.FlowVersionView" {
     import { FieldId } from "@salesforce/schema";
     const FlowVersionView: FieldId;
@@ -64,6 +64,12 @@ declare module "@salesforce/schema/FlowInterview.FlowVersionViewId" {
     import { FieldId } from "@salesforce/schema";
     const FlowVersionViewId: FieldId;
     export default FlowVersionViewId;
+}
+
+declare module "@salesforce/schema/FlowInterview.FulfillmentSteps" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentSteps: FieldId;
+    export default FulfillmentSteps;
 }
 
 declare module "@salesforce/schema/FlowInterview.Guid" {
@@ -166,6 +172,12 @@ declare module "@salesforce/schema/FlowInterview.RecordRelations" {
     import { FieldId } from "@salesforce/schema";
     const RecordRelations: FieldId;
     export default RecordRelations;
+}
+
+declare module "@salesforce/schema/FlowInterview.SerializedView" {
+    import { FieldId } from "@salesforce/schema";
+    const SerializedView: FieldId;
+    export default SerializedView;
 }
 
 declare module "@salesforce/schema/FlowInterview.Shares" {

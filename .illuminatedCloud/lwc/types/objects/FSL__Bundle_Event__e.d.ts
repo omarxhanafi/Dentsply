@@ -5,10 +5,10 @@
  */
 declare interface FSL__Bundle_Event__e extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
     /**
      * <h3><b>Param</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface FSL__Bundle_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Param__c: string;
+    FSL__Param__c?: string;
     /**
      * <h3><b>Text</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface FSL__Bundle_Event__e extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(130000)</td></tr>
      * </table>
      */
-    FSL__Text__c: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    FSL__Text__c?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

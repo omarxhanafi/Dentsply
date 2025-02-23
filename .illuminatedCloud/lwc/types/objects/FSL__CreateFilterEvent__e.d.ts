@@ -5,10 +5,10 @@
  */
 declare interface FSL__CreateFilterEvent__e extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
     /**
      * <h3><b>Appointment List Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface FSL__CreateFilterEvent__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__AppointmentListId__c: string;
+    FSL__AppointmentListId__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface FSL__CreateFilterEvent__e extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(130000)</td></tr>
      * </table>
      */
-    FSL__Description__c: string;
+    FSL__Description__c?: string;
     /**
      * <h3><b>Filter Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface FSL__CreateFilterEvent__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__FilterCategory__c: string;
+    FSL__FilterCategory__c?: string;
     /**
      * <h3><b>Filter Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface FSL__CreateFilterEvent__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__FilterName__c: string;
+    FSL__FilterName__c?: string;
     /**
      * <h3><b>Load Filter Immediately</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,7 +58,7 @@ declare interface FSL__CreateFilterEvent__e extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__LoadFilterImmediately__c: boolean;
+    FSL__LoadFilterImmediately__c?: boolean;
     /**
      * <h3><b>Service Ids</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface FSL__CreateFilterEvent__e extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(130000)</td></tr>
      * </table>
      */
-    FSL__ServiceApptIds__c: string;
+    FSL__ServiceApptIds__c?: string;
     /**
      * <h3><b>Territory Ids</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface FSL__CreateFilterEvent__e extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(130000)</td></tr>
      * </table>
      */
-    FSL__TerritoryIds__c: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    FSL__TerritoryIds__c?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

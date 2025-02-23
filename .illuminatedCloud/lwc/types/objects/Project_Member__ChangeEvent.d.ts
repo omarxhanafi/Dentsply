@@ -2,7 +2,7 @@
 
 declare interface Project_Member__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Country</b></h3>
      * <p>Lookup to the country object (interbnal object to keep track of the countries live in SFDC</p>
@@ -12,7 +12,7 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <p>Lookup to the country object (interbnal object to keep track of the countries live in SFDC</p>
@@ -22,7 +22,7 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__r: Country__c;
+    Country__r?: Country__c;
     /**
      * <h3><b>Country Location</b></h3>
      * <p>The country the member belongs to</p>
@@ -34,11 +34,11 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Location__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country_Location__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>External Member</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,11 +47,11 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    External_Member__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    External_Member__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Notes</b></h3>
      * <p>Place to add any specific notes about the project member - e.g. his/her role in the project and/or company</p>
@@ -60,7 +60,7 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Notes__c: string;
+    Notes__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,7 +68,7 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__c: string;
+    Project__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,7 +76,7 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__r: Project__c;
+    Project__r?: Project__c;
     /**
      * <h3><b>Project Member</b></h3>
      * <p>Add the member of the project (full SFDC license)</p>
@@ -86,7 +86,7 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project_Member__c: string;
+    Project_Member__c?: string;
     /**
      * <h3><b>Project Member</b></h3>
      * <p>Add the member of the project (full SFDC license)</p>
@@ -96,7 +96,7 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project_Member__r: User;
+    Project_Member__r?: User;
     /**
      * <h3><b>Project Role</b></h3>
      * <p>The user&#39;s role in the project</p>
@@ -122,8 +122,8 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">System Administrator</code></td><td>System Administrator</td><td nowrap>true</td></tr>
      * </table>
      */
-    Project_Role__c: string;
-    ReplayId: string;
+    Project_Role__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Time allocated per week</b></h3>
      * <p>Enter amount of hours allocated by the project member to this project.</p>
@@ -135,7 +135,7 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Time_allocated_per_week__c: number;
+    Time_allocated_per_week__c?: number;
     /**
      * <h3><b>Non-SFDC Project Member</b></h3>
      * <p>Add Project Member who isn&#39;t an SFDC user or has a Chatter Free user license</p>
@@ -145,7 +145,7 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Role__c: string;
+    User_Role__c?: string;
     /**
      * <h3><b>Non-SFDC Project Member</b></h3>
      * <p>Add Project Member who isn&#39;t an SFDC user or has a Chatter Free user license</p>
@@ -155,5 +155,5 @@ declare interface Project_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Role__r: User_Role__c;
+    User_Role__r?: User_Role__c;
 }

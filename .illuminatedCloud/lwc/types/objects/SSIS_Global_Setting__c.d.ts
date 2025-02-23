@@ -14,7 +14,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Account_Ownership__c: boolean;
+    Account_Ownership__c?: boolean;
     /**
      * <h3><b>Accounts</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Accounts__c: boolean;
+    Accounts__c?: boolean;
     /**
      * <h3><b>Campgain</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,7 +34,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Campgain__c: boolean;
+    Campgain__c?: boolean;
     /**
      * <h3><b>Consignment Stock</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Consignment_Stock__c: boolean;
+    Consignment_Stock__c?: boolean;
     /**
      * <h3><b>Contracts</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Contracts__c: boolean;
+    Contracts__c?: boolean;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -319,10 +319,10 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ZW</code></td><td>ZW</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Delivery Address Accounts</b></h3>
      * <h4>Field Attributes</h4>
@@ -332,7 +332,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Delivery_Address_Accounts__c: boolean;
+    Delivery_Address_Accounts__c?: boolean;
     /**
      * <h3><b>Delivery Address Ownership</b></h3>
      * <h4>Field Attributes</h4>
@@ -342,7 +342,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Delivery_Address_Ownership__c: boolean;
+    Delivery_Address_Ownership__c?: boolean;
     /**
      * <h3><b>ENDO</b></h3>
      * <h4>Field Attributes</h4>
@@ -352,7 +352,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ENDO__c: boolean;
+    ENDO__c?: boolean;
     /**
      * <h3><b>ERP Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -369,7 +369,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Others</code></td><td>Others</td><td nowrap>true</td></tr>
      * </table>
      */
-    ERP_Type__c: string;
+    ERP_Type__c?: string;
     /**
      * <h3><b>IMPL</b></h3>
      * <h4>Field Attributes</h4>
@@ -379,7 +379,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    IMPL__c: boolean;
+    IMPL__c?: boolean;
     /**
      * <h3><b>Internal Orders</b></h3>
      * <h4>Field Attributes</h4>
@@ -389,11 +389,11 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Internal_Orders__c: boolean;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Internal_Orders__c?: boolean;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Market/Company</b></h3>
      * <h4>Field Attributes</h4>
@@ -403,7 +403,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Market_Company__c: string;
+    Market_Company__c?: string;
     /**
      * <h3><b>Market/Company</b></h3>
      * <h4>Field Attributes</h4>
@@ -413,8 +413,8 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Market_Company__r: SSIS_ERP_SKU_Metadata_Country_Connectio__c;
-    Name: string;
+    Market_Company__r?: SSIS_ERP_SKU_Metadata_Country_Connectio__c;
+    Name?: string;
     /**
      * <h3><b>ORTH</b></h3>
      * <h4>Field Attributes</h4>
@@ -424,7 +424,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ORTH__c: boolean;
+    ORTH__c?: boolean;
     /**
      * <h3><b>Others/Unknown</b></h3>
      * <h4>Field Attributes</h4>
@@ -434,7 +434,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Others_Unknown__c: boolean;
+    Others_Unknown__c?: boolean;
     /**
      * <h3><b>PRE</b></h3>
      * <h4>Field Attributes</h4>
@@ -444,7 +444,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    PRE__c: boolean;
+    PRE__c?: boolean;
     /**
      * <h3><b>Product Area/Record Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -454,7 +454,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Product_Area__c: boolean;
+    Product_Area__c?: boolean;
     /**
      * <h3><b>PROS</b></h3>
      * <h4>Field Attributes</h4>
@@ -464,7 +464,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    PROS__c: boolean;
+    PROS__c?: boolean;
     /**
      * <h3><b>REST</b></h3>
      * <h4>Field Attributes</h4>
@@ -474,7 +474,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    REST__c: boolean;
+    REST__c?: boolean;
     /**
      * <h3><b>Sales History</b></h3>
      * <h4>Field Attributes</h4>
@@ -484,7 +484,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Sales_History__c: boolean;
+    Sales_History__c?: boolean;
     /**
      * <h3><b>SFDC Setup</b></h3>
      * <h4>Field Attributes</h4>
@@ -500,7 +500,7 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Global CRM</code></td><td>Global CRM</td><td nowrap>true</td></tr>
      * </table>
      */
-    SFDC_Setup__c: string;
+    SFDC_Setup__c?: string;
     /**
      * <h3><b>TrackWise</b></h3>
      * <h4>Field Attributes</h4>
@@ -510,5 +510,5 @@ declare interface SSIS_Global_Setting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    TrackWise__c: boolean;
+    TrackWise__c?: boolean;
 }

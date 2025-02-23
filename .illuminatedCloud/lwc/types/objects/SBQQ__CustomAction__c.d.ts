@@ -6,22 +6,22 @@
  */
 declare interface SBQQ__CustomAction__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__CustomActionCondition__c.SBQQ__CustomAction__c}.
      */
-    Custom_Action_Conditions__r: SBQQ__CustomActionCondition__c[];
+    Custom_Action_Conditions__r?: SBQQ__CustomActionCondition__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__CustomAction__c.SBQQ__ParentCustomAction__c}.
      */
-    Custom_Actions__r: SBQQ__CustomAction__c[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Custom_Actions__r?: SBQQ__CustomAction__c[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Action</b></h3>
      * <p>Action that this custom action performs.</p>
@@ -82,7 +82,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">View Pricing Guidance</code></td><td>View Pricing Guidance</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Action__c: string;
+    SBQQ__Action__c?: string;
     /**
      * <h3><b>Active</b></h3>
      * <p>Flag that determines whether this action is used.</p>
@@ -93,7 +93,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Active__c: boolean;
+    SBQQ__Active__c?: boolean;
     /**
      * <h3><b>Brand Button</b></h3>
      * <p>Indicates this Custom Action is a Brand Button. Affects styling of un-nested Actions only.</p>
@@ -104,7 +104,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__BrandButton__c: boolean;
+    SBQQ__BrandButton__c?: boolean;
     /**
      * <h3><b>Class</b></h3>
      * <p>Css class of the custom action for easy identification on HTML.</p>
@@ -116,7 +116,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Class__c: string;
+    SBQQ__Class__c?: string;
     /**
      * <h3><b>Conditions Met</b></h3>
      * <p>Choose the behavior for your conditions: All is AND; Any is OR.</p>
@@ -133,7 +133,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Any</code></td><td>Any</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__ConditionsMet__c: string;
+    SBQQ__ConditionsMet__c?: string;
     /**
      * <h3><b>Default</b></h3>
      * <p>Sets action to be the default overriding action.</p>
@@ -144,7 +144,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Default__c: boolean;
+    SBQQ__Default__c?: boolean;
     /**
      * <h3><b>Description</b></h3>
      * <p>Description of the Custom Action which will appear when users hover over the button.</p>
@@ -155,7 +155,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Description__c: string;
+    SBQQ__Description__c?: string;
     /**
      * <h3><b>Display Order</b></h3>
      * <p>The order in which this action display in the UI.</p>
@@ -167,7 +167,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__DisplayOrder__c: number;
+    SBQQ__DisplayOrder__c?: number;
     /**
      * <h3><b>Event Handler Name</b></h3>
      * <p>Method name for the click handler of this custom action.</p>
@@ -179,7 +179,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__EventHandlerName__c: string;
+    SBQQ__EventHandlerName__c?: string;
     /**
      * <h3><b>Icon</b></h3>
      * <p>Icon for this custom action</p>
@@ -366,7 +366,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">zoomout</code></td><td>zoomout</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Icon__c: string;
+    SBQQ__Icon__c?: string;
     /**
      * <h3><b>Icon Class</b></h3>
      * <p>CSS class name for the icon of this custom action.</p>
@@ -378,7 +378,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__IconClass__c: string;
+    SBQQ__IconClass__c?: string;
     /**
      * <h3><b>Label</b></h3>
      * <p>Label displayed for this action in the UI.</p>
@@ -437,7 +437,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Pricing Guidance</code></td><td>Pricing Guidance</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Label__c: string;
+    SBQQ__Label__c?: string;
     /**
      * <h3><b>Location</b></h3>
      * <p>Location of this action on the page.</p>
@@ -463,7 +463,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quote Document Panel</code></td><td>Quote Document Panel</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Location__c: string;
+    SBQQ__Location__c?: string;
     /**
      * <h3><b>Page</b></h3>
      * <p>The page of which to add the custom action.</p>
@@ -486,7 +486,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quote Document Detail</code></td><td>Quote Document Detail</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Page__c: string;
+    SBQQ__Page__c?: string;
     /**
      * <h3><b>Page Handler Name</b></h3>
      * <p>Page name for this custom action.</p>
@@ -498,7 +498,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PageHandlerName__c: string;
+    SBQQ__PageHandlerName__c?: string;
     /**
      * <h3><b>Parent Custom Action</b></h3>
      * <p>Reference to the parent custom action that this action is grouped under.</p>
@@ -509,7 +509,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ParentCustomAction__c: string;
+    SBQQ__ParentCustomAction__c?: string;
     /**
      * <h3><b>Parent Custom Action</b></h3>
      * <p>Reference to the parent custom action that this action is grouped under.</p>
@@ -520,7 +520,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ParentCustomAction__r: SBQQ__CustomAction__c;
+    SBQQ__ParentCustomAction__r?: SBQQ__CustomAction__c;
     /**
      * <h3><b>Return URL</b></h3>
      * <p>URL to return to after successful execution. Not applicable to all actions.</p>
@@ -530,7 +530,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ReturnURL__c: string;
+    SBQQ__ReturnURL__c?: string;
     /**
      * <h3><b>Target Object</b></h3>
      * <p>Object targeted by this action.</p>
@@ -549,7 +549,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Favorite</code></td><td>Favorite</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TargetObject__c: string;
+    SBQQ__TargetObject__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <p>UI element that this custom action is rendered as.</p>
@@ -567,7 +567,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Separator</code></td><td>Separator</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Type__c: string;
+    SBQQ__Type__c?: string;
     /**
      * <h3><b>URL</b></h3>
      * <p>URL to visit &#39;URL&#39; is selected as the Target Object.</p>
@@ -577,7 +577,7 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__URL__c: string;
+    SBQQ__URL__c?: string;
     /**
      * <h3><b>URL Target</b></h3>
      * <p>Method of navigating to the URL.</p>
@@ -594,9 +594,9 @@ declare interface SBQQ__CustomAction__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Replace Page</code></td><td>Replace Page</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__URLTarget__c: string;
+    SBQQ__URLTarget__c?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__SearchFilter__c.SBQQ__Action__c}.
      */
-    SearchFilters__r: SBQQ__SearchFilter__c[];
+    SearchFilters__r?: SBQQ__SearchFilter__c[];
 }

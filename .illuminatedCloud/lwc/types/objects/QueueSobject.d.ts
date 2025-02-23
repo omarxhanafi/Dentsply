@@ -2,9 +2,9 @@
 
 declare interface QueueSobject extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    Queue: Group;
-    QueueId: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    Queue?: Group;
+    QueueId?: string;
+    SystemModstamp?: string;
 }

@@ -168,10 +168,22 @@ declare module "@salesforce/schema/QuoteAction.Quote" {
     export default Quote;
 }
 
+declare module "@salesforce/schema/QuoteAction.QuoteAction" {
+    import { FieldId } from "@salesforce/schema";
+    const QuoteAction: FieldId;
+    export default QuoteAction;
+}
+
 declare module "@salesforce/schema/QuoteAction.QuoteId" {
     import { FieldId } from "@salesforce/schema";
     const QuoteId: FieldId;
     export default QuoteId;
+}
+
+declare module "@salesforce/schema/QuoteAction.QuoteLineItems" {
+    import { FieldId } from "@salesforce/schema";
+    const QuoteLineItems: FieldId;
+    export default QuoteLineItems;
 }
 
 declare module "@salesforce/schema/QuoteAction.RelatedRecord" {

@@ -16,7 +16,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Additional_Name__c: string;
+    Additional_Name__c?: string;
     /**
      * <h3><b>Catch Phrase</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -27,7 +27,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Catch_Phrase__c: string;
+    Catch_Phrase__c?: string;
     /**
      * <h3><b>Category</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan - Controls Sub-Category</p>
@@ -50,10 +50,10 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Category__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Dealer Name</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -64,7 +64,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_Name__c: string;
+    Dealer_Name__c?: string;
     /**
      * <h3><b>Details</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -74,7 +74,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Details__c: string;
+    Details__c?: string;
     /**
      * <h3><b>End Date</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -85,11 +85,11 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    End_Date__c: Date;
+    End_Date__c?: Date;
     /**
      * The reciprocal relationship for {@link FAQ__c.Item__c}.
      */
-    FAQs__r: FAQ__c[];
+    FAQs__r?: FAQ__c[];
     /**
      * <h3><b>Hidden From Users?</b></h3>
      * <p>SBU: PREP, ORTH, Country Japan, This field controls the sharing rule and makes sure records with this field ticked is not shared with users. Example of use case is a new product that has not yet been launched but added to the system.</p>
@@ -100,16 +100,16 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Hidden_From_Users__c: boolean;
-    IsDeleted: boolean;
+    Hidden_From_Users__c?: boolean;
+    IsDeleted?: boolean;
     /**
      * The reciprocal relationship for {@link Item_Attachment__c.Item__c}.
      */
-    Item_Attachments__r: Item_Attachment__c[];
+    Item_Attachments__r?: Item_Attachment__c[];
     /**
      * The reciprocal relationship for {@link Item_Specification__c.Item__c}.
      */
-    Item_Specifications__r: Item_Specification__c[];
+    Item_Specifications__r?: Item_Specification__c[];
     /**
      * <h3><b>Kana</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -120,10 +120,10 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Kana__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Kana__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Legacy ID</b></h3>
      * <p>Stores the old ID number - used for mapping when importing the data</p>
@@ -135,8 +135,8 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Legacy_ID__c: string;
-    Name: string;
+    Legacy_ID__c?: string;
+    Name?: string;
     /**
      * <h3><b>Old Product ID</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -147,7 +147,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_Product_ID__c: string;
+    Old_Product_ID__c?: string;
     /**
      * <h3><b>Product Image 1</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -157,7 +157,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Image_1__c: string;
+    Product_Image_1__c?: string;
     /**
      * <h3><b>Product Image 2</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -167,7 +167,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Image_2__c: string;
+    Product_Image_2__c?: string;
     /**
      * <h3><b>Product Image 3</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -177,7 +177,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Image_3__c: string;
+    Product_Image_3__c?: string;
     /**
      * <h3><b>Replacements</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -188,7 +188,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Replacements__c: string;
+    Replacements__c?: string;
     /**
      * <h3><b>Search Keyword</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -199,7 +199,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Search_Keyword__c: string;
+    Search_Keyword__c?: string;
     /**
      * <h3><b>Serial Number Management</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -210,7 +210,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Serial_Number_Management__c: boolean;
+    Serial_Number_Management__c?: boolean;
     /**
      * <h3><b>Status</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -226,7 +226,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not in use</code></td><td>Not in use</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Stock Status</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan</p>
@@ -245,7 +245,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">End of Sales</code></td><td>End of Sales</td><td nowrap>true</td></tr>
      * </table>
      */
-    Stock_Status__c: string;
+    Stock_Status__c?: string;
     /**
      * <h3><b>Stock Status Icon</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan - Need to update when images are in the system!</p>
@@ -258,7 +258,7 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Stock_Status_Icon__c: string;
+    Stock_Status_Icon__c?: string;
     /**
      * <h3><b>Sub Category</b></h3>
      * <p>SBU: PREP &amp; ORTHO; Country: Japan - Dependent on Category - Not defined yet - might be used in future</p>
@@ -274,5 +274,5 @@ declare interface Item__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not defined yet - might be used in future</code></td><td>Not defined yet - might be used in future</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sub_Category__c: string;
+    Sub_Category__c?: string;
 }

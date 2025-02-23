@@ -2,12 +2,12 @@
 
 declare interface AccountUserTerritory2View extends SObject 
 {
-    Account: Account;
-    AccountId: string;
-    LastModifiedDate: string;
-    RoleInTerritory2: string;
-    Territory2: Territory2;
-    Territory2Id: string;
-    User: User;
-    UserId: string;
+    Account?: Account;
+    AccountId?: string;
+    LastModifiedDate?: string;
+    RoleInTerritory2?: string;
+    Territory2?: Territory2;
+    Territory2Id?: string;
+    User?: User;
+    UserId?: string;
 }

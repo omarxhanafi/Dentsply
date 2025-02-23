@@ -2,12 +2,12 @@
 
 declare interface ServiceCrewChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CrewSize: number;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CrewSize?: number;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Gantt Color</b></h3>
      * <h4>Field Attributes</h4>
@@ -18,12 +18,12 @@ declare interface ServiceCrewChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__GanttColor__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: User;
-    OwnerId: string;
-    ReplayId: string;
+    FSL__GanttColor__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: User;
+    OwnerId?: string;
+    ReplayId?: string;
 }

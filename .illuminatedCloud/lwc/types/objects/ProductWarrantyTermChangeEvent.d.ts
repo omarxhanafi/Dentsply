@@ -2,19 +2,19 @@
 
 declare interface ProductWarrantyTermChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CoveredProduct: Product2;
-    CoveredProductFamily: string;
-    CoveredProductId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    ProductWarrantyTermNumber: string;
-    ReplayId: string;
-    WarrantyTerm: WarrantyTerm;
-    WarrantyTermId: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CoveredProduct?: Product2;
+    CoveredProductFamily?: string;
+    CoveredProductId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    ProductWarrantyTermNumber?: string;
+    ReplayId?: string;
+    WarrantyTerm?: WarrantyTerm;
+    WarrantyTermId?: string;
 }

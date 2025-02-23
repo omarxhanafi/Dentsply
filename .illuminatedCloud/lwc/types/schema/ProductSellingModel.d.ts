@@ -210,6 +210,12 @@ declare module "@salesforce/schema/ProductSellingModel.OpenActivities" {
     export default OpenActivities;
 }
 
+declare module "@salesforce/schema/ProductSellingModel.OrderItems" {
+    import { FieldId } from "@salesforce/schema";
+    const OrderItems: FieldId;
+    export default OrderItems;
+}
+
 declare module "@salesforce/schema/ProductSellingModel.Parent" {
     import { FieldId } from "@salesforce/schema";
     const Parent: FieldId;

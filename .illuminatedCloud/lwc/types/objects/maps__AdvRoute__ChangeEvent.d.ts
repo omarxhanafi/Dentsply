@@ -2,14 +2,14 @@
 
 declare interface maps__AdvRoute__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Maps Advanced Route Template User</b></h3>
      * <p>The is the Advanced Route template user associated to this route</p>
@@ -19,7 +19,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AdvRouteTemplateUser__c: string;
+    maps__AdvRouteTemplateUser__c?: string;
     /**
      * <h3><b>Maps Advanced Route Template User</b></h3>
      * <p>The is the Advanced Route template user associated to this route</p>
@@ -29,7 +29,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AdvRouteTemplateUser__r: maps__AdvRouteTemplateUser__c;
+    maps__AdvRouteTemplateUser__r?: maps__AdvRouteTemplateUser__c;
     /**
      * <h3><b>Driving Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,7 +41,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DrivingTime__c: string;
+    maps__DrivingTime__c?: string;
     /**
      * <h3><b>Driving Time (minutes)</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__DrivingTimeMinutes__c: number;
+    maps__DrivingTimeMinutes__c?: number;
     /**
      * <h3><b>Modified Driving Time (minutes)</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,7 +64,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ModifiedDrivingTime__c: number;
+    maps__ModifiedDrivingTime__c?: number;
     /**
      * <h3><b>Modified Route Length (miles)</b></h3>
      * <h4>Field Attributes</h4>
@@ -75,7 +75,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ModifiedRouteLength__c: number;
+    maps__ModifiedRouteLength__c?: number;
     /**
      * <h3><b>Options</b></h3>
      * <p>This is a JSON object of options used by Core Maps</p>
@@ -84,7 +84,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__Options__c: string;
+    maps__Options__c?: string;
     /**
      * <h3><b>Order Count</b></h3>
      * <h4>Field Attributes</h4>
@@ -96,7 +96,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__OrderCount__c: number;
+    maps__OrderCount__c?: number;
     /**
      * <h3><b>Route Date</b></h3>
      * <p>This is the date of the route</p>
@@ -106,7 +106,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RouteDate__c: Date;
+    maps__RouteDate__c?: Date;
     /**
      * <h3><b>Route End Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,7 +115,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RouteEndTime__c: string;
+    maps__RouteEndTime__c?: string;
     /**
      * <h3><b>Route Job Id</b></h3>
      * <p>This is the job id that produced the route</p>
@@ -127,7 +127,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RouteJobId__c: string;
+    maps__RouteJobId__c?: string;
     /**
      * <h3><b>Route Length (km)</b></h3>
      * <h4>Field Attributes</h4>
@@ -139,7 +139,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RouteLengthKm__c: number;
+    maps__RouteLengthKm__c?: number;
     /**
      * <h3><b>Route Length (miles)</b></h3>
      * <p>Total Distance of route</p>
@@ -152,7 +152,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__RouteLengthMi__c: number;
+    maps__RouteLengthMi__c?: number;
     /**
      * <h3><b>Route Start Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -161,7 +161,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RouteStartTime__c: string;
+    maps__RouteStartTime__c?: string;
     /**
      * <h3><b>Total Break Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -173,7 +173,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__TotalBreakTime__c: number;
+    maps__TotalBreakTime__c?: number;
     /**
      * <h3><b>Total Order Service Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -185,7 +185,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__TotalOrderServiceTime__c: number;
+    maps__TotalOrderServiceTime__c?: number;
     /**
      * <h3><b>Total Time</b></h3>
      * <p>All Travel time, wait time, order service time, and break service time.</p>
@@ -198,7 +198,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__TotalTime__c: number;
+    maps__TotalTime__c?: number;
     /**
      * <h3><b>Total Violation Time</b></h3>
      * <p>Total violation time of the route</p>
@@ -211,7 +211,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__TotalViolationTime__c: number;
+    maps__TotalViolationTime__c?: number;
     /**
      * <h3><b>Total Wait Time</b></h3>
      * <p>Total wait time for route</p>
@@ -224,7 +224,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    maps__TotalWaitTime__c: number;
+    maps__TotalWaitTime__c?: number;
     /**
      * <h3><b>User Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -236,7 +236,7 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__UserName__c: string;
+    maps__UserName__c?: string;
     /**
      * <h3><b>Violated Constraints</b></h3>
      * <h4>Field Attributes</h4>
@@ -247,9 +247,9 @@ declare interface maps__AdvRoute__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ViolatedConstraints__c: number;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    ReplayId: string;
+    maps__ViolatedConstraints__c?: number;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    ReplayId?: string;
 }

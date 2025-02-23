@@ -5,7 +5,7 @@
  */
 declare interface Integration_Progress_Setting__mdt extends SObject 
 {
-    DeveloperName: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Estimated Finished Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,7 +14,7 @@ declare interface Integration_Progress_Setting__mdt extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Estimated_Finished_Date__c: string;
+    Estimated_Finished_Date__c?: string;
     /**
      * <h3><b>Estimated Start Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,12 +23,12 @@ declare interface Integration_Progress_Setting__mdt extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Estimated_Start_Date__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    Estimated_Start_Date__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface Integration_Progress_Setting__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AU</code></td><td>AU</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Source__c: string;
+    Source__c?: string;
     /**
      * <h3><b>Step</b></h3>
      * <h4>Field Attributes</h4>
@@ -60,6 +60,6 @@ declare interface Integration_Progress_Setting__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Einstein Analytics</code></td><td>Einstein Analytics</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Step__c: string;
-    SystemModstamp: string;
+    Step__c?: string;
+    SystemModstamp?: string;
 }

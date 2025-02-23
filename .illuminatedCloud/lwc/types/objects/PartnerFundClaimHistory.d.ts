@@ -2,14 +2,14 @@
 
 declare interface PartnerFundClaimHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    PartnerFundClaim: PartnerFundClaim;
-    PartnerFundClaimId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    PartnerFundClaim?: PartnerFundClaim;
+    PartnerFundClaimId?: string;
 }

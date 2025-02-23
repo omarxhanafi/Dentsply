@@ -8,41 +8,41 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * <h3><b>Account Contact Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Account_Contact_Role__c: string;
+    echosign_dev1__Account_Contact_Role__c?: string;
     /**
      * <h3><b>Agreement Template</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,7 +61,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link echosign_dev1__Agreement_Template__c})</td></tr>
      * </table>
      */
-    echosign_dev1__Agreement_Template__c: string;
+    echosign_dev1__Agreement_Template__c?: string;
     /**
      * <h3><b>Agreement Template</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link echosign_dev1__Agreement_Template__c})</td></tr>
      * </table>
      */
-    echosign_dev1__Agreement_Template__r: echosign_dev1__Agreement_Template__c;
+    echosign_dev1__Agreement_Template__r?: echosign_dev1__Agreement_Template__c;
     /**
      * <h3><b>Recipient - Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Contact_Recipient__c: string;
+    echosign_dev1__Contact_Recipient__c?: string;
     /**
      * <h3><b>Recipient - Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -87,7 +87,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Contact_Recipient__r: Contact;
+    echosign_dev1__Contact_Recipient__r?: Contact;
     /**
      * <h3><b>Do Not Create Blank Recipient Row</b></h3>
      * <p>Check this box if you do not want a blank placeholder recipient to be created on the agreement page if no record is found based on the selected criteria.</p>
@@ -97,7 +97,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Do_Not_Create_Empty__c: boolean;
+    echosign_dev1__Do_Not_Create_Empty__c?: boolean;
     /**
      * <h3><b>Email Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,7 +108,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Email_Recipient__c: string;
+    echosign_dev1__Email_Recipient__c?: string;
     /**
      * <h3><b>Recipient - Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -119,7 +119,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Group_Recipient__c: string;
+    echosign_dev1__Group_Recipient__c?: string;
     /**
      * <h3><b>Index</b></h3>
      * <p>Set the signing order index for the recipient generated by this template. Setting the same order number for multiple recipient templates will use hybrid recipients.</p>
@@ -131,7 +131,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Index__c: number;
+    echosign_dev1__Index__c?: number;
     /**
      * <h3><b>Recipient - Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -140,7 +140,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Lead_Recipient__c: string;
+    echosign_dev1__Lead_Recipient__c?: string;
     /**
      * <h3><b>Recipient - Lead</b></h3>
      * <h4>Field Attributes</h4>
@@ -149,7 +149,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Lead_Recipient__r: Lead;
+    echosign_dev1__Lead_Recipient__r?: Lead;
     /**
      * <h3><b>Opportunity Contact Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -160,7 +160,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Opportunity_Contact_Role__c: string;
+    echosign_dev1__Opportunity_Contact_Role__c?: string;
     /**
      * <h3><b>Participant Set Index</b></h3>
      * <h4>Field Attributes</h4>
@@ -171,7 +171,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Participant_Set_Index__c: number;
+    echosign_dev1__Participant_Set_Index__c?: number;
     /**
      * <h3><b>Password</b></h3>
      * <h4>Field Attributes</h4>
@@ -182,7 +182,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Password__c: string;
+    echosign_dev1__Password__c?: string;
     /**
      * <h3><b>Phone Verification Country Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -299,7 +299,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">976</code></td><td>976</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Phone_Verification_Country_Code__c: string;
+    echosign_dev1__Phone_Verification_Country_Code__c?: string;
     /**
      * <h3><b>Phone Verification Phone Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -310,7 +310,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Phone_Verification_Phone_Number__c: string;
+    echosign_dev1__Phone_Verification_Phone_Number__c?: string;
     /**
      * <h3><b>Select Source Field from Master Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -321,7 +321,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Field__c: string;
+    echosign_dev1__Recipient_Field__c?: string;
     /**
      * <h3><b>Recipient Message</b></h3>
      * <p>Set a unique message for the recipient.</p>
@@ -330,7 +330,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Message__c: string;
+    echosign_dev1__Recipient_Message__c?: string;
     /**
      * <h3><b>Recipient Role</b></h3>
      * <h4>Field Attributes</h4>
@@ -353,7 +353,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Delegate to Certified Recipient</code></td><td>Delegate to Certified Recipient</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Role__c: string;
+    echosign_dev1__Recipient_Role__c?: string;
     /**
      * <h3><b>Recipient Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -371,7 +371,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Email</code></td><td>Email</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Type__c: string;
+    echosign_dev1__Recipient_Type__c?: string;
     /**
      * <h3><b>Recipient Workflow Label</b></h3>
      * <p>Recipient label defined in sign workflow</p>
@@ -383,7 +383,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Workflow_Label__c: string;
+    echosign_dev1__Recipient_Workflow_Label__c?: string;
     /**
      * <h3><b>Related Recipient Relationship</b></h3>
      * <h4>Field Attributes</h4>
@@ -394,7 +394,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Related_Recipient_Relationship__c: string;
+    echosign_dev1__Related_Recipient_Relationship__c?: string;
     /**
      * <h3><b>Related Selection Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -409,7 +409,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Created Date</code></td><td>Created Date</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Related_Selection_Field__c: string;
+    echosign_dev1__Related_Selection_Field__c?: string;
     /**
      * <h3><b>Related Selection Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -424,7 +424,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Oldest</code></td><td>Oldest</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Related_Selection_Type__c: string;
+    echosign_dev1__Related_Selection_Type__c?: string;
     /**
      * <h3><b>Signer Verification Method</b></h3>
      * <h4>Field Attributes</h4>
@@ -443,7 +443,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Government ID</code></td><td>Government ID</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Signer_Verification_Method__c: string;
+    echosign_dev1__Signer_Verification_Method__c?: string;
     /**
      * <h3><b>Source of Recipient</b></h3>
      * <h4>Field Attributes</h4>
@@ -465,7 +465,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Runtime Variable</code></td><td>Runtime Variable</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Type__c: string;
+    echosign_dev1__Type__c?: string;
     /**
      * <h3><b>Uniform Index</b></h3>
      * <p>Enable this option to set the same index for a template which results in multiple recipients, making them hybrid signers.</p>
@@ -475,7 +475,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Uniform_Index__c: boolean;
+    echosign_dev1__Uniform_Index__c?: boolean;
     /**
      * <h3><b>Recipient - User</b></h3>
      * <h4>Field Attributes</h4>
@@ -484,7 +484,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__User_Recipient__c: string;
+    echosign_dev1__User_Recipient__c?: string;
     /**
      * <h3><b>Recipient - User</b></h3>
      * <h4>Field Attributes</h4>
@@ -493,7 +493,7 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__User_Recipient__r: User;
+    echosign_dev1__User_Recipient__r?: User;
     /**
      * <h3><b>Variable Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -504,72 +504,72 @@ declare interface echosign_dev1__Recipient_Template__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Variable_Name__c: string;
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    echosign_dev1__Variable_Name__c?: string;
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: Recipient_Template__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: Recipient_Template__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

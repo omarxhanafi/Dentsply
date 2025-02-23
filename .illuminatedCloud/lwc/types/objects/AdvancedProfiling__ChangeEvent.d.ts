@@ -9,7 +9,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Adhesive</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Adhesive__c: string;
+    Adhesive__c?: string;
     /**
      * <h3><b>Anesthetic</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Anesthetic__c: string;
+    Anesthetic__c?: string;
     /**
      * <h3><b>Appliances -Night/Sportsguards/Retainers</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Scanner & Mill (Digital scan taken, sent to lab for fabrication)</code></td><td>Scanner &amp; Mill (Digital scan taken, sent to lab for fabrication)</td><td nowrap>true</td></tr>
      * </table>
      */
-    Appliances__c: string;
+    Appliances__c?: string;
     /**
      * <h3><b>Astra Restorative / Prostho Kit?</b></h3>
      * <p>Do you currently have an Astra Restorative / Prostho Kit?</p>
@@ -76,7 +76,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    AstraRestorativeProsthoKit__c: boolean;
+    AstraRestorativeProsthoKit__c?: boolean;
     /**
      * <h3><b>Bone / Regenerative</b></h3>
      * <h4>Field Attributes</h4>
@@ -93,7 +93,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dentsply Sirona</code></td><td>Dentsply Sirona</td><td nowrap>true</td></tr>
      * </table>
      */
-    BoneRegenerative__c: string;
+    BoneRegenerative__c?: string;
     /**
      * <h3><b>Bracket System Used</b></h3>
      * <h4>Field Attributes</h4>
@@ -109,7 +109,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    BracketSystemUsed__c: string;
+    BracketSystemUsed__c?: string;
     /**
      * <h3><b>Bridges</b></h3>
      * <h4>Field Attributes</h4>
@@ -126,7 +126,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Scanner & Mill (Digital scan taken, bridge designed and milled in house with CAD/CAM)</code></td><td>Scanner &amp; Mill (Digital scan taken, bridge designed and milled in house with CAD/CAM)</td><td nowrap>true</td></tr>
      * </table>
      */
-    Bridges__c: string;
+    Bridges__c?: string;
     /**
      * <h3><b>CAD/CAM Blocks</b></h3>
      * <h4>Field Attributes</h4>
@@ -142,7 +142,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    CADCAMBlocks__c: string;
+    CADCAMBlocks__c?: string;
     /**
      * <h3><b>Cavitron Inserts</b></h3>
      * <h4>Field Attributes</h4>
@@ -158,7 +158,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    CavitronInserts__c: string;
+    CavitronInserts__c?: string;
     /**
      * <h3><b>Cement</b></h3>
      * <h4>Field Attributes</h4>
@@ -174,8 +174,8 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Cement__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Cement__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Clear Aligner Brand Used</b></h3>
      * <h4>Field Attributes</h4>
@@ -193,7 +193,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    ClearAlignerBrandUsed__c: string;
+    ClearAlignerBrandUsed__c?: string;
     /**
      * <h3><b>Clear Aligner Therapy (ortho)</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,7 +210,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Scanner & Mill (Digital scan taken, sent to provider for case planning and aligner fabrication)</code></td><td>Scanner &amp; Mill (Digital scan taken, sent to provider for case planning and aligner fabrication)</td><td nowrap>true</td></tr>
      * </table>
      */
-    ClearAlignerTherapyOrtho__c: string;
+    ClearAlignerTherapyOrtho__c?: string;
     /**
      * <h3><b>Composite</b></h3>
      * <h4>Field Attributes</h4>
@@ -226,7 +226,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Composite__c: string;
+    Composite__c?: string;
     /**
      * <h3><b>Core Build-Up Materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -242,10 +242,10 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    CoreBuildUpMaterials__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CoreBuildUpMaterials__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Crowns</b></h3>
      * <h4>Field Attributes</h4>
@@ -262,8 +262,8 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    Crowns__c: string;
-    CurrencyIsoCode: string;
+    Crowns__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Digital Scanner</b></h3>
      * <h4>Field Attributes</h4>
@@ -284,7 +284,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    DigitalScanner__c: string;
+    DigitalScanner__c?: string;
     /**
      * <h3><b>Endo: Estimated Case Acceptance %</b></h3>
      * <h4>Field Attributes</h4>
@@ -294,7 +294,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    EndoEstimatedCaseAcceptance__c: number;
+    EndoEstimatedCaseAcceptance__c?: number;
     /**
      * <h3><b>Endo: Specialist Ref. To (Primary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -303,7 +303,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EndoSpecialistRefTo__c: string;
+    EndoSpecialistRefTo__c?: string;
     /**
      * <h3><b>Endo: Specialist Ref. To (Primary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -312,7 +312,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EndoSpecialistRefTo__r: Account;
+    EndoSpecialistRefTo__r?: Account;
     /**
      * <h3><b>Essix Machine</b></h3>
      * <h4>Field Attributes</h4>
@@ -328,7 +328,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    EssixMachine__c: string;
+    EssixMachine__c?: string;
     /**
      * <h3><b>Familiar w/ Restorative Options ?</b></h3>
      * <p>Are you familiar with the Astra Implant / Restorative Options available to your practice?</p>
@@ -338,7 +338,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FamiliarRestorativeOptions__c: boolean;
+    FamiliarRestorativeOptions__c?: boolean;
     /**
      * <h3><b>File System</b></h3>
      * <h4>Field Attributes</h4>
@@ -361,7 +361,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Twisted Files (Sybron Endo)</code></td><td>Twisted Files (Sybron Endo)</td><td nowrap>true</td></tr>
      * </table>
      */
-    FileSystem__c: string;
+    FileSystem__c?: string;
     /**
      * <h3><b>Finishing &amp; Polishing</b></h3>
      * <h4>Field Attributes</h4>
@@ -377,7 +377,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    FinishingPolishing__c: string;
+    FinishingPolishing__c?: string;
     /**
      * <h3><b>Fluoride Varnish</b></h3>
      * <h4>Field Attributes</h4>
@@ -393,7 +393,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    FluorideVarnish__c: string;
+    FluorideVarnish__c?: string;
     /**
      * <h3><b>Future Equipment Acquisition Plan</b></h3>
      * <p>TFUS-000003190: New field replacing &#39;Irrigation Needles&#39;</p>
@@ -413,7 +413,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    FutureEquipmentAcquisitionPlan__c: string;
+    FutureEquipmentAcquisitionPlan__c?: string;
     /**
      * <h3><b>Guided Implant Placement</b></h3>
      * <h4>Field Attributes</h4>
@@ -430,7 +430,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Scanner & Mill (Digital scan taken, guide designed in house, sent to lab for printed guide)</code></td><td>Scanner &amp; Mill (Digital scan taken, guide designed in house, sent to lab for printed guide)</td><td nowrap>true</td></tr>
      * </table>
      */
-    GuidedImplantPlacement__c: string;
+    GuidedImplantPlacement__c?: string;
     /**
      * <h3><b>Obturation Technique</b></h3>
      * <p>TFUS-000003190: field label changed from &#39;Gutta Percha&#39; to &#39;Obturation Technique&#39;</p>
@@ -454,7 +454,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Twisted Files (Sybron Endo)</code></td><td>Twisted Files (Sybron Endo)</td><td nowrap>true</td></tr>
      * </table>
      */
-    GuttaPercha__c: string;
+    GuttaPercha__c?: string;
     /**
      * <h3><b>Hand Files</b></h3>
      * <h4>Field Attributes</h4>
@@ -478,7 +478,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sinclair</code></td><td>Sinclair</td><td nowrap>true</td></tr>
      * </table>
      */
-    HandFiles__c: string;
+    HandFiles__c?: string;
     /**
      * <h3><b>Implant Abutments / Cover Screws</b></h3>
      * <h4>Field Attributes</h4>
@@ -494,7 +494,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    ImplantAbutmentsCoverScrews__c: string;
+    ImplantAbutmentsCoverScrews__c?: string;
     /**
      * <h3><b>Implant Restoration</b></h3>
      * <h4>Field Attributes</h4>
@@ -511,7 +511,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Scanner & Mill (Digital scan taken, implant crown designed with in house software, implant crown milled in house)</code></td><td>Scanner &amp; Mill (Digital scan taken, implant crown designed with in house software, implant crown milled in house)</td><td nowrap>true</td></tr>
      * </table>
      */
-    ImplantRestoration__c: string;
+    ImplantRestoration__c?: string;
     /**
      * <h3><b>Implants: Estimated Case Acceptance %</b></h3>
      * <p>Estimated case acceptance % for implant placement?</p>
@@ -521,7 +521,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsEstimatedCaseAcceptance__c: number;
+    ImplantsEstimatedCaseAcceptance__c?: number;
     /**
      * <h3><b>Implants: Primary Lab Used</b></h3>
      * <h4>Field Attributes</h4>
@@ -530,7 +530,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsPrimaryLabUsed__c: string;
+    ImplantsPrimaryLabUsed__c?: string;
     /**
      * <h3><b>Implants: Primary Lab Used</b></h3>
      * <h4>Field Attributes</h4>
@@ -539,7 +539,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsPrimaryLabUsed__r: Account;
+    ImplantsPrimaryLabUsed__r?: Account;
     /**
      * <h3><b>Implants: Specialist Ref. To (Primary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -548,7 +548,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsSpecialistRefTo__c: string;
+    ImplantsSpecialistRefTo__c?: string;
     /**
      * <h3><b>Implants: Specialist Ref. To (Primary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -557,7 +557,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ImplantsSpecialistRefTo__r: Account;
+    ImplantsSpecialistRefTo__r?: Account;
     /**
      * <h3><b>Impression Materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -573,7 +573,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    ImpressionMaterials__c: string;
+    ImpressionMaterials__c?: string;
     /**
      * <h3><b>Irrigation Needles</b></h3>
      * <h4>Field Attributes</h4>
@@ -592,7 +592,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    IrrigationNeedles__c: string;
+    IrrigationNeedles__c?: string;
     /**
      * <h3><b>Lab Used for Appliance(s)</b></h3>
      * <h4>Field Attributes</h4>
@@ -601,7 +601,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LabUsedforAppliance__c: string;
+    LabUsedforAppliance__c?: string;
     /**
      * <h3><b>Lab Used for Appliance(s)</b></h3>
      * <h4>Field Attributes</h4>
@@ -610,7 +610,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LabUsedforAppliance__r: Account;
+    LabUsedforAppliance__r?: Account;
     /**
      * <h3><b>Lab Used for Crown &amp; Bridge</b></h3>
      * <h4>Field Attributes</h4>
@@ -619,7 +619,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LabUsedforCrownBridge__c: string;
+    LabUsedforCrownBridge__c?: string;
     /**
      * <h3><b>Lab Used for Crown &amp; Bridge</b></h3>
      * <h4>Field Attributes</h4>
@@ -628,10 +628,10 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LabUsedforCrownBridge__r: Account;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    LabUsedforCrownBridge__r?: Account;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>MatrixMaterials</b></h3>
      * <h4>Field Attributes</h4>
@@ -647,7 +647,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    MatrixMaterials__c: string;
+    MatrixMaterials__c?: string;
     /**
      * <h3><b>Mill</b></h3>
      * <h4>Field Attributes</h4>
@@ -664,8 +664,8 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    Mill__c: string;
-    Name: string;
+    Mill__c?: string;
+    Name?: string;
     /**
      * <h3><b># of CBCT Scans performed/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -676,7 +676,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NrOfCBCTScansPerformedEachMonth__c: number;
+    NrOfCBCTScansPerformedEachMonth__c?: number;
     /**
      * <h3><b># of Bridges/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -687,7 +687,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OfBridgesMonth__c: number;
+    OfBridgesMonth__c?: number;
     /**
      * <h3><b># of CBCT Scans Referred/Month</b></h3>
      * <h4>Field Attributes</h4>
@@ -698,7 +698,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OfCBCTScansReferredMonth__c: number;
+    OfCBCTScansReferredMonth__c?: number;
     /**
      * <h3><b># of Clear Aligners (New Starts)/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -709,7 +709,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofClearAlignersNewStartsMonth__c: number;
+    ofClearAlignersNewStartsMonth__c?: number;
     /**
      * <h3><b># of Crowns/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -720,7 +720,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OfCrownsMonth__c: number;
+    OfCrownsMonth__c?: number;
     /**
      * <h3><b># of Fillings (Class III, IV, V)/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -731,7 +731,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofFillingsClassIIIIVVMonth__c: number;
+    ofFillingsClassIIIIVVMonth__c?: number;
     /**
      * <h3><b># of Fillings (Class II)/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -742,7 +742,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofFillingsClassIIMonth__c: number;
+    ofFillingsClassIIMonth__c?: number;
     /**
      * <h3><b># of Fillings (Class I)/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -753,7 +753,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofFillingsClassIMonth__c: number;
+    ofFillingsClassIMonth__c?: number;
     /**
      * <h3><b># of Implant Placements/month - Freehand</b></h3>
      * <h4>Field Attributes</h4>
@@ -764,7 +764,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofImplantPlacementsMonthFreehand__c: number;
+    ofImplantPlacementsMonthFreehand__c?: number;
     /**
      * <h3><b># of Implant Placements/month- Guided</b></h3>
      * <h4>Field Attributes</h4>
@@ -775,7 +775,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofImplantPlacementsMonthGuided__c: number;
+    ofImplantPlacementsMonthGuided__c?: number;
     /**
      * <h3><b># of Implant Restorations/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -786,7 +786,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofImplantRestorationsMonth__c: number;
+    ofImplantRestorationsMonth__c?: number;
     /**
      * <h3><b># of Nightguards/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -797,7 +797,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofNightguardsMonth__c: number;
+    ofNightguardsMonth__c?: number;
     /**
      * <h3><b># of Ortho Referred Out (to spec.)/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -808,7 +808,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofOrthoReferredOutMonth__c: number;
+    ofOrthoReferredOutMonth__c?: number;
     /**
      * <h3><b># of RCT Referred Out (to spec.)/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -819,7 +819,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofRCTReferredOutMonth__c: number;
+    ofRCTReferredOutMonth__c?: number;
     /**
      * <h3><b># of Retainers/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -830,7 +830,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofRetainersMonth__c: number;
+    ofRetainersMonth__c?: number;
     /**
      * <h3><b># of Root Canal Treatment</b></h3>
      * <h4>Field Attributes</h4>
@@ -841,7 +841,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofRootCanalTreatmentsMonth__c: number;
+    ofRootCanalTreatmentsMonth__c?: number;
     /**
      * <h3><b># of Sportsguards/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -852,7 +852,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofSportsguardsMonth__c: number;
+    ofSportsguardsMonth__c?: number;
     /**
      * <h3><b># of Traditional Ortho - Brackets/month</b></h3>
      * <h4>Field Attributes</h4>
@@ -863,7 +863,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofTraditionalOrthoBracketsMonth__c: number;
+    ofTraditionalOrthoBracketsMonth__c?: number;
     /**
      * <h3><b>Ortho: Estimated Case %</b></h3>
      * <p>What is your estimated case acceptance % for orthodontic treatment?</p>
@@ -873,7 +873,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrthoEstimatedCase__c: number;
+    OrthoEstimatedCase__c?: number;
     /**
      * <h3><b>Ortho: Specialist Ref. To (Primary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -882,7 +882,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrthoSpecialistRefTo__c: string;
+    OrthoSpecialistRefTo__c?: string;
     /**
      * <h3><b>Ortho: Specialist Ref. To (Primary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -891,7 +891,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrthoSpecialistRefTo__r: Account;
+    OrthoSpecialistRefTo__r?: Account;
     /**
      * <h3><b>Oven</b></h3>
      * <h4>Field Attributes</h4>
@@ -908,7 +908,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    Oven__c: string;
+    Oven__c?: string;
     /**
      * <h3><b>Plastics (for Appliances)</b></h3>
      * <h4>Field Attributes</h4>
@@ -924,7 +924,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    PlasticsForAppliances__c: string;
+    PlasticsForAppliances__c?: string;
     /**
      * <h3><b>Preferred Implant System</b></h3>
      * <h4>Field Attributes</h4>
@@ -946,7 +946,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zimmer/3i</code></td><td>Zimmer/3i</td><td nowrap>true</td></tr>
      * </table>
      */
-    PreferredImplantSystem__c: string;
+    PreferredImplantSystem__c?: string;
     /**
      * <h3><b>Preferred Restorative Implant System</b></h3>
      * <h4>Field Attributes</h4>
@@ -967,7 +967,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    PreferredRestorativeImplantSystem__c: string;
+    PreferredRestorativeImplantSystem__c?: string;
     /**
      * <h3><b>Prophy Paste</b></h3>
      * <h4>Field Attributes</h4>
@@ -983,7 +983,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    ProphyPaste__c: string;
+    ProphyPaste__c?: string;
     /**
      * <h3><b>CBCT Scans Referred To</b></h3>
      * <h4>Field Attributes</h4>
@@ -992,7 +992,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ReferredTo__c: string;
+    ReferredTo__c?: string;
     /**
      * <h3><b>CBCT Scans Referred To</b></h3>
      * <h4>Field Attributes</h4>
@@ -1001,8 +1001,8 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ReferredTo__r: Account;
-    ReplayId: string;
+    ReferredTo__r?: Account;
+    ReplayId?: string;
     /**
      * <h3><b>Temporary Filling Materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -1018,7 +1018,7 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    TemporaryFillingMaterials__c: string;
+    TemporaryFillingMaterials__c?: string;
     /**
      * <h3><b>Unique Record Identifier</b></h3>
      * <p>Used to prevent duplicate records per Account. Only one record is allowed per Account. Set by process builder.</p>
@@ -1030,5 +1030,5 @@ declare interface AdvancedProfiling__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    UniqueRecordIdentifier__c: string;
+    UniqueRecordIdentifier__c?: string;
 }

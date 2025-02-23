@@ -2,20 +2,20 @@
 
 declare interface Territory2ObjectExclusion extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Note: string;
-    Object: Account;
-    ObjectId: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    Territory2: Territory2;
-    Territory2Id: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Note?: string;
+    Object?: Account;
+    ObjectId?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    Territory2?: Territory2;
+    Territory2Id?: string;
 }

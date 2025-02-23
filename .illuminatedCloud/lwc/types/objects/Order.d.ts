@@ -2,7 +2,7 @@
 
 declare interface Order extends SObject 
 {
-    Account: Account;
+    Account?: Account;
     /**
      * <h3><b>Account Discount Model</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,7 +14,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Discount_Model__c: string;
+    Account_Discount_Model__c?: string;
     /**
      * <h3><b>Payer Account</b></h3>
      * <p>Account to track sample in AX</p>
@@ -24,7 +24,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_for_Sample_in_AX__c: string;
+    Account_for_Sample_in_AX__c?: string;
     /**
      * <h3><b>Payer Account</b></h3>
      * <p>Account to track sample in AX</p>
@@ -34,7 +34,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_for_Sample_in_AX__r: Account;
+    Account_for_Sample_in_AX__r?: Account;
     /**
      * <h3><b>Account Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Owner__c: string;
+    Account_Owner__c?: string;
     /**
      * <h3><b>Account Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,7 +52,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Owner__r: User;
+    Account_Owner__r?: User;
     /**
      * <h3><b>Account Rating</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,7 +64,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Rating__c: string;
+    Account_Rating__c?: string;
     /**
      * <h3><b>Account Record Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,11 +76,11 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Record_Type__c: string;
-    AccountId: string;
-    ActivatedBy: User;
-    ActivatedById: string;
-    ActivatedDate: string;
+    Account_Record_Type__c?: string;
+    AccountId?: string;
+    ActivatedBy?: User;
+    ActivatedById?: string;
+    ActivatedDate?: string;
     /**
      * <h3><b>Activity ID</b></h3>
      * <p>ID from related CFE</p>
@@ -92,8 +92,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Activity_ID__c: string;
-    ActivityHistories: ActivityHistory[];
+    Activity_ID__c?: string;
+    ActivityHistories?: ActivityHistory[];
     /**
      * <h3><b>Add/edit distributor</b></h3>
      * <h4>Field Attributes</h4>
@@ -105,7 +105,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Add_edit_dealer__c: string;
+    Add_edit_dealer__c?: string;
     /**
      * <h3><b>Allowed discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,7 +115,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Allowed_discount__c: number;
+    Allowed_discount__c?: number;
     /**
      * <h3><b>Allowed payment terms (months)</b></h3>
      * <h4>Field Attributes</h4>
@@ -127,7 +127,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td></tr>
      * </table>
      */
-    Allowed_payment_terms_months__c: number;
+    Allowed_payment_terms_months__c?: number;
     /**
      * <h3><b>amount of foc products with currency</b></h3>
      * <p>To mantain the currency of the country for approval process</p>
@@ -138,7 +138,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    amount_of_foc_products_eith_currency__c: number;
+    amount_of_foc_products_eith_currency__c?: number;
     /**
      * <h3><b>Amount of free of charge products</b></h3>
      * <h4>Field Attributes</h4>
@@ -149,7 +149,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.Value_of_free_product__c</code></td></tr>
      * </table>
      */
-    Amount_of_free_of_charge_products__c: number;
+    Amount_of_free_of_charge_products__c?: number;
     /**
      * <h3><b>Amount of Samples for Sales Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -160,7 +160,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.Value_of_Samples_for_Sales_Rep__c</code></td></tr>
      * </table>
      */
-    Amount_of_Samples_for_Sales_Rep__c: number;
+    Amount_of_Samples_for_Sales_Rep__c?: number;
     /**
      * <h3><b>Approval check (global)</b></h3>
      * <p>Used for checking if an approval is needed</p>
@@ -179,7 +179,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">National Sales Manager</code></td><td>National Sales Manager</td><td nowrap>true</td></tr>
      * </table>
      */
-    Approval_check_global__c: string;
+    Approval_check_global__c?: string;
     /**
      * <h3><b>Approval Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -191,7 +191,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ApprovalLevel__c: string;
+    ApprovalLevel__c?: string;
     /**
      * <h3><b>Approval Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -202,7 +202,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ApprovalLevelInt__c: number;
+    ApprovalLevelInt__c?: number;
     /**
      * <h3><b>Approval Level (secondary)</b></h3>
      * <h4>Field Attributes</h4>
@@ -213,7 +213,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ApprovalLevelSecondaryInt__c: number;
+    ApprovalLevelSecondaryInt__c?: number;
     /**
      * <h3><b>Overall Status and Approvals</b></h3>
      * <h4>Field Attributes</h4>
@@ -225,16 +225,16 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Approvals_Needed__c: string;
+    Approvals_Needed__c?: string;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AppUsageAssignments: AppUsageAssignment[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AppUsageAssignments?: AppUsageAssignment[];
     /**
      * <h3><b>Area Director Approval Required</b></h3>
      * <h4>Field Attributes</h4>
@@ -243,7 +243,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AND( Regional_Manager_Approval_Required__c ,  Regional_Manager_Approved__c =TRUE, Waive_Shipping_Charges__c = TRUE, OR( TEXT( Shipping_Method__c )=&quot;UFJ: F IntnlPriority: FedEx Intnl Priority Warehouse&quot;, TEXT( Shipping_Method__c )=&quot;UPS Next Day end of day - UXC $20.50&quot;, TEXT( Shipping_Method__c )=&quot;UPS Saturday 10:30am - UXH $49.50&quot;, TEXT( Shipping_Method__c )=&quot;UPS COD Next Day 10:30 AM: UX2&quot;, TEXT( Shipping_Method__c )=&quot;UPS COD Next Day PM: UX3&quot;, TEXT( Shipping_Method__c )=&quot;UPS COD 2nd Day PM:  UX5&quot;, TEXT( Shipping_Method__c )=&quot;UPS Next Day 10:30am - UXB $27.00&quot;, TEXT( Shipping_Method__c )=&quot;FedEx Next Day 10:30am - UFB $27.00&quot;, TEXT( Shipping_Method__c )=&quot;FedEx Next Day end of day - UFC $20.50&quot;, TEXT( Shipping_Method__c )=&quot;FedEx Next Day Early AM - 6-8:30am - UFA $49.50&quot;, TEXT(Shipping_Method__c )=&quot;FedEx Saturday 10:30am - UFH $49.50&quot;))</code></td></tr>
      * </table>
      */
-    Area_Director_Approval_Required__c: boolean;
+    Area_Director_Approval_Required__c?: boolean;
     /**
      * <h3><b>Areas Director Approved</b></h3>
      * <h4>Field Attributes</h4>
@@ -252,14 +252,14 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Areas_Director_Approved__c: boolean;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    Areas_Director_Approved__c?: boolean;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>ERP Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -270,7 +270,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AX_Order_Number__c: string;
+    AX_Order_Number__c?: string;
     /**
      * <h3><b>Backorder Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -279,16 +279,39 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Backorder_Notes__c: string;
-    BillingAddress: Address;
-    BillingCity: string;
-    BillingCountry: string;
-    BillingGeocodeAccuracy: string;
-    BillingLatitude: number;
-    BillingLongitude: number;
-    BillingPostalCode: string;
-    BillingState: string;
-    BillingStreet: string;
+    Backorder_Notes__c?: string;
+    BillingAddress?: Address;
+    /**
+     * <h3><b>Billing Address</b></h3>
+     * <p>Lookup to the Address Object of the Account</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    BillingAddress__c?: string;
+    /**
+     * <h3><b>Billing Address</b></h3>
+     * <p>Lookup to the Address Object of the Account</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    BillingAddress__r?: Address__c;
+    BillingCity?: string;
+    BillingCountry?: string;
+    BillingGeocodeAccuracy?: string;
+    BillingLatitude?: number;
+    BillingLongitude?: number;
+    BillingPostalCode?: string;
+    BillingState?: string;
+    BillingStreet?: string;
+    BillToContact?: Contact;
+    BillToContactId?: string;
+    CalculationStatus?: string;
     /**
      * <h3><b>Campaign</b></h3>
      * <h4>Field Attributes</h4>
@@ -297,7 +320,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign__c: string;
+    Campaign__c?: string;
     /**
      * <h3><b>Campaign</b></h3>
      * <h4>Field Attributes</h4>
@@ -306,8 +329,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign__r: Campaign;
-    CombinedAttachments: CombinedAttachment[];
+    Campaign__r?: Campaign;
+    CombinedAttachments?: CombinedAttachment[];
     /**
      * <h3><b>Commercial Leader approved</b></h3>
      * <h4>Field Attributes</h4>
@@ -316,7 +339,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Commercial_Leader_approved__c: boolean;
+    Commercial_Leader_approved__c?: boolean;
     /**
      * <h3><b>Commercial Leader e-mail</b></h3>
      * <h4>Field Attributes</h4>
@@ -327,7 +350,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Commercial_Leader_e_mail__c: string;
+    Commercial_Leader_e_mail__c?: string;
     /**
      * <h3><b>Communication to Customer Service</b></h3>
      * <h4>Field Attributes</h4>
@@ -335,9 +358,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Communication_to_Customer_Service__c: string;
-    CompanyAuthorizedBy: User;
-    CompanyAuthorizedById: string;
+    Communication_to_Customer_Service__c?: string;
+    CompanyAuthorizedBy?: User;
+    CompanyAuthorizedById?: string;
     /**
      * <h3><b>Confirmation #</b></h3>
      * <h4>Field Attributes</h4>
@@ -348,7 +371,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Confirmation__c: string;
+    Confirmation__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -357,7 +380,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -366,7 +389,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * <h3><b>Contact e-mail</b></h3>
      * <h4>Field Attributes</h4>
@@ -378,11 +401,11 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact_e_mail__c: string;
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    Contract: Contract;
-    ContractId: string;
+    Contact_e_mail__c?: string;
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    Contract?: Contract;
+    ContractId?: string;
     /**
      * <h3><b>Count Bundles</b></h3>
      * <h4>Field Attributes</h4>
@@ -392,7 +415,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Order_bundle__c.Order__c</code></td></tr>
      * </table>
      */
-    Count_Bundles__c: number;
+    Count_Bundles__c?: number;
     /**
      * <h3><b>Count Offer Codes</b></h3>
      * <p>This Roll-Up Summary field counts the OrderItems, which have an Offer Code applied to.</p>
@@ -405,7 +428,7 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    Count_Offer_Codes__c: number;
+    Count_Offer_Codes__c?: number;
     /**
      * <h3><b>Count products</b></h3>
      * <h4>Field Attributes</h4>
@@ -415,7 +438,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.OrderId</code></td></tr>
      * </table>
      */
-    Count_products__c: number;
+    Count_products__c?: number;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -426,7 +449,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Coupon Code Count</b></h3>
      * <h4>Field Attributes</h4>
@@ -438,7 +461,7 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    CouponCodeCount__c: number;
+    CouponCodeCount__c?: number;
     /**
      * <h3><b>Created by me</b></h3>
      * <p>Dynamic Checkbox that shows if the logged in the user creating the record</p>
@@ -448,7 +471,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedById == $User.Id, TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    Created_by_me__c: boolean;
+    Created_by_me__c?: boolean;
     /**
      * <h3><b>Created by My Direct Reports</b></h3>
      * <h4>Field Attributes</h4>
@@ -457,7 +480,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedBy.ManagerId = $User.Id, True, false)</code></td></tr>
      * </table>
      */
-    Created_by_My_Direct_Reports__c: boolean;
+    Created_by_My_Direct_Reports__c?: boolean;
     /**
      * <h3><b>Created by My Second Direct Reports</b></h3>
      * <p>Created by the users managed by my direct reports</p>
@@ -467,9 +490,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( CreatedBy.Manager.ManagerId  = $User.Id, True, false)</code></td></tr>
      * </table>
      */
-    Created_by_My_Second_Direct_Reports__c: boolean;
-    CreatedBy: User;
-    CreatedById: string;
+    Created_by_My_Second_Direct_Reports__c?: boolean;
+    CreatedBy?: User;
+    CreatedById?: string;
     /**
      * <h3><b>Created By Name</b></h3>
      * <p>Created to be able to show the created by name in order related list on Account.</p>
@@ -482,8 +505,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CreatedByName__c: string;
-    CreatedDate: string;
+    CreatedByName__c?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Credit Card Expiration Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -494,7 +517,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit_Card_Expiration_Date__c: string;
+    Credit_Card_Expiration_Date__c?: string;
     /**
      * <h3><b>CS Inbox Approved</b></h3>
      * <h4>Field Attributes</h4>
@@ -503,7 +526,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CS_Inbox_Approved__c: boolean;
+    CS_Inbox_Approved__c?: boolean;
     /**
      * <h3><b>CS Inbox Prospect Created</b></h3>
      * <p>Checked by a workflow on the approval process - if a  prospect needs to have a Movex Customer Created, the NA CS Inbox team creates the Movex Customer in a status 10, adds the Movex Number to the Account iN SFDC, and clicks &quot;Approve&quot;  on the Order to move the Order to the Project Team to release the Movex Customer from Status 10 to 20</p>
@@ -513,7 +536,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CS_Inbox_Prospect_Created__c: boolean;
+    CS_Inbox_Prospect_Created__c?: boolean;
     /**
      * <h3><b>CS Proj Team Movex Customer Released</b></h3>
      * <p>Updated by the approval process when the CS Project Team Member releases and merges the movex customer</p>
@@ -523,7 +546,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CS_Proj_Team_Movex_Customer_Released__c: boolean;
+    CS_Proj_Team_Movex_Customer_Released__c?: boolean;
     /**
      * <h3><b>CS Project Team Member Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -532,7 +555,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CS_Project_Team_Member_Assigned__c: string;
+    CS_Project_Team_Member_Assigned__c?: string;
     /**
      * <h3><b>CS Project Team Member Assigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -541,8 +564,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CS_Project_Team_Member_Assigned__r: User;
-    CurrencyIsoCode: string;
+    CS_Project_Team_Member_Assigned__r?: User;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Credit Card Information</b></h3>
      * <h4>Field Attributes</h4>
@@ -553,7 +576,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Credit_Card_Information__c: string;
+    Customer_Credit_Card_Information__c?: string;
     /**
      * <h3><b>Customer Service Alerts</b></h3>
      * <h4>Field Attributes</h4>
@@ -565,7 +588,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Alerts__c: string;
+    Customer_Service_Alerts__c?: string;
     /**
      * <h3><b># Customer Service Check</b></h3>
      * <h4>Field Attributes</h4>
@@ -577,7 +600,7 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    Customer_Service_Check__c: number;
+    Customer_Service_Check__c?: number;
     /**
      * <h3><b>Customer Service Date/Time Completed</b></h3>
      * <h4>Field Attributes</h4>
@@ -586,7 +609,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Date_Time_Completed__c: string;
+    Customer_Service_Date_Time_Completed__c?: string;
     /**
      * <h3><b>Customer Service Email</b></h3>
      * <p>To update the right customer email to be used in the approval process</p>
@@ -598,7 +621,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Email__c: string;
+    Customer_Service_Email__c?: string;
     /**
      * <h3><b>Customer Service Processing Time (Hrs)</b></h3>
      * <h4>Field Attributes</h4>
@@ -610,7 +633,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Processing_Time__c: number;
+    Customer_Service_Processing_Time__c?: number;
     /**
      * <h3><b>Customer Service Date/Time Received</b></h3>
      * <h4>Field Attributes</h4>
@@ -619,7 +642,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Received__c: string;
+    Customer_Service_Received__c?: string;
     /**
      * <h3><b>Customer Service Rep Responsible</b></h3>
      * <h4>Field Attributes</h4>
@@ -628,7 +651,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Rep_Responsible__c: string;
+    Customer_Service_Rep_Responsible__c?: string;
     /**
      * <h3><b>Customer Service Rep Responsible</b></h3>
      * <h4>Field Attributes</h4>
@@ -637,7 +660,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Rep_Responsible__r: User;
+    Customer_Service_Rep_Responsible__r?: User;
     /**
      * <h3><b>Customer Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -649,9 +672,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Type__c: string;
-    CustomerAuthorizedBy: Contact;
-    CustomerAuthorizedById: string;
+    Customer_Type__c?: string;
+    CustomerAuthorizedBy?: Contact;
+    CustomerAuthorizedById?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -660,7 +683,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__c: string;
+    Dealer__c?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -669,7 +692,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__r: Preferred_dealer_item__c;
+    Dealer__r?: Preferred_dealer_item__c;
     /**
      * <h3><b>Notes to dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -677,7 +700,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Dealer_notes__c: string;
+    Dealer_notes__c?: string;
     /**
      * <h3><b>Dealer price set</b></h3>
      * <h4>Field Attributes</h4>
@@ -686,11 +709,11 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Dealer_price_set__c: boolean;
+    Dealer_price_set__c?: boolean;
     /**
      * The reciprocal relationship for {@link Delivery__c.Order__c}.
      */
-    Deliveries__r: Delivery__c[];
+    Deliveries__r?: Delivery__c[];
     /**
      * <h3><b>Delivery Cost</b></h3>
      * <h4>Field Attributes</h4>
@@ -699,9 +722,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Delivery_Cost__c: number;
-    Description: string;
-    DigitalSignatures: DigitalSignature[];
+    Delivery_Cost__c?: number;
+    Description?: string;
+    DigitalSignatures?: DigitalSignature[];
     /**
      * <h3><b>Direct Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -713,7 +736,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Direct_Manager__c: string;
+    Direct_Manager__c?: string;
     /**
      * <h3><b># Discount Applied</b></h3>
      * <p>Counts the number of order line items with discount applied</p>
@@ -726,7 +749,7 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    Discount_Applied__c: number;
+    Discount_Applied__c?: number;
     /**
      * <h3><b>Discount Approval Needed</b></h3>
      * <p>For the Approval Process. Determines whether or not this order will need additional approvals. If Greater than 0, the order will need additional manager approval, if not - the order goes straight to Customer Service.</p>
@@ -738,7 +761,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.DiscountApproval_Line_Item__c</code></td></tr>
      * </table>
      */
-    Discount_Approval_Needed__c: number;
+    Discount_Approval_Needed__c?: number;
     /**
      * <h3><b>Contract Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -748,7 +771,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Discount_to_be_used__c: number;
+    Discount_to_be_used__c?: number;
     /**
      * <h3><b>Discounted Shipping</b></h3>
      * <h4>Field Attributes</h4>
@@ -757,7 +780,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Discounted_Shipping__c: boolean;
+    Discounted_Shipping__c?: boolean;
     /**
      * <h3><b>Discounted Shipping Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -768,7 +791,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discounted_Shipping_Type__c: string;
+    Discounted_Shipping_Type__c?: string;
+    DiscountPercent?: number;
     /**
      * <h3><b>Discount Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -787,7 +811,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Prior Pricing</code></td><td>Prior Pricing</td><td nowrap>true</td></tr>
      * </table>
      */
-    DiscountReason__c: string;
+    DiscountReason__c?: string;
     /**
      * <h3><b>Discount Reason Check ?</b></h3>
      * <h4>Field Attributes</h4>
@@ -799,11 +823,11 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DiscountReasonCheck__c: string;
+    DiscountReasonCheck__c?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__DiscountSchedule__c.SBQQ__Order__c}.
      */
-    DiscountSchedules__r: SBQQ__DiscountSchedule__c[];
+    DiscountSchedules__r?: SBQQ__DiscountSchedule__c[];
     /**
      * <h3><b>Distributor</b></h3>
      * <h4>Field Attributes</h4>
@@ -812,7 +836,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor__c: string;
+    Distributor__c?: string;
     /**
      * <h3><b>Distributor</b></h3>
      * <h4>Field Attributes</h4>
@@ -821,7 +845,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor__r: Account;
+    Distributor__r?: Account;
     /**
      * <h3><b>Distributor contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -830,7 +854,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor_contact__c: string;
+    Distributor_contact__c?: string;
     /**
      * <h3><b>Distributor contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -839,7 +863,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor_contact__r: Contact;
+    Distributor_contact__r?: Contact;
     /**
      * <h3><b>Distributor details</b></h3>
      * <h4>Field Attributes</h4>
@@ -850,7 +874,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor_details__c: string;
+    Distributor_details__c?: string;
     /**
      * <h3><b>Distributor email</b></h3>
      * <h4>Field Attributes</h4>
@@ -861,7 +885,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor_email__c: string;
+    Distributor_email__c?: string;
     /**
      * <h3><b>Distributor Missing</b></h3>
      * <h4>Field Attributes</h4>
@@ -870,7 +894,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">if(isblank( Distributor__c ), True, False)</code></td></tr>
      * </table>
      */
-    Distributor_Missing__c: boolean;
+    Distributor_Missing__c?: boolean;
     /**
      * <h3><b>Distributor PO number</b></h3>
      * <h4>Field Attributes</h4>
@@ -881,12 +905,12 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Distributor_PO_number__c: string;
+    Distributor_PO_number__c?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
-    EffectiveDate: Date;
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
+    EffectiveDate?: Date;
     /**
      * <h3><b>Email Body</b></h3>
      * <h4>Field Attributes</h4>
@@ -894,7 +918,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Email_Body__c: string;
+    Email_Body__c?: string;
     /**
      * <h3><b>Email Template ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -906,13 +930,13 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email_Template_ID__c: string;
+    Email_Template_ID__c?: string;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EndDate: Date;
-    EngagementInitiatedTopic: EngagementTopic[];
+    Emails?: EmailMessage[];
+    EndDate?: Date;
+    EngagementInitiatedTopic?: EngagementTopic[];
     /**
      * <h3><b>ERP Account Number on Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -923,7 +947,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERP_Account_Number_on_Contract__c: string;
+    ERP_Account_Number_on_Contract__c?: string;
     /**
      * <h3><b>ERP Customer Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -935,7 +959,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERP_Customer_Number__c: string;
+    ERP_Customer_Number__c?: string;
     /**
      * <h3><b>ERP Return Message</b></h3>
      * <h4>Field Attributes</h4>
@@ -943,7 +967,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    ERPReturnMessage__c: string;
+    ERPReturnMessage__c?: string;
     /**
      * <h3><b>ERP Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -954,7 +978,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERPStatus__c: string;
+    ERPStatus__c?: string;
     /**
      * <h3><b>ERPStopFlag</b></h3>
      * <h4>Field Attributes</h4>
@@ -963,9 +987,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ERPStopFlag__c: boolean;
-    EventRelations: EventRelation[];
-    Events: Event[];
+    ERPStopFlag__c?: boolean;
+    EventRelations?: EventRelation[];
+    Events?: Event[];
     /**
      * <h3><b>Notes to the customer</b></h3>
      * <h4>Field Attributes</h4>
@@ -973,9 +997,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    External_notes__c: string;
-    Feeds: OrderFeed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    External_notes__c?: string;
+    Feeds?: OrderFeed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>First Level Approver</b></h3>
      * <h4>Field Attributes</h4>
@@ -984,7 +1008,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FirstLevelApprover__c: string;
+    FirstLevelApprover__c?: string;
     /**
      * <h3><b>First Level Approver</b></h3>
      * <h4>Field Attributes</h4>
@@ -993,9 +1017,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FirstLevelApprover__r: User;
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    FirstLevelApprover__r?: User;
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>FOC products delivered</b></h3>
      * <h4>Field Attributes</h4>
@@ -1004,7 +1028,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FOC_products_delivered__c: boolean;
+    FOC_products_delivered__c?: boolean;
     /**
      * <h3><b>Free of Charge Order</b></h3>
      * <p>Used for NA to check if an entire order is an FOC order</p>
@@ -1014,7 +1038,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Free_of_Charge_Order__c: boolean;
+    Free_of_Charge_Order__c?: boolean;
     /**
      * <h3><b>Free Shipping Required?</b></h3>
      * <h4>Field Attributes</h4>
@@ -1026,12 +1050,14 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Free_Shipping_Required__c: string;
-    FulfillmentOrders: FulfillmentOrder[];
+    Free_Shipping_Required__c?: string;
+    FulfillmentOrders?: FulfillmentOrder[];
+    FulfillmentPlan?: FulfillmentPlan;
+    FulfillmentPlanId?: string;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
     /**
      * <h3><b>Global SFDC Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -1040,12 +1066,13 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">if (contains( RecordType.Name, &quot;global&quot;) , True, False)</code></td></tr>
      * </table>
      */
-    Global_SFDC_Order__c: boolean;
-    Histories: OrderHistory[];
+    Global_SFDC_Order__c?: boolean;
+    GrandTotalAmount?: number;
+    Histories?: OrderHistory[];
     /**
      * The reciprocal relationship for {@link IntegrationLog__c.Order__c}.
      */
-    IntegrationLogs__r: IntegrationLog__c[];
+    IntegrationLogs__r?: IntegrationLog__c[];
     /**
      * <h3><b>Invoice #</b></h3>
      * <h4>Field Attributes</h4>
@@ -1056,9 +1083,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invoice__c: string;
-    IsDeleted: boolean;
-    IsReductionOrder: boolean;
+    Invoice__c?: string;
+    IsDeleted?: boolean;
+    IsReductionOrder?: boolean;
     /**
      * <h3><b># Items at 100% Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1069,7 +1096,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.Number_of_Items_at_100_Discount__c</code></td></tr>
      * </table>
      */
-    Items_at_100_Discount__c: number;
+    Items_at_100_Discount__c?: number;
     /**
      * <h3><b># items for free</b></h3>
      * <p>roll up on the products with 100% discount</p>
@@ -1082,13 +1109,16 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    items_for_free__c: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
+    items_for_free__c?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastPricedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LegalEntity?: LegalEntity;
+    LegalEntityId?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
     /**
      * <h3><b>Location</b></h3>
      * <p>Used by the North America Implants Customer Service Team to understand where Orders are in the Approval Process via Order List View</p>
@@ -1101,7 +1131,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Location__c: string;
+    Location__c?: string;
     /**
      * <h3><b># Manager Approval</b></h3>
      * <h4>Field Attributes</h4>
@@ -1114,7 +1144,7 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    Manager_Approval__c: number;
+    Manager_Approval__c?: number;
     /**
      * <h3><b>Manager approval discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1124,7 +1154,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manager_approval_discount__c: number;
+    Manager_approval_discount__c?: number;
     /**
      * <h3><b>Margin Guidance Indicator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1136,7 +1166,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MarginGuidanceIndicator__c: string;
+    MarginGuidanceIndicator__c?: string;
     /**
      * <h3><b>Movex Customer Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -1148,7 +1178,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Customer_Number__c: string;
+    Movex_Customer_Number__c?: string;
     /**
      * <h3><b>Movex Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -1159,7 +1189,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Movex_Order_Number__c: string;
+    Movex_Order_Number__c?: string;
     /**
      * <h3><b>MTF Evaluation</b></h3>
      * <h4>Field Attributes</h4>
@@ -1170,7 +1200,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.MTF_EvaluationNumber__c</code></td></tr>
      * </table>
      */
-    MTF_Evaluation1__c: number;
+    MTF_Evaluation1__c?: number;
     /**
      * <h3><b>NA: Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -1182,9 +1212,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Area__c: string;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
+    NA_Area__c?: string;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
     /**
      * <h3><b>No of FOC rows</b></h3>
      * <h4>Field Attributes</h4>
@@ -1196,7 +1226,7 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    No_of_FOC_rows__c: number;
+    No_of_FOC_rows__c?: number;
     /**
      * <h3><b>Non-SIMPLANT Items</b></h3>
      * <h4>Field Attributes</h4>
@@ -1207,7 +1237,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.Non_SIMPLANT_Evaluation__c</code></td></tr>
      * </table>
      */
-    Non_SIMPLANT_Items__c: number;
+    Non_SIMPLANT_Items__c?: number;
     /**
      * <h3><b>Note for canceled orders</b></h3>
      * <h4>Field Attributes</h4>
@@ -1218,9 +1248,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Note_for_canceled_orders__c: string;
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    Note_for_canceled_orders__c?: string;
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>Offer Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -1231,12 +1261,12 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Offer_Code__c: string;
-    OpenActivities: OpenActivity[];
-    Opportunity: Opportunity;
-    OpportunityId: string;
-    OrchestrationSbmsStatus: string;
-    Order: FulfillmentOrderChangeEvent;
+    Offer_Code__c?: string;
+    OpenActivities?: OpenActivity[];
+    Opportunity?: Opportunity;
+    OpportunityId?: string;
+    OrchestrationSbmsStatus?: string;
+    Order?: FulfillmentOrderChangeEvent;
     /**
      * <h3><b>Order Account Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -1248,7 +1278,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Account_Name__c: string;
+    Order_Account_Name__c?: string;
     /**
      * <h3><b>Order Amount before total discount</b></h3>
      * <p>Value of the order with discount</p>
@@ -1260,7 +1290,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.Total_Line_Item_Price__c</code></td></tr>
      * </table>
      */
-    Order_amount_before_disc_globa__c: number;
+    Order_amount_before_disc_globa__c?: number;
     /**
      * <h3><b>Order Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1270,7 +1300,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Amount_global__c: number;
+    Order_Amount_global__c?: number;
     /**
      * <h3><b>Order amount (number)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1282,7 +1312,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_amount_number__c: number;
+    Order_amount_number__c?: number;
     /**
      * <h3><b>Order amount without discounts</b></h3>
      * <h4>Field Attributes</h4>
@@ -1292,7 +1322,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_amount_without_discounts__c: number;
+    Order_amount_without_discounts__c?: number;
     /**
      * <h3><b>Order bundle amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1303,11 +1333,11 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Order_bundle__c.Total_price__c</code></td></tr>
      * </table>
      */
-    Order_bundle_amount__c: number;
+    Order_bundle_amount__c?: number;
     /**
      * The reciprocal relationship for {@link Order_bundle__c.Order__c}.
      */
-    Order_bundles__r: Order_bundle__c[];
+    Order_bundles__r?: Order_bundle__c[];
     /**
      * <h3><b>Order Discount</b></h3>
      * <p>Discount for the total amount of the order</p>
@@ -1317,7 +1347,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Discount__c: number;
+    Order_Discount__c?: number;
     /**
      * <h3><b>Order Link</b></h3>
      * <h4>Field Attributes</h4>
@@ -1329,7 +1359,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Link__c: string;
+    Order_Link__c?: string;
     /**
      * <h3><b>Order Missing Info</b></h3>
      * <h4>Field Attributes</h4>
@@ -1346,7 +1376,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Distributor Name</code></td><td>Distributor Name</td><td nowrap>true</td></tr>
      * </table>
      */
-    Order_Missing_Info__c: string;
+    Order_Missing_Info__c?: string;
     /**
      * <h3><b>Order Owner Full Name</b></h3>
      * <p>Formula field displaying Order Owner</p>
@@ -1359,7 +1389,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Owner__c: string;
+    Order_Owner__c?: string;
     /**
      * <h3><b>Order quote valid until</b></h3>
      * <h4>Field Attributes</h4>
@@ -1368,7 +1398,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_quote_end_date__c: Date;
+    Order_quote_end_date__c?: Date;
     /**
      * <h3><b>Order Reason</b></h3>
      * <p>used by Taiwan and US (see TFUS-000006409)</p>
@@ -1387,7 +1417,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Make It Right orders</code></td><td>Make It Right orders</td><td nowrap>true</td></tr>
      * </table>
      */
-    Order_Reason__c: string;
+    Order_Reason__c?: string;
     /**
      * <h3><b>Order SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -1399,7 +1429,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_SBU__c: string;
+    Order_SBU__c?: string;
     /**
      * <h3><b>Order Source</b></h3>
      * <p>To track the origin of the order</p>
@@ -1419,7 +1449,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Webshop</code></td><td>Webshop</td><td nowrap>true</td></tr>
      * </table>
      */
-    Order_Source__c: string;
+    Order_Source__c?: string;
     /**
      * <h3><b>Order subtype</b></h3>
      * <h4>Field Attributes</h4>
@@ -1443,7 +1473,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Standard</code></td><td>Standard</td><td nowrap>true</td></tr>
      * </table>
      */
-    Order_subtype__c: string;
+    Order_subtype__c?: string;
     /**
      * <h3><b>Order Tracking</b></h3>
      * <h4>Field Attributes</h4>
@@ -1455,7 +1485,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Tracking__c: string;
+    Order_Tracking__c?: string;
     /**
      * <h3><b>Order Type</b></h3>
      * <p>Order Type for DNA</p>
@@ -1476,7 +1506,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Endodontics</code></td><td>Endodontics</td><td nowrap>true</td></tr>
      * </table>
      */
-    Order_Type__c: string;
+    Order_Type__c?: string;
     /**
      * <h3><b>Order Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1488,23 +1518,23 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Order_Type_formula__c: string;
-    OrderActions: OrderAction[];
-    OrderAdjustmentGroups: OrderAdjustmentGroup[];
-    OrderChangeLogs: OrderChangeLog[];
-    OrderDeliveryGroups: OrderDeliveryGroup[];
-    OrderItemAdjustmentLineItems: OrderItemAdjustmentLineItem[];
-    OrderItemGroups: OrderItemGroup[];
-    OrderItemRecipients: OrderItemRecipient[];
-    OrderItemRelationships: OrderItemRelationship[];
+    Order_Type_formula__c?: string;
+    OrderActions?: OrderAction[];
+    OrderAdjustmentGroups?: OrderAdjustmentGroup[];
+    OrderChangeLogs?: OrderChangeLog[];
+    OrderDeliveryGroups?: OrderDeliveryGroup[];
+    OrderItemAdjustmentLineItems?: OrderItemAdjustmentLineItem[];
+    OrderItemGroups?: OrderItemGroup[];
+    OrderItemRecipients?: OrderItemRecipient[];
+    OrderItemRelationships?: OrderItemRelationship[];
     /**
      * The reciprocal relationship for {@link OrderItem.OrderId}.
      */
-    OrderItems: OrderItem[];
-    OrderItemTaxLineItems: OrderItemTaxLineItem[];
-    OrderNumber: string;
-    OrderReferenceNumber: string;
-    Orders: Order[];
+    OrderItems?: OrderItem[];
+    OrderItemTaxLineItems?: OrderItemTaxLineItem[];
+    OrderNumber?: string;
+    OrderReferenceNumber?: string;
+    Orders?: Order[];
     /**
      * <h3><b>Orders Related to CFE</b></h3>
      * <h4>Field Attributes</h4>
@@ -1513,7 +1543,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Orders_Related_to_CFE__c: string;
+    Orders_Related_to_CFE__c?: string;
     /**
      * <h3><b>Orders Related to CFE</b></h3>
      * <h4>Field Attributes</h4>
@@ -1522,9 +1552,10 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Orders_Related_to_CFE__r: Orders_Related_to_CFE__c;
-    OriginalOrder: Order;
-    OriginalOrderId: string;
+    Orders_Related_to_CFE__r?: Orders_Related_to_CFE__c;
+    OriginalActionType?: string;
+    OriginalOrder?: Order;
+    OriginalOrderId?: string;
     /**
      * <h3><b>Overdue Invoice Age</b></h3>
      * <h4>Field Attributes</h4>
@@ -1536,7 +1567,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Overdue_Invoice_Age__c: number;
+    Overdue_Invoice_Age__c?: number;
     /**
      * <h3><b>Overdue Invoice Amount at this Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -1548,11 +1579,11 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Overdue_Invoice_Amount_at_this_Account__c: number;
-    Owner: SObject;
-    OwnerId: string;
-    Parent: DigitalSignatureChangeEvent;
-    ParentEntities: NetworkActivityAudit[];
+    Overdue_Invoice_Amount_at_this_Account__c?: number;
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: DigitalSignatureChangeEvent;
+    ParentEntities?: NetworkActivityAudit[];
     /**
      * <h3><b># Parent Kit Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -1564,8 +1595,8 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    ParentKitProduct__c: number;
-    ParentRecord: NetworkFeedResponseMetric;
+    ParentKitProduct__c?: number;
+    ParentRecord?: NetworkFeedResponseMetric;
     /**
      * <h3><b>Payment Period</b></h3>
      * <p>Indonesia has the legal requirement to indicate on each order sent out, which payment terms (time-wise in a sense of &quot;When is the order amount being settled by the customer?) the customer is choosing</p>
@@ -1583,7 +1614,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Cash on Delivery </code></td><td>Cash on Delivery </td><td nowrap>true</td></tr>
      * </table>
      */
-    Payment_Period__c: string;
+    Payment_Period__c?: string;
     /**
      * <h3><b>Payment terms (months)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1595,7 +1626,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td></tr>
      * </table>
      */
-    Payment_terms_months__c: number;
+    Payment_terms_months__c?: number;
     /**
      * <h3><b>Payment type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1616,7 +1647,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Mpay</code></td><td>Mpay</td><td nowrap>true</td></tr>
      * </table>
      */
-    Payment_type__c: string;
+    Payment_type__c?: string;
     /**
      * <h3><b>Payment type discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -1626,7 +1657,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Payment_type_discount__c: number;
+    Payment_type_discount__c?: number;
+    PaymentTerm?: PaymentTerm;
+    PaymentTermId?: string;
     /**
      * <h3><b>PDF Butler Alternative Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -1638,7 +1671,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PDFButlerAlternativeName__c: string;
+    PDFButlerAlternativeName__c?: string;
     /**
      * <h3><b>PDF Butler Draft</b></h3>
      * <h4>Field Attributes</h4>
@@ -1650,7 +1683,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PDFButlerDraft__c: string;
+    PDFButlerDraft__c?: string;
     /**
      * <h3><b>PDF Butler Locale</b></h3>
      * <h4>Field Attributes</h4>
@@ -1662,7 +1695,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PDFButlerLocale__c: string;
+    PDFButlerLocale__c?: string;
     /**
      * <h3><b>PDF Butler Send Email View</b></h3>
      * <h4>Field Attributes</h4>
@@ -1671,9 +1704,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">! ISBLANK(Contact__c) &amp;&amp; Contact__r.Email != &#39;&#39;</code></td></tr>
      * </table>
      */
-    PDFButlerSendEmailView__c: boolean;
-    PoDate: Date;
-    PoNumber: string;
+    PDFButlerSendEmailView__c?: boolean;
+    PoDate?: Date;
+    PoNumber?: string;
     /**
      * <h3><b>PPN 11%</b></h3>
      * <h4>Field Attributes</h4>
@@ -1685,7 +1718,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PPN10__c: number;
+    PPN10__c?: number;
     /**
      * <h3><b>Preferred Ship Date</b></h3>
      * <p>Requested as part of TFUS-000006281</p>
@@ -1695,9 +1728,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Preferred_Ship_Date__c: Date;
-    Pricebook2: Pricebook2;
-    Pricebook2Id: string;
+    Preferred_Ship_Date__c?: Date;
+    Pricebook2?: Pricebook2;
+    Pricebook2Id?: string;
     /**
      * <h3><b>Pricebook Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -1709,18 +1742,18 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Pricebook_Name__c: string;
+    Pricebook_Name__c?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__PriceSchedule__c.SBQQ__Order__c}.
      */
-    PriceSchedules__r: SBQQ__PriceSchedule__c[];
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
-    PrimaryRevenueTransactionErrorLogs: RevenueTransactionErrorLog[];
+    PriceSchedules__r?: SBQQ__PriceSchedule__c[];
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
+    PrimaryRevenueTransactionErrorLogs?: RevenueTransactionErrorLog[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
     /**
      * <h3><b>Process Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -1731,8 +1764,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProcessStatus__c: string;
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessStatus__c?: string;
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Profile Order Creator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1744,7 +1777,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Profile_Order_Creator__c: string;
+    Profile_Order_Creator__c?: string;
     /**
      * <h3><b>Project Team Approval Required</b></h3>
      * <h4>Field Attributes</h4>
@@ -1753,7 +1786,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( OR( Prospect_at_the_point_of_order_entry__c=TRUE, Account_Record_Type__c  = &quot;Clinical PROSPECT&quot;), TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    Project_Team_Approval_Required__c: boolean;
+    Project_Team_Approval_Required__c?: boolean;
     /**
      * <h3><b>Project Team Approved</b></h3>
      * <p>Populated by workflow/approval process</p>
@@ -1763,7 +1796,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Project_Team_Approved__c: boolean;
+    Project_Team_Approved__c?: boolean;
     /**
      * <h3><b>Project Team Date/Time Completed</b></h3>
      * <h4>Field Attributes</h4>
@@ -1772,7 +1805,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project_Team_Date_Time_Completed__c: string;
+    Project_Team_Date_Time_Completed__c?: string;
     /**
      * <h3><b>Project Team Date/Time Received</b></h3>
      * <h4>Field Attributes</h4>
@@ -1781,7 +1814,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Project_Team_Date_Time_Received__c: string;
+    Project_Team_Date_Time_Received__c?: string;
     /**
      * <h3><b>Prospect at the point of order entry</b></h3>
      * <p>Updated by a workflow at the point of order entry - evaluates the record type of the original account to determine processing by the customer service team</p>
@@ -1791,7 +1824,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Prospect_at_the_point_of_order_entry__c: boolean;
+    Prospect_at_the_point_of_order_entry__c?: boolean;
+    Quote?: Quote;
     /**
      * <h3><b>Quote Status</b></h3>
      * <p>Field to set the status of the quote</p>
@@ -1810,16 +1844,19 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No Order</code></td><td>No Order</td><td nowrap>true</td></tr>
      * </table>
      */
-    Quote_Status__c: string;
-    RecordActionHistories: RecordActionHistory[];
+    Quote_Status__c?: string;
+    QuoteId?: string;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordType: RecordType;
-    RecordTypeId: string;
-    ReferenceEntityAsyncOperationTrackers: AsyncOperationTracker[];
-    ReferenceEntityRevenueAsyncOperations: RevenueAsyncOperation[];
+    RecordActions?: RecordAction[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    ReferenceEntityAsyncOperationTrackers?: AsyncOperationTracker[];
+    ReferenceEntityRevenueAsyncOperations?: RevenueAsyncOperation[];
+    ReferenceObject?: SalesTransactionFulfillReq;
     /**
      * <h3><b>Regional Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -1828,7 +1865,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Regional_Manager__c: string;
+    Regional_Manager__c?: string;
     /**
      * <h3><b>Regional Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -1837,7 +1874,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Regional_Manager__r: User;
+    Regional_Manager__r?: User;
     /**
      * <h3><b>Regional Manager Approval Required</b></h3>
      * <h4>Field Attributes</h4>
@@ -1846,7 +1883,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( OR( AND( Discount_Approval_Needed__c  &gt; 0,  Non_SIMPLANT_Items__c&gt;=1,  SIMPLANT_Included__c &gt;=0), AND( Discount_Approval_Needed__c &gt;0,  Non_SIMPLANT_Items__c&gt;=0,  SIMPLANT_Included__c &gt;0,  Waive_Shipping_Charges__c =TRUE), AND( Discount_Approval_Needed__c &gt;0,  Non_SIMPLANT_Items__c&gt;=0,  SIMPLANT_Included__c &gt;0), AND(Non_SIMPLANT_Items__c &gt;0, Waive_Shipping_Charges__c =TRUE), AND( SIMPLANT_Included__c &gt;=0, Non_SIMPLANT_Items__c &gt;=1,Waive_Shipping_Charges__c =TRUE)), TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    Regional_Manager_Approval_Required__c: boolean;
+    Regional_Manager_Approval_Required__c?: boolean;
     /**
      * <h3><b>Regional Manager Approved</b></h3>
      * <h4>Field Attributes</h4>
@@ -1855,7 +1892,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Regional_Manager_Approved__c: boolean;
+    Regional_Manager_Approved__c?: boolean;
     /**
      * <h3><b>Regional Manager E-mail</b></h3>
      * <h4>Field Attributes</h4>
@@ -1866,25 +1903,25 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Regional_Manager_E_mail__c: string;
-    RelatedOrder: Order;
-    RelatedOrderChangeLogs: OrderChangeLog[];
-    RelatedOrderId: string;
-    RelatedOrders: Order[];
-    RelatedRecord: FlowRecordRelation;
+    Regional_Manager_E_mail__c?: string;
+    RelatedOrder?: Order;
+    RelatedOrderChangeLogs?: OrderChangeLog[];
+    RelatedOrderId?: string;
+    RelatedOrders?: Order[];
+    RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * The reciprocal relationship for {@link ReturnOrder.OrderId}.
      */
-    ReturnOrders: ReturnOrder[];
+    ReturnOrders?: ReturnOrder[];
     /**
      * The reciprocal relationship for {@link Field_Sales_Project_Members__c.Order__c}.
      */
-    Sales_Leads__r: Field_Sales_Project_Members__c[];
+    Sales_Leads__r?: Field_Sales_Project_Members__c[];
     /**
      * <h3><b>Sales Rep Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -1896,7 +1933,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Rep_Address__c: string;
+    Sales_Rep_Address__c?: string;
     /**
      * <h3><b>Sales Lead</b></h3>
      * <p>TFUS-000003080</p>
@@ -1906,7 +1943,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesLead__c: string;
+    SalesLead__c?: string;
     /**
      * <h3><b>Sales Lead</b></h3>
      * <p>TFUS-000003080</p>
@@ -1916,7 +1953,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesLead__r: Field_Sales_Project_Members__c;
+    SalesLead__r?: Field_Sales_Project_Members__c;
     /**
      * <h3><b>Sales Origin</b></h3>
      * <h4>Field Attributes</h4>
@@ -1927,7 +1964,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesOrigin__c: string;
+    SalesOrigin__c?: string;
+    SalesTransactionType?: SalesTransactionType;
+    SalesTransactionTypeId?: string;
     /**
      * <h3><b>Sample Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -1936,7 +1975,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">if(  isblank(Account_for_Sample_in_AX__c ),False,True)</code></td></tr>
      * </table>
      */
-    Sample_Order__c: boolean;
+    Sample_Order__c?: boolean;
     /**
      * <h3><b># sample products</b></h3>
      * <h4>Field Attributes</h4>
@@ -1949,7 +1988,7 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    sample_products__c: number;
+    sample_products__c?: number;
     /**
      * <h3><b>Second Level Approver</b></h3>
      * <h4>Field Attributes</h4>
@@ -1958,7 +1997,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SecondLevelApprover__c: string;
+    SecondLevelApprover__c?: string;
     /**
      * <h3><b>Second Level Approver</b></h3>
      * <h4>Field Attributes</h4>
@@ -1967,7 +2006,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SecondLevelApprover__r: User;
+    SecondLevelApprover__r?: User;
     /**
      * <h3><b>Not to send order to EDI automatically</b></h3>
      * <p>Used for US to control that a distributor order is not sent to dealer via EDI</p>
@@ -1977,8 +2016,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Send_order_manually__c: boolean;
-    Shares: OrderShare[];
+    Send_order_manually__c?: boolean;
+    Shares?: OrderShare[];
     /**
      * <h3><b>Ship from</b></h3>
      * <h4>Field Attributes</h4>
@@ -1993,7 +2032,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dentsply</code></td><td>Dentsply</td><td nowrap>true</td></tr>
      * </table>
      */
-    Ship_from__c: string;
+    Ship_from__c?: string;
     /**
      * <h3><b>Ship Method</b></h3>
      * <p>Picklist field (required) only on the Prosthetics Direct Orders (USC - US)</p>
@@ -2016,7 +2055,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Ship_Method__c: string;
+    Ship_Method__c?: string;
     /**
      * <h3><b>Ship to Sales Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -2025,7 +2064,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Ship_to_Sales_Rep__c: boolean;
+    Ship_to_Sales_Rep__c?: boolean;
     /**
      * <h3><b>Shipping Charges</b></h3>
      * <h4>Field Attributes</h4>
@@ -2042,7 +2081,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SIMPLANT Software Only - No Shipping Required</code></td><td>SIMPLANT Software Only - No Shipping Required</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Shipping_Charges__c: string;
+    Shipping_Charges__c?: string;
     /**
      * <h3><b>Delivery Method</b></h3>
      * <h4>Field Attributes</h4>
@@ -2073,8 +2112,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">UPS COD 2nd Day PM:  UX5</code></td><td>UPS COD 2nd Day PM:  UX5</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Shipping_Method__c: string;
-    ShippingAddress: Address;
+    Shipping_Method__c?: string;
+    ShippingAddress?: Address;
     /**
      * <h3><b>Shipping Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -2083,7 +2122,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShippingAddress__c: string;
+    ShippingAddress__c?: string;
     /**
      * <h3><b>Shipping Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -2092,15 +2131,15 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShippingAddress__r: Address__c;
-    ShippingCity: string;
-    ShippingCountry: string;
-    ShippingGeocodeAccuracy: string;
-    ShippingLatitude: number;
-    ShippingLongitude: number;
-    ShippingPostalCode: string;
-    ShippingState: string;
-    ShippingStreet: string;
+    ShippingAddress__r?: Address__c;
+    ShippingCity?: string;
+    ShippingCountry?: string;
+    ShippingGeocodeAccuracy?: string;
+    ShippingLatitude?: number;
+    ShippingLongitude?: number;
+    ShippingPostalCode?: string;
+    ShippingState?: string;
+    ShippingStreet?: string;
     /**
      * <h3><b>SIMPLANT CS Approval Required</b></h3>
      * <h4>Field Attributes</h4>
@@ -2109,7 +2148,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">if(SIMPLANT_Software_Evaluation__c  &lt;&gt; 0,TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    SIMPLANT_CS_Approval_Required__c: boolean;
+    SIMPLANT_CS_Approval_Required__c?: boolean;
     /**
      * <h3><b>SIMPLANT Customer Service Approved</b></h3>
      * <h4>Field Attributes</h4>
@@ -2118,7 +2157,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SIMPLANT_Customer_Service_Approved__c: boolean;
+    SIMPLANT_Customer_Service_Approved__c?: boolean;
     /**
      * <h3><b>SIMPLANT Director Approval Required</b></h3>
      * <h4>Field Attributes</h4>
@@ -2127,7 +2166,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(OR (AND (SIMPLANT_Included__c &gt;0,  Discount_Approval_Needed__c &gt;0,  Non_SIMPLANT_Items__c =0,  Waive_Shipping_Charges__c =TRUE), AND( SIMPLANT_Included__c &gt;0,  Discount_Approval_Needed__c &gt;0,  Non_SIMPLANT_Items__c =0)), TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    SIMPLANT_Director_Approval__c: boolean;
+    SIMPLANT_Director_Approval__c?: boolean;
     /**
      * <h3><b>SIMPLANT Director Approved</b></h3>
      * <p>Populated by workflow/approvals</p>
@@ -2137,7 +2176,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SIMPLANT_Director_Approved__c: boolean;
+    SIMPLANT_Director_Approved__c?: boolean;
     /**
      * <h3><b>SIMPLANT Included</b></h3>
      * <h4>Field Attributes</h4>
@@ -2148,7 +2187,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.SIMPLANT_Line_Item__c</code></td></tr>
      * </table>
      */
-    SIMPLANT_Included__c: number;
+    SIMPLANT_Included__c?: number;
     /**
      * <h3><b>SIMPLANT Software Evaluation</b></h3>
      * <h4>Field Attributes</h4>
@@ -2159,8 +2198,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.SIMPLANT_Software_Line_Item__c</code></td></tr>
      * </table>
      */
-    SIMPLANT_Software_Evaluation__c: number;
-    SobjectLookupValue: AIInsightValue;
+    SIMPLANT_Software_Evaluation__c?: number;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Source Record</b></h3>
      * <p>#1674</p>
@@ -2170,7 +2209,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceRecord__c: string;
+    SourceRecord__c?: string;
     /**
      * <h3><b>Source Record</b></h3>
      * <p>#1674</p>
@@ -2180,7 +2219,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceRecord__r: Source_Record__c;
+    SourceRecord__r?: Source_Record__c;
     /**
      * <h3><b>Special Requests</b></h3>
      * <h4>Field Attributes</h4>
@@ -2191,9 +2230,9 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SpecialRequests__c: string;
-    Status: string;
-    StatusCode: string;
+    SpecialRequests__c?: string;
+    Status?: string;
+    StatusCode?: string;
     /**
      * <h3><b>submitted date</b></h3>
      * <h4>Field Attributes</h4>
@@ -2202,7 +2241,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    submitted_date__c: string;
+    submitted_date__c?: string;
     /**
      * <h3><b>Submitted for Approval</b></h3>
      * <p>This box is checked only when the approval process has been enabled. This is to create a validation rule, such that only the approval process can change the Status</p>
@@ -2212,16 +2251,16 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Submitted_for_Approval__c: boolean;
-    SystemModstamp: string;
-    Tags: OrderTag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    Submitted_for_Approval__c?: boolean;
+    SystemModstamp?: string;
+    Tags?: OrderTag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
+    Tasks?: Task[];
     /**
      * <h3><b>Total Sales (w/ Margin Calculation)</b></h3>
      * <p>Used in formula of the Margin Indicator
@@ -2236,9 +2275,9 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    TF_TotalSalesMarginCalculation__c: number;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    TF_TotalSalesMarginCalculation__c?: number;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>Total After PPN</b></h3>
      * <h4>Field Attributes</h4>
@@ -2250,7 +2289,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_After_PPN__c: number;
+    Total_After_PPN__c?: number;
     /**
      * <h3><b>Total Amount</b></h3>
      * <p>Prints the total amount of an order, including Order Amount and Delivery Cost</p>
@@ -2261,7 +2300,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Amount__c: number;
+    Total_Amount__c?: number;
     /**
      * <h3><b>Total Bundle Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -2272,7 +2311,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Order_bundle__c.Order_Bundle_Discount_Amount__c</code></td></tr>
      * </table>
      */
-    Total_Bundle_Discount__c: number;
+    Total_Bundle_Discount__c?: number;
     /**
      * <h3><b>Total #bundle product in the order</b></h3>
      * <h4>Field Attributes</h4>
@@ -2282,7 +2321,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Order_bundle__c.Order__c</code></td></tr>
      * </table>
      */
-    Total_bundle_product_in_the_order__c: number;
+    Total_bundle_product_in_the_order__c?: number;
     /**
      * <h3><b>% total discount on the order</b></h3>
      * <p>The % discount doesn not count the percentage of discount in the bundle</p>
@@ -2293,7 +2332,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    total_discount_on_the_order_c__c: number;
+    total_discount_on_the_order_c__c?: number;
     /**
      * <h3><b>Total # of Products on this Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -2303,7 +2342,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.OrderId</code></td></tr>
      * </table>
      */
-    Total_of_Products_on_this_Order__c: number;
+    Total_of_Products_on_this_Order__c?: number;
     /**
      * <h3><b>Total Order Discount</b></h3>
      * <p>(Order Amount before Discount has been subtracted) MINUS (Order Amount after Discount has been substracted) = Order Discount</p>
@@ -2314,8 +2353,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Order_Discount__c: number;
-    TotalAmount: number;
+    Total_Order_Discount__c?: number;
+    TotalAmount?: number;
     /**
      * <h3><b>Total Cost</b></h3>
      * <h4>Field Attributes</h4>
@@ -2326,8 +2365,10 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.TotalCost__c</code></td></tr>
      * </table>
      */
-    TotalCost__c: number;
-    Type: string;
+    TotalCost__c?: number;
+    TotalRoundedLineAmount?: number;
+    TotalTaxAmount?: number;
+    Type?: string;
     /**
      * <h3><b>Type</b></h3>
      * <p>field for USC to manage special DOD offer</p>
@@ -2351,7 +2392,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Tradeout 1+1</code></td><td>Tradeout 1+1</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type__c: string;
+    Type__c?: string;
     /**
      * <h3><b>US Telesales Order Historical</b></h3>
      * <p>Field managed using approval process to track if in the order was created by a person that at the creation time had a Telesales profile</p>
@@ -2361,7 +2402,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    US__c: boolean;
+    US__c?: boolean;
     /**
      * <h3><b>US Telesales Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -2370,7 +2411,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">If(  US__c =True, True, if(Owner:User.Profile.Id = &#39;00e0J000001Ar3p&#39;, True, False))</code></td></tr>
      * </table>
      */
-    US_Telesales_Order__c: boolean;
+    US_Telesales_Order__c?: boolean;
     /**
      * <h3><b>US TeleSales Team Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -2382,7 +2423,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    US_Telsales__c: string;
+    US_Telsales__c?: string;
     /**
      * <h3><b>Used Coupons Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -2393,7 +2434,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">OrderItem.UsedCouponValue__c</code></td></tr>
      * </table>
      */
-    UsedCouponsValue__c: number;
+    UsedCouponsValue__c?: number;
     /**
      * <h3><b>User CountryPL</b></h3>
      * <h4>Field Attributes</h4>
@@ -2466,7 +2507,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vietnam</code></td><td>Vietnam</td><td nowrap>true</td></tr>
      * </table>
      */
-    User_CountryPL__c: string;
+    User_CountryPL__c?: string;
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -2478,7 +2519,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    User_Geography__c: string;
+    User_Geography__c?: string;
     /**
      * <h3><b>UserCountryETM</b></h3>
      * <h4>Field Attributes</h4>
@@ -2490,7 +2531,8 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    UserCountryETM__c: string;
+    UserCountryETM__c?: string;
+    ValidationResult?: string;
     /**
      * <h3><b>VAT Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -2502,7 +2544,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VAT_Number__c: string;
+    VAT_Number__c?: string;
     /**
      * <h3><b>Waive Shipping Charges</b></h3>
      * <h4>Field Attributes</h4>
@@ -2511,7 +2553,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Waive_Shipping_Charges__c: boolean;
+    Waive_Shipping_Charges__c?: boolean;
     /**
      * <h3><b>Was this Order ever put ON HOLD</b></h3>
      * <h4>Field Attributes</h4>
@@ -2520,7 +2562,7 @@ declare interface Order extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Was_this_Order_ever_put_ON_HOLD__c: boolean;
+    Was_this_Order_ever_put_ON_HOLD__c?: boolean;
     /**
      * <h3><b>Weighted Lower Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -2533,7 +2575,7 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    WeightedLowerGuidance__c: number;
+    WeightedLowerGuidance__c?: number;
     /**
      * <h3><b>Weighted Upper Guidance</b></h3>
      * <h4>Field Attributes</h4>
@@ -2546,14 +2588,14 @@ declare interface Order extends SObject
      * </td></tr>
      * </table>
      */
-    WeightedUpperGuidance__c: number;
-    What: EventChangeEvent;
+    WeightedUpperGuidance__c?: number;
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
     /**
      * The reciprocal relationship for {@link WorkOrderLineItem.OrderId}.
      */
-    WorkOrderLineItems: WorkOrderLineItem[];
+    WorkOrderLineItems?: WorkOrderLineItem[];
 }

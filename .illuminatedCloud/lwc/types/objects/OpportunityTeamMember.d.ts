@@ -2,27 +2,27 @@
 
 declare interface OpportunityTeamMember extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Histories: OpportunityTeamMemberHistory[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Opportunity: Opportunity;
-    OpportunityAccessLevel: string;
-    OpportunityId: string;
-    PhotoUrl: string;
-    RelatedRecord: FlowRecordRelation;
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TeamMemberRole: string;
-    Title: string;
-    User: User;
-    UserId: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Histories?: OpportunityTeamMemberHistory[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Opportunity?: Opportunity;
+    OpportunityAccessLevel?: string;
+    OpportunityId?: string;
+    PhotoUrl?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TeamMemberRole?: string;
+    Title?: string;
+    User?: User;
+    UserId?: string;
 }

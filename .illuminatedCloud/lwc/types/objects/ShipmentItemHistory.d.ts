@@ -2,14 +2,14 @@
 
 declare interface ShipmentItemHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ShipmentItem: ShipmentItem;
-    ShipmentItemId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ShipmentItem?: ShipmentItem;
+    ShipmentItemId?: string;
 }

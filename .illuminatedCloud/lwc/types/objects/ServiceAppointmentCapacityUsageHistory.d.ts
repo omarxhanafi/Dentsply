@@ -2,14 +2,14 @@
 
 declare interface ServiceAppointmentCapacityUsageHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ServiceAppointmentCapacityUsage: ServiceAppointmentCapacityUsage;
-    ServiceAppointmentCapacityUsageId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ServiceAppointmentCapacityUsage?: ServiceAppointmentCapacityUsage;
+    ServiceAppointmentCapacityUsageId?: string;
 }

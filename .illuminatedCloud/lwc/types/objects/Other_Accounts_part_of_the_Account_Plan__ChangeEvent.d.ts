@@ -10,7 +10,7 @@ declare interface Other_Accounts_part_of_the_Account_Plan__ChangeEvent extends S
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Part_of_the_Account_Plan__c: string;
+    Account_Part_of_the_Account_Plan__c?: string;
     /**
      * <h3><b>Account Part of the Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface Other_Accounts_part_of_the_Account_Plan__ChangeEvent extends S
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Part_of_the_Account_Plan__r: Account;
+    Account_Part_of_the_Account_Plan__r?: Account;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,7 +27,7 @@ declare interface Other_Accounts_part_of_the_Account_Plan__ChangeEvent extends S
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Opportunity})</td></tr>
      * </table>
      */
-    Account_Plan__c: string;
+    Account_Plan__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface Other_Accounts_part_of_the_Account_Plan__ChangeEvent extends S
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Opportunity})</td></tr>
      * </table>
      */
-    Account_Plan__r: Opportunity;
+    Account_Plan__r?: Opportunity;
     /**
      * <h3><b>Account Plan Stage</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,16 +47,16 @@ declare interface Other_Accounts_part_of_the_Account_Plan__ChangeEvent extends S
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Plan_Stage__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Account_Plan_Stage__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Relation to Account Plan Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,6 +64,6 @@ declare interface Other_Accounts_part_of_the_Account_Plan__ChangeEvent extends S
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Relation_to_Account_Plan_Description__c: string;
-    ReplayId: string;
+    Relation_to_Account_Plan_Description__c?: string;
+    ReplayId?: string;
 }

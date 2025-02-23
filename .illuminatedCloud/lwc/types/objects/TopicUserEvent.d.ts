@@ -2,12 +2,12 @@
 
 declare interface TopicUserEvent extends SObject 
 {
-    ActionEnum: string;
-    CreatedDate: string;
-    Network: Network;
-    NetworkId: string;
-    Topic: Topic;
-    TopicId: string;
-    User: SObject;
-    UserId: string;
+    ActionEnum?: string;
+    CreatedDate?: string;
+    Network?: Network;
+    NetworkId?: string;
+    Topic?: Topic;
+    TopicId?: string;
+    User?: SObject;
+    UserId?: string;
 }

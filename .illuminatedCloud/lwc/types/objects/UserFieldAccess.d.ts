@@ -2,15 +2,15 @@
 
 declare interface UserFieldAccess extends SObject 
 {
-    DurableId: string;
-    EntityDefinition: EntityDefinition;
-    EntityDefinitionId: string;
-    FieldDefinition: FieldDefinition;
-    FieldDefinitionId: string;
-    IsAccessible: boolean;
-    IsCreatable: boolean;
-    IsUpdatable: boolean;
-    RunningUserFieldAccess: FieldDefinition;
-    User: User;
-    UserId: string;
+    DurableId?: string;
+    EntityDefinition?: EntityDefinition;
+    EntityDefinitionId?: string;
+    FieldDefinition?: FieldDefinition;
+    FieldDefinitionId?: string;
+    IsAccessible?: boolean;
+    IsCreatable?: boolean;
+    IsUpdatable?: boolean;
+    RunningUserFieldAccess?: FieldDefinition;
+    User?: User;
+    UserId?: string;
 }

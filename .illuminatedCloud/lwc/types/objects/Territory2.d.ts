@@ -2,13 +2,13 @@
 
 declare interface Territory2 extends SObject 
 {
-    AccountAccessLevel: string;
-    AccountUserTerritory2Views: AccountUserTerritory2View[];
-    CaseAccessLevel: string;
-    ContactAccessLevel: string;
-    CurrencyIsoCode: string;
-    Description: string;
-    DeveloperName: string;
+    AccountAccessLevel?: string;
+    AccountUserTerritory2Views?: AccountUserTerritory2View[];
+    CaseAccessLevel?: string;
+    ContactAccessLevel?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
+    DeveloperName?: string;
     /**
      * <h3><b>E-com Team</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    EcomTeam__c: string;
+    EcomTeam__c?: string;
     /**
      * <h3><b>E-com Visible</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,13 +42,13 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    EcomVisible__c: boolean;
-    ForecastUser: User;
-    ForecastUserId: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    EcomVisible__c?: boolean;
+    ForecastUser?: User;
+    ForecastUserId?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>NumberOfChar</b></h3>
      * <h4>Field Attributes</h4>
@@ -60,13 +60,13 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NumberOfChar__c: number;
-    ObjectTerritory2Access: Territory2ObjSharingConfig[];
-    ObjectTerritory2Associations: ObjectTerritory2Association[];
-    ObjectUserTerritory2Views: ObjectUserTerritory2View[];
-    OpportunityAccessLevel: string;
-    ParentTerritory2: Territory2;
-    ParentTerritory2Id: string;
+    NumberOfChar__c?: number;
+    ObjectTerritory2Access?: Territory2ObjSharingConfig[];
+    ObjectTerritory2Associations?: ObjectTerritory2Association[];
+    ObjectUserTerritory2Views?: ObjectUserTerritory2View[];
+    OpportunityAccessLevel?: string;
+    ParentTerritory2?: Territory2;
+    ParentTerritory2Id?: string;
     /**
      * <h3><b>Primary Territory for User</b></h3>
      * <h4>Field Attributes</h4>
@@ -75,7 +75,7 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Primary_Territory_for_User__c: boolean;
+    Primary_Territory_for_User__c?: boolean;
     /**
      * <h3><b>Region Name (POC)</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,9 +86,9 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Region_Name_POC__c: string;
-    Related: Group;
-    RuleTerritory2Associations: RuleTerritory2Association[];
+    Region_Name_POC__c?: string;
+    Related?: Group;
+    RuleTerritory2Associations?: RuleTerritory2Association[];
     /**
      * <h3><b>SBU (POC)</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,17 +99,17 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU_POC__c: string;
-    SystemModstamp: string;
+    SBU_POC__c?: string;
+    SystemModstamp?: string;
     /**
      * The reciprocal relationship for {@link Opportunity.Territory2Id}.
      */
-    Territory2: Opportunity;
-    Territory2Model: Territory2Model;
-    Territory2ModelId: string;
-    Territory2ObjectExclusions: Territory2ObjectExclusion[];
-    Territory2Type: Territory2Type;
-    Territory2TypeId: string;
+    Territory2?: Opportunity;
+    Territory2Model?: Territory2Model;
+    Territory2ModelId?: string;
+    Territory2ObjectExclusions?: Territory2ObjectExclusion[];
+    Territory2Type?: Territory2Type;
+    Territory2TypeId?: string;
     /**
      * <h3><b>Territory Code</b></h3>
      * <p>Used to designate the territory code. Must be unique across our org. In North America - Used to match to the ERP User ID of a user to determine the primary territory of a User in the event of multiple territory assignments. This is used primarily for OBIEE reporting.</p>
@@ -121,7 +121,7 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Territory_Code__c: string;
+    Territory_Code__c?: string;
     /**
      * <h3><b>Territory Division</b></h3>
      * <p>Used by the North America Team to support OBIEE Reporting</p>
@@ -180,7 +180,7 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Virtual Sales</code></td><td>Virtual Sales</td><td nowrap>true</td></tr>
      * </table>
      */
-    Territory_Division__c: string;
+    Territory_Division__c?: string;
     /**
      * <h3><b>Territory Legacy ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -191,7 +191,7 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Territory_Legacy_ID__c: string;
+    Territory_Legacy_ID__c?: string;
     /**
      * <h3><b>Territory Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -208,6 +208,6 @@ declare interface Territory2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sales Rep</code></td><td>Sales Rep</td><td nowrap>true</td></tr>
      * </table>
      */
-    Territory_Level__c: string;
-    UserTerritory2Associations: UserTerritory2Association[];
+    Territory_Level__c?: string;
+    UserTerritory2Associations?: UserTerritory2Association[];
 }

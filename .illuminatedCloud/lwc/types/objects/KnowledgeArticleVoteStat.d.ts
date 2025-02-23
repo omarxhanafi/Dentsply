@@ -2,9 +2,9 @@
 
 declare interface KnowledgeArticleVoteStat extends SObject 
 {
-    Channel: string;
-    IsDeleted: boolean;
-    NormalizedScore: number;
-    Parent: KnowledgeArticle;
-    ParentId: string;
+    Channel?: string;
+    IsDeleted?: boolean;
+    NormalizedScore?: number;
+    Parent?: KnowledgeArticle;
+    ParentId?: string;
 }

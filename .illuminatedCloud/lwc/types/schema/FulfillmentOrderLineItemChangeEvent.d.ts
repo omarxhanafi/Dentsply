@@ -54,6 +54,18 @@ declare module "@salesforce/schema/FulfillmentOrderLineItemChangeEvent.EndDate" 
     export default EndDate;
 }
 
+declare module "@salesforce/schema/FulfillmentOrderLineItemChangeEvent.FulfillmentAsset" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentAsset: FieldId;
+    export default FulfillmentAsset;
+}
+
+declare module "@salesforce/schema/FulfillmentOrderLineItemChangeEvent.FulfillmentAssetId" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentAssetId: FieldId;
+    export default FulfillmentAssetId;
+}
+
 declare module "@salesforce/schema/FulfillmentOrderLineItemChangeEvent.FulfillmentOrder" {
     import { FieldId } from "@salesforce/schema";
     const FulfillmentOrder: FieldId;

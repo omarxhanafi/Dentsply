@@ -5,7 +5,7 @@
  */
 declare interface FSL__O2_Settings__mdt extends SObject 
 {
-    DeveloperName: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Activate O2</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,7 +14,7 @@ declare interface FSL__O2_Settings__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__isO2Active__c: boolean;
+    FSL__isO2Active__c?: boolean;
     /**
      * <h3><b>O2 Endpoint For Developers</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,11 +25,11 @@ declare interface FSL__O2_Settings__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__o2Endpoint__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    FSL__o2Endpoint__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
 }

@@ -15,7 +15,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Account Site</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Site__c: string;
+    Account_Site__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * <h3><b>Contact Type</b></h3>
      * <p>The Contact Type at this location</p>
@@ -80,10 +80,10 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other Contact</code></td><td>Other Contact</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contact_Type__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Contact_Type__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,11 +92,11 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Description__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Location Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,7 +108,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Location_Account__c: string;
+    Location_Account__c?: string;
     /**
      * <h3><b>Legacy Location Account ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -119,8 +119,8 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Location_Movex__c: string;
-    Name: string;
+    Location_Movex__c?: string;
+    Name?: string;
     /**
      * <h3><b>Preferred Days</b></h3>
      * <h4>Field Attributes</h4>
@@ -141,7 +141,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Sun</code></td><td>Sun</td><td nowrap>true</td></tr>
      * </table>
      */
-    Preferred_Days__c: string;
+    Preferred_Days__c?: string;
     /**
      * <h3><b>Preferred Hours</b></h3>
      * <h4>Field Attributes</h4>
@@ -151,7 +151,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Preferred_Hours__c: string;
+    Preferred_Hours__c?: string;
     /**
      * <h3><b>Product Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -166,7 +166,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental</code></td><td>Dental</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
+    Product_Area__c?: string;
     /**
      * <h3><b>Profession</b></h3>
      * <h4>Field Attributes</h4>
@@ -219,7 +219,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vascular surgeon</code></td><td>Vascular surgeon</td><td nowrap>true</td></tr>
      * </table>
      */
-    Profession__c: string;
+    Profession__c?: string;
     /**
      * <h3><b>Sales CY (LCTN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -231,7 +231,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_CY_D__c: number;
+    Sales_CY_D__c?: number;
     /**
      * <h3><b>Sales LY (LCTN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -243,7 +243,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_LY_D__c: number;
+    Sales_LY_D__c?: number;
     /**
      * <h3><b>Sales LYTD (LCTN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -255,7 +255,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_LYTD_D__c: number;
+    Sales_LYTD_D__c?: number;
     /**
      * <h3><b>Sold Implants CY (LCTN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -267,7 +267,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_CY__c: number;
+    Sold_Implants_CY__c?: number;
     /**
      * <h3><b>Sold Implants LY (LCTN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -279,7 +279,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_LY__c: number;
+    Sold_Implants_LY__c?: number;
     /**
      * <h3><b>Sold Implants LYTD (LCTN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -291,7 +291,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_LYTD__c: number;
+    Sold_Implants_LYTD__c?: number;
     /**
      * <h3><b>Sold Stock Abuts CY (LCTN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -303,7 +303,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abuts_CY_LCTN__c: number;
+    Sold_Stock_Abuts_CY_LCTN__c?: number;
     /**
      * <h3><b>Sold Stock Abuts LY (LCTN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -315,7 +315,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abuts_LY_LCTN__c: number;
+    Sold_Stock_Abuts_LY_LCTN__c?: number;
     /**
      * <h3><b>Sold Stock Abuts LYTD (LCTN)</b></h3>
      * <h4>Field Attributes</h4>
@@ -327,7 +327,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abuts_LYTD_LCTN__c: number;
+    Sold_Stock_Abuts_LYTD_LCTN__c?: number;
     /**
      * <h3><b>Sub Contact Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -414,7 +414,7 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Coordinator</code></td><td>Treatment Coordinator</td><td nowrap>true</td></tr>
      * </table>
      */
-    Sub_Contact_Type__c: string;
+    Sub_Contact_Type__c?: string;
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -459,5 +459,5 @@ declare interface Location__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">USA</code></td><td>USA</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    User_Country__c: string;
+    User_Country__c?: string;
 }

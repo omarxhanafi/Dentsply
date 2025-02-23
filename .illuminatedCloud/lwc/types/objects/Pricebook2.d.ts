@@ -10,12 +10,12 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Apply_contract_discounts__c: boolean;
+    Apply_contract_discounts__c?: boolean;
     /**
      * The reciprocal relationship for {@link AssetWarranty.Pricebook2Id}.
      */
-    AssetWarrantyPricebooks: AssetWarranty[];
-    AssociatedPricebook: PriceAdjustmentSchedule[];
+    AssetWarrantyPricebooks?: AssetWarranty[];
+    AssociatedPricebook?: PriceAdjustmentSchedule[];
     /**
      * <h3><b>Automatically Apply Discount (OM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,11 +24,11 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Automatically_Apply_Discount_OM__c: boolean;
+    Automatically_Apply_Discount_OM__c?: boolean;
     /**
      * The reciprocal relationship for {@link SBQQ__BlockPrice__c.SBQQ__PriceBook2__c}.
      */
-    BlockPrices__r: SBQQ__BlockPrice__c[];
+    BlockPrices__r?: SBQQ__BlockPrice__c[];
     /**
      * <h3><b>Company Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,8 +39,8 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CompanyCode__c: string;
-    ContextRecord: FlowExecutionErrorEvent;
+    CompanyCode__c?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Contract Discount types</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,11 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contract_Discount_types__c: string;
+    Contract_Discount_types__c?: string;
+    /**
+     * The reciprocal relationship for {@link Contract.Pricebook2Id}.
+     */
+    Contracts?: Contract[];
     /**
      * <h3><b>Conversion rate</b></h3>
      * <p>Used for Turkey to handle conversion from TRY to EUR in order email templates etc</p>
@@ -61,11 +65,13 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ConversionRate__c: number;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ConversionRate__c?: number;
+    CostBook?: CostBook;
+    CostBookId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Custom Logo URL</b></h3>
      * <p>When populated indicates the custom logo location for the related pricebook (used for instance in Classic Email templates)</p>
@@ -75,7 +81,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Custom_Logo_URL__c: string;
+    Custom_Logo_URL__c?: string;
     /**
      * <h3><b>Customer Service Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,7 +92,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Email__c: string;
+    Customer_Service_Email__c?: string;
     /**
      * <h3><b>Customer Service Samples Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -97,12 +103,12 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Service_Samples_Email__c: string;
+    Customer_Service_Samples_Email__c?: string;
     /**
      * The reciprocal relationship for {@link Default_price_book__c.Price_Book__c}.
      */
-    Default_price_books__r: Default_price_book__c[];
-    Description: string;
+    Default_price_books__r?: Default_price_book__c[];
+    Description?: string;
     /**
      * <h3><b>Direct orders: Show discount field</b></h3>
      * <h4>Field Attributes</h4>
@@ -111,7 +117,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Direct_orders_Show_discount_field__c: boolean;
+    Direct_orders_Show_discount_field__c?: boolean;
     /**
      * <h3><b>Direct orders: Show FOC field</b></h3>
      * <h4>Field Attributes</h4>
@@ -120,7 +126,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Direct_orders_Show_FOC_field__c: boolean;
+    Direct_orders_Show_FOC_field__c?: boolean;
     /**
      * <h3><b>Direct orders: Show prices</b></h3>
      * <h4>Field Attributes</h4>
@@ -129,7 +135,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Direct_orders_Show_prices__c: boolean;
+    Direct_orders_Show_prices__c?: boolean;
     /**
      * <h3><b>Discount Model</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,7 +144,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Model__c: string;
+    Discount_Model__c?: string;
     /**
      * <h3><b>Discount Model</b></h3>
      * <h4>Field Attributes</h4>
@@ -147,11 +153,11 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Model__r: Discount_model__c;
+    Discount_Model__r?: Discount_model__c;
     /**
      * The reciprocal relationship for {@link SBQQ__DiscountSchedule__c.SBQQ__Pricebook__c}.
      */
-    DiscountSchedules__r: SBQQ__DiscountSchedule__c[];
+    DiscountSchedules__r?: SBQQ__DiscountSchedule__c[];
     /**
      * <h3><b>Dummy Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -162,7 +168,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dummy_Field__c: string;
+    Dummy_Field__c?: string;
     /**
      * <h3><b>Header Order</b></h3>
      * <p>Header for the order doc</p>
@@ -171,8 +177,8 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Header_Order__c: string;
-    Histories: Pricebook2History[];
+    Header_Order__c?: string;
+    Histories?: Pricebook2History[];
     /**
      * <h3><b>Indirect orders: Show discount field</b></h3>
      * <h4>Field Attributes</h4>
@@ -181,7 +187,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Indirect_orders_Show_discount_field__c: boolean;
+    Indirect_orders_Show_discount_field__c?: boolean;
     /**
      * <h3><b>Indirect orders: Show FOC field</b></h3>
      * <h4>Field Attributes</h4>
@@ -190,7 +196,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Indirect_orders_Show_FOC_field__c: boolean;
+    Indirect_orders_Show_FOC_field__c?: boolean;
     /**
      * <h3><b>Indirect orders: Show prices</b></h3>
      * <h4>Field Attributes</h4>
@@ -199,8 +205,8 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Indirect_orders_Show_prices__c: boolean;
-    IsActive: boolean;
+    Indirect_orders_Show_prices__c?: boolean;
+    IsActive?: boolean;
     /**
      * <h3><b>Is Advanced (RLM) ?</b></h3>
      * <p>If a Pricebook &quot;is advaced&quot;, it will enable the RLM Experience. The following is applied:
@@ -211,15 +217,15 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    IsAdvanced__c: boolean;
-    IsArchived: boolean;
-    IsDeleted: boolean;
-    IsStandard: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
+    IsAdvanced__c?: boolean;
+    IsArchived?: boolean;
+    IsDeleted?: boolean;
+    IsStandard?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
     /**
      * <h3><b>Margin Guidance Calculation ?</b></h3>
      * <p>TFUS-000005314
@@ -230,7 +236,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    MarginGuidanceCalculation__c: boolean;
+    MarginGuidanceCalculation__c?: boolean;
     /**
      * <h3><b>Market</b></h3>
      * <p>&lt;ADMINISTRATION&gt; Keep the values of this field aligned with the UserMarket field values.</p>
@@ -281,8 +287,8 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vietnam</code></td><td>Vietnam</td><td nowrap>true</td></tr>
      * </table>
      */
-    Market__c: string;
-    Name: string;
+    Market__c?: string;
+    Name?: string;
     /**
      * <h3><b>Not Show FOC not given by Dealer</b></h3>
      * <p>Not to show free of charge product to dealer that are given to teh customer by teh DS customer service or by teh sales rep</p>
@@ -292,7 +298,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Not_show_foc_dealer__c: boolean;
+    Not_show_foc_dealer__c?: boolean;
     /**
      * <h3><b>Not Show prices to Dealer</b></h3>
      * <p>Not to show prices to dealer</p>
@@ -302,7 +308,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Not_Show_prices_to_Dealer__c: boolean;
+    Not_Show_prices_to_Dealer__c?: boolean;
     /**
      * <h3><b>Not Show Offer Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -311,7 +317,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    NotShowOfferCode__c: boolean;
+    NotShowOfferCode__c?: boolean;
     /**
      * <h3><b>Object Type Use(OM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -326,7 +332,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Opportunity</code></td><td>Opportunity</td><td nowrap>true</td></tr>
      * </table>
      */
-    ObjectTypeUseOM__c: string;
+    ObjectTypeUseOM__c?: string;
     /**
      * <h3><b>OM Extra Source Record SOQL Filter</b></h3>
      * <h4>Field Attributes</h4>
@@ -334,11 +340,11 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(2000)</td></tr>
      * </table>
      */
-    OMExtraSourceRecordSOQLFilter__c: string;
+    OMExtraSourceRecordSOQLFilter__c?: string;
     /**
      * The reciprocal relationship for {@link Opportunity.Pricebook2Id}.
      */
-    Opportunities: Opportunity[];
+    Opportunities?: Opportunity[];
     /**
      * <h3><b>Order Quote Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -346,8 +352,8 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Order_Quote_Comments__c: string;
-    Orders: Order[];
+    Order_Quote_Comments__c?: string;
+    Orders?: Order[];
     /**
      * <h3><b>PDF Butler Template</b></h3>
      * <h4>Field Attributes</h4>
@@ -358,7 +364,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PDF_Butler_Template__c: string;
+    PDF_Butler_Template__c?: string;
     /**
      * <h3><b>PDF Bulter Auto Email view</b></h3>
      * <h4>Field Attributes</h4>
@@ -367,15 +373,15 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    PDFBulterAutoEmailview__c: boolean;
+    PDFBulterAutoEmailview__c?: boolean;
     /**
      * The reciprocal relationship for {@link SBQQ__Dimension__c.SBQQ__PriceBook__c}.
      */
-    Price_Dimensions__r: SBQQ__Dimension__c[];
+    Price_Dimensions__r?: SBQQ__Dimension__c[];
     /**
      * The reciprocal relationship for {@link AssetWarranty.Pricebook2Id}.
      */
-    Pricebook2: AssetWarranty;
+    Pricebook2?: AssetWarranty;
     /**
      * <h3><b>Pricebook Channel</b></h3>
      * <h4>Field Attributes</h4>
@@ -392,7 +398,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Free Good Order</code></td><td>Free Good Order</td><td nowrap>true</td></tr>
      * </table>
      */
-    Pricebook_Channel__c: string;
+    Pricebook_Channel__c?: string;
     /**
      * <h3><b>Pricebook General Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -401,7 +407,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Pricebook_General_Discount__c: number;
+    Pricebook_General_Discount__c?: number;
     /**
      * <h3><b>Pricebook Subtype</b></h3>
      * <h4>Field Attributes</h4>
@@ -425,7 +431,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Standard</code></td><td>Standard</td><td nowrap>true</td></tr>
      * </table>
      */
-    Pricebook_Subtype__c: string;
+    Pricebook_Subtype__c?: string;
     /**
      * <h3><b>PriceBook Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -445,32 +451,32 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Endodontics</code></td><td>Endodontics</td><td nowrap>true</td></tr>
      * </table>
      */
-    PriceBook_Type__c: string;
-    PricebookEntries: PricebookEntry[];
-    PriceBookEntryDerivedPrices: PriceBookEntryDerivedPrice[];
+    PriceBook_Type__c?: string;
+    PricebookEntries?: PricebookEntry[];
+    PriceBookEntryDerivedPrices?: PriceBookEntryDerivedPrice[];
     /**
      * The reciprocal relationship for {@link SBQQ__PriceSchedule__c.SBQQ__Pricebook__c}.
      */
-    PriceSchedules__r: SBQQ__PriceSchedule__c[];
+    PriceSchedules__r?: SBQQ__PriceSchedule__c[];
     /**
      * The reciprocal relationship for {@link Product_bundle__c.Price_Book__c}.
      */
-    Product_bundle__r: Product_bundle__c[];
-    Quotes: Quote[];
+    Product_bundle__r?: Product_bundle__c[];
+    Quotes?: Quote[];
     /**
      * The reciprocal relationship for {@link SBQQ__Quote__c.SBQQ__PriceBook__c}.
      */
-    Quotes__r: SBQQ__Quote__c[];
-    RecordActionHistories: RecordActionHistory[];
+    Quotes__r?: SBQQ__Quote__c[];
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
+    RecordActions?: RecordAction[];
     /**
      * The reciprocal relationship for {@link Refined_pricebook_items__c.Price_Book__c}.
      */
-    Refined_pricebook_items__r: Refined_pricebook_items__c[];
-    RelatedRecord: FlowRecordRelation;
+    Refined_pricebook_items__r?: Refined_pricebook_items__c[];
+    RelatedRecord?: FlowRecordRelation;
     /**
      * <h3><b>SalesChannel</b></h3>
      * <h4>Field Attributes</h4>
@@ -481,7 +487,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesChannel__c: string;
+    SalesChannel__c?: string;
     /**
      * <h3><b>Send To ERP(OM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -490,11 +496,11 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SendToERPOM__c: boolean;
+    SendToERPOM__c?: boolean;
     /**
      * The reciprocal relationship for {@link ServiceContract.Pricebook2Id}.
      */
-    ServiceContracts: ServiceContract[];
+    ServiceContracts?: ServiceContract[];
     /**
      * <h3><b>Show Description (OM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -503,7 +509,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Show_Description_OM__c: boolean;
+    Show_Description_OM__c?: boolean;
     /**
      * <h3><b>Show Discount (OM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -512,7 +518,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Show_Discount_OM__c: boolean;
+    Show_Discount_OM__c?: boolean;
     /**
      * <h3><b>Show FOC (OM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -521,7 +527,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Show_FOC_OM__c: boolean;
+    Show_FOC_OM__c?: boolean;
     /**
      * <h3><b>Show OfferCode (OM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -530,7 +536,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Show_OfferCode_OM__c: boolean;
+    Show_OfferCode_OM__c?: boolean;
     /**
      * <h3><b>Show Price (OM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -539,7 +545,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Show_Price_OM__c: boolean;
+    Show_Price_OM__c?: boolean;
     /**
      * <h3><b>Show Approval Level Order Line (OM)</b></h3>
      * <p>Used for showing/hiding the approval level on order line level</p>
@@ -549,7 +555,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ShowApprovalLevelOrderLine__c: boolean;
+    ShowApprovalLevelOrderLine__c?: boolean;
     /**
      * <h3><b>Show Pricing from Micro-Service (OM)</b></h3>
      * <h4>Field Attributes</h4>
@@ -558,7 +564,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ShowPricingfromMicroServiceOM__c: boolean;
+    ShowPricingfromMicroServiceOM__c?: boolean;
     /**
      * <h3><b>Show Shipping Addresses</b></h3>
      * <h4>Field Attributes</h4>
@@ -567,8 +573,8 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ShowShippingAddresses__c: boolean;
-    SobjectLookupValue: AIInsightValue;
+    ShowShippingAddresses__c?: boolean;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Source Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -587,7 +593,7 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">4</code></td><td>SAP Hanau</td><td nowrap>true</td></tr>
      * </table>
      */
-    SourceId__c: string;
+    SourceId__c?: string;
     /**
      * <h3><b>Stop Orders in ERP</b></h3>
      * <p>Use case is to have a setting in the PriceBook to stop all orders in ERP, for manual handling &quot;User Hold&quot;
@@ -598,10 +604,10 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    StopOrdersinERP__c: boolean;
-    SystemModstamp: string;
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    StopOrdersinERP__c?: boolean;
+    SystemModstamp?: string;
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
     /**
      * <h3><b>Type of Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -616,12 +622,12 @@ declare interface Pricebook2 extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Wholesale Price</code></td><td>Wholesale Price</td><td nowrap>true</td></tr>
      * </table>
      */
-    Type_of_Price__c: string;
-    ValidFrom: string;
-    ValidTo: string;
+    Type_of_Price__c?: string;
+    ValidFrom?: string;
+    ValidTo?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__WebQuote__c.SBQQ__PriceBook__c}.
      */
-    Web_Quotes__r: SBQQ__WebQuote__c[];
-    WorkOrders: WorkOrder[];
+    Web_Quotes__r?: SBQQ__WebQuote__c[];
+    WorkOrders?: WorkOrder[];
 }

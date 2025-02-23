@@ -12,8 +12,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Actual_Cost_per_Participant__c: number;
-    ActualCost: number;
+    Actual_Cost_per_Participant__c?: number;
+    ActualCost?: number;
     /**
      * <h3><b>Additional Comments</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -22,7 +22,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Additional_Comments__c: string;
+    Additional_Comments__c?: string;
     /**
      * <h3><b>Additional Information</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,7 +30,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Additional_Information__c: string;
+    Additional_Information__c?: string;
     /**
      * <h3><b>Address</b></h3>
      * <p>TFUS-000005221</p>
@@ -39,15 +39,15 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Address</td></tr>
      * </table>
      */
-    Address__c: Address;
-    Address__City__s: string;
-    Address__CountryCode__s: string;
-    Address__GeocodeAccuracy__s: string;
-    Address__Latitude__s: number;
-    Address__Longitude__s: number;
-    Address__PostalCode__s: string;
-    Address__StateCode__s: string;
-    Address__Street__s: string;
+    Address__c?: Address;
+    Address__City__s?: string;
+    Address__CountryCode__s?: string;
+    Address__GeocodeAccuracy__s?: string;
+    Address__Latitude__s?: number;
+    Address__Longitude__s?: number;
+    Address__PostalCode__s?: string;
+    Address__StateCode__s?: string;
+    Address__Street__s?: string;
     /**
      * <h3><b>Advertising (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -60,7 +60,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Advertising_Actual__c: number;
+    Advertising_Actual__c?: number;
     /**
      * <h3><b>Advertising (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Advertising_Budget__c: number;
+    Advertising_Budget__c?: number;
     /**
      * <h3><b>Alternative Program Dates</b></h3>
      * <p>Used for the Activity Request form in North America</p>
@@ -81,7 +81,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Alternative_Program_Dates__c: string;
+    Alternative_Program_Dates__c?: string;
     /**
      * <h3><b>Alternative Speaker</b></h3>
      * <p>Used for the Activity Request form in North America</p>
@@ -93,9 +93,9 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Alternative_Speaker__c: string;
-    AmountAllOpportunities: number;
-    AmountWonOpportunities: number;
+    Alternative_Speaker__c?: string;
+    AmountAllOpportunities?: number;
+    AmountWonOpportunities?: number;
     /**
      * <h3><b>Ankylos</b></h3>
      * <h4>Field Attributes</h4>
@@ -104,7 +104,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( INCLUDES( Brand__c , &quot;ANKYLOS&quot;),TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    Ankylos__c: boolean;
+    Ankylos__c?: boolean;
     /**
      * <h3><b>Approval Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -122,7 +122,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Recalled</code></td><td>Recalled</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Approval_Status_DI__c: string;
+    Approval_Status_DI__c?: string;
     /**
      * <h3><b>Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -140,7 +140,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Webinar</code></td><td>Webinar</td><td nowrap>true</td></tr>
      * </table>
      */
-    Area__c: string;
+    Area__c?: string;
     /**
      * <h3><b>Arrangements made by MC?</b></h3>
      * <h4>Field Attributes</h4>
@@ -149,7 +149,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Arrangements_made_by_c__c: boolean;
+    Arrangements_made_by_c__c?: boolean;
     /**
      * <h3><b>Arrival Airport</b></h3>
      * <h4>Field Attributes</h4>
@@ -160,7 +160,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Arrival_Airport__c: string;
+    Arrival_Airport__c?: string;
     /**
      * <h3><b>Arrival Flight Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -171,7 +171,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Arrival_Flight_Number__c: string;
+    Arrival_Flight_Number__c?: string;
     /**
      * <h3><b>Arrival Time &amp; Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -180,7 +180,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Arrival_Time_Date__c: string;
+    Arrival_Time_Date__c?: string;
     /**
      * <h3><b>Assign Sales Rep from Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -189,7 +189,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    AssignRepFromDealer__c: boolean;
+    AssignRepFromDealer__c?: boolean;
     /**
      * <h3><b>ASTRA TECH Implant System</b></h3>
      * <h4>Field Attributes</h4>
@@ -198,7 +198,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;ASTRA TECH Implant System&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    ASTRA_TECH_Implant_System__c: boolean;
+    ASTRA_TECH_Implant_System__c?: boolean;
     /**
      * <h3><b>ATLANTIS Abutments</b></h3>
      * <h4>Field Attributes</h4>
@@ -207,7 +207,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;ATLANTIS Abutments&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    ATLANTIS_Abutments__c: boolean;
+    ATLANTIS_Abutments__c?: boolean;
     /**
      * <h3><b>ATLANTIS Conus (US)</b></h3>
      * <p>Target information on ATLANTIS Conus if this is criteria of Campaigns</p>
@@ -217,7 +217,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ATLANTIS_Conus__c: boolean;
+    ATLANTIS_Conus__c?: boolean;
     /**
      * <h3><b>ATLANTIS ISUS</b></h3>
      * <h4>Field Attributes</h4>
@@ -226,7 +226,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;ATLANTIS ISUS&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    ATLANTIS_ISUS__c: boolean;
+    ATLANTIS_ISUS__c?: boolean;
     /**
      * <h3><b>Audience</b></h3>
      * <h4>Field Attributes</h4>
@@ -242,7 +242,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Leads & Contacts</code></td><td>Leads &amp; Contacts</td><td nowrap>true</td></tr>
      * </table>
      */
-    Audience__c: string;
+    Audience__c?: string;
     /**
      * <h3><b>Blood (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -251,7 +251,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Blood_FR__c: string;
+    Blood_FR__c?: string;
     /**
      * <h3><b>Product Focus (IMPL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -288,7 +288,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Brand__c: string;
+    Brand__c?: string;
     /**
      * <h3><b>Main Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -374,6 +374,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core</code></td><td>DS Core</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Care</code></td><td>DS Core Care</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Create</code></td><td>DS Core Create</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Core Enterprise</code></td><td>DS Core Enterprise</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS OmniTaper</code></td><td>DS OmniTaper</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS PrimeTaper</code></td><td>DS PrimeTaper</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DT Post</code></td><td>DT Post</td><td nowrap>true</td></tr>
@@ -596,7 +597,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">XG5</code></td><td>XG5</td><td nowrap>true</td></tr>
      * </table>
      */
-    Brands__c: string;
+    Brands__c?: string;
     /**
      * <h3><b>Budgeted Cost - Budgeted Revenue</b></h3>
      * <p>The Net Cost of the Campaign when the budgeted revenue has been deducted. A negative number implies that this Campaign would deliver profit to DI</p>
@@ -607,7 +608,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Budgeted_Cost_Budgeted_Revenue__c: number;
+    Budgeted_Cost_Budgeted_Revenue__c?: number;
     /**
      * <h3><b>Budgeted Cost Per Participant</b></h3>
      * <p>Shows the budgeted Cost divided by the Number of Confirmed Attendees. This number might change as long as the Campaign is active (and members are added or possibly removed)</p>
@@ -618,8 +619,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Budgeted_Cost_Per_Participant__c: number;
-    BudgetedCost: number;
+    Budgeted_Cost_Per_Participant__c?: number;
+    BudgetedCost?: number;
     /**
      * <h3><b>California Course Description</b></h3>
      * <p>Used to enter specific information for California Courses needed for reporting.</p>
@@ -629,7 +630,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    California_Course_Description__c: string;
+    California_Course_Description__c?: string;
     /**
      * <h3><b>Course Title</b></h3>
      * <p>If it is a ADA CERP course or a California course the title is required for reporting purposes</p>
@@ -639,7 +640,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    California_Course_Name__c: string;
+    California_Course_Name__c?: string;
     /**
      * <h3><b>Campaign Approver</b></h3>
      * <h4>Field Attributes</h4>
@@ -648,7 +649,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Approver__c: string;
+    Campaign_Approver__c?: string;
     /**
      * <h3><b>Campaign Approver</b></h3>
      * <h4>Field Attributes</h4>
@@ -657,7 +658,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Approver__r: User;
+    Campaign_Approver__r?: User;
     /**
      * <h3><b>Campaign Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -696,7 +697,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Webinar</code></td><td>Webinar</td><td nowrap>true</td></tr>
      * </table>
      */
-    Campaign_Category__c: string;
+    Campaign_Category__c?: string;
     /**
      * <h3><b>Campaign City</b></h3>
      * <h4>Field Attributes</h4>
@@ -707,7 +708,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_City__c: string;
+    Campaign_City__c?: string;
     /**
      * <h3><b>Campaign Coordinator</b></h3>
      * <h4>Field Attributes</h4>
@@ -716,7 +717,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Coordinator__c: string;
+    Campaign_Coordinator__c?: string;
     /**
      * <h3><b>Campaign Coordinator</b></h3>
      * <h4>Field Attributes</h4>
@@ -725,7 +726,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Coordinator__r: User;
+    Campaign_Coordinator__r?: User;
     /**
      * <h3><b>Campaign Country</b></h3>
      * <p>Country where the Campaign is taking place.</p>
@@ -825,7 +826,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yemen</code></td><td>Yemen</td><td nowrap>true</td></tr>
      * </table>
      */
-    Campaign_Country__c: string;
+    Campaign_Country__c?: string;
     /**
      * <h3><b>End Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -834,7 +835,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_End_Time__c: Time;
+    Campaign_End_Time__c?: Time;
     /**
      * <h3><b>Campaign # (for Analysis only)</b></h3>
      * <p>Used in Reports, should not appear in any Page Layouts</p>
@@ -847,7 +848,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_for_Analysis_only__c: number;
+    Campaign_for_Analysis_only__c?: number;
     /**
      * <h3><b>Campaign Name + Campaign ID</b></h3>
      * <p>A Concatenation of Campaign name and Campaign ID. Used in reports</p>
@@ -860,7 +861,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Name_Campaign_ID__c: string;
+    Campaign_Name_Campaign_ID__c?: string;
     /**
      * <h3><b>Campaign Objectives</b></h3>
      * <h4>Field Attributes</h4>
@@ -869,7 +870,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Objectives__c: string;
+    Campaign_Objectives__c?: string;
     /**
      * <h3><b>Campaign Owner</b></h3>
      * <p>This field is only used in E-mail Template since Owner appearantly is not available!</p>
@@ -882,7 +883,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Owner__c: string;
+    Campaign_Owner__c?: string;
     /**
      * <h3><b>Campaign Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -893,7 +894,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Product__c: string;
+    Campaign_Product__c?: string;
     /**
      * <h3><b>Campaign Region</b></h3>
      * <p>Field used in Germany and France to be able to track campaigns per region (not always the same as cost unit).</p>
@@ -1020,7 +1021,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">North (Lab)</code></td><td>East DIS</td><td nowrap>true</td></tr>
      * </table>
      */
-    Campaign_Region_DE__c: string;
+    Campaign_Region_DE__c?: string;
     /**
      * <h3><b>Start Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -1029,7 +1030,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Start_Time__c: Time;
+    Campaign_Start_Time__c?: Time;
     /**
      * <h3><b>Campaign State</b></h3>
      * <h4>Field Attributes</h4>
@@ -1106,7 +1107,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">YT</code></td><td>YT</td><td nowrap>true</td></tr>
      * </table>
      */
-    Campaign_State__c: string;
+    Campaign_State__c?: string;
     /**
      * <h3><b>Campaign Type &amp; Category</b></h3>
      * <p>Concatenates Campaignt Type and Category. Use for Reports</p>
@@ -1119,7 +1120,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Type_Category__c: string;
+    Campaign_Type_Category__c?: string;
     /**
      * <h3><b>Campaign End Year</b></h3>
      * <p>The year of the end date of the campaign. Used in reports &amp; dashboards</p>
@@ -1132,9 +1133,9 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Campaign_Year__c: string;
-    CampaignImage: ContentDocument;
-    CampaignImageId: string;
+    Campaign_Year__c?: string;
+    CampaignImage?: ContentDocument;
+    CampaignImageId?: string;
     /**
      * <h3><b>Campaign Member Account ID List</b></h3>
      * <p>A comma-separated list of account IDs for all campaign members.</p>
@@ -1143,9 +1144,9 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(65535)</td></tr>
      * </table>
      */
-    CampaignMemberAccountIdList__c: string;
-    CampaignMemberRecordType: RecordType;
-    CampaignMemberRecordTypeId: string;
+    CampaignMemberAccountIdList__c?: string;
+    CampaignMemberRecordType?: RecordType;
+    CampaignMemberRecordTypeId?: string;
     /**
      * <h3><b>Campaign Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -1153,7 +1154,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    CampaignNotes__c: string;
+    CampaignNotes__c?: string;
     /**
      * <h3><b>Carrots (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1162,7 +1163,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Carrots_FR__c: string;
+    Carrots_FR__c?: string;
     /**
      * <h3><b>CAVITE D’ACCES (FR)</b></h3>
      * <p>To be used for PREP in France</p>
@@ -1172,7 +1173,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CAVITE_D_ACCES_FR__c: boolean;
+    CAVITE_D_ACCES_FR__c?: boolean;
     /**
      * <h3><b>CAVITY ACCESS GREEN (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1183,7 +1184,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CAVITY_ACCESS_GREEN_FR__c: number;
+    CAVITY_ACCESS_GREEN_FR__c?: number;
     /**
      * <h3><b>CAVITY ACCESS RED (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1194,8 +1195,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CAVITY_ACCESS_RED_FR__c: number;
-    ChangeEventHeader: ChangeEventHeader;
+    CAVITY_ACCESS_RED_FR__c?: number;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Channel</b></h3>
      * <p>TFUS3881</p>
@@ -1208,7 +1209,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Channel__c: string;
+    Channel__c?: string;
     /**
      * <h3><b>Charge Participants?</b></h3>
      * <p>Set this field if Participants should be charged for this Campaign. This does not mean that all participant must be charged</p>
@@ -1218,7 +1219,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Charge_Participants__c: boolean;
+    Charge_Participants__c?: boolean;
     /**
      * <h3><b>Comments ENDO (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1227,7 +1228,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Comments_ENDO_FR__c: string;
+    Comments_ENDO_FR__c?: string;
     /**
      * <h3><b>Comments IMPL (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1236,7 +1237,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Comments_Implants_FR__c: string;
+    Comments_Implants_FR__c?: string;
     /**
      * <h3><b>Comments MANT (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1245,7 +1246,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Comments_MANT_FR__c: string;
+    Comments_MANT_FR__c?: string;
     /**
      * <h3><b>Comments REST (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1254,7 +1255,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Comments_REST_FR__c: string;
+    Comments_REST_FR__c?: string;
     /**
      * <h3><b>Confirmed Moderator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1263,7 +1264,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Confirmed_Moderator__c: string;
+    Confirmed_Moderator__c?: string;
     /**
      * <h3><b>Confirmed Moderator</b></h3>
      * <h4>Field Attributes</h4>
@@ -1272,7 +1273,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Confirmed_Moderator__r: Contact;
+    Confirmed_Moderator__r?: Contact;
     /**
      * <h3><b>Confirmed Speaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -1281,7 +1282,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Confirmed_Speaker__c: string;
+    Confirmed_Speaker__c?: string;
     /**
      * <h3><b>Confirmed Speaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -1290,7 +1291,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Confirmed_Speaker__r: Contact;
+    Confirmed_Speaker__r?: Contact;
     /**
      * <h3><b>Consecutive Translation?</b></h3>
      * <p>Interpreter waits for the speaker to finish a sentence or an idea</p>
@@ -1300,7 +1301,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Consecutive_trans__c: boolean;
+    Consecutive_trans__c?: boolean;
     /**
      * <h3><b>Contact Name at Venue</b></h3>
      * <p>Used on the North America Activity Request Form</p>
@@ -1312,7 +1313,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact_Name_at_Venue__c: string;
+    Contact_Name_at_Venue__c?: string;
     /**
      * <h3><b>Continuing Training (FR)</b></h3>
      * <p>Field only for France</p>
@@ -1322,7 +1323,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Continuing_Training_FR__c: boolean;
+    Continuing_Training_FR__c?: boolean;
     /**
      * <h3><b>Contract Signed</b></h3>
      * <h4>Field Attributes</h4>
@@ -1331,7 +1332,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Contract_Signed__c: boolean;
+    Contract_Signed__c?: boolean;
     /**
      * <h3><b>Contrat d’honoraires (FR)</b></h3>
      * <p>To be used for France</p>
@@ -1347,7 +1348,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">NON</code></td><td>NON</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contrat_d_honoraires__c: string;
+    Contrat_d_honoraires__c?: string;
     /**
      * <h3><b>Convert To:</b></h3>
      * <h4>Field Attributes</h4>
@@ -1362,7 +1363,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Opportunity</code></td><td>Opportunity</td><td nowrap>true</td></tr>
      * </table>
      */
-    Convert_To__c: string;
+    Convert_To__c?: string;
     /**
      * <h3><b>CoSponsor RSVP Name and Contact Info</b></h3>
      * <h4>Field Attributes</h4>
@@ -1372,7 +1373,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;Please include Full Name and all contact information (email, phone, fax)&quot;</code></td></tr>
      * </table>
      */
-    CoSponsor_RSVP_Name_and_Contact_Info__c: string;
+    CoSponsor_RSVP_Name_and_Contact_Info__c?: string;
     /**
      * <h3><b>Cost Centre</b></h3>
      * <p>Removed DI</p>
@@ -1384,7 +1385,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Cost_Centre__c: string;
+    Cost_Centre__c?: string;
     /**
      * <h3><b>Organizing Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -1460,7 +1461,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yemen</code></td><td>Yemen</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country Code (3-digit)</b></h3>
      * <p>TFUS-000002404 Used by Eloqua</p>
@@ -1470,7 +1471,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Code_3_digit__c: string;
+    Country_Code_3_digit__c?: string;
     /**
      * <h3><b>Course # (California Only)</b></h3>
      * <p>California course code field to be visible for all North American campaign users.</p>
@@ -1482,7 +1483,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Course_California_Only__c: string;
+    Course_California_Only__c?: string;
     /**
      * <h3><b>Course Format</b></h3>
      * <p>Format of the event</p>
@@ -1494,7 +1495,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Course_Format__c: string;
+    Course_Format__c?: string;
     /**
      * <h3><b>Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -1510,7 +1511,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Advanced</code></td><td>Advanced</td><td nowrap>true</td></tr>
      * </table>
      */
-    Course_Level_D__c: string;
+    Course_Level_D__c?: string;
     /**
      * <h3><b>Course Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -1521,7 +1522,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Course_Product__c: string;
+    Course_Product__c?: string;
     /**
      * <h3><b>Course Title and Description</b></h3>
      * <p>Used for the North America Activity Request Form Process</p>
@@ -1531,7 +1532,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;“Enter title, course description and objectives only if developing a custom program&quot;</code></td></tr>
      * </table>
      */
-    Course_Title_and_Description__c: string;
+    Course_Title_and_Description__c?: string;
     /**
      * <h3><b>Course Title</b></h3>
      * <h4>Field Attributes</h4>
@@ -1542,10 +1543,10 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Course_Title_Cvent__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Course_Title_Cvent__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Creator User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -1557,7 +1558,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_User_Country__c: string;
+    Creator_User_Country__c?: string;
     /**
      * <h3><b>Credit Provider</b></h3>
      * <h4>Field Attributes</h4>
@@ -1568,7 +1569,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credit__c: string;
+    Credit__c?: string;
     /**
      * <h3><b>Credits</b></h3>
      * <h4>Field Attributes</h4>
@@ -1579,7 +1580,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Credits__c: number;
+    Credits__c?: number;
     /**
      * <h3><b>Credits handled by DS internal</b></h3>
      * <h4>Field Attributes</h4>
@@ -1588,7 +1589,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Credits_handled_by_DS_internal__c: boolean;
+    Credits_handled_by_DS_internal__c?: boolean;
     /**
      * <h3><b>Credits provided by?</b></h3>
      * <p>Defines if the credits for the course is provided by Dentsply Sirona or a 3rd party partner. Used for reporting.</p>
@@ -1607,7 +1608,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No credits provided</code></td><td>No credits provided</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    Credits_provided_by__c: string;
+    Credits_provided_by__c?: string;
     /**
      * <h3><b>Currency</b></h3>
      * <p>Used in WF Criteria. Can also be used in Page Lyouts if needed</p>
@@ -1620,8 +1621,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Currency__c: string;
-    CurrencyIsoCode: string;
+    Currency__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Event Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -1632,7 +1633,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CVENT_Event_Category__c: string;
+    CVENT_Event_Category__c?: string;
     /**
      * <h3><b>Event Stub</b></h3>
      * <h4>Field Attributes</h4>
@@ -1643,7 +1644,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__EventStub__c: string;
+    CventEvents__EventStub__c?: string;
     /**
      * <h3><b>Session Stub</b></h3>
      * <h4>Field Attributes</h4>
@@ -1654,7 +1655,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    CventEvents__SessionStub__c: string;
+    CventEvents__SessionStub__c?: string;
     /**
      * <h3><b>DB Campaign Tactic</b></h3>
      * <p>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</p>
@@ -1681,7 +1682,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Internal Website</code></td><td>Internal Website</td><td nowrap>true</td></tr>
      * </table>
      */
-    DB_Campaign_Tactic__c: string;
+    DB_Campaign_Tactic__c?: string;
     /**
      * <h3><b>Declaration approved by HQ (FR)</b></h3>
      * <p>Follow-up is demanding, on the request of the order Council- FOR FRANCE</p>
@@ -1697,7 +1698,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Declaration_approved_by_HQ_FR__c: string;
+    Declaration_approved_by_HQ_FR__c?: string;
     /**
      * <h3><b>Declaration to order council email</b></h3>
      * <p>This field is used for sending out an automatic email alert when the field Declaration to order council = Yes.
@@ -1710,7 +1711,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Declaration_to_order_council_email__c: string;
+    Declaration_to_order_council_email__c?: string;
     /**
      * <h3><b>Declaration  to the order Council (FR)</b></h3>
      * <p>Follow-up is demanding, on the request of the order Council - FOR FRANCE</p>
@@ -1726,7 +1727,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Declaration_to_the_order_Council_FR__c: string;
+    Declaration_to_the_order_Council_FR__c?: string;
     /**
      * <h3><b>Describe the business needs, goals</b></h3>
      * <h4>Field Attributes</h4>
@@ -1743,8 +1744,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Practice Management</code></td><td>Practice Management</td><td nowrap>true</td></tr>
      * </table>
      */
-    Describe_the_business_needs_goals__c: string;
-    Description: string;
+    Describe_the_business_needs_goals__c?: string;
+    Description?: string;
     /**
      * <h3><b>Double Room Rate Per Night</b></h3>
      * <h4>Field Attributes</h4>
@@ -1753,7 +1754,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Double_Room_Rate_Per_Night__c: number;
+    Double_Room_Rate_Per_Night__c?: number;
     /**
      * <h3><b>Email Template</b></h3>
      * <h4>Field Attributes</h4>
@@ -1762,7 +1763,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email_Template__c: string;
+    Email_Template__c?: string;
     /**
      * <h3><b>Emergency Contact and Contact Details</b></h3>
      * <h4>Field Attributes</h4>
@@ -1770,7 +1771,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1000)</td></tr>
      * </table>
      */
-    Emergency_Contact_and_Contact_Details__c: string;
+    Emergency_Contact_and_Contact_Details__c?: string;
     /**
      * <h3><b>End Date of Event</b></h3>
      * <p>Copy of End Date to be used on Email Templates</p>
@@ -1781,8 +1782,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    End_Date_of_Event__c: Date;
-    EndDate: Date;
+    End_Date_of_Event__c?: Date;
+    EndDate?: Date;
     /**
      * <h3><b>ENGINES # of NSK (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1793,7 +1794,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ENGINES_of_NSK__c: number;
+    ENGINES_of_NSK__c?: number;
     /**
      * <h3><b>ENGINES # of X SMART</b></h3>
      * <h4>Field Attributes</h4>
@@ -1804,7 +1805,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ENGINES_of_X_SMART__c: number;
+    ENGINES_of_X_SMART__c?: number;
     /**
      * <h3><b>ENGINES # of X SMART +/WO</b></h3>
      * <h4>Field Attributes</h4>
@@ -1815,7 +1816,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ENGINES_of_X_SMART_WO__c: number;
+    ENGINES_of_X_SMART_WO__c?: number;
     /**
      * <h3><b>Entertainment (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1828,7 +1829,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Entertainment_Actual__c: number;
+    Entertainment_Actual__c?: number;
     /**
      * <h3><b>Entertainment (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1837,7 +1838,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Entertainment_Budget__c: number;
+    Entertainment_Budget__c?: number;
     /**
      * <h3><b>Equipment</b></h3>
      * <p>Add information about specific Equipment needed during the Session</p>
@@ -1846,7 +1847,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Equipment__c: string;
+    Equipment__c?: string;
     /**
      * <h3><b>Equipment (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1859,7 +1860,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Equipment_Actual__c: number;
+    Equipment_Actual__c?: number;
     /**
      * <h3><b>Equipment (AU)</b></h3>
      * <p>To fill in equipment to bring to the Event</p>
@@ -1869,7 +1870,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_AU__c: string;
+    Equipment_AU__c?: string;
     /**
      * <h3><b>Equipment (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1878,7 +1879,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_Budget__c: number;
+    Equipment_Budget__c?: number;
     /**
      * <h3><b>Equipment Contact person and phone (FR)</b></h3>
      * <p>To be used for equipment booking</p>
@@ -1890,7 +1891,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_Contact_person_and_phone__c: string;
+    Equipment_Contact_person_and_phone__c?: string;
     /**
      * <h3><b>Equipment delivery address (FR)</b></h3>
      * <p>To be used for equipment booking</p>
@@ -1900,7 +1901,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_delivery_address_FR__c: string;
+    Equipment_delivery_address_FR__c?: string;
     /**
      * <h3><b>Equipment delivery date and time (FR)</b></h3>
      * <p>To be used for equipment booking</p>
@@ -1910,7 +1911,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_delivery_date_and_time__c: string;
+    Equipment_delivery_date_and_time__c?: string;
     /**
      * <h3><b>Equipment needed (FR)</b></h3>
      * <p>Equipment needed for Fance</p>
@@ -1926,7 +1927,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Equipment_needed_FR__c: string;
+    Equipment_needed_FR__c?: string;
     /**
      * <h3><b>Equipment # of dummy implants (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -1938,7 +1939,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_of_dummy_implants_FR__c: number;
+    Equipment_of_dummy_implants_FR__c?: number;
     /**
      * <h3><b>Equipment # of Implant units (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -1950,7 +1951,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_of_Implant_units_FR__c: number;
+    Equipment_of_Implant_units_FR__c?: number;
     /**
      * <h3><b>Equipment # of mandibles (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -1962,7 +1963,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_of_mandibles_FR__c: number;
+    Equipment_of_mandibles_FR__c?: number;
     /**
      * <h3><b>Equipment # of work station (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -1974,7 +1975,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_of_work_station_FR__c: number;
+    Equipment_of_work_station_FR__c?: number;
     /**
      * <h3><b>Equipment take back date (FR)</b></h3>
      * <p>To be used for equipment booking</p>
@@ -1984,7 +1985,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Equipment_take_back_date__c: Date;
+    Equipment_take_back_date__c?: Date;
     /**
      * <h3><b>Est Cost per Participant</b></h3>
      * <p>The Estimated Cost is the budgeted cost on the Campaign divided by the Estimated number of participants. This figure differs from Budgeted cost/participant since the latter field calculates based on actual confirmed participants</p>
@@ -1995,7 +1996,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_Cost_per_Participant__c: number;
+    Est_Cost_per_Participant__c?: number;
     /**
      * <h3><b>Est # of participants</b></h3>
      * <h4>Field Attributes</h4>
@@ -2006,7 +2007,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Est_of_participants__c: number;
+    Est_of_participants__c?: number;
     /**
      * <h3><b>Event Code</b></h3>
      * <p>CVENT Event Code</p>
@@ -2018,7 +2019,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Event_Code__c: string;
+    Event_Code__c?: string;
     /**
      * <h3><b>Event Categorisation</b></h3>
      * <h4>Field Attributes</h4>
@@ -2039,9 +2040,9 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    EventCategorisation__c: string;
-    ExpectedResponse: number;
-    ExpectedRevenue: number;
+    EventCategorisation__c?: string;
+    ExpectedResponse?: number;
+    ExpectedRevenue?: number;
     /**
      * <h3><b>Expertease guided-surgery hands-on (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -2059,7 +2060,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AVANCEE</code></td><td>AVANCEE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Expertease_guided_surgery_hands_on_FR__c: string;
+    Expertease_guided_surgery_hands_on_FR__c?: string;
     /**
      * <h3><b>External Organizer</b></h3>
      * <h4>Field Attributes</h4>
@@ -2068,7 +2069,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    External_Organizer__c: string;
+    External_Organizer__c?: string;
     /**
      * <h3><b>External Organizer</b></h3>
      * <h4>Field Attributes</h4>
@@ -2077,7 +2078,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    External_Organizer__r: Account;
+    External_Organizer__r?: Account;
     /**
      * <h3><b>External Organizer City</b></h3>
      * <p>Visiting City as entered on the Partner Account.</p>
@@ -2090,7 +2091,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    External_Organizer_City__c: string;
+    External_Organizer_City__c?: string;
     /**
      * <h3><b>External Project ID</b></h3>
      * <p>The Project ID based from an external system. Note that this does NOT mean that any transactions based on this Project ID will be automatically integrated</p>
@@ -2102,7 +2103,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    External_Project_ID__c: string;
+    External_Project_ID__c?: string;
     /**
      * <h3><b>Fibre Lasers (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2111,7 +2112,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Fibre_Lasers_FR__c: string;
+    Fibre_Lasers_FR__c?: string;
     /**
      * <h3><b>Follow-Up Steps completed</b></h3>
      * <p>TFUS-000005061</p>
@@ -2121,7 +2122,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Follow_Up_Steps_completed__c: boolean;
+    Follow_Up_Steps_completed__c?: boolean;
     /**
      * <h3><b>Food &amp; Beverage (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2134,7 +2135,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Food_Beverage_Actual__c: number;
+    Food_Beverage_Actual__c?: number;
     /**
      * <h3><b>Food &amp; Beverage (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2143,7 +2144,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Food_Beverage_Budget__c: number;
+    Food_Beverage_Budget__c?: number;
     /**
      * <h3><b>Frialit</b></h3>
      * <h4>Field Attributes</h4>
@@ -2152,7 +2153,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;Frialit&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    Frialit__c: boolean;
+    Frialit__c?: boolean;
     /**
      * <h3><b>Frios</b></h3>
      * <h4>Field Attributes</h4>
@@ -2161,7 +2162,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;Frios&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    Frios__c: boolean;
+    Frios__c?: boolean;
     /**
      * <h3><b>GDW Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -2172,7 +2173,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    GDWUniqueKey__c: string;
+    GDWUniqueKey__c?: string;
     /**
      * <h3><b>Geographical Target</b></h3>
      * <h4>Field Attributes</h4>
@@ -2188,7 +2189,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">International</code></td><td>International</td><td nowrap>true</td></tr>
      * </table>
      */
-    Geographical_Target__c: string;
+    Geographical_Target__c?: string;
     /**
      * <h3><b>Gifts (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2201,7 +2202,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Gifts_Actual__c: number;
+    Gifts_Actual__c?: number;
     /**
      * <h3><b>Gifts (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2210,7 +2211,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Gifts_Budget__c: number;
+    Gifts_Budget__c?: number;
     /**
      * <h3><b>Goggles (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2219,7 +2220,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Goggles_FR__c: string;
+    Goggles_FR__c?: string;
     /**
      * <h3><b>Hands on date (FR)</b></h3>
      * <p>To be used for equipment booking</p>
@@ -2229,7 +2230,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hands_on_date_FR__c: Date;
+    Hands_on_date_FR__c?: Date;
     /**
      * <h3><b>Hands-on Demonstration</b></h3>
      * <h4>Field Attributes</h4>
@@ -2238,7 +2239,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Hands_on_Demonstration__c: boolean;
+    Hands_on_Demonstration__c?: boolean;
     /**
      * <h3><b>Hands-on Hours</b></h3>
      * <p>Used for reporting (CE-reporting). Shows the summarized value of session length (excluding session type &quot;Social Event&quot;) for sessions that has either &quot;Hands-on Demonstration&quot;=TRUE OR Session Type (D) = &quot;Hands-on Training&quot; - populated via APEX</p>
@@ -2250,7 +2251,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hands_on_Hours__c: number;
+    Hands_on_Hours__c?: number;
     /**
      * <h3><b>Has Sessions</b></h3>
      * <p>This field is checked if the Campaign has Sessions</p>
@@ -2260,7 +2261,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Has_Sessions__c: boolean;
+    Has_Sessions__c?: boolean;
     /**
      * <h3><b>Responsible to contact Venue?</b></h3>
      * <p>Used on the North America Activity Request Form</p>
@@ -2277,19 +2278,19 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DM</code></td><td>DM</td><td nowrap>true</td></tr>
      * </table>
      */
-    Has_Venue_been_contacted__c: string;
-    HierarchyActualCost: number;
-    HierarchyAmountAllOpportunities: number;
-    HierarchyAmountWonOpportunities: number;
-    HierarchyBudgetedCost: number;
-    HierarchyExpectedRevenue: number;
-    HierarchyNumberOfContacts: number;
-    HierarchyNumberOfConvertedLeads: number;
-    HierarchyNumberOfLeads: number;
-    HierarchyNumberOfOpportunities: number;
-    HierarchyNumberOfResponses: number;
-    HierarchyNumberOfWonOpportunities: number;
-    HierarchyNumberSent: number;
+    Has_Venue_been_contacted__c?: string;
+    HierarchyActualCost?: number;
+    HierarchyAmountAllOpportunities?: number;
+    HierarchyAmountWonOpportunities?: number;
+    HierarchyBudgetedCost?: number;
+    HierarchyExpectedRevenue?: number;
+    HierarchyNumberOfContacts?: number;
+    HierarchyNumberOfConvertedLeads?: number;
+    HierarchyNumberOfLeads?: number;
+    HierarchyNumberOfOpportunities?: number;
+    HierarchyNumberOfResponses?: number;
+    HierarchyNumberOfWonOpportunities?: number;
+    HierarchyNumberSent?: number;
     /**
      * <h3><b>Honorarium (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2302,7 +2303,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Honorarium_Actual__c: number;
+    Honorarium_Actual__c?: number;
     /**
      * <h3><b>Honorarium (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2311,7 +2312,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Honorarium_Budget__c: number;
+    Honorarium_Budget__c?: number;
     /**
      * <h3><b>Honorarium Cost Notes</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -2320,7 +2321,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Honorarium_Cost_Notes__c: string;
+    Honorarium_Cost_Notes__c?: string;
     /**
      * <h3><b>Hotel &amp; Accommodation (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2329,7 +2330,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hotel_Accommodation__c: number;
+    Hotel_Accommodation__c?: number;
     /**
      * <h3><b>Hotel &amp; Accommodation (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2342,7 +2343,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Hotel_Accommodation_Actual__c: number;
+    Hotel_Accommodation_Actual__c?: number;
     /**
      * <h3><b>Hotel Check In Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -2351,7 +2352,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hotel_Check_in_Date__c: Date;
+    Hotel_Check_in_Date__c?: Date;
     /**
      * <h3><b>Hotel Check Out Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -2360,7 +2361,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hotel_Check_Out_Date__c: Date;
+    Hotel_Check_Out_Date__c?: Date;
     /**
      * <h3><b>Hotel Information</b></h3>
      * <h4>Field Attributes</h4>
@@ -2369,7 +2370,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hotel_Information__c: string;
+    Hotel_Information__c?: string;
     /**
      * <h3><b>HQ Campaign Coordinator</b></h3>
      * <h4>Field Attributes</h4>
@@ -2378,7 +2379,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HQ_Campaign_Coordinator__c: string;
+    HQ_Campaign_Coordinator__c?: string;
     /**
      * <h3><b>HQ Campaign Coordinator</b></h3>
      * <h4>Field Attributes</h4>
@@ -2387,7 +2388,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HQ_Campaign_Coordinator__r: User;
+    HQ_Campaign_Coordinator__r?: User;
     /**
      * <h3><b>HQ Coordinator Country</b></h3>
      * <p>Displays the User Country of the HQ Campaign Coordinator. Used in reports and dashboards</p>
@@ -2400,7 +2401,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HQ_Coordinator_Country__c: string;
+    HQ_Coordinator_Country__c?: string;
     /**
      * <h3><b># of HQ Mölndal Coordinators involved</b></h3>
      * <p>Shows the number of users from the HQ office at Mölndal involved as either Campaign Coordinator, HQ Campaign Coordinator or HQ (second) Campaign Coordinator</p>
@@ -2413,7 +2414,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HQ_M_lndal_Coordinators_involved__c: number;
+    HQ_M_lndal_Coordinators_involved__c?: number;
     /**
      * <h3><b>HQ (second) Campaign Coordinator</b></h3>
      * <p>To be used for HQ if there are more than on from HQ working on the Campaign</p>
@@ -2423,7 +2424,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HQ_second_Campaign_Coordinator__c: string;
+    HQ_second_Campaign_Coordinator__c?: string;
     /**
      * <h3><b>HQ (second) Campaign Coordinator</b></h3>
      * <p>To be used for HQ if there are more than on from HQ working on the Campaign</p>
@@ -2433,7 +2434,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HQ_second_Campaign_Coordinator__r: User;
+    HQ_second_Campaign_Coordinator__r?: User;
     /**
      * <h3><b>Include in Dealer Community?</b></h3>
      * <h4>Field Attributes</h4>
@@ -2442,7 +2443,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Include_in_Dealer_Community__c: string;
+    Include_in_Dealer_Community__c?: string;
     /**
      * <h3><b>Initial Training (FR)</b></h3>
      * <p>Information for France</p>
@@ -2452,7 +2453,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Initial_Training_FR__c: boolean;
+    Initial_Training_FR__c?: boolean;
     /**
      * <h3><b>Instructional Hours</b></h3>
      * <p>Used for reporting (CE-reporting). Shows the summarized value of session length (excluding session type &quot;Social Event&quot; and cancelled events) - populated via APEX</p>
@@ -2464,7 +2465,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Instructional_Hours__c: number;
+    Instructional_Hours__c?: number;
     /**
      * <h3><b>Internal Comments</b></h3>
      * <h4>Field Attributes</h4>
@@ -2472,7 +2473,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Internal_Comments_D__c: string;
+    Internal_Comments_D__c?: string;
     /**
      * <h3><b>Internal training</b></h3>
      * <p>Fill in this checkbox if this Session is Internal training. To be used for Global Trainers</p>
@@ -2482,7 +2483,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Internal_training__c: boolean;
+    Internal_training__c?: boolean;
     /**
      * <h3><b>International Speaker involved</b></h3>
      * <p>This field roll-ups the international speaker field on the member. if this field is filled, it means that there is an international speaker involved. Used for sharing</p>
@@ -2495,7 +2496,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    International_Speaker_involved__c: number;
+    International_Speaker_involved__c?: number;
     /**
      * <h3><b>International speaker involved(sharing)</b></h3>
      * <p>Help field for sharing of the international speaker involved roll-up summary field. As roll-up summary fields are not shareable this fields is a help field that takes the same value as on the summary field</p>
@@ -2508,7 +2509,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    International_speaker_involved_sharing__c: number;
+    International_speaker_involved_sharing__c?: number;
     /**
      * <h3><b>Invitation/Course Flyer: Design</b></h3>
      * <h4>Field Attributes</h4>
@@ -2516,7 +2517,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    Invitation_Course_Flyer__c: string;
+    Invitation_Course_Flyer__c?: string;
     /**
      * <h3><b>Distribution Method</b></h3>
      * <h4>Field Attributes</h4>
@@ -2534,7 +2535,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Email: e-blast</code></td><td>Email: e-blast</td><td nowrap>true</td></tr>
      * </table>
      */
-    Invitation_Course_Flyer_Format__c: string;
+    Invitation_Course_Flyer_Format__c?: string;
     /**
      * <h3><b>Invitation/Course Flyer: Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -2545,7 +2546,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Invitation_Course_Flyer_Quantity__c: number;
+    Invitation_Course_Flyer_Quantity__c?: number;
     /**
      * <h3><b>Invitation/Course Flyer Created By</b></h3>
      * <h4>Field Attributes</h4>
@@ -2561,7 +2562,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">None Required</code></td><td>None Required</td><td nowrap>true</td></tr>
      * </table>
      */
-    Invitation_Course_Flyer_Required__c: string;
+    Invitation_Course_Flyer_Required__c?: string;
     /**
      * <h3><b>Invitation/Course Flyer: Style</b></h3>
      * <h4>Field Attributes</h4>
@@ -2576,8 +2577,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Third Party/Co-sponsor</code></td><td>Third Party/Co-sponsor</td><td nowrap>true</td></tr>
      * </table>
      */
-    Invitation_Course_Flyer_Style__c: string;
-    IsActive: boolean;
+    Invitation_Course_Flyer_Style__c?: string;
+    IsActive?: boolean;
     /**
      * <h3><b>KITS RESTO DIRECT (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2586,7 +2587,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    KITS_RESTO_DIRECT_FR__c: boolean;
+    KITS_RESTO_DIRECT_FR__c?: boolean;
     /**
      * <h3><b>KITS RESTO INDIRECT (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2595,7 +2596,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    KITS_RESTO_INDIRECT_FR__c: boolean;
+    KITS_RESTO_INDIRECT_FR__c?: boolean;
     /**
      * <h3><b>Last Approval Change Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -2605,10 +2606,10 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">NOW()</code></td></tr>
      * </table>
      */
-    Last_Approval_Change_Date__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Last_Approval_Change_Date__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Latex Gloves (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2617,7 +2618,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Latex_Gloves_FR__c: string;
+    Latex_Gloves_FR__c?: string;
     /**
      * <h3><b>Lecture Abstract</b></h3>
      * <h4>Field Attributes</h4>
@@ -2625,7 +2626,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Lecture_Abstract_D__c: string;
+    Lecture_Abstract_D__c?: string;
     /**
      * <h3><b>Lecture Title</b></h3>
      * <p>A Lookup to the Lecture Library. The Lecture Name and Abstract of the Lecture will be added to the session if those values are not filled with information</p>
@@ -2635,7 +2636,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lecture_Title__c: string;
+    Lecture_Title__c?: string;
     /**
      * <h3><b>Lecture Title</b></h3>
      * <p>A Lookup to the Lecture Library. The Lecture Name and Abstract of the Lecture will be added to the session if those values are not filled with information</p>
@@ -2645,7 +2646,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lecture_Title__r: Lecture__c;
+    Lecture_Title__r?: Lecture__c;
     /**
      * <h3><b>Legacy ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -2656,7 +2657,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Legacy_ID__c: string;
+    Legacy_ID__c?: string;
     /**
      * <h3><b>Local Contact Person</b></h3>
      * <h4>Field Attributes</h4>
@@ -2667,7 +2668,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Local_Contact_Person__c: string;
+    Local_Contact_Person__c?: string;
     /**
      * <h3><b>Mail Check To:</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -2676,7 +2677,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Mail_Check_To__c: string;
+    Mail_Check_To__c?: string;
     /**
      * <h3><b>Mailing list provided by:</b></h3>
      * <h4>Field Attributes</h4>
@@ -2693,7 +2694,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Purchase List</code></td><td>Purchase List</td><td nowrap>true</td></tr>
      * </table>
      */
-    Mailing_list_provided_by__c: string;
+    Mailing_list_provided_by__c?: string;
     /**
      * <h3><b>Mailing &amp; Printing (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2706,7 +2707,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Mailing_Printing_Actual__c: number;
+    Mailing_Printing_Actual__c?: number;
     /**
      * <h3><b>Mailing &amp; Printing (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2715,7 +2716,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Mailing_Printing_Budget__c: number;
+    Mailing_Printing_Budget__c?: number;
     /**
      * <h3><b>Make Check Payable to:</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -2724,7 +2725,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Make_Check_Payable_to__c: string;
+    Make_Check_Payable_to__c?: string;
     /**
      * <h3><b>Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -2755,7 +2756,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">UK</code></td><td>UK</td><td nowrap>true</td></tr>
      * </table>
      */
-    Market__c: string;
+    Market__c?: string;
     /**
      * <h3><b>Marketing End Date</b></h3>
      * <p>This date is updated by Eloqua and sets the date for when the marketing team completed the promotions efforts for this specific Campaign.</p>
@@ -2765,7 +2766,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Marketing_End_Date__c: Date;
+    Marketing_End_Date__c?: Date;
     /**
      * <h3><b>Marketing Start Date</b></h3>
      * <p>This date is updated by Eloqua and sets the date for when the marketing team began the promotions efforts for this specific Campaign.</p>
@@ -2775,7 +2776,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Marketing_Start_Date__c: Date;
+    Marketing_Start_Date__c?: Date;
     /**
      * <h3><b>MAX TUITION FOR WORKFLOW</b></h3>
      * <h4>Field Attributes</h4>
@@ -2785,7 +2786,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MAX_TUITION_FOR_WORKFLOW__c: number;
+    MAX_TUITION_FOR_WORKFLOW__c?: number;
     /**
      * <h3><b>Maximum # of Participants Reached?</b></h3>
      * <h4>Field Attributes</h4>
@@ -2794,7 +2795,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">of_Available_Event_Seats__c  &lt;= 0</code></td></tr>
      * </table>
      */
-    Maximum_of_Participants_Reached__c: boolean;
+    Maximum_of_Participants_Reached__c?: boolean;
     /**
      * <h3><b>Meal End Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -2805,7 +2806,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Meal_End_Time__c: string;
+    Meal_End_Time__c?: string;
     /**
      * <h3><b>Meal Start Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -2816,7 +2817,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Meal_Start_Time__c: string;
+    Meal_Start_Time__c?: string;
     /**
      * <h3><b>Meals Included</b></h3>
      * <h4>Field Attributes</h4>
@@ -2837,7 +2838,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">All meals during event.</code></td><td>All meals during event.</td><td nowrap>true</td></tr>
      * </table>
      */
-    Meals_Included__c: string;
+    Meals_Included__c?: string;
     /**
      * <h3><b>Minimal # Participants reached?</b></h3>
      * <h4>Field Attributes</h4>
@@ -2846,7 +2847,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">of_Event_Attendees__c  &gt;=  Minimal_Participants_required__c</code></td></tr>
      * </table>
      */
-    Minimal_Participants_reached__c: boolean;
+    Minimal_Participants_reached__c?: boolean;
     /**
      * <h3><b>Minimal # Participants required</b></h3>
      * <h4>Field Attributes</h4>
@@ -2857,7 +2858,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Minimal_Participants_required__c: number;
+    Minimal_Participants_required__c?: number;
     /**
      * <h3><b>MISE EN FORME (FR)</b></h3>
      * <p>To be used for PREP in France</p>
@@ -2867,7 +2868,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    MISE_EN_FORME_FR__c: boolean;
+    MISE_EN_FORME_FR__c?: boolean;
     /**
      * <h3><b>Multiple Sessions - Logistics Details</b></h3>
      * <h4>Field Attributes</h4>
@@ -2876,7 +2877,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Multiple_Sessions_Logistics_Details__c: boolean;
+    Multiple_Sessions_Logistics_Details__c?: boolean;
     /**
      * <h3><b>My Campaigns (Campaign Coordinator)</b></h3>
      * <h4>Field Attributes</h4>
@@ -2888,7 +2889,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    My_Campaigns_Campaign_Coordinator__c: number;
+    My_Campaigns_Campaign_Coordinator__c?: number;
     /**
      * <h3><b>NA: Co-Sponsor of Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -2897,7 +2898,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Co_Sponsor_of_Event__c: string;
+    NA_Co_Sponsor_of_Event__c?: string;
     /**
      * <h3><b>NA: Co-Sponsor of Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -2906,7 +2907,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NA_Co_Sponsor_of_Event__r: Account;
+    NA_Co_Sponsor_of_Event__r?: Account;
     /**
      * <h3><b>NA: Initiative</b></h3>
      * <h4>Field Attributes</h4>
@@ -2924,7 +2925,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Specialist Education</code></td><td>Specialist Education</td><td nowrap>true</td></tr>
      * </table>
      */
-    NA_Initiative__c: string;
+    NA_Initiative__c?: string;
     /**
      * <h3><b>NA: Materials</b></h3>
      * <h4>Field Attributes</h4>
@@ -2941,7 +2942,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Quickscreen and/or 10 ft pop-up</code></td><td>Quickscreen and/or 10 ft pop-up</td><td nowrap>true</td></tr>
      * </table>
      */
-    NA_Materials__c: string;
+    NA_Materials__c?: string;
     /**
      * <h3><b>NA: Program Module</b></h3>
      * <h4>Field Attributes</h4>
@@ -2963,8 +2964,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Custom program (requires RM and Director approval)</code></td><td>Custom program (requires RM and Director approval)</td><td nowrap>true</td></tr>
      * </table>
      */
-    NA_Program_Module__c: string;
-    Name: string;
+    NA_Program_Module__c?: string;
+    Name?: string;
     /**
      * <h3><b>Name of Venue</b></h3>
      * <p>Used for the Activity Request form in North America, populated by the DM. Workflow updates the Venue Lookup field</p>
@@ -2976,7 +2977,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Name_of_Venue__c: string;
+    Name_of_Venue__c?: string;
     /**
      * <h3><b>Notify Dealer Sales Rep by Email?</b></h3>
      * <h4>Field Attributes</h4>
@@ -2985,14 +2986,14 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Notify_Dealer_Sales_Rep_by_Email__c: string;
-    NumberOfContacts: number;
-    NumberOfConvertedLeads: number;
-    NumberOfLeads: number;
-    NumberOfOpportunities: number;
-    NumberOfResponses: number;
-    NumberOfWonOpportunities: number;
-    NumberSent: number;
+    Notify_Dealer_Sales_Rep_by_Email__c?: string;
+    NumberOfContacts?: number;
+    NumberOfConvertedLeads?: number;
+    NumberOfLeads?: number;
+    NumberOfOpportunities?: number;
+    NumberOfResponses?: number;
+    NumberOfWonOpportunities?: number;
+    NumberSent?: number;
     /**
      * <h3><b>OBTURATION CALAMUS/BEEFILL (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3003,7 +3004,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OBTURATION_CALAMUS_BEEFILL_FR__c: number;
+    OBTURATION_CALAMUS_BEEFILL_FR__c?: number;
     /**
      * <h3><b>OBTURATION (FR)</b></h3>
      * <p>To be used for PREP in France</p>
@@ -3013,7 +3014,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    OBTURATION_FR__c: boolean;
+    OBTURATION_FR__c?: boolean;
     /**
      * <h3><b>OBTURATION OBTURATORS (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3024,7 +3025,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OBTURATION_OBTURATORS_FR__c: number;
+    OBTURATION_OBTURATORS_FR__c?: number;
     /**
      * <h3><b>OBTURATION POST SPACE BUR (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3035,7 +3036,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OBTURATION_POST_SPACE_BUR_FR__c: number;
+    OBTURATION_POST_SPACE_BUR_FR__c?: number;
     /**
      * <h3><b>OBTURATION RANGE TO CHECK (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3046,7 +3047,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OBTURATION_RANGE_TO_CHECK_FR__c: number;
+    OBTURATION_RANGE_TO_CHECK_FR__c?: number;
     /**
      * <h3><b>OBTURATION TANKS THERMAPREP (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3057,7 +3058,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OBTURATION_TANKS_THERMAPREP_FR__c: number;
+    OBTURATION_TANKS_THERMAPREP_FR__c?: number;
     /**
      * <h3><b>OBTURATION THERMACUT (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3068,7 +3069,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OBTURATION_THERMACUT_FR__c: number;
+    OBTURATION_THERMACUT_FR__c?: number;
     /**
      * <h3><b>OBTURATION THERMAFILS (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3079,7 +3080,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OBTURATION_THERMAFILS_FR__c: number;
+    OBTURATION_THERMAFILS_FR__c?: number;
     /**
      * <h3><b>OBTURATION TOP SEAL (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3090,7 +3091,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OBTURATION_TOP_SEAL_FR__c: number;
+    OBTURATION_TOP_SEAL_FR__c?: number;
     /**
      * <h3><b># of Available Seats</b></h3>
      * <h4>Field Attributes</h4>
@@ -3102,7 +3103,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Available_Event_Seats__c: number;
+    of_Available_Event_Seats__c?: number;
     /**
      * <h3><b># of Participants</b></h3>
      * <h4>Field Attributes</h4>
@@ -3115,7 +3116,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    of_Event_Attendees__c: number;
+    of_Event_Attendees__c?: number;
     /**
      * <h3><b>Registrants / Capacity</b></h3>
      * <h4>Field Attributes</h4>
@@ -3126,7 +3127,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Event_Seats__c: number;
+    of_Event_Seats__c?: number;
     /**
      * <h3><b># of HQ Hannau Coordinators involved</b></h3>
      * <p>Summarize the number of users involved as either Coordinator, HQ Coordinator or HQ (second) Coordinator - belonging to the HQ Hannau office.</p>
@@ -3139,7 +3140,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_HQ_Hannau_Coordinators_involved__c: number;
+    of_HQ_Hannau_Coordinators_involved__c?: number;
     /**
      * <h3><b># of HQ Mannheim Coordinators involved</b></h3>
      * <p>Summarize the number of users involved as either Coordinator, HQ Coordinator or HQ (second) Coordinator - belonging to the HQ Mannheim office.</p>
@@ -3152,7 +3153,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_HQ_Mannheim_Coordinators_involved__c: number;
+    of_HQ_Mannheim_Coordinators_involved__c?: number;
     /**
      * <h3><b># of Material Moteurs NSK (FR)</b></h3>
      * <p>To be used for PREP in France</p>
@@ -3164,7 +3165,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Material_Moteurs_NSK_FR__c: string;
+    of_Material_Moteurs_NSK_FR__c?: string;
     /**
      * <h3><b># of Material Moteurs XS (FR)</b></h3>
      * <p>To be used for PREP in France</p>
@@ -3176,7 +3177,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Material_Moteurs_XS__c: string;
+    of_Material_Moteurs_XS__c?: string;
     /**
      * <h3><b># of Material Moteurs XS+ (FR)</b></h3>
      * <p>To be used for PREP in France</p>
@@ -3188,7 +3189,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Material_Moteurs_XSS__c: string;
+    of_Material_Moteurs_XSS__c?: string;
     /**
      * <h3><b># of Material Thermaprep (FR)</b></h3>
      * <p>To be used for PREP in France</p>
@@ -3200,7 +3201,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Material_Thermaprep_FR__c: string;
+    of_Material_Thermaprep_FR__c?: string;
     /**
      * <h3><b># of Occupied Seats</b></h3>
      * <h4>Field Attributes</h4>
@@ -3212,7 +3213,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    of_Occupied_Event_Seats__c: number;
+    of_Occupied_Event_Seats__c?: number;
     /**
      * <h3><b># of Participants (Reported)</b></h3>
      * <p>This field is used to add the number of participants in the occasions when DI will not have access to the names of the participants. This would include Campaigns in dealer markets where we sponsor with speakers etc. When names exists they should be added as Campaign Members</p>
@@ -3224,7 +3225,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Participants_Reported__c: number;
+    of_Participants_Reported__c?: number;
     /**
      * <h3><b>Open Program - Post on Website?</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -3234,7 +3235,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Open_Program_Post_on_Website__c: boolean;
+    Open_Program_Post_on_Website__c?: boolean;
     /**
      * <h3><b>Organizer additional information (AT)</b></h3>
      * <p>Information concerning the organizer(s)</p>
@@ -3244,7 +3245,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Organizer_additional_information_AT__c: string;
+    Organizer_additional_information_AT__c?: string;
     /**
      * <h3><b>Other - TO BE DELETED</b></h3>
      * <p>Delete Q3 2017 if not used</p>
@@ -3255,7 +3256,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Other__c: number;
+    Other__c?: number;
     /**
      * <h3><b>Other/Uncategorized (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3268,7 +3269,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Other_Actual__c: number;
+    Other_Actual__c?: number;
     /**
      * <h3><b>Other/Uncategorized (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3277,7 +3278,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_Budget__c: number;
+    Other_Budget__c?: number;
     /**
      * <h3><b>Other Cost Notes</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -3286,7 +3287,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Other_Cost_Notes__c: string;
+    Other_Cost_Notes__c?: string;
     /**
      * <h3><b>Other equipment Name (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -3298,7 +3299,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_equipment_Name_FR__c: string;
+    Other_equipment_Name_FR__c?: string;
     /**
      * <h3><b>Other equipment Number (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -3310,7 +3311,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_equipment_Number_FR__c: string;
+    Other_equipment_Number_FR__c?: string;
     /**
      * <h3><b>Other equipment Quantity (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -3322,7 +3323,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_equipment_Quantity_FR__c: string;
+    Other_equipment_Quantity_FR__c?: string;
     /**
      * <h3><b>Other Implant Companies in the Area</b></h3>
      * <p>Used for the Activity Request form in North America</p>
@@ -3334,7 +3335,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_Implant_Companies_in_the_Area__c: string;
+    Other_Implant_Companies_in_the_Area__c?: string;
     /**
      * <h3><b>Other Material (Quantity and Name)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3342,7 +3343,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    OTHER_MATERIAL_QUANTITY_AND_NAME__c: string;
+    OTHER_MATERIAL_QUANTITY_AND_NAME__c?: string;
     /**
      * <h3><b>Overall Agreement</b></h3>
      * <h4>Field Attributes</h4>
@@ -3351,8 +3352,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Overall_Agreement__c: boolean;
-    Owner: User;
+    Overall_Agreement__c?: boolean;
+    Owner?: User;
     /**
      * <h3><b>Owner Region</b></h3>
      * <h4>Field Attributes</h4>
@@ -3364,7 +3365,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Owner_Region__c: string;
+    Owner_Region__c?: string;
     /**
      * <h3><b>Owner User Country</b></h3>
      * <p>The Owners&#39; User Country. Use in reports to split campaigns by country</p>
@@ -3377,8 +3378,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Owner_User_Country__c: string;
-    OwnerId: string;
+    Owner_User_Country__c?: string;
+    OwnerId?: string;
     /**
      * <h3><b>Pack Empreinte (FR)</b></h3>
      * <p>Used only in France</p>
@@ -3388,7 +3389,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Pack_Empreinte_FR__c: boolean;
+    Pack_Empreinte_FR__c?: boolean;
     /**
      * <h3><b>Pack Hygiene (FR)</b></h3>
      * <p>Used only in France</p>
@@ -3398,8 +3399,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Pack_Hygiene_FR__c: boolean;
-    Parent: Campaign;
+    Pack_Hygiene_FR__c?: boolean;
+    Parent?: Campaign;
     /**
      * <h3><b>Parent Campaign</b></h3>
      * <p>Link the Campaign to an overall Parent Campaign. Used for e.g. large congresses, road-shows or modular courses to collect several Campaigns under one &quot;umbrella&quot;.</p>
@@ -3409,7 +3410,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Campaign_DI__c: string;
+    Parent_Campaign_DI__c?: string;
     /**
      * <h3><b>Parent Campaign</b></h3>
      * <p>Link the Campaign to an overall Parent Campaign. Used for e.g. large congresses, road-shows or modular courses to collect several Campaigns under one &quot;umbrella&quot;.</p>
@@ -3419,7 +3420,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Campaign_DI__r: Campaign;
+    Parent_Campaign_DI__r?: Campaign;
     /**
      * <h3><b>Parent Campaign ID</b></h3>
      * <p>Displays the Parent Campaign ID. Used for custom links reports at the Parent Campaign</p>
@@ -3432,7 +3433,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Campaign_ID_DI__c: string;
+    Parent_Campaign_ID_DI__c?: string;
     /**
      * <h3><b>Campaign</b></h3>
      * <p>Used on sessions to show what Campaign is the parent Campaign</p>
@@ -3442,7 +3443,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Event__c: string;
+    Parent_Event__c?: string;
     /**
      * <h3><b>Campaign</b></h3>
      * <p>Used on sessions to show what Campaign is the parent Campaign</p>
@@ -3452,8 +3453,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Event__r: Campaign;
-    ParentId: string;
+    Parent_Event__r?: Campaign;
+    ParentId?: string;
     /**
      * <h3><b>Participating Accounts</b></h3>
      * <p>For internal use only</p>
@@ -3462,7 +3463,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Participating_Accounts__c: string;
+    Participating_Accounts__c?: string;
     /**
      * <h3><b>Participation Fees (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3475,7 +3476,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Participation_Fees_Actual__c: number;
+    Participation_Fees_Actual__c?: number;
     /**
      * <h3><b>Participation Fees (Actual)</b></h3>
      * <p>Formula to use get a postive value for Participation fees</p>
@@ -3486,7 +3487,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Participation_Fees_Actual_Formula__c: number;
+    Participation_Fees_Actual_Formula__c?: number;
     /**
      * <h3><b>Participation Fees (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3495,7 +3496,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Participation_Fees_Budget__c: number;
+    Participation_Fees_Budget__c?: number;
     /**
      * <h3><b>Partner Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -3510,7 +3511,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    PartnerEvent__c: string;
+    PartnerEvent__c?: string;
     /**
      * <h3><b>Partner Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -3521,7 +3522,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PartnerName__c: string;
+    PartnerName__c?: string;
     /**
      * <h3><b>Pig Jaws (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -3530,7 +3531,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Pig_Jaws_FR__c: string;
+    Pig_Jaws_FR__c?: string;
     /**
      * <h3><b>Planner E-Mail</b></h3>
      * <p>CVENT Event Planner First Name</p>
@@ -3542,7 +3543,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Planner_E_Mail__c: string;
+    Planner_E_Mail__c?: string;
     /**
      * <h3><b>Planner First Name</b></h3>
      * <p>CVENT Event Planner First Name</p>
@@ -3554,7 +3555,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Planner_First_Name__c: string;
+    Planner_First_Name__c?: string;
     /**
      * <h3><b>Planner Last Name</b></h3>
      * <p>CVENT Event Planner First Name</p>
@@ -3566,7 +3567,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Planner_Last_Name__c: string;
+    Planner_Last_Name__c?: string;
     /**
      * <h3><b>Planning Status</b></h3>
      * <p>CVENT Planning Status</p>
@@ -3578,7 +3579,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Planning_Status__c: string;
+    Planning_Status__c?: string;
     /**
      * <h3><b>Post event registration to council (FR)</b></h3>
      * <p>Fill in after an event if you sent the regulatory information to the order council</p>
@@ -3588,7 +3589,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Post_event_registration_to_council__c: boolean;
+    Post_event_registration_to_council__c?: boolean;
     /**
      * <h3><b>Preferred Program Date/s</b></h3>
      * <h4>Field Attributes</h4>
@@ -3599,7 +3600,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Preferred_Program_Dates__c: string;
+    Preferred_Program_Dates__c?: string;
     /**
      * <h3><b>Preferred Program Length</b></h3>
      * <h4>Field Attributes</h4>
@@ -3611,7 +3612,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;Please enter preferred program length.&quot;</code></td></tr>
      * </table>
      */
-    Preferred_Program_Lenght__c: string;
+    Preferred_Program_Lenght__c?: string;
     /**
      * <h3><b>PREP BRAND (FR)</b></h3>
      * <p>To be used for PREP in France</p>
@@ -3630,7 +3631,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">PTU RTE</code></td><td>PTU RTE</td><td nowrap>true</td></tr>
      * </table>
      */
-    PREP__c: string;
+    PREP__c?: string;
     /**
      * <h3><b>Primary Contact Person at Venue</b></h3>
      * <h4>Field Attributes</h4>
@@ -3639,7 +3640,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Contact_Person_at_Venue__c: string;
+    Primary_Contact_Person_at_Venue__c?: string;
     /**
      * <h3><b>Primary Contact Person at Venue</b></h3>
      * <h4>Field Attributes</h4>
@@ -3648,7 +3649,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Contact_Person_at_Venue__r: Contact;
+    Primary_Contact_Person_at_Venue__r?: Contact;
     /**
      * <h3><b>Primary Hotel</b></h3>
      * <h4>Field Attributes</h4>
@@ -3657,7 +3658,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Hotel__c: string;
+    Primary_Hotel__c?: string;
     /**
      * <h3><b>Primary Hotel</b></h3>
      * <h4>Field Attributes</h4>
@@ -3666,7 +3667,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Primary_Hotel__r: Account;
+    Primary_Hotel__r?: Account;
     /**
      * <h3><b>Primary Language</b></h3>
      * <h4>Field Attributes</h4>
@@ -3691,7 +3692,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Swedish</code></td><td>Swedish</td><td nowrap>true</td></tr>
      * </table>
      */
-    Primary_Language__c: string;
+    Primary_Language__c?: string;
     /**
      * <h3><b>Mailing and Printing Cost Notes</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -3700,7 +3701,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Printing_and_Mailing_Cost_Notes__c: string;
+    Printing_and_Mailing_Cost_Notes__c?: string;
     /**
      * <h3><b>Product Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -3717,7 +3718,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Urology (UK)</code></td><td>Urology (UK)</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
+    Product_Area__c?: string;
     /**
      * <h3><b>Product Focus (CDCM)</b></h3>
      * <p>Product list for users to pick the focus of the Campaign. This list is intended to be a copy of the list for CFEs, and dependent on country (Campaign Owner Country) - just as a CFE is dependent on Assigned To Country.</p>
@@ -3740,7 +3741,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">InFire HTC</code></td><td>InFire HTC</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Focus_CDCM__c: string;
+    Product_Focus_CDCM__c?: string;
     /**
      * <h3><b>Product Focus (ENDO)</b></h3>
      * <p>Product list for users to pick the focus of the Campaign. This list is intended to be a copy of the list for CFEs, and dependent on country (Campaign Owner Country) - just as a CFE is dependent on Assigned To Country.</p>
@@ -3791,7 +3792,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">WaveOne Gold</code></td><td>WaveOne Gold</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Focus_ENDO__c: string;
+    Product_Focus_ENDO__c?: string;
     /**
      * <h3><b>Product Focus (IMAG)</b></h3>
      * <p>Product list for users to pick the focus of the Campaign. This list is intended to be a copy of the list for CFEs, and dependent on country (Campaign Owner Country) - just as a CFE is dependent on Assigned To Country.</p>
@@ -3808,7 +3809,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Intra Oral</code></td><td>Intra Oral</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Focus_IMAG__c: string;
+    Product_Focus_IMAG__c?: string;
     /**
      * <h3><b>Product Focus (INST)</b></h3>
      * <p>Product list for users to pick the focus of the Campaign. This list is intended to be a copy of the list for CFEs, and dependent on country (Campaign Owner Country) - just as a CFE is dependent on Assigned To Country.</p>
@@ -3825,7 +3826,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Instrument</code></td><td>Instrument</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Focus_INST__c: string;
+    Product_Focus_INST__c?: string;
     /**
      * <h3><b>Product Focus (ORTH)</b></h3>
      * <p>Product list for users to pick the focus of the Campaign. This list is intended to be a copy of the list for CFEs, and dependent on country (Campaign Owner Country) - just as a CFE is dependent on Assigned To Country.</p>
@@ -3939,7 +3940,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Zirbra</code></td><td>Zirbra</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Focus_ORTH__c: string;
+    Product_Focus_ORTH__c?: string;
     /**
      * <h3><b>Product Focus (PREV)</b></h3>
      * <p>Product list for users to pick the focus of the Campaign. This list is intended to be a copy of the list for CFEs, and dependent on country (Campaign Owner Country) - just as a CFE is dependent on Assigned To Country.</p>
@@ -3967,7 +3968,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">PS3400 - 25K</code></td><td>PS3400 - 25K</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Focus_PREV__c: string;
+    Product_Focus_PREV__c?: string;
     /**
      * <h3><b>Product Focus (PROS)</b></h3>
      * <p>Product list for users to pick the focus of the Campaign. This list is intended to be a copy of the list for CFEs, and dependent on organizing country (Campaign Owner Country) - just as a CFE is dependent on Assigned To Country.</p>
@@ -4027,7 +4028,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Universal Stain&Glaze</code></td><td>DS Universal Stain&amp;Glaze</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Focus_PROS__c: string;
+    Product_Focus_PROS__c?: string;
     /**
      * <h3><b>Product Focus (REST)</b></h3>
      * <p>Product list for users to pick the focus of the Campaign. This list is intended to be a copy of the list for CFEs, and dependent on country (Campaign Owner Country) - just as a CFE is dependent on Assigned To Country.</p>
@@ -4075,7 +4076,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">V4</code></td><td>V4</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Focus_REST__c: string;
+    Product_Focus_REST__c?: string;
     /**
      * <h3><b>Product Focus (TRCE)</b></h3>
      * <p>Product list for users to pick the focus of the Campaign. This list is intended to be a copy of the list for CFEs, and dependent on country (Campaign Owner Country) - just as a CFE is dependent on Assigned To Country.</p>
@@ -4092,7 +4093,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Intego/Intego Pro</code></td><td>Intego/Intego Pro</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Focus_TRCE__c: string;
+    Product_Focus_TRCE__c?: string;
     /**
      * <h3><b>Products</b></h3>
      * <h4>Field Attributes</h4>
@@ -4102,7 +4103,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Products__c: number;
+    Products__c?: number;
     /**
      * <h3><b>Target Contacts</b></h3>
      * <h4>Field Attributes</h4>
@@ -4154,7 +4155,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Coordinator</code></td><td>Treatment Coordinator</td><td nowrap>true</td></tr>
      * </table>
      */
-    Profession__c: string;
+    Profession__c?: string;
     /**
      * <h3><b>Profession Added</b></h3>
      * <p>Checks if Profession is used on the Campaign</p>
@@ -4164,7 +4165,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( ISBLANK(Profession__c) , false, true)</code></td></tr>
      * </table>
      */
-    Profession_added_DQ__c: boolean;
+    Profession_added_DQ__c?: boolean;
     /**
      * <h3><b>Profile EV</b></h3>
      * <p>Fill in this value if OsseoSpeed Profile EV is used on the Campaign</p>
@@ -4174,7 +4175,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Profile_EV__c: boolean;
+    Profile_EV__c?: boolean;
     /**
      * <h3><b>Program</b></h3>
      * <h4>Field Attributes</h4>
@@ -4182,7 +4183,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Program__c: string;
+    Program__c?: string;
     /**
      * <h3><b>Presentation End Time</b></h3>
      * <p>Used for the Activity Request form in North America</p>
@@ -4194,7 +4195,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Program_End__c: string;
+    Program_End__c?: string;
     /**
      * <h3><b>Program Goals and Topics</b></h3>
      * <h4>Field Attributes</h4>
@@ -4203,7 +4204,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Program_Goals_and_Topics__c: string;
+    Program_Goals_and_Topics__c?: string;
     /**
      * <h3><b>Presentation Start Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -4214,7 +4215,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Program_Start__c: string;
+    Program_Start__c?: string;
     /**
      * <h3><b>Project ID</b></h3>
      * <p>This is a unique SFDC generated Number. It can be used a a subset of an External ID. Using this # the Campaign External ID (or other field where this is used) will be unique.</p>
@@ -4225,7 +4226,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Project_ID__c: string;
+    Project_ID__c?: string;
     /**
      * <h3><b>Promotion information</b></h3>
      * <h4>Field Attributes</h4>
@@ -4233,7 +4234,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1000)</td></tr>
      * </table>
      */
-    Promotion_information__c: string;
+    Promotion_information__c?: string;
     /**
      * <h3><b>Promotion Program</b></h3>
      * <h4>Field Attributes</h4>
@@ -4248,7 +4249,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">GET Promotion CE Program</code></td><td>GET Promotion CE Program</td><td nowrap>true</td></tr>
      * </table>
      */
-    Promotion_Program__c: string;
+    Promotion_Program__c?: string;
     /**
      * <h3><b>Prosthetic hands-on (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -4266,7 +4267,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AVANCEE</code></td><td>AVANCEE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Prosthetic_hands_on_FR__c: string;
+    Prosthetic_hands_on_FR__c?: string;
     /**
      * <h3><b>R£LAX Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -4275,7 +4276,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CONTAINS(UPPER(Name),&quot;R£LAX&quot;)</code></td></tr>
      * </table>
      */
-    R_LAX_Event__c: boolean;
+    R_LAX_Event__c?: boolean;
     /**
      * <h3><b>Record Type ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -4287,9 +4288,9 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Record_Type_ID__c: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
+    Record_Type_ID__c?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Reference Person at MC</b></h3>
      * <h4>Field Attributes</h4>
@@ -4300,7 +4301,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Reference_Person_at_MC__c: string;
+    Reference_Person_at_MC__c?: string;
     /**
      * <h3><b>Registrants / Capacity</b></h3>
      * <h4>Field Attributes</h4>
@@ -4311,7 +4312,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RegistrantsCapacity__c: string;
+    RegistrantsCapacity__c?: string;
     /**
      * <h3><b>Registration Deadline Date</b></h3>
      * <p>CVENT Registration Deadline Date</p>
@@ -4321,7 +4322,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Registration_Deadline_Date__c: Date;
+    Registration_Deadline_Date__c?: Date;
     /**
      * <h3><b>Registration End Time</b></h3>
      * <p>Used for the Activity Request form in North America</p>
@@ -4333,7 +4334,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Registration_Time_End__c: string;
+    Registration_Time_End__c?: string;
     /**
      * <h3><b>Registration Start Time</b></h3>
      * <p>Used for the Activity Request form in North America</p>
@@ -4345,7 +4346,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Registration_Time_Start__c: string;
+    Registration_Time_Start__c?: string;
     /**
      * <h3><b>Remaining Registration Capacity</b></h3>
      * <p>&quot;Remaining Capacity&quot; is the result of subtracting the &quot;Number of Registrants&quot; (comprising all campaign members with accepted status) from the &quot;Registrants / Capacity.&quot;</p>
@@ -4358,8 +4359,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RemainingRegistrationCapacity__c: number;
-    ReplayId: string;
+    RemainingRegistrationCapacity__c?: number;
+    ReplayId?: string;
     /**
      * <h3><b>Reply To Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -4370,7 +4371,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ReplyToEmail__c: string;
+    ReplyToEmail__c?: string;
     /**
      * <h3><b>reported group (DE)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4382,7 +4383,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    reported_group_DE__c: string;
+    reported_group_DE__c?: string;
     /**
      * <h3><b>Responsible Sales Team</b></h3>
      * <h4>Field Attributes</h4>
@@ -4391,7 +4392,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Responsible_Sales_Team__c: string;
+    Responsible_Sales_Team__c?: string;
     /**
      * <h3><b>REST Material (FR)</b></h3>
      * <p>To be used for France PREP SBU</p>
@@ -4416,7 +4417,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Rinn XCP</code></td><td>Rinn XCP</td><td nowrap>true</td></tr>
      * </table>
      */
-    REST_Material_FR__c: string;
+    REST_Material_FR__c?: string;
     /**
      * <h3><b>RSVP by (AU)</b></h3>
      * <p>Last date to cancel</p>
@@ -4426,7 +4427,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RSVP_by_AU__c: Date;
+    RSVP_by_AU__c?: Date;
     /**
      * <h3><b>RSVP deadline</b></h3>
      * <h4>Field Attributes</h4>
@@ -4435,7 +4436,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RSVP_deadline__c: Date;
+    RSVP_deadline__c?: Date;
     /**
      * <h3><b>RSVP to</b></h3>
      * <h4>Field Attributes</h4>
@@ -4451,7 +4452,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Co-sponsor (provide name)</code></td><td>Co-sponsor (provide name)</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    RSVP_to__c: string;
+    RSVP_to__c?: string;
     /**
      * <h3><b>RTE C = 018 Range (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4462,7 +4463,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RTE_C_018_Range__c: number;
+    RTE_C_018_Range__c?: number;
     /**
      * <h3><b>RTE C+021 r (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4473,7 +4474,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RTE_C_021_r_FR__c: number;
+    RTE_C_021_r_FR__c?: number;
     /**
      * <h3><b>RTE C+025 ASS (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4484,7 +4485,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RTE_C_025_ASS_FR__c: number;
+    RTE_C_025_ASS_FR__c?: number;
     /**
      * <h3><b>RTE D1 Proteper (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4495,7 +4496,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RTE_D1_Proteper_FR__c: number;
+    RTE_D1_Proteper_FR__c?: number;
     /**
      * <h3><b>RTE D2 Proteper (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4506,7 +4507,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RTE_D2_Proteper_FR__c: number;
+    RTE_D2_Proteper_FR__c?: number;
     /**
      * <h3><b>RTE D3 Proteper (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4517,7 +4518,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RTE_D3_Proteper_FR__c: number;
+    RTE_D3_Proteper_FR__c?: number;
     /**
      * <h3><b>RTE RETRAIT ASS (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4528,7 +4529,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RTE_RETRAIT_ASS_FR__c: number;
+    RTE_RETRAIT_ASS_FR__c?: number;
     /**
      * <h3><b>SBU</b></h3>
      * <p>Used to track which SBU the Campaigns target for promotion/training.</p>
@@ -4555,7 +4556,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Midwest</code></td><td>Midwest</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBU_Focus__c: string;
+    SBU_Focus__c?: string;
     /**
      * <h3><b>Scalpels (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4564,7 +4565,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Scalpels_FR__c: string;
+    Scalpels_FR__c?: string;
     /**
      * <h3><b>Scientific thema (FR)</b></h3>
      * <p>A free text field used to enter Campaign specific information about Scientific thema</p>
@@ -4574,7 +4575,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Scientific_thema_FR__c: string;
+    Scientific_thema_FR__c?: string;
     /**
      * <h3><b>Scope</b></h3>
      * <p>TFUS-000004477</p>
@@ -4590,7 +4591,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Regional</code></td><td>Regional</td><td nowrap>true</td></tr>
      * </table>
      */
-    Scope__c: string;
+    Scope__c?: string;
     /**
      * <h3><b>Secondary Campaign Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -4599,7 +4600,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Secondary_Campaign_Owner__c: string;
+    Secondary_Campaign_Owner__c?: string;
     /**
      * <h3><b>Secondary Campaign Owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -4608,7 +4609,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Secondary_Campaign_Owner__r: User;
+    Secondary_Campaign_Owner__r?: User;
     /**
      * <h3><b>Session: Campaign Audience - TO BE DELET</b></h3>
      * <p>Copy of Campaign Audience field to session to be used in email templates.
@@ -4622,7 +4623,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Campaign_Audience__c: string;
+    Session_Campaign_Audience__c?: string;
     /**
      * <h3><b>Session: Campaign City - TO BE DELETED</b></h3>
      * <p>Delete Q3 2017 if not used</p>
@@ -4635,7 +4636,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Campaign_City__c: string;
+    Session_Campaign_City__c?: string;
     /**
      * <h3><b>Session: Campaign Country - TBD</b></h3>
      * <p>Session Country as entered on Campaign Country the Campaign parent.
@@ -4649,7 +4650,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Campaign_Country__c: string;
+    Session_Campaign_Country__c?: string;
     /**
      * <h3><b>Session: Campaign Est # of particip.TBD</b></h3>
      * <p>Created as a copy of the Campaign Est # of participants of the Parent Campaign to be able to include in an email template to send to the Speaker.
@@ -4663,7 +4664,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Campaign_Est_of_participants__c: number;
+    Session_Campaign_Est_of_participants__c?: number;
     /**
      * <h3><b>Session: Campaign Name - TBD</b></h3>
      * <p>Copy of Campaign Name on Campaign Session to be used on Email Templates.
@@ -4677,7 +4678,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Campaign_Name__c: string;
+    Session_Campaign_Name__c?: string;
     /**
      * <h3><b>Session: Campaign Start Date - TBD</b></h3>
      * <p>Copy of Campaign Start Date to session to be used on email templates.
@@ -4689,7 +4690,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Campaign_Start_Date__c: Date;
+    Session_Campaign_Start_Date__c?: Date;
     /**
      * <h3><b>Session End Date &amp; Time</b></h3>
      * <p>Used by HQ T&amp;E</p>
@@ -4699,7 +4700,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_End_Date_Time__c: string;
+    Session_End_Date_Time__c?: string;
     /**
      * <h3><b>Session Length</b></h3>
      * <h4>Field Attributes</h4>
@@ -4710,7 +4711,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Length__c: number;
+    Session_Length__c?: number;
     /**
      * <h3><b>Session Lenght (Calculated)</b></h3>
      * <h4>Field Attributes</h4>
@@ -4722,7 +4723,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Length_Calculated__c: string;
+    Session_Length_Calculated__c?: string;
     /**
      * <h3><b>Session Length Unit</b></h3>
      * <h4>Field Attributes</h4>
@@ -4738,7 +4739,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">hour</code></td><td>hour</td><td nowrap>true</td></tr>
      * </table>
      */
-    Session_Length_Unit__c: string;
+    Session_Length_Unit__c?: string;
     /**
      * <h3><b># of Session Seats</b></h3>
      * <p>The maximum number of allowed participants for this session.</p>
@@ -4750,7 +4751,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Max_Occupancy__c: number;
+    Session_Max_Occupancy__c?: number;
     /**
      * <h3><b># of Occupied Session Seats</b></h3>
      * <p>The number of confirmed participants for this session.</p>
@@ -4761,7 +4762,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Session_Participant__c.Session__c</code></td></tr>
      * </table>
      */
-    Session_Occupancy__c: number;
+    Session_Occupancy__c?: number;
     /**
      * <h3><b>Session Start Date &amp; Time</b></h3>
      * <p>Use by HQ T&amp;E</p>
@@ -4771,7 +4772,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Start_Date_Time__c: string;
+    Session_Start_Date_Time__c?: string;
     /**
      * <h3><b>Session Topic</b></h3>
      * <h4>Field Attributes</h4>
@@ -4782,7 +4783,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Session_Topic__c: string;
+    Session_Topic__c?: string;
     /**
      * <h3><b>Session Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -4806,7 +4807,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Congress Activity</code></td><td>Congress Activity</td><td nowrap>true</td></tr>
      * </table>
      */
-    Session_Type_D__c: string;
+    Session_Type_D__c?: string;
     /**
      * <h3><b>Session Categorisation</b></h3>
      * <h4>Field Attributes</h4>
@@ -4822,7 +4823,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Continuous Education</code></td><td>Continuous Education</td><td nowrap>true</td></tr>
      * </table>
      */
-    SessionCategorisation__c: string;
+    SessionCategorisation__c?: string;
     /**
      * <h3><b>Shared Globally</b></h3>
      * <p>Indicates if the source event has attendees from different countries.</p>
@@ -4832,7 +4833,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SharedGlobally__c: boolean;
+    SharedGlobally__c?: boolean;
     /**
      * <h3><b>Simplant</b></h3>
      * <h4>Field Attributes</h4>
@@ -4841,7 +4842,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;Simplant&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    Simplant__c: boolean;
+    Simplant__c?: boolean;
     /**
      * <h3><b>Simultaneous Translation?</b></h3>
      * <p>Participants wear headphones, and the interpreter renders the speaker&#39;s words into the target language as he or she is speaking</p>
@@ -4851,7 +4852,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Simultaneous_Translation__c: boolean;
+    Simultaneous_Translation__c?: boolean;
     /**
      * <h3><b>Single Room Rate Per Night</b></h3>
      * <h4>Field Attributes</h4>
@@ -4860,7 +4861,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Single_Room_Rate_Per_Night__c: number;
+    Single_Room_Rate_Per_Night__c?: number;
     /**
      * <h3><b>Source/Origin</b></h3>
      * <h4>Field Attributes</h4>
@@ -4884,7 +4885,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Webinar</code></td><td>Webinar</td><td nowrap>true</td></tr>
      * </table>
      */
-    Source_Origin__c: string;
+    Source_Origin__c?: string;
     /**
      * <h3><b>Speaker</b></h3>
      * <p>Used by HQ T&amp;E.</p>
@@ -4894,7 +4895,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker__c: string;
+    Speaker__c?: string;
     /**
      * <h3><b>Speaker</b></h3>
      * <p>Used by HQ T&amp;E.</p>
@@ -4904,7 +4905,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker__r: Contact;
+    Speaker__r?: Contact;
     /**
      * <h3><b>Speaker Contract signed up (FR)</b></h3>
      * <p>To be used for PREP in France</p>
@@ -4914,7 +4915,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Speaker_Contract_signed_up_FR__c: boolean;
+    Speaker_Contract_signed_up_FR__c?: boolean;
     /**
      * <h3><b>Speaker Education</b></h3>
      * <p>To be used for HQ Marketing and filled in if the Campaign includes education for Speakers</p>
@@ -4924,7 +4925,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Speaker_Education__c: boolean;
+    Speaker_Education__c?: boolean;
     /**
      * <h3><b>Speaker: Flight Requirements OverseasTBD</b></h3>
      * <p>Overseas Flight Requirements as entered on the Speaker. Fomrula field to be able to include in Mail Merge Templates.
@@ -4938,7 +4939,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Flight_Req_Overseas__c: string;
+    Speaker_Flight_Req_Overseas__c?: string;
     /**
      * <h3><b>Speaker Hotel Recommendation</b></h3>
      * <h4>Field Attributes</h4>
@@ -4949,7 +4950,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Hotel_Recommendation__c: string;
+    Speaker_Hotel_Recommendation__c?: string;
     /**
      * <h3><b>Speaker: Mailing Address -TBD</b></h3>
      * <p>Mailing Street as input on the Speaker. Field to be able to include the information on a mail merge template.
@@ -4963,7 +4964,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Mailing_Address__c: string;
+    Speaker_Mailing_Address__c?: string;
     /**
      * <h3><b>Speaker: Mailing City - TBD</b></h3>
      * <p>Mailing City as inpu on the Speaker. Formula field to be able to include information on a mail merge template.
@@ -4977,7 +4978,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Mailing_City__c: string;
+    Speaker_Mailing_City__c?: string;
     /**
      * <h3><b>Speaker: Mailing P.Code - TBD</b></h3>
      * <p>Mailing Postal Code as input on the Speaker. Formula field to be able to include information on a mail merge template.
@@ -4991,7 +4992,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Mailing_Postal_Code__c: string;
+    Speaker_Mailing_Postal_Code__c?: string;
     /**
      * <h3><b>Speaker Requested</b></h3>
      * <p>Used for the North America Activity Request Form</p>
@@ -5003,7 +5004,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Requested__c: string;
+    Speaker_Requested__c?: string;
     /**
      * <h3><b>Speaker&#39;s Flight to Arrive Deadline</b></h3>
      * <p>Used for the Activity Request form in North America</p>
@@ -5015,7 +5016,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_s_Flight_to_Arrive_Deadline__c: string;
+    Speaker_s_Flight_to_Arrive_Deadline__c?: string;
     /**
      * <h3><b>Speaker:Salutation - TBD</b></h3>
      * <p>Salutation as entered on the Speaker. Formula field to be able to include field on mail merge.
@@ -5029,7 +5030,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Salutation__c: string;
+    Speaker_Salutation__c?: string;
     /**
      * <h3><b>Speaker: Title - TBD</b></h3>
      * <p>Ttile as input on Speaker. Formula field to be able to includ in mail merge.
@@ -5043,7 +5044,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Title__c: string;
+    Speaker_Title__c?: string;
     /**
      * <h3><b>Speaker Travel (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5056,7 +5057,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Speaker_Travel_Actual__c: number;
+    Speaker_Travel_Actual__c?: number;
     /**
      * <h3><b>Speaker Travel (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5065,7 +5066,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Travel_Budget__c: number;
+    Speaker_Travel_Budget__c?: number;
     /**
      * <h3><b>Speaker Travel Cost Notes</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -5074,7 +5075,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Speaker_Travel_Cost_Notes__c: string;
+    Speaker_Travel_Cost_Notes__c?: string;
     /**
      * <h3><b>Special Request Amount (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5083,7 +5084,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Special_Request_Amount_Budget__c: number;
+    Special_Request_Amount_Budget__c?: number;
     /**
      * <h3><b>Amount of Sponsorship Check</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -5093,7 +5094,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sponsorship_Amount__c: number;
+    Sponsorship_Amount__c?: number;
     /**
      * <h3><b>Standard Lecture Title</b></h3>
      * <h4>Field Attributes</h4>
@@ -5102,7 +5103,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Standard_Lecture_Title_D__c: string;
+    Standard_Lecture_Title_D__c?: string;
     /**
      * <h3><b>Standard Lecture Title</b></h3>
      * <h4>Field Attributes</h4>
@@ -5111,7 +5112,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Standard_Lecture_Title_D__r: Lecture__c;
+    Standard_Lecture_Title_D__r?: Lecture__c;
     /**
      * <h3><b>Standard Participation Fee</b></h3>
      * <p>The Standard Price of the Campaign excluding VAT. This does not mean that all participants pays this specific price</p>
@@ -5121,7 +5122,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Standard_Participation_Fee__c: number;
+    Standard_Participation_Fee__c?: number;
     /**
      * <h3><b>Standard Session Lenght</b></h3>
      * <h4>Field Attributes</h4>
@@ -5133,7 +5134,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Standard_Session_Lenght__c: string;
+    Standard_Session_Lenght__c?: string;
     /**
      * <h3><b>Start Year</b></h3>
      * <p>The Year the Campaign starts. Used in reports. Should not appear in any page layouts</p>
@@ -5146,9 +5147,9 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Start_Year__c: string;
-    StartDate: Date;
-    Status: string;
+    Start_Year__c?: string;
+    StartDate?: Date;
+    Status?: string;
     /**
      * <h3><b>Status of Campaign</b></h3>
      * <h4>Field Attributes</h4>
@@ -5160,7 +5161,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Status_of_Campaign__c: string;
+    Status_of_Campaign__c?: string;
     /**
      * <h3><b>STEPPS</b></h3>
      * <h4>Field Attributes</h4>
@@ -5169,7 +5170,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;STEPPS&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    STEPPS__c: boolean;
+    STEPPS__c?: boolean;
     /**
      * <h3><b>Strategy/Segment</b></h3>
      * <h4>Field Attributes</h4>
@@ -5192,7 +5193,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">High</code></td><td>High</td><td nowrap>true</td></tr>
      * </table>
      */
-    Strategy__c: string;
+    Strategy__c?: string;
     /**
      * <h3><b>Submitted for Marketing review</b></h3>
      * <p>TFUS-000005061</p>
@@ -5202,7 +5203,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Submitted_for_Marketing_review__c: boolean;
+    Submitted_for_Marketing_review__c?: boolean;
     /**
      * <h3><b>Sum Total Course Fee</b></h3>
      * <p>Roll-Up Summary field (SUM) for the Campaign Members&#39; &quot;Course Fee&quot;</p>
@@ -5214,7 +5215,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Summarized Field:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CampaignMember.Course_Fee__c</code></td></tr>
      * </table>
      */
-    Sum_Total_Course_Fee__c: number;
+    Sum_Total_Course_Fee__c?: number;
     /**
      * <h3><b>Surgical Drapes (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5223,7 +5224,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Surgical_Drapes_FR__c: string;
+    Surgical_Drapes_FR__c?: string;
     /**
      * <h3><b>Surgical hands-on on cadavers (FR)</b></h3>
      * <p>Surgical hands-on on cadavers</p>
@@ -5241,7 +5242,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AVANCEE</code></td><td>AVANCEE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Surgical_hands_on_on_cadavers_FR__c: string;
+    Surgical_hands_on_on_cadavers_FR__c?: string;
     /**
      * <h3><b>Surgical hands-on on models (FR)</b></h3>
      * <p>Used in France to bring equipment to Campaigns</p>
@@ -5259,7 +5260,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AVANCEE</code></td><td>AVANCEE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Surgical_hands_on_on_models_FR__c: string;
+    Surgical_hands_on_on_models_FR__c?: string;
     /**
      * <h3><b>Symbios</b></h3>
      * <h4>Field Attributes</h4>
@@ -5268,7 +5269,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;Symbios&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    Symbios__c: boolean;
+    Symbios__c?: boolean;
     /**
      * <h3><b>Synchronize to Eloqua?</b></h3>
      * <h4>Field Attributes</h4>
@@ -5277,7 +5278,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Synchronize_to_Eloqua__c: string;
+    Synchronize_to_Eloqua__c?: string;
     /**
      * <h3><b>Target Check - TBD</b></h3>
      * <p>Delete Q3 2017 if not used</p>
@@ -5290,7 +5291,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Target_Check__c: string;
+    Target_Check__c?: string;
     /**
      * <h3><b>Target Country</b></h3>
      * <p>Country/countries targeted for this campaign.</p>
@@ -5385,7 +5386,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yemen</code></td><td>Yemen</td><td nowrap>true</td></tr>
      * </table>
      */
-    Target_Country__c: string;
+    Target_Country__c?: string;
     /**
      * <h3><b>Target Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -5401,7 +5402,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Surgical</code></td><td>Surgical</td><td nowrap>true</td></tr>
      * </table>
      */
-    Target_Group__c: string;
+    Target_Group__c?: string;
     /**
      * <h3><b>Target Hub</b></h3>
      * <p>Field to show the target Region for the Campaign</p>
@@ -5424,7 +5425,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Southern Europe</code></td><td>Southern Europe</td><td nowrap>true</td></tr>
      * </table>
      */
-    Target_Hub__c: string;
+    Target_Hub__c?: string;
     /**
      * <h3><b>Target Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -5445,7 +5446,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dental Other (i.e. Hygienist etc.)</code></td><td>Dental Other (i.e. Hygienist etc.)</td><td nowrap>true</td></tr>
      * </table>
      */
-    Target_Type__c: string;
+    Target_Type__c?: string;
     /**
      * <h3><b>Target Type Added</b></h3>
      * <p>Checks if the field Target Type is used</p>
@@ -5455,7 +5456,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( ISBLANK(Target_Type__c ) , false, true)</code></td></tr>
      * </table>
      */
-    Target_Type_Added_DQ__c: boolean;
+    Target_Type_Added_DQ__c?: boolean;
     /**
      * <h3><b>Target Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -5474,7 +5475,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SEU</code></td><td>SEU</td><td nowrap>true</td></tr>
      * </table>
      */
-    TargetMarket__c: string;
+    TargetMarket__c?: string;
     /**
      * <h3><b>Target: Q1</b></h3>
      * <h4>Field Attributes</h4>
@@ -5483,7 +5484,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TargetQ1__c: number;
+    TargetQ1__c?: number;
     /**
      * <h3><b>Target: Q2</b></h3>
      * <h4>Field Attributes</h4>
@@ -5492,7 +5493,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TargetQ2__c: number;
+    TargetQ2__c?: number;
     /**
      * <h3><b>Target: Q3</b></h3>
      * <h4>Field Attributes</h4>
@@ -5501,7 +5502,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TargetQ3__c: number;
+    TargetQ3__c?: number;
     /**
      * <h3><b>Target: Q4</b></h3>
      * <h4>Field Attributes</h4>
@@ -5510,7 +5511,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TargetQ4__c: number;
+    TargetQ4__c?: number;
     /**
      * <h3><b>Target: Total Amount</b></h3>
      * <h4>Field Attributes</h4>
@@ -5520,7 +5521,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TargetTotalAmount__c: number;
+    TargetTotalAmount__c?: number;
     /**
      * <h3><b>Technical Advisor Requested</b></h3>
      * <h4>Field Attributes</h4>
@@ -5529,7 +5530,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Technical_Advisor_Requested__c: string;
+    Technical_Advisor_Requested__c?: string;
     /**
      * <h3><b>Technical Advisor Requested</b></h3>
      * <h4>Field Attributes</h4>
@@ -5538,7 +5539,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Technical_Advisor_Requested__r: User;
+    Technical_Advisor_Requested__r?: User;
     /**
      * <h3><b>Third Party Sponsorship (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5551,7 +5552,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Third_Party_Sponsorship_Actual__c: number;
+    Third_Party_Sponsorship_Actual__c?: number;
     /**
      * <h3><b>Third Party Sponsorship (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5560,7 +5561,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Third_Party_Sponsorship_Budget__c: number;
+    Third_Party_Sponsorship_Budget__c?: number;
     /**
      * <h3><b>Third Party Type</b></h3>
      * <p>Enter what type of 3rd Party partner that provides the Credits. Used for reporting.</p>
@@ -5579,7 +5580,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Third_Party_Type__c: string;
+    Third_Party_Type__c?: string;
     /**
      * <h3><b>Todays Date</b></h3>
      * <p>Used to input todays date on a Mail Merge Template.</p>
@@ -5590,7 +5591,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Todays_Date__c: Date;
+    Todays_Date__c?: Date;
     /**
      * <h3><b>Total Cost (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5600,7 +5601,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Cost_Actual__c: number;
+    Total_Cost_Actual__c?: number;
     /**
      * <h3><b>Total cost (Actual)-Total Rev. (Actual)</b></h3>
      * <p>A field that calculates the actual total cost - actual total revenue and shows the amount Dentsply spent on the Campaign.</p>
@@ -5611,7 +5612,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_cost_Actual_Total_Rev_Actual__c: number;
+    Total_cost_Actual_Total_Rev_Actual__c?: number;
     /**
      * <h3><b>Total Cost (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5621,7 +5622,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Cost_Budget__c: number;
+    Total_Cost_Budget__c?: number;
     /**
      * <h3><b>Total Revenue (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5631,7 +5632,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Revenue_Actual__c: number;
+    Total_Revenue_Actual__c?: number;
     /**
      * <h3><b>Total Revenue (Actual)</b></h3>
      * <p>This field shows a positive number of the Revenue field Total Revenue (Actual).</p>
@@ -5642,7 +5643,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Revenue_Actual_Formula__c: number;
+    Total_Revenue_Actual_Formula__c?: number;
     /**
      * <h3><b>Total Revenue (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5652,7 +5653,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Total_Revenue_Budget__c: number;
+    Total_Revenue_Budget__c?: number;
     /**
      * <h3><b>Total Cost (Budget)</b></h3>
      * <p>Total Budget Cost from CVENT</p>
@@ -5662,7 +5663,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TotalCostBudgetCvent__c: number;
+    TotalCostBudgetCvent__c?: number;
     /**
      * <h3><b>TRAINING KITS # PROTAPER GOLD (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5673,7 +5674,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TRAINING_KITS_PROTAPER_GOLD_FR__c: number;
+    TRAINING_KITS_PROTAPER_GOLD_FR__c?: number;
     /**
      * <h3><b>TRAINING KITS # PROTAPER NEXT (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5684,7 +5685,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TRAINING_KITS_PROTAPER_NEXT_FR__c: number;
+    TRAINING_KITS_PROTAPER_NEXT_FR__c?: number;
     /**
      * <h3><b>TRAINING KITS # RECIPROC BLUE (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5695,7 +5696,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TRAINING_KITS_RECIPROC_BLUE_FR__c: number;
+    TRAINING_KITS_RECIPROC_BLUE_FR__c?: number;
     /**
      * <h3><b>TRAINING KITS # WAVE ONE GOLD (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5706,7 +5707,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TRAINING_KITS_WAVE_ONE_GOLD_FR__c: number;
+    TRAINING_KITS_WAVE_ONE_GOLD_FR__c?: number;
     /**
      * <h3><b>Travel &amp; Transfer (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5719,7 +5720,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Travel_Transfer_Actual__c: number;
+    Travel_Transfer_Actual__c?: number;
     /**
      * <h3><b>Travel &amp; Transfer (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5728,7 +5729,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Travel_Transfer_Budget__c: number;
+    Travel_Transfer_Budget__c?: number;
     /**
      * <h3><b>Tuition</b></h3>
      * <h4>Field Attributes</h4>
@@ -5743,7 +5744,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Tuition__c: string;
+    Tuition__c?: string;
     /**
      * <h3><b>Tuition Breakdown</b></h3>
      * <h4>Field Attributes</h4>
@@ -5755,7 +5756,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot; Please indicate different tuition amounts for different attendee types. Example: Doctor tuition vs Staff tuition&quot;</code></td></tr>
      * </table>
      */
-    Tuition_Breakdown__c: string;
+    Tuition_Breakdown__c?: string;
     /**
      * <h3><b>Tuition: Clinician</b></h3>
      * <h4>Field Attributes</h4>
@@ -5764,7 +5765,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tuition_Clinician__c: number;
+    Tuition_Clinician__c?: number;
     /**
      * <h3><b>Tuition: Laboratory</b></h3>
      * <h4>Field Attributes</h4>
@@ -5773,7 +5774,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tuition_Laboratory__c: number;
+    Tuition_Laboratory__c?: number;
     /**
      * <h3><b>Tuition: Staff</b></h3>
      * <h4>Field Attributes</h4>
@@ -5782,8 +5783,8 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Tuition_Staff__c: number;
-    Type: string;
+    Tuition_Staff__c?: number;
+    Type?: string;
     /**
      * <h3><b>Validation of the material by HQ (FR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5792,7 +5793,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Validation_of_the_material_by_the_HQ_FR__c: string;
+    Validation_of_the_material_by_the_HQ_FR__c?: string;
     /**
      * <h3><b>VAT (Amount)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5801,7 +5802,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VAT__c: number;
+    VAT__c?: number;
     /**
      * <h3><b>Venue</b></h3>
      * <h4>Field Attributes</h4>
@@ -5810,7 +5811,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Venue__c: string;
+    Venue__c?: string;
     /**
      * <h3><b>Venue</b></h3>
      * <h4>Field Attributes</h4>
@@ -5819,7 +5820,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Venue__r: Account;
+    Venue__r?: Account;
     /**
      * <h3><b>Venue Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -5830,7 +5831,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Venue_Address1__c: string;
+    Venue_Address1__c?: string;
     /**
      * <h3><b>Venue Address</b></h3>
      * <p>Used on the North America Activity Request Form</p>
@@ -5839,7 +5840,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Venue_Address__c: string;
+    Venue_Address__c?: string;
     /**
      * <h3><b>Venue Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -5850,7 +5851,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Venue_Country__c: string;
+    Venue_Country__c?: string;
     /**
      * <h3><b>Venue Expenses (Actual)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5863,7 +5864,7 @@ declare interface CampaignChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    Venue_Expenses_Actual__c: number;
+    Venue_Expenses_Actual__c?: number;
     /**
      * <h3><b>Venue Expenses (Budget)</b></h3>
      * <h4>Field Attributes</h4>
@@ -5872,7 +5873,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Venue_Expenses_Budget__c: number;
+    Venue_Expenses_Budget__c?: number;
     /**
      * <h3><b>Venue Cost Notes</b></h3>
      * <p>Used on NA Activity Request Form</p>
@@ -5881,7 +5882,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Venue_Food_AV_Cost_Notes__c: string;
+    Venue_Food_AV_Cost_Notes__c?: string;
     /**
      * <h3><b>Venue Phone Number</b></h3>
      * <p>Used on the North America Activity Request Form</p>
@@ -5891,7 +5892,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Venue_Phone_Number__c: string;
+    Venue_Phone_Number__c?: string;
     /**
      * <h3><b>Venue Room/Hall</b></h3>
      * <h4>Field Attributes</h4>
@@ -5902,7 +5903,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Venue_Room_Hall__c: string;
+    Venue_Room_Hall__c?: string;
     /**
      * <h3><b>Venue ZIP Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -5913,7 +5914,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Venue_ZIP_Code__c: string;
+    Venue_ZIP_Code__c?: string;
     /**
      * <h3><b>Visa required</b></h3>
      * <p>Fill in checkbox if you need a visa to travel to this Campaign</p>
@@ -5923,7 +5924,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Visa_required__c: boolean;
+    Visa_required__c?: boolean;
     /**
      * <h3><b>Visuel  plaquette (FR)</b></h3>
      * <p>To choose flyers for France</p>
@@ -5946,7 +5947,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Comm – C2</code></td><td>Comm – C2</td><td nowrap>true</td></tr>
      * </table>
      */
-    Visuel_plaquette_FR__c: string;
+    Visuel_plaquette_FR__c?: string;
     /**
      * <h3><b>WeldOne - TBD</b></h3>
      * <p>Delete Q3 2017 if not used</p>
@@ -5956,7 +5957,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;WeldOne&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    WeldOne__c: boolean;
+    WeldOne__c?: boolean;
     /**
      * <h3><b>XiVe</b></h3>
      * <h4>Field Attributes</h4>
@@ -5965,5 +5966,5 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(INCLUDES( Brand__c , &quot;XiVe&quot;),TRUE,FALSE)</code></td></tr>
      * </table>
      */
-    XiVe__c: boolean;
+    XiVe__c?: boolean;
 }

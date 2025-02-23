@@ -5,13 +5,13 @@
  */
 declare interface testInCountry1__InCountryValue__mdt extends SObject 
 {
-    DeveloperName: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
-    SystemModstamp: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,5 +22,5 @@ declare interface testInCountry1__InCountryValue__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    testInCountry1__Value__c: string;
+    testInCountry1__Value__c?: string;
 }

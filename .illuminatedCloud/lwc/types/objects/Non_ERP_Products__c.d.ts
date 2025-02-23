@@ -14,19 +14,19 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Additional_Name__c: string;
+    Additional_Name__c?: string;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
     /**
      * The reciprocal relationship for {@link Asset.Product_Name__c}.
      */
-    Assets__r: Asset[];
+    Assets__r?: Asset[];
     /**
      * <h3><b>Assignment Rule Codes</b></h3>
      * <h4>Field Attributes</h4>
@@ -37,14 +37,14 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AssignmentRuleCodes__c: string;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    AssignmentRuleCodes__c?: string;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Catch Phrase</b></h3>
      * <p>Used for Japan</p>
@@ -54,8 +54,8 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Catch_Phrase__c: string;
-    CombinedAttachments: CombinedAttachment[];
+    Catch_Phrase__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
     /**
      * <h3><b>Competitor Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,17 +64,17 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Competitor_Product__c: boolean;
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    Competitor_Product__c?: boolean;
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Countries</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,15 +83,15 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Countries__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Countries__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link Current_products_used__c.Non_ERP_Product__c}.
      */
-    Current_products_used__r: Current_products_used__c[];
+    Current_products_used__r?: Current_products_used__c[];
     /**
      * <h3><b>Custom Category</b></h3>
      * <p>Used for any kind of Custome categorization of the non-erp products. Example is MENA region that categorize the non-erp into specific categorizations used for their sub-segmentation calculations</p>
@@ -103,7 +103,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomCategory__c: string;
+    CustomCategory__c?: string;
     /**
      * <h3><b>Details</b></h3>
      * <p>Used for Japan</p>
@@ -112,28 +112,28 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Details__c: string;
+    Details__c?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
     /**
      * The reciprocal relationship for {@link FAQ__c.NonERPProduct__c}.
      */
-    FAQs__r: FAQ__c[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    FAQs__r?: FAQ__c[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
     /**
      * <h3><b>Global Product (Show to all countries)</b></h3>
      * <p>If checked, this product will be shown to all countries regardless of the countries&#39; field selection.
@@ -144,7 +144,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    GlobalProductShowtoallcountries__c: boolean;
+    GlobalProductShowtoallcountries__c?: boolean;
     /**
      * <h3><b>Inactive</b></h3>
      * <h4>Field Attributes</h4>
@@ -153,7 +153,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Inactive__c: boolean;
+    Inactive__c?: boolean;
     /**
      * <h3><b>Internal Id</b></h3>
      * <p>Record identifier used for data migration and internal (SFDC) usage.</p>
@@ -165,16 +165,16 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    InternalId__c: string;
-    IsDeleted: boolean;
+    InternalId__c?: string;
+    IsDeleted?: boolean;
     /**
      * The reciprocal relationship for {@link Item_Attachment__c.NonERPProduct__c}.
      */
-    Item_Attachments__r: Item_Attachment__c[];
+    Item_Attachments__r?: Item_Attachment__c[];
     /**
      * The reciprocal relationship for {@link Item_Specification__c.NonERPProduct__c}.
      */
-    Item_Specifications__r: Item_Specification__c[];
+    Item_Specifications__r?: Item_Specification__c[];
     /**
      * <h3><b>Kana</b></h3>
      * <p>Used for Japan</p>
@@ -184,7 +184,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Kana__c: string;
+    Kana__c?: string;
     /**
      * <h3><b>Focus Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -193,14 +193,14 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    KeyProduct__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    KeyProduct__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Manufacturer</b></h3>
      * <h4>Field Attributes</h4>
@@ -211,7 +211,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Manufacturer__c: string;
+    Manufacturer__c?: string;
     /**
      * <h3><b>Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -223,9 +223,9 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Market__c: string;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
+    Market__c?: string;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
     /**
      * <h3><b>Non-ERP Product Id (18 digit)</b></h3>
      * <h4>Field Attributes</h4>
@@ -237,9 +237,9 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Non_ERP_Product_Id_18_digit__c: string;
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
+    Non_ERP_Product_Id_18_digit__c?: string;
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
     /**
      * <h3><b>Old Product ID</b></h3>
      * <p>Used for Japan</p>
@@ -249,24 +249,24 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Old_Product_ID__c: string;
+    Old_Product_ID__c?: string;
     /**
      * The reciprocal relationship for {@link Opportunity.Trial_Product__c}.
      */
-    Opportunities__r: Opportunity[];
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    Opportunities__r?: Opportunity[];
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Product Group (Local)</b></h3>
      * <p>Free Text, optional</p>
@@ -278,7 +278,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Category__c: string;
+    Product_Category__c?: string;
     /**
      * <h3><b>Product Image 1</b></h3>
      * <p>Used for Japan</p>
@@ -287,7 +287,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Product_Image_1__c: string;
+    Product_Image_1__c?: string;
     /**
      * <h3><b>Product Image 2</b></h3>
      * <p>Used for Japan</p>
@@ -296,7 +296,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Product_Image_2__c: string;
+    Product_Image_2__c?: string;
     /**
      * <h3><b>Product Image 3</b></h3>
      * <p>Used for Japan</p>
@@ -305,7 +305,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Product_Image_3__c: string;
+    Product_Image_3__c?: string;
     /**
      * <h3><b>Product Market Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -314,7 +314,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Market_Mapping__c: string;
+    Product_Market_Mapping__c?: string;
     /**
      * <h3><b>Product Market Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -323,7 +323,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_Market_Mapping__r: SSIS_ERP_SKU_Metadata_Country_Connectio__c;
+    Product_Market_Mapping__r?: SSIS_ERP_SKU_Metadata_Country_Connectio__c;
     /**
      * <h3><b>Product Family</b></h3>
      * <p>Assocaites the non-ERP product to a product family. Used for the Workflow definitions and analysis</p>
@@ -333,7 +333,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductFamily__c: string;
+    ProductFamily__c?: string;
     /**
      * <h3><b>Product Family</b></h3>
      * <p>Assocaites the non-ERP product to a product family. Used for the Workflow definitions and analysis</p>
@@ -343,7 +343,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductFamily__r: ProductFamily__c;
+    ProductFamily__r?: ProductFamily__c;
     /**
      * <h3><b>Product Group (Global)</b></h3>
      * <h4>Field Attributes</h4>
@@ -354,12 +354,12 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ProductGroupText__c: string;
-    Products__r: Product2[];
+    ProductGroupText__c?: string;
+    Products__r?: Product2[];
     /**
      * The reciprocal relationship for {@link Product_Profiling__c.Product_Name__c}.
      */
-    Products_Profiling__r: Product_Profiling__c[];
+    Products_Profiling__r?: Product_Profiling__c[];
     /**
      * <h3><b>Quantity Unit Of Measure</b></h3>
      * <h4>Field Attributes</h4>
@@ -376,26 +376,26 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">boxes</code></td><td>boxes</td><td nowrap>true</td></tr>
      * </table>
      */
-    QuantityUnitOfMeasure__c: string;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    QuantityUnitOfMeasure__c?: string;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>Replacements</b></h3>
      * <p>Used for Japan</p>
@@ -405,7 +405,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Replacements__c: string;
+    Replacements__c?: string;
     /**
      * <h3><b>Product Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -427,7 +427,7 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Treatment Centers</code></td><td>Treatment Centers</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
     /**
      * <h3><b>Search Keyword</b></h3>
      * <p>Used for Japan</p>
@@ -437,9 +437,9 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Search_Keyword__c: string;
-    Shares: Non_ERP_Products__Share[];
-    SobjectLookupValue: AIInsightValue;
+    Search_Keyword__c?: string;
+    Shares?: Non_ERP_Products__Share[];
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Stock Status</b></h3>
      * <p>Used for Japan</p>
@@ -457,8 +457,8 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">End of Sales</code></td><td>End of Sales</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
-    SystemModstamp: string;
+    Status__c?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>T35 Name (UK)</b></h3>
      * <p>Used for UK</p>
@@ -470,14 +470,14 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    T35_Name_UK__c: string;
-    Tags: Non_ERP_Products__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    T35_Name_UK__c?: string;
+    Tags?: Non_ERP_Products__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * <h3><b>Valid in my Market?</b></h3>
      * <h4>Field Attributes</h4>
@@ -486,14 +486,14 @@ declare interface Non_ERP_Products__c extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(UPPER(TEXT($User.Market__c))=UPPER(TEXT(Product_Market_Mapping__r.Market__c)), True, IF(TEXT($User.Market__c)=&quot;South Africa&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;ZA&quot;,True, IF(TEXT($User.Market__c)=&quot;Iberia&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;ES&quot;,True, IF(TEXT($User.Market__c)=&quot;Thailand&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;TH&quot;,True, IF(TEXT($User.Market__c)=&quot;Australia&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;AU&quot;,True, IF(TEXT($User.Market__c)=&quot;Hong Kong&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;HK&quot;,True, IF(TEXT($User.Market__c)=&quot;Singapore&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;SG&quot;,True, IF(TEXT($User.Market__c)=&quot;Germany&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;DE&quot;,True, IF(TEXT($User.Market__c)=&quot;Austria&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;AT&quot;,True, IF(TEXT($User.Market__c)=&quot;Switzerland&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;DE&quot;,True, IF(TEXT($User.Market__c)=&quot;France&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;FR&quot;,True, IF(TEXT($User.Market__c)=&quot;Italy&quot; &amp;&amp; TEXT(Product_Market_Mapping__r.Market__c)=&quot;IT&quot;,True,False)&#47;&#42;italy, iberia &amp; south africa exception&#42;&#47; )))))))))))</code></td></tr>
      * </table>
      */
-    Valid_in_my_Market__c: boolean;
+    Valid_in_my_Market__c?: boolean;
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

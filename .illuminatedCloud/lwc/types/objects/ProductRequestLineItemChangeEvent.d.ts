@@ -2,18 +2,18 @@
 
 declare interface ProductRequestLineItemChangeEvent extends SObject 
 {
-    Account: Account;
-    AccountId: string;
-    Case: Case;
-    CaseId: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Description: string;
-    DestinationLocation: Location;
-    DestinationLocationId: string;
+    Account?: Account;
+    AccountId?: string;
+    Case?: Case;
+    CaseId?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Description?: string;
+    DestinationLocation?: Location;
+    DestinationLocationId?: string;
     /**
      * <h3><b>Quantity Received</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface ProductRequestLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERPQtyReceived__c: number;
+    ERPQtyReceived__c?: number;
     /**
      * <h3><b>Quantity Ready To Pick Up</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,7 +35,7 @@ declare interface ProductRequestLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERPQtyShipped__c: number;
+    ERPQtyShipped__c?: number;
     /**
      * <h3><b>ERP Requested Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -46,7 +46,7 @@ declare interface ProductRequestLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERPQtyTransfer__c: number;
+    ERPQtyTransfer__c?: number;
     /**
      * <h3><b>Last ERP Activity Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,34 +55,34 @@ declare interface ProductRequestLineItemChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERPTransDate__c: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    NeedByDate: string;
-    Parent: ProductRequest;
-    ParentId: string;
-    Product2: Product2;
-    Product2Id: string;
-    ProductRequestLineItemNumber: string;
-    QuantityRequested: number;
-    QuantityUnitOfMeasure: string;
-    ReplayId: string;
-    ShipmentType: string;
-    ShipToAddress: Address;
-    ShipToCity: string;
-    ShipToCountry: string;
-    ShipToGeocodeAccuracy: string;
-    ShipToLatitude: number;
-    ShipToLongitude: number;
-    ShipToPostalCode: string;
-    ShipToState: string;
-    ShipToStreet: string;
-    SourceLocation: Location;
-    SourceLocationId: string;
-    Status: string;
-    WorkOrder: WorkOrder;
-    WorkOrderId: string;
-    WorkOrderLineItem: WorkOrderLineItem;
-    WorkOrderLineItemId: string;
+    ERPTransDate__c?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    NeedByDate?: string;
+    Parent?: ProductRequest;
+    ParentId?: string;
+    Product2?: Product2;
+    Product2Id?: string;
+    ProductRequestLineItemNumber?: string;
+    QuantityRequested?: number;
+    QuantityUnitOfMeasure?: string;
+    ReplayId?: string;
+    ShipmentType?: string;
+    ShipToAddress?: Address;
+    ShipToCity?: string;
+    ShipToCountry?: string;
+    ShipToGeocodeAccuracy?: string;
+    ShipToLatitude?: number;
+    ShipToLongitude?: number;
+    ShipToPostalCode?: string;
+    ShipToState?: string;
+    ShipToStreet?: string;
+    SourceLocation?: Location;
+    SourceLocationId?: string;
+    Status?: string;
+    WorkOrder?: WorkOrder;
+    WorkOrderId?: string;
+    WorkOrderLineItem?: WorkOrderLineItem;
+    WorkOrderLineItemId?: string;
 }

@@ -5,14 +5,14 @@
  */
 declare interface SBQQ__LookupQuery__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Lookup Field</b></h3>
      * <p>API Name of the custom field used in the query.</p>
@@ -28,7 +28,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SBQQ__Category__c</code></td><td>SBQQ__Category__c</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__LookupField__c: string;
+    SBQQ__LookupField__c?: string;
     /**
      * <h3><b>Match Type</b></h3>
      * <p>If Match Type = Field Value, select a Tested Object and Tested Field. If Match Type = Static Value, enter the value into Tested Value. If Match Type = Configuration Attribute, specify a Configuration Attribute.</p>
@@ -46,7 +46,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Configuration Attribute Value</code></td><td>Configuration Attribute Value</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__MatchType__c: string;
+    SBQQ__MatchType__c?: string;
     /**
      * <h3><b>Operator</b></h3>
      * <p>The operator that is applied when comparing the Field with the Value.</p>
@@ -67,7 +67,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">greater or equals</code></td><td>greater or equals</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Operator__c: string;
+    SBQQ__Operator__c?: string;
     /**
      * <h3><b>ParentRuleIsActive</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,7 +77,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ParentRuleIsActive__c: boolean;
+    SBQQ__ParentRuleIsActive__c?: boolean;
     /**
      * <h3><b>Price Rule</b></h3>
      * <p>Price Rule associated with this Lookup Query. Replaces the legacy master-detail field.</p>
@@ -88,7 +88,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PriceRule2__c: string;
+    SBQQ__PriceRule2__c?: string;
     /**
      * <h3><b>Price Rule</b></h3>
      * <p>Price Rule associated with this Lookup Query. Replaces the legacy master-detail field.</p>
@@ -99,7 +99,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__PriceRule2__r: SBQQ__PriceRule__c;
+    SBQQ__PriceRule2__r?: SBQQ__PriceRule__c;
     /**
      * <h3><b>Product Rule</b></h3>
      * <p>Product Rule associated with this Lookup Query</p>
@@ -110,7 +110,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductRule__c: string;
+    SBQQ__ProductRule__c?: string;
     /**
      * <h3><b>Product Rule</b></h3>
      * <p>Product Rule associated with this Lookup Query</p>
@@ -121,7 +121,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ProductRule__r: SBQQ__ProductRule__c;
+    SBQQ__ProductRule__r?: SBQQ__ProductRule__c;
     /**
      * <h3><b>Parent Rule Lookup Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -133,7 +133,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RuleLookupObject__c: string;
+    SBQQ__RuleLookupObject__c?: string;
     /**
      * <h3><b>RuleTargetsCalculator</b></h3>
      * <h4>Field Attributes</h4>
@@ -143,7 +143,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__RuleTargetsCalculator__c: boolean;
+    SBQQ__RuleTargetsCalculator__c?: boolean;
     /**
      * <h3><b>Tested Configuration Attribute</b></h3>
      * <p>Configuration Attribute that is evaluated by this query. Required if Match Type = Configuration Attribute and only if this Query is associated with a Product Rule.</p>
@@ -154,7 +154,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TestedConfigurationAttribute__c: string;
+    SBQQ__TestedConfigurationAttribute__c?: string;
     /**
      * <h3><b>Tested Configuration Attribute</b></h3>
      * <p>Configuration Attribute that is evaluated by this query. Required if Match Type = Configuration Attribute and only if this Query is associated with a Product Rule.</p>
@@ -165,7 +165,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TestedConfigurationAttribute__r: SBQQ__ConfigurationAttribute__c;
+    SBQQ__TestedConfigurationAttribute__r?: SBQQ__ConfigurationAttribute__c;
     /**
      * <h3><b>Tested Field</b></h3>
      * <p>Field on Quote, Quote Line or Product Option object that is evaluated by this query. Required if Match Type = Field Value.</p>
@@ -181,7 +181,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product Code</code></td><td>Product Code</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TestedField__c: string;
+    SBQQ__TestedField__c?: string;
     /**
      * <h3><b>Tested Object</b></h3>
      * <p>Object against which the query is evaluated. Required if Match Type = Field Value.</p>
@@ -199,7 +199,7 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product Option</code></td><td>Product Option</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TestedObject__c: string;
+    SBQQ__TestedObject__c?: string;
     /**
      * <h3><b>Tested Value</b></h3>
      * <p>The value you want to match in the field you selected using the operator chosen. Required if Match Type = Static Value.</p>
@@ -211,5 +211,5 @@ declare interface SBQQ__LookupQuery__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__TestedValue__c: string;
+    SBQQ__TestedValue__c?: string;
 }

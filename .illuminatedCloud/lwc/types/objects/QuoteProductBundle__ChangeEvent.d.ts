@@ -14,7 +14,7 @@ declare interface QuoteProductBundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BundleOfferDiscountAmount__c: number;
+    BundleOfferDiscountAmount__c?: number;
     /**
      * <h3><b>Bundle Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,16 +26,16 @@ declare interface QuoteProductBundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    BundlePrice__c: number;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    BundlePrice__c?: number;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Product Bundle</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface QuoteProductBundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Product_bundle__c})</td></tr>
      * </table>
      */
-    ProductBundle__c: string;
+    ProductBundle__c?: string;
     /**
      * <h3><b>Product Bundle</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface QuoteProductBundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Product_bundle__c})</td></tr>
      * </table>
      */
-    ProductBundle__r: Product_bundle__c;
+    ProductBundle__r?: Product_bundle__c;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,7 +63,7 @@ declare interface QuoteProductBundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td></tr>
      * </table>
      */
-    Quantity__c: number;
+    Quantity__c?: number;
     /**
      * <h3><b>Quote</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,7 +71,7 @@ declare interface QuoteProductBundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Quote})</td></tr>
      * </table>
      */
-    Quote__c: string;
+    Quote__c?: string;
     /**
      * <h3><b>Quote</b></h3>
      * <h4>Field Attributes</h4>
@@ -79,6 +79,6 @@ declare interface QuoteProductBundle__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Quote})</td></tr>
      * </table>
      */
-    Quote__r: Quote;
-    ReplayId: string;
+    Quote__r?: Quote;
+    ReplayId?: string;
 }

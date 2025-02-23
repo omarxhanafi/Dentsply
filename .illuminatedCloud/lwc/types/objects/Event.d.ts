@@ -2,9 +2,9 @@
 
 declare interface Event extends SObject 
 {
-    AcceptedEventRelations: AcceptedEventRelation[];
-    Account: Account;
-    AccountId: string;
+    AcceptedEventRelations?: AcceptedEventRelation[];
+    Account?: Account;
+    AccountId?: string;
     /**
      * <h3><b>Action</b></h3>
      * <h4>Field Attributes</h4>
@@ -16,7 +16,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Action__c: string;
+    Action__c?: string;
     /**
      * <h3><b>Activity Count #</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Activity_Count__c: number;
+    Activity_Count__c?: number;
     /**
      * <h3><b>Activity ID (18 digit)</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Activity_ID_18_digit__c: string;
+    Activity_ID_18_digit__c?: string;
     /**
      * <h3><b>Activity Result</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Survey/Evaluation</code></td><td>Survey/Evaluation</td><td nowrap>true</td></tr>
      * </table>
      */
-    Activity_Result__c: string;
+    Activity_Result__c?: string;
     /**
      * <h3><b>Activity Subtype</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,10 +78,10 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Activity_Subtype__c: string;
-    ActivityDate: Date;
-    ActivityDateTime: string;
-    ActivityFieldHistories: ActivityFieldHistory[];
+    Activity_Subtype__c?: string;
+    ActivityDate?: Date;
+    ActivityDateTime?: string;
+    ActivityFieldHistories?: ActivityFieldHistory[];
     /**
      * <h3><b>ASM/NSM Co-travel</b></h3>
      * <p>Check box used by SR to register CFEs where the ASM/NSM participates.</p>
@@ -91,7 +91,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ASM_NSM_Co_travel__c: boolean;
+    ASM_NSM_Co_travel__c?: boolean;
     /**
      * <h3><b>Assigned to me?</b></h3>
      * <h4>Field Attributes</h4>
@@ -100,7 +100,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(Owner:User.Id == $User.Id, true,false)</code></td></tr>
      * </table>
      */
-    Assigned_to_me__c: boolean;
+    Assigned_to_me__c?: boolean;
     /**
      * <h3><b>Activity Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -109,7 +109,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Astra_Tech_Type__c: string;
+    Astra_Tech_Type__c?: string;
     /**
      * <h3><b>ATLANTIS Abutments</b></h3>
      * <p>A detailed Product</p>
@@ -119,10 +119,10 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ATLANTIS_Abutments__c: boolean;
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
-    Attachments: Attachment[];
+    ATLANTIS_Abutments__c?: boolean;
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
+    Attachments?: Attachment[];
     /**
      * <h3><b>Business Initiative</b></h3>
      * <h4>Field Attributes</h4>
@@ -145,7 +145,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Lab Base Business</code></td><td>Lab Base Business</td><td nowrap>true</td></tr>
      * </table>
      */
-    Business_Initiative__c: string;
+    Business_Initiative__c?: string;
     /**
      * <h3><b>Bypass Auto Invites When Creating</b></h3>
      * <p>Should not be exposed in the UI. This field can be used to suppress the calendar invites trigger when the Event is being created. For example: if you do not want the invites to be automatically sent because they will be sent elsewhere other than the trigger, you should set this to field to true.</p>
@@ -155,7 +155,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Bypass_Auto_Invites_When_Creating__c: boolean;
+    Bypass_Auto_Invites_When_Creating__c?: boolean;
     /**
      * <h3><b>Call Report</b></h3>
      * <h4>Field Attributes</h4>
@@ -164,7 +164,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Call_Report__c: string;
+    Call_Report__c?: string;
     /**
      * <h3><b>Call Report</b></h3>
      * <h4>Field Attributes</h4>
@@ -173,7 +173,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Call_Report__r: Call_Report__c;
+    Call_Report__r?: Call_Report__c;
     /**
      * <h3><b>Call Type</b></h3>
      * <p>custom field for the call type because we can not access the standard field</p>
@@ -190,7 +190,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Outbound</code></td><td>Outbound</td><td nowrap>true</td></tr>
      * </table>
      */
-    Call_Type__c: string;
+    Call_Type__c?: string;
     /**
      * <h3><b>CallAnsweredTime</b></h3>
      * <h4>Field Attributes</h4>
@@ -201,7 +201,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CallAnsweredTime__c: string;
+    CallAnsweredTime__c?: string;
     /**
      * <h3><b>CallDisconnectedTime</b></h3>
      * <h4>Field Attributes</h4>
@@ -212,7 +212,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CallDisconnectedTime__c: string;
+    CallDisconnectedTime__c?: string;
     /**
      * <h3><b>CallInitiatedTime</b></h3>
      * <h4>Field Attributes</h4>
@@ -223,7 +223,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CallInitiatedTime__c: string;
+    CallInitiatedTime__c?: string;
     /**
      * <h3><b>CallWrapupTime</b></h3>
      * <h4>Field Attributes</h4>
@@ -234,7 +234,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CallWrapupTime__c: string;
+    CallWrapupTime__c?: string;
     /**
      * <h3><b>Click this link to edit this CFE</b></h3>
      * <p>Custom URL to show a link to the VF Page (to edit the event)
@@ -245,8 +245,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Click_this_link_to_edit_this_CFE__c: string;
-    ClientGuid: string;
+    Click_this_link_to_edit_this_CFE__c?: string;
+    ClientGuid?: string;
     /**
      * <h3><b>Co-travel</b></h3>
      * <h4>Field Attributes</h4>
@@ -262,7 +262,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Dealer/Distributor</code></td><td>Dealer/Distributor</td><td nowrap>true</td></tr>
      * </table>
      */
-    Co_travel__c: string;
+    Co_travel__c?: string;
     /**
      * <h3><b>Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -271,7 +271,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Co_Travel_Manager__c: string;
+    Co_Travel_Manager__c?: string;
     /**
      * <h3><b>Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -280,8 +280,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Co_Travel_Manager__r: User;
-    CombinedAttachments: CombinedAttachment[];
+    Co_Travel_Manager__r?: User;
+    CombinedAttachments?: CombinedAttachment[];
     /**
      * <h3><b>Contact Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -293,7 +293,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact_Id__c: string;
+    Contact_Id__c?: string;
     /**
      * <h3><b>Contact Type</b></h3>
      * <p>Used for DNA TeleSales Only for Reporting Purposes - Hope to Retire this Soon!</p>
@@ -314,9 +314,9 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Receptionist</code></td><td>Receptionist</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contact_Type__c: string;
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
+    Contact_Type__c?: string;
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
     /**
      * <h3><b>Course/Event Promotion</b></h3>
      * <p>Highlights that the Sales Reps have discussed courses or events promotion.</p>
@@ -326,7 +326,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CourseOrEventPromotion__c: boolean;
+    CourseOrEventPromotion__c?: boolean;
     /**
      * <h3><b>Create Campaign</b></h3>
      * <h4>Field Attributes</h4>
@@ -335,7 +335,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Create_Campiagn__c: boolean;
+    Create_Campiagn__c?: boolean;
     /**
      * <h3><b>Created by me</b></h3>
      * <h4>Field Attributes</h4>
@@ -344,7 +344,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedById == $User.Id, TRUE, FALSE)</code></td></tr>
      * </table>
      */
-    Created_by_me__c: boolean;
+    Created_by_me__c?: boolean;
     /**
      * <h3><b>Created by My Direct Reports</b></h3>
      * <h4>Field Attributes</h4>
@@ -353,10 +353,10 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF(CreatedBy.ManagerId = $User.Id, True, false)</code></td></tr>
      * </table>
      */
-    Created_by_My_Direct_Reports__c: boolean;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Created_by_My_Direct_Reports__c?: boolean;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Creator Continent</b></h3>
      * <h4>Field Attributes</h4>
@@ -368,7 +368,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Continent__c: string;
+    Creator_Continent__c?: string;
     /**
      * <h3><b>Creator Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -380,7 +380,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Country__c: string;
+    Creator_Country__c?: string;
     /**
      * <h3><b>Creator Division</b></h3>
      * <p>The Territory Division of the creator at the time when the Event/Task was created. (Set by a flow)</p>
@@ -392,7 +392,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Division__c: string;
+    Creator_Division__c?: string;
     /**
      * <h3><b>Creator Federation ID</b></h3>
      * <p>The federation ID of the creator at the time when the Event/Task was created. (Set by a flow)</p>
@@ -404,7 +404,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Federation_ID__c: string;
+    Creator_Federation_ID__c?: string;
     /**
      * <h3><b>Creator Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -416,7 +416,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Market__c: string;
+    Creator_Market__c?: string;
     /**
      * <h3><b>Creator Sales Channel</b></h3>
      * <h4>Field Attributes</h4>
@@ -428,7 +428,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Sales_Channel__c: string;
+    Creator_Sales_Channel__c?: string;
     /**
      * <h3><b>Creator SR Origin</b></h3>
      * <h4>Field Attributes</h4>
@@ -440,7 +440,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_SR_Origin__c: string;
+    Creator_SR_Origin__c?: string;
     /**
      * <h3><b>Creator Territory</b></h3>
      * <p>The name of the territory (ies) that the creator is assigned to when the Event or Task was created</p>
@@ -452,8 +452,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Territory__c: string;
-    CurrencyIsoCode: string;
+    Creator_Territory__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Facing Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -462,7 +462,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Customer_Facing_Event__c: boolean;
+    Customer_Facing_Event__c?: boolean;
     /**
      * <h3><b>Attendee</b></h3>
      * <h4>Field Attributes</h4>
@@ -471,7 +471,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Attendee__c: string;
+    CventEvents__Attendee__c?: string;
     /**
      * <h3><b>Attendee</b></h3>
      * <h4>Field Attributes</h4>
@@ -480,7 +480,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Attendee__r: CventEvents__Attendee__c;
+    CventEvents__Attendee__r?: CventEvents__Attendee__c;
     /**
      * <h3><b>Cvent Event Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -489,7 +489,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Event__c: string;
+    CventEvents__Event__c?: string;
     /**
      * <h3><b>Cvent Event Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -498,7 +498,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Event__r: CventEvents__Event__c;
+    CventEvents__Event__r?: CventEvents__Event__c;
     /**
      * <h3><b>Cvent Event</b></h3>
      * <h4>Field Attributes</h4>
@@ -510,7 +510,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__EventTitle__c: string;
+    CventEvents__EventTitle__c?: string;
     /**
      * <h3><b>DB Activity Type</b></h3>
      * <p>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</p>
@@ -523,7 +523,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DB_Activity_Type__c: string;
+    DB_Activity_Type__c?: string;
     /**
      * <h3><b>Dealer/Distributor</b></h3>
      * <h4>Field Attributes</h4>
@@ -532,7 +532,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_Customer__c: string;
+    Dealer_Customer__c?: string;
     /**
      * <h3><b>Dealer/Distributor</b></h3>
      * <h4>Field Attributes</h4>
@@ -541,8 +541,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer_Customer__r: Account;
-    DeclinedEventRelations: DeclinedEventRelation[];
+    Dealer_Customer__r?: Account;
+    DeclinedEventRelations?: DeclinedEventRelation[];
     /**
      * <h3><b>Demonstration</b></h3>
      * <p>Used in Japan and ASIA - Track if the meeting contained a demonstration. Used for meeting statistics.</p>
@@ -552,8 +552,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Demonstration__c: boolean;
-    Description: string;
+    Demonstration__c?: boolean;
+    Description?: string;
     /**
      * <h3><b>DNIS</b></h3>
      * <p>Field to identify call</p>
@@ -565,8 +565,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DNIS__c: string;
-    DurationInMinutes: number;
+    DNIS__c?: string;
+    DurationInMinutes?: number;
     /**
      * <h3><b>End User Activity</b></h3>
      * <h4>Field Attributes</h4>
@@ -582,10 +582,10 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product Information</code></td><td>Product Information</td><td nowrap>true</td></tr>
      * </table>
      */
-    End_User_Activity__c: string;
-    EndDate: Date;
-    EndDateTime: string;
-    Event: EventRecurrenceException;
+    End_User_Activity__c?: string;
+    EndDate?: Date;
+    EndDateTime?: string;
+    Event?: EventRecurrenceException;
     /**
      * <h3><b>Event Speaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -596,7 +596,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Event_Speaker__c: string;
+    Event_Speaker__c?: string;
     /**
      * <h3><b>Event Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -613,7 +613,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">-</code></td><td>-</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Event_Status__c: string;
+    Event_Status__c?: string;
     /**
      * <h3><b>EventOrigin</b></h3>
      * <p>Shows Origin of Event either from Salesforce Classic / Lightning / Outlook (Lightning Sync) / Lightning Mobile App</p>
@@ -631,12 +631,12 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Outlook</code></td><td>Outlook</td><td nowrap>true</td></tr>
      * </table>
      */
-    EventOrigin__c: string;
-    EventRelations: EventRelation[];
-    EventSubtype: string;
-    EventWhoRelations: EventWhoRelation[];
-    Feeds: EventFeed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    EventOrigin__c?: string;
+    EventRelations?: EventRelation[];
+    EventSubtype?: string;
+    EventWhoRelations?: EventWhoRelation[];
+    Feeds?: EventFeed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>First Call Resolution</b></h3>
      * <h4>Field Attributes</h4>
@@ -651,8 +651,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    First_Call_Resolution__c: string;
-    FirstPublishLocation: ContentVersion;
+    First_Call_Resolution__c?: string;
+    FirstPublishLocation?: ContentVersion;
     /**
      * <h3><b>Count of Events</b></h3>
      * <p>Count of all events</p>
@@ -665,7 +665,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Count_of_Events__c: number;
+    FSL__Count_of_Events__c?: number;
     /**
      * <h3><b>Count of Tasks</b></h3>
      * <h4>Field Attributes</h4>
@@ -677,7 +677,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Count_of_Tasks__c: number;
+    FSL__Count_of_Tasks__c?: number;
     /**
      * <h3><b>Event Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -692,8 +692,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Resource Absence</code></td><td>Resource Absence</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__Event_Type__c: string;
-    GroupEventType: string;
+    FSL__Event_Type__c?: string;
+    GroupEventType?: string;
     /**
      * <h3><b>holdTimeInSeconds</b></h3>
      * <h4>Field Attributes</h4>
@@ -704,7 +704,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    holdTimeInSeconds__c: number;
+    holdTimeInSeconds__c?: number;
     /**
      * <h3><b>CallId</b></h3>
      * <p>InGenius Call ID.</p>
@@ -716,21 +716,21 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ingenius__CallId__c: string;
-    IsAllDayEvent: boolean;
-    IsArchived: boolean;
-    IsChild: boolean;
-    IsClientManaged: boolean;
-    IsDeleted: boolean;
-    IsException: boolean;
-    IsGroupEvent: boolean;
-    IsPrivate: boolean;
-    IsRecurrence: boolean;
-    IsRecurrence2: boolean;
-    IsRecurrence2Exception: boolean;
-    IsRecurrence2Exclusion: boolean;
-    IsReminderSet: boolean;
-    IsVisibleInSelfService: boolean;
+    ingenius__CallId__c?: string;
+    IsAllDayEvent?: boolean;
+    IsArchived?: boolean;
+    IsChild?: boolean;
+    IsClientManaged?: boolean;
+    IsDeleted?: boolean;
+    IsException?: boolean;
+    IsGroupEvent?: boolean;
+    IsPrivate?: boolean;
+    IsRecurrence?: boolean;
+    IsRecurrence2?: boolean;
+    IsRecurrence2Exception?: boolean;
+    IsRecurrence2Exclusion?: boolean;
+    IsReminderSet?: boolean;
+    IsVisibleInSelfService?: boolean;
     /**
      * <h3><b>Last Modified</b></h3>
      * <h4>Field Attributes</h4>
@@ -740,10 +740,10 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Modified__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Last_Modified__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Legacy ID</b></h3>
      * <h4>Field Attributes</h4>
@@ -754,9 +754,9 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Legacy_ID__c: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    Location: string;
+    Legacy_ID__c?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    Location?: string;
     /**
      * <h3><b>Location Was Automatically Calculated</b></h3>
      * <p>Will be true if the Location field on the event was automatically calculated. For manually entered locations, this will be false. Used to determine if Location should be automatically changed when WhoId or WhatId is changed.</p>
@@ -766,7 +766,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    Location_Was_Automatically_Calculated__c: boolean;
+    Location_Was_Automatically_Calculated__c?: boolean;
     /**
      * <h3><b>Maps Base Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -775,7 +775,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__BaseObjectId__c: string;
+    maps__BaseObjectId__c?: string;
     /**
      * <h3><b>Maps Base Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -784,7 +784,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__BaseObjectId__r: maps__BaseObject__c;
+    maps__BaseObjectId__r?: maps__BaseObject__c;
     /**
      * <h3><b>Layer Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -795,7 +795,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LayerId__c: string;
+    maps__LayerId__c?: string;
     /**
      * <h3><b>Maps Advanced Route Waypoint</b></h3>
      * <p>This is the default lookup to associate the Advanced Route Waypoint</p>
@@ -805,7 +805,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__WA_AdvRouteWaypoint__c: string;
+    maps__WA_AdvRouteWaypoint__c?: string;
     /**
      * <h3><b>Maps Advanced Route Waypoint</b></h3>
      * <p>This is the default lookup to associate the Advanced Route Waypoint</p>
@@ -815,7 +815,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__WA_AdvRouteWaypoint__r: maps__AdvRouteWaypoint__c;
+    maps__WA_AdvRouteWaypoint__r?: maps__AdvRouteWaypoint__c;
     /**
      * <h3><b>New Customer Acquisition (DE)</b></h3>
      * <p>used to track CFEs during new customer acquisition</p>
@@ -825,7 +825,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    new_customer_acquisition_DE__c: boolean;
+    new_customer_acquisition_DE__c?: boolean;
     /**
      * <h3><b>Number of implants (TR)</b></h3>
      * <p>This is a field requested from turkey to track the number of implants during surgery</p>
@@ -837,7 +837,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Number_of_implants_TR__c: number;
+    Number_of_implants_TR__c?: number;
     /**
      * <h3><b>Number of patients (TR)</b></h3>
      * <h4>Field Attributes</h4>
@@ -848,7 +848,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Number_of_patients_TR__c: number;
+    Number_of_patients_TR__c?: number;
     /**
      * <h3><b>Objective</b></h3>
      * <h4>Field Attributes</h4>
@@ -857,7 +857,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Objective__c: string;
+    Objective__c?: string;
     /**
      * <h3><b>Order collected in the CFE</b></h3>
      * <h4>Field Attributes</h4>
@@ -866,7 +866,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( isblank(Orders_Related_to_CFE__c)=True,False,True)</code></td></tr>
      * </table>
      */
-    Order_collected_in_the_CFE__c: boolean;
+    Order_collected_in_the_CFE__c?: boolean;
     /**
      * <h3><b>Orders Related to CFE</b></h3>
      * <h4>Field Attributes</h4>
@@ -875,7 +875,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Orders_Related_to_CFE__c: string;
+    Orders_Related_to_CFE__c?: string;
     /**
      * <h3><b>Orders Related to CFE</b></h3>
      * <h4>Field Attributes</h4>
@@ -884,8 +884,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Orders_Related_to_CFE__r: Orders_Related_to_CFE__c;
-    OriginalInstanceDateTime: string;
+    Orders_Related_to_CFE__r?: Orders_Related_to_CFE__c;
+    OriginalInstanceDateTime?: string;
     /**
      * <h3><b>origUCID</b></h3>
      * <p>field for the call</p>
@@ -897,12 +897,12 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    origUCID__c: string;
-    Owner: SObject;
-    OwnerId: string;
-    Parent: FeedComment;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
+    origUCID__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: FeedComment;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
     /**
      * <h3><b>Phone Number Calling</b></h3>
      * <p>phone number calling for the CTI integration since standard field is not visible in lightning</p>
@@ -912,7 +912,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Phone_Number_Calling__c: string;
+    Phone_Number_Calling__c?: string;
     /**
      * <h3><b>Planned CFE</b></h3>
      * <h4>Field Attributes</h4>
@@ -921,7 +921,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AND(Customer_Facing_Event__c, ActivityDateTime &gt; CreatedDate)</code></td></tr>
      * </table>
      */
-    PlannedCFE__c: boolean;
+    PlannedCFE__c?: boolean;
     /**
      * <h3><b>Presentation</b></h3>
      * <p>Country: Singapore, Malaysia, Phillipines, SBU: All, Used for KPI measurements in Asia. Should be marked if it has been agreed that the rep may do a presentation on the meeting.</p>
@@ -931,7 +931,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Presentation__c: boolean;
+    Presentation__c?: boolean;
     /**
      * <h3><b>Product Area</b></h3>
      * <h4>Field Attributes</h4>
@@ -947,26 +947,26 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Urology</code></td><td>Urology</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    Recurrence2PatternStartDate: string;
-    Recurrence2PatternText: string;
-    Recurrence2PatternTimeZone: string;
-    Recurrence2PatternVersion: string;
-    RecurrenceActivity: Event;
-    RecurrenceActivityId: string;
-    RecurrenceDayOfMonth: number;
-    RecurrenceDayOfWeekMask: number;
-    RecurrenceEndDateOnly: Date;
-    RecurrenceEvent: EventRecurrenceException;
-    RecurrenceInstance: string;
-    RecurrenceInterval: number;
-    RecurrenceMonthOfYear: string;
-    RecurrenceStartDateTime: string;
-    RecurrenceTimeZoneSidKey: string;
-    RecurrenceType: string;
-    RecurringEvents: Event[];
+    Product_Area__c?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    Recurrence2PatternStartDate?: string;
+    Recurrence2PatternText?: string;
+    Recurrence2PatternTimeZone?: string;
+    Recurrence2PatternVersion?: string;
+    RecurrenceActivity?: Event;
+    RecurrenceActivityId?: string;
+    RecurrenceDayOfMonth?: number;
+    RecurrenceDayOfWeekMask?: number;
+    RecurrenceEndDateOnly?: Date;
+    RecurrenceEvent?: EventRecurrenceException;
+    RecurrenceInstance?: string;
+    RecurrenceInterval?: number;
+    RecurrenceMonthOfYear?: string;
+    RecurrenceStartDateTime?: string;
+    RecurrenceTimeZoneSidKey?: string;
+    RecurrenceType?: string;
+    RecurringEvents?: Event[];
     /**
      * <h3><b>Related to</b></h3>
      * <h4>Field Attributes</h4>
@@ -978,7 +978,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Related_to_Account_Opportunity__c: string;
+    Related_to_Account_Opportunity__c?: string;
     /**
      * <h3><b>Related To (D)</b></h3>
      * <h4>Field Attributes</h4>
@@ -990,7 +990,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Related_To_D__c: string;
+    Related_To_D__c?: string;
     /**
      * <h3><b>Related To Name</b></h3>
      * <p>Populated by a trigger with the name of the record in the Related To Field.
@@ -1003,7 +1003,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Related_To_Name__c: string;
+    Related_To_Name__c?: string;
     /**
      * <h3><b>Related to Opportunity (for analysis)?</b></h3>
      * <p>This field sets a 1 if the event is linked to an Opportunity, otherwise 0. Use for analysis only</p>
@@ -1016,9 +1016,9 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Related_to_Opportunity__c: number;
-    RelatedRecord: FlowRecordRelation;
-    ReminderDateTime: string;
+    Related_to_Opportunity__c?: number;
+    RelatedRecord?: FlowRecordRelation;
+    ReminderDateTime?: string;
     /**
      * <h3><b>ringTimeInSeconds</b></h3>
      * <h4>Field Attributes</h4>
@@ -1029,7 +1029,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ringTimeInSeconds__c: number;
+    ringTimeInSeconds__c?: number;
     /**
      * <h3><b>RSM Co-Travel</b></h3>
      * <p>Check box used by SR to register CFEs where the RSM participates.</p>
@@ -1039,7 +1039,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    RSM_Co_Travel__c: boolean;
+    RSM_Co_Travel__c?: boolean;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -1048,7 +1048,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBU__c: string;
+    SBU__c?: string;
     /**
      * <h3><b>Scheduled / Routed in Salesforce Maps</b></h3>
      * <h4>Field Attributes</h4>
@@ -1057,7 +1057,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    ScheduledRoutedInSalesforceMaps__c: boolean;
+    ScheduledRoutedInSalesforceMaps__c?: boolean;
     /**
      * <h3><b>Scientific Market Monitoring (D-IT)</b></h3>
      * <p>CFE related to a Scientific Project. Used by DI Italy.</p>
@@ -1067,7 +1067,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Scientific_Market_Monitoring_D_IT__c: boolean;
+    Scientific_Market_Monitoring_D_IT__c?: boolean;
     /**
      * <h3><b>Send Calendar Invites</b></h3>
      * <p>Send Calendar Invites flag is used to enable/disable outlook invite process for a particular event.</p>
@@ -1077,7 +1077,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Send_Calendar_Invites__c: boolean;
+    Send_Calendar_Invites__c?: boolean;
     /**
      * <h3><b>Send Survey</b></h3>
      * <h4>Field Attributes</h4>
@@ -1086,8 +1086,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Send_Survey__c: string;
-    ShowAs: string;
+    Send_Survey__c?: string;
+    ShowAs?: string;
     /**
      * <h3><b>Showpad Activity</b></h3>
      * <h4>Field Attributes</h4>
@@ -1096,7 +1096,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Activity__c: string;
+    ShowpadForSF__Showpad_Activity__c?: string;
     /**
      * <h3><b>Showpad Activity</b></h3>
      * <h4>Field Attributes</h4>
@@ -1105,12 +1105,12 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShowpadForSF__Showpad_Activity__r: ShowpadForSF__Showpad_Activity__c;
-    SobjectLookupValue: AIInsightValue;
-    StartDateTime: string;
-    Subject: string;
-    SystemModstamp: string;
-    Tags: EventTag[];
+    ShowpadForSF__Showpad_Activity__r?: ShowpadForSF__Showpad_Activity__c;
+    SobjectLookupValue?: AIInsightValue;
+    StartDateTime?: string;
+    Subject?: string;
+    SystemModstamp?: string;
+    Tags?: EventTag[];
     /**
      * <h3><b>talkTimeInSeconds</b></h3>
      * <h4>Field Attributes</h4>
@@ -1121,8 +1121,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    talkTimeInSeconds__c: number;
-    Target: AIRecordInsight;
+    talkTimeInSeconds__c?: number;
+    Target?: AIRecordInsight;
     /**
      * <h3><b>Task Objective</b></h3>
      * <h4>Field Attributes</h4>
@@ -1133,9 +1133,9 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Task_Objective__c: string;
-    TopicAssignments: TopicAssignment[];
-    Type: string;
+    Task_Objective__c?: string;
+    TopicAssignments?: TopicAssignment[];
+    Type?: string;
     /**
      * <h3><b>Local Time</b></h3>
      * <p>Shows the current local time for the related record (Lead, Contact etc.). This field is meant to be used on the Task record.</p>
@@ -1148,7 +1148,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Local_Time__c: string;
+    tz__Local_Time__c?: string;
     /**
      * <h3><b>Timezone</b></h3>
      * <p>Timezone abbreviation (PST, EST, etc.) for the related record (Lead, Contact etc.).</p>
@@ -1160,7 +1160,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__Timezone__c: string;
+    tz__Timezone__c?: string;
     /**
      * <h3><b>UTC Offset</b></h3>
      * <p>UTC timezone offset for the related record (Lead, Contact etc.).</p>
@@ -1172,8 +1172,8 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    tz__UTC_Offset__c: number;
-    UndecidedEventRelations: UndecidedEventRelation[];
+    tz__UTC_Offset__c?: number;
+    UndecidedEventRelations?: UndecidedEventRelation[];
     /**
      * <h3><b>User Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -1189,6 +1189,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Austria</code></td><td>Austria</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Belgium</code></td><td>Belgium</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Canada</code></td><td>Canada</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Czech Republic</code></td><td>Czech Republic</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Denmark</code></td><td>Denmark</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DEX</code></td><td>DEX</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Estonia</code></td><td>Estonia</td><td nowrap>true</td></tr>
@@ -1220,7 +1221,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vietnam</code></td><td>Vietnam</td><td nowrap>true</td></tr>
      * </table>
      */
-    User_Country__c: string;
+    User_Country__c?: string;
     /**
      * <h3><b>Ustomed (D-PL)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1229,11 +1230,11 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Ustomed_D_PL__c: boolean;
+    Ustomed_D_PL__c?: boolean;
     /**
      * The reciprocal relationship for {@link VideoCall.EventId}.
      */
-    VideoCallActivities: VideoCall[];
+    VideoCallActivities?: VideoCall[];
     /**
      * <h3><b>Weekday</b></h3>
      * <h4>Field Attributes</h4>
@@ -1245,13 +1246,13 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Weekday__c: string;
-    What: SObject;
-    WhatCount: number;
-    WhatId: string;
-    Who: SObject;
-    WhoCount: number;
-    WhoId: string;
+    Weekday__c?: string;
+    What?: SObject;
+    WhatCount?: number;
+    WhatId?: string;
+    Who?: SObject;
+    WhoCount?: number;
+    WhoId?: string;
     /**
      * <h3><b>Workflow Run Time</b></h3>
      * <p>Updated by a workflow, which mainly to touch the event and to fire the trigger.</p>
@@ -1261,7 +1262,7 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Workflow_Run_Time__c: Date;
+    Workflow_Run_Time__c?: Date;
     /**
      * <h3><b>WrapupTimeInSeconds</b></h3>
      * <h4>Field Attributes</h4>
@@ -1272,5 +1273,5 @@ declare interface Event extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WrapupTimeInSeconds__c: number;
+    WrapupTimeInSeconds__c?: number;
 }

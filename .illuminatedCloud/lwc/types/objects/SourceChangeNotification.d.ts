@@ -2,14 +2,14 @@
 
 declare interface SourceChangeNotification extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
-    IsNameObsolete: boolean;
-    MemberName: string;
-    MemberType: string;
-    ReplayId: string;
-    RevisionNum: number;
-    SourceEvent: AsyncOperationEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
+    IsNameObsolete?: boolean;
+    MemberName?: string;
+    MemberType?: string;
+    ReplayId?: string;
+    RevisionNum?: number;
+    SourceEvent?: AsyncOperationEvent;
 }

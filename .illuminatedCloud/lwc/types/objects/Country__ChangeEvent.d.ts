@@ -10,7 +10,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Account_Programs__c: boolean;
+    Account_Programs__c?: boolean;
     /**
      * <h3><b>Case Management</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Case_Management__c: boolean;
+    Case_Management__c?: boolean;
     /**
      * <h3><b>Case Management</b></h3>
      * <h4>Field Attributes</h4>
@@ -37,8 +37,8 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    CaseManagementPL__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    CaseManagementPL__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Chat</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,7 +47,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Chat__c: boolean;
+    Chat__c?: boolean;
     /**
      * <h3><b>Chat</b></h3>
      * <h4>Field Attributes</h4>
@@ -65,7 +65,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    ChatPL__c: string;
+    ChatPL__c?: string;
     /**
      * <h3><b>CIM360</b></h3>
      * <h4>Field Attributes</h4>
@@ -80,7 +80,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    CIM360__c: string;
+    CIM360__c?: string;
     /**
      * <h3><b>CIM360 Integration</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,7 +89,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CIM360_Integration__c: boolean;
+    CIM360_Integration__c?: boolean;
     /**
      * <h3><b>Clinical Affairs</b></h3>
      * <h4>Field Attributes</h4>
@@ -98,7 +98,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Clinical_Affairs__c: boolean;
+    Clinical_Affairs__c?: boolean;
     /**
      * <h3><b>Clinical Affairs</b></h3>
      * <h4>Field Attributes</h4>
@@ -116,7 +116,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    ClinicalAffairsPL__c: string;
+    ClinicalAffairsPL__c?: string;
     /**
      * <h3><b>Commercial Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -127,7 +127,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Commercial_Description__c: string;
+    Commercial_Description__c?: string;
     /**
      * <h3><b>Contact MDM</b></h3>
      * <h4>Field Attributes</h4>
@@ -136,7 +136,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Contact_MDM__c: boolean;
+    Contact_MDM__c?: boolean;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -371,7 +371,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ATG</code></td><td>ATG</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Country Manager</b></h3>
      * <p>Responsible for the Country.</p>
@@ -383,7 +383,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country_Manager__c: string;
+    Country_Manager__c?: string;
     /**
      * <h3><b>Country Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -586,7 +586,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CRM Team</code></td><td>CRM Team</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country_Name__c: string;
+    Country_Name__c?: string;
     /**
      * <h3><b>CPQ</b></h3>
      * <h4>Field Attributes</h4>
@@ -595,7 +595,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CPQ__c: boolean;
+    CPQ__c?: boolean;
     /**
      * <h3><b># CPQ Users</b></h3>
      * <h4>Field Attributes</h4>
@@ -606,7 +606,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CPQ_Users__c: number;
+    CPQ_Users__c?: number;
     /**
      * <h3><b>CPQ</b></h3>
      * <h4>Field Attributes</h4>
@@ -624,7 +624,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    CPQPL__c: string;
+    CPQPL__c?: string;
     /**
      * <h3><b>CPQ Readiness</b></h3>
      * <h4>Field Attributes</h4>
@@ -639,10 +639,10 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    CPQReadiness__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CPQReadiness__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>CRM Analyst</b></h3>
      * <p>Country CRM Analyst Name(s)</p>
@@ -654,7 +654,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CRM_Analyst__c: string;
+    CRM_Analyst__c?: string;
     /**
      * <h3><b>CTI</b></h3>
      * <h4>Field Attributes</h4>
@@ -663,7 +663,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CTI__c: boolean;
+    CTI__c?: boolean;
     /**
      * <h3><b>CTI</b></h3>
      * <h4>Field Attributes</h4>
@@ -681,8 +681,8 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    CTIPL__c: string;
-    CurrencyIsoCode: string;
+    CTIPL__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Service</b></h3>
      * <h4>Field Attributes</h4>
@@ -691,7 +691,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Customer_Service__c: boolean;
+    Customer_Service__c?: boolean;
     /**
      * <h3><b>Customer Service</b></h3>
      * <h4>Field Attributes</h4>
@@ -709,7 +709,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    CustomerServicePL__c: string;
+    CustomerServicePL__c?: string;
     /**
      * <h3><b>Cvent Integration</b></h3>
      * <h4>Field Attributes</h4>
@@ -718,7 +718,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Cvent_Integration__c: boolean;
+    Cvent_Integration__c?: boolean;
     /**
      * <h3><b>Sell out data details</b></h3>
      * <p>Direct or Indirect information</p>
@@ -727,7 +727,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Dealer_Sell_Out__c: string;
+    Dealer_Sell_Out__c?: string;
     /**
      * <h3><b>Digital Signature</b></h3>
      * <h4>Field Attributes</h4>
@@ -745,7 +745,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    DigitalSignaturePL__c: string;
+    DigitalSignaturePL__c?: string;
     /**
      * <h3><b>Eloqua Integration</b></h3>
      * <h4>Field Attributes</h4>
@@ -754,7 +754,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    eloqua_Integration__c: boolean;
+    eloqua_Integration__c?: boolean;
     /**
      * <h3><b>Email To Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -763,7 +763,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Email_To_Case__c: boolean;
+    Email_To_Case__c?: boolean;
     /**
      * <h3><b>Email To Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -781,7 +781,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    EmailToCasePL__c: string;
+    EmailToCasePL__c?: string;
     /**
      * <h3><b>ERP Company Code</b></h3>
      * <p>Add the Local ERP Company Code</p>
@@ -793,7 +793,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ERP_Company_Code__c: string;
+    ERP_Company_Code__c?: string;
     /**
      * <h3><b>ERP system description</b></h3>
      * <h4>Field Attributes</h4>
@@ -801,7 +801,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    ERP_System_Description__c: string;
+    ERP_System_Description__c?: string;
     /**
      * <h3><b>Field Service</b></h3>
      * <h4>Field Attributes</h4>
@@ -810,7 +810,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Field_Service__c: boolean;
+    Field_Service__c?: boolean;
     /**
      * <h3><b>Field Service</b></h3>
      * <h4>Field Attributes</h4>
@@ -830,7 +830,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yes</code></td><td>Yes</td><td nowrap>true</td></tr>
      * </table>
      */
-    FieldService__c: string;
+    FieldService__c?: string;
     /**
      * <h3><b>FSL</b></h3>
      * <h4>Field Attributes</h4>
@@ -839,7 +839,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__c: boolean;
+    FSL__c?: boolean;
     /**
      * <h3><b># FSL Users</b></h3>
      * <h4>Field Attributes</h4>
@@ -850,7 +850,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL_Users__c: number;
+    FSL_Users__c?: number;
     /**
      * <h3><b>FSL</b></h3>
      * <h4>Field Attributes</h4>
@@ -868,7 +868,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSLPL__c: string;
+    FSLPL__c?: string;
     /**
      * <h3><b>General information</b></h3>
      * <h4>Field Attributes</h4>
@@ -876,7 +876,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    general_information__c: string;
+    general_information__c?: string;
     /**
      * <h3><b>Geopointe</b></h3>
      * <h4>Field Attributes</h4>
@@ -885,7 +885,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Geopointe__c: boolean;
+    Geopointe__c?: boolean;
     /**
      * <h3><b>Geopointe</b></h3>
      * <h4>Field Attributes</h4>
@@ -903,7 +903,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    GeopointePL__c: string;
+    GeopointePL__c?: string;
     /**
      * <h3><b>Get Feedback</b></h3>
      * <h4>Field Attributes</h4>
@@ -912,7 +912,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Get_Feedback__c: boolean;
+    Get_Feedback__c?: boolean;
     /**
      * <h3><b>Get Feedback</b></h3>
      * <h4>Field Attributes</h4>
@@ -930,7 +930,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    GetFeedbackPL__c: string;
+    GetFeedbackPL__c?: string;
     /**
      * <h3><b>HUB</b></h3>
      * <h4>Field Attributes</h4>
@@ -949,7 +949,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Warsaw</code></td><td>Warsaw</td><td nowrap>true</td></tr>
      * </table>
      */
-    HUB__c: string;
+    HUB__c?: string;
     /**
      * <h3><b>Inside Sales</b></h3>
      * <h4>Field Attributes</h4>
@@ -958,7 +958,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Inside_Sales__c: boolean;
+    Inside_Sales__c?: boolean;
     /**
      * <h3><b>Inside Sales</b></h3>
      * <h4>Field Attributes</h4>
@@ -976,7 +976,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    InsideSalesPL__c: string;
+    InsideSalesPL__c?: string;
     /**
      * <h3><b>KOL Management</b></h3>
      * <h4>Field Attributes</h4>
@@ -985,7 +985,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    KOL_Management__c: boolean;
+    KOL_Management__c?: boolean;
     /**
      * <h3><b>Language</b></h3>
      * <h4>Field Attributes</h4>
@@ -994,10 +994,10 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Language__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Language__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Link to Local EA App</b></h3>
      * <h4>Field Attributes</h4>
@@ -1006,7 +1006,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Link_to_Local_EA_App__c: string;
+    Link_to_Local_EA_App__c?: string;
     /**
      * <h3><b>Local Agreement with SFDC</b></h3>
      * <p>Fill in this checkbox if there is a local agreement to SFDC from the country.</p>
@@ -1016,7 +1016,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Local_agreement_with_SFDC__c: boolean;
+    Local_agreement_with_SFDC__c?: boolean;
     /**
      * <h3><b>Local EA App</b></h3>
      * <h4>Field Attributes</h4>
@@ -1025,7 +1025,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Local_EA_App__c: boolean;
+    Local_EA_App__c?: boolean;
     /**
      * <h3><b>Local SFDC Agreement expire</b></h3>
      * <p>Enter expire date of the local agreement with SFDC</p>
@@ -1035,7 +1035,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Local_SFDC_Agreement_expire__c: string;
+    Local_SFDC_Agreement_expire__c?: string;
     /**
      * <h3><b>Local CRM Analyst</b></h3>
      * <h4>Field Attributes</h4>
@@ -1052,7 +1052,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3local_crm_analyst</code></td><td>3</td><td nowrap>true</td></tr>
      * </table>
      */
-    LocalCRMAnalyst__c: string;
+    LocalCRMAnalyst__c?: string;
     /**
      * <h3><b>Local EA Analyst</b></h3>
      * <h4>Field Attributes</h4>
@@ -1061,7 +1061,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LocalEAAnalyst__c: string;
+    LocalEAAnalyst__c?: string;
     /**
      * <h3><b>Local EA App</b></h3>
      * <h4>Field Attributes</h4>
@@ -1079,7 +1079,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    LocalEAAppPL__c: string;
+    LocalEAAppPL__c?: string;
     /**
      * <h3><b>Local Project Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -1096,7 +1096,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3LPM</code></td><td>3</td><td nowrap>true</td></tr>
      * </table>
      */
-    LocalProjectManager__c: string;
+    LocalProjectManager__c?: string;
     /**
      * <h3><b>Local Project Team</b></h3>
      * <h4>Field Attributes</h4>
@@ -1113,7 +1113,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3local_project_team</code></td><td>3</td><td nowrap>true</td></tr>
      * </table>
      */
-    LocalProjectTeam__c: string;
+    LocalProjectTeam__c?: string;
     /**
      * <h3><b>Location</b></h3>
      * <h4>Field Attributes</h4>
@@ -1122,7 +1122,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Location__c: string;
+    Location__c?: string;
     /**
      * <h3><b>Marketing</b></h3>
      * <h4>Field Attributes</h4>
@@ -1131,7 +1131,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Marketing__c: boolean;
+    Marketing__c?: boolean;
     /**
      * <h3><b>Marketing (Eloqua)</b></h3>
      * <h4>Field Attributes</h4>
@@ -1140,7 +1140,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Marketing_Eloqua__c: boolean;
+    Marketing_Eloqua__c?: boolean;
     /**
      * <h3><b>Marketing</b></h3>
      * <h4>Field Attributes</h4>
@@ -1158,7 +1158,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    MarketingPL__c: string;
+    MarketingPL__c?: string;
     /**
      * <h3><b>Mindset</b></h3>
      * <h4>Field Attributes</h4>
@@ -1175,7 +1175,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3mindset</code></td><td>3</td><td nowrap>true</td></tr>
      * </table>
      */
-    Mindset__c: string;
+    Mindset__c?: string;
     /**
      * <h3><b>Using ONE AX</b></h3>
      * <h4>Field Attributes</h4>
@@ -1184,8 +1184,8 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Move_to_AX__c: boolean;
-    Name: string;
+    Move_to_AX__c?: boolean;
+    Name?: string;
     /**
      * <h3><b>Object Notes</b></h3>
      * <p>Add any specific notes of importance for the object usage (e.g. Orders only used by PRE or only marketing uses Campaigns)</p>
@@ -1194,7 +1194,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Object_Notes__c: string;
+    Object_Notes__c?: string;
     /**
      * <h3><b># of Active Users</b></h3>
      * <h4>Field Attributes</h4>
@@ -1205,7 +1205,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Active_Users__c: number;
+    of_Active_Users__c?: number;
     /**
      * <h3><b># of ERPs</b></h3>
      * <p>Enter how many ERP systems that is in use for the country currently</p>
@@ -1217,7 +1217,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ofERPs__c: number;
+    ofERPs__c?: number;
     /**
      * <h3><b>Omnichannel</b></h3>
      * <h4>Field Attributes</h4>
@@ -1226,7 +1226,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Omnichannel__c: boolean;
+    Omnichannel__c?: boolean;
     /**
      * <h3><b>Omnichannel</b></h3>
      * <h4>Field Attributes</h4>
@@ -1244,7 +1244,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    OmnichannelPL__c: string;
+    OmnichannelPL__c?: string;
     /**
      * <h3><b>ONE AX in Use</b></h3>
      * <p>Fill in SBU using one AX</p>
@@ -1265,7 +1265,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Equip</code></td><td>Equip</td><td nowrap>true</td></tr>
      * </table>
      */
-    ONE_AX_in_Use__c: string;
+    ONE_AX_in_Use__c?: string;
     /**
      * <h3><b>ONE SFDC Marketing Modules</b></h3>
      * <h4>Field Attributes</h4>
@@ -1274,7 +1274,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ONE_SFDC_Marketing_Modules__c: string;
+    ONE_SFDC_Marketing_Modules__c?: string;
     /**
      * <h3><b>ONE SFDC Marketing Platform</b></h3>
      * <h4>Field Attributes</h4>
@@ -1283,7 +1283,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ONE_SFDC_Marketing_Platform__c: string;
+    ONE_SFDC_Marketing_Platform__c?: string;
     /**
      * <h3><b>ONE SFDC Sales Modules</b></h3>
      * <h4>Field Attributes</h4>
@@ -1292,7 +1292,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ONE_SFDC_Sales_Modules__c: string;
+    ONE_SFDC_Sales_Modules__c?: string;
     /**
      * <h3><b>Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -1301,7 +1301,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Order__c: boolean;
+    Order__c?: boolean;
     /**
      * <h3><b>Other IT systems</b></h3>
      * <h4>Field Attributes</h4>
@@ -1310,7 +1310,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Other_IT_Systems__c: string;
+    Other_IT_Systems__c?: string;
     /**
      * <h3><b>Outside Sales</b></h3>
      * <h4>Field Attributes</h4>
@@ -1319,7 +1319,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Outside_Sales__c: boolean;
+    Outside_Sales__c?: boolean;
     /**
      * <h3><b>Outside Sales</b></h3>
      * <h4>Field Attributes</h4>
@@ -1337,9 +1337,9 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    OutsideSalesPL__c: string;
-    Owner: SObject;
-    OwnerId: string;
+    OutsideSalesPL__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>PDF Butler</b></h3>
      * <h4>Field Attributes</h4>
@@ -1348,7 +1348,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    PDF_Butler__c: boolean;
+    PDF_Butler__c?: boolean;
     /**
      * <h3><b>PDF Butler</b></h3>
      * <h4>Field Attributes</h4>
@@ -1366,7 +1366,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    PDFButlerPL__c: string;
+    PDFButlerPL__c?: string;
     /**
      * <h3><b>Platform</b></h3>
      * <h4>Field Attributes</h4>
@@ -1383,7 +1383,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    Platform__c: string;
+    Platform__c?: string;
     /**
      * <h3><b>Point of Sales</b></h3>
      * <h4>Field Attributes</h4>
@@ -1392,7 +1392,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Point_of_Sales__c: boolean;
+    Point_of_Sales__c?: boolean;
     /**
      * <h3><b>Point of Sales</b></h3>
      * <h4>Field Attributes</h4>
@@ -1410,7 +1410,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    PointOfSalesPL__c: string;
+    PointOfSalesPL__c?: string;
     /**
      * <h3><b>Postal Code Data</b></h3>
      * <h4>Field Attributes</h4>
@@ -1419,7 +1419,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Postal_Code_Data__c: boolean;
+    Postal_Code_Data__c?: boolean;
     /**
      * <h3><b>Postal Code Data</b></h3>
      * <h4>Field Attributes</h4>
@@ -1437,7 +1437,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    PostalCodeDataPL__c: string;
+    PostalCodeDataPL__c?: string;
     /**
      * <h3><b>RCO</b></h3>
      * <h4>Field Attributes</h4>
@@ -1460,7 +1460,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">USA, CA, LATAM</code></td><td>USA, CA, LATAM</td><td nowrap>true</td></tr>
      * </table>
      */
-    RCO__c: string;
+    RCO__c?: string;
     /**
      * <h3><b>RCO/SBU Specific</b></h3>
      * <h4>Field Attributes</h4>
@@ -1469,7 +1469,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RCO_SBU_Specific__c: string;
+    RCO_SBU_Specific__c?: string;
     /**
      * <h3><b>Region</b></h3>
      * <p>To split up RCO&#39;s</p>
@@ -1512,8 +1512,8 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">USA</code></td><td>USA</td><td nowrap>true</td></tr>
      * </table>
      */
-    Region__c: string;
-    ReplayId: string;
+    Region__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Sales Cloud</b></h3>
      * <h4>Field Attributes</h4>
@@ -1528,7 +1528,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    SalesCloud__c: string;
+    SalesCloud__c?: string;
     /**
      * <h3><b>SBU Information</b></h3>
      * <p>Select any SBU using SFDC</p>
@@ -1558,7 +1558,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Implants Indirect</code></td><td>Implants Indirect</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBU_Information__c: string;
+    SBU_Information__c?: string;
     /**
      * <h3><b>Service Cloud</b></h3>
      * <h4>Field Attributes</h4>
@@ -1573,7 +1573,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    ServiceCloud__c: string;
+    ServiceCloud__c?: string;
     /**
      * <h3><b>SFDC Sales Platform</b></h3>
      * <h4>Field Attributes</h4>
@@ -1582,7 +1582,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SFDC_Sales_Platform__c: string;
+    SFDC_Sales_Platform__c?: string;
     /**
      * <h3><b># SFDC Users</b></h3>
      * <h4>Field Attributes</h4>
@@ -1593,7 +1593,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SFDCUsers__c: number;
+    SFDCUsers__c?: number;
     /**
      * <h3><b>SiroForce Integration</b></h3>
      * <h4>Field Attributes</h4>
@@ -1602,7 +1602,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SiroForce_Integration__c: boolean;
+    SiroForce_Integration__c?: boolean;
     /**
      * <h3><b>Smartsolve Integration</b></h3>
      * <h4>Field Attributes</h4>
@@ -1611,7 +1611,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Smartsolve_Integration__c: boolean;
+    Smartsolve_Integration__c?: boolean;
     /**
      * <h3><b>SMS</b></h3>
      * <h4>Field Attributes</h4>
@@ -1620,7 +1620,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Sms__c: boolean;
+    Sms__c?: boolean;
     /**
      * <h3><b>SMS</b></h3>
      * <h4>Field Attributes</h4>
@@ -1638,7 +1638,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    SMSPL__c: string;
+    SMSPL__c?: string;
     /**
      * <h3><b>Sub-RCO</b></h3>
      * <h4>Field Attributes</h4>
@@ -1672,7 +1672,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">USA</code></td><td>USA</td><td nowrap>true</td></tr>
      * </table>
      */
-    SubRCO__c: string;
+    SubRCO__c?: string;
     /**
      * <h3><b>Tableau CRM</b></h3>
      * <h4>Field Attributes</h4>
@@ -1687,7 +1687,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    TableauCRM__c: string;
+    TableauCRM__c?: string;
     /**
      * <h3><b>Web to Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -1696,7 +1696,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Web_to_Case__c: boolean;
+    Web_to_Case__c?: boolean;
     /**
      * <h3><b>Web To Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -1714,7 +1714,7 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Not Applicable</code></td><td>Not Applicable</td><td nowrap>true</td></tr>
      * </table>
      */
-    WebToCasePL__c: string;
+    WebToCasePL__c?: string;
     /**
      * <h3><b>Access to 3rd party data</b></h3>
      * <h4>Field Attributes</h4>
@@ -1723,5 +1723,5 @@ declare interface Country__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    X3rd__c: boolean;
+    X3rd__c?: boolean;
 }

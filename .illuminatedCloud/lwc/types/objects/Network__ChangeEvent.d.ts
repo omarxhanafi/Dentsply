@@ -13,7 +13,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Loyalty_D__c: string;
+    Account_Loyalty_D__c?: string;
     /**
      * <h3><b>Account Volume</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account_Volume_D__c: string;
+    Account_Volume_D__c?: string;
     /**
      * <h3><b>Active SBUs</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">MANT</code></td><td>MANT</td><td nowrap>true</td></tr>
      * </table>
      */
-    Active_SBUs__c: string;
+    Active_SBUs__c?: string;
     /**
      * <h3><b>Ankylos (IT)</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Brand_Ankylos_D_IT__c: boolean;
+    Brand_Ankylos_D_IT__c?: boolean;
     /**
      * <h3><b>ATIS (IT)</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,7 +63,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Brand_ATIS_D_IT__c: boolean;
+    Brand_ATIS_D_IT__c?: boolean;
     /**
      * <h3><b>ATIS EV (IT)</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Brand_ATIS_EV_D_IT__c: boolean;
+    Brand_ATIS_EV_D_IT__c?: boolean;
     /**
      * <h3><b>ATLANTIS Abutments (IT)</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Brand_ATLANTIS_Abutments_D_IT__c: boolean;
+    Brand_ATLANTIS_Abutments_D_IT__c?: boolean;
     /**
      * <h3><b>ATLANTIS ISUS (IT)</b></h3>
      * <h4>Field Attributes</h4>
@@ -90,7 +90,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Brand_ATLANTIS_ISUS_D_IT__c: boolean;
+    Brand_ATLANTIS_ISUS_D_IT__c?: boolean;
     /**
      * <h3><b>Frios (IT)</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,7 +99,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Brand_Frios_D_IT__c: boolean;
+    Brand_Frios_D_IT__c?: boolean;
     /**
      * <h3><b>SIMPLANT (D-IT)</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,7 +108,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Brand_SIMPLANT_D_IT__c: boolean;
+    Brand_SIMPLANT_D_IT__c?: boolean;
     /**
      * <h3><b>XiVE  (IT)</b></h3>
      * <h4>Field Attributes</h4>
@@ -117,7 +117,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Brand_XiVE_D_IT__c: boolean;
+    Brand_XiVE_D_IT__c?: boolean;
     /**
      * <h3><b>central contact owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -129,7 +129,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    central_contact_owner__c: string;
+    central_contact_owner__c?: string;
     /**
      * <h3><b>CEO</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,7 +138,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CEO__c: string;
+    CEO__c?: string;
     /**
      * <h3><b>CEO</b></h3>
      * <h4>Field Attributes</h4>
@@ -147,7 +147,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CEO__r: Contact;
+    CEO__r?: Contact;
     /**
      * <h3><b>CFO</b></h3>
      * <h4>Field Attributes</h4>
@@ -156,7 +156,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFO__c: string;
+    CFO__c?: string;
     /**
      * <h3><b>CFO</b></h3>
      * <h4>Field Attributes</h4>
@@ -165,7 +165,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFO__r: Contact;
+    CFO__r?: Contact;
     /**
      * <h3><b>Business agreement content</b></h3>
      * <h4>Field Attributes</h4>
@@ -173,7 +173,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Chain_Business_agreement_content__c: string;
+    Chain_Business_agreement_content__c?: string;
     /**
      * <h3><b>Education</b></h3>
      * <h4>Field Attributes</h4>
@@ -182,7 +182,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Chain_Education__c: boolean;
+    Chain_Education__c?: boolean;
     /**
      * <h3><b>Marketing support</b></h3>
      * <h4>Field Attributes</h4>
@@ -193,7 +193,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Chain_Marketing_support__c: string;
+    Chain_Marketing_support__c?: string;
     /**
      * <h3><b>Preferred products</b></h3>
      * <h4>Field Attributes</h4>
@@ -202,7 +202,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Chain_Preferred_products__c: string;
+    Chain_Preferred_products__c?: string;
     /**
      * <h3><b>Training</b></h3>
      * <h4>Field Attributes</h4>
@@ -211,7 +211,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Chain_training__c: boolean;
+    Chain_training__c?: boolean;
     /**
      * <h3><b>Chain Turnover CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -221,7 +221,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Chain_Turnover_CY__c: number;
+    Chain_Turnover_CY__c?: number;
     /**
      * <h3><b>Chain Turnover LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -230,7 +230,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Chain_Turnover_LY__c: number;
+    Chain_Turnover_LY__c?: number;
     /**
      * <h3><b>Chain VAT number</b></h3>
      * <h4>Field Attributes</h4>
@@ -241,8 +241,8 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Chain_VAT_number__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    Chain_VAT_number__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Clinic Director</b></h3>
      * <h4>Field Attributes</h4>
@@ -251,7 +251,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Clinic_Director__c: string;
+    Clinic_Director__c?: string;
     /**
      * <h3><b>Clinic Director</b></h3>
      * <h4>Field Attributes</h4>
@@ -260,7 +260,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Clinic_Director__r: Contact;
+    Clinic_Director__r?: Contact;
     /**
      * <h3><b>Contract (IT)</b></h3>
      * <p>Scientific Study, Contract in place? (D-IT)</p>
@@ -276,7 +276,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Contract_D_IT__c: string;
+    Contract_D_IT__c?: string;
     /**
      * <h3><b>Count</b></h3>
      * <h4>Field Attributes</h4>
@@ -288,10 +288,10 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Count__c: number;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Count__c?: number;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Creator Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -303,7 +303,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Country__c: string;
+    Creator_Country__c?: string;
     /**
      * <h3><b>Creator Market</b></h3>
      * <h4>Field Attributes</h4>
@@ -315,8 +315,8 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Creator_Market__c: string;
-    CurrencyIsoCode: string;
+    Creator_Market__c?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Mission</b></h3>
      * <h4>Field Attributes</h4>
@@ -324,7 +324,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Dental_Chain_Mission__c: string;
+    Dental_Chain_Mission__c?: string;
     /**
      * <h3><b>Vision</b></h3>
      * <h4>Field Attributes</h4>
@@ -332,7 +332,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Dental_Chain_Vision__c: string;
+    Dental_Chain_Vision__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -341,7 +341,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
+    Description__c?: string;
     /**
      * <h3><b>HQ Total Inv. already provided (IT)</b></h3>
      * <p>HQ Total Investment already provided (D-IT)</p>
@@ -352,7 +352,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    HQ_Total_Inv_already_provided_D_IT__c: number;
+    HQ_Total_Inv_already_provided_D_IT__c?: number;
     /**
      * <h3><b>HQ Total Investment (IT)</b></h3>
      * <p>HQ Total Investment  (D-IT)</p>
@@ -362,7 +362,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HQ_Total_Investment_D_IT__c: number;
+    HQ_Total_Investment_D_IT__c?: number;
     /**
      * <h3><b>Hub Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -371,7 +371,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hub_Account__c: string;
+    Hub_Account__c?: string;
     /**
      * <h3><b>Hub Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -380,7 +380,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hub_Account__r: Account;
+    Hub_Account__r?: Account;
     /**
      * <h3><b>Hub Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -389,7 +389,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hub_Account_lookup__c: string;
+    Hub_Account_lookup__c?: string;
     /**
      * <h3><b>Hub Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -398,7 +398,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hub_Account_lookup__r: Account;
+    Hub_Account_lookup__r?: Account;
     /**
      * <h3><b>HUB account owner</b></h3>
      * <h4>Field Attributes</h4>
@@ -410,7 +410,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HUB_account_owner__c: string;
+    HUB_account_owner__c?: string;
     /**
      * <h3><b>HUB address</b></h3>
      * <h4>Field Attributes</h4>
@@ -422,7 +422,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HUB_address__c: string;
+    HUB_address__c?: string;
     /**
      * <h3><b>Hub Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -431,7 +431,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hub_Contact__c: string;
+    Hub_Contact__c?: string;
     /**
      * <h3><b>Hub Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -440,7 +440,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Hub_Contact__r: Contact;
+    Hub_Contact__r?: Contact;
     /**
      * <h3><b>HUB phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -452,7 +452,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HUB_phone__c: string;
+    HUB_phone__c?: string;
     /**
      * <h3><b>Key Network</b></h3>
      * <h4>Field Attributes</h4>
@@ -461,10 +461,10 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Key_Network__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Key_Network__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Local Total Inv. already provided (IT)</b></h3>
      * <p>Local Total Investment already provided (D-IT)</p>
@@ -474,7 +474,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Local_Total_Inv_already_provided_D_IT__c: number;
+    Local_Total_Inv_already_provided_D_IT__c?: number;
     /**
      * <h3><b>Local Total Investment (IT)</b></h3>
      * <p>Scientific Study, Local Total Investment (D-IT)</p>
@@ -484,7 +484,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Local_Total_Investment_D_IT__c: number;
+    Local_Total_Investment_D_IT__c?: number;
     /**
      * <h3><b>Main Competitor</b></h3>
      * <h4>Field Attributes</h4>
@@ -496,7 +496,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_Competitor_D__c: string;
+    Main_Competitor_D__c?: string;
     /**
      * <h3><b>Materials HQ (IT)</b></h3>
      * <p>Materials HQ (D-IT)</p>
@@ -512,7 +512,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Materials_HQ_D_IT__c: string;
+    Materials_HQ_D_IT__c?: string;
     /**
      * <h3><b>Materials IT (IT)</b></h3>
      * <p>Materials IT (D-IT)</p>
@@ -528,8 +528,8 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">No</code></td><td>No</td><td nowrap>true</td></tr>
      * </table>
      */
-    Materials_IT_D_IT__c: string;
-    Name: string;
+    Materials_IT_D_IT__c?: string;
+    Name?: string;
     /**
      * <h3><b>Network Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -547,7 +547,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DSO Network</code></td><td>DSO Network</td><td nowrap>true</td></tr>
      * </table>
      */
-    Network_Category__c: string;
+    Network_Category__c?: string;
     /**
      * <h3><b>Network # (HQ)</b></h3>
      * <p>Used in reports</p>
@@ -560,7 +560,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Network_HQ__c: number;
+    Network_HQ__c?: number;
     /**
      * <h3><b>Network Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -590,7 +590,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DSO Network</code></td><td>DSO Network</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Network_Type__c: string;
+    Network_Type__c?: string;
     /**
      * <h3><b># of Account Members Range</b></h3>
      * <h4>Field Attributes</h4>
@@ -602,7 +602,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Account_Members_Range__c: string;
+    of_Account_Members_Range__c?: string;
     /**
      * <h3><b># of Contact Members Range</b></h3>
      * <h4>Field Attributes</h4>
@@ -614,9 +614,9 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    of_Contact_Members_Range__c: string;
-    Owner: SObject;
-    OwnerId: string;
+    of_Contact_Members_Range__c?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Parent Network</b></h3>
      * <h4>Field Attributes</h4>
@@ -625,7 +625,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Network__c: string;
+    Parent_Network__c?: string;
     /**
      * <h3><b>Parent Network</b></h3>
      * <h4>Field Attributes</h4>
@@ -634,7 +634,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Parent_Network__r: Network__c;
+    Parent_Network__r?: Network__c;
     /**
      * <h3><b>Product Area</b></h3>
      * <p>Used for separating Networks</p>
@@ -651,7 +651,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Urology</code></td><td>Urology</td><td nowrap>true</td></tr>
      * </table>
      */
-    Product_Area__c: string;
+    Product_Area__c?: string;
     /**
      * <h3><b>Purchasing Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -660,7 +660,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Purchasing_Manager__c: string;
+    Purchasing_Manager__c?: string;
     /**
      * <h3><b>Purchasing Manager</b></h3>
      * <h4>Field Attributes</h4>
@@ -669,9 +669,9 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Purchasing_Manager__r: Contact;
-    RecordType: RecordType;
-    RecordTypeId: string;
+    Purchasing_Manager__r?: Contact;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Regenerative solutions user?</b></h3>
      * <h4>Field Attributes</h4>
@@ -680,8 +680,8 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Regenerative_solutions_user__c: boolean;
-    ReplayId: string;
+    Regenerative_solutions_user__c?: boolean;
+    ReplayId?: string;
     /**
      * <h3><b>Sales CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -693,7 +693,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_CY_D__c: number;
+    Sales_CY_D__c?: number;
     /**
      * <h3><b>Sales Dental LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -705,7 +705,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Dental_LY__c: number;
+    Sales_Dental_LY__c?: number;
     /**
      * <h3><b>Sales Dental YTD</b></h3>
      * <h4>Field Attributes</h4>
@@ -717,7 +717,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_Dental_YTD__c: number;
+    Sales_Dental_YTD__c?: number;
     /**
      * <h3><b>Sales LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -729,7 +729,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sales_LY_D__c: number;
+    Sales_LY_D__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -741,7 +741,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_Abuts_CY__c: number;
+    Sold_ATL_Abuts_CY__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -753,7 +753,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_Abuts_LY__c: number;
+    Sold_ATL_Abuts_LY__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s YTD</b></h3>
      * <p>Hub_Account__r.TQ_CY_D_DD_CustAbuts_Atlantis__c</p>
@@ -766,7 +766,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_Abuts_YTD__c: number;
+    Sold_ATL_Abuts_YTD__c?: number;
     /**
      * <h3><b>Sold Implants CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -778,7 +778,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_CY__c: number;
+    Sold_Implants_CY__c?: number;
     /**
      * <h3><b>Sold Implants LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -790,7 +790,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_LY__c: number;
+    Sold_Implants_LY__c?: number;
     /**
      * <h3><b>Sold Implants YTD</b></h3>
      * <h4>Field Attributes</h4>
@@ -802,7 +802,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_YTD__c: number;
+    Sold_Implants_YTD__c?: number;
     /**
      * <h3><b>Hub Sold Stock Abut&#39;s CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -814,7 +814,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abuts_CY__c: number;
+    Sold_Stock_Abuts_CY__c?: number;
     /**
      * <h3><b>Hub Sold Stock Abut&#39;s LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -826,7 +826,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abuts_LY__c: number;
+    Sold_Stock_Abuts_LY__c?: number;
     /**
      * <h3><b>Hub Sold Stock Abut&#39;s YTD</b></h3>
      * <h4>Field Attributes</h4>
@@ -838,7 +838,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abuts_YTD__c: number;
+    Sold_Stock_Abuts_YTD__c?: number;
     /**
      * <h3><b>Study start year (IT)</b></h3>
      * <p>Scientific Study start year (D-IT)</p>
@@ -863,7 +863,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">2016</code></td><td>2016</td><td nowrap>true</td></tr>
      * </table>
      */
-    Study_start_year_D_IT__c: string;
+    Study_start_year_D_IT__c?: string;
     /**
      * <h3><b>Study status (IT)</b></h3>
      * <p>Scientific Study status (D-IT)</p>
@@ -884,7 +884,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Failed</code></td><td>Failed</td><td nowrap>true</td></tr>
      * </table>
      */
-    Study_status_D_IT__c: string;
+    Study_status_D_IT__c?: string;
     /**
      * <h3><b>Study type (IT)</b></h3>
      * <p>Scientific Study type (D-IT)</p>
@@ -904,7 +904,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CR</code></td><td>CR</td><td nowrap>true</td></tr>
      * </table>
      */
-    Study_type_D_IT__c: string;
+    Study_type_D_IT__c?: string;
     /**
      * <h3><b># of Account Network Members</b></h3>
      * <h4>Field Attributes</h4>
@@ -914,7 +914,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Account_Network_Member__c.Network__c</code></td></tr>
      * </table>
      */
-    Xof_Account_Network_Members__c: number;
+    Xof_Account_Network_Members__c?: number;
     /**
      * <h3><b># of Contact Network Members</b></h3>
      * <h4>Field Attributes</h4>
@@ -924,7 +924,7 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>Summary Foreign Key:</b></td><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Contact_Network_Member__c.Network__c</code></td></tr>
      * </table>
      */
-    Xof_Contact_Network_Members__c: number;
+    Xof_Contact_Network_Members__c?: number;
     /**
      * <h3><b>Yearly ATL Potential</b></h3>
      * <h4>Field Attributes</h4>
@@ -936,5 +936,5 @@ declare interface Network__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Yearly_ATL_Potential__c: number;
+    Yearly_ATL_Potential__c?: number;
 }

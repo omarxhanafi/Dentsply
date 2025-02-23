@@ -2,14 +2,14 @@
 
 declare interface BatchJobPartFailedRecordHistory extends SObject 
 {
-    BatchJobPartFailedRecord: BatchJobPartFailedRecord;
-    BatchJobPartFailedRecordId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    BatchJobPartFailedRecord?: BatchJobPartFailedRecord;
+    BatchJobPartFailedRecordId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

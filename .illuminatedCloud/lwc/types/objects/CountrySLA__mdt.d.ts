@@ -17,8 +17,8 @@ declare interface CountrySLA__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
-    DeveloperName: string;
+    Country__c?: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Entitlement Process</b></h3>
      * <p>Entitlement Process Name</p>
@@ -30,7 +30,7 @@ declare interface CountrySLA__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Entitlement_Process__c: string;
+    Entitlement_Process__c?: string;
     /**
      * <h3><b>Fallback Entitlement Record</b></h3>
      * <p>Default entitlement record to be set on cases created through email2case and is not assigned to a contact</p>
@@ -42,11 +42,11 @@ declare interface CountrySLA__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FallbackEntitlementRecord__c: string;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    FallbackEntitlementRecord__c?: string;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,8 +61,8 @@ declare interface CountrySLA__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Work Order</code></td><td>Work Order</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Object__c: string;
-    QualifiedApiName: string;
+    Object__c?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Related Queues</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,6 +71,6 @@ declare interface CountrySLA__mdt extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RelatedQueues__c: string;
-    SystemModstamp: string;
+    RelatedQueues__c?: string;
+    SystemModstamp?: string;
 }

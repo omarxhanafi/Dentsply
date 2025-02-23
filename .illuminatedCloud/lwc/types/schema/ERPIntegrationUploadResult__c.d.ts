@@ -114,12 +114,6 @@ declare module "@salesforce/schema/ERPIntegrationUploadResult__c.CurrencyIsoCode
     export default CurrencyIsoCode;
 }
 
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.DataFlowName__c" {
-    import { FieldId } from "@salesforce/schema";
-    const DataFlowName__c: FieldId;
-    export default DataFlowName__c;
-}
-
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.DocEnvelopeRefObjects" {
     import { FieldId } from "@salesforce/schema";
     const DocEnvelopeRefObjects: FieldId;
@@ -132,34 +126,28 @@ declare module "@salesforce/schema/ERPIntegrationUploadResult__c.DuplicateRecord
     export default DuplicateRecordItems;
 }
 
+declare module "@salesforce/schema/ERPIntegrationUploadResult__c.ERPIntegrationDataFlowRun__c" {
+    import { FieldId } from "@salesforce/schema";
+    const ERPIntegrationDataFlowRun__c: FieldId;
+    export default ERPIntegrationDataFlowRun__c;
+}
+
+declare module "@salesforce/schema/ERPIntegrationUploadResult__c.ERPIntegrationDataFlowRun__r" {
+    import { FieldId } from "@salesforce/schema";
+    const ERPIntegrationDataFlowRun__r: FieldId;
+    export default ERPIntegrationDataFlowRun__r;
+}
+
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.EngagementInitiatedTopic" {
     import { FieldId } from "@salesforce/schema";
     const EngagementInitiatedTopic: FieldId;
     export default EngagementInitiatedTopic;
 }
 
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.Error__c" {
-    import { FieldId } from "@salesforce/schema";
-    const Error__c: FieldId;
-    export default Error__c;
-}
-
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.EventRelations" {
     import { FieldId } from "@salesforce/schema";
     const EventRelations: FieldId;
     export default EventRelations;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.ExecutionID__c" {
-    import { FieldId } from "@salesforce/schema";
-    const ExecutionID__c: FieldId;
-    export default ExecutionID__c;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.ExternalID__c" {
-    import { FieldId } from "@salesforce/schema";
-    const ExternalID__c: FieldId;
-    export default ExternalID__c;
 }
 
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.FeedSubscriptionsForEntity" {
@@ -216,18 +204,6 @@ declare module "@salesforce/schema/ERPIntegrationUploadResult__c.LastModifiedDat
     export default LastModifiedDate;
 }
 
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.LastReferencedDate" {
-    import { FieldId } from "@salesforce/schema";
-    const LastReferencedDate: FieldId;
-    export default LastReferencedDate;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.LastViewedDate" {
-    import { FieldId } from "@salesforce/schema";
-    const LastViewedDate: FieldId;
-    export default LastViewedDate;
-}
-
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.LinkedEntity" {
     import { FieldId } from "@salesforce/schema";
     const LinkedEntity: FieldId;
@@ -238,12 +214,6 @@ declare module "@salesforce/schema/ERPIntegrationUploadResult__c.LocalRecord" {
     import { FieldId } from "@salesforce/schema";
     const LocalRecord: FieldId;
     export default LocalRecord;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.LogicAppURL__c" {
-    import { FieldId } from "@salesforce/schema";
-    const LogicAppURL__c: FieldId;
-    export default LogicAppURL__c;
 }
 
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.Name" {
@@ -268,18 +238,6 @@ declare module "@salesforce/schema/ERPIntegrationUploadResult__c.NotesAndAttachm
     import { FieldId } from "@salesforce/schema";
     const NotesAndAttachments: FieldId;
     export default NotesAndAttachments;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.Owner" {
-    import { FieldId } from "@salesforce/schema";
-    const Owner: FieldId;
-    export default Owner;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.OwnerId" {
-    import { FieldId } from "@salesforce/schema";
-    const OwnerId: FieldId;
-    export default OwnerId;
 }
 
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.Parent" {
@@ -390,22 +348,10 @@ declare module "@salesforce/schema/ERPIntegrationUploadResult__c.Relation" {
     export default Relation;
 }
 
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.Shares" {
-    import { FieldId } from "@salesforce/schema";
-    const Shares: FieldId;
-    export default Shares;
-}
-
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.SobjectLookupValue" {
     import { FieldId } from "@salesforce/schema";
     const SobjectLookupValue: FieldId;
     export default SobjectLookupValue;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.Source__c" {
-    import { FieldId } from "@salesforce/schema";
-    const Source__c: FieldId;
-    export default Source__c;
 }
 
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.SystemModstamp" {
@@ -448,12 +394,6 @@ declare module "@salesforce/schema/ERPIntegrationUploadResult__c.TopicAssignment
     import { FieldId } from "@salesforce/schema";
     const TopicAssignments: FieldId;
     export default TopicAssignments;
-}
-
-declare module "@salesforce/schema/ERPIntegrationUploadResult__c.UploadResultURI__c" {
-    import { FieldId } from "@salesforce/schema";
-    const UploadResultURI__c: FieldId;
-    export default UploadResultURI__c;
 }
 
 declare module "@salesforce/schema/ERPIntegrationUploadResult__c.UserDefinedLabelAssignments" {

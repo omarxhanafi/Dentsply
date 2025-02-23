@@ -8,56 +8,56 @@ declare interface maps__BaseObject__c extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Address Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -68,7 +68,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AddressObject__c: string;
+    maps__AddressObject__c?: string;
     /**
      * <h3><b>Auto Assignment Dirty Flag</b></h3>
      * <h4>Field Attributes</h4>
@@ -79,8 +79,8 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AutoAssignmentDirtyFlag__c: string;
-    maps__BaseObjectIds__r: LookedUpFromActivity[];
+    maps__AutoAssignmentDirtyFlag__c?: string;
+    maps__BaseObjectIds__r?: LookedUpFromActivity[];
     /**
      * <h3><b>Batch Size</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">50</code></td></tr>
      * </table>
      */
-    maps__BatchSize__c: number;
+    maps__BatchSize__c?: number;
     /**
      * <h3><b>City</b></h3>
      * <h4>Field Attributes</h4>
@@ -103,7 +103,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__City__c: string;
+    maps__City__c?: string;
     /**
      * <h3><b>Clean City</b></h3>
      * <h4>Field Attributes</h4>
@@ -114,7 +114,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CleanCity__c: string;
+    maps__CleanCity__c?: string;
     /**
      * <h3><b>Clean Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -125,7 +125,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CleanCountry__c: string;
+    maps__CleanCountry__c?: string;
     /**
      * <h3><b>Clean County</b></h3>
      * <h4>Field Attributes</h4>
@@ -136,7 +136,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CleanCounty__c: string;
+    maps__CleanCounty__c?: string;
     /**
      * <h3><b>Clean District</b></h3>
      * <h4>Field Attributes</h4>
@@ -147,7 +147,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CleanDistrict__c: string;
+    maps__CleanDistrict__c?: string;
     /**
      * <h3><b>Clean Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -158,7 +158,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CleanPostalCode__c: string;
+    maps__CleanPostalCode__c?: string;
     /**
      * <h3><b>Clean State</b></h3>
      * <h4>Field Attributes</h4>
@@ -169,7 +169,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CleanState__c: string;
+    maps__CleanState__c?: string;
     /**
      * <h3><b>Clean Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -180,7 +180,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CleanStreet__c: string;
+    maps__CleanStreet__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -191,7 +191,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Country__c: string;
+    maps__Country__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -200,7 +200,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Description__c: string;
+    maps__Description__c?: string;
     /**
      * <h3><b>Device Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -211,7 +211,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DeviceId__c: string;
+    maps__DeviceId__c?: string;
     /**
      * <h3><b>Device Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -222,7 +222,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DeviceType__c: string;
+    maps__DeviceType__c?: string;
     /**
      * <h3><b>Device Vendor</b></h3>
      * <h4>Field Attributes</h4>
@@ -233,7 +233,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DeviceVendor__c: string;
+    maps__DeviceVendor__c?: string;
     /**
      * <h3><b>Disable Global Search</b></h3>
      * <p>Disables searching for records inside Maps with this Base Object.</p>
@@ -243,7 +243,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__DisableGlobalSearch__c: boolean;
+    maps__DisableGlobalSearch__c?: boolean;
     /**
      * <h3><b>In Active</b></h3>
      * <h4>Field Attributes</h4>
@@ -252,7 +252,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__InActive__c: boolean;
+    maps__InActive__c?: boolean;
     /**
      * <h3><b>Last Updated</b></h3>
      * <h4>Field Attributes</h4>
@@ -261,7 +261,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LastUpdated__c: string;
+    maps__LastUpdated__c?: string;
     /**
      * <h3><b>Latitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -272,7 +272,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Latitude__c: string;
+    maps__Latitude__c?: string;
     /**
      * <h3><b>Longitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -283,7 +283,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Longitude__c: string;
+    maps__Longitude__c?: string;
     /**
      * <h3><b>MapIt Proximity Measurement Unit</b></h3>
      * <h4>Field Attributes</h4>
@@ -301,7 +301,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Yards</code></td><td>Yards</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__MapIt_Proximity_Measurement_Unit__c: string;
+    maps__MapIt_Proximity_Measurement_Unit__c?: string;
     /**
      * <h3><b>MapIt Proximity On</b></h3>
      * <h4>Field Attributes</h4>
@@ -310,7 +310,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__MapIt_Proximity_On__c: boolean;
+    maps__MapIt_Proximity_On__c?: boolean;
     /**
      * <h3><b>MapIt Proximity Radius</b></h3>
      * <h4>Field Attributes</h4>
@@ -321,7 +321,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MapIt_Proximity_Radius__c: number;
+    maps__MapIt_Proximity_Radius__c?: number;
     /**
      * <h3><b>MapIt Show Inside Shape</b></h3>
      * <h4>Field Attributes</h4>
@@ -330,7 +330,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__MapIt_Show_Inside_Shape__c: boolean;
+    maps__MapIt_Show_Inside_Shape__c?: boolean;
     /**
      * <h3><b>MapIt Zoom Control</b></h3>
      * <h4>Field Attributes</h4>
@@ -342,7 +342,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">16</code></td></tr>
      * </table>
      */
-    maps__MapIt_Zoom_Control__c: number;
+    maps__MapIt_Zoom_Control__c?: number;
     /**
      * <h3><b>MapIt Zoom To Fit</b></h3>
      * <h4>Field Attributes</h4>
@@ -351,8 +351,8 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__MapIt_Zoom_To_Fit__c: boolean;
-    maps__MapsAdvancedRouteDataSets__r: AdvRouteDataSet__c[];
+    maps__MapIt_Zoom_To_Fit__c?: boolean;
+    maps__MapsAdvancedRouteDataSets__r?: AdvRouteDataSet__c[];
     /**
      * <h3><b>Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -363,7 +363,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Name__c: string;
+    maps__Name__c?: string;
     /**
      * <h3><b>Polyline Vertices</b></h3>
      * <h4>Field Attributes</h4>
@@ -374,7 +374,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__PolylineVertices__c: string;
+    maps__PolylineVertices__c?: string;
     /**
      * <h3><b>Polymorphic Address Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -385,7 +385,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__PolymorphicAddressObject__c: string;
+    maps__PolymorphicAddressObject__c?: string;
     /**
      * <h3><b>Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -396,7 +396,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__PostalCode__c: string;
+    maps__PostalCode__c?: string;
     /**
      * <h3><b>Priority Field</b></h3>
      * <h4>Field Attributes</h4>
@@ -407,7 +407,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__PriorityField__c: string;
+    maps__PriorityField__c?: string;
     /**
      * <h3><b>Priority Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -423,7 +423,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Other</code></td><td>Other</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__PriorityType__c: string;
+    maps__PriorityType__c?: string;
     /**
      * <h3><b>Processing</b></h3>
      * <h4>Field Attributes</h4>
@@ -432,7 +432,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__Processing__c: boolean;
+    maps__Processing__c?: boolean;
     /**
      * <h3><b>Quality</b></h3>
      * <h4>Field Attributes</h4>
@@ -443,7 +443,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Quality__c: string;
+    maps__Quality__c?: string;
     /**
      * <h3><b>Record Type Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -454,7 +454,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RecordTypeId__c: string;
+    maps__RecordTypeId__c?: string;
     /**
      * <h3><b>Routing End Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -465,7 +465,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RoutingEndTime__c: string;
+    maps__RoutingEndTime__c?: string;
     /**
      * <h3><b>Routing Has Address</b></h3>
      * <h4>Field Attributes</h4>
@@ -476,7 +476,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RoutingHasAddress__c: string;
+    maps__RoutingHasAddress__c?: string;
     /**
      * <h3><b>Routing Is Flexible</b></h3>
      * <h4>Field Attributes</h4>
@@ -487,7 +487,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RoutingIsFlexible__c: string;
+    maps__RoutingIsFlexible__c?: string;
     /**
      * <h3><b>Routing Start Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -498,9 +498,9 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RoutingStartTime__c: string;
-    maps__Saved_Queries__r: MarkerLayer__c[];
-    maps__ScheduledJobs__r: ScheduledJob__c[];
+    maps__RoutingStartTime__c?: string;
+    maps__Saved_Queries__r?: MarkerLayer__c[];
+    maps__ScheduledJobs__r?: ScheduledJob__c[];
     /**
      * <h3><b>Settings</b></h3>
      * <h4>Field Attributes</h4>
@@ -508,7 +508,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__Settings__c: string;
+    maps__Settings__c?: string;
     /**
      * <h3><b>Shape</b></h3>
      * <p>This field is used to store lookup field names to Maps territories which can be set up for Geofence Layers.</p>
@@ -520,7 +520,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Shape__c: string;
+    maps__Shape__c?: string;
     /**
      * <h3><b>Similarity</b></h3>
      * <h4>Field Attributes</h4>
@@ -531,7 +531,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Similarity__c: string;
+    maps__Similarity__c?: string;
     /**
      * <h3><b>Skip Failed Geocodes</b></h3>
      * <h4>Field Attributes</h4>
@@ -540,7 +540,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__SkipFailedGeocodes__c: boolean;
+    maps__SkipFailedGeocodes__c?: boolean;
     /**
      * <h3><b>State</b></h3>
      * <h4>Field Attributes</h4>
@@ -551,7 +551,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__State__c: string;
+    maps__State__c?: string;
     /**
      * <h3><b>Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -562,7 +562,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Street__c: string;
+    maps__Street__c?: string;
     /**
      * <h3><b>testLat</b></h3>
      * <h4>Field Attributes</h4>
@@ -573,7 +573,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__testLat__c: string;
+    maps__testLat__c?: string;
     /**
      * <h3><b>Tooltip Ten</b></h3>
      * <h4>Field Attributes</h4>
@@ -584,7 +584,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip10__c: string;
+    maps__Tooltip10__c?: string;
     /**
      * <h3><b>Tooltip Eleven</b></h3>
      * <h4>Field Attributes</h4>
@@ -595,7 +595,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip11__c: string;
+    maps__Tooltip11__c?: string;
     /**
      * <h3><b>Tooltip Twelve</b></h3>
      * <h4>Field Attributes</h4>
@@ -606,7 +606,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip12__c: string;
+    maps__Tooltip12__c?: string;
     /**
      * <h3><b>Tooltip Thirteen</b></h3>
      * <h4>Field Attributes</h4>
@@ -617,7 +617,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip13__c: string;
+    maps__Tooltip13__c?: string;
     /**
      * <h3><b>Tooltip Fourteen</b></h3>
      * <h4>Field Attributes</h4>
@@ -628,7 +628,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip14__c: string;
+    maps__Tooltip14__c?: string;
     /**
      * <h3><b>Tooltip Fifteen</b></h3>
      * <h4>Field Attributes</h4>
@@ -639,7 +639,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip15__c: string;
+    maps__Tooltip15__c?: string;
     /**
      * <h3><b>Tooltip One</b></h3>
      * <h4>Field Attributes</h4>
@@ -650,7 +650,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip1__c: string;
+    maps__Tooltip1__c?: string;
     /**
      * <h3><b>Tooltip Two</b></h3>
      * <h4>Field Attributes</h4>
@@ -661,7 +661,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip2__c: string;
+    maps__Tooltip2__c?: string;
     /**
      * <h3><b>Tooltip Three</b></h3>
      * <h4>Field Attributes</h4>
@@ -672,7 +672,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip3__c: string;
+    maps__Tooltip3__c?: string;
     /**
      * <h3><b>Tooltip Four</b></h3>
      * <h4>Field Attributes</h4>
@@ -683,7 +683,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip4__c: string;
+    maps__Tooltip4__c?: string;
     /**
      * <h3><b>Tooltip Five</b></h3>
      * <h4>Field Attributes</h4>
@@ -694,7 +694,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip5__c: string;
+    maps__Tooltip5__c?: string;
     /**
      * <h3><b>Tooltip Six</b></h3>
      * <h4>Field Attributes</h4>
@@ -705,7 +705,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip6__c: string;
+    maps__Tooltip6__c?: string;
     /**
      * <h3><b>Tooltip Seven</b></h3>
      * <h4>Field Attributes</h4>
@@ -716,7 +716,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip7__c: string;
+    maps__Tooltip7__c?: string;
     /**
      * <h3><b>Tooltip Eight</b></h3>
      * <h4>Field Attributes</h4>
@@ -727,7 +727,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip8__c: string;
+    maps__Tooltip8__c?: string;
     /**
      * <h3><b>Tooltip Nine</b></h3>
      * <h4>Field Attributes</h4>
@@ -738,7 +738,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Tooltip9__c: string;
+    maps__Tooltip9__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -754,7 +754,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Geofence</code></td><td>Geofence</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Type__c: string;
+    maps__Type__c?: string;
     /**
      * <h3><b>Verified Latitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -765,7 +765,7 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__VerifiedLatitude__c: string;
+    maps__VerifiedLatitude__c?: string;
     /**
      * <h3><b>Verified Longitude</b></h3>
      * <h4>Field Attributes</h4>
@@ -776,61 +776,61 @@ declare interface maps__BaseObject__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__VerifiedLongitude__c: string;
-    maps__Waypoints__r: Waypoint__c[];
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    maps__VerifiedLongitude__c?: string;
+    maps__Waypoints__r?: Waypoint__c[];
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: BaseObject__Share[];
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: BaseObject__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: BaseObject__Share[];
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: BaseObject__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

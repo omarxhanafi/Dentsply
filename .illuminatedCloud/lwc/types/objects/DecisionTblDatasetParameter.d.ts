@@ -2,18 +2,18 @@
 
 declare interface DecisionTblDatasetParameter extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DatasetFieldName: string;
-    DatasetSourceObject: string;
-    DecisionTableDatasetLink: DecisionTableDatasetLink;
-    DecisionTableDatasetLinkId: string;
-    DecisionTableParameter: DecisionTableParameter;
-    DecisionTableParameterId: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DatasetFieldName?: string;
+    DatasetSourceObject?: string;
+    DecisionTableDatasetLink?: DecisionTableDatasetLink;
+    DecisionTableDatasetLinkId?: string;
+    DecisionTableParameter?: DecisionTableParameter;
+    DecisionTableParameterId?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    SystemModstamp?: string;
 }

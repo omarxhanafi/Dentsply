@@ -5,27 +5,27 @@ declare interface LiveChatTranscriptSkill extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    RelatedRecord: FlowRecordRelation;
-    Skill: Skill;
-    SkillId: string;
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    Transcript: LiveChatTranscript;
-    TranscriptId: string;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    RelatedRecord?: FlowRecordRelation;
+    Skill?: Skill;
+    SkillId?: string;
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    Transcript?: LiveChatTranscript;
+    TranscriptId?: string;
 }

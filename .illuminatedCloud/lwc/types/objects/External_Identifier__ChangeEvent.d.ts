@@ -12,7 +12,7 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attribute_1__c: string;
+    Attribute_1__c?: string;
     /**
      * <h3><b>Attribute 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,12 +23,12 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Attribute_2__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Attribute_2__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Email</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email__c: string;
+    Email__c?: string;
     /**
      * <h3><b>External SF ID</b></h3>
      * <p>Combination of the government Id &amp; Zip code</p>
@@ -51,7 +51,7 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    External_ID_1__c: string;
+    External_ID_1__c?: string;
     /**
      * <h3><b>External ID</b></h3>
      * <p>Some countries have multiple addresses attached to one government Id, therefore this will act as the plain government Id and External ID 1 will act as the unique Id in SF</p>
@@ -63,7 +63,7 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    External_ID__c: string;
+    External_ID__c?: string;
     /**
      * <h3><b>First Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    First_Name__c: string;
+    First_Name__c?: string;
     /**
      * <h3><b>Full Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,7 +86,7 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Full_Name__c: string;
+    Full_Name__c?: string;
     /**
      * <h3><b>Last Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -97,13 +97,13 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Last_Name__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    Last_Name__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Phone</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,8 +112,8 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Phone__c: string;
-    ReplayId: string;
+    Phone__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Visiting City</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Visiting_City__c: string;
+    Visiting_City__c?: string;
     /**
      * <h3><b>Visiting Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -135,7 +135,7 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Visiting_Country__c: string;
+    Visiting_Country__c?: string;
     /**
      * <h3><b>Visiting Street</b></h3>
      * <h4>Field Attributes</h4>
@@ -146,7 +146,7 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Visiting_Street__c: string;
+    Visiting_Street__c?: string;
     /**
      * <h3><b>Visiting Zip/Postal Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -157,5 +157,5 @@ declare interface External_Identifier__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Visiting_Zip_Postal_Code__c: string;
+    Visiting_Zip_Postal_Code__c?: string;
 }

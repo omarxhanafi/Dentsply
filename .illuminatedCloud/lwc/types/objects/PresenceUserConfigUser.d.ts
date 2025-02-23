@@ -2,16 +2,16 @@
 
 declare interface PresenceUserConfigUser extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    PresenceUserConfig: PresenceUserConfig;
-    PresenceUserConfigId: string;
-    SystemModstamp: string;
-    User: User;
-    UserId: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    PresenceUserConfig?: PresenceUserConfig;
+    PresenceUserConfigId?: string;
+    SystemModstamp?: string;
+    User?: User;
+    UserId?: string;
 }

@@ -246,6 +246,12 @@ declare module "@salesforce/schema/ServiceTerritory.GeocodeAccuracy" {
     export default GeocodeAccuracy;
 }
 
+declare module "@salesforce/schema/ServiceTerritory.GeolocationBasedActions" {
+    import { FieldId } from "@salesforce/schema";
+    const GeolocationBasedActions: FieldId;
+    export default GeolocationBasedActions;
+}
+
 declare module "@salesforce/schema/ServiceTerritory.Histories" {
     import { FieldId } from "@salesforce/schema";
     const Histories: FieldId;

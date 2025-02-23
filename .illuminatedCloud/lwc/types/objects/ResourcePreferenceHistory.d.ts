@@ -2,14 +2,14 @@
 
 declare interface ResourcePreferenceHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ResourcePreference: ResourcePreference;
-    ResourcePreferenceId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ResourcePreference?: ResourcePreference;
+    ResourcePreferenceId?: string;
 }

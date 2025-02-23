@@ -2,9 +2,9 @@
 
 declare interface GroupMember extends SObject 
 {
-    Group: Group;
-    GroupId: string;
-    SystemModstamp: string;
-    UserOrGroup: SObject;
-    UserOrGroupId: string;
+    Group?: Group;
+    GroupId?: string;
+    SystemModstamp?: string;
+    UserOrGroup?: SObject;
+    UserOrGroupId?: string;
 }

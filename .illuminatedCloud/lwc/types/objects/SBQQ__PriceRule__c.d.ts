@@ -6,26 +6,26 @@
  */
 declare interface SBQQ__PriceRule__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__PriceAction__c.SBQQ__Rule__c}.
      */
-    PriceActions__r: SBQQ__PriceAction__c[];
+    PriceActions__r?: SBQQ__PriceAction__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__PriceCondition__c.SBQQ__Rule__c}.
      */
-    PriceConditions__r: SBQQ__PriceCondition__c[];
+    PriceConditions__r?: SBQQ__PriceCondition__c[];
     /**
      * The reciprocal relationship for {@link SBQQ__LookupQuery__c.SBQQ__PriceRule2__c}.
      */
-    PriceRuleLookupQueries__r: SBQQ__LookupQuery__c[];
+    PriceRuleLookupQueries__r?: SBQQ__LookupQuery__c[];
     /**
      * <h3><b>Active</b></h3>
      * <p>Indicates whether this rule is active or not.</p>
@@ -36,7 +36,7 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SBQQ__Active__c: boolean;
+    SBQQ__Active__c?: boolean;
     /**
      * <h3><b>Advanced Condition</b></h3>
      * <p>Can only be entered if the Conditions Met is Custom. Enter a combination of the Price Condition Index #s, AND, OR, and parenthesis (e.g. (123 AND 124) AND 125).</p>
@@ -47,7 +47,7 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__AdvancedCondition__c: string;
+    SBQQ__AdvancedCondition__c?: string;
     /**
      * <h3><b>Conditions Met</b></h3>
      * <p>Choose the behavior for your conditions: All is AND, Any is OR, Custom is a combination of AND/OR.</p>
@@ -65,7 +65,7 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Custom</code></td><td>Custom</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__ConditionsMet__c: string;
+    SBQQ__ConditionsMet__c?: string;
     /**
      * <h3><b>Configurator Evaluation Event</b></h3>
      * <p>Event that specifies when Price Rules should be fired.</p>
@@ -82,7 +82,7 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Edit</code></td><td>Edit</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__ConfiguratorEvaluationEvent__c: string;
+    SBQQ__ConfiguratorEvaluationEvent__c?: string;
     /**
      * <h3><b>Calculator Evaluation Event</b></h3>
      * <p>Event that causes this rule to be evaluated.</p>
@@ -101,7 +101,7 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">After Calculate</code></td><td>After Calculate</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__EvaluationEvent__c: string;
+    SBQQ__EvaluationEvent__c?: string;
     /**
      * <h3><b>Evaluation Order</b></h3>
      * <p>Order in which this price rule is evaluated.</p>
@@ -113,7 +113,7 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__EvaluationOrder__c: number;
+    SBQQ__EvaluationOrder__c?: number;
     /**
      * <h3><b>Lookup Object</b></h3>
      * <p>API Name of the Custom Object that stores the lookup data.</p>
@@ -129,7 +129,7 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">SBQQ__LookupData__c</code></td><td>SBQQ__LookupData__c</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__LookupObject__c: string;
+    SBQQ__LookupObject__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>Optional field that makes this rule specific to the product.</p>
@@ -140,7 +140,7 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__c: string;
+    SBQQ__Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <p>Optional field that makes this rule specific to the product.</p>
@@ -151,7 +151,7 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__Product__r: Product2;
+    SBQQ__Product__r?: Product2;
     /**
      * <h3><b>Evaluation Scope</b></h3>
      * <p>Object that’s the target of the field update.</p>
@@ -168,5 +168,5 @@ declare interface SBQQ__PriceRule__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Calculator</code></td><td>Calculator</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TargetObject__c: string;
+    SBQQ__TargetObject__c?: string;
 }

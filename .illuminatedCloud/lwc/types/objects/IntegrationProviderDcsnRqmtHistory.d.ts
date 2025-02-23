@@ -2,14 +2,14 @@
 
 declare interface IntegrationProviderDcsnRqmtHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IntegrationProviderDcsnRqmt: IntegrationProviderDcsnRqmt;
-    IntegrationProviderDcsnRqmtId: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IntegrationProviderDcsnRqmt?: IntegrationProviderDcsnRqmt;
+    IntegrationProviderDcsnRqmtId?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

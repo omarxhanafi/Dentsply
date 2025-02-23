@@ -5,10 +5,10 @@
  */
 declare interface FSL__FMA_Count_Action__e extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
     /**
      * <h3><b>FMA CS Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface FSL__FMA_Count_Action__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__FMA_CS_Name__c: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    FSL__FMA_CS_Name__c?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

@@ -2,17 +2,17 @@
 
 declare interface UserCustomBadge extends SObject 
 {
-    BadgeType: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CustomText: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Localization: UserCustomBadgeLocalization[];
-    Parent: SObject;
-    ParentId: string;
-    SystemModstamp: string;
+    BadgeType?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CustomText?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Localization?: UserCustomBadgeLocalization[];
+    Parent?: SObject;
+    ParentId?: string;
+    SystemModstamp?: string;
 }

@@ -2,16 +2,16 @@
 
 declare interface AuthProvParamFwdAllowlist extends SObject 
 {
-    AuthProvider: AuthProvider;
-    AuthProviderId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    Description: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Param: string;
-    SystemModstamp: string;
+    AuthProvider?: AuthProvider;
+    AuthProviderId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    Description?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Param?: string;
+    SystemModstamp?: string;
 }

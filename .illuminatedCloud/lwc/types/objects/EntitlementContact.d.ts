@@ -5,27 +5,27 @@ declare interface EntitlementContact extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    Contact: Contact;
-    ContactId: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    Entitlement: Entitlement;
-    EntitlementId: string;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    Contact?: Contact;
+    ContactId?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    Entitlement?: Entitlement;
+    EntitlementId?: string;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
 }

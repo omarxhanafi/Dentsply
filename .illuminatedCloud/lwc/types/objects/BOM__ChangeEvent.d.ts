@@ -2,11 +2,11 @@
 
 declare interface BOM__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -16,7 +16,7 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Discount__c: number;
+    Discount__c?: number;
     /**
      * <h3><b>Discounted Value</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,11 +26,11 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Discount_Value__c: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Discount_Value__c?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__r: Product2;
+    Product__r?: Product2;
     /**
      * <h3><b>Product bundle</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,7 +56,7 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Product_bundle__c})</td></tr>
      * </table>
      */
-    Product_bundle__c: string;
+    Product_bundle__c?: string;
     /**
      * <h3><b>Product bundle</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,7 +64,7 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Product_bundle__c})</td></tr>
      * </table>
      */
-    Product_bundle__r: Product_bundle__c;
+    Product_bundle__r?: Product_bundle__c;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -75,8 +75,8 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity__c: number;
-    ReplayId: string;
+    Quantity__c?: number;
+    ReplayId?: string;
     /**
      * <h3><b>Row price</b></h3>
      * <h4>Field Attributes</h4>
@@ -86,7 +86,7 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Row_price__c: number;
+    Row_price__c?: number;
     /**
      * <h3><b>Sort Order</b></h3>
      * <p>Controls the sorting order of the quote line items during their generation for a quote</p>
@@ -98,7 +98,7 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SortOrder__c: number;
+    SortOrder__c?: number;
     /**
      * <h3><b>Unit price</b></h3>
      * <h4>Field Attributes</h4>
@@ -107,5 +107,5 @@ declare interface BOM__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Unit_price__c: number;
+    Unit_price__c?: number;
 }

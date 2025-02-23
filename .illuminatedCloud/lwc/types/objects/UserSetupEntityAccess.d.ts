@@ -2,10 +2,10 @@
 
 declare interface UserSetupEntityAccess extends SObject 
 {
-    DeveloperName: string;
-    DurableId: string;
-    KeyPrefix: string;
-    LastCacheUpdate: string;
-    NamespacePrefix: string;
-    SetupEntityId: string;
+    DeveloperName?: string;
+    DurableId?: string;
+    KeyPrefix?: string;
+    LastCacheUpdate?: string;
+    NamespacePrefix?: string;
+    SetupEntityId?: string;
 }

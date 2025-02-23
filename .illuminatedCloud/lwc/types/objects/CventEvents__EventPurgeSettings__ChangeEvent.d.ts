@@ -2,11 +2,11 @@
 
 declare interface CventEvents__EventPurgeSettings__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Event Statuses</b></h3>
      * <p>Events in one of this statuses will be purged from Salesforce.</p>
@@ -18,7 +18,7 @@ declare interface CventEvents__EventPurgeSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__EventStatuses__c: string;
+    CventEvents__EventStatuses__c?: string;
     /**
      * <h3><b>Purge</b></h3>
      * <p>Indicates whether the event purge is configured.</p>
@@ -28,7 +28,7 @@ declare interface CventEvents__EventPurgeSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    CventEvents__IsConfigured__c: boolean;
+    CventEvents__IsConfigured__c?: boolean;
     /**
      * <h3><b>Last Purge Date</b></h3>
      * <p>Last purge operation date and time.</p>
@@ -38,7 +38,7 @@ declare interface CventEvents__EventPurgeSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__LastPurgeDate__c: string;
+    CventEvents__LastPurgeDate__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <p>Last purge operation status.</p>
@@ -50,12 +50,12 @@ declare interface CventEvents__EventPurgeSettings__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CventEvents__Status__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    CventEvents__Status__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

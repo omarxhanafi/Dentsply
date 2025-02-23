@@ -2,16 +2,16 @@
 
 declare interface BrandingSetProperty extends SObject 
 {
-    BrandingSet: BrandingSet;
-    BrandingSetId: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    PropertyName: string;
-    PropertyValue: string;
-    SystemModstamp: string;
+    BrandingSet?: BrandingSet;
+    BrandingSetId?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    PropertyName?: string;
+    PropertyValue?: string;
+    SystemModstamp?: string;
 }

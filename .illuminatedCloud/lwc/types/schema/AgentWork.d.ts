@@ -372,6 +372,18 @@ declare module "@salesforce/schema/AgentWork.TargetObject" {
     export default TargetObject;
 }
 
+declare module "@salesforce/schema/AgentWork.TransferRequester" {
+    import { FieldId } from "@salesforce/schema";
+    const TransferRequester: FieldId;
+    export default TransferRequester;
+}
+
+declare module "@salesforce/schema/AgentWork.TransferRequesterId" {
+    import { FieldId } from "@salesforce/schema";
+    const TransferRequesterId: FieldId;
+    export default TransferRequesterId;
+}
+
 declare module "@salesforce/schema/AgentWork.User" {
     import { FieldId } from "@salesforce/schema";
     const User: FieldId;

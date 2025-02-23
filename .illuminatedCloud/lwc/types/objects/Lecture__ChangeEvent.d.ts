@@ -9,12 +9,12 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Html</td></tr>
      * </table>
      */
-    Abstract__c: string;
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Abstract__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Internal Lecture</b></h3>
      * <p>Sets the lecture to be Internal if the related speaker is an internal contact</p>
@@ -24,7 +24,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( Speaker__r.Internal_Contact__c = TRUE, true, false)</code></td></tr>
      * </table>
      */
-    Internal_Lecture__c: boolean;
+    Internal_Lecture__c?: boolean;
     /**
      * <h3><b>Language</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,10 +52,10 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Swedish</code></td><td>Swedish</td><td nowrap>true</td></tr>
      * </table>
      */
-    Language__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Language__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Lecture Abstract</b></h3>
      * <h4>Field Attributes</h4>
@@ -63,7 +63,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Lecture_Abstract__c: string;
+    Lecture_Abstract__c?: string;
     /**
      * <h3><b>Lecture Library</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lecture_Library__c: string;
+    Lecture_Library__c?: string;
     /**
      * <h3><b>Lecture Library</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Lecture_Library__r: Lecture__c;
+    Lecture_Library__r?: Lecture__c;
     /**
      * <h3><b>Lecture Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -97,7 +97,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">External Lecturer</code></td><td>External Lecturer</td><td nowrap>true</td></tr>
      * </table>
      */
-    Lecture_Type__c: string;
+    Lecture_Type__c?: string;
     /**
      * <h3><b>Length</b></h3>
      * <h4>Field Attributes</h4>
@@ -108,7 +108,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Length__c: number;
+    Length__c?: number;
     /**
      * <h3><b>Length Unit</b></h3>
      * <h4>Field Attributes</h4>
@@ -123,13 +123,13 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">hour(s)</code></td><td>hour(s)</td><td nowrap>true</td></tr>
      * </table>
      */
-    Length_Unit__c: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    ReplayId: string;
+    Length_Unit__c?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Speaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -138,7 +138,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker__c: string;
+    Speaker__c?: string;
     /**
      * <h3><b>Speaker</b></h3>
      * <h4>Field Attributes</h4>
@@ -147,7 +147,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker__r: Contact;
+    Speaker__r?: Contact;
     /**
      * <h3><b>Speaker Biography</b></h3>
      * <h4>Field Attributes</h4>
@@ -155,7 +155,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(1500)</td></tr>
      * </table>
      */
-    Speaker_Biography__c: string;
+    Speaker_Biography__c?: string;
     /**
      * <h3><b>Speaker Profession</b></h3>
      * <h4>Field Attributes</h4>
@@ -167,7 +167,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_Profession__c: string;
+    Speaker_Profession__c?: string;
     /**
      * <h3><b>Speaker (text)</b></h3>
      * <p>User solely for enhanced lookup search</p>
@@ -179,7 +179,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Speaker_text__c: string;
+    Speaker_text__c?: string;
     /**
      * <h3><b>Standard Lecture Lenght</b></h3>
      * <h4>Field Attributes</h4>
@@ -190,7 +190,7 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Standard_Lecture_Lenght__c: number;
+    Standard_Lecture_Lenght__c?: number;
     /**
      * <h3><b>Standard Lecture Length Unit</b></h3>
      * <h4>Field Attributes</h4>
@@ -205,5 +205,5 @@ declare interface Lecture__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">hours</code></td><td>hours</td><td nowrap>true</td></tr>
      * </table>
      */
-    Standard_Lecture_Length_Unit__c: string;
+    Standard_Lecture_Length_Unit__c?: string;
 }

@@ -2,14 +2,14 @@
 
 declare interface OrderDeliveryGroupHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    OrderDeliveryGroup: OrderDeliveryGroup;
-    OrderDeliveryGroupId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    OrderDeliveryGroup?: OrderDeliveryGroup;
+    OrderDeliveryGroupId?: string;
 }

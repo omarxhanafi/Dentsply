@@ -2,8 +2,8 @@
 
 declare interface FormulaFunctionAllowedType extends SObject 
 {
-    DurableId: string;
-    Function: FormulaFunction;
-    FunctionId: string;
-    Type: string;
+    DurableId?: string;
+    Function?: FormulaFunction;
+    FunctionId?: string;
+    Type?: string;
 }

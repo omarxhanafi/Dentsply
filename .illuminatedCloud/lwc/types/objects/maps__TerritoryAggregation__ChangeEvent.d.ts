@@ -2,14 +2,14 @@
 
 declare interface maps__TerritoryAggregation__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Avg</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,7 +20,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Avg__c: number;
+    maps__Avg__c?: number;
     /**
      * <h3><b>Count</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,7 +31,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Count__c: number;
+    maps__Count__c?: number;
     /**
      * <h3><b>Active</b></h3>
      * <h4>Field Attributes</h4>
@@ -40,7 +40,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    maps__IsActive__c: boolean;
+    maps__IsActive__c?: boolean;
     /**
      * <h3><b>MAIO Aggregator Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MAIOAggregatorKey__c: string;
+    maps__MAIOAggregatorKey__c?: string;
     /**
      * <h3><b>Max</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Max__c: number;
+    maps__Max__c?: number;
     /**
      * <h3><b>Min</b></h3>
      * <h4>Field Attributes</h4>
@@ -73,7 +73,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Min__c: number;
+    maps__Min__c?: number;
     /**
      * <h3><b>Deactivation Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -81,7 +81,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__Reason__c: string;
+    maps__Reason__c?: string;
     /**
      * <h3><b>Sum</b></h3>
      * <h4>Field Attributes</h4>
@@ -92,7 +92,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Sum__c: number;
+    maps__Sum__c?: number;
     /**
      * <h3><b>Maps Territory Aggregation Setting</b></h3>
      * <h4>Field Attributes</h4>
@@ -101,7 +101,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TerritoryAggregationSetting__c: string;
+    maps__TerritoryAggregationSetting__c?: string;
     /**
      * <h3><b>Maps Territory Aggregation Setting</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TerritoryAggregationSetting__r: maps__TerritoryAggregationSetting__c;
+    maps__TerritoryAggregationSetting__r?: maps__TerritoryAggregationSetting__c;
     /**
      * <h3><b>Maps Territory Layer</b></h3>
      * <h4>Field Attributes</h4>
@@ -118,7 +118,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__Layer__c})</td></tr>
      * </table>
      */
-    maps__TerritoryLayer__c: string;
+    maps__TerritoryLayer__c?: string;
     /**
      * <h3><b>Maps Territory Layer</b></h3>
      * <h4>Field Attributes</h4>
@@ -126,7 +126,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__Layer__c})</td></tr>
      * </table>
      */
-    maps__TerritoryLayer__r: maps__Layer__c;
+    maps__TerritoryLayer__r?: maps__Layer__c;
     /**
      * <h3><b>Maps Territory Node</b></h3>
      * <h4>Field Attributes</h4>
@@ -135,7 +135,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TerritoryNode__c: string;
+    maps__TerritoryNode__c?: string;
     /**
      * <h3><b>Maps Territory Node</b></h3>
      * <h4>Field Attributes</h4>
@@ -144,7 +144,7 @@ declare interface maps__TerritoryAggregation__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TerritoryNode__r: maps__TerritoryNode__c;
-    Name: string;
-    ReplayId: string;
+    maps__TerritoryNode__r?: maps__TerritoryNode__c;
+    Name?: string;
+    ReplayId?: string;
 }

@@ -6,14 +6,14 @@
  */
 declare interface SBQQ__CustomActionCondition__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Custom Action</b></h3>
      * <p>Custom Action that is running this Condition.</p>
@@ -23,7 +23,7 @@ declare interface SBQQ__CustomActionCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__CustomAction__c: string;
+    SBQQ__CustomAction__c?: string;
     /**
      * <h3><b>Custom Action</b></h3>
      * <p>Custom Action that is running this Condition.</p>
@@ -33,7 +33,7 @@ declare interface SBQQ__CustomActionCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__CustomAction__r: SBQQ__CustomAction__c;
+    SBQQ__CustomAction__r?: SBQQ__CustomAction__c;
     /**
      * <h3><b>Field</b></h3>
      * <p>Field on Quote Line or Product Option object that is evaluated by this condition.</p>
@@ -49,7 +49,7 @@ declare interface SBQQ__CustomActionCondition__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product Code</code></td><td>Product Code</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Field__c: string;
+    SBQQ__Field__c?: string;
     /**
      * <h3><b>Filter Value</b></h3>
      * <p>Value to evaluate against.</p>
@@ -61,7 +61,7 @@ declare interface SBQQ__CustomActionCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__FilterValue__c: string;
+    SBQQ__FilterValue__c?: string;
     /**
      * <h3><b>Operator</b></h3>
      * <p>The operator that is applied when comparing the Field with the Value.</p>
@@ -85,7 +85,7 @@ declare interface SBQQ__CustomActionCondition__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">contains</code></td><td>contains</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__Operator__c: string;
+    SBQQ__Operator__c?: string;
     /**
      * <h3><b>ParentConditionIsActive</b></h3>
      * <h4>Field Attributes</h4>
@@ -95,7 +95,7 @@ declare interface SBQQ__CustomActionCondition__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SBQQ__ParentActionIsActive__c: boolean;
+    SBQQ__ParentActionIsActive__c?: boolean;
     /**
      * <h3><b>Target Object</b></h3>
      * <p>Object against which the condition is evaluated.</p>
@@ -112,5 +112,5 @@ declare interface SBQQ__CustomActionCondition__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Product</code></td><td>Product</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBQQ__TargetObject__c: string;
+    SBQQ__TargetObject__c?: string;
 }

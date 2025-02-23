@@ -5,14 +5,14 @@
  */
 declare interface XSBUProduct__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -22,7 +22,7 @@ declare interface XSBUProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price__c: number;
+    Price__c?: number;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -32,7 +32,7 @@ declare interface XSBUProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface XSBUProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__r: Product2;
+    Product__r?: Product2;
     /**
      * <h3><b>Product line</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,7 +52,7 @@ declare interface XSBUProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product_line__c: string;
+    Product_line__c?: string;
     /**
      * <h3><b>Questionnaire Setup</b></h3>
      * <h4>Field Attributes</h4>
@@ -62,7 +62,7 @@ declare interface XSBUProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QuestionnaireSetup__c: string;
+    QuestionnaireSetup__c?: string;
     /**
      * <h3><b>Questionnaire Setup</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,5 +72,5 @@ declare interface XSBUProduct__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QuestionnaireSetup__r: Questionnaire_Setup__c;
+    QuestionnaireSetup__r?: Questionnaire_Setup__c;
 }

@@ -2,15 +2,15 @@
 
 declare interface EventBusSubscriber extends SObject 
 {
-    CurrencyIsoCode: string;
-    ExternalId: string;
-    IsPartitioned: boolean;
-    LastError: string;
-    Name: string;
-    Position: number;
-    Retries: number;
-    Status: string;
-    Tip: number;
-    Topic: string;
-    Type: string;
+    CurrencyIsoCode?: string;
+    ExternalId?: string;
+    IsPartitioned?: boolean;
+    LastError?: string;
+    Name?: string;
+    Position?: number;
+    Retries?: number;
+    Status?: string;
+    Tip?: number;
+    Topic?: string;
+    Type?: string;
 }

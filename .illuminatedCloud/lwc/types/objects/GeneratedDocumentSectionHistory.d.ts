@@ -2,14 +2,14 @@
 
 declare interface GeneratedDocumentSectionHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    GeneratedDocumentSection: GeneratedDocumentSection;
-    GeneratedDocumentSectionId: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    GeneratedDocumentSection?: GeneratedDocumentSection;
+    GeneratedDocumentSectionId?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

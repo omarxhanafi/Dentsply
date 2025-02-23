@@ -24,6 +24,12 @@ declare module "@salesforce/schema/FulfillmentOrderLineItem.ApprovalWorkItems" {
     export default ApprovalWorkItems;
 }
 
+declare module "@salesforce/schema/FulfillmentOrderLineItem.AssociatedFulfillmentlineRelationships" {
+    import { FieldId } from "@salesforce/schema";
+    const AssociatedFulfillmentlineRelationships: FieldId;
+    export default AssociatedFulfillmentlineRelationships;
+}
+
 declare module "@salesforce/schema/FulfillmentOrderLineItem.AttachedContentDocuments" {
     import { FieldId } from "@salesforce/schema";
     const AttachedContentDocuments: FieldId;
@@ -78,6 +84,12 @@ declare module "@salesforce/schema/FulfillmentOrderLineItem.CurrencyIsoCode" {
     export default CurrencyIsoCode;
 }
 
+declare module "@salesforce/schema/FulfillmentOrderLineItem.DecomposedToLineItemRels" {
+    import { FieldId } from "@salesforce/schema";
+    const DecomposedToLineItemRels: FieldId;
+    export default DecomposedToLineItemRels;
+}
+
 declare module "@salesforce/schema/FulfillmentOrderLineItem.Description" {
     import { FieldId } from "@salesforce/schema";
     const Description: FieldId;
@@ -120,6 +132,30 @@ declare module "@salesforce/schema/FulfillmentOrderLineItem.FlowOrchestrationWor
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/FulfillmentOrderLineItem.FulfillmentAsset" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentAsset: FieldId;
+    export default FulfillmentAsset;
+}
+
+declare module "@salesforce/schema/FulfillmentOrderLineItem.FulfillmentAssetId" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentAssetId: FieldId;
+    export default FulfillmentAssetId;
+}
+
+declare module "@salesforce/schema/FulfillmentOrderLineItem.FulfillmentLineAttributes" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentLineAttributes: FieldId;
+    export default FulfillmentLineAttributes;
+}
+
+declare module "@salesforce/schema/FulfillmentOrderLineItem.FulfillmentLineSourceRels" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentLineSourceRels: FieldId;
+    export default FulfillmentLineSourceRels;
+}
+
 declare module "@salesforce/schema/FulfillmentOrderLineItem.FulfillmentOrder" {
     import { FieldId } from "@salesforce/schema";
     const FulfillmentOrder: FieldId;
@@ -154,6 +190,12 @@ declare module "@salesforce/schema/FulfillmentOrderLineItem.FulfillmentOrderLine
     import { FieldId } from "@salesforce/schema";
     const FulfillmentOrderLineItemNumber: FieldId;
     export default FulfillmentOrderLineItemNumber;
+}
+
+declare module "@salesforce/schema/FulfillmentOrderLineItem.FulfillmentSteps" {
+    import { FieldId } from "@salesforce/schema";
+    const FulfillmentSteps: FieldId;
+    export default FulfillmentSteps;
 }
 
 declare module "@salesforce/schema/FulfillmentOrderLineItem.GeneratedDocRefObjects" {
@@ -208,6 +250,12 @@ declare module "@salesforce/schema/FulfillmentOrderLineItem.LinkedEntity" {
     import { FieldId } from "@salesforce/schema";
     const LinkedEntity: FieldId;
     export default LinkedEntity;
+}
+
+declare module "@salesforce/schema/FulfillmentOrderLineItem.MainFulfillmentLineRelationships" {
+    import { FieldId } from "@salesforce/schema";
+    const MainFulfillmentLineRelationships: FieldId;
+    export default MainFulfillmentLineRelationships;
 }
 
 declare module "@salesforce/schema/FulfillmentOrderLineItem.OrderItem" {
@@ -316,6 +364,12 @@ declare module "@salesforce/schema/FulfillmentOrderLineItem.SobjectLookupValue" 
     import { FieldId } from "@salesforce/schema";
     const SobjectLookupValue: FieldId;
     export default SobjectLookupValue;
+}
+
+declare module "@salesforce/schema/FulfillmentOrderLineItem.SourceLineItem" {
+    import { FieldId } from "@salesforce/schema";
+    const SourceLineItem: FieldId;
+    export default SourceLineItem;
 }
 
 declare module "@salesforce/schema/FulfillmentOrderLineItem.SystemModstamp" {

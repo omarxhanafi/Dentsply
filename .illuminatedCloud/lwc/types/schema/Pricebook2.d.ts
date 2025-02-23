@@ -54,10 +54,28 @@ declare module "@salesforce/schema/Pricebook2.Contract_Discount_types__c" {
     export default Contract_Discount_types__c;
 }
 
+declare module "@salesforce/schema/Pricebook2.Contracts" {
+    import { FieldId } from "@salesforce/schema";
+    const Contracts: FieldId;
+    export default Contracts;
+}
+
 declare module "@salesforce/schema/Pricebook2.ConversionRate__c" {
     import { FieldId } from "@salesforce/schema";
     const ConversionRate__c: FieldId;
     export default ConversionRate__c;
+}
+
+declare module "@salesforce/schema/Pricebook2.CostBook" {
+    import { FieldId } from "@salesforce/schema";
+    const CostBook: FieldId;
+    export default CostBook;
+}
+
+declare module "@salesforce/schema/Pricebook2.CostBookId" {
+    import { FieldId } from "@salesforce/schema";
+    const CostBookId: FieldId;
+    export default CostBookId;
 }
 
 declare module "@salesforce/schema/Pricebook2.CreatedBy" {

@@ -5,7 +5,7 @@
  */
 declare interface ERPIntegration_ContractMappings__mdt extends SObject 
 {
-    DeveloperName: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Is Voucher</b></h3>
      * <h4>Field Attributes</h4>
@@ -14,12 +14,12 @@ declare interface ERPIntegration_ContractMappings__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    IsVoucher__c: boolean;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    IsVoucher__c?: boolean;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Record Type Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -30,6 +30,6 @@ declare interface ERPIntegration_ContractMappings__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RecordTypeId__c: string;
-    SystemModstamp: string;
+    RecordTypeId__c?: string;
+    SystemModstamp?: string;
 }

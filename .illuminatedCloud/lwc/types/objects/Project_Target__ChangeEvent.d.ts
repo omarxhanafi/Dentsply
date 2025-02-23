@@ -2,11 +2,11 @@
 
 declare interface Project_Target__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Follow-up date</b></h3>
      * <h4>Field Attributes</h4>
@@ -15,10 +15,10 @@ declare interface Project_Target__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Follow_up_date__c: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Follow_up_date__c?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Method for measure</b></h3>
      * <h4>Field Attributes</h4>
@@ -27,8 +27,8 @@ declare interface Project_Target__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Method_for_measure__c: string;
-    Name: string;
+    Method_for_measure__c?: string;
+    Name?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface Project_Target__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__c: string;
+    Project__c?: string;
     /**
      * <h3><b>Project</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,8 +44,8 @@ declare interface Project_Target__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Project__c})</td></tr>
      * </table>
      */
-    Project__r: Project__c;
-    ReplayId: string;
+    Project__r?: Project__c;
+    ReplayId?: string;
     /**
      * <h3><b>Target Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,7 +53,7 @@ declare interface Project_Target__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Target_Description__c: string;
+    Target_Description__c?: string;
     /**
      * <h3><b>Target KPI</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,7 +64,7 @@ declare interface Project_Target__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Target_KPI__c: string;
+    Target_KPI__c?: string;
     /**
      * <h3><b>Target reach (%)</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,5 +82,5 @@ declare interface Project_Target__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">100</code></td><td>100</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Target_reach__c: string;
+    Target_reach__c?: string;
 }

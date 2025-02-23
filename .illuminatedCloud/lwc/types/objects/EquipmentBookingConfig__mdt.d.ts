@@ -17,7 +17,7 @@ declare interface EquipmentBookingConfig__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountCountry__c: string;
+    AccountCountry__c?: string;
     /**
      * <h3><b>Booking Algorithm</b></h3>
      * <p>Affects how can we reserve an equipment</p>
@@ -34,10 +34,10 @@ declare interface EquipmentBookingConfig__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Predictive</code></td><td>Predictive</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    BookingAlgorithm__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
+    BookingAlgorithm__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
     /**
      * <h3><b>Location Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,9 +48,9 @@ declare interface EquipmentBookingConfig__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LocationId__c: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    LocationId__c?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>New Request Notification</b></h3>
      * <h4>Field Attributes</h4>
@@ -59,7 +59,7 @@ declare interface EquipmentBookingConfig__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    NewRequestNotification__c: boolean;
+    NewRequestNotification__c?: boolean;
     /**
      * <h3><b>Number of Days</b></h3>
      * <h4>Field Attributes</h4>
@@ -70,8 +70,8 @@ declare interface EquipmentBookingConfig__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NumberofDays__c: number;
-    QualifiedApiName: string;
+    NumberofDays__c?: number;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Queue Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,6 +82,6 @@ declare interface EquipmentBookingConfig__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    QueueId__c: string;
-    SystemModstamp: string;
+    QueueId__c?: string;
+    SystemModstamp?: string;
 }

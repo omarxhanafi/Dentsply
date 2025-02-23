@@ -8,46 +8,46 @@ declare interface FSL__UserSetting__c extends SObject
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * <h3><b>Date Horizon Properties</b></h3>
      * <p>Selected date horizon fields</p>
@@ -59,7 +59,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Date_Horizon_Properties__c: string;
+    FSL__Date_Horizon_Properties__c?: string;
     /**
      * <h3><b>Days In Utilization View</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,7 +71,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">14</code></td></tr>
      * </table>
      */
-    FSL__DaysInUtilizationView__c: number;
+    FSL__DaysInUtilizationView__c?: number;
     /**
      * <h3><b>Default Left Panel</b></h3>
      * <p>The default panel on the left side of the gantt</p>
@@ -83,7 +83,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__DefaultLeftPanel__c: string;
+    FSL__DefaultLeftPanel__c?: string;
     /**
      * <h3><b>Drag Na Duration</b></h3>
      * <h4>Field Attributes</h4>
@@ -95,7 +95,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">60</code></td></tr>
      * </table>
      */
-    FSL__Drag_Na_Duration__c: number;
+    FSL__Drag_Na_Duration__c?: number;
     /**
      * <h3><b>Drag Na Label</b></h3>
      * <h4>Field Attributes</h4>
@@ -106,7 +106,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Drag_Na_Label__c: string;
+    FSL__Drag_Na_Label__c?: string;
     /**
      * <h3><b>Drag Na Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -117,7 +117,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Drag_Na_Type__c: string;
+    FSL__Drag_Na_Type__c?: string;
     /**
      * <h3><b>Favorite Territories</b></h3>
      * <p>List of ids of favorite territories</p>
@@ -126,7 +126,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(130000)</td></tr>
      * </table>
      */
-    FSL__FavoriteTerritories__c: string;
+    FSL__FavoriteTerritories__c?: string;
     /**
      * <h3><b>Filter Candidates</b></h3>
      * <p>Filter candidates after get slots</p>
@@ -136,7 +136,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    FSL__Filter_Candidates__c: boolean;
+    FSL__Filter_Candidates__c?: boolean;
     /**
      * <h3><b>Filters</b></h3>
      * <p>Custom service list filters</p>
@@ -145,7 +145,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(50000)</td></tr>
      * </table>
      */
-    FSL__Filters__c: string;
+    FSL__Filters__c?: string;
     /**
      * <h3><b>Gantt Palette</b></h3>
      * <h4>Field Attributes</h4>
@@ -154,7 +154,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Gantt_Palette__c: string;
+    FSL__Gantt_Palette__c?: string;
     /**
      * <h3><b>Gantt Palette</b></h3>
      * <h4>Field Attributes</h4>
@@ -163,7 +163,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Gantt_Palette__r: FSL__GanttPalette__c;
+    FSL__Gantt_Palette__r?: FSL__GanttPalette__c;
     /**
      * <h3><b>Gantt Chart Policy</b></h3>
      * <h4>Field Attributes</h4>
@@ -172,7 +172,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Gantt_Policy__c: string;
+    FSL__Gantt_Policy__c?: string;
     /**
      * <h3><b>Gantt Chart Policy</b></h3>
      * <h4>Field Attributes</h4>
@@ -181,7 +181,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Gantt_Policy__r: FSL__Scheduling_Policy__c;
+    FSL__Gantt_Policy__r?: FSL__Scheduling_Policy__c;
     /**
      * <h3><b>Gantt View Finish Hour</b></h3>
      * <p>Set the visible finish hour on the timeline</p>
@@ -194,7 +194,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">24</code></td></tr>
      * </table>
      */
-    FSL__Gantt_View_Finish_Hour__c: number;
+    FSL__Gantt_View_Finish_Hour__c?: number;
     /**
      * <h3><b>Gantt View Start Hour</b></h3>
      * <p>Set the visible start hour on the timeline</p>
@@ -207,7 +207,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    FSL__Gantt_View_Start_Hour__c: number;
+    FSL__Gantt_View_Start_Hour__c?: number;
     /**
      * <h3><b>Highlight Weekeneds</b></h3>
      * <p>Highlight Weekeneds On The Gantt</p>
@@ -217,7 +217,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__Highlight_Weekeneds__c: boolean;
+    FSL__Highlight_Weekeneds__c?: boolean;
     /**
      * <h3><b>Include Weekends</b></h3>
      * <p>Include weekends inside the gantt view</p>
@@ -227,7 +227,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__Include_Weekends__c: boolean;
+    FSL__Include_Weekends__c?: boolean;
     /**
      * <h3><b>Hidden Polygons</b></h3>
      * <p>List of ids of Invisible polygons on the map</p>
@@ -236,7 +236,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(130000)</td></tr>
      * </table>
      */
-    FSL__Invisible_Polygons__c: string;
+    FSL__Invisible_Polygons__c?: string;
     /**
      * <h3><b>Left Panel Width Percentage</b></h3>
      * <h4>Field Attributes</h4>
@@ -245,7 +245,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Left_Panel_Width_Percentage__c: number;
+    FSL__Left_Panel_Width_Percentage__c?: number;
     /**
      * <h3><b>Load On Today</b></h3>
      * <p>First load gantt on today&#39;s date or last visited date</p>
@@ -255,7 +255,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__Load_On_Today__c: boolean;
+    FSL__Load_On_Today__c?: boolean;
     /**
      * <h3><b>Lock Gantt</b></h3>
      * <p>gantt is locked for drag and drop</p>
@@ -265,7 +265,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__Lock_Gantt__c: boolean;
+    FSL__Lock_Gantt__c?: boolean;
     /**
      * <h3><b>Longterm Minimum Absence Duration</b></h3>
      * <p>Minimum duration of Resource Absence to show on the long term view</p>
@@ -278,7 +278,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">8</code></td></tr>
      * </table>
      */
-    FSL__Longterm_Min_Absence_Duration__c: number;
+    FSL__Longterm_Min_Absence_Duration__c?: number;
     /**
      * <h3><b>Longterm Minimum Service Duration</b></h3>
      * <p>Minimum duration of Service Appointment to show on the long term view</p>
@@ -291,7 +291,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">8</code></td></tr>
      * </table>
      */
-    FSL__Longterm_Min_Service_Duration__c: number;
+    FSL__Longterm_Min_Service_Duration__c?: number;
     /**
      * <h3><b>Months on view</b></h3>
      * <p>Number of months to display on the long term view</p>
@@ -304,7 +304,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">8</code></td></tr>
      * </table>
      */
-    FSL__Longterm_Num_Of_Months__c: number;
+    FSL__Longterm_Num_Of_Months__c?: number;
     /**
      * <h3><b>Marker Clustering</b></h3>
      * <p>Gantt markers clustering</p>
@@ -314,7 +314,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__Map_Markers_Cluster__c: boolean;
+    FSL__Map_Markers_Cluster__c?: boolean;
     /**
      * <h3><b>Map Object Markers</b></h3>
      * <h4>Field Attributes</h4>
@@ -325,7 +325,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Map_Object_Markers__c: string;
+    FSL__Map_Object_Markers__c?: string;
     /**
      * <h3><b>Match Gantt Dates</b></h3>
      * <p>Service list should match the dates visible on the gantt</p>
@@ -335,7 +335,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__Match_Gantt_Dates__c: boolean;
+    FSL__Match_Gantt_Dates__c?: boolean;
     /**
      * <h3><b>Resource Filter</b></h3>
      * <p>Last selected resource filtering for gantt view</p>
@@ -344,7 +344,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    FSL__Resource_Filter__c: string;
+    FSL__Resource_Filter__c?: string;
     /**
      * <h3><b>Resource Row Height</b></h3>
      * <p>Set the height of a row in the gantt</p>
@@ -362,7 +362,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">large</code></td><td>large</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__Resource_Row_Height__c: string;
+    FSL__Resource_Row_Height__c?: string;
     /**
      * <h3><b>Scheduling horizon limit</b></h3>
      * <p>Determines the number of days to show before the selected scheduling horizon</p>
@@ -375,7 +375,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">14</code></td></tr>
      * </table>
      */
-    FSL__Scheduling_horizon_limit__c: number;
+    FSL__Scheduling_horizon_limit__c?: number;
     /**
      * <h3><b>Selected List View</b></h3>
      * <p>Last selected list view for service appointment list</p>
@@ -387,7 +387,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Selected_List_View__c: string;
+    FSL__Selected_List_View__c?: string;
     /**
      * <h3><b>Service List Coloring</b></h3>
      * <p>Background styling for service on the list</p>
@@ -399,7 +399,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__ServiceListColoring__c: string;
+    FSL__ServiceListColoring__c?: string;
     /**
      * <h3><b>Services_List_Height Percentage</b></h3>
      * <h4>Field Attributes</h4>
@@ -408,7 +408,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Services_List_Height_Percentage__c: number;
+    FSL__Services_List_Height_Percentage__c?: number;
     /**
      * <h3><b>Services Per Page</b></h3>
      * <p>Set the maximum amount of services per page</p>
@@ -427,7 +427,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">50</code></td><td>50</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__Services_Per_Page__c: string;
+    FSL__Services_Per_Page__c?: string;
     /**
      * <h3><b>Show only MDT in Longterm</b></h3>
      * <p>Show only MDT service appointments in long term view</p>
@@ -437,7 +437,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__Show_Only_MDT_In_Longterm__c: boolean;
+    FSL__Show_Only_MDT_In_Longterm__c?: boolean;
     /**
      * <h3><b>Show Orphan Services</b></h3>
      * <h4>Field Attributes</h4>
@@ -446,7 +446,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    FSL__Show_Orphan_Services__c: boolean;
+    FSL__Show_Orphan_Services__c?: boolean;
     /**
      * <h3><b>Show Favorite Territories Tab</b></h3>
      * <p>Default tab to show on the territories window</p>
@@ -456,7 +456,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    FSL__ShowFavoriteTerritoriesTab__c: boolean;
+    FSL__ShowFavoriteTerritoriesTab__c?: boolean;
     /**
      * <h3><b>Skills Filter Logic Operator</b></h3>
      * <h4>Field Attributes</h4>
@@ -467,7 +467,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Skills_Logic_Operator__c: string;
+    FSL__Skills_Logic_Operator__c?: string;
     /**
      * <h3><b>Toggled Territories</b></h3>
      * <p>Decide if a territory is opened on the Gantt view</p>
@@ -476,7 +476,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32000)</td></tr>
      * </table>
      */
-    FSL__Toggled_Territories__c: string;
+    FSL__Toggled_Territories__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -485,7 +485,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__User__c: string;
+    FSL__User__c?: string;
     /**
      * <h3><b>User</b></h3>
      * <h4>Field Attributes</h4>
@@ -494,8 +494,8 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__User__r: User;
-    FSL__User_Setting_Territory_UserSettings__r: User_Setting_Territory__c[];
+    FSL__User__r?: User;
+    FSL__User_Setting_Territory_UserSettings__r?: User_Setting_Territory__c[];
     /**
      * <h3><b>Utilization Properties</b></h3>
      * <p>Selected properties for calculating utilization</p>
@@ -507,7 +507,7 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__Utilization_Properties__c: string;
+    FSL__Utilization_Properties__c?: string;
     /**
      * <h3><b>View Capacity Type</b></h3>
      * <p>Show only capacities with chosen duration</p>
@@ -525,72 +525,72 @@ declare interface FSL__UserSetting__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">None</code></td><td>None</td><td nowrap>true</td></tr>
      * </table>
      */
-    FSL__View_Capacity_Type__c: string;
+    FSL__View_Capacity_Type__c?: string;
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LastReferencedDate: string;
-    LastViewedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LastReferencedDate?: string;
+    LastViewedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: UserSetting__Share[];
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: UserSetting__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: UserSetting__Share[];
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: UserSetting__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

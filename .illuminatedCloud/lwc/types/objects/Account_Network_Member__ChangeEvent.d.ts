@@ -9,7 +9,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account_Network_Member__c: string;
+    Account_Network_Member__c?: string;
     /**
      * <h3><b>Account Network Member</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account_Network_Member__r: Account;
+    Account_Network_Member__r?: Account;
     /**
      * <h3><b>#CFE</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,8 +29,8 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CFE_D__c: number;
-    ChangeEventHeader: ChangeEventHeader;
+    CFE_D__c?: number;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,7 +39,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,11 +48,11 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Contact__r?: Contact;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Dental Sales CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -64,7 +64,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dental_Sales_CY__c: number;
+    Dental_Sales_CY__c?: number;
     /**
      * <h3><b>Dental Sales LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,7 +76,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dental_Sales_LY__c: number;
+    Dental_Sales_LY__c?: number;
     /**
      * <h3><b>Dental Sales YTD</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,10 +88,10 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dental_Sales_YTD__c: number;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Dental_Sales_YTD__c?: number;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Loyalty</b></h3>
      * <h4>Field Attributes</h4>
@@ -103,7 +103,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Loyalty_D__c: string;
+    Loyalty_D__c?: string;
     /**
      * <h3><b>Main Competitor</b></h3>
      * <h4>Field Attributes</h4>
@@ -115,8 +115,8 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Main_Competitor_D__c: string;
-    Name: string;
+    Main_Competitor_D__c?: string;
+    Name?: string;
     /**
      * <h3><b>Network</b></h3>
      * <h4>Field Attributes</h4>
@@ -124,7 +124,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Network__c})</td></tr>
      * </table>
      */
-    Network__c: string;
+    Network__c?: string;
     /**
      * <h3><b>Network</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,7 +132,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Network__c})</td></tr>
      * </table>
      */
-    Network__r: Network__c;
+    Network__r?: Network__c;
     /**
      * <h3><b>Network Priority of Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -148,8 +148,8 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">3 - Tertiary</code></td><td>3 - Tertiary</td><td nowrap>true</td></tr>
      * </table>
      */
-    Network_Priority_of_Account__c: string;
-    ReplayId: string;
+    Network_Priority_of_Account__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Sold ATL Abut&#39;s CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -161,7 +161,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_Abutments_CY__c: number;
+    Sold_ATL_Abutments_CY__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s YTD</b></h3>
      * <p>Account_Network_Member__r.TQ_CY_D_DD_CustAbuts_Atlantis__c</p>
@@ -174,7 +174,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_Abutments_YTD__c: number;
+    Sold_ATL_Abutments_YTD__c?: number;
     /**
      * <h3><b>Sold ATL Abut&#39;s LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -186,7 +186,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_ATL_Abuts_LY__c: number;
+    Sold_ATL_Abuts_LY__c?: number;
     /**
      * <h3><b>Sold Implants CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -198,7 +198,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_CY__c: number;
+    Sold_Implants_CY__c?: number;
     /**
      * <h3><b>Sold Implants LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -210,7 +210,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_LY__c: number;
+    Sold_Implants_LY__c?: number;
     /**
      * <h3><b>Sold Implants YTD</b></h3>
      * <h4>Field Attributes</h4>
@@ -222,7 +222,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Implants_YTD__c: number;
+    Sold_Implants_YTD__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s CY</b></h3>
      * <h4>Field Attributes</h4>
@@ -234,7 +234,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abuts_CY__c: number;
+    Sold_Stock_Abuts_CY__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s LY</b></h3>
      * <h4>Field Attributes</h4>
@@ -246,7 +246,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abuts_LY__c: number;
+    Sold_Stock_Abuts_LY__c?: number;
     /**
      * <h3><b>Sold Stock Abut&#39;s YTD</b></h3>
      * <h4>Field Attributes</h4>
@@ -258,7 +258,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Sold_Stock_Abuts_YTD__c: number;
+    Sold_Stock_Abuts_YTD__c?: number;
     /**
      * <h3><b>Volume</b></h3>
      * <h4>Field Attributes</h4>
@@ -270,7 +270,7 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Volume_D__c: string;
+    Volume_D__c?: string;
     /**
      * <h3><b>Yearly Atlantis Potential</b></h3>
      * <h4>Field Attributes</h4>
@@ -282,5 +282,5 @@ declare interface Account_Network_Member__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Yearly_Atlantis_Potential__c: number;
+    Yearly_Atlantis_Potential__c?: number;
 }

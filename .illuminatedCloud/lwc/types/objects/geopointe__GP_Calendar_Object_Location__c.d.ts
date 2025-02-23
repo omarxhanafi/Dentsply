@@ -6,9 +6,9 @@
  */
 declare interface geopointe__GP_Calendar_Object_Location__c extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Geopointe Calendar Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface geopointe__GP_Calendar_Object_Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geopointe_Calendar_Object__c: string;
+    geopointe__Geopointe_Calendar_Object__c?: string;
     /**
      * <h3><b>Geopointe Calendar Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -26,7 +26,7 @@ declare interface geopointe__GP_Calendar_Object_Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Geopointe_Calendar_Object__r: geopointe__GP_Calendar_Object__c;
+    geopointe__Geopointe_Calendar_Object__r?: geopointe__GP_Calendar_Object__c;
     /**
      * <h3><b>Map Object Name</b></h3>
      * <p>The Geopointe Map object to use for mapping the calendar items.</p>
@@ -38,7 +38,7 @@ declare interface geopointe__GP_Calendar_Object_Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Map_Object_Name__c: string;
+    geopointe__Map_Object_Name__c?: string;
     /**
      * <h3><b>Precedence</b></h3>
      * <h4>Field Attributes</h4>
@@ -49,7 +49,7 @@ declare interface geopointe__GP_Calendar_Object_Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Precedence__c: number;
+    geopointe__Precedence__c?: number;
     /**
      * <h3><b>Relationship Field</b></h3>
      * <p>Defines the field used to link a Calendar Item to an Object. The lookup field must point to an object that is also configured as a Geopointe Map Object.</p>
@@ -61,7 +61,7 @@ declare interface geopointe__GP_Calendar_Object_Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Relationship_Field__c: string;
+    geopointe__Relationship_Field__c?: string;
     /**
      * <h3><b>Relationship SObject Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,10 +72,10 @@ declare interface geopointe__GP_Calendar_Object_Location__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    geopointe__Relationship_SObject_Name__c: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    geopointe__Relationship_SObject_Name__c?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
 }

@@ -13,7 +13,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    AcceptedTermsAndConditions__c: boolean;
+    AcceptedTermsAndConditions__c?: boolean;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -21,7 +21,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,7 +29,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -38,7 +38,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountPlan__c: string;
+    AccountPlan__c?: string;
     /**
      * <h3><b>Account Plan</b></h3>
      * <h4>Field Attributes</h4>
@@ -47,7 +47,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountPlan__r: Account_Plan__c;
+    AccountPlan__r?: Account_Plan__c;
     /**
      * <h3><b>Account Program Tier</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,7 +56,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountProgramTier__c: string;
+    AccountProgramTier__c?: string;
     /**
      * <h3><b>Account Program Tier</b></h3>
      * <h4>Field Attributes</h4>
@@ -65,8 +65,8 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AccountProgramTier__r: LoyaltyProgramTier__c;
-    ActivityHistories: ActivityHistory[];
+    AccountProgramTier__r?: LoyaltyProgramTier__c;
+    ActivityHistories?: ActivityHistory[];
     /**
      * <h3><b>Advanced Profiling</b></h3>
      * <h4>Field Attributes</h4>
@@ -75,7 +75,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AdvancedProfiling__c: string;
+    AdvancedProfiling__c?: string;
     /**
      * <h3><b>Advanced Profiling</b></h3>
      * <h4>Field Attributes</h4>
@@ -84,22 +84,22 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AdvancedProfiling__r: AdvancedProfiling__c;
+    AdvancedProfiling__r?: AdvancedProfiling__c;
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
     /**
      * <h3><b>Authorized Points Balance</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AuthorizedPointsBalance__c: number;
+    AuthorizedPointsBalance__c?: number;
     /**
      * <h3><b>Available Points</b></h3>
      * <h4>Field Attributes</h4>
@@ -121,7 +121,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    AvailablePoints__c: number;
+    AvailablePoints__c?: number;
     /**
      * <h3><b>Canada Consultation Interview Export</b></h3>
      * <h4>Field Attributes</h4>
@@ -133,7 +133,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Canada_Consultation_Interview_Export__c: string;
+    Canada_Consultation_Interview_Export__c?: string;
     /**
      * <h3><b>Category</b></h3>
      * <h4>Field Attributes</h4>
@@ -148,12 +148,12 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Voucher Only</code></td><td>Voucher Only</td><td nowrap>true</td></tr>
      * </table>
      */
-    Category__c: string;
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    Category__c?: string;
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * <h3><b>Consumable Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -164,7 +164,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ConsumableOrderNumber__c: string;
+    ConsumableOrderNumber__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -173,7 +173,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -182,17 +182,17 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
+    Contact__r?: Contact;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -203,7 +203,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerId__c: string;
+    CustomerId__c?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -212,7 +212,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__c: string;
+    Dealer__c?: string;
     /**
      * <h3><b>Dealer</b></h3>
      * <h4>Field Attributes</h4>
@@ -221,7 +221,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Dealer__r: Account;
+    Dealer__r?: Account;
     /**
      * <h3><b>DEP Record Hash</b></h3>
      * <h4>Field Attributes</h4>
@@ -232,7 +232,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DEPRecordHash__c: string;
+    DEPRecordHash__c?: string;
     /**
      * <h3><b>DEP Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -243,7 +243,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    DEPUniqueKey__c: string;
+    DEPUniqueKey__c?: string;
     /**
      * <h3><b>Distributor Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -252,7 +252,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DistributorRep__c: string;
+    DistributorRep__c?: string;
     /**
      * <h3><b>Distributor Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -261,15 +261,15 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DistributorRep__r: Contact;
+    DistributorRep__r?: Contact;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * <h3><b>Earned Points Total</b></h3>
      * <h4>Field Attributes</h4>
@@ -280,7 +280,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EarnedPointsTotal__c: number;
+    EarnedPointsTotal__c?: number;
     /**
      * <h3><b>Email</b></h3>
      * <p>Email of the person signing the T&amp;C</p>
@@ -292,12 +292,12 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email__c: string;
+    Email__c?: string;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EngagementInitiatedTopic: EngagementTopic[];
+    Emails?: EmailMessage[];
+    EngagementInitiatedTopic?: EngagementTopic[];
     /**
      * <h3><b>Equipment Invoice Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -308,9 +308,9 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EquipmentInvoiceNumber__c: string;
-    EventRelations: EventRelation[];
-    Events: Event[];
+    EquipmentInvoiceNumber__c?: string;
+    EventRelations?: EventRelation[];
+    Events?: Event[];
     /**
      * <h3><b>Expired Points Total</b></h3>
      * <h4>Field Attributes</h4>
@@ -321,7 +321,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ExpiredPointsTotal__c: number;
+    ExpiredPointsTotal__c?: number;
     /**
      * <h3><b>External Id</b></h3>
      * <p>Random string generated on insert. Used as external id to be sent out via email to customers to not expose the real Salesforce Id.</p>
@@ -333,9 +333,9 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    ExternalId__c: string;
-    Feeds: LoyaltyProgramParticipant__Feed[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
+    ExternalId__c?: string;
+    Feeds?: LoyaltyProgramParticipant__Feed[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
     /**
      * <h3><b>First Name</b></h3>
      * <p>First Name of the person agreeing to the T&amp;C.</p>
@@ -347,14 +347,14 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FirstName__c: string;
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    FirstName__c?: string;
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    Histories: LoyaltyProgramParticipant__History[];
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    Histories?: LoyaltyProgramParticipant__History[];
     /**
      * <h3><b>is Completed</b></h3>
      * <h4>Field Attributes</h4>
@@ -363,8 +363,8 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    isCompleted__c: boolean;
-    IsDeleted: boolean;
+    isCompleted__c?: boolean;
+    IsDeleted?: boolean;
     /**
      * <h3><b>isDeleted</b></h3>
      * <h4>Field Attributes</h4>
@@ -373,11 +373,11 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    isDeleted__c: boolean;
-    LastActivityDate: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    isDeleted__c?: boolean;
+    LastActivityDate?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Last Name</b></h3>
      * <p>Last Name of the person signing the T&amp;C</p>
@@ -389,7 +389,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastName__c: string;
+    LastName__c?: string;
     /**
      * <h3><b>Last Purchase Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -398,7 +398,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastPurchaseDate__c: Date;
+    LastPurchaseDate__c?: Date;
     /**
      * <h3><b>Level</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -424,9 +424,9 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Titanium</code></td><td>Titanium</td><td nowrap>true</td></tr>
      * </table>
      */
-    Level__c: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    Level__c?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Loyalty Eligible</b></h3>
      * <h4>Field Attributes</h4>
@@ -435,7 +435,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    LoyaltyEligible__c: boolean;
+    LoyaltyEligible__c?: boolean;
     /**
      * <h3><b>Loyalty Enabled</b></h3>
      * <h4>Field Attributes</h4>
@@ -444,7 +444,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    LoyaltyEnabled__c: boolean;
+    LoyaltyEnabled__c?: boolean;
     /**
      * <h3><b>Account Program</b></h3>
      * <h4>Field Attributes</h4>
@@ -453,7 +453,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LoyaltyProgram__c: string;
+    LoyaltyProgram__c?: string;
     /**
      * <h3><b>Account Program</b></h3>
      * <h4>Field Attributes</h4>
@@ -462,7 +462,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LoyaltyProgram__r: LoyaltyProgram__c;
+    LoyaltyProgram__r?: LoyaltyProgram__c;
     /**
      * <h3><b>Member Id</b></h3>
      * <p>Id from external system</p>
@@ -474,7 +474,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MemberId__c: string;
+    MemberId__c?: string;
     /**
      * <h3><b>Membership Expiry Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -483,10 +483,10 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Membership_Expiry_Date__c: Date;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
+    Membership_Expiry_Date__c?: Date;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
     /**
      * <h3><b>Notes</b></h3>
      * <h4>Field Attributes</h4>
@@ -494,17 +494,17 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Notes__c: string;
-    NotesAndAttachments: NoteAndAttachment[];
-    OpenActivities: OpenActivity[];
+    Notes__c?: string;
+    NotesAndAttachments?: NoteAndAttachment[];
+    OpenActivities?: OpenActivity[];
     /**
      * The reciprocal relationship for {@link Opportunity.AccountProgramMember__c}.
      */
-    Opportunities__r: Opportunity[];
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
+    Opportunities__r?: Opportunity[];
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Payment Preference</b></h3>
      * <h4>Field Attributes</h4>
@@ -522,7 +522,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">DS Points</code></td><td>DS Points</td><td nowrap>true</td></tr>
      * </table>
      */
-    PaymentPreference__c: string;
+    PaymentPreference__c?: string;
     /**
      * <h3><b>Pending Points Total</b></h3>
      * <h4>Field Attributes</h4>
@@ -533,7 +533,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PendingPointsTotal__c: number;
+    PendingPointsTotal__c?: number;
     /**
      * <h3><b>Points Adjusted Total</b></h3>
      * <h4>Field Attributes</h4>
@@ -544,7 +544,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PointsAdjustedTotal__c: number;
+    PointsAdjustedTotal__c?: number;
     /**
      * <h3><b>Points Expiring Soon</b></h3>
      * <h4>Field Attributes</h4>
@@ -555,7 +555,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PointsExpiringSoon__c: number;
+    PointsExpiringSoon__c?: number;
     /**
      * <h3><b>Points Expiring Soon Expiration Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -564,7 +564,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PointsExpiringSoonExpirationDate__c: Date;
+    PointsExpiringSoonExpirationDate__c?: Date;
     /**
      * <h3><b>Practice Name</b></h3>
      * <p>Practice Name of the person signing the T&amp;C.</p>
@@ -576,14 +576,14 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeName__c: string;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    PracticeName__c?: string;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
     /**
      * <h3><b>Purchase Date of Equipment</b></h3>
      * <h4>Field Attributes</h4>
@@ -592,18 +592,18 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PurchaseDateOfEquipment__c: Date;
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    PurchaseDateOfEquipment__c?: Date;
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RecordType: RecordType;
-    RecordTypeId: string;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RecordType?: RecordType;
+    RecordTypeId?: string;
     /**
      * <h3><b>Redeemed Points Total</b></h3>
      * <h4>Field Attributes</h4>
@@ -614,17 +614,17 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RedeemedPointsTotal__c: number;
-    RelatedRecord: ContentDistribution;
+    RedeemedPointsTotal__c?: number;
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
     /**
      * <h3><b>Remit-To Address</b></h3>
      * <p>TFUS-000002383</p>
@@ -634,11 +634,11 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RemitAddress__c: string;
+    RemitAddress__c?: string;
     /**
      * The reciprocal relationship for {@link Field_Sales_Project_Members__c.AccountProgramMember__c}.
      */
-    Sales_Leads__r: Field_Sales_Project_Members__c[];
+    Sales_Leads__r?: Field_Sales_Project_Members__c[];
     /**
      * <h3><b>Sales Lead Source</b></h3>
      * <p>The Sales Lead from where the Account Program Member was created</p>
@@ -648,7 +648,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesLeadSource__c: string;
+    SalesLeadSource__c?: string;
     /**
      * <h3><b>Sales Lead Source</b></h3>
      * <p>The Sales Lead from where the Account Program Member was created</p>
@@ -658,7 +658,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesLeadSource__r: Field_Sales_Project_Members__c;
+    SalesLeadSource__r?: Field_Sales_Project_Members__c;
     /**
      * <h3><b>Sales Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -667,7 +667,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesRep__c: string;
+    SalesRep__c?: string;
     /**
      * <h3><b>Sales Rep</b></h3>
      * <h4>Field Attributes</h4>
@@ -676,8 +676,8 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesRep__r: User;
-    SobjectLookupValue: AIInsightValue;
+    SalesRep__r?: User;
+    SobjectLookupValue?: AIInsightValue;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -695,7 +695,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inactive</code></td><td>Inactive</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Date of subscription</b></h3>
      * <h4>Field Attributes</h4>
@@ -705,7 +705,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">TODAY()</code></td></tr>
      * </table>
      */
-    SubscribeDate__c: Date;
+    SubscribeDate__c?: Date;
     /**
      * <h3><b>Subtype</b></h3>
      * <p>https://dentsplysirona.lightning.force.com/lightning/r/Project__c/a1T6M0000050T5yUAE/view</p>
@@ -715,16 +715,16 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Subtype__c: string;
-    SystemModstamp: string;
-    Tags: LoyaltyProgramParticipant__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    Subtype__c?: string;
+    SystemModstamp?: string;
+    Tags?: LoyaltyProgramParticipant__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
+    Tasks?: Task[];
     /**
      * <h3><b>Tenant Id</b></h3>
      * <p>The id of the Loyalty Program platform. Can have different tenants per country for example.</p>
@@ -736,7 +736,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TenantId__c: string;
+    TenantId__c?: string;
     /**
      * <h3><b>Terms and Conditions Consent Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -745,7 +745,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TermsAndConditionsConsentDate__c: string;
+    TermsAndConditionsConsentDate__c?: string;
     /**
      * <h3><b>Terms and Conditions Document Link</b></h3>
      * <p>Link to the T&amp;C document that the customer accepted</p>
@@ -755,7 +755,7 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TermsAndConditionsDocumentLink__c: string;
+    TermsAndConditionsDocumentLink__c?: string;
     /**
      * <h3><b>Tier Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -766,9 +766,9 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    TierId__c: string;
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
+    TierId__c?: string;
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
     /**
      * <h3><b>Unique Record Identifier</b></h3>
      * <p>Populated by process builder. Only one member per account and account program allowed.</p>
@@ -780,16 +780,16 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    UniqueRecordIdentifier__c: string;
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    UniqueRecordIdentifier__c?: string;
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
+    VideoRelatedRecords?: VideoCall[];
     /**
      * The reciprocal relationship for {@link Voucher__c.AccountProgramMember__c}.
      */
-    Vouchers__r: Voucher__c[];
+    Vouchers__r?: Voucher__c[];
     /**
      * <h3><b>Voucher Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -806,12 +806,12 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Implants</code></td><td>Implants</td><td nowrap>true</td></tr>
      * </table>
      */
-    VoucherType__c: string;
-    What: EventChangeEvent;
+    VoucherType__c?: string;
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
     /**
      * <h3><b>YTD Sales total</b></h3>
      * <p>Integrated from Loyalty platform the YTD Sales Total</p>
@@ -823,5 +823,5 @@ declare interface LoyaltyProgramParticipant__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    YTD_Sales_total__c: number;
+    YTD_Sales_total__c?: number;
 }

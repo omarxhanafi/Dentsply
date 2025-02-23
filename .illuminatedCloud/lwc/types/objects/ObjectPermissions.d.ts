@@ -2,19 +2,19 @@
 
 declare interface ObjectPermissions extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Parent: PermissionSet;
-    ParentId: string;
-    PermissionsCreate: boolean;
-    PermissionsDelete: boolean;
-    PermissionsEdit: boolean;
-    PermissionsModifyAllRecords: boolean;
-    PermissionsRead: boolean;
-    PermissionsViewAllRecords: boolean;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Parent?: PermissionSet;
+    ParentId?: string;
+    PermissionsCreate?: boolean;
+    PermissionsDelete?: boolean;
+    PermissionsEdit?: boolean;
+    PermissionsModifyAllRecords?: boolean;
+    PermissionsRead?: boolean;
+    PermissionsViewAllRecords?: boolean;
+    SystemModstamp?: string;
 }

@@ -2,19 +2,19 @@
 
 declare interface TaskRecurrenceException extends SObject 
 {
-    ActivityDateOriginal: string;
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeletion: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    RecurrenceTask: Task;
-    RecurrenceTaskId: string;
-    RelatedRecord: FlowRecordRelation;
-    SystemModstamp: string;
-    Task: Task;
-    TaskId: string;
+    ActivityDateOriginal?: string;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeletion?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    RecurrenceTask?: Task;
+    RecurrenceTaskId?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SystemModstamp?: string;
+    Task?: Task;
+    TaskId?: string;
 }

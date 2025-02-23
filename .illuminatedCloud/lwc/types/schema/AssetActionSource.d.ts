@@ -324,6 +324,18 @@ declare module "@salesforce/schema/AssetActionSource.TargetObject" {
     export default TargetObject;
 }
 
+declare module "@salesforce/schema/AssetActionSource.TaxTreatment" {
+    import { FieldId } from "@salesforce/schema";
+    const TaxTreatment: FieldId;
+    export default TaxTreatment;
+}
+
+declare module "@salesforce/schema/AssetActionSource.TaxTreatmentId" {
+    import { FieldId } from "@salesforce/schema";
+    const TaxTreatmentId: FieldId;
+    export default TaxTreatmentId;
+}
+
 declare module "@salesforce/schema/AssetActionSource.TotalLineAmount" {
     import { FieldId } from "@salesforce/schema";
     const TotalLineAmount: FieldId;

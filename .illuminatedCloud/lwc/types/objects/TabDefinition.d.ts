@@ -2,18 +2,18 @@
 
 declare interface TabDefinition extends SObject 
 {
-    AppTabs: AppTabMember[];
-    Colors: ColorDefinition[];
-    DurableId: string;
-    Icons: IconDefinition[];
-    IsAvailableInAloha: boolean;
-    IsAvailableInDesktop: boolean;
-    IsAvailableInLightning: boolean;
-    IsAvailableInMobile: boolean;
-    IsCustom: boolean;
-    Label: string;
-    MobileUrl: string;
-    Name: string;
-    SobjectName: string;
-    Url: string;
+    AppTabs?: AppTabMember[];
+    Colors?: ColorDefinition[];
+    DurableId?: string;
+    Icons?: IconDefinition[];
+    IsAvailableInAloha?: boolean;
+    IsAvailableInDesktop?: boolean;
+    IsAvailableInLightning?: boolean;
+    IsAvailableInMobile?: boolean;
+    IsCustom?: boolean;
+    Label?: string;
+    MobileUrl?: string;
+    Name?: string;
+    SobjectName?: string;
+    Url?: string;
 }

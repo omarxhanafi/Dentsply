@@ -6,66 +6,66 @@
  */
 declare interface maps__AdvRouteTemplate__c extends SObject 
 {
-    ActivityHistories: ActivityHistory[];
+    ActivityHistories?: ActivityHistory[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
      */
-    ApprovalSubmissions: ApprovalSubmission[];
+    ApprovalSubmissions?: ApprovalSubmission[];
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
-    ApprovalWorkItems: ApprovalWorkItem[];
-    AttachedContentDocuments: AttachedContentDocument[];
-    AttachedContentNotes: AttachedContentNote[];
+    ApprovalWorkItems?: ApprovalWorkItem[];
+    AttachedContentDocuments?: AttachedContentDocument[];
+    AttachedContentNotes?: AttachedContentNote[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    AttachedTo: ProcessException;
-    Attachments: Attachment[];
-    CombinedAttachments: CombinedAttachment[];
-    ConnectionReceived: PartnerNetworkConnection;
-    ConnectionReceivedId: string;
-    ConnectionSent: PartnerNetworkConnection;
-    ConnectionSentId: string;
+    AttachedTo?: ProcessException;
+    Attachments?: Attachment[];
+    CombinedAttachments?: CombinedAttachment[];
+    ConnectionReceived?: PartnerNetworkConnection;
+    ConnectionReceivedId?: string;
+    ConnectionSent?: PartnerNetworkConnection;
+    ConnectionSentId?: string;
     /**
      * The reciprocal relationship for {@link ContactRequest.WhatId}.
      */
-    ContactRequests: ContactRequest[];
-    ContentDocumentLinks: ContentDocumentLink[];
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ContactRequests?: ContactRequest[];
+    ContentDocumentLinks?: ContentDocumentLink[];
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
-    DocEnvelopeRefObjects: DocumentEnvelope[];
+    DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
-    DuplicateRecordItems: DuplicateRecordItem[];
+    DuplicateRecordItems?: DuplicateRecordItem[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    Emails: EmailMessage[];
-    EngagementInitiatedTopic: EngagementTopic[];
-    EventRelations: EventRelation[];
-    Events: Event[];
-    FeedSubscriptionsForEntity: EntitySubscription[];
-    FirstPublishLocation: ContentVersion;
-    FlowOrchestrationWorkItems: FlowOrchestrationWorkItem[];
+    Emails?: EmailMessage[];
+    EngagementInitiatedTopic?: EngagementTopic[];
+    EventRelations?: EventRelation[];
+    Events?: Event[];
+    FeedSubscriptionsForEntity?: EntitySubscription[];
+    FirstPublishLocation?: ContentVersion;
+    FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
-    GeneratedDocRefObjects: GeneratedDocument[];
-    IsDeleted: boolean;
-    LastActivityDate: Date;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    LinkedEntity: ContentDocumentLinkChangeEvent;
-    LocalRecord: PartnerNetworkRecordConnection;
+    GeneratedDocRefObjects?: GeneratedDocument[];
+    IsDeleted?: boolean;
+    LastActivityDate?: Date;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    LinkedEntity?: ContentDocumentLinkChangeEvent;
+    LocalRecord?: PartnerNetworkRecordConnection;
     /**
      * <h3><b>Active</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__Active__c: boolean;
+    maps__Active__c?: boolean;
     /**
      * <h3><b>Activity Date Field on Completed Visit</b></h3>
      * <p>This is the date field on the visit record used to determine date of activity</p>
@@ -86,7 +86,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ActivityDateFieldOnCompletedVisit__c: string;
+    maps__ActivityDateFieldOnCompletedVisit__c?: string;
     /**
      * <h3><b>Activity Date Field on Future Visit</b></h3>
      * <p>This is the date field on the future visit record used to determine date of activity</p>
@@ -98,7 +98,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ActivityDateFieldOnFutureVisit__c: string;
+    maps__ActivityDateFieldOnFutureVisit__c?: string;
     /**
      * <h3><b>Activity End Date Field on Future Visit</b></h3>
      * <p>This is the end date field on the future visit record used to determine date of activity</p>
@@ -110,11 +110,11 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ActivityEndDateFieldOnFutureVisit__c: string;
-    maps__AdvRouteDataSets__r: AdvRouteDataSet__c[];
-    maps__AdvRouteDataSetsCreatedFrom__r: AdvRouteDataSet__c[];
-    maps__AdvRouteDebugs__r: DebugLog__c[];
-    maps__AdvRoutePriorities__r: AdvRoutePriority__c[];
+    maps__ActivityEndDateFieldOnFutureVisit__c?: string;
+    maps__AdvRouteDataSets__r?: AdvRouteDataSet__c[];
+    maps__AdvRouteDataSetsCreatedFrom__r?: AdvRouteDataSet__c[];
+    maps__AdvRouteDebugs__r?: DebugLog__c[];
+    maps__AdvRoutePriorities__r?: AdvRoutePriority__c[];
     /**
      * <h3><b>Maps Advanced Route Routable Object</b></h3>
      * <p>This will look up to the Advanced Route routable object configuration associated with the template</p>
@@ -124,7 +124,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AdvRouteRoutableObject__c: string;
+    maps__AdvRouteRoutableObject__c?: string;
     /**
      * <h3><b>Maps Advanced Route Routable Object</b></h3>
      * <p>This will look up to the Advanced Route routable object configuration associated with the template</p>
@@ -134,7 +134,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AdvRouteRoutableObject__r: maps__AdvRouteRoutableObject__c;
+    maps__AdvRouteRoutableObject__r?: maps__AdvRouteRoutableObject__c;
     /**
      * <h3><b>Maps Advanced Route Template</b></h3>
      * <p>This is a lookup to the main Advanced Route template when routing multiple base objects on the same template</p>
@@ -144,7 +144,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AdvRouteTemplate__c: string;
+    maps__AdvRouteTemplate__c?: string;
     /**
      * <h3><b>Maps Advanced Route Template</b></h3>
      * <p>This is a lookup to the main Advanced Route template when routing multiple base objects on the same template</p>
@@ -154,10 +154,10 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__AdvRouteTemplate__r: maps__AdvRouteTemplate__c;
-    maps__AdvRouteTemplates__r: AdvRouteTemplate__c[];
-    maps__AdvRouteTemplateUsers__r: AdvRouteTemplateUser__c[];
-    maps__AdvRouteWaypoints__r: AdvRouteWaypoint__c[];
+    maps__AdvRouteTemplate__r?: maps__AdvRouteTemplate__c;
+    maps__AdvRouteTemplates__r?: AdvRouteTemplate__c[];
+    maps__AdvRouteTemplateUsers__r?: AdvRouteTemplateUser__c[];
+    maps__AdvRouteWaypoints__r?: AdvRouteWaypoint__c[];
     /**
      * <h3><b>Base Filter Filters</b></h3>
      * <h4>Field Attributes</h4>
@@ -165,7 +165,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__BaseFilterFilters__c: string;
+    maps__BaseFilterFilters__c?: string;
     /**
      * <h3><b>Base Filter Includes All Records</b></h3>
      * <p>This checkbox is used to determine if the template has a base filter or if it should include all records</p>
@@ -175,7 +175,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    maps__BaseFilterIncludesAllRecords__c: boolean;
+    maps__BaseFilterIncludesAllRecords__c?: boolean;
     /**
      * <h3><b>Base Filter Logic Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -183,7 +183,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__BaseFilterLogicOrder__c: string;
+    maps__BaseFilterLogicOrder__c?: string;
     /**
      * <h3><b>Base Filter Where Clause</b></h3>
      * <h4>Field Attributes</h4>
@@ -191,7 +191,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__BaseFilterWhereClause__c: string;
+    maps__BaseFilterWhereClause__c?: string;
     /**
      * <h3><b>Base Url</b></h3>
      * <p>This will determine the orgs base url to be used in email templates</p>
@@ -204,7 +204,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__BaseUrl__c: string;
+    maps__BaseUrl__c?: string;
     /**
      * <h3><b>Completed Tabs</b></h3>
      * <p>This will be an array of numbers.  Each number will correspond to a tab on the template builder.  If a number is missing, it is assumed that that tab has not been completed yet for this template;
@@ -217,7 +217,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CompletedTabs__c: string;
+    maps__CompletedTabs__c?: string;
     /**
      * <h3><b>Completed Tabs Picklist</b></h3>
      * <p>These are the completed tabs for the template</p>
@@ -232,7 +232,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">PlanInformation</code></td><td>PlanInformation</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__CompletedTabsPicklist__c: string;
+    maps__CompletedTabsPicklist__c?: string;
     /**
      * <h3><b>Completed Visit Filters</b></h3>
      * <p>This is a JSON object containing the visit filter information</p>
@@ -241,7 +241,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__CompletedVisitFilters__c: string;
+    maps__CompletedVisitFilters__c?: string;
     /**
      * <h3><b>Completed Visit Object</b></h3>
      * <p>This is the object that describes a visit</p>
@@ -253,7 +253,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CompletedVisitObject__c: string;
+    maps__CompletedVisitObject__c?: string;
     /**
      * <h3><b>Completed Visit Order of Operations</b></h3>
      * <p>This holds the order of operations for the visit logic</p>
@@ -265,7 +265,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CompletedVisitOrderOfOperations__c: string;
+    maps__CompletedVisitOrderOfOperations__c?: string;
     /**
      * <h3><b>Completed Visits Query</b></h3>
      * <p>This is the query to determine an object has been visited</p>
@@ -274,7 +274,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__CompletedVisitsQuery__c: string;
+    maps__CompletedVisitsQuery__c?: string;
     /**
      * <h3><b>Core Base Object Id</b></h3>
      * <p>This is the core base object associated to the template</p>
@@ -286,7 +286,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__CoreBaseObjectId__c: string;
+    maps__CoreBaseObjectId__c?: string;
     /**
      * <h3><b>Days Between Optimizations</b></h3>
      * <p>This represents how many days will go before optimizing each user</p>
@@ -298,7 +298,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DaysBetweenOptimizations__c: number;
+    maps__DaysBetweenOptimizations__c?: number;
     /**
      * <h3><b>Days Between Optimizations Factor</b></h3>
      * <h4>Field Attributes</h4>
@@ -313,7 +313,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Weekly</code></td><td>Weekly</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__DaysBetweenOptimizationsFactor__c: string;
+    maps__DaysBetweenOptimizationsFactor__c?: string;
     /**
      * <h3><b>Day(s) of Week to Route for</b></h3>
      * <p>These are the days of the week that the route can calculate for</p>
@@ -323,7 +323,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DaysOfWeekToRouteFor__c: string;
+    maps__DaysOfWeekToRouteFor__c?: string;
     /**
      * <h3><b>Days to Insert</b></h3>
      * <p>This is the days to insert</p>
@@ -335,7 +335,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DaysToInsert__c: number;
+    maps__DaysToInsert__c?: number;
     /**
      * <h3><b>Days to Insert Unit</b></h3>
      * <p>This is the days to insert unit</p>
@@ -351,7 +351,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Months</code></td><td>Months</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__DaysToInsertUnit__c: string;
+    maps__DaysToInsertUnit__c?: string;
     /**
      * <h3><b>Day(s) To Optimize On</b></h3>
      * <p>Thiese are the days of the week optimizations can run on</p>
@@ -361,7 +361,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__DayToOptimizeOn__c: string;
+    maps__DayToOptimizeOn__c?: string;
     /**
      * <h3><b>Description</b></h3>
      * <p>A short description of the template</p>
@@ -371,7 +371,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__Description__c: string;
+    maps__Description__c?: string;
     /**
      * <h3><b>End Date</b></h3>
      * <p>The date the template ends on</p>
@@ -381,7 +381,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__EndDate__c: Date;
+    maps__EndDate__c?: Date;
     /**
      * <h3><b>Frequency Start Date</b></h3>
      * <p>This will be the date that all frequency calculations should start on</p>
@@ -391,7 +391,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__FrequencyStartDate__c: Date;
+    maps__FrequencyStartDate__c?: Date;
     /**
      * <h3><b>Frequency Starts on Template Start</b></h3>
      * <p>This determines if our frequency calculation should start when the template starts or should be a rolling frequency</p>
@@ -401,7 +401,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    maps__FrequencyStartsOnTemplateStart__c: boolean;
+    maps__FrequencyStartsOnTemplateStart__c?: boolean;
     /**
      * <h3><b>Future Visit Filters</b></h3>
      * <p>This is a JSON object containing the visit filter information</p>
@@ -410,7 +410,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__FutureVisitFilters__c: string;
+    maps__FutureVisitFilters__c?: string;
     /**
      * <h3><b>Future Visit Logic Order of Operations</b></h3>
      * <p>This holds the order of operations for the future visit logic</p>
@@ -422,7 +422,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__FutureVisitLogicOrderOfOperations__c: string;
+    maps__FutureVisitLogicOrderOfOperations__c?: string;
     /**
      * <h3><b>Future Visit Object</b></h3>
      * <p>This is the object that describes a future visit</p>
@@ -434,7 +434,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__FutureVisitObject__c: string;
+    maps__FutureVisitObject__c?: string;
     /**
      * <h3><b>Future Visits Query</b></h3>
      * <p>This is the query to determine an objects future visits</p>
@@ -443,7 +443,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__FutureVisitsQuery__c: string;
+    maps__FutureVisitsQuery__c?: string;
     /**
      * <h3><b>Repeating</b></h3>
      * <p>This flag tells us if a template should continue to be used even after the current end date</p>
@@ -453,7 +453,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__IsRepeating__c: boolean;
+    maps__IsRepeating__c?: boolean;
     /**
      * <h3><b>Max Segment Travel Time</b></h3>
      * <h4>Field Attributes</h4>
@@ -464,7 +464,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MaxSegmentTravelTime__c: number;
+    maps__MaxSegmentTravelTime__c?: number;
     /**
      * <h3><b>Max Total Distance</b></h3>
      * <h4>Field Attributes</h4>
@@ -475,7 +475,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MaxTotalDistance__c: number;
+    maps__MaxTotalDistance__c?: number;
     /**
      * <h3><b>Max Working Hours</b></h3>
      * <p>This field is used to set a max number of hours a user can configure as their working hours per day</p>
@@ -487,7 +487,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__MaxWorkingHours__c: number;
+    maps__MaxWorkingHours__c?: number;
     /**
      * <h3><b>Needs Deleting</b></h3>
      * <p>This checkbox is used to flag a template for deletion</p>
@@ -497,7 +497,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__NeedsDeleting__c: boolean;
+    maps__NeedsDeleting__c?: boolean;
     /**
      * <h3><b>Optimization Speed Preference</b></h3>
      * <p>Allows for faster optimization speeds to maintain in-field productivity.</p>
@@ -516,7 +516,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">60</code></td><td>60</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__OptimizationSpeedPreference__c: string;
+    maps__OptimizationSpeedPreference__c?: string;
     /**
      * <h3><b>Prevent Same Shift Visits</b></h3>
      * <h4>Field Attributes</h4>
@@ -525,7 +525,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__PreventSameShiftVisits__c: boolean;
+    maps__PreventSameShiftVisits__c?: boolean;
     /**
      * <h3><b>Prioritization Strictness</b></h3>
      * <p>This tells Maps Advanced Route how strict to account for the priorities during routing.  1 is least strict and 7 is most strict.</p>
@@ -547,8 +547,8 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">7</code></td><td>7</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__PrioritizationStrictness__c: string;
-    maps__RelatedAdvRoutePriorities__r: AdvRoutePriority__c[];
+    maps__PrioritizationStrictness__c?: string;
+    maps__RelatedAdvRoutePriorities__r?: AdvRoutePriority__c[];
     /**
      * <h3><b>Repeat Until Date</b></h3>
      * <p>This date is the date  a repeating template will stop being used</p>
@@ -558,7 +558,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RepeatUntilDate__c: Date;
+    maps__RepeatUntilDate__c?: Date;
     /**
      * <h3><b>Routable Object Order Number</b></h3>
      * <p>This is the tab number for routable objects on the template when routing multiple base objects</p>
@@ -570,7 +570,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RoutableObjectOrderNumber__c: number;
+    maps__RoutableObjectOrderNumber__c?: number;
     /**
      * <h3><b>Route Duration Interval</b></h3>
      * <p>This is the route duration interval</p>
@@ -582,7 +582,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RouteDurationInterval__c: number;
+    maps__RouteDurationInterval__c?: number;
     /**
      * <h3><b>Route Duration Interval Type</b></h3>
      * <p>This is the route duration interval type</p>
@@ -598,7 +598,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Months</code></td><td>Months</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__RouteDurationIntervalType__c: string;
+    maps__RouteDurationIntervalType__c?: string;
     /**
      * <h3><b>Route Duration Type</b></h3>
      * <p>This is the duration type of the route</p>
@@ -608,7 +608,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RouteDurationType__c: string;
+    maps__RouteDurationType__c?: string;
     /**
      * <h3><b>Route Order Buffer</b></h3>
      * <h4>Field Attributes</h4>
@@ -619,7 +619,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RouteOrderBuffer__c: number;
+    maps__RouteOrderBuffer__c?: number;
     /**
      * <h3><b>Routes and Schedule Config</b></h3>
      * <p>This will look up to the Maps Routes and Schedule Config setting used for outputs and future visits</p>
@@ -629,7 +629,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RoutesAndScheduleConfig__c: string;
+    maps__RoutesAndScheduleConfig__c?: string;
     /**
      * <h3><b>Routes and Schedule Config</b></h3>
      * <p>This will look up to the Maps Routes and Schedule Config setting used for outputs and future visits</p>
@@ -639,7 +639,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__RoutesAndScheduleConfig__r: maps__CalEventBaseObj__c;
+    maps__RoutesAndScheduleConfig__r?: maps__CalEventBaseObj__c;
     /**
      * <h3><b>Run Auto Reoptimization</b></h3>
      * <h4>Field Attributes</h4>
@@ -648,7 +648,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">true</code></td></tr>
      * </table>
      */
-    maps__RunAutoOptimization__c: boolean;
+    maps__RunAutoOptimization__c?: boolean;
     /**
      * <h3><b>Saved Query Id</b></h3>
      * <p>This will be the id of the related Saved Query record for Maps</p>
@@ -660,7 +660,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__SavedQueryId__c: string;
+    maps__SavedQueryId__c?: string;
     /**
      * <h3><b>Selected Output Types</b></h3>
      * <p>These are the selected output types for the template</p>
@@ -675,7 +675,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Event</code></td><td>Event</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__SelectedOutputTypes__c: string;
+    maps__SelectedOutputTypes__c?: string;
     /**
      * <h3><b>Selected Promo Windows</b></h3>
      * <p>These are the selected promo windows for the template</p>
@@ -690,7 +690,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Event</code></td><td>Event</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__SelectedPromoWindows__c: string;
+    maps__SelectedPromoWindows__c?: string;
     /**
      * <h3><b>Start Date</b></h3>
      * <p>The date the template starts on</p>
@@ -700,7 +700,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__StartDate__c: Date;
+    maps__StartDate__c?: Date;
     /**
      * <h3><b>Template Object</b></h3>
      * <p>This is the object that the template will process</p>
@@ -712,7 +712,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TemplateObject__c: string;
+    maps__TemplateObject__c?: string;
     /**
      * <h3><b>Template Object Field on Completed Visit</b></h3>
      * <p>This is the field on the visit record that relates the visit to the template object</p>
@@ -724,7 +724,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TemplateObjectFieldOnCompletedVisit__c: string;
+    maps__TemplateObjectFieldOnCompletedVisit__c?: string;
     /**
      * <h3><b>Template Object Field on Future Visit</b></h3>
      * <p>This is the field on the future visit record that relates the visit to the template object</p>
@@ -736,7 +736,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TemplateObjectFieldOnFutureVisit__c: string;
+    maps__TemplateObjectFieldOnFutureVisit__c?: string;
     /**
      * <h3><b>Template Object Latitude Field</b></h3>
      * <p>This is the field that holds the latitude on the template object</p>
@@ -748,7 +748,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TemplateObjectLatitudeField__c: string;
+    maps__TemplateObjectLatitudeField__c?: string;
     /**
      * <h3><b>Template Object Longitude Field</b></h3>
      * <p>This is the longitude field on the template object</p>
@@ -760,7 +760,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TemplateObjectLongitudeField__c: string;
+    maps__TemplateObjectLongitudeField__c?: string;
     /**
      * <h3><b>Time to Reoptimize</b></h3>
      * <h4>Field Attributes</h4>
@@ -869,7 +869,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">11:45 PM</code></td><td>11:45 PM</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__TimeToOptimize__c: string;
+    maps__TimeToOptimize__c?: string;
     /**
      * <h3><b>Tooltip Field Apis</b></h3>
      * <p>This field holds a JSON array of field apis to be used for tooltips</p>
@@ -878,7 +878,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    maps__TooltipFieldApis__c: string;
+    maps__TooltipFieldApis__c?: string;
     /**
      * <h3><b>User Field</b></h3>
      * <p>This is the field that will be compared on the object to determine if that object is owned/maintained by a route template user</p>
@@ -890,7 +890,7 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__UserField__c: string;
+    maps__UserField__c?: string;
     /**
      * <h3><b>Visit Type</b></h3>
      * <p>This is for determining which visit windows should be used based on visit type</p>
@@ -902,65 +902,65 @@ declare interface maps__AdvRouteTemplate__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__VisitType__c: string;
-    Name: string;
-    NetworkUserHistoryRecentToRecord: NetworkUserHistoryRecent[];
-    Notes: Note[];
-    NotesAndAttachments: NoteAndAttachment[];
-    OpenActivities: OpenActivity[];
-    Owner: SObject;
-    OwnerId: string;
-    Parent: Case__hd;
-    ParentEntities: NetworkActivityAudit[];
-    ParentRecord: NetworkFeedResponseMetric;
-    PartnerRecord: PartnerNetworkRecordConnection;
-    PrimaryRecord: PendingServiceRoutingInteractionInfo;
+    maps__VisitType__c?: string;
+    Name?: string;
+    NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
+    Notes?: Note[];
+    NotesAndAttachments?: NoteAndAttachment[];
+    OpenActivities?: OpenActivity[];
+    Owner?: SObject;
+    OwnerId?: string;
+    Parent?: Case__hd;
+    ParentEntities?: NetworkActivityAudit[];
+    ParentRecord?: NetworkFeedResponseMetric;
+    PartnerRecord?: PartnerNetworkRecordConnection;
+    PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
      */
-    ProcessExceptions: ProcessException[];
-    ProcessInstances: ProcessInstance[];
-    ProcessSteps: ProcessInstanceHistory[];
-    Record: CollaborationGroupRecordChangeEvent;
-    RecordActionHistories: RecordActionHistory[];
+    ProcessExceptions?: ProcessException[];
+    ProcessInstances?: ProcessInstance[];
+    ProcessSteps?: ProcessInstanceHistory[];
+    Record?: CollaborationGroupRecordChangeEvent;
+    RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
      */
-    RecordActions: RecordAction[];
-    RecordAlertParent: RecordAlert[];
-    RecordAlertWhat: RecordAlert[];
-    RecordAssociatedGroups: CollaborationGroupRecord[];
-    RelatedRecord: ContentDistribution;
+    RecordActions?: RecordAction[];
+    RecordAlertParent?: RecordAlert[];
+    RecordAlertWhat?: RecordAlert[];
+    RecordAssociatedGroups?: CollaborationGroupRecord[];
+    RelatedRecord?: ContentDistribution;
     /**
      * The reciprocal relationship for {@link VoiceCall.RelatedRecordId}.
      */
-    RelatedRecords: VoiceCall[];
+    RelatedRecords?: VoiceCall[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
-    RelatedTo: EmailMessage;
-    Relation: EventRelationChangeEvent;
-    Shares: AdvRouteTemplate__Share[];
-    SobjectLookupValue: AIInsightValue;
-    SystemModstamp: string;
-    Tags: AdvRouteTemplate__Tag[];
-    Target: AIRecordInsight;
-    TargetObject: PendingServiceRoutingInteractionInfo;
-    TaskRelations: TaskRelation[];
+    RelatedTo?: EmailMessage;
+    Relation?: EventRelationChangeEvent;
+    Shares?: AdvRouteTemplate__Share[];
+    SobjectLookupValue?: AIInsightValue;
+    SystemModstamp?: string;
+    Tags?: AdvRouteTemplate__Tag[];
+    Target?: AIRecordInsight;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
+    TaskRelations?: TaskRelation[];
     /**
      * The reciprocal relationship for {@link Task.WhatId}.
      */
-    Tasks: Task[];
-    Topic: EngagementTopicChangeEvent;
-    TopicAssignments: TopicAssignment[];
-    UserDefinedLabelAssignments: UserDefinedLabelAssignment[];
+    Tasks?: Task[];
+    Topic?: EngagementTopicChangeEvent;
+    TopicAssignments?: TopicAssignment[];
+    UserDefinedLabelAssignments?: UserDefinedLabelAssignment[];
     /**
      * The reciprocal relationship for {@link VideoCall.RelatedRecordId}.
      */
-    VideoRelatedRecords: VideoCall[];
-    What: EventChangeEvent;
+    VideoRelatedRecords?: VideoCall[];
+    What?: EventChangeEvent;
     /**
      * The reciprocal relationship for {@link AgentWork.WorkItemId}.
      */
-    WorkItem: AgentWork;
+    WorkItem?: AgentWork;
 }

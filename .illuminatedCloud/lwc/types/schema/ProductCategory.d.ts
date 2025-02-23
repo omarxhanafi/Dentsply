@@ -282,6 +282,12 @@ declare module "@salesforce/schema/ProductCategory.ProductCategoryQualifications
     export default ProductCategoryQualifications;
 }
 
+declare module "@salesforce/schema/ProductCategory.Record" {
+    import { FieldId } from "@salesforce/schema";
+    const Record: FieldId;
+    export default Record;
+}
+
 declare module "@salesforce/schema/ProductCategory.RelatedRecord" {
     import { FieldId } from "@salesforce/schema";
     const RelatedRecord: FieldId;

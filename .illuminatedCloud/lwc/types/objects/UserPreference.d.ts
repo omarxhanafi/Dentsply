@@ -2,9 +2,9 @@
 
 declare interface UserPreference extends SObject 
 {
-    Preference: string;
-    SystemModstamp: string;
-    User: User;
-    UserId: string;
-    Value: string;
+    Preference?: string;
+    SystemModstamp?: string;
+    User?: User;
+    UserId?: string;
+    Value?: string;
 }

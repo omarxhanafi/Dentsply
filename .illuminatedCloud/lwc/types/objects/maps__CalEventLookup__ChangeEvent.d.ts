@@ -2,14 +2,14 @@
 
 declare interface maps__CalEventLookup__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Base Object Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -20,7 +20,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__BaseObjectId__c: string;
+    maps__BaseObjectId__c?: string;
     /**
      * <h3><b>Maps Calendar Event Base Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -28,7 +28,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__CalEventBaseObj__c})</td></tr>
      * </table>
      */
-    maps__CalEventBaseObj__c: string;
+    maps__CalEventBaseObj__c?: string;
     /**
      * <h3><b>Maps Calendar Event Base Object</b></h3>
      * <h4>Field Attributes</h4>
@@ -36,7 +36,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link maps__CalEventBaseObj__c})</td></tr>
      * </table>
      */
-    maps__CalEventBaseObj__r: maps__CalEventBaseObj__c;
+    maps__CalEventBaseObj__r?: maps__CalEventBaseObj__c;
     /**
      * <h3><b>Enabled</b></h3>
      * <h4>Field Attributes</h4>
@@ -45,7 +45,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__Enabled__c: boolean;
+    maps__Enabled__c?: boolean;
     /**
      * <h3><b>Location Source</b></h3>
      * <h4>Field Attributes</h4>
@@ -54,7 +54,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    maps__LocationSource__c: boolean;
+    maps__LocationSource__c?: boolean;
     /**
      * <h3><b>Lookup Field API</b></h3>
      * <h4>Field Attributes</h4>
@@ -65,7 +65,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__LookupFieldAPI__c: string;
+    maps__LookupFieldAPI__c?: string;
     /**
      * <h3><b>Object API</b></h3>
      * <h4>Field Attributes</h4>
@@ -76,7 +76,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__ObjectAPI__c: string;
+    maps__ObjectAPI__c?: string;
     /**
      * <h3><b>Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -91,7 +91,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Custom</code></td><td>Custom</td><td nowrap>true</td></tr>
      * </table>
      */
-    maps__Type__c: string;
+    maps__Type__c?: string;
     /**
      * <h3><b>TypeAPI</b></h3>
      * <h4>Field Attributes</h4>
@@ -102,7 +102,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TypeAPI__c: string;
+    maps__TypeAPI__c?: string;
     /**
      * <h3><b>TypeDefaultValue</b></h3>
      * <h4>Field Attributes</h4>
@@ -113,7 +113,7 @@ declare interface maps__CalEventLookup__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    maps__TypeDefaultValue__c: string;
-    Name: string;
-    ReplayId: string;
+    maps__TypeDefaultValue__c?: string;
+    Name?: string;
+    ReplayId?: string;
 }

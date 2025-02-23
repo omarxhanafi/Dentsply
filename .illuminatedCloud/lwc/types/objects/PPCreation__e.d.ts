@@ -5,10 +5,10 @@
  */
 declare interface PPCreation__e extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

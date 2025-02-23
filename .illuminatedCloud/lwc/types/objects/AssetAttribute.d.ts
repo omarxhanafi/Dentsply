@@ -2,19 +2,19 @@
 
 declare interface AssetAttribute extends SObject 
 {
-    Asset: Asset;
-    AssetId: string;
-    AttributeDefinition: AttributeDefinition;
-    AttributeDefinitionId: string;
-    AttributeName: string;
-    AttributePicklistValue: AttributePicklistValue;
-    AttributePicklistValueId: string;
-    AttributeValue: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    ExternalId: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Asset?: Asset;
+    AssetId?: string;
+    AttributeDefinition?: AttributeDefinition;
+    AttributeDefinitionId?: string;
+    AttributeName?: string;
+    AttributePicklistValue?: AttributePicklistValue;
+    AttributePicklistValueId?: string;
+    AttributeValue?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    ExternalId?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
 }

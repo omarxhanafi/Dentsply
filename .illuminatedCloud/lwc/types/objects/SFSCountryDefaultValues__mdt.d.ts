@@ -16,7 +16,7 @@ declare interface SFSCountryDefaultValues__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country__c: string;
+    Country__c?: string;
     /**
      * <h3><b>Currency</b></h3>
      * <h4>Field Attributes</h4>
@@ -31,8 +31,8 @@ declare interface SFSCountryDefaultValues__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">NZD</code></td><td>NZD</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Currency__c: string;
-    DeveloperName: string;
+    Currency__c?: string;
+    DeveloperName?: string;
     /**
      * <h3><b>Entitlement Enabled</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,11 +41,11 @@ declare interface SFSCountryDefaultValues__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    EntitlementEnabled__c: boolean;
-    Label: string;
-    Language: string;
-    MasterLabel: string;
-    NamespacePrefix: string;
+    EntitlementEnabled__c?: boolean;
+    Label?: string;
+    Language?: string;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
     /**
      * <h3><b>Pricebook Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -56,8 +56,8 @@ declare interface SFSCountryDefaultValues__mdt extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PricebookId__c: string;
-    QualifiedApiName: string;
+    PricebookId__c?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>Survey Enabled</b></h3>
      * <p>TFUS-000006524</p>
@@ -67,6 +67,6 @@ declare interface SFSCountryDefaultValues__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SurveyEnabled__c: boolean;
-    SystemModstamp: string;
+    SurveyEnabled__c?: boolean;
+    SystemModstamp?: string;
 }

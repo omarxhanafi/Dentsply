@@ -2,14 +2,14 @@
 
 declare interface WorkStepTemplateHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    WorkStepTemplate: WorkStepTemplate;
-    WorkStepTemplateId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    WorkStepTemplate?: WorkStepTemplate;
+    WorkStepTemplateId?: string;
 }

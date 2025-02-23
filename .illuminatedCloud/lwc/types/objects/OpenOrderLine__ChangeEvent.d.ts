@@ -9,7 +9,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,8 +17,8 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
-    ChangeEventHeader: ChangeEventHeader;
+    Account__r?: Account;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Company Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -29,11 +29,11 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CompanyCode__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    CompanyCode__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Current Workflow Step</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CurrentManufactureStep__c: string;
+    CurrentManufactureStep__c?: string;
     /**
      * <h3><b>Customer Master UniqueKey</b></h3>
      * <h4>Field Attributes</h4>
@@ -55,7 +55,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerMasterUniqueKey__c: string;
+    CustomerMasterUniqueKey__c?: string;
     /**
      * <h3><b>Customer No</b></h3>
      * <h4>Field Attributes</h4>
@@ -66,7 +66,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerNo__c: string;
+    CustomerNo__c?: string;
     /**
      * <h3><b>Customer Order Line No</b></h3>
      * <h4>Field Attributes</h4>
@@ -77,7 +77,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerOrderLineNo__c: string;
+    CustomerOrderLineNo__c?: string;
     /**
      * <h3><b>Customer Order No</b></h3>
      * <h4>Field Attributes</h4>
@@ -88,7 +88,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerOrderNo__c: string;
+    CustomerOrderNo__c?: string;
     /**
      * <h3><b>Customer Order Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -99,7 +99,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerOrderType__c: string;
+    CustomerOrderType__c?: string;
     /**
      * <h3><b>Customer Order Type Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +110,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerOrderTypeName__c: string;
+    CustomerOrderTypeName__c?: string;
     /**
      * <h3><b>Customer Sales Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -121,7 +121,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CustomerSalesGroup__c: string;
+    CustomerSalesGroup__c?: string;
     /**
      * <h3><b>Delivered Mfg Qty</b></h3>
      * <h4>Field Attributes</h4>
@@ -132,7 +132,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DeliveredMfgQty__c: number;
+    DeliveredMfgQty__c?: number;
     /**
      * <h3><b>Delivered Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -143,7 +143,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DeliveredQuantity__c: number;
+    DeliveredQuantity__c?: number;
     /**
      * <h3><b>Del Value Not Invoiced</b></h3>
      * <h4>Field Attributes</h4>
@@ -152,7 +152,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DelValueNotInvoiced__c: number;
+    DelValueNotInvoiced__c?: number;
     /**
      * <h3><b>Del Value Not Invoiced Inv</b></h3>
      * <h4>Field Attributes</h4>
@@ -161,7 +161,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DelValueNotInvoiced_Inv__c: number;
+    DelValueNotInvoiced_Inv__c?: number;
     /**
      * <h3><b>DEP Record Hash</b></h3>
      * <h4>Field Attributes</h4>
@@ -172,7 +172,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DEPRecordHash__c: string;
+    DEPRecordHash__c?: string;
     /**
      * <h3><b>DEP Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -183,7 +183,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    DEPUniqueKey__c: string;
+    DEPUniqueKey__c?: string;
     /**
      * <h3><b>Entity Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -194,7 +194,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    EntityCode__c: string;
+    EntityCode__c?: string;
     /**
      * <h3><b>GDW Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -205,7 +205,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    GDWUniqueKey__c: string;
+    GDWUniqueKey__c?: string;
     /**
      * <h3><b>Global Item Master UniqueKey</b></h3>
      * <h4>Field Attributes</h4>
@@ -216,7 +216,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GlobalItemMasterUniqueKey__c: string;
+    GlobalItemMasterUniqueKey__c?: string;
     /**
      * <h3><b>GlobalSalesOrderStatusDesc</b></h3>
      * <p>GlobalSalesOrderStatusDesc</p>
@@ -228,7 +228,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GlobalSalesOrderStatusDesc__c: string;
+    GlobalSalesOrderStatusDesc__c?: string;
     /**
      * <h3><b>Global SKU</b></h3>
      * <h4>Field Attributes</h4>
@@ -239,7 +239,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    GlobalSKU__c: string;
+    GlobalSKU__c?: string;
     /**
      * <h3><b>Invoice Currency</b></h3>
      * <h4>Field Attributes</h4>
@@ -250,7 +250,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    InvoiceCurrency__c: string;
+    InvoiceCurrency__c?: string;
     /**
      * <h3><b>Workflow Step Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -259,10 +259,10 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LastManufactureStepDate__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    LastManufactureStepDate__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Load Time Stamp</b></h3>
      * <h4>Field Attributes</h4>
@@ -271,7 +271,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LoadTimeStamp__c: string;
+    LoadTimeStamp__c?: string;
     /**
      * <h3><b>Local Item Master UniqueKey</b></h3>
      * <h4>Field Attributes</h4>
@@ -282,7 +282,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LocalItemMasterUniqueKey__c: string;
+    LocalItemMasterUniqueKey__c?: string;
     /**
      * <h3><b>Local SKU</b></h3>
      * <h4>Field Attributes</h4>
@@ -293,7 +293,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LocalSKU__c: string;
+    LocalSKU__c?: string;
     /**
      * <h3><b>Manufacturing Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -307,8 +307,8 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td><td>1</td><td nowrap>true</td></tr>
      * </table>
      */
-    ManufactureStatus__c: string;
-    Name: string;
+    ManufactureStatus__c?: string;
+    Name?: string;
     /**
      * <h3><b>Next Workflow Step</b></h3>
      * <h4>Field Attributes</h4>
@@ -319,7 +319,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    NextManufactureStep__c: string;
+    NextManufactureStep__c?: string;
     /**
      * <h3><b>OperationalOrderStatusDesc</b></h3>
      * <p>OperationalOrderStatusDesc</p>
@@ -331,7 +331,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OperationalOrderStatusDesc__c: string;
+    OperationalOrderStatusDesc__c?: string;
     /**
      * <h3><b>Order Currency</b></h3>
      * <h4>Field Attributes</h4>
@@ -342,7 +342,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrderCurrency__c: string;
+    OrderCurrency__c?: string;
     /**
      * <h3><b>Ordered Mfg Qty</b></h3>
      * <h4>Field Attributes</h4>
@@ -353,7 +353,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrderedMfgQty__c: number;
+    OrderedMfgQty__c?: number;
     /**
      * <h3><b>Ordered Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -364,7 +364,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrderedQuantity__c: number;
+    OrderedQuantity__c?: number;
     /**
      * <h3><b>Order Entry Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -373,7 +373,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrderEntryDate__c: Date;
+    OrderEntryDate__c?: Date;
     /**
      * <h3><b>Order Value Not Invoiced</b></h3>
      * <h4>Field Attributes</h4>
@@ -382,7 +382,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrderValueNotInvoiced__c: number;
+    OrderValueNotInvoiced__c?: number;
     /**
      * <h3><b>Order Value Not Invoiced Inv</b></h3>
      * <h4>Field Attributes</h4>
@@ -391,7 +391,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    OrderValueNotInvoiced_Inv__c: number;
+    OrderValueNotInvoiced_Inv__c?: number;
     /**
      * <h3><b>Patient Case Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -402,7 +402,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PatientCaseId__c: string;
+    PatientCaseId__c?: string;
     /**
      * <h3><b>Practice Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -413,7 +413,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeId__c: string;
+    PracticeId__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -422,7 +422,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__c: string;
+    Product__c?: string;
     /**
      * <h3><b>Product</b></h3>
      * <h4>Field Attributes</h4>
@@ -431,7 +431,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Product__r: Product2;
+    Product__r?: Product2;
     /**
      * <h3><b>Remaining Mfg Qty</b></h3>
      * <h4>Field Attributes</h4>
@@ -442,7 +442,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RemainingMfgQty__c: number;
+    RemainingMfgQty__c?: number;
     /**
      * <h3><b>Remaining Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -453,8 +453,8 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RemainingQuantity__c: number;
-    ReplayId: string;
+    RemainingQuantity__c?: number;
+    ReplayId?: string;
     /**
      * <h3><b>Sales Order Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -465,7 +465,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesOrderStatus__c: string;
+    SalesOrderStatus__c?: string;
     /**
      * <h3><b>SalesOrderStatusDesc</b></h3>
      * <p>SalesOrderStatusDesc</p>
@@ -477,7 +477,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesOrderStatusDesc__c: string;
+    SalesOrderStatusDesc__c?: string;
     /**
      * <h3><b>Sales Origin</b></h3>
      * <h4>Field Attributes</h4>
@@ -488,7 +488,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesOrigin__c: string;
+    SalesOrigin__c?: string;
     /**
      * <h3><b>Sales Type Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -499,7 +499,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SalesTypeCode__c: string;
+    SalesTypeCode__c?: string;
     /**
      * <h3><b>Ship Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -508,7 +508,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShipDate__c: Date;
+    ShipDate__c?: Date;
     /**
      * <h3><b>Ship Date Confirmed</b></h3>
      * <h4>Field Attributes</h4>
@@ -517,7 +517,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShipDateConfirmed__c: Date;
+    ShipDateConfirmed__c?: Date;
     /**
      * <h3><b>Ship Date Requested</b></h3>
      * <h4>Field Attributes</h4>
@@ -526,7 +526,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShipDateRequested__c: Date;
+    ShipDateRequested__c?: Date;
     /**
      * <h3><b>Ship To Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -537,7 +537,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    ShipToCountry__c: string;
+    ShipToCountry__c?: string;
     /**
      * <h3><b>Site Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -548,7 +548,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SiteId__c: string;
+    SiteId__c?: string;
     /**
      * <h3><b>Source Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -559,7 +559,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceId__c: number;
+    SourceId__c?: number;
     /**
      * <h3><b>SourceSystemName</b></h3>
      * <p>Source System Name</p>
@@ -571,7 +571,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SourceSystemName__c: string;
+    SourceSystemName__c?: string;
     /**
      * <h3><b>SureSmile Open Order Type</b></h3>
      * <p>A logic applied in DEP to group the Suresmile open orders in to buckets of different type based on e.g. next workflow step. Types can be e..g rejected, needs information, etc.</p>
@@ -583,7 +583,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SureSmileOpenOrderType__c: string;
+    SureSmileOpenOrderType__c?: string;
     /**
      * <h3><b>SureSmile Platform</b></h3>
      * <h4>Field Attributes</h4>
@@ -594,7 +594,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SureSmilePlatform__c: string;
+    SureSmilePlatform__c?: string;
     /**
      * <h3><b>SureSmile Product Name</b></h3>
      * <p>The product name from the suresmile website.
@@ -607,7 +607,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SureSmileProductName__c: string;
+    SureSmileProductName__c?: string;
     /**
      * <h3><b>SureSmile Product Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -618,7 +618,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SureSmileProductType__c: string;
+    SureSmileProductType__c?: string;
     /**
      * <h3><b>SureSmile Treatment Submission</b></h3>
      * <h4>Field Attributes</h4>
@@ -627,7 +627,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SureSmileTreatmentSubmission__c: boolean;
+    SureSmileTreatmentSubmission__c?: boolean;
     /**
      * <h3><b>Website Order Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -636,7 +636,7 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WebsiteOrderDate__c: Date;
+    WebsiteOrderDate__c?: Date;
     /**
      * <h3><b>Website Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -650,5 +650,5 @@ declare interface OpenOrderLine__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">1</code></td><td>1</td><td nowrap>true</td></tr>
      * </table>
      */
-    WebsiteStatus__c: string;
+    WebsiteStatus__c?: string;
 }

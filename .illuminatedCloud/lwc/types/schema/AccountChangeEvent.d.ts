@@ -4956,6 +4956,12 @@ declare module "@salesforce/schema/AccountChangeEvent.Sold_Stock_Abut_s_LY_CY__c
     export default Sold_Stock_Abut_s_LY_CY__c;
 }
 
+declare module "@salesforce/schema/AccountChangeEvent.SourceSystemIdentifier" {
+    import { FieldId } from "@salesforce/schema";
+    const SourceSystemIdentifier: FieldId;
+    export default SourceSystemIdentifier;
+}
+
 declare module "@salesforce/schema/AccountChangeEvent.SourceSystemName__c" {
     import { FieldId } from "@salesforce/schema";
     const SourceSystemName__c: FieldId;

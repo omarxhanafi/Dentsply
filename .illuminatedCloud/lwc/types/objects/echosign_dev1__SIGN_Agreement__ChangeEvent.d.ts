@@ -2,11 +2,11 @@
 
 declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject 
 {
-    ChangeEventHeader: ChangeEventHeader;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    ChangeEventHeader?: ChangeEventHeader;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -15,7 +15,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Account__c: string;
+    echosign_dev1__Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,7 +24,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Account__r: Account;
+    echosign_dev1__Account__r?: Account;
     /**
      * <h3><b>Additional Recipient 1 (User)</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Additional_Recipient_1_User__c: string;
+    echosign_dev1__Additional_Recipient_1_User__c?: string;
     /**
      * <h3><b>Additional Recipient 1 (User)</b></h3>
      * <h4>Field Attributes</h4>
@@ -42,7 +42,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Additional_Recipient_1_User__r: User;
+    echosign_dev1__Additional_Recipient_1_User__r?: User;
     /**
      * <h3><b>Additional Recipient 2 (User)</b></h3>
      * <h4>Field Attributes</h4>
@@ -51,7 +51,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Additional_Recipient_2_User__c: string;
+    echosign_dev1__Additional_Recipient_2_User__c?: string;
     /**
      * <h3><b>Additional Recipient 2 (User)</b></h3>
      * <h4>Field Attributes</h4>
@@ -60,7 +60,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Additional_Recipient_2_User__r: User;
+    echosign_dev1__Additional_Recipient_2_User__r?: User;
     /**
      * <h3><b>Additional Recipient 3 (User)</b></h3>
      * <h4>Field Attributes</h4>
@@ -69,7 +69,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Additional_Recipient_3_User__c: string;
+    echosign_dev1__Additional_Recipient_3_User__c?: string;
     /**
      * <h3><b>Additional Recipient 3 (User)</b></h3>
      * <h4>Field Attributes</h4>
@@ -78,7 +78,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Additional_Recipient_3_User__r: User;
+    echosign_dev1__Additional_Recipient_3_User__r?: User;
     /**
      * <h3><b>Additional Options</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,7 +89,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__AdditionalOptions__c: string;
+    echosign_dev1__AdditionalOptions__c?: string;
     /**
      * <h3><b>Agreement Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -98,7 +98,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Agreement_Type__c: string;
+    echosign_dev1__Agreement_Type__c?: string;
     /**
      * <h3><b>Agreement Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -107,7 +107,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Agreement_Type__r: echosign_dev1__Agreement_Type__c;
+    echosign_dev1__Agreement_Type__r?: echosign_dev1__Agreement_Type__c;
     /**
      * <h3><b>Language</b></h3>
      * <p>Select the language of the recipients.</p>
@@ -157,7 +157,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Vietnamese (Vietnam)</code></td><td>Vietnamese (Vietnam)</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__AgreementLocale__c: string;
+    echosign_dev1__AgreementLocale__c?: string;
     /**
      * <h3><b>Attachment ID Order</b></h3>
      * <p>(Optional) Enter a list of comma separated Attachment IDs in the order to be displayed.</p>
@@ -166,7 +166,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    echosign_dev1__Attachment_ID_Order2__c: string;
+    echosign_dev1__Attachment_ID_Order2__c?: string;
     /**
      * <h3><b>DEPRECATED</b></h3>
      * <p>DEPRECATED</p>
@@ -178,7 +178,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Attachment_ID_Order__c: string;
+    echosign_dev1__Attachment_ID_Order__c?: string;
     /**
      * <h3><b>Attachment Service Invocation Count</b></h3>
      * <h4>Field Attributes</h4>
@@ -189,7 +189,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Attachment_Service_Invocation_Count__c: string;
+    echosign_dev1__Attachment_Service_Invocation_Count__c?: string;
     /**
      * <h3><b>Attachment Workflow Index</b></h3>
      * <p>(Optional) Enter a list of comma separated workflow file index.</p>
@@ -201,7 +201,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Attachment_Workflow_Index__c: string;
+    echosign_dev1__Attachment_Workflow_Index__c?: string;
     /**
      * <h3><b>Preview or Position Signature Fields</b></h3>
      * <p>Preview the document or drag and drop form fields or signature fields on to the document before it is sent for signature.</p>
@@ -211,7 +211,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Authoring__c: boolean;
+    echosign_dev1__Authoring__c?: boolean;
     /**
      * <h3><b>Auto Update</b></h3>
      * <h4>Field Attributes</h4>
@@ -220,7 +220,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__AutoUpdate__c: boolean;
+    echosign_dev1__AutoUpdate__c?: boolean;
     /**
      * <h3><b>Background Action</b></h3>
      * <h4>Field Attributes</h4>
@@ -238,7 +238,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Update</code></td><td>Update</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Background_Action__c: string;
+    echosign_dev1__Background_Action__c?: string;
     /**
      * <h3><b>Notify Signer</b></h3>
      * <h4>Field Attributes</h4>
@@ -247,7 +247,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Cancel_Delete_Notify_Signer__c: boolean;
+    echosign_dev1__Cancel_Delete_Notify_Signer__c?: boolean;
     /**
      * <h3><b>Cancel Delete Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -258,7 +258,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Cancel_Delete_Reason__c: string;
+    echosign_dev1__Cancel_Delete_Reason__c?: string;
     /**
      * <h3><b>Send email copies to</b></h3>
      * <p>Send an extra copy of signed agreement to these email addresses.</p>
@@ -270,7 +270,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Cc__c: string;
+    echosign_dev1__Cc__c?: string;
     /**
      * <h3><b>Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -279,7 +279,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Contract__c: string;
+    echosign_dev1__Contract__c?: string;
     /**
      * <h3><b>Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -288,7 +288,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Contract__r: Contract;
+    echosign_dev1__Contract__r?: Contract;
     /**
      * <h3><b>Data Mapping Error</b></h3>
      * <h4>Field Attributes</h4>
@@ -296,7 +296,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    echosign_dev1__Data_Mapping_Error__c: string;
+    echosign_dev1__Data_Mapping_Error__c?: string;
     /**
      * <h3><b>Data Mapping Result</b></h3>
      * <h4>Field Attributes</h4>
@@ -312,7 +312,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Failed</code></td><td>Failed</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Data_Mapping_Result__c: string;
+    echosign_dev1__Data_Mapping_Result__c?: string;
     /**
      * <h3><b>Date Sent</b></h3>
      * <h4>Field Attributes</h4>
@@ -321,7 +321,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__DateSent__c: string;
+    echosign_dev1__DateSent__c?: string;
     /**
      * <h3><b>Date Sent (Date)</b></h3>
      * <h4>Field Attributes</h4>
@@ -331,7 +331,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__DateSentDate__c: Date;
+    echosign_dev1__DateSentDate__c?: Date;
     /**
      * <h3><b>Date Signed</b></h3>
      * <h4>Field Attributes</h4>
@@ -340,7 +340,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__DateSigned__c: string;
+    echosign_dev1__DateSigned__c?: string;
     /**
      * <h3><b>Date Signed (Date)</b></h3>
      * <h4>Field Attributes</h4>
@@ -350,7 +350,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__DateSignedDate__c: Date;
+    echosign_dev1__DateSignedDate__c?: Date;
     /**
      * <h3><b>Date Viewed</b></h3>
      * <h4>Field Attributes</h4>
@@ -359,7 +359,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__DateViewed__c: string;
+    echosign_dev1__DateViewed__c?: string;
     /**
      * <h3><b>Date Viewed (Date)</b></h3>
      * <h4>Field Attributes</h4>
@@ -369,7 +369,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__DateViewedDate__c: Date;
+    echosign_dev1__DateViewedDate__c?: Date;
     /**
      * <h3><b>Days Unsigned</b></h3>
      * <h4>Field Attributes</h4>
@@ -381,7 +381,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__DaysUnsigned__c: number;
+    echosign_dev1__DaysUnsigned__c?: number;
     /**
      * <h3><b>Days Until Signed</b></h3>
      * <h4>Field Attributes</h4>
@@ -393,7 +393,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__DaysUntilSigned__c: number;
+    echosign_dev1__DaysUntilSigned__c?: number;
     /**
      * <h3><b>Expire document in X days</b></h3>
      * <p>Specify the number of days until the agreement expires and can no longer be signed.</p>
@@ -405,7 +405,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__DaysUntilSigningDeadline__c: number;
+    echosign_dev1__DaysUntilSigningDeadline__c?: number;
     /**
      * <h3><b>Document</b></h3>
      * <h4>Field Attributes</h4>
@@ -417,7 +417,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Document__c: string;
+    echosign_dev1__Document__c?: string;
     /**
      * <h3><b>Document Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -428,7 +428,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Document_Key__c: string;
+    echosign_dev1__Document_Key__c?: string;
     /**
      * <h3><b>Enable Automatic Reminders</b></h3>
      * <p>Send an automatic weekly or daily reminder to recipients.</p>
@@ -438,7 +438,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Enable_Automatic_Reminders__c: boolean;
+    echosign_dev1__Enable_Automatic_Reminders__c?: boolean;
     /**
      * <h3><b>Host signing for the first signer</b></h3>
      * <p>Host signing to get in-person signatures from your computer or device.</p>
@@ -448,7 +448,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Enable_Hosted_Signing__c: boolean;
+    echosign_dev1__Enable_Hosted_Signing__c?: boolean;
     /**
      * <h3><b>Encoded Password</b></h3>
      * <h4>Field Attributes</h4>
@@ -459,7 +459,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__EncodedPassword__c: string;
+    echosign_dev1__EncodedPassword__c?: string;
     /**
      * <h3><b>Error Message</b></h3>
      * <h4>Field Attributes</h4>
@@ -470,7 +470,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__ErrorMessage__c: string;
+    echosign_dev1__ErrorMessage__c?: string;
     /**
      * <h3><b>Sign External Password</b></h3>
      * <h4>Field Attributes</h4>
@@ -481,7 +481,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__External_Password__c: string;
+    echosign_dev1__External_Password__c?: string;
     /**
      * <h3><b>External Signers Verification Method</b></h3>
      * <h4>Field Attributes</h4>
@@ -497,7 +497,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Web identity authentication</code></td><td>Web identity authentication</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__External_Signers_Verification_Method__c: string;
+    echosign_dev1__External_Signers_Verification_Method__c?: string;
     /**
      * <h3><b>Failed Notifications</b></h3>
      * <h4>Field Attributes</h4>
@@ -509,7 +509,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * </td></tr>
      * </table>
      */
-    echosign_dev1__Failed_Notifications__c: number;
+    echosign_dev1__Failed_Notifications__c?: number;
     /**
      * <h3><b>Fill &amp; Sign</b></h3>
      * <h4>Field Attributes</h4>
@@ -518,7 +518,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Fill_Sign__c: boolean;
+    echosign_dev1__Fill_Sign__c?: boolean;
     /**
      * <h3><b>Sign Internal Password</b></h3>
      * <h4>Field Attributes</h4>
@@ -529,7 +529,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Internal_Password__c: string;
+    echosign_dev1__Internal_Password__c?: string;
     /**
      * <h3><b>Internal Signers Verification Method</b></h3>
      * <h4>Field Attributes</h4>
@@ -545,7 +545,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Web identity authentication</code></td><td>Web identity authentication</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Internal_Signers_Verification_Method__c: string;
+    echosign_dev1__Internal_Signers_Verification_Method__c?: string;
     /**
      * <h3><b>LastEventId</b></h3>
      * <h4>Field Attributes</h4>
@@ -556,7 +556,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__LastEventId__c: string;
+    echosign_dev1__LastEventId__c?: string;
     /**
      * <h3><b>Legacy Record ID</b></h3>
      * <p>This field stores the Record ID for any records converted from the unmanaged package.</p>
@@ -568,7 +568,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Legacy_Record_ID__c: string;
+    echosign_dev1__Legacy_Record_ID__c?: string;
     /**
      * <h3><b>Merge Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -577,7 +577,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Merge_Mapping__c: string;
+    echosign_dev1__Merge_Mapping__c?: string;
     /**
      * <h3><b>Merge Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -586,7 +586,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Merge_Mapping__r: echosign_dev1__SIGN_Merge_Mapping__c;
+    echosign_dev1__Merge_Mapping__r?: echosign_dev1__SIGN_Merge_Mapping__c;
     /**
      * <h3><b>Merge Mapping Error</b></h3>
      * <h4>Field Attributes</h4>
@@ -594,7 +594,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(131072)</td></tr>
      * </table>
      */
-    echosign_dev1__Merge_Mapping_Error__c: string;
+    echosign_dev1__Merge_Mapping_Error__c?: string;
     /**
      * <h3><b>Merge Mapping Result</b></h3>
      * <h4>Field Attributes</h4>
@@ -610,7 +610,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Failed</code></td><td>Failed</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Merge_Mapping_Result__c: string;
+    echosign_dev1__Merge_Mapping_Result__c?: string;
     /**
      * <h3><b>Message</b></h3>
      * <p>Specify a message to the recipients.</p>
@@ -620,7 +620,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">&quot;Please review and sign this document.&quot;</code></td></tr>
      * </table>
      */
-    echosign_dev1__Message__c: string;
+    echosign_dev1__Message__c?: string;
     /**
      * <h3><b>Minutes Until Signed</b></h3>
      * <h4>Field Attributes</h4>
@@ -632,7 +632,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Minutes_Until_Signed__c: number;
+    echosign_dev1__Minutes_Until_Signed__c?: number;
     /**
      * <h3><b>Additional Recipients (Email)</b></h3>
      * <h4>Field Attributes</h4>
@@ -643,7 +643,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__More_Recipients__c: string;
+    echosign_dev1__More_Recipients__c?: string;
     /**
      * <h3><b>Agreement Name(Long Version))</b></h3>
      * <p>Agreement name can have up to 255 characters.</p>
@@ -655,7 +655,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Name__c: string;
+    echosign_dev1__Name__c?: string;
     /**
      * <h3><b>Password</b></h3>
      * <h4>Field Attributes</h4>
@@ -667,7 +667,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__NewPassword__c: string;
+    echosign_dev1__NewPassword__c?: string;
     /**
      * <h3><b>On Load Action</b></h3>
      * <h4>Field Attributes</h4>
@@ -686,7 +686,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">View</code></td><td>View</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__On_Load_Action__c: string;
+    echosign_dev1__On_Load_Action__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -695,7 +695,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Opportunity__c: string;
+    echosign_dev1__Opportunity__c?: string;
     /**
      * <h3><b>Opportunity</b></h3>
      * <h4>Field Attributes</h4>
@@ -704,7 +704,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Opportunity__r: Opportunity;
+    echosign_dev1__Opportunity__r?: Opportunity;
     /**
      * <h3><b>Partner Server URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -716,7 +716,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Partner_Server_URL__c: string;
+    echosign_dev1__Partner_Server_URL__c?: string;
     /**
      * <h3><b>View Password</b></h3>
      * <h4>Field Attributes</h4>
@@ -727,7 +727,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Password__c: string;
+    echosign_dev1__Password__c?: string;
     /**
      * <h3><b>Password required to view PDF</b></h3>
      * <p>The signed PDF that is sent to all parties is encrypted and this password will be required to open it. Don&#39;t lose the password as it is not recoverable.</p>
@@ -737,7 +737,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__PasswordProtectPDF__c: boolean;
+    echosign_dev1__PasswordProtectPDF__c?: boolean;
     /**
      * <h3><b>Password required to sign</b></h3>
      * <h4>Field Attributes</h4>
@@ -746,7 +746,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__PasswordProtectSign__c: boolean;
+    echosign_dev1__PasswordProtectSign__c?: boolean;
     /**
      * <h3><b>Percent Signed</b></h3>
      * <h4>Field Attributes</h4>
@@ -758,7 +758,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Percent_Signed__c: number;
+    echosign_dev1__Percent_Signed__c?: number;
     /**
      * <h3><b>Post Sign Redirect Delay (seconds)</b></h3>
      * <h4>Field Attributes</h4>
@@ -769,7 +769,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Post_Sign_Redirect_Delay__c: number;
+    echosign_dev1__Post_Sign_Redirect_Delay__c?: number;
     /**
      * <h3><b>Post Sign Redirect URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -778,7 +778,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Post_Sign_Redirect_URL__c: string;
+    echosign_dev1__Post_Sign_Redirect_URL__c?: string;
     /**
      * <h3><b>Send written signatures to fax number</b></h3>
      * <h4>Field Attributes</h4>
@@ -787,7 +787,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__PreferFax__c: boolean;
+    echosign_dev1__PreferFax__c?: boolean;
     /**
      * <h3><b>Data Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -796,7 +796,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Process_Template__c: string;
+    echosign_dev1__Process_Template__c?: string;
     /**
      * <h3><b>Data Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -805,7 +805,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Process_Template__r: echosign_dev1__SIGN_Data_Mapping__c;
+    echosign_dev1__Process_Template__r?: echosign_dev1__SIGN_Data_Mapping__c;
     /**
      * <h3><b>Rebuild Recipient List</b></h3>
      * <p>Set this field to force the basic Adobe Sign agreement and advanced Adobe Sign agreement pages to rebuild the related Recipient List using the Lookup fields on the Agreement record.</p>
@@ -815,7 +815,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Rebuild_Recipient_List__c: boolean;
+    echosign_dev1__Rebuild_Recipient_List__c?: boolean;
     /**
      * <h3><b>Additional Recipient 1 (Contact)</b></h3>
      * <h4>Field Attributes</h4>
@@ -824,7 +824,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient2__c: string;
+    echosign_dev1__Recipient2__c?: string;
     /**
      * <h3><b>Additional Recipient 1 (Contact)</b></h3>
      * <h4>Field Attributes</h4>
@@ -833,7 +833,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient2__r: Contact;
+    echosign_dev1__Recipient2__r?: Contact;
     /**
      * <h3><b>Additional Recipient 2 (Contact)</b></h3>
      * <h4>Field Attributes</h4>
@@ -842,7 +842,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient3__c: string;
+    echosign_dev1__Recipient3__c?: string;
     /**
      * <h3><b>Additional Recipient 2 (Contact)</b></h3>
      * <h4>Field Attributes</h4>
@@ -851,7 +851,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient3__r: Contact;
+    echosign_dev1__Recipient3__r?: Contact;
     /**
      * <h3><b>Additional Recipient 3 (Contact)</b></h3>
      * <h4>Field Attributes</h4>
@@ -860,7 +860,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient4__c: string;
+    echosign_dev1__Recipient4__c?: string;
     /**
      * <h3><b>Additional Recipient 3 (Contact)</b></h3>
      * <h4>Field Attributes</h4>
@@ -869,7 +869,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient4__r: Contact;
+    echosign_dev1__Recipient4__r?: Contact;
     /**
      * <h3><b>Recipient (Contact)</b></h3>
      * <h4>Field Attributes</h4>
@@ -878,7 +878,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient__c: string;
+    echosign_dev1__Recipient__c?: string;
     /**
      * <h3><b>Recipient (Contact)</b></h3>
      * <h4>Field Attributes</h4>
@@ -887,7 +887,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient__r: Contact;
+    echosign_dev1__Recipient__r?: Contact;
     /**
      * <h3><b>Recipient Addresses</b></h3>
      * <h4>Field Attributes</h4>
@@ -896,7 +896,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Addresses__c: string;
+    echosign_dev1__Recipient_Addresses__c?: string;
     /**
      * <h3><b>Additional Recipient 1 (Lead)</b></h3>
      * <h4>Field Attributes</h4>
@@ -905,7 +905,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Lead2__c: string;
+    echosign_dev1__Recipient_Lead2__c?: string;
     /**
      * <h3><b>Additional Recipient 1 (Lead)</b></h3>
      * <h4>Field Attributes</h4>
@@ -914,7 +914,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Lead2__r: Lead;
+    echosign_dev1__Recipient_Lead2__r?: Lead;
     /**
      * <h3><b>Additional Recipient 2 (Lead)</b></h3>
      * <h4>Field Attributes</h4>
@@ -923,7 +923,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Lead3__c: string;
+    echosign_dev1__Recipient_Lead3__c?: string;
     /**
      * <h3><b>Additional Recipient 2 (Lead)</b></h3>
      * <h4>Field Attributes</h4>
@@ -932,7 +932,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Lead3__r: Lead;
+    echosign_dev1__Recipient_Lead3__r?: Lead;
     /**
      * <h3><b>Additional Recipient 3 (Lead)</b></h3>
      * <h4>Field Attributes</h4>
@@ -941,7 +941,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Lead4__c: string;
+    echosign_dev1__Recipient_Lead4__c?: string;
     /**
      * <h3><b>Additional Recipient 3 (Lead)</b></h3>
      * <h4>Field Attributes</h4>
@@ -950,7 +950,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Lead4__r: Lead;
+    echosign_dev1__Recipient_Lead4__r?: Lead;
     /**
      * <h3><b>Recipient (Lead)</b></h3>
      * <p>Recipient (from Lead)</p>
@@ -960,7 +960,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Lead__c: string;
+    echosign_dev1__Recipient_Lead__c?: string;
     /**
      * <h3><b>Recipient (Lead)</b></h3>
      * <p>Recipient (from Lead)</p>
@@ -970,7 +970,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_Lead__r: Lead;
+    echosign_dev1__Recipient_Lead__r?: Lead;
     /**
      * <h3><b>Recipient (User)</b></h3>
      * <h4>Field Attributes</h4>
@@ -979,7 +979,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_User__c: string;
+    echosign_dev1__Recipient_User__c?: string;
     /**
      * <h3><b>Recipient (User)</b></h3>
      * <h4>Field Attributes</h4>
@@ -988,7 +988,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Recipient_User__r: User;
+    echosign_dev1__Recipient_User__r?: User;
     /**
      * <h3><b>Remind recipient to sign</b></h3>
      * <h4>Field Attributes</h4>
@@ -1004,7 +1004,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Every Week, Until Signed</code></td><td>Every Week, Until Signed</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__RemindRecipient__c: string;
+    echosign_dev1__RemindRecipient__c?: string;
     /**
      * <h3><b>Result</b></h3>
      * <h4>Field Attributes</h4>
@@ -1016,7 +1016,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Result__c: string;
+    echosign_dev1__Result__c?: string;
     /**
      * <h3><b>ReturnURL</b></h3>
      * <h4>Field Attributes</h4>
@@ -1027,7 +1027,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__ReturnURL__c: string;
+    echosign_dev1__ReturnURL__c?: string;
     /**
      * <h3><b>ReturnURL_Text</b></h3>
      * <h4>Field Attributes</h4>
@@ -1038,7 +1038,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__ReturnURL_Text__c: string;
+    echosign_dev1__ReturnURL_Text__c?: string;
     /**
      * <h3><b>Sender Recorded</b></h3>
      * <h4>Field Attributes</h4>
@@ -1049,7 +1049,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Sender_Recorded__c: string;
+    echosign_dev1__Sender_Recorded__c?: string;
     /**
      * <h3><b>Sender Signs Only</b></h3>
      * <h4>Field Attributes</h4>
@@ -1058,7 +1058,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Sender_Signs_Only__c: boolean;
+    echosign_dev1__Sender_Signs_Only__c?: boolean;
     /**
      * <h3><b>Send On Behalf Of</b></h3>
      * <h4>Field Attributes</h4>
@@ -1067,7 +1067,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Sender_User__c: string;
+    echosign_dev1__Sender_User__c?: string;
     /**
      * <h3><b>Send On Behalf Of</b></h3>
      * <h4>Field Attributes</h4>
@@ -1076,7 +1076,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Sender_User__r: User;
+    echosign_dev1__Sender_User__r?: User;
     /**
      * <h3><b>I also need to sign this document</b></h3>
      * <p>Check this option if you also need to sign this agreement. Then select if you sign first or if your recipients sign first.</p>
@@ -1086,7 +1086,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__SenderSigns__c: boolean;
+    echosign_dev1__SenderSigns__c?: boolean;
     /**
      * <h3><b>Sign Workflow Id</b></h3>
      * <p>Sign Workflow Id</p>
@@ -1098,7 +1098,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Sign_Workflow_Id__c: string;
+    echosign_dev1__Sign_Workflow_Id__c?: string;
     /**
      * <h3><b>Recipients sign in</b></h3>
      * <h4>Field Attributes</h4>
@@ -1113,7 +1113,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Any Order</code></td><td>Any Order</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Signature_Flow__c: string;
+    echosign_dev1__Signature_Flow__c?: string;
     /**
      * <h3><b>Signature Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -1128,7 +1128,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">I sign, then the Recipient signs</code></td><td>I sign, then the Recipient signs</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__SignatureOrder__c: string;
+    echosign_dev1__SignatureOrder__c?: string;
     /**
      * <h3><b>Signature Type</b></h3>
      * <h4>Field Attributes</h4>
@@ -1143,7 +1143,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">e-Signature</code></td><td>e-Signature</td><td nowrap>true</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__SignatureType__c: string;
+    echosign_dev1__SignatureType__c?: string;
     /**
      * <h3><b>Signed PDF</b></h3>
      * <h4>Field Attributes</h4>
@@ -1154,7 +1154,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__SignedPDF__c: string;
+    echosign_dev1__SignedPDF__c?: string;
     /**
      * <h3><b>Signing Deadline</b></h3>
      * <p>Specify the date when the agreement expires and can no longer be signed.</p>
@@ -1164,7 +1164,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Signing_Deadline__c: Date;
+    echosign_dev1__Signing_Deadline__c?: Date;
     /**
      * <h3><b>Signing URL</b></h3>
      * <h4>Field Attributes</h4>
@@ -1173,7 +1173,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__Signing_URL__c: string;
+    echosign_dev1__Signing_URL__c?: string;
     /**
      * <h3><b>Agreement Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -1208,7 +1208,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Waiting for my Delegation</code></td><td>Waiting for my Delegation</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    echosign_dev1__Status__c: string;
+    echosign_dev1__Status__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -1220,7 +1220,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    echosign_dev1__StatusVisible__c: string;
+    echosign_dev1__StatusVisible__c?: string;
     /**
      * <h3><b>Sync Data Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -1229,7 +1229,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Sync_Data_Mapping__c: boolean;
+    echosign_dev1__Sync_Data_Mapping__c?: boolean;
     /**
      * <h3><b>Trigger Data Mapping</b></h3>
      * <h4>Field Attributes</h4>
@@ -1238,13 +1238,13 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    echosign_dev1__Trigger_Process_Template__c: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    echosign_dev1__Trigger_Process_Template__c?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Quote</b></h3>
      * <h4>Field Attributes</h4>
@@ -1253,7 +1253,7 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quote__c: string;
+    Quote__c?: string;
     /**
      * <h3><b>Quote</b></h3>
      * <h4>Field Attributes</h4>
@@ -1262,6 +1262,6 @@ declare interface echosign_dev1__SIGN_Agreement__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quote__r: Quote;
-    ReplayId: string;
+    Quote__r?: Quote;
+    ReplayId?: string;
 }

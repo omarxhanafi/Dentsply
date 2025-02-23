@@ -2,13 +2,13 @@
 
 declare interface SalesforcePayment extends SObject 
 {
-    AppliedAmount: number;
-    AppliedDate: Date;
-    ExternalId: string;
-    Memo: string;
-    PaymentCurrency: string;
-    SalesforceInvoice: SalesforceInvoice;
-    SalesforceInvoiceId: string;
-    SalesforcePaymentName: string;
-    SalesforcePaymentType: string;
+    AppliedAmount?: number;
+    AppliedDate?: Date;
+    ExternalId?: string;
+    Memo?: string;
+    PaymentCurrency?: string;
+    SalesforceInvoice?: SalesforceInvoice;
+    SalesforceInvoiceId?: string;
+    SalesforcePaymentName?: string;
+    SalesforcePaymentType?: string;
 }

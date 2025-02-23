@@ -2,9 +2,9 @@
 
 declare interface FlexQueueItem extends SObject 
 {
-    AsyncApexJob: AsyncApexJob;
-    AsyncApexJobId: string;
-    FlexQueueItemId: string;
-    JobPosition: number;
-    JobType: string;
+    AsyncApexJob?: AsyncApexJob;
+    AsyncApexJobId?: string;
+    FlexQueueItemId?: string;
+    JobPosition?: number;
+    JobType?: string;
 }

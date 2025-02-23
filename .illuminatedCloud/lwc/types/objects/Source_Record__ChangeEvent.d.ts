@@ -13,7 +13,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Atlantis_Web_Order_Customer__c: string;
+    Atlantis_Web_Order_Customer__c?: string;
     /**
      * <h3><b>Cash Discount</b></h3>
      * <h4>Field Attributes</h4>
@@ -24,8 +24,8 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CashDiscount__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    CashDiscount__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>CIM Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,7 +33,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    CIM_Account__c: string;
+    CIM_Account__c?: string;
     /**
      * <h3><b>CIM Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -41,7 +41,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    CIM_Account__r: Account;
+    CIM_Account__r?: Account;
     /**
      * <h3><b>CIM Source Status</b></h3>
      * <p>Shows the CIM360 status - not to confuse with the status from the source it self, like e.g. the ERP status. this is the status set in CIM360, to handle the CIM360 work and status.</p>
@@ -60,7 +60,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Exclude from Queue</code></td><td>Exclude from Queue</td><td nowrap>true</td></tr>
      * </table>
      */
-    CIMSourceStatus__c: string;
+    CIMSourceStatus__c?: string;
     /**
      * <h3><b>Combined Fields</b></h3>
      * <p>To concatenate values from the source record to display in the Service cloud</p>
@@ -73,7 +73,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Combined_Fields__c: string;
+    Combined_Fields__c?: string;
     /**
      * <h3><b>Combined Fields SureSmile</b></h3>
      * <p>Display Practice Id for Source records SureSmile</p>
@@ -86,7 +86,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    CombinedFieldsSureSmile__c: string;
+    CombinedFieldsSureSmile__c?: string;
     /**
      * <h3><b>Company Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -97,11 +97,11 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Company_Code__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Company_Code__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Customer Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,7 +112,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Customer_Id__c: string;
+    Customer_Id__c?: string;
     /**
      * <h3><b>Customer Flag</b></h3>
      * <p>Field on Address in ERP (at least AX) - where an address can be flagged as a &quot;Customer&quot; - it is used in special cases e.g. a DSO to flag specific addresses as customers rather then just an address. Used in e.g. Italy and also part of integration logics for assigning sales etc to accounts in SFDC. values are 1 = TRUE, 0 = FALSE - on occasions a value of 255 can be seen and indicates som error</p>
@@ -125,7 +125,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    CustomerFlag__c: number;
+    CustomerFlag__c?: number;
     /**
      * <h3><b>Description</b></h3>
      * <p>Brings over the ERP Description field on Accounts from ERPs</p>
@@ -135,7 +135,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Description__c: string;
+    Description__c?: string;
     /**
      * <h3><b>Discount Model</b></h3>
      * <h4>Field Attributes</h4>
@@ -146,7 +146,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DiscountModel__c: string;
+    DiscountModel__c?: string;
     /**
      * <h3><b>Discount Model Description</b></h3>
      * <h4>Field Attributes</h4>
@@ -157,7 +157,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DiscountModelDescription__c: string;
+    DiscountModelDescription__c?: string;
     /**
      * <h3><b>District Code</b></h3>
      * <p>District Code from ERP (at least AX)</p>
@@ -169,7 +169,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DistrictCode__c: string;
+    DistrictCode__c?: string;
     /**
      * <h3><b>District Description</b></h3>
      * <p>Corresponds to CIM field: DISTRICT_DESC</p>
@@ -181,7 +181,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    DistrictDescription__c: string;
+    DistrictDescription__c?: string;
     /**
      * <h3><b>Hyperion Customer Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -192,7 +192,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    HyperionCustomerGroup__c: string;
+    HyperionCustomerGroup__c?: string;
     /**
      * <h3><b>Invoice Periodicity</b></h3>
      * <h4>Field Attributes</h4>
@@ -203,7 +203,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    InvoicePeriodicity__c: string;
+    InvoicePeriodicity__c?: string;
     /**
      * <h3><b>Kana Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -214,10 +214,10 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    KanaName__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    KanaName__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Line Discount</b></h3>
      * <p>Line Discount description from AX. &quot;PriceDiscGroup.Name&quot;
@@ -230,7 +230,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LineDiscount__c: string;
+    LineDiscount__c?: string;
     /**
      * <h3><b>Line Discount Code</b></h3>
      * <p>Brought Over from Line Discount in AX.
@@ -243,7 +243,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LineDiscountCode__c: string;
+    LineDiscountCode__c?: string;
     /**
      * <h3><b>Location Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -254,7 +254,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Location_Id__c: string;
+    Location_Id__c?: string;
     /**
      * <h3><b>Multi Line Discount Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -265,8 +265,8 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    MultiLineDiscountCode__c: string;
-    Name: string;
+    MultiLineDiscountCode__c?: string;
+    Name?: string;
     /**
      * <h3><b>Payer</b></h3>
      * <h4>Field Attributes</h4>
@@ -277,7 +277,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Payer__c: string;
+    Payer__c?: string;
     /**
      * <h3><b>Payment Conditions</b></h3>
      * <h4>Field Attributes</h4>
@@ -288,7 +288,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PaymentConditions__c: string;
+    PaymentConditions__c?: string;
     /**
      * <h3><b>Payment Terms</b></h3>
      * <p>Payment Terms Code from ERP</p>
@@ -300,7 +300,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PaymentTerms__c: string;
+    PaymentTerms__c?: string;
     /**
      * <h3><b>Payment Terms Description</b></h3>
      * <p>Text Description of Payment Terms Code from ERP</p>
@@ -312,7 +312,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PaymentTermsDescription__c: string;
+    PaymentTermsDescription__c?: string;
     /**
      * <h3><b>Practice Site &amp; HRID</b></h3>
      * <p>TFUS-000006212 As a User, I want to see Practice HRID on Source record list view, so that I can easily identify SureSmile accounts</p>
@@ -325,7 +325,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Practice_Site_HRID__c: string;
+    Practice_Site_HRID__c?: string;
     /**
      * <h3><b>Practice HRID</b></h3>
      * <p>PracticeHRID of a SueSmile Account</p>
@@ -337,7 +337,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeHRID__c: string;
+    PracticeHRID__c?: string;
     /**
      * <h3><b>Practice ID</b></h3>
      * <p>PracticeID of a SureSmile account</p>
@@ -349,7 +349,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeID__c: string;
+    PracticeID__c?: string;
     /**
      * <h3><b>Practice Site Id</b></h3>
      * <p>SureSmile Practice Site ID</p>
@@ -361,7 +361,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    PracticeSiteId__c: string;
+    PracticeSiteId__c?: string;
     /**
      * <h3><b>Price Group</b></h3>
      * <h4>Field Attributes</h4>
@@ -372,10 +372,10 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Price_Group__c: string;
-    RecordType: RecordType;
-    RecordTypeId: string;
-    ReplayId: string;
+    Price_Group__c?: string;
+    RecordType?: RecordType;
+    RecordTypeId?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Search Info</b></h3>
      * <p>TFUS-000002577 Used in search layout as secondary field for additional information in lookup fields</p>
@@ -388,7 +388,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    SearchInfo__c: string;
+    SearchInfo__c?: string;
     /**
      * <h3><b>Source Address</b></h3>
      * <p>Address of the source record in CIM</p>
@@ -397,7 +397,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(900)</td></tr>
      * </table>
      */
-    Source_Address__c: string;
+    Source_Address__c?: string;
     /**
      * <h3><b>Source Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -419,7 +419,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">64</code></td><td>SIROFORCE</td><td nowrap>true</td></tr>
      * </table>
      */
-    Source_Id__c: string;
+    Source_Id__c?: string;
     /**
      * <h3><b>Status</b></h3>
      * <h4>Field Attributes</h4>
@@ -434,7 +434,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Inactive</code></td><td>Inactive</td><td nowrap>true</td></tr>
      * </table>
      */
-    Status__c: string;
+    Status__c?: string;
     /**
      * <h3><b>Suresmile Advanced Platform</b></h3>
      * <p>Information collected from Customer Interfaces table in AX (related table to Accounts) - set to true if an active record exists as Suresmile Advanced</p>
@@ -444,7 +444,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SuresmileAdvancedPlatform__c: boolean;
+    SuresmileAdvancedPlatform__c?: boolean;
     /**
      * <h3><b>Suresmile Aligner Platform</b></h3>
      * <p>Information collected from Customer Interfaces table in AX (related table to Accounts) - set to true if an active record exists as Suresmile Aligner</p>
@@ -454,7 +454,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SuresmileAlignerPlatform__c: boolean;
+    SuresmileAlignerPlatform__c?: boolean;
     /**
      * <h3><b>Suresmile Ortho Platform</b></h3>
      * <p>Information collected from Customer Interfaces table in AX (related table to Accounts) - set to true if an active record exists as Suresmile Ortho</p>
@@ -464,7 +464,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    SuresmileOrthoPlatform__c: boolean;
+    SuresmileOrthoPlatform__c?: boolean;
     /**
      * <h3><b>Tiered customer</b></h3>
      * <p>Used for identifying customers that are tiered - i.e. that they have a general discount connected to their account in the related ERP system.</p>
@@ -474,7 +474,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF( (Company_Code__c = &#39;044&#39; &amp;&amp; DiscountModel__c != &#39;DIRECT&#39; &amp;&amp;  ISBLANK(DiscountModel__c)=FALSE) || (Company_Code__c = &#39;US&#39; &amp;&amp; DiscountModel__c == &#39;US-TIER&#39;) || (Company_Code__c = &#39;101&#39; &amp;&amp; DiscountModel__c != &#39;DIRECT&#39; &amp;&amp; ISBLANK(DiscountModel__c)=FALSE) || (Company_Code__c = &#39;CA&#39; &amp;&amp; DiscountModel__c == &#39;CA-TIER&#39;), true, false)</code></td></tr>
      * </table>
      */
-    Tiered__c: boolean;
+    Tiered__c?: boolean;
     /**
      * <h3><b>Unique Source Record Id</b></h3>
      * <h4>Field Attributes</h4>
@@ -485,7 +485,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
      * </table>
      */
-    Unique_Source_Record_Id__c: string;
+    Unique_Source_Record_Id__c?: string;
     /**
      * <h3><b>VAT Registration No</b></h3>
      * <h4>Field Attributes</h4>
@@ -496,7 +496,7 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    VATRegistrationNo__c: string;
+    VATRegistrationNo__c?: string;
     /**
      * <h3><b>Warehouse Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -507,5 +507,5 @@ declare interface Source_Record__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    WarehouseCode__c: string;
+    WarehouseCode__c?: string;
 }

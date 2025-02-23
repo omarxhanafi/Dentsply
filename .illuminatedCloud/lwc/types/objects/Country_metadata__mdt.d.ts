@@ -20,7 +20,7 @@ declare interface Country_metadata__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Account_Sales_Summary</code></td><td>Account_Sales_Summary</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Component__c: string;
+    Component__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -37,10 +37,10 @@ declare interface Country_metadata__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Canada</code></td><td>Canada</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    Country__c: string;
-    DeveloperName: string;
-    Label: string;
-    Language: string;
+    Country__c?: string;
+    DeveloperName?: string;
+    Label?: string;
+    Language?: string;
     /**
      * <h3><b>Lightning Component</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface Country_metadata__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LightningComponent__c: string;
+    LightningComponent__c?: string;
     /**
      * <h3><b>Lightning Component</b></h3>
      * <h4>Field Attributes</h4>
@@ -60,10 +60,10 @@ declare interface Country_metadata__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    LightningComponent__r: Lightning_Component__mdt;
-    MasterLabel: string;
-    NamespacePrefix: string;
-    QualifiedApiName: string;
+    LightningComponent__r?: Lightning_Component__mdt;
+    MasterLabel?: string;
+    NamespacePrefix?: string;
+    QualifiedApiName?: string;
     /**
      * <h3><b>SBU</b></h3>
      * <h4>Field Attributes</h4>
@@ -82,8 +82,8 @@ declare interface Country_metadata__mdt extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ORTH</code></td><td>ORTH</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    SBU__c: string;
-    SystemModstamp: string;
+    SBU__c?: string;
+    SystemModstamp?: string;
     /**
      * <h3><b>Team setup</b></h3>
      * <h4>Field Attributes</h4>
@@ -93,7 +93,7 @@ declare interface Country_metadata__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Team_setup__c: string;
+    Team_setup__c?: string;
     /**
      * <h3><b>Team setup</b></h3>
      * <h4>Field Attributes</h4>
@@ -103,7 +103,7 @@ declare interface Country_metadata__mdt extends SObject
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Team_setup__r: Team_setup__mdt;
+    Team_setup__r?: Team_setup__mdt;
     /**
      * <h3><b>Visible?</b></h3>
      * <h4>Field Attributes</h4>
@@ -112,5 +112,5 @@ declare interface Country_metadata__mdt extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Visible__c: boolean;
+    Visible__c?: boolean;
 }

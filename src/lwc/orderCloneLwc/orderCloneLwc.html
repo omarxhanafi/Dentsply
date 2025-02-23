@@ -1,0 +1,10 @@
+<template>
+    <lightning-quick-action-panel header="Confirm Cloning">
+        <p>Are you sure you want to clone <strong>{orderNumber}</strong>?</p>
+
+        <div slot="footer">
+            <lightning-button label="No" onclick={handleNo}></lightning-button>
+            <lightning-button label="Yes" variant="brand" onclick={handleYes} class="slds-m-left_small"></lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

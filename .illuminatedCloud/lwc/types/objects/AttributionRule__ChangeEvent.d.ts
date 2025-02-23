@@ -19,7 +19,7 @@ declare interface AttributionRule__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ShipToIfCustomer</code></td><td>Ship To only if Customer, otherwise Ordered By</td><td nowrap>true</td></tr>
      * </table>
      */
-    AttributeTo__c: string;
+    AttributeTo__c?: string;
     /**
      * <h3><b>Attribution Target</b></h3>
      * <h4>Field Attributes</h4>
@@ -35,8 +35,8 @@ declare interface AttributionRule__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">CustomerMaster</code></td><td>Customer Master</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    AttributionTarget__c: string;
-    ChangeEventHeader: ChangeEventHeader;
+    AttributionTarget__c?: string;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Company Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -44,7 +44,7 @@ declare interface AttributionRule__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    CompanyCode__c: string;
+    CompanyCode__c?: string;
     /**
      * <h3><b>Country</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,11 +52,11 @@ declare interface AttributionRule__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    Country__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Country__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>If CIM ID is missing:</b></h3>
      * <h4>Field Attributes</h4>
@@ -71,13 +71,13 @@ declare interface AttributionRule__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">None</code></td><td>Do nothing</td><td nowrap>&nbsp;</td><td nowrap>true</td></tr>
      * </table>
      */
-    FallbackStrategy__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    Owner: SObject;
-    OwnerId: string;
+    FallbackStrategy__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    Owner?: SObject;
+    OwnerId?: string;
     /**
      * <h3><b>Precedence</b></h3>
      * <h4>Field Attributes</h4>
@@ -89,8 +89,8 @@ declare interface AttributionRule__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">0</code></td></tr>
      * </table>
      */
-    Precedence__c: number;
-    ReplayId: string;
+    Precedence__c?: number;
+    ReplayId?: string;
     /**
      * <h3><b>Source System Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -98,5 +98,5 @@ declare interface AttributionRule__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Long Text Area(32768)</td></tr>
      * </table>
      */
-    SourceSystemName__c: string;
+    SourceSystemName__c?: string;
 }

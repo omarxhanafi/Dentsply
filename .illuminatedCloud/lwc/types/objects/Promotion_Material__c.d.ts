@@ -14,7 +14,7 @@ declare interface Promotion_Material__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -23,7 +23,7 @@ declare interface Promotion_Material__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Article Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -34,10 +34,10 @@ declare interface Promotion_Material__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Article_Name__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Article_Name__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Delivery Note</b></h3>
      * <h4>Field Attributes</h4>
@@ -48,7 +48,7 @@ declare interface Promotion_Material__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Delivery_Note__c: string;
+    Delivery_Note__c?: string;
     /**
      * <h3><b>Entry Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -58,12 +58,12 @@ declare interface Promotion_Material__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Entry_Date__c: Date;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
+    Entry_Date__c?: Date;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
     /**
      * <h3><b>Orderer</b></h3>
      * <h4>Field Attributes</h4>
@@ -74,7 +74,7 @@ declare interface Promotion_Material__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Orderer__c: string;
+    Orderer__c?: string;
     /**
      * <h3><b>Quantity</b></h3>
      * <h4>Field Attributes</h4>
@@ -85,5 +85,5 @@ declare interface Promotion_Material__c extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Quantity__c: number;
+    Quantity__c?: number;
 }

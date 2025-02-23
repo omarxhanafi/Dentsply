@@ -5,10 +5,10 @@
  */
 declare interface FSL__Bundler_Cache_Refresh_Event__e extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    EventUuid: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    EventUuid?: string;
     /**
      * <h3><b>orgid</b></h3>
      * <h4>Field Attributes</h4>
@@ -19,7 +19,7 @@ declare interface FSL__Bundler_Cache_Refresh_Event__e extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    FSL__orgid__c: string;
-    ReplayId: string;
-    SourceEvent: AsyncOperationEvent;
+    FSL__orgid__c?: string;
+    ReplayId?: string;
+    SourceEvent?: AsyncOperationEvent;
 }

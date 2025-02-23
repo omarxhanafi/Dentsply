@@ -1656,6 +1656,12 @@ declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsManage
     export default MaximumPermissionsManageContentProperties;
 }
 
+declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsManageContentTaxonomy" {
+    import { FieldId } from "@salesforce/schema";
+    const MaximumPermissionsManageContentTaxonomy: FieldId;
+    export default MaximumPermissionsManageContentTaxonomy;
+}
+
 declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsManageContentTypes" {
     import { FieldId } from "@salesforce/schema";
     const MaximumPermissionsManageContentTypes: FieldId;
@@ -2128,6 +2134,12 @@ declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsModify
     import { FieldId } from "@salesforce/schema";
     const MaximumPermissionsModifyAllData: FieldId;
     export default MaximumPermissionsModifyAllData;
+}
+
+declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsModifyAllPolicyCenterPolicies" {
+    import { FieldId } from "@salesforce/schema";
+    const MaximumPermissionsModifyAllPolicyCenterPolicies: FieldId;
+    export default MaximumPermissionsModifyAllPolicyCenterPolicies;
 }
 
 declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsModifyDataClassification" {
@@ -2946,6 +2958,12 @@ declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsViewAl
     export default MaximumPermissionsViewAllForeignKeyNames;
 }
 
+declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsViewAllPolicyCenterPolicies" {
+    import { FieldId } from "@salesforce/schema";
+    const MaximumPermissionsViewAllPolicyCenterPolicies: FieldId;
+    export default MaximumPermissionsViewAllPolicyCenterPolicies;
+}
+
 declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsViewAllProfiles" {
     import { FieldId } from "@salesforce/schema";
     const MaximumPermissionsViewAllProfiles: FieldId;
@@ -2976,6 +2994,12 @@ declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsViewCo
     export default MaximumPermissionsViewContent;
 }
 
+declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsViewContentTaxonomy" {
+    import { FieldId } from "@salesforce/schema";
+    const MaximumPermissionsViewContentTaxonomy: FieldId;
+    export default MaximumPermissionsViewContentTaxonomy;
+}
+
 declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsViewCustomerSentiment" {
     import { FieldId } from "@salesforce/schema";
     const MaximumPermissionsViewCustomerSentiment: FieldId;
@@ -3004,6 +3028,12 @@ declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsViewDr
     import { FieldId } from "@salesforce/schema";
     const MaximumPermissionsViewDraftArticles: FieldId;
     export default MaximumPermissionsViewDraftArticles;
+}
+
+declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsViewEnablementAnalytics" {
+    import { FieldId } from "@salesforce/schema";
+    const MaximumPermissionsViewEnablementAnalytics: FieldId;
+    export default MaximumPermissionsViewEnablementAnalytics;
 }
 
 declare module "@salesforce/schema/PermissionSetLicense.MaximumPermissionsViewEncryptedData" {

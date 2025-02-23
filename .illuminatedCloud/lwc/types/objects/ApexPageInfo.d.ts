@@ -2,13 +2,13 @@
 
 declare interface ApexPageInfo extends SObject 
 {
-    ApexPageId: string;
-    ApiVersion: number;
-    Description: string;
-    DurableId: string;
-    IsAvailableInTouch: boolean;
-    IsShowHeader: string;
-    MasterLabel: string;
-    Name: string;
-    NameSpacePrefix: string;
+    ApexPageId?: string;
+    ApiVersion?: number;
+    Description?: string;
+    DurableId?: string;
+    IsAvailableInTouch?: boolean;
+    IsShowHeader?: string;
+    MasterLabel?: string;
+    Name?: string;
+    NameSpacePrefix?: string;
 }

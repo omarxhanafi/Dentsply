@@ -2,16 +2,16 @@
 
 declare interface NetworkAffinity extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Network: Network;
-    NetworkId: string;
-    Profile: Profile;
-    ProfileId: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Network?: Network;
+    NetworkId?: string;
+    Profile?: Profile;
+    ProfileId?: string;
+    SystemModstamp?: string;
 }

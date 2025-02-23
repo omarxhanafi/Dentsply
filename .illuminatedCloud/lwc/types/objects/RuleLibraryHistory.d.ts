@@ -2,14 +2,14 @@
 
 declare interface RuleLibraryHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    RuleLibrary: RuleLibrary;
-    RuleLibraryId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    RuleLibrary?: RuleLibrary;
+    RuleLibraryId?: string;
 }
