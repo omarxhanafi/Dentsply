@@ -19,7 +19,7 @@ public with sharing class QuoteCloneController {
      */
     @AuraEnabled(cacheable=true)
     public static Quote getQuoteDetails(Id quoteId) {
-        return [SELECT Id, Name FROM Quote WHERE Id = :quoteId LIMIT 1];
+        return [SELECT Id, Name, QuoteNumber, Status FROM Quote WHERE Id = :quoteId LIMIT 1];
     }
 
     /**
@@ -29,10 +29,10 @@ public with sharing class QuoteCloneController {
      *
      * @param quoteId   Id of the Quote to be cloned.
      *
-     * @return Id - Id of the cloned Quote.
+     * @return Quote - The cloned Quote.
      */
     @AuraEnabled
-    public static Id cloneQuote(Id quoteId) {
+    public static Quote cloneQuote(Id quoteId) {
         try {
             // Get all fields for the Quote object dynamically
             Map<String, Schema.SObjectField> quoteFieldsMap = Schema.getGlobalDescribe().get('Quote').getDescribe().fields.getMap();
@@ -101,7 +101,10 @@ public with sharing class QuoteCloneController {
                 insert clonedQLIs;
             }
 
-            return clonedQuote.Id;
+            // Retrieve the cloned Quote with QuoteNumber and Name
+            clonedQuote = [SELECT Id, QuoteNumber, Name FROM Quote WHERE Id = :clonedQuote.Id LIMIT 1];
+
+            return clonedQuote;
         } catch (Exception e) {
             System.debug('Error cloning Quote: ' + e.getMessage());
             throw new AuraHandledException('Error cloning Quote: ' + e.getMessage());

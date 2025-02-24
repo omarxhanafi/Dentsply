@@ -8,11 +8,23 @@ import { CloseActionScreenEvent } from 'lightning/actions';
 export default class QuoteCloneLwc extends NavigationMixin(LightningElement) {
     @api recordId; // Quote Id passed from the Quick Action
     quoteName;
+    quoteNumber;
+    quoteStatus;
+
+    warningVisible = true;
+    redWarningVisible = false;
 
     @wire(getQuoteDetails, { quoteId: '$recordId' })
     wiredQuote({ error, data }) {
         if (data) {
             this.quoteName = data.Name;
+            this.quoteNumber = data.QuoteNumber;
+            this.quoteStatus = data.Status;
+
+            // Show red warning only if status is Rejected or Denied
+            if (this.quoteStatus === 'Rejected' || this.quoteStatus === 'Denied') {
+                this.redWarningVisible = true;
+            }
         } else if (error) {
             console.error('Error fetching Quote details:', error);
         }
@@ -29,11 +41,11 @@ export default class QuoteCloneLwc extends NavigationMixin(LightningElement) {
     // Method to clone the Quote and navigate to the cloned record
     cloneAndNavigate() {
         cloneQuote({ quoteId: this.recordId })
-            .then(clonedQuoteId => {
+            .then(clonedQuote => {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Success',
-                        message: 'Quote \"' + this.quoteName + '\" created successfully!',
+                        message: 'Quote \"' + clonedQuote.Name + '\" - \"' + clonedQuote.QuoteNumber + '\" created successfully!',
                         variant: 'success',
                     })
                 );
@@ -42,7 +54,7 @@ export default class QuoteCloneLwc extends NavigationMixin(LightningElement) {
                 this[NavigationMixin.Navigate]({
                     type: 'standard__recordPage',
                     attributes: {
-                        recordId: clonedQuoteId,
+                        recordId: clonedQuote.Id,
                         actionName: 'view'
                     }
                 });
@@ -60,5 +72,13 @@ export default class QuoteCloneLwc extends NavigationMixin(LightningElement) {
                     })
                 );
             });
+    }
+
+    closeWarning() {
+        this.warningVisible = false;
+    }
+
+    closeRedWarning() {
+        this.redWarningVisible = false;
     }
 }

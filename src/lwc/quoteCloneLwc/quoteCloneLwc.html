@@ -1,7 +1,26 @@
 <template>
     <lightning-quick-action-panel header="Confirm Cloning">
-        <p>Are you sure you want to clone <strong>{quoteName}</strong>?</p>
+        <div lwc:if={warningVisible} class="slds-notify slds-notify_alert slds-alert_warning warning-alert" role="alert">
+            <span class="slds-assistive-text">Warning</span>
+            <lightning-icon icon-name="utility:warning" alternative-text="Warning" size="small" class="slds-m-right_x-small"></lightning-icon>
+            <span>Cloning a quote duplicates its details, including line items. Pricing and product changes won’t be reflected automatically.</span>
+            <button class="slds-button slds-button_icon slds-notify__close" onclick={closeWarning}>
+                <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Close"></lightning-icon>
+            </button>
+            <br/>
+        </div>
 
+        <!-- Warning for Rejected/Denied Quotes -->
+        <div lwc:if={redWarningVisible} class="slds-notify slds-notify_alert slds-alert_error rejected-alert" role="alert">
+            <span class="slds-assistive-text">Error</span>
+            <lightning-icon icon-name="utility:error" alternative-text="Error" size="small" class="slds-m-right_x-small"></lightning-icon>
+            <span>You are about to clone a Quote that was <strong>{quoteStatus}</strong>.</span>
+            <button class="slds-button slds-button_icon slds-notify__close" onclick={closeRedWarning}>
+                <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Close"></lightning-icon>
+            </button>
+        </div>
+
+        <p>Are you sure you want to clone <strong>{quoteName}</strong>&nbsp;<strong>({quoteNumber})</strong>?</p>
         <div slot="footer">
             <lightning-button label="No" onclick={handleNo}></lightning-button>
             <lightning-button label="Yes" variant="brand" onclick={handleYes} class="slds-m-left_small"></lightning-button>
