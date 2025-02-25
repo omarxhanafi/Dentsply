@@ -2866,6 +2866,30 @@ Please contact your Administrator (CRM Analyst).</value>
         <value>Competitor Products</value>
     </labels>
     <labels>
+        <fullName>WPConfirmationHeader</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPConfirmationHeader</shortDescription>
+        <value>Confirmation</value>
+    </labels>
+    <labels>
+        <fullName>WPConfirmationText1</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPConfirmationText1</shortDescription>
+        <value>Are you sure you want to add</value>
+    </labels>
+    <labels>
+        <fullName>WPConfirmationText2</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPConfirmationText2</shortDescription>
+        <value>to</value>
+    </labels>
+    <labels>
         <fullName>WPDSProducts</fullName>
         <categories>WorkflowProfiling</categories>
         <language>en_US</language>
@@ -2898,30 +2922,6 @@ Click new to add more ...</value>
         <protected>false</protected>
         <shortDescription>WPProductFamily</shortDescription>
         <value>Product Family</value>
-    </labels>
-    <labels>
-        <fullName>WPConfirmationHeader</fullName>
-        <categories>WorkflowProfiling</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>WPConfirmationHeader</shortDescription>
-        <value>Confirmation</value>
-    </labels>
-    <labels>
-        <fullName>WPConfirmationText1</fullName>
-        <categories>WorkflowProfiling</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>WPConfirmationText1</shortDescription>
-        <value>Are you sure you want to add</value>
-    </labels>
-    <labels>
-        <fullName>WPConfirmationText2</fullName>
-        <categories>WorkflowProfiling</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>WPConfirmationText2</shortDescription>
-        <value>to</value>
     </labels>
     <labels>
         <fullName>WPSuccessText1</fullName>
@@ -3682,5 +3682,61 @@ Click new to add more ...</value>
         <protected>false</protected>
         <shortDescription>xsbu_assign_ETM_manually</shortDescription>
         <value>Assign the Opportunity to</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCloneConfirmation</fullName>
+        <categories>QuoteClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteClone</shortDescription>
+        <value>Are you sure you want to clone</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCloneWarning</fullName>
+        <categories>QuoteClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteCloneWarning</shortDescription>
+        <value>Confirm with your administrator: Sync Pricing Data Job is executed.</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCloneRejectedDenied</fullName>
+        <categories>QuoteClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteClone</shortDescription>
+        <value>You are about to clone a Quote that was</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneConfirmation</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Are you sure you want to clone</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneWarning</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderCloneWarning</shortDescription>
+        <value>Confirm with your administrator : Sync Pricing Data Job is executed.</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneRejectedDenied</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>You are about to clone an Order that was</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneRejectedDeniedConfirmation</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Are you sure?</value>
     </labels>
 </CustomLabels>

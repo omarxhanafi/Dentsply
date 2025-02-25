@@ -19,7 +19,7 @@ public with sharing class OrderCloneController {
      */
     @AuraEnabled(cacheable=true)
     public static Order getOrderDetails(Id orderId) {
-        return [SELECT Id, OrderNumber FROM Order WHERE Id = :orderId LIMIT 1];
+        return [SELECT Id, OrderNumber, Status FROM Order WHERE Id = :orderId LIMIT 1];
     }
 
     /**

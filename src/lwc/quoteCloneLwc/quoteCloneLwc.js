@@ -4,6 +4,9 @@ import getQuoteDetails from '@salesforce/apex/QuoteCloneController.getQuoteDetai
 import { NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CloseActionScreenEvent } from 'lightning/actions';
+import QuoteCloneConfirmation from '@salesforce/label/c.QuoteCloneConfirmation';
+import QuoteCloneWarning from '@salesforce/label/c.QuoteCloneWarning';
+import QuoteCloneRejectedDenied from '@salesforce/label/c.QuoteCloneRejectedDenied';
 
 export default class QuoteCloneLwc extends NavigationMixin(LightningElement) {
     @api recordId; // Quote Id passed from the Quick Action
@@ -13,6 +16,13 @@ export default class QuoteCloneLwc extends NavigationMixin(LightningElement) {
 
     warningVisible = true;
     redWarningVisible = false;
+
+    // Custom labels
+    labels = {
+        QuoteCloneConfirmation,
+        QuoteCloneWarning,
+        QuoteCloneRejectedDenied
+    };
 
     @wire(getQuoteDetails, { quoteId: '$recordId' })
     wiredQuote({ error, data }) {

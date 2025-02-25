@@ -1,0 +1,15 @@
+.slds-notify {
+    margin-bottom: 15px;
+}
+
+.warning-alert {
+    background: #fffae6;
+    border: 1px solid #ffb75d;
+    color: #613915;
+}
+
+.rejected-alert {
+    background: #fdecea;
+    border: 1px solid #d93f3c;
+    color: #5a1e1e;
+}

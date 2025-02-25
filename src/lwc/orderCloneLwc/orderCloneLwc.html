@@ -1,6 +1,25 @@
 <template>
     <lightning-quick-action-panel header="Confirm Cloning">
-        <p>Are you sure you want to clone <strong>{orderNumber}</strong>?</p>
+        <!-- Warning for Rejected/Denied Orders -->
+        <div lwc:if={redWarningVisible} class="slds-notify slds-notify_alert slds-alert_error rejected-alert" role="alert">
+            <lightning-icon icon-name="utility:warning" alternative-text="Error" size="small" class="slds-m-right_x-small"></lightning-icon>
+            <span>{labels.OrderCloneRejectedDenied} <strong>{orderStatus}</strong>. {labels.OrderCloneRejectedDeniedConfirmation}</span>
+            <button class="slds-button slds-button_icon slds-notify__close" onclick={closeRedWarning}>
+                <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Close"></lightning-icon>
+            </button>
+        </div>
+
+        <!-- Standard Warning -->
+        <div lwc:if={warningVisible} class="slds-notify slds-notify_alert slds-alert_warning warning-alert" role="alert">
+            <lightning-icon icon-name="utility:warning" alternative-text="Warning" size="small" class="slds-m-right_x-small"></lightning-icon>
+            <span>{labels.OrderCloneWarning}</span>
+            <button class="slds-button slds-button_icon slds-notify__close" onclick={closeWarning}>
+                <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Close"></lightning-icon>
+            </button>
+        </div>
+
+        <!-- Confirmation Message -->
+        <p>{labels.OrderCloneConfirmation} <strong>{orderNumber}</strong>?</p>
 
         <div slot="footer">
             <lightning-button label="No" onclick={handleNo}></lightning-button>

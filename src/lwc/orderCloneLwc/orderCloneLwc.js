@@ -4,15 +4,36 @@ import getOrderDetails from '@salesforce/apex/OrderCloneController.getOrderDetai
 import { NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CloseActionScreenEvent } from 'lightning/actions';
+import OrderCloneConfirmation from '@salesforce/label/c.OrderCloneConfirmation';
+import OrderCloneWarning from '@salesforce/label/c.OrderCloneWarning';
+import OrderCloneRejectedDenied from '@salesforce/label/c.OrderCloneRejectedDenied';
+import OrderCloneRejectedDeniedConfirmation from '@salesforce/label/c.OrderCloneRejectedDeniedConfirmation';
 
 export default class OrderCloneLwc extends NavigationMixin(LightningElement) {
     @api recordId; // Order Id passed from the Quick Action
     orderNumber;
+    orderStatus;
+
+    warningVisible = true;
+    redWarningVisible = false;
+
+    labels = {
+        OrderCloneConfirmation,
+        OrderCloneWarning,
+        OrderCloneRejectedDenied,
+        OrderCloneRejectedDeniedConfirmation
+    };
 
     @wire(getOrderDetails, { orderId: '$recordId' })
     wiredOrder({ error, data }) {
         if (data) {
             this.orderNumber = data.OrderNumber;
+            this.orderStatus = data.Status;
+
+            // Show red warning only if status is Rejected or Denied
+            if (this.orderStatus === 'Rejected' || this.orderStatus === 'Denied') {
+                this.redWarningVisible = true;
+            }
         } else if (error) {
             console.error('Error fetching Order details:', error);
         }
