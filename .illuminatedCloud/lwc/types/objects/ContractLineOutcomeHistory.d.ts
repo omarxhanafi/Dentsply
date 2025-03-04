@@ -2,14 +2,14 @@
 
 declare interface ContractLineOutcomeHistory extends SObject 
 {
-    ContractLineOutcome: ContractLineOutcome;
-    ContractLineOutcomeId: string;
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
+    ContractLineOutcome?: ContractLineOutcome;
+    ContractLineOutcomeId?: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
 }

@@ -58,13 +58,11 @@ declare interface Asset extends SObject
      * The reciprocal relationship for {@link AssetAccountParticipant.AssetId}.
      */
     AssetAccountParticipantsAsset?: AssetAccountParticipant[];
-    AssetActions?: AssetAction[];
     AssetAttributes?: AssetAttribute[];
     /**
      * The reciprocal relationship for {@link AssetContactParticipant.AssetId}.
      */
     AssetContactParticipantAsset?: AssetContactParticipant[];
-    AssetContractRelationships?: AssetContractRelationship[];
     /**
      * The reciprocal relationship for {@link AssetDowntimePeriod.AssetId}.
      */
@@ -84,7 +82,6 @@ declare interface Asset extends SObject
     AssetID18Digits__c?: string;
     AssetServicedBy?: Account;
     AssetServicedById?: string;
-    AssetStatePeriods?: AssetStatePeriod[];
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     Attachments?: Attachment[];
@@ -200,13 +197,11 @@ declare interface Asset extends SObject
     FeedSubscriptionsForEntity?: EntitySubscription[];
     FirstPublishLocation?: ContentVersion;
     FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
-    FulfillmentDecompositions?: AssetFulfillmentDecomp[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
     GeneratedDocRefObjects?: GeneratedDocument[];
     GeocodeAccuracy?: string;
-    HasLifecycleManagement?: boolean;
     Histories?: AssetHistory[];
     InstallDate?: Date;
     /**
@@ -240,8 +235,6 @@ declare interface Asset extends SObject
     LastReferencedDate?: string;
     LastViewedDate?: string;
     Latitude?: number;
-    LifecycleEndDate?: string;
-    LifecycleStartDate?: string;
     LinkedEntity?: ContentDocumentLinkChangeEvent;
     Location?: Location;
     LocationId?: string;
@@ -303,7 +296,6 @@ declare interface Asset extends SObject
      * </table>
      */
     Opportunity__r?: Opportunity;
-    OrderActions?: OrderAction[];
     /**
      * <h3><b>Order Number</b></h3>
      * <h4>Field Attributes</h4>
@@ -321,7 +313,6 @@ declare interface Asset extends SObject
     ParentRecord?: NetworkFeedResponseMetric;
     PostalCode?: string;
     Price?: number;
-    PricingSource?: string;
     /**
      * The reciprocal relationship for {@link AssetRelationship.AssetId}.
      */
@@ -387,7 +378,6 @@ declare interface Asset extends SObject
      * The reciprocal relationship for {@link SBQQ__QuoteLine__c.SBQQ__RenewedAsset__c}.
      */
     Quote_Lines__r?: SBQQ__QuoteLine__c[];
-    QuoteActions?: QuoteAction[];
     RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.
@@ -419,14 +409,11 @@ declare interface Asset extends SObject
      */
     RelatedAssets?: AssetRelationship[];
     RelatedRecord?: FlowRecordRelation;
-    RelatedRevenueTransactionErrorLogs?: RevenueTransactionErrorLog[];
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
     RelatedTo?: EmailMessage;
     Relation?: EventRelationChangeEvent;
-    RenewalTerm?: number;
-    RenewalTermUnit?: string;
     /**
      * The reciprocal relationship for {@link ResourcePreference.RelatedRecordId}.
      */

@@ -30,8 +30,6 @@ declare interface FulfillmentOrder extends SObject
     CreatedById?: string;
     CreatedDate?: string;
     CurrencyIsoCode?: string;
-    DeliveryMethod?: OrderDeliveryMethod;
-    DeliveryMethodId?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
@@ -60,7 +58,6 @@ declare interface FulfillmentOrder extends SObject
     FulfilledToPostalCode?: string;
     FulfilledToState?: string;
     FulfilledToStreet?: string;
-    FulfillmentLineRelationships?: FulfillmentLineRel[];
     FulfillmentOrder?: FOStatusChangedEvent;
     FulfillmentOrderItemAdjustments?: FulfillmentOrderItemAdjustment[];
     FulfillmentOrderItemTaxes?: FulfillmentOrderItemTax[];

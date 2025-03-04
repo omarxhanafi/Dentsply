@@ -9,8 +9,6 @@ declare interface IntegrationProviderExecutionChangeEvent extends SObject
     CurrencyIsoCode?: string;
     ErrorCode?: string;
     ExecutionDateTime?: string;
-    ExecutionStepInstance?: FulfillmentStep;
-    ExecutionStepInstanceId?: string;
     IntegrationProviderDef?: IntegrationProviderDef;
     IntegrationProviderDefId?: string;
     LastModifiedBy?: User;

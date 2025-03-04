@@ -11,6 +11,7 @@ global class BatchUpdateProducts implements Database.Batchable<sObject> {
     private Set<String> pg2Codes;
     private Set<String> pg3Codes;
     private Set<String> pg4Codes;
+    private Integer productCount = 0;
 
     public BatchUpdateProducts(Set<String> pg1Codes, Set<String> pg2Codes, Set<String> pg3Codes, Set<String> pg4Codes) {
         this.pg1Codes = pg1Codes;
@@ -29,11 +30,15 @@ global class BatchUpdateProducts implements Database.Batchable<sObject> {
                 'OR GlobalSKUMapping__r.PG3_Code__c IN :pg3Codes ' +
                 'OR PG4_Code__c IN :pg4Codes ' +
                 'OR GlobalSKUMapping__r.PG4_Code__c IN :pg4Codes ';
-        return Database.getQueryLocator(query);
+        Database.QueryLocator queryLocator = Database.getQueryLocator(query);
+
+        return queryLocator;
     }
 
     global void execute(Database.BatchableContext BC, List<Product2> records) {
         try{
+            this.productCount += records.size();
+
             for (Product2 product : records) {
                 product.PG1_Code__c = product.PG1_Code__c != null ? product.PG1_Code__c += 'XX' : 'XX';
                 product.PG2_Code__c = product.PG2_Code__c != null ? product.PG2_Code__c += 'XX' : 'XX';
@@ -55,5 +60,27 @@ global class BatchUpdateProducts implements Database.Batchable<sObject> {
     }
 
     global void finish(Database.BatchableContext BC) {
-        DebugLog.addinfo('Batch finished successfully: BatchUpdateProducts JobId:', bc.getJobId());    }
+        DebugLog.addInfo('Batch finished successfully: BatchUpdateProducts JobId:', BC.getJobId());
+
+        // Query AsyncApexJob to get job details
+        AsyncApexJob job = [
+                SELECT Id, Status, NumberOfErrors, TotalJobItems, JobItemsProcessed, CreatedDate, CompletedDate
+                FROM AsyncApexJob
+                WHERE Id = :BC.getJobId()
+                LIMIT 1
+        ];
+
+        // Advanced logging
+        BatchUpdateProductsLog__c log = new BatchUpdateProductsLog__c();
+        log.JobId__c = BC.getJobId();
+        log.StartTime__c = job.CreatedDate;
+        log.EndTime__c = job.CompletedDate;
+        log.Duration__c = (job.CompletedDate.getTime() - job.CreatedDate.getTime()) / 1000; // Duration in seconds
+        log.Status__c = job.Status;
+        log.ProductCount__c = this.productCount; // Number of products
+        log.NumberOfErrors__c = job.NumberOfErrors; // Number of errors
+        log.JobItemsProcessed__c = job.JobItemsProcessed; // Number of job items processed
+
+        insert log;
+    }
 }

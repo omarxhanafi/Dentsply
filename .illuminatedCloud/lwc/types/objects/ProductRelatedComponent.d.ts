@@ -2,7 +2,6 @@
 
 declare interface ProductRelatedComponent extends SObject 
 {
-    AssetRelationships?: AssetRelationship[];
     ChildProduct?: Product2;
     ChildProductClassification?: ProductClassification;
     ChildProductClassificationId?: string;
@@ -27,7 +26,6 @@ declare interface ProductRelatedComponent extends SObject
     MaxQuantity?: number;
     MinQuantity?: number;
     Name?: string;
-    OrderItemRelationships?: OrderItemRelationship[];
     ParentProduct?: Product2;
     ParentProductId?: string;
     ParentProductRole?: string;
@@ -35,7 +33,6 @@ declare interface ProductRelatedComponent extends SObject
     ParentSellingModelId?: string;
     ProductComponentGroup?: ProductComponentGroup;
     ProductComponentGroupId?: string;
-    ProductRelatedComponent?: AssetRelationshipChangeEvent;
     /**
      * The reciprocal relationship for {@link ProductRelComponentOverride.ProductRelatedComponentId}.
      */
@@ -44,7 +41,6 @@ declare interface ProductRelatedComponent extends SObject
     ProductRelationshipTypeId?: string;
     Quantity?: number;
     QuantityScaleMethod?: string;
-    QuoteLineRelationships?: QuoteLineRelationship[];
     RelatedRecord?: FlowRecordRelation;
     Sequence?: number;
     SobjectLookupValue?: AIInsightValue;

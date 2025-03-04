@@ -23,8 +23,6 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * </table>
      */
     BasePrice__c?: number;
-    BillingFrequency?: string;
-    BillingReference?: string;
     /**
      * <h3><b>Can Be Deleted</b></h3>
      * <h4>Field Attributes</h4>
@@ -39,10 +37,8 @@ declare interface QuoteLineItemChangeEvent extends SObject
     CreatedById?: string;
     CreatedDate?: string;
     CurrencyIsoCode?: string;
-    CustomProductName?: string;
     Description?: string;
     Discount?: number;
-    DiscountAmount?: number;
     /**
      * <h3><b>Discounted Sales Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -53,9 +49,6 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * </table>
      */
     DiscountedUnitPrice__c?: number;
-    EffectiveGrantDate?: Date;
-    EndDate?: Date;
-    EndQuantity?: number;
     /**
      * <h3><b>Extra Applied Discount</b></h3>
      * <p>Quantity * (BasePrice__c - NetPrice__c)</p>
@@ -66,12 +59,9 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * </table>
      */
     ExtraAppliedDiscount__c?: number;
-    IsPrimarySegment?: boolean;
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;
-    LegalEntity?: LegalEntity;
-    LegalEntityId?: string;
     LineNumber?: string;
     /**
      * <h3><b>Net Price</b></h3>
@@ -83,34 +73,15 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * </table>
      */
     NetPrice__c?: number;
-    NetTotalPrice?: number;
-    NetUnitPrice?: number;
     OpportunityLineItem?: OpportunityLineItem;
     OpportunityLineItemId?: string;
-    PartnerDiscountPercent?: number;
-    PartnerUnitPrice?: number;
-    PeriodBoundary?: string;
-    PeriodBoundaryDay?: number;
-    PeriodBoundaryStartMonth?: string;
     PricebookEntry?: PricebookEntry;
     PricebookEntryId?: string;
-    PriceWaterfallIdentifier?: string;
-    PricingTermCount?: number;
     Product2?: Product2;
     Product2Id?: string;
-    ProductSellingModel?: ProductSellingModel;
-    ProductSellingModelId?: string;
-    ProrationPolicy?: ProrationPolicy;
-    ProrationPolicyId?: string;
     Quantity?: number;
     Quote?: Quote;
-    QuoteAction?: QuoteAction;
-    QuoteActionId?: string;
     QuoteId?: string;
-    QuoteLineGroup?: QuoteLineGroup;
-    QuoteLineGroupId?: string;
-    QuoteLineItemRecipient?: QuoteLineItemRecipient;
-    QuoteLineItemRecipientId?: string;
     /**
      * <h3><b>Quote Line Bundle</b></h3>
      * <h4>Field Attributes</h4>
@@ -129,7 +100,6 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * </table>
      */
     QuoteProductBundle__r?: QuoteProductBundle__c;
-    RampIdentifier?: string;
     ReplayId?: string;
     /**
      * <h3><b>Retail Price</b></h3>
@@ -142,14 +112,8 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * </table>
      */
     RetailPrice__c?: number;
-    SegmentIdentifier?: string;
-    SegmentName?: string;
-    SegmentType?: string;
     ServiceDate?: Date;
     SortOrder?: number;
-    StartDate?: Date;
-    StartQuantity?: number;
-    SubscriptionTerm?: number;
     /**
      * <h3><b>Tariff Code</b></h3>
      * <h4>Field Attributes</h4>
@@ -162,7 +126,6 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * </table>
      */
     TariffCode__c?: string;
-    TotalAdjustmentAmount?: number;
     /**
      * <h3><b>Total Discount Amount</b></h3>
      * <p>Quantity * (RetailPrice__c - NetPrice__c)</p>
@@ -183,7 +146,6 @@ declare interface QuoteLineItemChangeEvent extends SObject
      * </table>
      */
     TotalDiscountPercentage__c?: number;
-    TotalLineAmount?: number;
     /**
      * <h3><b>Total List Price</b></h3>
      * <p>PricebookEntry.UnitPrice * Quantity
@@ -224,7 +186,6 @@ declare interface QuoteLineItemChangeEvent extends SObject
      */
     UnitDiscountAmount__c?: number;
     UnitPrice?: number;
-    ValidationResult?: string;
     /**
      * <h3><b>VAT Amount</b></h3>
      * <h4>Field Attributes</h4>

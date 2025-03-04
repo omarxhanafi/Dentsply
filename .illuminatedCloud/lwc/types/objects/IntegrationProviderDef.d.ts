@@ -11,14 +11,9 @@ declare interface IntegrationProviderDef extends SObject
     Description?: string;
     DeveloperName?: string;
     ExternalServiceOperationName?: string;
-    FalloutRules?: FulfillmentFalloutRule[];
     FileBasedApexClass?: string;
-    FulfillmentStepDefinitions?: FulfillmentStepDefinition[];
-    FulfillmentStepJeopardyRules?: FulfillmentStepJeopardyRule[];
-    FulfillmentSteps?: FulfillmentStep[];
     InputDataProcessor?: OmniIntegrationProcConfig;
     InputDataProcessorId?: string;
-    IntegrationDefinitionName?: FulfillmentStepChangeEvent;
     /**
      * The reciprocal relationship for {@link IntegrationProviderAttr.IntegrationProviderDefId}.
      */

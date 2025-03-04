@@ -299,7 +299,6 @@ declare interface Product2ChangeEvent extends SObject
      * </table>
      */
     Dashboard_Product__c?: string;
-    DecompositionScope?: string;
     /**
      * <h3><b>DEP Record Hash</b></h3>
      * <h4>Field Attributes</h4>
@@ -386,7 +385,6 @@ declare interface Product2ChangeEvent extends SObject
      */
     FactoryDesc__c?: string;
     Family?: string;
-    FulfillmentQtyCalcMethod?: string;
     /**
      * <h3><b>GDW Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -511,19 +509,6 @@ declare interface Product2ChangeEvent extends SObject
      * </table>
      */
     List_Price__c?: number;
-    /**
-     * <h3><b>Market</b></h3>
-     * <p>The Market that the Company Code belongs to</p>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text</td></tr>
-     * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">TEXT(SSIS_ERP_SKU_Market_Mapping__r.Market__c)</code></td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
-     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    Market__c?: string;
     Name?: string;
     /**
      * <h3><b>Non-ERP Product</b></h3>
@@ -940,8 +925,6 @@ declare interface Product2ChangeEvent extends SObject
      * </table>
      */
     TariffCode__c?: string;
-    TaxPolicy?: TaxPolicy;
-    TaxPolicyId?: string;
     TransferRecordMode?: string;
     Type?: string;
     /**
@@ -956,7 +939,6 @@ declare interface Product2ChangeEvent extends SObject
      * </table>
      */
     Unit_of_Measurement__c?: string;
-    UsageModelType?: string;
     /**
      * <h3><b>VAT</b></h3>
      * <h4>Field Attributes</h4>

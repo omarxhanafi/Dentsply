@@ -14,7 +14,6 @@ declare interface AssetRelationship extends SObject
     Asset?: Asset;
     AssetId?: string;
     AssetRelationshipNumber?: string;
-    AssetRole?: string;
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     CombinedAttachments?: CombinedAttachment[];
@@ -43,7 +42,6 @@ declare interface AssetRelationship extends SObject
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
     GeneratedDocRefObjects?: GeneratedDocument[];
-    GroupingKey?: string;
     Histories?: AssetRelationshipHistory[];
     IsDeleted?: boolean;
     LastModifiedBy?: User;
@@ -58,8 +56,6 @@ declare interface AssetRelationship extends SObject
     ParentRecord?: NetworkFeedResponseMetric;
     ProcessInstances?: ProcessInstance[];
     ProcessSteps?: ProcessInstanceHistory[];
-    ProductRelatedComponent?: ProductRelatedComponent;
-    ProductRelatedComponentId?: string;
     RecordActionHistories?: RecordActionHistory[];
     /**
      * The reciprocal relationship for {@link RecordAction.RecordId}.

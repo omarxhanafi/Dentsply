@@ -264,26 +264,6 @@ declare interface OrderChangeEvent extends SObject
      */
     Backorder_Notes__c?: string;
     BillingAddress?: Address;
-    /**
-     * <h3><b>Billing Address</b></h3>
-     * <p>Lookup to the Address Object of the Account</p>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    BillingAddress__c?: string;
-    /**
-     * <h3><b>Billing Address</b></h3>
-     * <p>Lookup to the Address Object of the Account</p>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    BillingAddress__r?: Address__c;
     BillingCity?: string;
     BillingCountry?: string;
     BillingGeocodeAccuracy?: string;
@@ -292,9 +272,6 @@ declare interface OrderChangeEvent extends SObject
     BillingPostalCode?: string;
     BillingState?: string;
     BillingStreet?: string;
-    BillToContact?: Contact;
-    BillToContactId?: string;
-    CalculationStatus?: string;
     /**
      * <h3><b>Campaign</b></h3>
      * <h4>Field Attributes</h4>
@@ -768,7 +745,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     Discounted_Shipping_Type__c?: string;
-    DiscountPercent?: number;
     /**
      * <h3><b>Discount Reason</b></h3>
      * <h4>Field Attributes</h4>
@@ -1008,8 +984,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     Free_Shipping_Required__c?: string;
-    FulfillmentPlan?: FulfillmentPlan;
-    FulfillmentPlanId?: string;
     /**
      * <h3><b>Global SFDC Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -1058,9 +1032,6 @@ declare interface OrderChangeEvent extends SObject
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;
-    LastPricedDate?: string;
-    LegalEntity?: LegalEntity;
-    LegalEntityId?: string;
     /**
      * <h3><b>Location</b></h3>
      * <p>Used by the North America Implants Customer Service Team to understand where Orders are in the Approval Process via Order List View</p>
@@ -1203,7 +1174,6 @@ declare interface OrderChangeEvent extends SObject
     Offer_Code__c?: string;
     Opportunity?: Opportunity;
     OpportunityId?: string;
-    OrchestrationSbmsStatus?: string;
     /**
      * <h3><b>Order Account Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -1472,7 +1442,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     Orders_Related_to_CFE__r?: Orders_Related_to_CFE__c;
-    OriginalActionType?: string;
     OriginalOrder?: Order;
     OriginalOrderId?: string;
     /**
@@ -1574,8 +1543,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     Payment_type_discount__c?: number;
-    PaymentTerm?: PaymentTerm;
-    PaymentTermId?: string;
     /**
      * <h3><b>PDF Butler Alternative Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -1729,7 +1696,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     Prospect_at_the_point_of_order_entry__c?: boolean;
-    Quote?: Quote;
     /**
      * <h3><b>Quote Status</b></h3>
      * <p>Field to set the status of the quote</p>
@@ -1749,7 +1715,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     Quote_Status__c?: string;
-    QuoteId?: string;
     RecordType?: RecordType;
     RecordTypeId?: string;
     /**
@@ -1799,8 +1764,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     Regional_Manager_E_mail__c?: string;
-    RelatedOrder?: Order;
-    RelatedOrderId?: string;
     ReplayId?: string;
     /**
      * <h3><b>Sales Rep Address</b></h3>
@@ -1845,8 +1808,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     SalesOrigin__c?: string;
-    SalesTransactionType?: SalesTransactionType;
-    SalesTransactionTypeId?: string;
     /**
      * <h3><b>Sample Order</b></h3>
      * <h4>Field Attributes</h4>
@@ -2233,8 +2194,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     TotalCost__c?: number;
-    TotalRoundedLineAmount?: number;
-    TotalTaxAmount?: number;
     Type?: string;
     /**
      * <h3><b>Type</b></h3>
@@ -2248,9 +2207,11 @@ declare interface OrderChangeEvent extends SObject
      * <table border="0" valign="top">
      * <tr><td nowrap><b>API Name</b></td><td nowrap><b>Label</b></td><td nowrap><b>Active</b></td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AD Overage Spend</code></td><td>AD Overage Spend</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Deal on Demand</code></td><td>Deal on Demand</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Discount on Demand</code></td><td>Discount on Demand</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Grip Stock</code></td><td>Grip Stock</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New Customer</code></td><td>New Customer</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New User</code></td><td>New User</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New User 1+1</code></td><td>New User 1+1</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New User 2+1</code></td><td>New User 2+1</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Tessera Trade Out B7,T3,G3</code></td><td>Tessera Trade Out B7,T3,G3</td><td nowrap>true</td></tr>
@@ -2399,7 +2360,6 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     UserCountryETM__c?: string;
-    ValidationResult?: string;
     /**
      * <h3><b>VAT Number</b></h3>
      * <h4>Field Attributes</h4>

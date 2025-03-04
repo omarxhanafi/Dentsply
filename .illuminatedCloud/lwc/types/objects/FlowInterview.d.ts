@@ -9,10 +9,8 @@ declare interface FlowInterview extends SObject
     CurrentFlowVersion?: string;
     EngineType?: string;
     Error?: string;
-    FlowInterview?: FulfillmentStepChangeEvent;
     FlowVersionView?: FlowVersionView;
     FlowVersionViewId?: string;
-    FulfillmentSteps?: FulfillmentStep[];
     Guid?: string;
     Interview?: FlowOrchestrationInstance;
     InterviewLabel?: string;

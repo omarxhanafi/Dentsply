@@ -2,14 +2,14 @@
 
 declare interface TimeSheetHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    TimeSheet: TimeSheet;
-    TimeSheetId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    TimeSheet?: TimeSheet;
+    TimeSheetId?: string;
 }

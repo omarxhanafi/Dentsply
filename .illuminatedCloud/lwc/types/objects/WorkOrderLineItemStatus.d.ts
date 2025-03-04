@@ -2,16 +2,16 @@
 
 declare interface WorkOrderLineItemStatus extends SObject 
 {
-    ApiName: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsDefault: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MasterLabel: string;
-    SortOrder: number;
-    StatusCode: string;
-    SystemModstamp: string;
+    ApiName?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsDefault?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MasterLabel?: string;
+    SortOrder?: number;
+    StatusCode?: string;
+    SystemModstamp?: string;
 }

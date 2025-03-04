@@ -1784,9 +1784,6 @@ declare interface ContractChangeEvent extends SObject
      * </table>
      */
     Price__c?: number;
-    Pricebook2?: Pricebook2;
-    Pricebook2Id?: string;
-    PricingSource?: string;
     /**
      * <h3><b>Purchase Contract External ID</b></h3>
      * <p>This is the primary contract external id. If there is a match between Movex and SFDC in this field the contract or voucher is updated. If not it the other Contract external ID is checked. This is used to cater for the scenario that a Contract (not a Voucher) should never be inserted, while the Voucher can be inserted.</p>
@@ -1903,8 +1900,6 @@ declare interface ContractChangeEvent extends SObject
      * </table>
      */
     Remains_rev_material__c?: number;
-    RenewalTerm2?: number;
-    RenewalTermUnit?: string;
     ReplayId?: string;
     /**
      * <h3><b>Revenue: basis for allowance</b></h3>

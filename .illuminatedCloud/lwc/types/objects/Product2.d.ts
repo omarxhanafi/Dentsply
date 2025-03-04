@@ -44,8 +44,6 @@ declare interface Product2 extends SObject
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     Attachments?: Attachment[];
-    AttributeAdjustmentConditions?: AttributeAdjustmentCondition[];
-    AttributeBasedAdjustments?: AttributeBasedAdjustment[];
     AvailabilityDate?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__UpgradeSource__c.SBQQ__SourceProduct__c}.
@@ -118,7 +116,6 @@ declare interface Product2 extends SObject
      * </table>
      */
     BrandType__c?: string;
-    BundleBasedAdjustments?: BundleBasedAdjustment[];
     /**
      * <h3><b>Business Area - Brand</b></h3>
      * <p>This formula field combines the Busienss Area Code and Brand like  &quot;DI1 - Ankylos&quot;. Use this field for grouping in reports etc</p>
@@ -381,7 +378,6 @@ declare interface Product2 extends SObject
      * </table>
      */
     Dashboard_Product__c?: string;
-    DecompositionScope?: string;
     /**
      * <h3><b>DEP Record Hash</b></h3>
      * <h4>Field Attributes</h4>
@@ -405,7 +401,6 @@ declare interface Product2 extends SObject
      */
     DEPUniqueKey__c?: string;
     Description?: string;
-    DestinationProduct?: ProductFulfillmentDecompRule[];
     /**
      * The reciprocal relationship for {@link SBQQ__Dimension__c.SBQQ__Product__c}.
      */
@@ -508,12 +503,10 @@ declare interface Product2 extends SObject
     FilterObjects?: DocTemplateSectionCondition[];
     FirstPublishLocation?: ContentVersion;
     FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
-    FulfillmentAssets?: FulfillmentAsset[];
     /**
      * The reciprocal relationship for {@link FulfillmentOrderLineItem.Product2Id}.
      */
     FulfillmentOrderLineItems?: FulfillmentOrderLineItem[];
-    FulfillmentQtyCalcMethod?: string;
     /**
      * <h3><b>GDW Unique Key</b></h3>
      * <h4>Field Attributes</h4>
@@ -628,7 +621,6 @@ declare interface Product2 extends SObject
     IsDeleted?: boolean;
     IsSerialized?: boolean;
     IsSoldOnlyWithOtherProds?: boolean;
-    Items?: ContractItemPrice[];
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;
@@ -674,19 +666,6 @@ declare interface Product2 extends SObject
      * The reciprocal relationship for {@link MarginGuidance__c.Product__c}.
      */
     Margin_Guidances__r?: MarginGuidance__c[];
-    /**
-     * <h3><b>Market</b></h3>
-     * <p>The Market that the Company Code belongs to</p>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text</td></tr>
-     * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">TEXT(SSIS_ERP_SKU_Market_Mapping__r.Market__c)</code></td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
-     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    Market__c?: string;
     Name?: string;
     NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
     /**
@@ -913,10 +892,7 @@ declare interface Product2 extends SObject
      * </table>
      */
     PillarDesc__c?: string;
-    PriceAdjustmentTiers?: PriceAdjustmentTier[];
     PricebookEntries?: PricebookEntry[];
-    PriceBookEntryContributingProducts?: PriceBookEntryDerivedPrice[];
-    PriceBookEntryDerivedProducts?: PriceBookEntryDerivedPrice[];
     /**
      * The reciprocal relationship for {@link SBQQ__PriceRule__c.SBQQ__Product__c}.
      */
@@ -1019,13 +995,10 @@ declare interface Product2 extends SObject
      * The reciprocal relationship for {@link ProductComponentGroup.ParentProductId}.
      */
     ProductComponentGroups?: ProductComponentGroup[];
-    ProductConfigFlowAssignmentProducts?: ProductConfigFlowAssignment[];
-    ProductCostBookEntry?: CostBookEntry[];
     /**
      * The reciprocal relationship for {@link ProductDisqualification.ProductId}.
      */
     ProductDisqualifications?: ProductDisqualification[];
-    ProductFulfillmentScenarios?: ProductFulfillmentScenario[];
     /**
      * The reciprocal relationship for {@link ProductItem.Product2Id}.
      */
@@ -1038,7 +1011,6 @@ declare interface Product2 extends SObject
      * The reciprocal relationship for {@link ProductRequestLineItem.Product2Id}.
      */
     ProductRequestLineItems?: ProductRequestLineItem[];
-    Products?: OrderDeliveryMethod[];
     /**
      * The reciprocal relationship for {@link Product2.GlobalSKUMapping__c}.
      */
@@ -1081,7 +1053,6 @@ declare interface Product2 extends SObject
      * The reciprocal relationship for {@link ProductTransfer.Product2Id}.
      */
     ProductTransfers?: ProductTransfer[];
-    ProductUsageGrants?: ProductUsageGrant[];
     /**
      * The reciprocal relationship for {@link ProductWarrantyTerm.CoveredProductId}.
      */
@@ -1261,7 +1232,6 @@ declare interface Product2 extends SObject
      */
     SKUKey__c?: string;
     SobjectLookupValue?: AIInsightValue;
-    SourceProduct?: ProductFulfillmentDecompRule[];
     /**
      * <h3><b>Source System Name</b></h3>
      * <h4>Field Attributes</h4>
@@ -1325,8 +1295,6 @@ declare interface Product2 extends SObject
      * The reciprocal relationship for {@link Task.WhatId}.
      */
     Tasks?: Task[];
-    TaxPolicy?: TaxPolicy;
-    TaxPolicyId?: string;
     /**
      * The reciprocal relationship for {@link ToothCabinetProduct__c.Product__c}.
      */
@@ -1354,8 +1322,6 @@ declare interface Product2 extends SObject
      * The reciprocal relationship for {@link SBQQ__UpgradeSource__c.SBQQ__UpgradeProduct__c}.
      */
     UpgradeSources__r?: SBQQ__UpgradeSource__c[];
-    UsageModelType?: string;
-    UsageResources?: UsageResource[];
     /**
      * <h3><b>VAT</b></h3>
      * <h4>Field Attributes</h4>

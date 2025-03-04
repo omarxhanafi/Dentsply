@@ -32,6 +32,18 @@ declare interface CventEvents__FieldsMapping__c extends SObject
     CreatedDate?: string;
     CurrencyIsoCode?: string;
     /**
+     * <h3><b>Apply On Action</b></h3>
+     * <p>Indicates which DML action this field mapping will be applied on.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(18)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    CventEvents__ApplyOnAction__c?: string;
+    /**
      * <h3><b>Cvent Field</b></h3>
      * <p>Attendee Temp field API name used for mapping.</p>
      * <h4>Field Attributes</h4>
@@ -79,10 +91,10 @@ declare interface CventEvents__FieldsMapping__c extends SObject
     CventEvents__IsRequired__c?: boolean;
     /**
      * <h3><b>Object</b></h3>
-     * <p>Salesforce target object name used for mapping.</p>
+     * <p>Salesforce target object name used for mapping (either &#39;Contact&#39;, &#39;Lead&#39;, &#39;PersonAccount&#39;, &#39;Campaign&#39;, &#39;CampaignMember&#39;, or &#39;{namespacePrefix}__Attendee__c&#39;)</p>
      * <h4>Field Attributes</h4>
      * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(24)</td></tr>
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(64)</td></tr>
      * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
      * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>

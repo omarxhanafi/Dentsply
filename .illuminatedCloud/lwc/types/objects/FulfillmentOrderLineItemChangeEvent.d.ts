@@ -10,8 +10,6 @@ declare interface FulfillmentOrderLineItemChangeEvent extends SObject
     CurrencyIsoCode?: string;
     Description?: string;
     EndDate?: string;
-    FulfillmentAsset?: FulfillmentAsset;
-    FulfillmentAssetId?: string;
     FulfillmentOrder?: FulfillmentOrder;
     FulfillmentOrderId?: string;
     FulfillmentOrderLineItemNumber?: string;
@@ -41,7 +39,5 @@ declare interface FulfillmentOrderLineItemChangeEvent extends SObject
     TotalLineTaxAmount?: number;
     TotalPrice?: number;
     TotalTaxAmount?: number;
-    Type?: string;
-    TypeCode?: string;
     UnitPrice?: number;
 }

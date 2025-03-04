@@ -26,7 +26,6 @@ declare interface WorkOrderLineItem extends SObject
      */
     ArticleSKU__c?: string;
     Asset?: Asset;
-    AssetActionSourceReferences?: AssetActionSource[];
     AssetId?: string;
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];

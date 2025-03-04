@@ -76,8 +76,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     Article_Number__c?: string;
-    AssetActionSourceReferences?: AssetActionSource[];
-    AssociatedOrderItemRelationships?: OrderItemRelationship[];
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     /**
@@ -132,8 +130,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     AXRetailPrice__c?: number;
-    BillingFrequency2?: string;
-    BillingReference2?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__BlockPrice__c.SBQQ__OrderProduct__c}.
      */
@@ -176,10 +172,7 @@ declare interface OrderItem extends SObject
      * The reciprocal relationship for {@link FulfillmentOrderLineItem.OrderItemId}.
      */
     CurrentFulfillmentOrderLineItems?: FulfillmentOrderLineItem[];
-    CustomProductName?: string;
-    DecomposedToLineItemRels?: FulfillmentLineSourceRel[];
     Description?: string;
-    Discount?: number;
     /**
      * <h3><b>Discount Approval Evaluation</b></h3>
      * <h4>Field Attributes</h4>
@@ -202,7 +195,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     Discount_Percent__c?: number;
-    DiscountAmount?: number;
     /**
      * <h3><b>Discount Approval Line Item</b></h3>
      * <h4>Field Attributes</h4>
@@ -243,7 +235,6 @@ declare interface OrderItem extends SObject
      */
     DocEnvelopeRefObjects?: DocumentEnvelope[];
     EndDate?: Date;
-    EndQuantity?: number;
     /**
      * <h3><b>ERP Account for Sample</b></h3>
      * <h4>Field Attributes</h4>
@@ -286,7 +277,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     Free_of_Charge_Delivery__c?: string;
-    FulfillmentSteps?: FulfillmentStepSource[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
@@ -308,8 +298,6 @@ declare interface OrderItem extends SObject
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;
-    LegalEntity?: LegalEntity;
-    LegalEntityId?: string;
     /**
      * <h3><b>Line Approval Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -334,7 +322,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     LowerGuidance__c?: number;
-    MainOrderItemRelationships?: OrderItemRelationship[];
     /**
      * <h3><b>Margin</b></h3>
      * <p>#5314 - Margin Guidance Calculation Process</p>
@@ -401,7 +388,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     MTF_EvaluationNumber__c?: number;
-    NetTotalPrice?: number;
     /**
      * <h3><b>Nett Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -414,7 +400,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     NettPrice__c?: number;
-    NetUnitPrice?: number;
     /**
      * <h3><b>No Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -491,24 +476,16 @@ declare interface OrderItem extends SObject
      */
     Offer_Code_Name__c?: string;
     Order?: Order;
-    OrderAction?: OrderAction;
-    OrderActionId?: string;
-    OrderChangeLogs?: OrderChangeLog[];
     OrderId?: string;
-    OrderItem?: CreateAssetOrderDtlEvent;
-    OrderItemAdjustmentLineItems?: OrderItemAdjustmentLineItem[];
-    OrderItemAttributes?: OrderItemAttribute[];
-    OrderItemDetails?: OrderItemDetail[];
-    OrderItemGroup?: OrderItemGroup;
-    OrderItemGroupId?: string;
+    /**
+     * The reciprocal relationship for {@link FulfillmentOrderLineItem.OrderItemId}.
+     */
+    OrderItem?: FulfillmentOrderLineItem;
     OrderItemNumber?: string;
-    OrderItemRecipient?: OrderItemRecipient;
-    OrderItemRecipientId?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__OrderItemConsumptionSchedule__c.SBQQ__OrderItem__c}.
      */
     OrderItems__r?: SBQQ__OrderItemConsumptionSchedule__c[];
-    OrderItemTaxLineItems?: OrderItemTaxLineItem[];
     OriginalOrderItem?: OrderItem;
     OriginalOrderItemId?: string;
     Parent?: FeedComment;
@@ -522,22 +499,13 @@ declare interface OrderItem extends SObject
      * </table>
      */
     ParentKit__c?: boolean;
-    ParentOrderItem?: OrderItem;
-    ParentOrderItemId?: string;
     ParentRecord?: NetworkFeedResponseMetric;
-    PartnerDiscountPercent?: number;
-    PartnerUnitPrice?: number;
-    PeriodBoundary?: string;
-    PeriodBoundaryDay?: number;
-    PeriodBoundaryStartMonth?: string;
     PricebookEntry?: PricebookEntry;
     PricebookEntryId?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__PriceSchedule__c.SBQQ__OrderProduct__c}.
      */
     PriceSchedules__r?: SBQQ__PriceSchedule__c[];
-    PriceWaterfallIdentifier?: string;
-    PricingTermCount?: number;
     PrimaryRevenueTransactionErrorLogs?: RevenueTransactionErrorLog[];
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.
@@ -582,19 +550,8 @@ declare interface OrderItem extends SObject
      * </table>
      */
     Product_Type__c?: string;
-    ProductSellingModel?: ProductSellingModel;
-    ProductSellingModelId?: string;
-    ProrationPolicy?: ProrationPolicy;
-    ProrationPolicyId?: string;
     Quantity?: number;
-    QuoteLineItem?: QuoteLineItem;
-    QuoteLineItemId?: string;
-    RelatedOrderChangeLogs?: OrderChangeLog[];
-    RelatedOrderItem?: OrderItem;
-    RelatedOrderItemId?: string;
-    RelatedOrderItems?: OrderItem[];
     RelatedRecord?: FlowRecordRelation;
-    RelatedRevenueTransactionErrorLogs?: RevenueTransactionErrorLog[];
     /**
      * <h3><b>Retail Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -619,7 +576,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     Reward__c?: number;
-    RoundedLineAmount?: number;
     /**
      * <h3><b>Sales Special</b></h3>
      * <h4>Field Attributes</h4>
@@ -710,19 +666,13 @@ declare interface OrderItem extends SObject
      */
     SIMPLANT_Software_Line_Item__c?: number;
     SobjectLookupValue?: AIInsightValue;
-    SourceLineItem?: FulfillmentStepSourceChangeEvent;
-    StartQuantity?: number;
-    Status?: string;
     /**
      * The reciprocal relationship for {@link SBQQ__Subscription__c.SBQQ__OrderProduct__c}.
      */
     Subscriptions__r?: SBQQ__Subscription__c[];
-    SubscriptionTerm?: number;
     SystemModstamp?: string;
     Target?: AIRecordInsight;
     TargetObject?: PendingServiceRoutingInteractionInfo;
-    TaxTreatment?: TaxTreatment;
-    TaxTreatmentId?: string;
     /**
      * <h3><b>Total Line Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -733,8 +683,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     Total_Line_Item_Price__c?: number;
-    TotalAdjustmentAmount?: number;
-    TotalAmtWithTax?: number;
     /**
      * <h3><b>Total Cost</b></h3>
      * <h4>Field Attributes</h4>
@@ -771,7 +719,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     TotalDiscountAmount__c?: number;
-    TotalLineAmount?: number;
     /**
      * <h3><b>Total Line Item Price PDF Butler</b></h3>
      * <p>Calculating Total Amount with TAX/VAT of &quot;Total_Line_Item_Price__c&quot;
@@ -812,9 +759,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     TotalRetailPrice__c?: number;
-    TotalTaxAmount?: number;
-    Type?: string;
-    TypeCode?: string;
     /**
      * <h3><b>Unit price</b></h3>
      * <h4>Field Attributes</h4>
@@ -855,7 +799,6 @@ declare interface OrderItem extends SObject
      * </table>
      */
     UsedCouponValue__c?: number;
-    ValidationResult?: string;
     /**
      * <h3><b>Value of free product</b></h3>
      * <h4>Field Attributes</h4>

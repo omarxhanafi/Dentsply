@@ -38,7 +38,6 @@ declare interface PricebookEntry extends SObject
      * </table>
      */
     ApprovalLevel3__c?: number;
-    AssetActionSources?: AssetActionSource[];
     ContextRecord?: FlowExecutionErrorEvent;
     /**
      * The reciprocal relationship for {@link ContractLineItem.PricebookEntryId}.
@@ -74,7 +73,6 @@ declare interface PricebookEntry extends SObject
     IsActive?: boolean;
     IsArchived?: boolean;
     IsDeleted?: boolean;
-    IsDerived?: boolean;
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;
@@ -108,7 +106,6 @@ declare interface PricebookEntry extends SObject
      * The reciprocal relationship for {@link ContractLineItem.PricebookEntryId}.
      */
     PricebookEntry?: ContractLineItem;
-    PriceBookEntryDerivedPrices?: PriceBookEntryDerivedPrice[];
     /**
      * <h3><b>Primary?</b></h3>
      * <h4>Field Attributes</h4>

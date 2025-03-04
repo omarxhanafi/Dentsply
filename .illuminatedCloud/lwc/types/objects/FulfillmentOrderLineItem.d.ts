@@ -11,7 +11,6 @@ declare interface FulfillmentOrderLineItem extends SObject
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
     ApprovalWorkItems?: ApprovalWorkItem[];
-    AssociatedFulfillmentlineRelationships?: FulfillmentLineRel[];
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     CombinedAttachments?: CombinedAttachment[];
@@ -21,7 +20,6 @@ declare interface FulfillmentOrderLineItem extends SObject
     CreatedById?: string;
     CreatedDate?: string;
     CurrencyIsoCode?: string;
-    DecomposedToLineItemRels?: FulfillmentLineSourceRel[];
     Description?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
@@ -32,10 +30,6 @@ declare interface FulfillmentOrderLineItem extends SObject
     FeedSubscriptionsForEntity?: EntitySubscription[];
     FirstPublishLocation?: ContentVersion;
     FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
-    FulfillmentAsset?: FulfillmentAsset;
-    FulfillmentAssetId?: string;
-    FulfillmentLineAttributes?: FulfillmentLineAttribute[];
-    FulfillmentLineSourceRels?: FulfillmentLineSourceRel[];
     FulfillmentOrder?: FulfillmentOrder;
     FulfillmentOrderId?: string;
     /**
@@ -45,7 +39,6 @@ declare interface FulfillmentOrderLineItem extends SObject
     FulfillmentOrderItemTaxes?: FulfillmentOrderItemTax[];
     FulfillmentOrderLineItem?: FulfillOrdItemQtyChgEvent;
     FulfillmentOrderLineItemNumber?: string;
-    FulfillmentSteps?: FulfillmentStepSource[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
@@ -57,7 +50,6 @@ declare interface FulfillmentOrderLineItem extends SObject
     LastModifiedById?: string;
     LastModifiedDate?: string;
     LinkedEntity?: ContentDocumentLinkChangeEvent;
-    MainFulfillmentLineRelationships?: FulfillmentLineRel[];
     OrderItem?: OrderItem;
     OrderItemId?: string;
     OriginalQuantity?: number;
@@ -76,7 +68,6 @@ declare interface FulfillmentOrderLineItem extends SObject
     ReshipReason?: string;
     ServiceDate?: string;
     SobjectLookupValue?: AIInsightValue;
-    SourceLineItem?: FulfillmentStepSourceChangeEvent;
     SystemModstamp?: string;
     Target?: AIRecordInsight;
     TargetObject?: PendingServiceRoutingInteractionInfo;
@@ -89,7 +80,5 @@ declare interface FulfillmentOrderLineItem extends SObject
     TotalLineTaxAmount?: number;
     TotalPrice?: number;
     TotalTaxAmount?: number;
-    Type?: string;
-    TypeCode?: string;
     UnitPrice?: number;
 }

@@ -337,6 +337,15 @@ declare interface Expert__c extends SObject
      */
     DocEnvelopeRefObjects?: DocumentEnvelope[];
     /**
+     * <h3><b>DS Signature Workflows</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Multiselect Picklist</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    DS_Signature_Workflows__c?: string;
+    /**
      * The reciprocal relationship for {@link DuplicateRecordItem.RecordId}.
      */
     DuplicateRecordItems?: DuplicateRecordItem[];
@@ -545,6 +554,31 @@ declare interface Expert__c extends SObject
      * </table>
      */
     GlobalKOL__c?: boolean;
+    /**
+     * <h3><b>Government Role (Current/Former)</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Picklist</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
+     * </table>
+     * <h4>Picklist Values</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>API Name</b></td><td nowrap><b>Label</b></td><td nowrap><b>Active</b></td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">YES</code></td><td>YES</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">NO</code></td><td>NO</td><td nowrap>true</td></tr>
+     * </table>
+     */
+    Government_Role__c?: string;
+    /**
+     * <h3><b>Government Role Date</b></h3>
+     * <p>TFUS-000007398 As Owner of KOL Management setup, I want to some more feature on KOL Information, so that for compliance reason</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Date</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    Government_Role_Date__c?: Date;
     Histories?: Expert__History[];
     /**
      * <h3><b>Hygienist with &gt;5 years experience</b></h3>

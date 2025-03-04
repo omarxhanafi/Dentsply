@@ -9,7 +9,7 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__c: string;
+    Account__c?: string;
     /**
      * <h3><b>Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -17,7 +17,7 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Account})</td></tr>
      * </table>
      */
-    Account__r: Account;
+    Account__r?: Account;
     /**
      * <h3><b>Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -25,7 +25,7 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Case})</td></tr>
      * </table>
      */
-    Case__c: string;
+    Case__c?: string;
     /**
      * <h3><b>Case</b></h3>
      * <h4>Field Attributes</h4>
@@ -33,8 +33,8 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Master Detail({@link Case})</td></tr>
      * </table>
      */
-    Case__r: Case;
-    ChangeEventHeader: ChangeEventHeader;
+    Case__r?: Case;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -43,7 +43,7 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__c: string;
+    Contact__c?: string;
     /**
      * <h3><b>Contact</b></h3>
      * <h4>Field Attributes</h4>
@@ -52,11 +52,11 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Contact__r: Contact;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
+    Contact__r?: Contact;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
     /**
      * <h3><b>Email</b></h3>
      * <p>Show Email from contact if populated, otherwise to show it from Account</p>
@@ -69,10 +69,10 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Email__c: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
+    Email__c?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
     /**
      * <h3><b>Main Contact Point</b></h3>
      * <p>The primary account/contact for all communications around this case</p>
@@ -82,8 +82,8 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    MainContactPoint__c: boolean;
-    Name: string;
+    MainContactPoint__c?: boolean;
+    Name?: string;
     /**
      * <h3><b>Phone</b></h3>
      * <p>Show the phone number from Contact if populated, otherwise from Account Phone</p>
@@ -96,8 +96,8 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Phone__c: string;
-    ReplayId: string;
+    Phone__c?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Role</b></h3>
      * <p>Account/Contact role for this Case</p>
@@ -117,5 +117,5 @@ declare interface CaseAccountRole__ChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Third Party Contractor</code></td><td>Third Party Contractor</td><td nowrap>true</td></tr>
      * </table>
      */
-    Role__c: string;
+    Role__c?: string;
 }

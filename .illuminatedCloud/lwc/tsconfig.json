@@ -221,6 +221,9 @@
       "c/updateOrderItemOmLwc": [
         "src/lwc/updateOrderItemOmLwc/updateOrderItemOmLwc"
       ],
+      "c/updateProductsLwc": [
+        "src/lwc/updateProductsLwc/updateProductsLwc"
+      ],
       "c/utils": [
         "src/lwc/utils/utils"
       ],

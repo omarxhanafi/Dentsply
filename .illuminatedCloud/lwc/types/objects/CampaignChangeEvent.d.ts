@@ -470,6 +470,7 @@ declare interface CampaignChangeEvent extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ProTaper Next</code></td><td>ProTaper Next</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">ProTaper Ultimate</code></td><td>ProTaper Ultimate</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Purevac</code></td><td>Purevac</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Pureclave</code></td><td>Pureclave</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">RDH</code></td><td>RDH</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Reciproc</code></td><td>Reciproc</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Reciproc blue</code></td><td>Reciproc blue</td><td nowrap>true</td></tr>

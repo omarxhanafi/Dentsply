@@ -2,14 +2,14 @@
 
 declare interface Translation extends SObject 
 {
-    CanManage: boolean;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    IsActive: boolean;
-    Language: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    SystemModstamp: string;
+    CanManage?: boolean;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    IsActive?: boolean;
+    Language?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    SystemModstamp?: string;
 }

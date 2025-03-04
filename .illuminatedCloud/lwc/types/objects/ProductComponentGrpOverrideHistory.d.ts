@@ -2,14 +2,14 @@
 
 declare interface ProductComponentGrpOverrideHistory extends SObject 
 {
-    CreatedBy: SObject;
-    CreatedById: string;
-    CreatedDate: string;
-    DataType: string;
-    Field: string;
-    IsDeleted: boolean;
-    NewValue: any;
-    OldValue: any;
-    ProductComponentGrpOverride: ProductComponentGrpOverride;
-    ProductComponentGrpOverrideId: string;
+    CreatedBy?: SObject;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DataType?: string;
+    Field?: string;
+    IsDeleted?: boolean;
+    NewValue?: any;
+    OldValue?: any;
+    ProductComponentGrpOverride?: ProductComponentGrpOverride;
+    ProductComponentGrpOverrideId?: string;
 }

@@ -67,7 +67,6 @@ declare interface PricebookEntryChangeEvent extends SObject
     FreeProductThreshold__c?: number;
     IsActive?: boolean;
     IsArchived?: boolean;
-    IsDerived?: boolean;
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;

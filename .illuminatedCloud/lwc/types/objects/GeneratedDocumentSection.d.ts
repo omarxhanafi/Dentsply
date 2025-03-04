@@ -21,8 +21,6 @@ declare interface GeneratedDocumentSection extends SObject
     CreatedDate?: string;
     CurrencyIsoCode?: string;
     DisplayHeaderFontStyle?: string;
-    DocumentTemplateClause?: DocumentClause;
-    DocumentTemplateClauseId?: string;
     DocumentTemplateSection?: DocumentTemplateSection;
     DocumentTemplateSectionId?: string;
     /**

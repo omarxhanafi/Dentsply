@@ -44,7 +44,6 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsAllowUniversalSearch?: boolean;
     MaximumPermissionsAllowViewEditConvertedLeads?: boolean;
     MaximumPermissionsAllowViewKnowledge?: boolean;
-    MaximumPermissionsAmendAssets?: boolean;
     MaximumPermissionsApexRestServices?: boolean;
     MaximumPermissionsApiEnabled?: boolean;
     MaximumPermissionsApiUserOnly?: boolean;
@@ -73,7 +72,6 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsCampaignInfluence2?: boolean;
     MaximumPermissionsCanAccessCE?: boolean;
     MaximumPermissionsCanApproveFeedPost?: boolean;
-    MaximumPermissionsCancelAssets?: boolean;
     MaximumPermissionsCanEditDataPrepRecipe?: boolean;
     MaximumPermissionsCanEditPrompts?: boolean;
     MaximumPermissionsCanInitiateMessagingSessions?: boolean;
@@ -102,7 +100,6 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsClientSecretRotation?: boolean;
     MaximumPermissionsCloseConversations?: boolean;
     MaximumPermissionsCMSECEAuthoringAccess?: boolean;
-    MaximumPermissionsCommerceTaxApiUser?: boolean;
     MaximumPermissionsConfigCustomRecs?: boolean;
     MaximumPermissionsConfigureDataspaceScope?: boolean;
     MaximumPermissionsConfigureLiveMessage?: boolean;
@@ -111,15 +108,7 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsContentAdministrator?: boolean;
     MaximumPermissionsContentHubUser?: boolean;
     MaximumPermissionsContentWorkspaces?: boolean;
-    MaximumPermissionsContextServiceAdmin?: boolean;
-    MaximumPermissionsContextServiceEmbedAdmin?: boolean;
-    MaximumPermissionsContextServiceRuntime?: boolean;
     MaximumPermissionsConvertLeads?: boolean;
-    MaximumPermissionsCoreCPQUser?: boolean;
-    MaximumPermissionsCorePricingAdmin?: boolean;
-    MaximumPermissionsCorePricingDesignTimeUser?: boolean;
-    MaximumPermissionsCorePricingManager?: boolean;
-    MaximumPermissionsCorePricingRunTimeUser?: boolean;
     MaximumPermissionsCosellAuthSetupUser?: boolean;
     MaximumPermissionsCosellExportUser?: boolean;
     MaximumPermissionsCreateAuditFields?: boolean;
@@ -149,7 +138,6 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsDeleteActivatedContract?: boolean;
     MaximumPermissionsDeleteCrMemoAndInvoice?: boolean;
     MaximumPermissionsDeleteTopics?: boolean;
-    MaximumPermissionsDerivedPricing?: boolean;
     MaximumPermissionsDesignContextRule?: boolean;
     MaximumPermissionsDfoAdminUser?: boolean;
     MaximumPermissionsDFODesignerUser?: boolean;
@@ -222,7 +210,6 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsHasUnlimitedErbScoringRequests?: boolean;
     MaximumPermissionsHasUnlimitedNBAExecutions?: boolean;
     MaximumPermissionsHeadlessCMSAccess?: boolean;
-    MaximumPermissionsHeadlessConfiguratorUser?: boolean;
     MaximumPermissionsHeadlessPublishNudges?: boolean;
     MaximumPermissionsHideReadByList?: boolean;
     MaximumPermissionsIdentityConnect?: boolean;
@@ -261,7 +248,6 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsManageAccessPolicies?: boolean;
     MaximumPermissionsManageAgentforceServiceAgent?: boolean;
     MaximumPermissionsManageAnalyticSnapshots?: boolean;
-    MaximumPermissionsManageAssets?: boolean;
     MaximumPermissionsManageAuthProviders?: boolean;
     MaximumPermissionsManageBusinessHourHolidays?: boolean;
     MaximumPermissionsManageC2CHighVolumePriming?: boolean;
@@ -388,7 +374,6 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsPortalSuperUser?: boolean;
     MaximumPermissionsPreventClassicExperience?: boolean;
     MaximumPermissionsPreviewExperienceUser?: boolean;
-    MaximumPermissionsPricingDiscovery?: boolean;
     MaximumPermissionsPrismPlaygroundUser?: boolean;
     MaximumPermissionsPrivacyDataAccess?: boolean;
     MaximumPermissionsPRMChannelMgmtConsoleUser?: boolean;
@@ -400,7 +385,6 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsProductCatalogMgmtBaseCCUser?: boolean;
     MaximumPermissionsProductCatalogMgmtBasePCUser?: boolean;
     MaximumPermissionsProductConfigurationRuleAccess?: boolean;
-    MaximumPermissionsProductConfiguratorUser?: boolean;
     MaximumPermissionsProductDiscoveryUser?: boolean;
     MaximumPermissionsPublishArticles?: boolean;
     MaximumPermissionsPublishPackaging?: boolean;
@@ -409,10 +393,8 @@ declare interface PermissionSetLicense extends SObject
     MaximumPermissionsQueryNonVetoedFiles?: boolean;
     MaximumPermissionsQuipMetricsAccess?: boolean;
     MaximumPermissionsQuipUserEngagementMetrics?: boolean;
-    MaximumPermissionsQuoteToOrderUser?: boolean;
     MaximumPermissionsReassignOrchestrationWorkItems?: boolean;
     MaximumPermissionsRecordVisibilityAPI?: boolean;
-    MaximumPermissionsRenewAssets?: boolean;
     MaximumPermissionsReplyRecommendationUser?: boolean;
     MaximumPermissionsResetPasswords?: boolean;
     MaximumPermissionsRunCatalogItemsOnBehalfOf?: boolean;

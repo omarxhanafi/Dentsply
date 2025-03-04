@@ -154,7 +154,7 @@ declare interface User extends SObject
     ArticleArchivedBy?: Knowledge__kav;
     ArticleCreatedBy?: Knowledge__kav;
     AssignedBy?: Knowledge__kav;
-    AssignedTo?: FulfillmentStepChangeEvent;
+    AssignedTo?: Knowledge__kav;
     /**
      * The reciprocal relationship for {@link ApprovalWorkItem.AssignedToId}.
      */
@@ -970,8 +970,6 @@ declare interface User extends SObject
      * </table>
      */
     FSSK__FSK_FSL_Resource_Type__c?: string;
-    FulfillmentStepDefinitions?: FulfillmentStepDefinition[];
-    FulfillmentSteps?: FulfillmentStep[];
     /**
      * <h3><b>Full Name</b></h3>
      * <h4>Field Attributes</h4>

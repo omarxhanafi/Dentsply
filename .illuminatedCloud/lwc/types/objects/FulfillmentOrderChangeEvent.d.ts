@@ -13,8 +13,6 @@ declare interface FulfillmentOrderChangeEvent extends SObject
     CreatedById?: string;
     CreatedDate?: string;
     CurrencyIsoCode?: string;
-    DeliveryMethod?: OrderDeliveryMethod;
-    DeliveryMethodId?: string;
     FulfilledFromLocation?: Location;
     FulfilledFromLocationId?: string;
     FulfilledToAddress?: Address;

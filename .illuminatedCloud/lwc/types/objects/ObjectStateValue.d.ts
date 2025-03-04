@@ -21,8 +21,6 @@ declare interface ObjectStateValue extends SObject
     CreatedById?: string;
     CreatedDate?: string;
     CurrencyIsoCode?: string;
-    CustomPermission?: CustomPermission;
-    CustomPermissionId?: string;
     Description?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.

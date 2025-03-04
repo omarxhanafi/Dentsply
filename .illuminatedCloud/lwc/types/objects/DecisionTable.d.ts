@@ -33,8 +33,6 @@ declare interface DecisionTable extends SObject
     LastSyncDate?: string;
     MasterLabel?: string;
     NamespacePrefix?: string;
-    PricingElementDecisionTables?: PricingRecipeTableMapping[];
-    ProcedurePlanOptionDecisionTable?: ProcedurePlanOption[];
     RefreshFailureReason?: string;
     RefreshStatus?: string;
     SetupName?: string;

@@ -2,17 +2,17 @@
 
 declare interface DuplicateJobMatchingRuleDefinition extends SObject 
 {
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    DuplicateJobDefinition: DuplicateJobDefinition;
-    DuplicateJobDefinitionId: string;
-    DuplicateJobMatchingRules: DuplicateJobMatchingRule[];
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    MatchingRule: MatchingRule;
-    MatchingRuleId: string;
-    SystemModstamp: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    DuplicateJobDefinition?: DuplicateJobDefinition;
+    DuplicateJobDefinitionId?: string;
+    DuplicateJobMatchingRules?: DuplicateJobMatchingRule[];
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    MatchingRule?: MatchingRule;
+    MatchingRuleId?: string;
+    SystemModstamp?: string;
 }

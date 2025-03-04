@@ -3739,4 +3739,132 @@ Click new to add more ...</value>
         <shortDescription>OrderClone</shortDescription>
         <value>Are you sure?</value>
     </labels>
+    <labels>
+        <fullName>UpdateProducts_BatchUpdateProducts</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BatchUpdateProducts</shortDescription>
+        <value>Batch Update Products</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_ExecuteBatch</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExecuteBatch</shortDescription>
+        <value>Execute Batch</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_PreviousJobs</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreviousJobs</shortDescription>
+        <value>Previous jobs</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_JobID</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JobID</shortDescription>
+        <value>Job ID</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_StartTime</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartTime</shortDescription>
+        <value>Start Time</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_EndTime</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EndTime</shortDescription>
+        <value>End Time</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Status</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Details</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Details</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Duration</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Duration</shortDescription>
+        <value>Duration</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_ProductCount</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductCount</shortDescription>
+        <value>Product Count</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Errors</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Errors</shortDescription>
+        <value>Errors</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_ItemsProcessed</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ItemsProcessed</shortDescription>
+        <value>Items Processed</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_ErrorMessages</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorMessages</shortDescription>
+        <value>Error Messages</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Previous</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Next</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_PageOf</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PageOf</shortDescription>
+        <value>Page {0} of {1}</value>
+    </labels>
 </CustomLabels>

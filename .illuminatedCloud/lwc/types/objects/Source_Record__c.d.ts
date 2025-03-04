@@ -450,7 +450,6 @@ declare interface Source_Record__c extends SObject
     ProcessExceptions?: ProcessException[];
     ProcessInstances?: ProcessInstance[];
     ProcessSteps?: ProcessInstanceHistory[];
-    Quotes__r?: Quote[];
     Record?: CollaborationGroupRecordChangeEvent;
     RecordActionHistories?: RecordActionHistory[];
     /**

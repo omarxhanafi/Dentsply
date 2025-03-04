@@ -242,8 +242,7 @@ declare interface Address__c extends SObject
     NetworkUserHistoryRecentToRecord?: NetworkUserHistoryRecent[];
     Notes?: Note[];
     NotesAndAttachments?: NoteAndAttachment[];
-    OrdersBillingAddress__r?: Order[];
-    OrdersShippingAddress__r?: Order[];
+    Orders__r?: Order[];
     Parent?: Case__hd;
     ParentEntities?: NetworkActivityAudit[];
     ParentRecord?: NetworkFeedResponseMetric;
@@ -320,8 +319,6 @@ declare interface Address__c extends SObject
     ProcessExceptions?: ProcessException[];
     ProcessInstances?: ProcessInstance[];
     ProcessSteps?: ProcessInstanceHistory[];
-    Quotes1__r?: Quote[];
-    Quotes_Billing_Address__r?: Quote[];
     Record?: CollaborationGroupRecordChangeEvent;
     RecordActionHistories?: RecordActionHistory[];
     /**

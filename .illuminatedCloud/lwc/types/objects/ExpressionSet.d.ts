@@ -25,7 +25,6 @@ declare interface ExpressionSet extends SObject
     Emails?: EmailMessage[];
     EventRelations?: EventRelation[];
     Events?: Event[];
-    ExecuteOnRule?: FulfillmentStepChangeEvent;
     ExecutionScale?: string;
     ExpressionSetDefinition?: ExpressionSetDefinition;
     ExpressionSetDefinitionId?: string;
@@ -36,8 +35,6 @@ declare interface ExpressionSet extends SObject
     Feeds?: ExpressionSetFeed[];
     FeedSubscriptionsForEntity?: EntitySubscription[];
     FirstPublishLocation?: ContentVersion;
-    FulfillmentStepDefinitions?: FulfillmentStepDefinition[];
-    FulfillmentSteps?: FulfillmentStep[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
@@ -60,14 +57,12 @@ declare interface ExpressionSet extends SObject
     Parent?: FeedComment;
     ParentEntities?: NetworkActivityAudit[];
     ParentRecord?: NetworkFeedResponseMetric;
-    ProductDecompEnrichmentRules?: ProductDecompEnrichmentRule[];
     RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
     RelatedTo?: EmailMessage;
     Relation?: EventRelationChangeEvent;
-    ResumeOnRule?: FulfillmentStepChangeEvent;
     Shares?: ExpressionSetShare[];
     SobjectLookupValue?: AIInsightValue;
     SystemModstamp?: string;

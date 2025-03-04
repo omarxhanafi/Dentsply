@@ -28,7 +28,6 @@ declare interface UnitOfMeasure extends SObject
     OwnerId?: string;
     ProcessInstances?: ProcessInstance[];
     ProcessSteps?: ProcessInstanceHistory[];
-    ProductUsageGrants?: ProductUsageGrant[];
     RelatedRecord?: FlowRecordRelation;
     Sequence?: number;
     Shares?: UnitOfMeasureShare[];
@@ -46,5 +45,4 @@ declare interface UnitOfMeasure extends SObject
      * The reciprocal relationship for {@link AttributeDefinition.UnitOfMeasureId}.
      */
     UnitOfMeasures?: AttributeDefinition[];
-    UsageResources?: UsageResource[];
 }

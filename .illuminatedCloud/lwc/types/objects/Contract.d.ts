@@ -384,7 +384,6 @@ declare interface Contract extends SObject
      * </table>
      */
     Area_manager_DE__r?: User;
-    AssetContractRelationships?: AssetContractRelationship[];
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     Attachments?: Attachment[];
@@ -1155,7 +1154,6 @@ declare interface Contract extends SObject
      * The reciprocal relationship for {@link SBQQ__ContractedPrice__c.SBQQ__Contract__c}.
      */
     ContractedPrices__r?: SBQQ__ContractedPrice__c[];
-    ContractItemPrices?: ContractItemPrice[];
     ContractNumber?: string;
     /**
      * <h3><b>Contract#</b></h3>
@@ -1877,10 +1875,6 @@ declare interface Contract extends SObject
      * </table>
      */
     Price__c?: number;
-    PriceAdjustmentSchedules?: PriceAdjustmentSchedule[];
-    Pricebook2?: Pricebook2;
-    Pricebook2Id?: string;
-    PricingSource?: string;
     ProcessInstances?: ProcessInstance[];
     ProcessSteps?: ProcessInstanceHistory[];
     /**
@@ -2019,8 +2013,6 @@ declare interface Contract extends SObject
      * </table>
      */
     Remains_rev_material__c?: number;
-    RenewalTerm2?: number;
-    RenewalTermUnit?: string;
     /**
      * <h3><b>Revenue: basis for allowance</b></h3>
      * <h4>Field Attributes</h4>

@@ -2,7 +2,6 @@
 
 declare interface AttributePicklistValue extends SObject 
 {
-    Abbreviation?: string;
     ActivityHistories?: ActivityHistory[];
     /**
      * The reciprocal relationship for {@link ApprovalSubmission.RelatedRecordId}.
@@ -13,7 +12,6 @@ declare interface AttributePicklistValue extends SObject
      */
     ApprovalWorkItems?: ApprovalWorkItem[];
     AssetAttributes?: AssetAttribute[];
-    AssetStatePeriodAttributes?: AssetStatePeriodAttribute[];
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     Attachments?: Attachment[];
@@ -30,7 +28,6 @@ declare interface AttributePicklistValue extends SObject
     CreatedById?: string;
     CreatedDate?: string;
     CurrencyIsoCode?: string;
-    DisplayValue?: string;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
@@ -45,14 +42,11 @@ declare interface AttributePicklistValue extends SObject
     FeedSubscriptionsForEntity?: EntitySubscription[];
     FirstPublishLocation?: ContentVersion;
     FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
-    FulfillmentAssetAttributes?: FulfillmentAssetAttribute[];
-    FulfillmentLineAttributes?: FulfillmentLineAttribute[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
     GeneratedDocRefObjects?: GeneratedDocument[];
     Histories?: AttributePicklistValueHistory[];
-    IsDefault?: boolean;
     IsDeleted?: boolean;
     LastModifiedBy?: User;
     LastModifiedById?: string;
@@ -64,7 +58,6 @@ declare interface AttributePicklistValue extends SObject
     Notes?: Note[];
     NotesAndAttachments?: NoteAndAttachment[];
     OpenActivities?: OpenActivity[];
-    OrderItemAttributes?: OrderItemAttribute[];
     Parent?: FeedComment;
     ParentEntities?: NetworkActivityAudit[];
     ParentRecord?: NetworkFeedResponseMetric;
@@ -72,16 +65,13 @@ declare interface AttributePicklistValue extends SObject
     PicklistId?: string;
     ProcessInstances?: ProcessInstance[];
     ProcessSteps?: ProcessInstanceHistory[];
-    QuoteLineItemAttributes?: QuoteLineItemAttribute[];
     RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
     RelatedTo?: EmailMessage;
     Relation?: EventRelationChangeEvent;
-    Sequence?: number;
     SobjectLookupValue?: AIInsightValue;
-    Status?: string;
     SystemModstamp?: string;
     Target?: AIRecordInsight;
     TargetObject?: PendingServiceRoutingInteractionInfo;
@@ -91,7 +81,5 @@ declare interface AttributePicklistValue extends SObject
      */
     Tasks?: Task[];
     Value?: string;
-    ValueTransformInputValues?: ValTfrm[];
-    ValueTransformOutputValues?: ValTfrm[];
     What?: EventChangeEvent;
 }

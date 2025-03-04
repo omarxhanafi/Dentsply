@@ -5,7 +5,7 @@
     <option name="apexLogLevel" value="DEBUG" />
     <option name="calloutsLogLevel" value="INFO" />
     <option name="changedOnly" value="false" />
-    <option name="connectionName" value="RLMDev" />
+    <option name="connectionName" value="DevMar25" />
     <option name="connectionType" value="OAUTH" />
     <option name="contextConfiguration" value="false" />
     <option name="databaseLogLevel" value="INFO" />
@@ -35,7 +35,7 @@
     <option name="apexLogLevel" value="DEBUG" />
     <option name="calloutsLogLevel" value="INFO" />
     <option name="changedOnly" value="false" />
-    <option name="connectionName" value="RLMDev" />
+    <option name="connectionName" value="DevMar25" />
     <option name="connectionType" value="OAUTH" />
     <option name="contextConfiguration" value="false" />
     <option name="databaseLogLevel" value="INFO" />

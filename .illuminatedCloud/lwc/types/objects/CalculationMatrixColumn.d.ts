@@ -20,7 +20,6 @@ declare interface CalculationMatrixColumn extends SObject
     CreatedDate?: string;
     CurrencyIsoCode?: string;
     DataType?: string;
-    DecisionOutputColumn?: PricingProcedureOutputMap[];
     DisplaySequence?: number;
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.

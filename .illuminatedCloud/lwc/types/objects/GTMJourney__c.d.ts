@@ -167,6 +167,18 @@ declare interface GTMJourney__c extends SObject
     ParentEntities?: NetworkActivityAudit[];
     ParentRecord?: NetworkFeedResponseMetric;
     PartnerRecord?: PartnerNetworkRecordConnection;
+    /**
+     * <h3><b>Playbooks</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text</td></tr>
+     * <tr><td nowrap><b>Formula:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">IF (TEXT(Type__c) = &#39;Implants&#39;, HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=b8ad3376e263cdd7a4cc8a874c6cbe1d&quot;, &quot;Discovery EV Implants Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=3171fbe38e2f63386312313872897798&quot;, &quot;Demo EV Implants Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=5411b0e274dcb9050cb3159664e323db&quot;, &quot;Onboarding EV Implants Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=5325bcfc238841e01f6fc8db7fd6382f&quot;, &quot;SOW Growth EV Implants Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=5f7f434d617fc5a7b2f470e770175dc5&quot;, &quot;Advocacy EV Implant Playbook&quot;) , IF (TEXT(Type__c) = &#39;MIS Implants&#39;, HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=d49d99837fa52f674836ce1d90495424&quot;, &quot;Discovery MIS Implant Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=0b1fcae123e79f800ce04e5881b6d32a&quot;, &quot;Demo MIS Implants Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=aeb8a8e71ed4363b29cde90ecb044d43&quot;, &quot;Onboarding MIS Implant Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=795aefccd86d604e3c81f7a5bb7d117b&quot;, &quot;SOW Growth MIS Implants Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=1f10d4bca3711829bf0c435d7cb7715d&quot;, &quot;Advocacy MIS Implants Playbook&quot;) , IF (TEXT(Type__c) = &#39;DS Lab&#39;, HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=c1d8140d2adcb6a515c879e38c8695a5&quot;, &quot;Discovery LDP Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=4b345222034ab158545987441484789a&quot;, &quot;Demo LDP Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=c8ed7a8d07e27c7919da7c8995e4b5fe&quot;, &quot;Onboarding LDP Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=53a85e68479609e591d3b81544002763&quot;, &quot;SOW LDP Growth Playbook&quot;) +BR()+ HYPERLINK(&quot;https://dentsplysirona.showpad.biz/webapp2/home?slug=8b45b9684e2dad489369c3fb02c46153&quot;, &quot;Advocacy LDP Playbook&quot;) , &#39;Not Available&#39; ) ) )</code></td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    Playbooks__c?: string;
     PrimaryRecord?: PendingServiceRoutingInteractionInfo;
     /**
      * The reciprocal relationship for {@link ProcessException.AttachedToId}.

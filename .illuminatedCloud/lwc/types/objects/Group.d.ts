@@ -18,8 +18,6 @@ declare interface Group extends SObject
     DoesIncludeBosses?: boolean;
     DoesSendEmailToMembers?: boolean;
     Email?: string;
-    FalloutQueue?: FulfillmentFalloutRule;
-    FulfillmentSteps?: FulfillmentStep[];
     Group?: OmniSupervisorConfigGroup;
     GroupMembers?: GroupMember[];
     LastModifiedBy?: User;

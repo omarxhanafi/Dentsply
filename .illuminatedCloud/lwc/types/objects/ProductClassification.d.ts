@@ -31,7 +31,6 @@ declare interface ProductClassification extends SObject
     CreatedById?: string;
     CreatedDate?: string;
     CurrencyIsoCode?: string;
-    DecompositionRules?: ProductFulfillmentDecompRule[];
     /**
      * The reciprocal relationship for {@link DocumentEnvelope.ReferenceObjectId}.
      */
@@ -74,7 +73,6 @@ declare interface ProductClassification extends SObject
      * The reciprocal relationship for {@link ProductClassificationAttr.ProductClassificationId}.
      */
     ProductClassificationAttrs?: ProductClassificationAttr[];
-    ProductConfigFlowAssignments?: ProductConfigFlowAssignment[];
     RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.

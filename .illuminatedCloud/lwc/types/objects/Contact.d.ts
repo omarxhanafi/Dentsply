@@ -3498,6 +3498,9 @@ declare interface Contact extends SObject
      * </table>
      */
     Qualtrics_Survey__c?: string;
+    /**
+     * The reciprocal relationship for {@link Quote.ContactId}.
+     */
     Quotes?: Quote[];
     Quotes__r?: Quote[];
     /**

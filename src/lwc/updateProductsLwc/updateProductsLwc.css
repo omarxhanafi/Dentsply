@@ -1,0 +1,43 @@
+.slds-box {
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #dddbda;
+    border-radius: 0.25rem;
+}
+
+.slds-grid {
+    margin-bottom: 0.5rem;
+}
+
+.slds-col {
+    padding: 0.5rem;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.animated-progress {
+    position: relative;
+    height: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.animated-progress .progress-bar {
+    position: absolute;
+    height: 100%;
+    background-color: #0070d2;
+    border-radius: 10px;
+    animation: moveProgress 2s linear infinite;
+}
+
+@keyframes moveProgress {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}

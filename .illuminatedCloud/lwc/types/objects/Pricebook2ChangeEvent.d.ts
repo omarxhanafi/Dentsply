@@ -53,8 +53,6 @@ declare interface Pricebook2ChangeEvent extends SObject
      * </table>
      */
     ConversionRate__c?: number;
-    CostBook?: CostBook;
-    CostBookId?: string;
     CreatedBy?: User;
     CreatedById?: string;
     CreatedDate?: string;
@@ -185,17 +183,6 @@ declare interface Pricebook2ChangeEvent extends SObject
      */
     Indirect_orders_Show_prices__c?: boolean;
     IsActive?: boolean;
-    /**
-     * <h3><b>Is Advanced (RLM) ?</b></h3>
-     * <p>If a Pricebook &quot;is advaced&quot;, it will enable the RLM Experience. The following is applied:
-     * - created orders are assigned to the &quot;Advanced Order&quot; Record Type</p>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Checkbox</td></tr>
-     * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
-     * </table>
-     */
-    IsAdvanced__c?: boolean;
     IsArchived?: boolean;
     IsStandard?: boolean;
     LastModifiedBy?: User;
@@ -553,6 +540,4 @@ declare interface Pricebook2ChangeEvent extends SObject
      * </table>
      */
     Type_of_Price__c?: string;
-    ValidFrom?: string;
-    ValidTo?: string;
 }

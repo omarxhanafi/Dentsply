@@ -2,7 +2,6 @@
 
 declare interface ClauseCatgConfiguration extends SObject 
 {
-    CategoryReference?: DocumentClauseSet[];
     CreatedBy?: User;
     CreatedById?: string;
     CreatedDate?: string;

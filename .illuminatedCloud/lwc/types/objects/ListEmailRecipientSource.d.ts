@@ -2,22 +2,22 @@
 
 declare interface ListEmailRecipientSource extends SObject 
 {
-    ContextRecord: FlowExecutionErrorEvent;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
-    CurrencyIsoCode: string;
-    IsDeleted: boolean;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    ListEmail: ListEmail;
-    ListEmailId: string;
-    Name: string;
-    RelatedRecord: FlowRecordRelation;
-    SourceList: SObject;
-    SourceListId: string;
-    SourceType: string;
-    SystemModstamp: string;
-    TargetObject: PendingServiceRoutingInteractionInfo;
+    ContextRecord?: FlowExecutionErrorEvent;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
+    CurrencyIsoCode?: string;
+    IsDeleted?: boolean;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    ListEmail?: ListEmail;
+    ListEmailId?: string;
+    Name?: string;
+    RelatedRecord?: FlowRecordRelation;
+    SourceList?: SObject;
+    SourceListId?: string;
+    SourceType?: string;
+    SystemModstamp?: string;
+    TargetObject?: PendingServiceRoutingInteractionInfo;
 }

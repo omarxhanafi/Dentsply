@@ -3,7 +3,6 @@
 declare interface ProductSellingModel extends SObject 
 {
     ActivityHistories?: ActivityHistory[];
-    AssetActionSources?: AssetActionSource[];
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     Attachments?: Attachment[];
@@ -50,7 +49,6 @@ declare interface ProductSellingModel extends SObject
     Notes?: Note[];
     NotesAndAttachments?: NoteAndAttachment[];
     OpenActivities?: OpenActivity[];
-    OrderItems?: OrderItem[];
     Parent?: FeedComment;
     ParentEntities?: NetworkActivityAudit[];
     /**
@@ -62,12 +60,10 @@ declare interface ProductSellingModel extends SObject
      * The reciprocal relationship for {@link ProductRelatedComponent.ParentSellingModelId}.
      */
     ParentSellingModel?: ProductRelatedComponent;
-    PriceAdjustmentTiers?: PriceAdjustmentTier[];
     PricebookEntries?: PricebookEntry[];
-    PriceBookEntryDerivedPrices?: PriceBookEntryDerivedPrice[];
     PricingTerm?: number;
     PricingTermUnit?: string;
-    ProductSellingModel?: ContractItemPrice;
+    ProductSellingModel?: PricebookEntryChangeEvent;
     ProductSellingModelOptions?: ProductSellingModelOption[];
     RelatedRecord?: FlowRecordRelation;
     /**

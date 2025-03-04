@@ -221,12 +221,14 @@ declare interface Case extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M0000040GYWUA2</code></td><td>Queue: IT: Technical Admin</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G0J000003ZRtuUAG</code></td><td>Queue: IT: Technical Customer Support</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M0000040EIuUAM</code></td><td>Queue: RU: Support Suresmile</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00GKA000000MFaw</code></td><td>Queue: UK: Commercial Sales Support</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004GTcqUAG</code></td><td>Queue: UK/IE: CS - IMPL</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004GTcvUAG</code></td><td>Queue: UK/IE: CS - PRE</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004GTd0UAG</code></td><td>Queue: UK/IE: CS - SuperUser</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004CLVS</code></td><td>Queue: UK/IE: Customer Service Admin</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004CQ7Q</code></td><td>Queue: UK/IE: Subscribe &amp; Save</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004GUd6UAG</code></td><td>Queue: UK/IE: SureSmile Support</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M0000040DCCUA2</code></td><td>Queue: UK/IE: Tech Support</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G0J000003GzvNUAS</code></td><td>Queue: US Guide Tier 2 Support</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G0J000003GzvMUAS</code></td><td>Queue: US Atlantis Tier 2 Support</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G0J000003GzvOUAS</code></td><td>Queue: US Manager Support</td><td nowrap>true</td></tr>
@@ -246,7 +248,6 @@ declare interface Case extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004GUcDUAW</code></td><td>Queue: SureSmile - Global Support</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000004GUbyUAG</code></td><td>Queue: SureSmile - Berlin Support</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00G6M000003RXdL</code></td><td>Queue: SureSmile - Clinical Assistance</td><td nowrap>true</td></tr>
-     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">00GKA000000MFaw</code></td><td>Queue: UK: Commercial Sales Support</td><td nowrap>true</td></tr>
      * </table>
      */
     Assign_To__c?: string;
@@ -1758,6 +1759,7 @@ declare interface Case extends SObject
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Primesolution</code></td><td>Primesolution</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Prophy angles</code></td><td>Prophy angles</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Provisional</code></td><td>Provisional</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Pureclave</code></td><td>Pureclave</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Regenerative</code></td><td>Regenerative</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Resin</code></td><td>Resin</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Retainer Brite</code></td><td>Retainer Brite</td><td nowrap>true</td></tr>

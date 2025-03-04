@@ -3,7 +3,6 @@
 declare interface ProrationPolicy extends SObject 
 {
     ArePartialPeriodsAllowed?: boolean;
-    AssetActionSources?: AssetActionSource[];
     ContextRecord?: FlowExecutionErrorEvent;
     CreatedBy?: User;
     CreatedById?: string;
@@ -15,11 +14,8 @@ declare interface ProrationPolicy extends SObject
     LastReferencedDate?: string;
     LastViewedDate?: string;
     Name?: string;
-    OrderItems?: OrderItem[];
     ProductSellingModelOptions?: ProductSellingModelOption[];
-    ProrationPolicy?: OrderItemChangeEvent;
     ProrationPolicyType?: string;
-    QuoteLineItems?: QuoteLineItem[];
     RelatedRecord?: FlowRecordRelation;
     RemainderStrategy?: string;
     SystemModstamp?: string;

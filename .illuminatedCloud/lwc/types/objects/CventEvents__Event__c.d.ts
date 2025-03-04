@@ -320,6 +320,25 @@ declare interface CventEvents__Event__c extends SObject
      */
     CventEvents__pkg_EventFormat__c?: string;
     /**
+     * <h3><b>Event Status</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Picklist</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>true</td></tr>
+     * </table>
+     * <h4>Picklist Values</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>API Name</b></td><td nowrap><b>Label</b></td><td nowrap><b>Active</b></td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Upcoming</code></td><td>Upcoming</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Ongoing</code></td><td>Ongoing</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Completed</code></td><td>Completed</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Cancelled</code></td><td>Cancelled</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Deleted</code></td><td>Deleted</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Archived</code></td><td>Archived</td><td nowrap>true</td></tr>
+     * </table>
+     */
+    CventEvents__pkg_EventStatus__c?: string;
+    /**
      * <h3><b>Event Stub</b></h3>
      * <h4>Field Attributes</h4>
      * <table border="0" valign="top">
@@ -406,6 +425,33 @@ declare interface CventEvents__Event__c extends SObject
      * </table>
      */
     CventEvents__pkg_LanguageCountry__c?: string;
+    /**
+     * <h3><b>Last Effective Sync Date</b></h3>
+     * <p>Date and time of the most recent sync when attendee data was pulled from Cvent.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Date Time</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    CventEvents__pkg_LastEffectiveSyncDate__c?: string;
+    /**
+     * <h3><b>Last Effective Sync Status</b></h3>
+     * <p>Status of the most recent sync when attendee data was pulled from Cvent.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Picklist</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * </table>
+     * <h4>Picklist Values</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>API Name</b></td><td nowrap><b>Label</b></td><td nowrap><b>Active</b></td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Success</code></td><td>Success</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Partial Error</code></td><td>Partial Error</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Error</code></td><td>Error</td><td nowrap>true</td></tr>
+     * </table>
+     */
+    CventEvents__pkg_LastEffectiveSyncStatus__c?: string;
     /**
      * <h3><b>Last Modified Date</b></h3>
      * <h4>Field Attributes</h4>
@@ -640,7 +686,7 @@ declare interface CventEvents__Event__c extends SObject
      */
     CventEvents__pkg_StateName__c?: string;
     /**
-     * <h3><b>Status</b></h3>
+     * <h3><b>Registration Status</b></h3>
      * <h4>Field Attributes</h4>
      * <table border="0" valign="top">
      * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Picklist</td></tr>

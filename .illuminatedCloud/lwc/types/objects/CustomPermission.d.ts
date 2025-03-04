@@ -21,8 +21,6 @@ declare interface CustomPermission extends SObject
     LastModifiedDate?: string;
     MasterLabel?: string;
     NamespacePrefix?: string;
-    ObjectStateTransitions?: ObjectStateTransition[];
-    ObjectStateValues?: ObjectStateValue[];
     SetupEntityAccessItems?: SetupEntityAccess[];
     SystemModstamp?: string;
 }

@@ -2,6 +2,6 @@
 
 declare interface ContentTagSubscription extends SObject 
 {
-    User: User;
-    UserId: string;
+    User?: User;
+    UserId?: string;
 }

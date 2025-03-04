@@ -112,8 +112,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     AXRetailPrice__c?: number;
-    BillingFrequency2?: string;
-    BillingReference2?: string;
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -142,9 +140,7 @@ declare interface OrderItemChangeEvent extends SObject
     CreatedById?: string;
     CreatedDate?: string;
     CurrencyIsoCode?: string;
-    CustomProductName?: string;
     Description?: string;
-    Discount?: number;
     /**
      * <h3><b>Discount Approval Evaluation</b></h3>
      * <h4>Field Attributes</h4>
@@ -167,7 +163,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     Discount_Percent__c?: number;
-    DiscountAmount?: number;
     /**
      * <h3><b>Discount Approval Line Item</b></h3>
      * <h4>Field Attributes</h4>
@@ -200,7 +195,6 @@ declare interface OrderItemChangeEvent extends SObject
      */
     Distr__c?: number;
     EndDate?: Date;
-    EndQuantity?: number;
     /**
      * <h3><b>ERP Account for Sample</b></h3>
      * <h4>Field Attributes</h4>
@@ -254,8 +248,6 @@ declare interface OrderItemChangeEvent extends SObject
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;
-    LegalEntity?: LegalEntity;
-    LegalEntityId?: string;
     /**
      * <h3><b>Line Approval Level</b></h3>
      * <h4>Field Attributes</h4>
@@ -345,7 +337,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     MTF_EvaluationNumber__c?: number;
-    NetTotalPrice?: number;
     /**
      * <h3><b>Nett Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -358,7 +349,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     NettPrice__c?: number;
-    NetUnitPrice?: number;
     /**
      * <h3><b>No Contract</b></h3>
      * <h4>Field Attributes</h4>
@@ -435,14 +425,8 @@ declare interface OrderItemChangeEvent extends SObject
      */
     Offer_Code_Name__c?: string;
     Order?: Order;
-    OrderAction?: OrderAction;
-    OrderActionId?: string;
     OrderId?: string;
-    OrderItemGroup?: OrderItemGroup;
-    OrderItemGroupId?: string;
     OrderItemNumber?: string;
-    OrderItemRecipient?: OrderItemRecipient;
-    OrderItemRecipientId?: string;
     OriginalOrderItem?: OrderItem;
     OriginalOrderItemId?: string;
     /**
@@ -454,15 +438,8 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     ParentKit__c?: boolean;
-    PartnerDiscountPercent?: number;
-    PartnerUnitPrice?: number;
-    PeriodBoundary?: string;
-    PeriodBoundaryDay?: number;
-    PeriodBoundaryStartMonth?: string;
     PricebookEntry?: PricebookEntry;
     PricebookEntryId?: string;
-    PriceWaterfallIdentifier?: string;
-    PricingTermCount?: number;
     Product2?: Product2;
     Product2Id?: string;
     /**
@@ -502,15 +479,7 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     Product_Type__c?: string;
-    ProductSellingModel?: ProductSellingModel;
-    ProductSellingModelId?: string;
-    ProrationPolicy?: ProrationPolicy;
-    ProrationPolicyId?: string;
     Quantity?: number;
-    QuoteLineItem?: QuoteLineItem;
-    QuoteLineItemId?: string;
-    RelatedOrderItem?: OrderItem;
-    RelatedOrderItemId?: string;
     ReplayId?: string;
     /**
      * <h3><b>Retail Price</b></h3>
@@ -532,7 +501,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     Reward__c?: number;
-    RoundedLineAmount?: number;
     /**
      * <h3><b>Sales Special</b></h3>
      * <h4>Field Attributes</h4>
@@ -622,10 +590,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     SIMPLANT_Software_Line_Item__c?: number;
-    StartQuantity?: number;
-    Status?: string;
-    TaxTreatment?: TaxTreatment;
-    TaxTreatmentId?: string;
     /**
      * <h3><b>Total Line Price</b></h3>
      * <h4>Field Attributes</h4>
@@ -636,7 +600,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     Total_Line_Item_Price__c?: number;
-    TotalAdjustmentAmount?: number;
     /**
      * <h3><b>Total Cost</b></h3>
      * <h4>Field Attributes</h4>
@@ -673,7 +636,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     TotalDiscountAmount__c?: number;
-    TotalLineAmount?: number;
     /**
      * <h3><b>Total Line Item Price PDF Butler</b></h3>
      * <p>Calculating Total Amount with TAX/VAT of &quot;Total_Line_Item_Price__c&quot;
@@ -713,9 +675,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     TotalRetailPrice__c?: number;
-    TotalTaxAmount?: number;
-    Type?: string;
-    TypeCode?: string;
     /**
      * <h3><b>Unit price</b></h3>
      * <h4>Field Attributes</h4>
@@ -756,7 +715,6 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     UsedCouponValue__c?: number;
-    ValidationResult?: string;
     /**
      * <h3><b>Value of free product</b></h3>
      * <h4>Field Attributes</h4>

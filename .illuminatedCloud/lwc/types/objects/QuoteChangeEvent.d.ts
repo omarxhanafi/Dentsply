@@ -53,24 +53,6 @@ declare interface QuoteChangeEvent extends SObject
      */
     Approval_Submission_DateTime__c?: string;
     BillingAddress?: Address;
-    /**
-     * <h3><b>Billing Address</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    BillingAddress__c?: string;
-    /**
-     * <h3><b>Billing Address</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    BillingAddress__r?: Address__c;
     BillingCity?: string;
     BillingCountry?: string;
     BillingGeocodeAccuracy?: string;
@@ -80,8 +62,6 @@ declare interface QuoteChangeEvent extends SObject
     BillingPostalCode?: string;
     BillingState?: string;
     BillingStreet?: string;
-    BillToContact?: Contact;
-    BillToContactId?: string;
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -94,7 +74,6 @@ declare interface QuoteChangeEvent extends SObject
      * </table>
      */
     Brand__c?: string;
-    CalculationStatus?: string;
     ChangeEventHeader?: ChangeEventHeader;
     Contact?: Contact;
     ContactId?: string;
@@ -229,7 +208,6 @@ declare interface QuoteChangeEvent extends SObject
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;
-    LastPricedDate?: string;
     /**
      * <h3><b>Leasing Account</b></h3>
      * <h4>Field Attributes</h4>
@@ -248,8 +226,6 @@ declare interface QuoteChangeEvent extends SObject
      * </table>
      */
     LeasingAccount__r?: Account;
-    LegalEntity?: LegalEntity;
-    LegalEntityId?: string;
     LineItemCount?: number;
     /**
      * <h3><b>Manager</b></h3>
@@ -298,11 +274,8 @@ declare interface QuoteChangeEvent extends SObject
      * </table>
      */
     Origin__c?: string;
-    OriginalActionType?: string;
     Owner?: User;
     OwnerId?: string;
-    PartnerAccount?: Account;
-    PartnerAccountId?: string;
     /**
      * <h3><b>Payment Terms</b></h3>
      * <h4>Field Attributes</h4>
@@ -463,24 +436,6 @@ declare interface QuoteChangeEvent extends SObject
      */
     SelectQuoteTemplate__c?: string;
     ShippingAddress?: Address;
-    /**
-     * <h3><b>Shipping Address</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    ShippingAddress__c?: string;
-    /**
-     * <h3><b>Shipping Address</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    ShippingAddress__r?: Address__c;
     ShippingCity?: string;
     ShippingCountry?: string;
     ShippingGeocodeAccuracy?: string;
@@ -491,25 +446,6 @@ declare interface QuoteChangeEvent extends SObject
     ShippingPostalCode?: string;
     ShippingState?: string;
     ShippingStreet?: string;
-    /**
-     * <h3><b>Source Record</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Source_Record__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    SourceRecord__c?: string;
-    /**
-     * <h3><b>Source Record</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Source_Record__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    SourceRecord__r?: Source_Record__c;
-    StartDate?: Date;
     Status?: string;
     Subtotal?: number;
     Tax?: number;
@@ -535,7 +471,6 @@ declare interface QuoteChangeEvent extends SObject
      * </table>
      */
     UserCountry__c?: string;
-    ValidationResult?: string;
     /**
      * <h3><b>Warranty Period</b></h3>
      * <h4>Field Attributes</h4>

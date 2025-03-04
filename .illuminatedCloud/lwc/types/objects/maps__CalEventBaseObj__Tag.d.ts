@@ -2,13 +2,13 @@
 
 declare interface maps__CalEventBaseObj__Tag extends SObject 
 {
-    CreatedDate: string;
-    IsDeleted: boolean;
-    Item: CalEventBaseObj__c;
-    ItemId: string;
-    Name: string;
-    SystemModstamp: string;
-    TagDefinition: TagDefinition;
-    TagDefinitionId: string;
-    Type: string;
+    CreatedDate?: string;
+    IsDeleted?: boolean;
+    Item?: CalEventBaseObj__c;
+    ItemId?: string;
+    Name?: string;
+    SystemModstamp?: string;
+    TagDefinition?: TagDefinition;
+    TagDefinitionId?: string;
+    Type?: string;
 }

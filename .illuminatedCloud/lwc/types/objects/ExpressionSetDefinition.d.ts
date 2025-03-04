@@ -6,10 +6,9 @@ declare interface ExpressionSetDefinition extends SObject
     CreatedBy?: User;
     CreatedById?: string;
     CreatedDate?: string;
-    DefaultPricingProcedureForRecipe?: PricingRecipe[];
     DeveloperName?: string;
     ExecutionScale?: string;
-    ExpressionSetDefinition?: ExpressionSetDefinitionContextDefinition;
+    ExpressionSetDefinition?: ExpressionSetDefinitionVersion[];
     ExpressionSetDefinitions?: ExpressionSet[];
     IsDeleted?: boolean;
     Language?: string;
@@ -18,7 +17,5 @@ declare interface ExpressionSetDefinition extends SObject
     LastModifiedDate?: string;
     MasterLabel?: string;
     NamespacePrefix?: string;
-    ProcedurePlanOptionExpSetDefinition?: ProcedurePlanOption[];
-    SalesTransactionTypes?: SalesTransactionType[];
     SystemModstamp?: string;
 }

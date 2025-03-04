@@ -13,7 +13,6 @@ declare interface ObjectStateDefinition extends SObject
      * The reciprocal relationship for {@link ApprovalWorkItem.RelatedRecordId}.
      */
     ApprovalWorkItems?: ApprovalWorkItem[];
-    AppUsageType?: string;
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     Attachments?: Attachment[];

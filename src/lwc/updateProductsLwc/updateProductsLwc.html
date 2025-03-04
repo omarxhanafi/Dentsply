@@ -1,0 +1,103 @@
+<template>
+    <div class="slds-p-around_medium">
+        <lightning-card title={labels.batchUpdateProducts} icon-name="custom:custom63">
+            <div class="slds-p-around_medium">
+                <!-- Button to run the batch job -->
+                <lightning-button
+                        label={labels.executeBatch}
+                        onclick={handleRunBatch}
+                        disabled={isRunning}
+                ></lightning-button>
+
+                <!-- Progress bar for the running job -->
+                <template if:true={isRunning}>
+                    <div class="slds-m-top_small">
+                        <lightning-progress-bar
+                                value={progress}
+                                size="large"
+                                variant="circular"
+                                class="animated-progress"
+                        ></lightning-progress-bar>
+                    </div>
+                    <div class="slds-text-align_center slds-m-top_small">
+                        {progressMessage}
+                    </div>
+                </template>
+
+                <!-- Historical jobs table -->
+                <template if:true={historicalJobs.length}>
+                    <h3 class="slds-text-heading_small slds-m-top_large slds-m-bottom_medium">
+                        {labels.previousJobs}
+                    </h3>
+
+                    <!-- Collapsible details for the expanded row -->
+                    <template if:true={expandedRowDetails}>
+                        <div class="slds-m-top_small">
+                            <div class="slds-box slds-theme_default">
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <strong>{labels.jobId}:</strong> {expandedRowDetails.JobId__c}
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <strong>{labels.status}: </strong>
+                                        <strong class={expandedRowDetails.statusClass}>
+                                            {expandedRowDetails.Status__c}
+                                        </strong>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <strong>{labels.startTime}:</strong> {expandedRowDetails.StartTimeFormatted}
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <strong>{labels.endTime}:</strong> {expandedRowDetails.EndTimeFormatted}
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <strong>{labels.duration}:</strong> {expandedRowDetails.DurationFormatted}
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <strong>{labels.productCount}:</strong> {expandedRowDetails.ProductCount__c}
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <strong>{labels.errors}:</strong> {expandedRowDetails.NumberOfErrors__c}
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <strong>{labels.itemsProcessed}:</strong> {expandedRowDetails.JobItemsProcessed__c}
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <strong>{labels.errorMessages}:</strong> {expandedRowDetails.ErrorMessages__c}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <div class="slds-m-top_small">
+                        <lightning-datatable
+                                key-field="JobId__c"
+                                data={paginatedJobs}
+                                columns={columns}
+                                hide-checkbox-column
+                                onrowaction={toggleDetails}
+                        ></lightning-datatable>
+                    </div>
+
+                    <!-- Pagination controls -->
+                    <div class="slds-m-top_medium slds-align_absolute-center">
+                        <lightning-button
+                                label={labels.previous}
+                                onclick={previousPage}
+                                disabled={isPreviousDisabled}
+                        ></lightning-button>
+                        <span class="slds-m-horizontal_small">
+                            {pageOfLabel}
+                        </span>
+                        <lightning-button
+                                label={labels.next}
+                                onclick={nextPage}
+                                disabled={isNextDisabled}
+                        ></lightning-button>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>

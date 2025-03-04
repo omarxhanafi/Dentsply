@@ -4178,7 +4178,6 @@ declare interface Account extends SObject
      */
     Free_Insurance_Medical_Care__c?: number;
     From?: EmailMessage;
-    FulfillmentAssets?: FulfillmentAsset[];
     /**
      * The reciprocal relationship for {@link FulfillmentOrder.AccountId}.
      */
@@ -5764,7 +5763,6 @@ declare interface Account extends SObject
      * </table>
      */
     Order_value_not_invoiced__c?: number;
-    OrderItemRecipients?: OrderItemRecipient[];
     Orders?: Order[];
     /**
      * The reciprocal relationship for {@link Order.Distributor_contact__c}.
@@ -6288,6 +6286,9 @@ declare interface Account extends SObject
     PersonOtherState?: string;
     PersonOtherStreet?: string;
     PersonPersonRecord?: UserEmailPreferredPerson[];
+    /**
+     * The reciprocal relationship for {@link Quote.ContactId}.
+     */
     PersonQuotes?: Quote[];
     PersonRecord?: UserEmailPreferredPersonChangeEvent;
     PersonRelatedPersons?: VideoCallParticipant[];
@@ -6645,8 +6646,6 @@ declare interface Account extends SObject
      * The reciprocal relationship for {@link SBQQ__QuoteLineGroup__c.SBQQ__Account__c}.
      */
     QuoteLineGroups__r?: SBQQ__QuoteLineGroup__c[];
-    QuoteLineItemRecipients?: QuoteLineItemRecipient[];
-    Quotes?: Quote[];
     Quotes__pr?: Quote[];
     /**
      * The reciprocal relationship for {@link Quote.LeasingAccount__c}.

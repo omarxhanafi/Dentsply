@@ -69,24 +69,6 @@ declare interface Quote extends SObject
     AttachedContentNotes?: AttachedContentNote[];
     Attachments?: Attachment[];
     BillingAddress?: Address;
-    /**
-     * <h3><b>Billing Address</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    BillingAddress__c?: string;
-    /**
-     * <h3><b>Billing Address</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    BillingAddress__r?: Address__c;
     BillingCity?: string;
     BillingCountry?: string;
     BillingGeocodeAccuracy?: string;
@@ -96,8 +78,6 @@ declare interface Quote extends SObject
     BillingPostalCode?: string;
     BillingState?: string;
     BillingStreet?: string;
-    BillToContact?: Contact;
-    BillToContactId?: string;
     /**
      * <h3><b>Brand</b></h3>
      * <h4>Field Attributes</h4>
@@ -110,7 +90,6 @@ declare interface Quote extends SObject
      * </table>
      */
     Brand__c?: string;
-    CalculationStatus?: string;
     CanCreateQuoteLineItems?: boolean;
     CombinedAttachments?: CombinedAttachment[];
     Contact?: Contact;
@@ -272,7 +251,6 @@ declare interface Quote extends SObject
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;
-    LastPricedDate?: string;
     LastReferencedDate?: string;
     LastViewedDate?: string;
     /**
@@ -293,8 +271,6 @@ declare interface Quote extends SObject
      * </table>
      */
     LeasingAccount__r?: Account;
-    LegalEntity?: LegalEntity;
-    LegalEntityId?: string;
     LineItemCount?: number;
     LinkedEntity?: ContentDocumentLinkChangeEvent;
     /**
@@ -335,7 +311,6 @@ declare interface Quote extends SObject
     OpenActivities?: OpenActivity[];
     Opportunity?: Opportunity;
     OpportunityId?: string;
-    Orders?: Order[];
     /**
      * <h3><b>Origin</b></h3>
      * <h4>Field Attributes</h4>
@@ -348,14 +323,11 @@ declare interface Quote extends SObject
      * </table>
      */
     Origin__c?: string;
-    OriginalActionType?: string;
     Owner?: SObject;
     OwnerId?: string;
     Parent?: DigitalSignatureChangeEvent;
     ParentEntities?: NetworkActivityAudit[];
     ParentRecord?: NetworkFeedResponseMetric;
-    PartnerAccount?: Account;
-    PartnerAccountId?: string;
     /**
      * <h3><b>Payment Terms</b></h3>
      * <h4>Field Attributes</h4>
@@ -420,16 +392,14 @@ declare interface Quote extends SObject
     PlannedFinancing__c?: string;
     Pricebook2?: Pricebook2;
     Pricebook2Id?: string;
-    PrimaryRecord?: QuoteToOrderErrDtlEvent;
     PrimaryRevenueTransactionErrorLogs?: RevenueTransactionErrorLog[];
     ProcessInstances?: ProcessInstance[];
     ProcessSteps?: ProcessInstanceHistory[];
-    Quote?: OrderChangeEvent;
+    Quote?: QuoteLineItemChangeEvent;
     /**
      * The reciprocal relationship for {@link QuoteProductBundle__c.Quote__c}.
      */
     Quote_Product_Bundles__r?: QuoteProductBundle__c[];
-    QuoteActions?: QuoteAction[];
     /**
      * <h3><b>Quote Date</b></h3>
      * <p>The date of the quote that is used in PDF Butler and can be considered as the start date of the quote from customer perspective. &quot;Last_Approval_Action_DateTime__c&quot; and &quot;CreatedDate&quot; if not.</p>
@@ -442,10 +412,7 @@ declare interface Quote extends SObject
      */
     QuoteDate__c?: Date;
     QuoteDocuments?: QuoteDocument[];
-    QuoteLineGroups?: QuoteLineGroup[];
-    QuoteLineItemRecipients?: QuoteLineItemRecipient[];
     QuoteLineItems?: QuoteLineItem[];
-    QuoteLineRelationships?: QuoteLineRelationship[];
     /**
      * <h3><b>Quote Lines Discount Changed</b></h3>
      * <p>Shows the number of Quote Line Items rows where the final price has been changed ( Sales Price or Discount has been modified by user) - either Increased or Decreased.</p>
@@ -479,7 +446,6 @@ declare interface Quote extends SObject
     RecordTypeId?: string;
     ReferenceEntityAsyncOperationTrackers?: AsyncOperationTracker[];
     ReferenceEntityRevenueAsyncOperations?: RevenueAsyncOperation[];
-    ReferenceObject?: SalesTransactionFulfillReq;
     RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
@@ -545,24 +511,6 @@ declare interface Quote extends SObject
     SelectQuoteTemplate__c?: string;
     Shares?: QuoteShare[];
     ShippingAddress?: Address;
-    /**
-     * <h3><b>Shipping Address</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    ShippingAddress__c?: string;
-    /**
-     * <h3><b>Shipping Address</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Address__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    ShippingAddress__r?: Address__c;
     ShippingCity?: string;
     ShippingCountry?: string;
     ShippingGeocodeAccuracy?: string;
@@ -574,25 +522,6 @@ declare interface Quote extends SObject
     ShippingState?: string;
     ShippingStreet?: string;
     SobjectLookupValue?: AIInsightValue;
-    /**
-     * <h3><b>Source Record</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Source_Record__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    SourceRecord__c?: string;
-    /**
-     * <h3><b>Source Record</b></h3>
-     * <h4>Field Attributes</h4>
-     * <table border="0" valign="top">
-     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Lookup({@link Source_Record__c})</td></tr>
-     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
-     * </table>
-     */
-    SourceRecord__r?: Source_Record__c;
-    StartDate?: Date;
     Status?: string;
     Subtotal?: number;
     /**
@@ -631,7 +560,6 @@ declare interface Quote extends SObject
      * </table>
      */
     UserCountry__c?: string;
-    ValidationResult?: string;
     /**
      * <h3><b>Warranty Period</b></h3>
      * <h4>Field Attributes</h4>

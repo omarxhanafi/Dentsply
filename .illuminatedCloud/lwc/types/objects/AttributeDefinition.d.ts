@@ -12,11 +12,9 @@ declare interface AttributeDefinition extends SObject
      */
     ApprovalWorkItems?: ApprovalWorkItem[];
     AssetAttributes?: AssetAttribute[];
-    AssetStatePeriodAttributes?: AssetStatePeriodAttribute[];
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     Attachments?: Attachment[];
-    AttributeAdjustmentConditions?: AttributeAdjustmentCondition[];
     /**
      * The reciprocal relationship for {@link AttributeCategoryAttribute.AttributeDefinitionId}.
      */
@@ -43,24 +41,18 @@ declare interface AttributeDefinition extends SObject
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
      */
     Emails?: EmailMessage[];
-    EnrichmentDestinations?: ProductDecompEnrichmentRule[];
-    EnrichmentSources?: ProductDecompEnrichmentRule[];
     EventRelations?: EventRelation[];
     Events?: Event[];
     Feeds?: AttributeDefinitionFeed[];
     FeedSubscriptionsForEntity?: EntitySubscription[];
     FirstPublishLocation?: ContentVersion;
     FlowOrchestrationWorkItems?: FlowOrchestrationWorkItem[];
-    FulfillmentAssetAttributes?: FulfillmentAssetAttribute[];
-    FulfillmentLineAttributes?: FulfillmentLineAttribute[];
     /**
      * The reciprocal relationship for {@link GeneratedDocument.ReferenceObjectId}.
      */
     GeneratedDocRefObjects?: GeneratedDocument[];
     Histories?: AttributeDefinitionHistory[];
-    IsActive?: boolean;
     IsDeleted?: boolean;
-    IsRequired?: boolean;
     Label?: string;
     LastModifiedBy?: User;
     LastModifiedById?: string;
@@ -72,7 +64,6 @@ declare interface AttributeDefinition extends SObject
     Notes?: Note[];
     NotesAndAttachments?: NoteAndAttachment[];
     OpenActivities?: OpenActivity[];
-    OrderItemAttributes?: OrderItemAttribute[];
     Owner?: SObject;
     OwnerId?: string;
     Parent?: FeedComment;
@@ -90,7 +81,6 @@ declare interface AttributeDefinition extends SObject
      * The reciprocal relationship for {@link ProductClassificationAttr.AttributeDefinitionId}.
      */
     ProductClassificationAttrs?: ProductClassificationAttr[];
-    QuoteLineItemAttributes?: QuoteLineItemAttribute[];
     RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.

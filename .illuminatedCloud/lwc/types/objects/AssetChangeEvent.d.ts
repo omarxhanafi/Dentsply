@@ -123,7 +123,6 @@ declare interface AssetChangeEvent extends SObject
      */
     DSI_serial_number__c?: string;
     GeocodeAccuracy?: string;
-    HasLifecycleManagement?: boolean;
     InstallDate?: Date;
     /**
      * <h3><b>Installed At (Id)</b></h3>
@@ -153,8 +152,6 @@ declare interface AssetChangeEvent extends SObject
     LastModifiedById?: string;
     LastModifiedDate?: string;
     Latitude?: number;
-    LifecycleEndDate?: string;
-    LifecycleStartDate?: string;
     Location?: Location;
     LocationId?: string;
     Longitude?: number;
@@ -222,7 +219,6 @@ declare interface AssetChangeEvent extends SObject
     ParentId?: string;
     PostalCode?: string;
     Price?: number;
-    PricingSource?: string;
     Product2?: Product2;
     Product2Id?: string;
     /**
@@ -281,8 +277,6 @@ declare interface AssetChangeEvent extends SObject
      * </table>
      */
     RegistrationDate__c?: Date;
-    RenewalTerm?: number;
-    RenewalTermUnit?: string;
     ReplayId?: string;
     /**
      * <h3><b>Revenue Synergy commodity code</b></h3>

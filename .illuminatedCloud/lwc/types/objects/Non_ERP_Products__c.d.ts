@@ -199,6 +199,19 @@ declare interface Non_ERP_Products__c extends SObject
     LastModifiedDate?: string;
     LastReferencedDate?: string;
     LastViewedDate?: string;
+    /**
+     * <h3><b>Lifespan (in Months)</b></h3>
+     * <p>This field controls the lifespan of the products - used in the integrated solution to decide after how long period of time in months a product profiling record should be set up inactive.
+     * If field is left empty the product profiling records will always remain active.</p>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Number(2,0)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    LifespanMonths__c?: number;
     LinkedEntity?: ContentDocumentLinkChangeEvent;
     LocalRecord?: PartnerNetworkRecordConnection;
     /**

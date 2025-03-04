@@ -10,8 +10,6 @@ declare interface ShipmentChangeEvent extends SObject
     CurrencyIsoCode?: string;
     DeliveredTo?: SObject;
     DeliveredToId?: string;
-    DeliveryMethod?: OrderDeliveryMethod;
-    DeliveryMethodId?: string;
     Description?: string;
     DestinationLocation?: Location;
     DestinationLocationId?: string;

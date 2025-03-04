@@ -5,15 +5,11 @@ declare interface DecisionTableParameter extends SObject
     CreatedBy?: User;
     CreatedById?: string;
     CreatedDate?: string;
-    CtxDefinitionOutputField?: ProcedurePlanOption;
-    CtxMappingOutputField?: ProcedurePlanOption;
     DataType?: string;
-    DecisionOutputColumn?: PricingProcedureOutputMap[];
     DecisionTable?: DecisionTable;
     DecisionTableId?: string;
     DecisionTableParameter?: DecisionTblDatasetParameter;
     DomainObject?: string;
-    ExpressionSetOutputField?: ProcedurePlanOption;
     FieldName?: string;
     FieldPath?: string;
     IsDeleted?: boolean;

@@ -11,7 +11,7 @@ declare interface ServiceFlow__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Active__c: boolean;
+    Active__c?: boolean;
     /**
      * <h3><b>Apply</b></h3>
      * <p>Apply checkbox for basic rules without criteria</p>
@@ -21,8 +21,8 @@ declare interface ServiceFlow__ChangeEvent extends SObject
      * <tr><td nowrap><b>Default Value:</b></td><td><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">false</code></td></tr>
      * </table>
      */
-    Apply__c: boolean;
-    ChangeEventHeader: ChangeEventHeader;
+    Apply__c?: boolean;
+    ChangeEventHeader?: ChangeEventHeader;
     /**
      * <h3><b>Country 2 Digits</b></h3>
      * <p>US
@@ -36,10 +36,10 @@ declare interface ServiceFlow__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Country2Digits__c: string;
-    CreatedBy: User;
-    CreatedById: string;
-    CreatedDate: string;
+    Country2Digits__c?: string;
+    CreatedBy?: User;
+    CreatedById?: string;
+    CreatedDate?: string;
     /**
      * <h3><b>Criteria 1</b></h3>
      * <h4>Field Attributes</h4>
@@ -50,7 +50,7 @@ declare interface ServiceFlow__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Criteria1__c: string;
+    Criteria1__c?: string;
     /**
      * <h3><b>Criteria 2</b></h3>
      * <h4>Field Attributes</h4>
@@ -61,7 +61,7 @@ declare interface ServiceFlow__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Criteria2__c: string;
+    Criteria2__c?: string;
     /**
      * <h3><b>Criteria 3</b></h3>
      * <h4>Field Attributes</h4>
@@ -72,7 +72,7 @@ declare interface ServiceFlow__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Criteria3__c: string;
+    Criteria3__c?: string;
     /**
      * <h3><b>Criteria 4</b></h3>
      * <h4>Field Attributes</h4>
@@ -83,13 +83,13 @@ declare interface ServiceFlow__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    Criteria4__c: string;
-    CurrencyIsoCode: string;
-    LastModifiedBy: User;
-    LastModifiedById: string;
-    LastModifiedDate: string;
-    Name: string;
-    ReplayId: string;
+    Criteria4__c?: string;
+    CurrencyIsoCode?: string;
+    LastModifiedBy?: User;
+    LastModifiedById?: string;
+    LastModifiedDate?: string;
+    Name?: string;
+    ReplayId?: string;
     /**
      * <h3><b>Rule Type</b></h3>
      * <p>- EmailConsent
@@ -104,7 +104,7 @@ declare interface ServiceFlow__ChangeEvent extends SObject
      * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
      * </table>
      */
-    RuleType__c: string;
-    SetupOwner: SObject;
-    SetupOwnerId: string;
+    RuleType__c?: string;
+    SetupOwner?: SObject;
+    SetupOwnerId?: string;
 }

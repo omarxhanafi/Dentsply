@@ -47,7 +47,6 @@ declare interface PermissionSet extends SObject
     PermissionsAllowUniversalSearch?: boolean;
     PermissionsAllowViewEditConvertedLeads?: boolean;
     PermissionsAllowViewKnowledge?: boolean;
-    PermissionsAmendAssets?: boolean;
     PermissionsApexRestServices?: boolean;
     PermissionsApiEnabled?: boolean;
     PermissionsApiUserOnly?: boolean;
@@ -76,7 +75,6 @@ declare interface PermissionSet extends SObject
     PermissionsCampaignInfluence2?: boolean;
     PermissionsCanAccessCE?: boolean;
     PermissionsCanApproveFeedPost?: boolean;
-    PermissionsCancelAssets?: boolean;
     PermissionsCanEditDataPrepRecipe?: boolean;
     PermissionsCanEditPrompts?: boolean;
     PermissionsCanInitiateMessagingSessions?: boolean;
@@ -105,7 +103,6 @@ declare interface PermissionSet extends SObject
     PermissionsClientSecretRotation?: boolean;
     PermissionsCloseConversations?: boolean;
     PermissionsCMSECEAuthoringAccess?: boolean;
-    PermissionsCommerceTaxApiUser?: boolean;
     PermissionsConfigCustomRecs?: boolean;
     PermissionsConfigureDataspaceScope?: boolean;
     PermissionsConfigureLiveMessage?: boolean;
@@ -114,15 +111,7 @@ declare interface PermissionSet extends SObject
     PermissionsContentAdministrator?: boolean;
     PermissionsContentHubUser?: boolean;
     PermissionsContentWorkspaces?: boolean;
-    PermissionsContextServiceAdmin?: boolean;
-    PermissionsContextServiceEmbedAdmin?: boolean;
-    PermissionsContextServiceRuntime?: boolean;
     PermissionsConvertLeads?: boolean;
-    PermissionsCoreCPQUser?: boolean;
-    PermissionsCorePricingAdmin?: boolean;
-    PermissionsCorePricingDesignTimeUser?: boolean;
-    PermissionsCorePricingManager?: boolean;
-    PermissionsCorePricingRunTimeUser?: boolean;
     PermissionsCosellAuthSetupUser?: boolean;
     PermissionsCosellExportUser?: boolean;
     PermissionsCreateAuditFields?: boolean;
@@ -152,7 +141,6 @@ declare interface PermissionSet extends SObject
     PermissionsDeleteActivatedContract?: boolean;
     PermissionsDeleteCrMemoAndInvoice?: boolean;
     PermissionsDeleteTopics?: boolean;
-    PermissionsDerivedPricing?: boolean;
     PermissionsDesignContextRule?: boolean;
     PermissionsDfoAdminUser?: boolean;
     PermissionsDFODesignerUser?: boolean;
@@ -229,7 +217,6 @@ declare interface PermissionSet extends SObject
     PermissionsHasUnlimitedErbScoringRequests?: boolean;
     PermissionsHasUnlimitedNBAExecutions?: boolean;
     PermissionsHeadlessCMSAccess?: boolean;
-    PermissionsHeadlessConfiguratorUser?: boolean;
     PermissionsHeadlessPublishNudges?: boolean;
     PermissionsHideReadByList?: boolean;
     PermissionsIdentityConnect?: boolean;
@@ -268,7 +255,6 @@ declare interface PermissionSet extends SObject
     PermissionsManageAccessPolicies?: boolean;
     PermissionsManageAgentforceServiceAgent?: boolean;
     PermissionsManageAnalyticSnapshots?: boolean;
-    PermissionsManageAssets?: boolean;
     PermissionsManageAuthProviders?: boolean;
     PermissionsManageBusinessHourHolidays?: boolean;
     PermissionsManageC2CHighVolumePriming?: boolean;
@@ -395,7 +381,6 @@ declare interface PermissionSet extends SObject
     PermissionsPortalSuperUser?: boolean;
     PermissionsPreventClassicExperience?: boolean;
     PermissionsPreviewExperienceUser?: boolean;
-    PermissionsPricingDiscovery?: boolean;
     PermissionsPrismPlaygroundUser?: boolean;
     PermissionsPrivacyDataAccess?: boolean;
     PermissionsPRMChannelMgmtConsoleUser?: boolean;
@@ -407,7 +392,6 @@ declare interface PermissionSet extends SObject
     PermissionsProductCatalogMgmtBaseCCUser?: boolean;
     PermissionsProductCatalogMgmtBasePCUser?: boolean;
     PermissionsProductConfigurationRuleAccess?: boolean;
-    PermissionsProductConfiguratorUser?: boolean;
     PermissionsProductDiscoveryUser?: boolean;
     PermissionsPublishArticles?: boolean;
     PermissionsPublishPackaging?: boolean;
@@ -416,10 +400,8 @@ declare interface PermissionSet extends SObject
     PermissionsQueryNonVetoedFiles?: boolean;
     PermissionsQuipMetricsAccess?: boolean;
     PermissionsQuipUserEngagementMetrics?: boolean;
-    PermissionsQuoteToOrderUser?: boolean;
     PermissionsReassignOrchestrationWorkItems?: boolean;
     PermissionsRecordVisibilityAPI?: boolean;
-    PermissionsRenewAssets?: boolean;
     PermissionsReplyRecommendationUser?: boolean;
     PermissionsResetPasswords?: boolean;
     PermissionsRunCatalogItemsOnBehalfOf?: boolean;

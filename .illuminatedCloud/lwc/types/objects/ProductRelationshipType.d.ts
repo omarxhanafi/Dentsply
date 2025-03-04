@@ -7,8 +7,6 @@ declare interface ProductRelationshipType extends SObject
     CreatedBy?: User;
     CreatedById?: string;
     CreatedDate?: string;
-    FulfillmentAssetRelationships?: FulfillmentAssetRelationship[];
-    FulfillmentLineRelationships?: FulfillmentLineRel[];
     IsDeleted?: boolean;
     LastModifiedBy?: User;
     LastModifiedById?: string;
@@ -17,7 +15,6 @@ declare interface ProductRelationshipType extends SObject
     LastViewedDate?: string;
     MainProductRoleCat?: string;
     Name?: string;
-    OrderItemRelationships?: OrderItemRelationship[];
     /**
      * The reciprocal relationship for {@link ProductRelatedComponent.ProductRelationshipTypeId}.
      */
@@ -26,7 +23,6 @@ declare interface ProductRelationshipType extends SObject
      * The reciprocal relationship for {@link ProductRelatedComponent.ProductRelationshipTypeId}.
      */
     ProductRelationshipType?: ProductRelatedComponent;
-    QuoteLineRelationships?: QuoteLineRelationship[];
     RelatedRecord?: FlowRecordRelation;
     SobjectLookupValue?: AIInsightValue;
     SystemModstamp?: string;

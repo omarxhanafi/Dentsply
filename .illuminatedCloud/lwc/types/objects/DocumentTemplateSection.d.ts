@@ -23,8 +23,6 @@ declare interface DocumentTemplateSection extends SObject
     CurrencyIsoCode?: string;
     DisplayConditionExpression?: string;
     DocumentTemplate?: DocumentTemplate;
-    DocumentTemplateClause?: DocumentClause;
-    DocumentTemplateClauseId?: string;
     DocumentTemplateId?: string;
     /**
      * The reciprocal relationship for {@link DocTemplateSectionCondition.DocumentTemplateSectionId}.

@@ -33,8 +33,6 @@ declare interface IntegrationProviderExecution extends SObject
     EventRelations?: EventRelation[];
     Events?: Event[];
     ExecutionDateTime?: string;
-    ExecutionStepInstance?: FulfillmentStep;
-    ExecutionStepInstanceId?: string;
     Feeds?: IntegrationProviderExecutionFeed[];
     FeedSubscriptionsForEntity?: EntitySubscription[];
     FirstPublishLocation?: ContentVersion;

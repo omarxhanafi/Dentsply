@@ -2,8 +2,8 @@
 
 declare interface ContentBody extends SObject 
 {
-    ContentBody: ContentVersion;
-    ContextRecord: FlowExecutionErrorEvent;
-    LatestContent: ContentNote;
-    RelatedRecord: FlowRecordRelation;
+    ContentBody?: ContentVersion;
+    ContextRecord?: FlowExecutionErrorEvent;
+    LatestContent?: ContentNote;
+    RelatedRecord?: FlowRecordRelation;
 }

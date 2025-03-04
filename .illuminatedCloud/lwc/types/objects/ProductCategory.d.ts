@@ -42,7 +42,6 @@ declare interface ProductCategory extends SObject
     Histories?: ProductCategoryHistory[];
     IsDeleted?: boolean;
     IsNavigational?: boolean;
-    Items?: ContractItemPrice[];
     LastModifiedBy?: User;
     LastModifiedById?: string;
     LastModifiedDate?: string;
