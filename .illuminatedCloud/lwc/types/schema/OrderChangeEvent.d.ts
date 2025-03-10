@@ -366,6 +366,12 @@ declare module "@salesforce/schema/OrderChangeEvent.ContractId" {
     export default ContractId;
 }
 
+declare module "@salesforce/schema/OrderChangeEvent.CorrelationId__c" {
+    import { FieldId } from "@salesforce/schema";
+    const CorrelationId__c: FieldId;
+    export default CorrelationId__c;
+}
+
 declare module "@salesforce/schema/OrderChangeEvent.Count_Bundles__c" {
     import { FieldId } from "@salesforce/schema";
     const Count_Bundles__c: FieldId;
@@ -544,6 +550,12 @@ declare module "@salesforce/schema/OrderChangeEvent.Dealer_price_set__c" {
     import { FieldId } from "@salesforce/schema";
     const Dealer_price_set__c: FieldId;
     export default Dealer_price_set__c;
+}
+
+declare module "@salesforce/schema/OrderChangeEvent.DeliveryMethod__c" {
+    import { FieldId } from "@salesforce/schema";
+    const DeliveryMethod__c: FieldId;
+    export default DeliveryMethod__c;
 }
 
 declare module "@salesforce/schema/OrderChangeEvent.Delivery_Cost__c" {
@@ -772,6 +784,12 @@ declare module "@salesforce/schema/OrderChangeEvent.Id" {
     import { FieldId } from "@salesforce/schema";
     const Id: FieldId;
     export default Id;
+}
+
+declare module "@salesforce/schema/OrderChangeEvent.InvoiceNote__c" {
+    import { FieldId } from "@salesforce/schema";
+    const InvoiceNote__c: FieldId;
+    export default InvoiceNote__c;
 }
 
 declare module "@salesforce/schema/OrderChangeEvent.Invoice__c" {

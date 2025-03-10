@@ -426,6 +426,12 @@ declare module "@salesforce/schema/Order.ContractId" {
     export default ContractId;
 }
 
+declare module "@salesforce/schema/Order.CorrelationId__c" {
+    import { FieldId } from "@salesforce/schema";
+    const CorrelationId__c: FieldId;
+    export default CorrelationId__c;
+}
+
 declare module "@salesforce/schema/Order.Count_Bundles__c" {
     import { FieldId } from "@salesforce/schema";
     const Count_Bundles__c: FieldId;
@@ -610,6 +616,12 @@ declare module "@salesforce/schema/Order.Deliveries__r" {
     import { FieldId } from "@salesforce/schema";
     const Deliveries__r: FieldId;
     export default Deliveries__r;
+}
+
+declare module "@salesforce/schema/Order.DeliveryMethod__c" {
+    import { FieldId } from "@salesforce/schema";
+    const DeliveryMethod__c: FieldId;
+    export default DeliveryMethod__c;
 }
 
 declare module "@salesforce/schema/Order.Delivery_Cost__c" {
@@ -934,6 +946,12 @@ declare module "@salesforce/schema/Order.IntegrationLogs__r" {
     import { FieldId } from "@salesforce/schema";
     const IntegrationLogs__r: FieldId;
     export default IntegrationLogs__r;
+}
+
+declare module "@salesforce/schema/Order.InvoiceNote__c" {
+    import { FieldId } from "@salesforce/schema";
+    const InvoiceNote__c: FieldId;
+    export default InvoiceNote__c;
 }
 
 declare module "@salesforce/schema/Order.Invoice__c" {

@@ -388,6 +388,17 @@ declare interface OrderChangeEvent extends SObject
     Contract?: Contract;
     ContractId?: string;
     /**
+     * <h3><b>Correlation Id</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text(255)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>true</td></tr>
+     * </table>
+     */
+    CorrelationId__c?: string;
+    /**
      * <h3><b>Count Bundles</b></h3>
      * <h4>Field Attributes</h4>
      * <table border="0" valign="top">
@@ -700,6 +711,22 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     Delivery_Cost__c?: number;
+    /**
+     * <h3><b>Delivery Method</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Picklist</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * </table>
+     * <h4>Picklist Values</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>API Name</b></td><td nowrap><b>Label</b></td><td nowrap><b>Active</b></td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Standard Ground</code></td><td>Standard Ground</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">2-Day</code></td><td>2-Day</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Next Day air</code></td><td>Next Day air</td><td nowrap>true</td></tr>
+     * </table>
+     */
+    DeliveryMethod__c?: string;
     Description?: string;
     /**
      * <h3><b>Direct Manager</b></h3>
@@ -1030,6 +1057,15 @@ declare interface OrderChangeEvent extends SObject
      * </table>
      */
     Invoice__c?: string;
+    /**
+     * <h3><b>Invoice Note</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Text Area</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    InvoiceNote__c?: string;
     IsReductionOrder?: boolean;
     /**
      * <h3><b># Items at 100% Discount</b></h3>
@@ -2248,9 +2284,11 @@ declare interface OrderChangeEvent extends SObject
      * <table border="0" valign="top">
      * <tr><td nowrap><b>API Name</b></td><td nowrap><b>Label</b></td><td nowrap><b>Active</b></td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">AD Overage Spend</code></td><td>AD Overage Spend</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Deal on Demand</code></td><td>Deal on Demand</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Discount on Demand</code></td><td>Discount on Demand</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Grip Stock</code></td><td>Grip Stock</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New Customer</code></td><td>New Customer</td><td nowrap>true</td></tr>
+     * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New User</code></td><td>New User</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New User 1+1</code></td><td>New User 1+1</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">New User 2+1</code></td><td>New User 2+1</td><td nowrap>true</td></tr>
      * <tr><td nowrap><code style="background-color: rgba(174, 184, 193, 0.2); border-width: 0; padding: 1px 4px; margin: 1px 0;">Tessera Trade Out B7,T3,G3</code></td><td>Tessera Trade Out B7,T3,G3</td><td nowrap>true</td></tr>

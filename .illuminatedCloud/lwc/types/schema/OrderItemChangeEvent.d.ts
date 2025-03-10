@@ -258,6 +258,12 @@ declare module "@salesforce/schema/OrderItemChangeEvent.LineApprovalLevel__c" {
     export default LineApprovalLevel__c;
 }
 
+declare module "@salesforce/schema/OrderItemChangeEvent.LineNumber" {
+    import { FieldId } from "@salesforce/schema";
+    const LineNumber: FieldId;
+    export default LineNumber;
+}
+
 declare module "@salesforce/schema/OrderItemChangeEvent.ListPrice" {
     import { FieldId } from "@salesforce/schema";
     const ListPrice: FieldId;
@@ -706,6 +712,12 @@ declare module "@salesforce/schema/OrderItemChangeEvent.TotalLineItemPricePDFBut
     import { FieldId } from "@salesforce/schema";
     const TotalLineItemPricePDFButler__c: FieldId;
     export default TotalLineItemPricePDFButler__c;
+}
+
+declare module "@salesforce/schema/OrderItemChangeEvent.TotalLoyaltyPoints__c" {
+    import { FieldId } from "@salesforce/schema";
+    const TotalLoyaltyPoints__c: FieldId;
+    export default TotalLoyaltyPoints__c;
 }
 
 declare module "@salesforce/schema/OrderItemChangeEvent.TotalPriceNet__c" {

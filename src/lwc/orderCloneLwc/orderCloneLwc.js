@@ -76,7 +76,7 @@ export default class OrderCloneLwc extends NavigationMixin(LightningElement) {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Error',
-                        message: 'An error occurred while cloning the Order.',
+                        message: 'An error occurred while cloning the Order. Check the logs for details.',
                         variant: 'error',
                     })
                 );

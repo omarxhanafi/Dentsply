@@ -51,6 +51,17 @@ declare interface BundleBasedAdjustment extends SObject
     LastReferencedDate?: string;
     LastViewedDate?: string;
     LinkedEntity?: ContentDocumentLinkChangeEvent;
+    /**
+     * <h3><b>Lower Bound</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Number(18,0)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    LowerBound__c?: number;
     Name?: string;
     Notes?: Note[];
     NotesAndAttachments?: NoteAndAttachment[];
@@ -59,6 +70,8 @@ declare interface BundleBasedAdjustment extends SObject
     ParentEntities?: NetworkActivityAudit[];
     ParentProduct?: Product2;
     ParentProductId?: string;
+    ParentProductSellingModel?: ProductSellingModel;
+    ParentProductSellingModelId?: string;
     ParentRecord?: NetworkFeedResponseMetric;
     PriceAdjustmentSchedule?: PriceAdjustmentSchedule;
     PriceAdjustmentScheduleId?: string;
@@ -68,6 +81,8 @@ declare interface BundleBasedAdjustment extends SObject
     ProcessSteps?: ProcessInstanceHistory[];
     Product?: Product2;
     ProductId?: string;
+    ProductSellingModel?: ProductSellingModel;
+    ProductSellingModelId?: string;
     RelatedRecord?: FlowRecordRelation;
     /**
      * The reciprocal relationship for {@link EmailMessage.RelatedToId}.
@@ -76,6 +91,8 @@ declare interface BundleBasedAdjustment extends SObject
     Relation?: EventRelationChangeEvent;
     RootBundle?: Product2;
     RootBundleId?: string;
+    RootProductSellingModel?: ProductSellingModel;
+    RootProductSellingModelId?: string;
     ScheduleType?: string;
     SellingModelType?: string;
     SobjectLookupValue?: AIInsightValue;
@@ -88,5 +105,16 @@ declare interface BundleBasedAdjustment extends SObject
      */
     Tasks?: Task[];
     TopicAssignments?: TopicAssignment[];
+    /**
+     * <h3><b>Upper Bound</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Number(18,0)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    UpperBound__c?: number;
     What?: EventChangeEvent;
 }

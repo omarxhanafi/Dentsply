@@ -7,6 +7,7 @@ declare interface ProductSellingModel extends SObject
     AttachedContentDocuments?: AttachedContentDocument[];
     AttachedContentNotes?: AttachedContentNote[];
     Attachments?: Attachment[];
+    BundleBasedAdjustments?: BundleBasedAdjustment[];
     /**
      * The reciprocal relationship for {@link ProductRelatedComponent.ParentSellingModelId}.
      */

@@ -402,6 +402,12 @@ declare module "@salesforce/schema/OrderItem.LineApprovalLevel__c" {
     export default LineApprovalLevel__c;
 }
 
+declare module "@salesforce/schema/OrderItem.LineNumber" {
+    import { FieldId } from "@salesforce/schema";
+    const LineNumber: FieldId;
+    export default LineNumber;
+}
+
 declare module "@salesforce/schema/OrderItem.LinkedEntity" {
     import { FieldId } from "@salesforce/schema";
     const LinkedEntity: FieldId;
@@ -1024,6 +1030,12 @@ declare module "@salesforce/schema/OrderItem.TotalLineItemPricePDFButler__c" {
     import { FieldId } from "@salesforce/schema";
     const TotalLineItemPricePDFButler__c: FieldId;
     export default TotalLineItemPricePDFButler__c;
+}
+
+declare module "@salesforce/schema/OrderItem.TotalLoyaltyPoints__c" {
+    import { FieldId } from "@salesforce/schema";
+    const TotalLoyaltyPoints__c: FieldId;
+    export default TotalLoyaltyPoints__c;
 }
 
 declare module "@salesforce/schema/OrderItem.TotalPrice" {

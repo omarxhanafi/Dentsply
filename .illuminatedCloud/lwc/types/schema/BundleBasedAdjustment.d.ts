@@ -216,6 +216,12 @@ declare module "@salesforce/schema/BundleBasedAdjustment.LinkedEntity" {
     export default LinkedEntity;
 }
 
+declare module "@salesforce/schema/BundleBasedAdjustment.LowerBound__c" {
+    import { FieldId } from "@salesforce/schema";
+    const LowerBound__c: FieldId;
+    export default LowerBound__c;
+}
+
 declare module "@salesforce/schema/BundleBasedAdjustment.Name" {
     import { FieldId } from "@salesforce/schema";
     const Name: FieldId;
@@ -262,6 +268,18 @@ declare module "@salesforce/schema/BundleBasedAdjustment.ParentProductId" {
     import { FieldId } from "@salesforce/schema";
     const ParentProductId: FieldId;
     export default ParentProductId;
+}
+
+declare module "@salesforce/schema/BundleBasedAdjustment.ParentProductSellingModel" {
+    import { FieldId } from "@salesforce/schema";
+    const ParentProductSellingModel: FieldId;
+    export default ParentProductSellingModel;
+}
+
+declare module "@salesforce/schema/BundleBasedAdjustment.ParentProductSellingModelId" {
+    import { FieldId } from "@salesforce/schema";
+    const ParentProductSellingModelId: FieldId;
+    export default ParentProductSellingModelId;
 }
 
 declare module "@salesforce/schema/BundleBasedAdjustment.ParentRecord" {
@@ -318,6 +336,18 @@ declare module "@salesforce/schema/BundleBasedAdjustment.ProductId" {
     export default ProductId;
 }
 
+declare module "@salesforce/schema/BundleBasedAdjustment.ProductSellingModel" {
+    import { FieldId } from "@salesforce/schema";
+    const ProductSellingModel: FieldId;
+    export default ProductSellingModel;
+}
+
+declare module "@salesforce/schema/BundleBasedAdjustment.ProductSellingModelId" {
+    import { FieldId } from "@salesforce/schema";
+    const ProductSellingModelId: FieldId;
+    export default ProductSellingModelId;
+}
+
 declare module "@salesforce/schema/BundleBasedAdjustment.RelatedRecord" {
     import { FieldId } from "@salesforce/schema";
     const RelatedRecord: FieldId;
@@ -346,6 +376,18 @@ declare module "@salesforce/schema/BundleBasedAdjustment.RootBundleId" {
     import { FieldId } from "@salesforce/schema";
     const RootBundleId: FieldId;
     export default RootBundleId;
+}
+
+declare module "@salesforce/schema/BundleBasedAdjustment.RootProductSellingModel" {
+    import { FieldId } from "@salesforce/schema";
+    const RootProductSellingModel: FieldId;
+    export default RootProductSellingModel;
+}
+
+declare module "@salesforce/schema/BundleBasedAdjustment.RootProductSellingModelId" {
+    import { FieldId } from "@salesforce/schema";
+    const RootProductSellingModelId: FieldId;
+    export default RootProductSellingModelId;
 }
 
 declare module "@salesforce/schema/BundleBasedAdjustment.ScheduleType" {
@@ -400,6 +442,12 @@ declare module "@salesforce/schema/BundleBasedAdjustment.TopicAssignments" {
     import { FieldId } from "@salesforce/schema";
     const TopicAssignments: FieldId;
     export default TopicAssignments;
+}
+
+declare module "@salesforce/schema/BundleBasedAdjustment.UpperBound__c" {
+    import { FieldId } from "@salesforce/schema";
+    const UpperBound__c: FieldId;
+    export default UpperBound__c;
 }
 
 declare module "@salesforce/schema/BundleBasedAdjustment.UserRecordAccess" {

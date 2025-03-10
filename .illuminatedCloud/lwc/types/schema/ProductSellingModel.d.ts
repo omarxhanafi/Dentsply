@@ -36,6 +36,12 @@ declare module "@salesforce/schema/ProductSellingModel.Attachments" {
     export default Attachments;
 }
 
+declare module "@salesforce/schema/ProductSellingModel.BundleBasedAdjustments" {
+    import { FieldId } from "@salesforce/schema";
+    const BundleBasedAdjustments: FieldId;
+    export default BundleBasedAdjustments;
+}
+
 declare module "@salesforce/schema/ProductSellingModel.ChildProductRelatedComponents" {
     import { FieldId } from "@salesforce/schema";
     const ChildProductRelatedComponents: FieldId;

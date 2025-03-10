@@ -268,6 +268,7 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     LineApprovalLevel__c?: string;
+    LineNumber?: number;
     ListPrice?: number;
     /**
      * <h3><b>Lower Guidance (%)</b></h3>
@@ -689,6 +690,17 @@ declare interface OrderItemChangeEvent extends SObject
      * </table>
      */
     TotalLineItemPricePDFButler__c?: number;
+    /**
+     * <h3><b>Total Loyalty Points</b></h3>
+     * <h4>Field Attributes</h4>
+     * <table border="0" valign="top">
+     * <tr><td nowrap><b>Data Type:</b></td><td nowrap>Number(18,0)</td></tr>
+     * <tr><td nowrap><b>Required:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>Unique:</b></td><td nowrap>false</td></tr>
+     * <tr><td nowrap><b>External ID:</b></td><td nowrap>false</td></tr>
+     * </table>
+     */
+    TotalLoyaltyPoints__c?: number;
     /**
      * <h3><b>Total Price Net</b></h3>
      * <h4>Field Attributes</h4>
