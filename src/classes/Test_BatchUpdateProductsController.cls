@@ -8,6 +8,7 @@
 @isTest(seeAllData=false)
 public without sharing class Test_BatchUpdateProductsController {
 
+    // Test setup
     @testSetup
     private static void setup() {
         TestDataFactory.createBypassCustomSetting();
@@ -17,6 +18,8 @@ public without sharing class Test_BatchUpdateProductsController {
         TestDataFactory.createDefaultOrgLevelBypassPB();
     }
 
+
+    // Test method for runBatch()
     @isTest
     private static void testRunBatch() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
@@ -48,6 +51,7 @@ public without sharing class Test_BatchUpdateProductsController {
         }
     }
 
+    // Test method for getJobStatus()
     @isTest
     private static void testGetJobStatus() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
@@ -69,14 +73,18 @@ public without sharing class Test_BatchUpdateProductsController {
         }
     }
 
+    // Test method for getHistoricalJobs()
     @isTest
     private static void testGetHistoricalJobs() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];
 
         System.runAs(testUser) {
-            // Create a test BatchUpdateProductsLog__c record
+            // Create a test AsyncApexJob record to generate a dynamic ID
+            Id jobId = Database.executeBatch(new BatchUpdateProducts(new Set<String>(), new Set<String>(), new Set<String>(), new Set<String>()), 200);
+
+            // Create a log record
             BatchUpdateProductsLog__c log = new BatchUpdateProductsLog__c(
-                    JobId__c = '707000000000000',
+                    JobId__c = jobId,
                     StartTime__c = System.now(),
                     EndTime__c = System.now().addMinutes(5),
                     Duration__c = 300,
@@ -100,6 +108,7 @@ public without sharing class Test_BatchUpdateProductsController {
         }
     }
 
+    // Test method for getRunningJob()
     @isTest
     private static void testGetRunningJob() {
         User testUser = [SELECT Id FROM User WHERE Alias = 'test1' LIMIT 1];

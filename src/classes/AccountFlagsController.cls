@@ -5,6 +5,7 @@
  *
  * @History
  * 22-06-2023   Omar     Create new AccountFlagsController class
+ * 10-03-2025   Omar     Included UK and Ireland in the OneDS Loyalty Flag
  */
 
 public with sharing class AccountFlagsController {
@@ -56,8 +57,8 @@ public with sharing class AccountFlagsController {
         // KOL flag
         results.put('kol', new AccountFlag(kolCount > 0 ? 1 : 0, null));
 
-        // Add One DS flag (Only for US and Canada)
-        if(new List<String>{'US', 'CA'}.contains(thisAccount?.Country__c)){
+        // Add One DS flag (Only for US, Canada, UK and Ireland)
+        if(new List<String>{'US', 'CA', 'GB', 'IE'}.contains(thisAccount?.Country__c)){
             AccountFlag oneDsFlag = getOneDSFlag(accountId);
             results.put('oneDs', oneDsFlag);
         }

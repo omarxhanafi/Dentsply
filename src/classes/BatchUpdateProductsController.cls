@@ -11,6 +11,12 @@
 
 public with sharing class BatchUpdateProductsController {
 
+    private static final Integer PG1_LENGTH_MIN = 2;
+    private static final Integer PG1_LENGTH_MAX = 3;
+    private static final Integer PG2_LENGTH = 4;
+    private static final Integer PG3_LENGTH = 5;
+    private static final Integer PG4_LENGTH = 6;
+
     /**
      * runBatch Starts the BatchUpdateProducts batch job.
      *          It collects PG codes from Non_ERP_Products__c records and passes them to the batch class.
@@ -43,14 +49,16 @@ public with sharing class BatchUpdateProductsController {
 
         // Categorize PG codes by their length
         for(String eachPgCode : pgCodes){
-            if(eachPgCode.length() == 2 || eachPgCode.length() == 3){
+            if(eachPgCode.length() == PG1_LENGTH_MIN || eachPgCode.length() == PG1_LENGTH_MAX){
                 pg1Codes.add(eachPgCode);
-            } else if(eachPgCode.length() == 4){
+            } else if(eachPgCode.length() == PG2_LENGTH){
                 pg2Codes.add(eachPgCode);
-            } else if(eachPgCode.length() == 5){
+            } else if(eachPgCode.length() == PG3_LENGTH){
                 pg3Codes.add(eachPgCode);
-            } else if(eachPgCode.length() == 6){
+            } else if(eachPgCode.length() == PG4_LENGTH){
                 pg4Codes.add(eachPgCode);
+            }  else {
+                DebugLog.addError('BatchUpdateProductsController - Unexpected PG code length: ' + eachPgCode.length());
             }
         }
 
