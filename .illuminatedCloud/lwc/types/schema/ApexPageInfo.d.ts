@@ -30,6 +30,12 @@ declare module "@salesforce/schema/ApexPageInfo.DurableId" {
     export default DurableId;
 }
 
+declare module "@salesforce/schema/ApexPageInfo.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ApexPageInfo.IsAvailableInTouch" {
     import { FieldId } from "@salesforce/schema";
     const IsAvailableInTouch: FieldId;

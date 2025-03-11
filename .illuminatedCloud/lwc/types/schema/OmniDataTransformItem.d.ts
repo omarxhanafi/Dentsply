@@ -96,6 +96,12 @@ declare module "@salesforce/schema/OmniDataTransformItem.GlobalKey" {
     export default GlobalKey;
 }
 
+declare module "@salesforce/schema/OmniDataTransformItem.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OmniDataTransformItem.InputFieldName" {
     import { FieldId } from "@salesforce/schema";
     const InputFieldName: FieldId;

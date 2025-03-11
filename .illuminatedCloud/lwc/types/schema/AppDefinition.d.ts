@@ -42,6 +42,12 @@ declare module "@salesforce/schema/AppDefinition.HeaderColor" {
     export default HeaderColor;
 }
 
+declare module "@salesforce/schema/AppDefinition.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AppDefinition.IsLargeFormFactorSupported" {
     import { FieldId } from "@salesforce/schema";
     const IsLargeFormFactorSupported: FieldId;

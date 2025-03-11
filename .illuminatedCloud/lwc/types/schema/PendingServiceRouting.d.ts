@@ -90,6 +90,12 @@ declare module "@salesforce/schema/PendingServiceRouting.GroupId" {
     export default GroupId;
 }
 
+declare module "@salesforce/schema/PendingServiceRouting.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/PendingServiceRouting.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -54,6 +54,12 @@ declare module "@salesforce/schema/ProcessInstanceNode.ElapsedTimeInMinutes" {
     export default ElapsedTimeInMinutes;
 }
 
+declare module "@salesforce/schema/ProcessInstanceNode.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ProcessInstanceNode.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

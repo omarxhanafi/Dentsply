@@ -12,6 +12,12 @@ declare module "@salesforce/schema/ExpenseShare.AccessLevel" {
     export default AccessLevel;
 }
 
+declare module "@salesforce/schema/ExpenseShare.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ExpenseShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -18,6 +18,12 @@ declare module "@salesforce/schema/ClientBrowser.FullUserAgent" {
     export default FullUserAgent;
 }
 
+declare module "@salesforce/schema/ClientBrowser.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ClientBrowser.LastUpdate" {
     import { FieldId } from "@salesforce/schema";
     const LastUpdate: FieldId;

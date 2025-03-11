@@ -72,6 +72,12 @@ declare module "@salesforce/schema/StaticResource.Description" {
     export default Description;
 }
 
+declare module "@salesforce/schema/StaticResource.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/StaticResource.InviteImage" {
     import { FieldId } from "@salesforce/schema";
     const InviteImage: FieldId;

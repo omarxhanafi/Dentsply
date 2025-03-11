@@ -198,6 +198,12 @@ declare module "@salesforce/schema/Organization.GeocodeAccuracy" {
     export default GeocodeAccuracy;
 }
 
+declare module "@salesforce/schema/Organization.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Organization.InstanceName" {
     import { FieldId } from "@salesforce/schema";
     const InstanceName: FieldId;

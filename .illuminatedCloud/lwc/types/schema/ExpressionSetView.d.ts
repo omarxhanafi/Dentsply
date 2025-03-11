@@ -30,6 +30,12 @@ declare module "@salesforce/schema/ExpressionSetView.HasContextDefinitionRef" {
     export default HasContextDefinitionRef;
 }
 
+declare module "@salesforce/schema/ExpressionSetView.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ExpressionSetView.IsExecutable" {
     import { FieldId } from "@salesforce/schema";
     const IsExecutable: FieldId;

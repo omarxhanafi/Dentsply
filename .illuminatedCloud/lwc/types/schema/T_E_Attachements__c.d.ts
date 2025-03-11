@@ -186,6 +186,12 @@ declare module "@salesforce/schema/T_E_Attachements__c.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/T_E_Attachements__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/T_E_Attachements__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

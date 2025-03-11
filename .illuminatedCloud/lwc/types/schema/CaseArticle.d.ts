@@ -54,6 +54,12 @@ declare module "@salesforce/schema/CaseArticle.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/CaseArticle.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CaseArticle.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

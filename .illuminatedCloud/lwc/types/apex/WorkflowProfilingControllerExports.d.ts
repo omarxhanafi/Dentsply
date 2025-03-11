@@ -1,7 +1,7 @@
 // DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
 
 declare module "@salesforce/apex/WorkflowProfilingController.createOrUpdateWorkflowProfilings" {
-    export default function createOrUpdateWorkflowProfilings(params: {newRecords: any[]}): Promise<void>;
+    export default function createOrUpdateWorkflowProfilings(params: {newRecords: WorkflowProfiling__c[]}): Promise<void>;
 }
 
 declare module "@salesforce/apex/WorkflowProfilingController.createProductProfiling" {
@@ -13,9 +13,9 @@ declare module "@salesforce/apex/WorkflowProfilingController.getProductFamilyLis
 }
 
 declare module "@salesforce/apex/WorkflowProfilingController.getWorkflowProfilingsByAccount" {
-    export default function getWorkflowProfilingsByAccount(params: {accountId: string}): Promise<any[]>;
+    export default function getWorkflowProfilingsByAccount(params: {accountId: string}): Promise<WorkflowProfiling__c[]>;
 }
 
 declare module "@salesforce/apex/WorkflowProfilingController.getWorkflows" {
-    export default function getWorkflows(params: {accountId: string}): Promise<any[]>;
+    export default function getWorkflows(params: {accountId: string}): Promise<Workflow__c[]>;
 }

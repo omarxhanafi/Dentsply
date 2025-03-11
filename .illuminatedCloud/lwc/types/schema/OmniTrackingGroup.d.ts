@@ -48,6 +48,12 @@ declare module "@salesforce/schema/OmniTrackingGroup.GroupType" {
     export default GroupType;
 }
 
+declare module "@salesforce/schema/OmniTrackingGroup.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OmniTrackingGroup.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

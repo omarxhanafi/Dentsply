@@ -54,6 +54,12 @@ declare module "@salesforce/schema/CronTrigger.EndTime" {
     export default EndTime;
 }
 
+declare module "@salesforce/schema/CronTrigger.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CronTrigger.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

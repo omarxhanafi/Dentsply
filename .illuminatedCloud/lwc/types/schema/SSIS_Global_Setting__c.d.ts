@@ -90,6 +90,12 @@ declare module "@salesforce/schema/SSIS_Global_Setting__c.IMPL__c" {
     export default IMPL__c;
 }
 
+declare module "@salesforce/schema/SSIS_Global_Setting__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SSIS_Global_Setting__c.Internal_Orders__c" {
     import { FieldId } from "@salesforce/schema";
     const Internal_Orders__c: FieldId;

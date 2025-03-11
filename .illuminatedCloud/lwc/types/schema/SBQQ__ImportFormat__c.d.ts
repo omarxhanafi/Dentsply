@@ -24,6 +24,12 @@ declare module "@salesforce/schema/SBQQ__ImportFormat__c.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/SBQQ__ImportFormat__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SBQQ__ImportFormat__c.ImportColumns__r" {
     import { FieldId } from "@salesforce/schema";
     const ImportColumns__r: FieldId;

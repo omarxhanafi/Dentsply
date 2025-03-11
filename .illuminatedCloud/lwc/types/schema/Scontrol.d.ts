@@ -72,6 +72,12 @@ declare module "@salesforce/schema/Scontrol.HtmlWrapper" {
     export default HtmlWrapper;
 }
 
+declare module "@salesforce/schema/Scontrol.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Scontrol.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

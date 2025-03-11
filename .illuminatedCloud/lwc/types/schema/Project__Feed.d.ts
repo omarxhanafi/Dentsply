@@ -102,6 +102,12 @@ declare module "@salesforce/schema/Project__Feed.FeedTrackedChanges" {
     export default FeedTrackedChanges;
 }
 
+declare module "@salesforce/schema/Project__Feed.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Project__Feed.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

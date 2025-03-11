@@ -96,6 +96,12 @@ declare module "@salesforce/schema/CaseMilestone.ElapsedTimeInMins" {
     export default ElapsedTimeInMins;
 }
 
+declare module "@salesforce/schema/CaseMilestone.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CaseMilestone.IsCompleted" {
     import { FieldId } from "@salesforce/schema";
     const IsCompleted: FieldId;

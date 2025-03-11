@@ -12,6 +12,12 @@ declare module "@salesforce/schema/maps__AdvRouteContinuousTravel__Share.AccessL
     export default AccessLevel;
 }
 
+declare module "@salesforce/schema/maps__AdvRouteContinuousTravel__Share.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/maps__AdvRouteContinuousTravel__Share.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

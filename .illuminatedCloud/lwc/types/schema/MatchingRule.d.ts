@@ -48,6 +48,12 @@ declare module "@salesforce/schema/MatchingRule.DuplicateJobMatchingRuleDefiniti
     export default DuplicateJobMatchingRuleDefinitions;
 }
 
+declare module "@salesforce/schema/MatchingRule.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/MatchingRule.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

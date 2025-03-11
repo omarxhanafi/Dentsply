@@ -60,6 +60,12 @@ declare module "@salesforce/schema/UserProvMockTarget.ExternalUsername" {
     export default ExternalUsername;
 }
 
+declare module "@salesforce/schema/UserProvMockTarget.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/UserProvMockTarget.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

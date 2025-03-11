@@ -90,6 +90,12 @@ declare module "@salesforce/schema/OmniDataTransform.GlobalKey" {
     export default GlobalKey;
 }
 
+declare module "@salesforce/schema/OmniDataTransform.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OmniDataTransform.InputParsingClass" {
     import { FieldId } from "@salesforce/schema";
     const InputParsingClass: FieldId;

@@ -60,6 +60,12 @@ declare module "@salesforce/schema/OrderItemRecipient.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/OrderItemRecipient.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OrderItemRecipient.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

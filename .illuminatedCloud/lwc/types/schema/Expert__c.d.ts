@@ -450,6 +450,12 @@ declare module "@salesforce/schema/Expert__c.Hygienist_with_director_level_exper
     export default Hygienist_with_director_level_experience__c;
 }
 
+declare module "@salesforce/schema/Expert__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Expert__c.Imaging__c" {
     import { FieldId } from "@salesforce/schema";
     const Imaging__c: FieldId;

@@ -66,6 +66,12 @@ declare module "@salesforce/schema/DataObjectDataChgEvent.EventUuid" {
     export default EventUuid;
 }
 
+declare module "@salesforce/schema/DataObjectDataChgEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DataObjectDataChgEvent.Offset" {
     import { FieldId } from "@salesforce/schema";
     const Offset: FieldId;

@@ -30,6 +30,12 @@ declare module "@salesforce/schema/OrderItemType.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/OrderItemType.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OrderItemType.IsDefault" {
     import { FieldId } from "@salesforce/schema";
     const IsDefault: FieldId;

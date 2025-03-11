@@ -36,6 +36,12 @@ declare module "@salesforce/schema/ServiceCrewHistory.Field" {
     export default Field;
 }
 
+declare module "@salesforce/schema/ServiceCrewHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ServiceCrewHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

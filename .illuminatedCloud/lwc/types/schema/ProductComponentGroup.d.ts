@@ -156,6 +156,12 @@ declare module "@salesforce/schema/ProductComponentGroup.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/ProductComponentGroup.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ProductComponentGroup.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

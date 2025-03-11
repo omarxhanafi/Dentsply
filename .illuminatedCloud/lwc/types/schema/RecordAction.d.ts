@@ -66,6 +66,12 @@ declare module "@salesforce/schema/RecordAction.FlowInterviewId" {
     export default FlowInterviewId;
 }
 
+declare module "@salesforce/schema/RecordAction.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/RecordAction.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

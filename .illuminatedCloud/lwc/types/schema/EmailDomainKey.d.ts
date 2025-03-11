@@ -60,6 +60,12 @@ declare module "@salesforce/schema/EmailDomainKey.DomainMatchPattern" {
     export default DomainMatchPattern;
 }
 
+declare module "@salesforce/schema/EmailDomainKey.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EmailDomainKey.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

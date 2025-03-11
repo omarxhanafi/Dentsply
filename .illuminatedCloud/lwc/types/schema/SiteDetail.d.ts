@@ -12,6 +12,12 @@ declare module "@salesforce/schema/SiteDetail.DurableId" {
     export default DurableId;
 }
 
+declare module "@salesforce/schema/SiteDetail.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SiteDetail.IsRegistrationEnabled" {
     import { FieldId } from "@salesforce/schema";
     const IsRegistrationEnabled: FieldId;

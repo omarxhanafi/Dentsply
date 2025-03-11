@@ -48,6 +48,12 @@ declare module "@salesforce/schema/ApexTestQueueItem.ExtendedStatus" {
     export default ExtendedStatus;
 }
 
+declare module "@salesforce/schema/ApexTestQueueItem.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ApexTestQueueItem.ParentJob" {
     import { FieldId } from "@salesforce/schema";
     const ParentJob: FieldId;

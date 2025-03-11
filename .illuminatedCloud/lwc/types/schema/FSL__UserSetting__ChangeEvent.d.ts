@@ -294,6 +294,12 @@ declare module "@salesforce/schema/FSL__UserSetting__ChangeEvent.FSL__View_Capac
     export default FSL__View_Capacity_Type__c;
 }
 
+declare module "@salesforce/schema/FSL__UserSetting__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__UserSetting__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

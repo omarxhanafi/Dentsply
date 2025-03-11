@@ -444,6 +444,12 @@ declare module "@salesforce/schema/KOL_Contract__c.Hyperion_Business_Function__c
     export default Hyperion_Business_Function__c;
 }
 
+declare module "@salesforce/schema/KOL_Contract__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/KOL_Contract__c.Include_Case_Series__c" {
     import { FieldId } from "@salesforce/schema";
     const Include_Case_Series__c: FieldId;

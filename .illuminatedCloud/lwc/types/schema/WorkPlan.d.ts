@@ -156,6 +156,12 @@ declare module "@salesforce/schema/WorkPlan.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/WorkPlan.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/WorkPlan.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

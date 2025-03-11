@@ -108,6 +108,12 @@ declare module "@salesforce/schema/PLZ_Dental__c.Gebiet_digital__c" {
     export default Gebiet_digital__c;
 }
 
+declare module "@salesforce/schema/PLZ_Dental__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/PLZ_Dental__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

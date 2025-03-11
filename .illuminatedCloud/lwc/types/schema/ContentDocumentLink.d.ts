@@ -24,6 +24,12 @@ declare module "@salesforce/schema/ContentDocumentLink.ContextRecord" {
     export default ContextRecord;
 }
 
+declare module "@salesforce/schema/ContentDocumentLink.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContentDocumentLink.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

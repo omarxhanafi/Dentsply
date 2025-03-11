@@ -66,6 +66,12 @@ declare module "@salesforce/schema/AccountContactRelation.EndDate" {
     export default EndDate;
 }
 
+declare module "@salesforce/schema/AccountContactRelation.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AccountContactRelation.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

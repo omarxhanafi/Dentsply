@@ -36,6 +36,12 @@ declare module "@salesforce/schema/UserRecordAccess.HasTransferAccess" {
     export default HasTransferAccess;
 }
 
+declare module "@salesforce/schema/UserRecordAccess.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/UserRecordAccess.MaxAccessLevel" {
     import { FieldId } from "@salesforce/schema";
     const MaxAccessLevel: FieldId;

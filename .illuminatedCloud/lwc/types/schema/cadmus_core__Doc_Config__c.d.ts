@@ -174,6 +174,12 @@ declare module "@salesforce/schema/cadmus_core__Doc_Config__c.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/cadmus_core__Doc_Config__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/cadmus_core__Doc_Config__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

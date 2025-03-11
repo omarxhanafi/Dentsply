@@ -132,6 +132,12 @@ declare module "@salesforce/schema/OmniProcess.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/OmniProcess.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OmniProcess.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

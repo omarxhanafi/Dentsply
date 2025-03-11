@@ -690,6 +690,12 @@ declare module "@salesforce/schema/OpportunityChangeEvent.High_Level_Plan__c" {
     export default High_Level_Plan__c;
 }
 
+declare module "@salesforce/schema/OpportunityChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OpportunityChangeEvent.Improved_based_on_Managers_feedback__c" {
     import { FieldId } from "@salesforce/schema";
     const Improved_based_on_Managers_feedback__c: FieldId;

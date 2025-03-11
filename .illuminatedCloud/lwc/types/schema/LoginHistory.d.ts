@@ -72,6 +72,12 @@ declare module "@salesforce/schema/LoginHistory.ForwardedForIp" {
     export default ForwardedForIp;
 }
 
+declare module "@salesforce/schema/LoginHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/LoginHistory.LoginGeo" {
     import { FieldId } from "@salesforce/schema";
     const LoginGeo: FieldId;

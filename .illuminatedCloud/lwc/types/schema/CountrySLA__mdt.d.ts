@@ -30,6 +30,12 @@ declare module "@salesforce/schema/CountrySLA__mdt.FallbackEntitlementRecord__c"
     export default FallbackEntitlementRecord__c;
 }
 
+declare module "@salesforce/schema/CountrySLA__mdt.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CountrySLA__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

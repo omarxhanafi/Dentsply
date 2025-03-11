@@ -48,6 +48,12 @@ declare module "@salesforce/schema/EngagementTopicHistory.Field" {
     export default Field;
 }
 
+declare module "@salesforce/schema/EngagementTopicHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EngagementTopicHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

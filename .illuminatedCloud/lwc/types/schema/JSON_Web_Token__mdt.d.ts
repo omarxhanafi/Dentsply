@@ -30,6 +30,12 @@ declare module "@salesforce/schema/JSON_Web_Token__mdt.Endpoint__c" {
     export default Endpoint__c;
 }
 
+declare module "@salesforce/schema/JSON_Web_Token__mdt.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/JSON_Web_Token__mdt.Issuer__c" {
     import { FieldId } from "@salesforce/schema";
     const Issuer__c: FieldId;

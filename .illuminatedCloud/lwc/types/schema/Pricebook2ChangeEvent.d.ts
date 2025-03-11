@@ -144,6 +144,12 @@ declare module "@salesforce/schema/Pricebook2ChangeEvent.Header_Order__c" {
     export default Header_Order__c;
 }
 
+declare module "@salesforce/schema/Pricebook2ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Pricebook2ChangeEvent.Indirect_orders_Show_FOC_field__c" {
     import { FieldId } from "@salesforce/schema";
     const Indirect_orders_Show_FOC_field__c: FieldId;

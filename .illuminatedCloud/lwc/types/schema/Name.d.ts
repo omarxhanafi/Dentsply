@@ -24,6 +24,12 @@ declare module "@salesforce/schema/Name.FirstName" {
     export default FirstName;
 }
 
+declare module "@salesforce/schema/Name.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Name.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

@@ -168,6 +168,12 @@ declare module "@salesforce/schema/Project__ChangeEvent.Go_Live_date__c" {
     export default Go_Live_date__c;
 }
 
+declare module "@salesforce/schema/Project__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Project__ChangeEvent.Initiator_role_info__c" {
     import { FieldId } from "@salesforce/schema";
     const Initiator_role_info__c: FieldId;

@@ -72,6 +72,12 @@ declare module "@salesforce/schema/LiveChatDeployment.HasTranscriptSave" {
     export default HasTranscriptSave;
 }
 
+declare module "@salesforce/schema/LiveChatDeployment.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/LiveChatDeployment.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

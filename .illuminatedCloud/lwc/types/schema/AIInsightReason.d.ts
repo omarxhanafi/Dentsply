@@ -66,6 +66,12 @@ declare module "@salesforce/schema/AIInsightReason.FieldValue" {
     export default FieldValue;
 }
 
+declare module "@salesforce/schema/AIInsightReason.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AIInsightReason.Intensity" {
     import { FieldId } from "@salesforce/schema";
     const Intensity: FieldId;

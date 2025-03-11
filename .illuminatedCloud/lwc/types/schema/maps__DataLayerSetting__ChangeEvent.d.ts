@@ -36,6 +36,12 @@ declare module "@salesforce/schema/maps__DataLayerSetting__ChangeEvent.CurrencyI
     export default CurrencyIsoCode;
 }
 
+declare module "@salesforce/schema/maps__DataLayerSetting__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/maps__DataLayerSetting__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

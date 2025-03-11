@@ -6,6 +6,12 @@ declare module "@salesforce/schema/OrderShare" {
     export default OrderShare;
 }
 
+declare module "@salesforce/schema/OrderShare.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OrderShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -144,6 +144,12 @@ declare module "@salesforce/schema/RecordAlert.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/RecordAlert.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/RecordAlert.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

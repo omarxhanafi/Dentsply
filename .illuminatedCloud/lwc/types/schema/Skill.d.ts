@@ -36,6 +36,12 @@ declare module "@salesforce/schema/Skill.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/Skill.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Skill.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

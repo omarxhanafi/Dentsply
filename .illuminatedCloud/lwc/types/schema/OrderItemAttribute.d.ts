@@ -66,6 +66,12 @@ declare module "@salesforce/schema/OrderItemAttribute.ExternalId" {
     export default ExternalId;
 }
 
+declare module "@salesforce/schema/OrderItemAttribute.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OrderItemAttribute.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

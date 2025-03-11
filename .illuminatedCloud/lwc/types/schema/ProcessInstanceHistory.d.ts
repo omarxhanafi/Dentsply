@@ -60,6 +60,12 @@ declare module "@salesforce/schema/ProcessInstanceHistory.ElapsedTimeInMinutes" 
     export default ElapsedTimeInMinutes;
 }
 
+declare module "@salesforce/schema/ProcessInstanceHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ProcessInstanceHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

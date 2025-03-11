@@ -48,6 +48,12 @@ declare module "@salesforce/schema/BatchApexErrorEvent.ExceptionType" {
     export default ExceptionType;
 }
 
+declare module "@salesforce/schema/BatchApexErrorEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/BatchApexErrorEvent.JobScope" {
     import { FieldId } from "@salesforce/schema";
     const JobScope: FieldId;

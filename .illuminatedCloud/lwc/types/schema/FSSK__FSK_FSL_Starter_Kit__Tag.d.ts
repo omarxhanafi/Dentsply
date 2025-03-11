@@ -12,6 +12,12 @@ declare module "@salesforce/schema/FSSK__FSK_FSL_Starter_Kit__Tag.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/FSSK__FSK_FSL_Starter_Kit__Tag.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSSK__FSK_FSL_Starter_Kit__Tag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

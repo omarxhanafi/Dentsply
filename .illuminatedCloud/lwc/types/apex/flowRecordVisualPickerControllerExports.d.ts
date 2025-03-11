@@ -5,5 +5,5 @@ declare module "@salesforce/apex/flowRecordVisualPickerController.getRecords" {
 }
 
 declare module "@salesforce/apex/flowRecordVisualPickerController.getRelatedContacts" {
-    export default function getRelatedContacts(params: {recordId: string}): Promise<any[]>;
+    export default function getRelatedContacts(params: {recordId: string}): Promise<Contact[]>;
 }

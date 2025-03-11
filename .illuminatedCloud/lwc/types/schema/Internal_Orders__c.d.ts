@@ -126,6 +126,12 @@ declare module "@salesforce/schema/Internal_Orders__c.GDWUniqueKey__c" {
     export default GDWUniqueKey__c;
 }
 
+declare module "@salesforce/schema/Internal_Orders__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Internal_Orders__c.Implant_system__c" {
     import { FieldId } from "@salesforce/schema";
     const Implant_system__c: FieldId;

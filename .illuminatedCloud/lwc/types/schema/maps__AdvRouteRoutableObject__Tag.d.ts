@@ -12,6 +12,12 @@ declare module "@salesforce/schema/maps__AdvRouteRoutableObject__Tag.CreatedDate
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/maps__AdvRouteRoutableObject__Tag.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/maps__AdvRouteRoutableObject__Tag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

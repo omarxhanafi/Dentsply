@@ -24,6 +24,12 @@ declare module "@salesforce/schema/IconDefinition.Height" {
     export default Height;
 }
 
+declare module "@salesforce/schema/IconDefinition.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/IconDefinition.TabDefinition" {
     import { FieldId } from "@salesforce/schema";
     const TabDefinition: FieldId;

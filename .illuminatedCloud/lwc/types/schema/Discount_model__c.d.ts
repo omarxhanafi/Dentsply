@@ -222,6 +222,12 @@ declare module "@salesforce/schema/Discount_model__c.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/Discount_model__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Discount_model__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

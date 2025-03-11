@@ -36,6 +36,12 @@ declare module "@salesforce/schema/FormulaFunction.ExampleString" {
     export default ExampleString;
 }
 
+declare module "@salesforce/schema/FormulaFunction.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FormulaFunction.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

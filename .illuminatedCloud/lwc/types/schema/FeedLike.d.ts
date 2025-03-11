@@ -54,6 +54,12 @@ declare module "@salesforce/schema/FeedLike.FeedItemId" {
     export default FeedItemId;
 }
 
+declare module "@salesforce/schema/FeedLike.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FeedLike.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

@@ -936,6 +936,12 @@ declare module "@salesforce/schema/Order.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/Order.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Order.IntegrationLogs__r" {
     import { FieldId } from "@salesforce/schema";
     const IntegrationLogs__r: FieldId;

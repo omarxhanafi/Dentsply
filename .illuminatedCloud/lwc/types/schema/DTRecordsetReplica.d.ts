@@ -66,6 +66,12 @@ declare module "@salesforce/schema/DTRecordsetReplica.HashKey" {
     export default HashKey;
 }
 
+declare module "@salesforce/schema/DTRecordsetReplica.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DTRecordsetReplica.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

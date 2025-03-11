@@ -102,6 +102,12 @@ declare module "@salesforce/schema/ProcedurePlanOption.ExpressionSetOutputFieldI
     export default ExpressionSetOutputFieldId;
 }
 
+declare module "@salesforce/schema/ProcedurePlanOption.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ProcedurePlanOption.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

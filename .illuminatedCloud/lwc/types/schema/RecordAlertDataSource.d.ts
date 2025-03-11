@@ -42,6 +42,12 @@ declare module "@salesforce/schema/RecordAlertDataSource.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/RecordAlertDataSource.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/RecordAlertDataSource.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

@@ -162,6 +162,12 @@ declare module "@salesforce/schema/maps__TPUserPreference__c.GeneratedDocRefObje
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/maps__TPUserPreference__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/maps__TPUserPreference__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

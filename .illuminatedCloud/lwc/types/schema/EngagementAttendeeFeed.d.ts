@@ -102,6 +102,12 @@ declare module "@salesforce/schema/EngagementAttendeeFeed.FeedTrackedChanges" {
     export default FeedTrackedChanges;
 }
 
+declare module "@salesforce/schema/EngagementAttendeeFeed.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EngagementAttendeeFeed.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

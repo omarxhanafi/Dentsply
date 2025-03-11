@@ -24,6 +24,12 @@ declare module "@salesforce/schema/CaseTeamTemplateRecord.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/CaseTeamTemplateRecord.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CaseTeamTemplateRecord.Parent" {
     import { FieldId } from "@salesforce/schema";
     const Parent: FieldId;

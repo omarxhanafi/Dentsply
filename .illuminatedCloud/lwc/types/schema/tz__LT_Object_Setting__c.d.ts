@@ -132,6 +132,12 @@ declare module "@salesforce/schema/tz__LT_Object_Setting__c.GeneratedDocRefObjec
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/tz__LT_Object_Setting__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/tz__LT_Object_Setting__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

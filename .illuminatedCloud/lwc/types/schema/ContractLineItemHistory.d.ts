@@ -48,6 +48,12 @@ declare module "@salesforce/schema/ContractLineItemHistory.Field" {
     export default Field;
 }
 
+declare module "@salesforce/schema/ContractLineItemHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContractLineItemHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -18,6 +18,12 @@ declare module "@salesforce/schema/ProcessNode.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/ProcessNode.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ProcessNode.Name" {
     import { FieldId } from "@salesforce/schema";
     const Name: FieldId;

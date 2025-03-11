@@ -48,6 +48,12 @@ declare module "@salesforce/schema/BriefcaseRule.FilterLogic" {
     export default FilterLogic;
 }
 
+declare module "@salesforce/schema/BriefcaseRule.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/BriefcaseRule.IsAscendingOrder" {
     import { FieldId } from "@salesforce/schema";
     const IsAscendingOrder: FieldId;

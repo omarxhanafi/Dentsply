@@ -66,6 +66,12 @@ declare module "@salesforce/schema/CaseExternalDocument.ExternalId" {
     export default ExternalId;
 }
 
+declare module "@salesforce/schema/CaseExternalDocument.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CaseExternalDocument.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

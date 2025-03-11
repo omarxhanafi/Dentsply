@@ -42,6 +42,12 @@ declare module "@salesforce/schema/FlowStageRelation.FlexIndex" {
     export default FlexIndex;
 }
 
+declare module "@salesforce/schema/FlowStageRelation.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FlowStageRelation.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

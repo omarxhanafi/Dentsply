@@ -48,6 +48,12 @@ declare module "@salesforce/schema/QuickTextChangeEvent.CurrencyIsoCode" {
     export default CurrencyIsoCode;
 }
 
+declare module "@salesforce/schema/QuickTextChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/QuickTextChangeEvent.IsInsertable" {
     import { FieldId } from "@salesforce/schema";
     const IsInsertable: FieldId;

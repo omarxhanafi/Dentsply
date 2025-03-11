@@ -66,6 +66,12 @@ declare module "@salesforce/schema/ContentAsset.Icon" {
     export default Icon;
 }
 
+declare module "@salesforce/schema/ContentAsset.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContentAsset.Image" {
     import { FieldId } from "@salesforce/schema";
     const Image: FieldId;

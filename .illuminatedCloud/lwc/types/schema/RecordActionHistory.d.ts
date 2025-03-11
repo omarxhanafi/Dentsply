@@ -42,6 +42,12 @@ declare module "@salesforce/schema/RecordActionHistory.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/RecordActionHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/RecordActionHistory.IsMandatory" {
     import { FieldId } from "@salesforce/schema";
     const IsMandatory: FieldId;

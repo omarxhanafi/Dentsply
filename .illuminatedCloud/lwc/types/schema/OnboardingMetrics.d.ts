@@ -30,6 +30,12 @@ declare module "@salesforce/schema/OnboardingMetrics.ExperienceName" {
     export default ExperienceName;
 }
 
+declare module "@salesforce/schema/OnboardingMetrics.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OnboardingMetrics.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -438,6 +438,12 @@ declare module "@salesforce/schema/Field_Sales_Project_Members__c.IS_My_Lead__c"
     export default IS_My_Lead__c;
 }
 
+declare module "@salesforce/schema/Field_Sales_Project_Members__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Field_Sales_Project_Members__c.InProgressAssignedDate__c" {
     import { FieldId } from "@salesforce/schema";
     const InProgressAssignedDate__c: FieldId;

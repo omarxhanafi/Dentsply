@@ -66,6 +66,12 @@ declare module "@salesforce/schema/QuoteLineItemAttribute.ExternalId" {
     export default ExternalId;
 }
 
+declare module "@salesforce/schema/QuoteLineItemAttribute.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/QuoteLineItemAttribute.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

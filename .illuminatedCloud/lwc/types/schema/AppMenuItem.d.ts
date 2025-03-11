@@ -90,6 +90,12 @@ declare module "@salesforce/schema/AppMenuItem.IconUrl" {
     export default IconUrl;
 }
 
+declare module "@salesforce/schema/AppMenuItem.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AppMenuItem.InfoUrl" {
     import { FieldId } from "@salesforce/schema";
     const InfoUrl: FieldId;

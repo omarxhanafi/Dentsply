@@ -36,6 +36,12 @@ declare module "@salesforce/schema/PlatformCachePartition.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/PlatformCachePartition.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/PlatformCachePartition.IsDefaultPartition" {
     import { FieldId } from "@salesforce/schema";
     const IsDefaultPartition: FieldId;

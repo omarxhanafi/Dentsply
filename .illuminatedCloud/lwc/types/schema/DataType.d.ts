@@ -42,6 +42,12 @@ declare module "@salesforce/schema/DataType.DurableId" {
     export default DurableId;
 }
 
+declare module "@salesforce/schema/DataType.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DataType.IsComplex" {
     import { FieldId } from "@salesforce/schema";
     const IsComplex: FieldId;

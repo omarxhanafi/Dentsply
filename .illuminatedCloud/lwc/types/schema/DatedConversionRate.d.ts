@@ -30,6 +30,12 @@ declare module "@salesforce/schema/DatedConversionRate.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/DatedConversionRate.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DatedConversionRate.IsoCode" {
     import { FieldId } from "@salesforce/schema";
     const IsoCode: FieldId;

@@ -48,6 +48,12 @@ declare module "@salesforce/schema/FSL__Crew_Management_User_Settings__ChangeEve
     export default FSL__SkillsLogicOperator__c;
 }
 
+declare module "@salesforce/schema/FSL__Crew_Management_User_Settings__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Crew_Management_User_Settings__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

@@ -126,6 +126,12 @@ declare module "@salesforce/schema/AgentWorkChangeEvent.HandleTime" {
     export default HandleTime;
 }
 
+declare module "@salesforce/schema/AgentWorkChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AgentWorkChangeEvent.IsInterruptible" {
     import { FieldId } from "@salesforce/schema";
     const IsInterruptible: FieldId;

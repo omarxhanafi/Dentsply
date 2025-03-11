@@ -5,5 +5,5 @@ declare module "@salesforce/apex/EventRelationDetails.getAttendeesList" {
 }
 
 declare module "@salesforce/apex/EventRelationDetails.getEventRelationDetails" {
-    export default function getEventRelationDetails(params: {eventid: string}): Promise<any[]>;
+    export default function getEventRelationDetails(params: {eventid: string}): Promise<EventRelation[]>;
 }

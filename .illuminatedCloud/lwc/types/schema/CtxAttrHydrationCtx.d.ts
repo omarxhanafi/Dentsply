@@ -42,6 +42,12 @@ declare module "@salesforce/schema/CtxAttrHydrationCtx.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/CtxAttrHydrationCtx.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CtxAttrHydrationCtx.InheritedFrom" {
     import { FieldId } from "@salesforce/schema";
     const InheritedFrom: FieldId;

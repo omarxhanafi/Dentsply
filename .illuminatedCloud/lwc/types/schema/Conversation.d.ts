@@ -72,6 +72,12 @@ declare module "@salesforce/schema/Conversation.EndTime" {
     export default EndTime;
 }
 
+declare module "@salesforce/schema/Conversation.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Conversation.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

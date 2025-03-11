@@ -186,6 +186,12 @@ declare module "@salesforce/schema/ApptBundleAggrPolicy.GeneratedDocRefObjects" 
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/ApptBundleAggrPolicy.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ApptBundleAggrPolicy.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

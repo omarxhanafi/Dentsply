@@ -30,6 +30,12 @@ declare module "@salesforce/schema/ContentFolderLink.EnableFolderStatus" {
     export default EnableFolderStatus;
 }
 
+declare module "@salesforce/schema/ContentFolderLink.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContentFolderLink.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

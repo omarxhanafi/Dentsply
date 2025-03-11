@@ -150,6 +150,12 @@ declare module "@salesforce/schema/ApptBundlePolicySvcTerr.GeneratedDocRefObject
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/ApptBundlePolicySvcTerr.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ApptBundlePolicySvcTerr.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

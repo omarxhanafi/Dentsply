@@ -90,6 +90,12 @@ declare module "@salesforce/schema/PlatformAction.IconWidth" {
     export default IconWidth;
 }
 
+declare module "@salesforce/schema/PlatformAction.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/PlatformAction.InvocationStatus" {
     import { FieldId } from "@salesforce/schema";
     const InvocationStatus: FieldId;

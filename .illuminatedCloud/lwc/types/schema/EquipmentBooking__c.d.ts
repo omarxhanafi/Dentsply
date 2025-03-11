@@ -324,6 +324,12 @@ declare module "@salesforce/schema/EquipmentBooking__c.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/EquipmentBooking__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EquipmentBooking__c.InventoryItem__c" {
     import { FieldId } from "@salesforce/schema";
     const InventoryItem__c: FieldId;

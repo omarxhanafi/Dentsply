@@ -2,7 +2,7 @@
 
 declare namespace OpportunityStageGuidanceClass {
     declare interface StageWrapper {
-        stageInfo?: any[];
+        stageInfo?: OppStageGuidance__mdt[];
         currentStage?: string;
         currentStageGuidance?: string;
         fieldsToDisplay?: string[];

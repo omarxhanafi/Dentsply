@@ -18,6 +18,12 @@ declare module "@salesforce/schema/FiscalYearSettings.EndDate" {
     export default EndDate;
 }
 
+declare module "@salesforce/schema/FiscalYearSettings.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FiscalYearSettings.IsStandardYear" {
     import { FieldId } from "@salesforce/schema";
     const IsStandardYear: FieldId;

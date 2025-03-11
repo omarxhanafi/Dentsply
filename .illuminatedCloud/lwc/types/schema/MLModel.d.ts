@@ -42,6 +42,12 @@ declare module "@salesforce/schema/MLModel.Dataset" {
     export default Dataset;
 }
 
+declare module "@salesforce/schema/MLModel.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/MLModel.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

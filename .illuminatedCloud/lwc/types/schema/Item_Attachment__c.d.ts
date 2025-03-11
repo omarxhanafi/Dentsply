@@ -36,6 +36,12 @@ declare module "@salesforce/schema/Item_Attachment__c.File_Type__c" {
     export default File_Type__c;
 }
 
+declare module "@salesforce/schema/Item_Attachment__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Item_Attachment__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

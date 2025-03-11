@@ -24,6 +24,12 @@ declare module "@salesforce/schema/MessagingChannelSkill.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/MessagingChannelSkill.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/MessagingChannelSkill.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

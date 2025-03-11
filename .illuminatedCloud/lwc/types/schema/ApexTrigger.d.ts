@@ -42,6 +42,12 @@ declare module "@salesforce/schema/ApexTrigger.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/ApexTrigger.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ApexTrigger.IsValid" {
     import { FieldId } from "@salesforce/schema";
     const IsValid: FieldId;

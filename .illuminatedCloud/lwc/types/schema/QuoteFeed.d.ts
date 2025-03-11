@@ -102,6 +102,12 @@ declare module "@salesforce/schema/QuoteFeed.FeedTrackedChanges" {
     export default FeedTrackedChanges;
 }
 
+declare module "@salesforce/schema/QuoteFeed.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/QuoteFeed.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

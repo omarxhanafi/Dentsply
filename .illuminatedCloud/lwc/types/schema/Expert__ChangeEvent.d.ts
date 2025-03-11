@@ -282,6 +282,12 @@ declare module "@salesforce/schema/Expert__ChangeEvent.Hygienist_with_director_l
     export default Hygienist_with_director_level_experience__c;
 }
 
+declare module "@salesforce/schema/Expert__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Expert__ChangeEvent.Imaging__c" {
     import { FieldId } from "@salesforce/schema";
     const Imaging__c: FieldId;

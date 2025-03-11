@@ -54,6 +54,12 @@ declare module "@salesforce/schema/UiFormulaRule.Formula" {
     export default Formula;
 }
 
+declare module "@salesforce/schema/UiFormulaRule.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/UiFormulaRule.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

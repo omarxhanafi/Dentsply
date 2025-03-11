@@ -168,6 +168,12 @@ declare module "@salesforce/schema/KolInternalContact__c.GeneratedDocRefObjects"
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/KolInternalContact__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/KolInternalContact__c.InternalContact__c" {
     import { FieldId } from "@salesforce/schema";
     const InternalContact__c: FieldId;

@@ -2,7 +2,7 @@
 
 declare namespace WorkflowProfilingController {
     declare interface ProductFamilyWrapper {
-        productFamily?: any;
+        productFamily?: ProductFamily__c;
         competitorProducts?: WorkflowProfilingController.NonERPProductWrapper[];
         dsProducts?: WorkflowProfilingController.NonERPProductWrapper[];
     }

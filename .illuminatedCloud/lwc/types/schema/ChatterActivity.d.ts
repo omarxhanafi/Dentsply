@@ -18,6 +18,12 @@ declare module "@salesforce/schema/ChatterActivity.CommentReceivedCount" {
     export default CommentReceivedCount;
 }
 
+declare module "@salesforce/schema/ChatterActivity.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ChatterActivity.InfluenceRawRank" {
     import { FieldId } from "@salesforce/schema";
     const InfluenceRawRank: FieldId;

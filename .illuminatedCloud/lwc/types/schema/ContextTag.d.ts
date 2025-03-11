@@ -54,6 +54,12 @@ declare module "@salesforce/schema/ContextTag.Description" {
     export default Description;
 }
 
+declare module "@salesforce/schema/ContextTag.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContextTag.InheritedFrom" {
     import { FieldId } from "@salesforce/schema";
     const InheritedFrom: FieldId;

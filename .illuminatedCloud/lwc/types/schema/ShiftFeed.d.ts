@@ -102,6 +102,12 @@ declare module "@salesforce/schema/ShiftFeed.FeedTrackedChanges" {
     export default FeedTrackedChanges;
 }
 
+declare module "@salesforce/schema/ShiftFeed.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ShiftFeed.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

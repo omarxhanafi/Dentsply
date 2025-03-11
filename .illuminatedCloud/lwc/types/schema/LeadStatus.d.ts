@@ -30,6 +30,12 @@ declare module "@salesforce/schema/LeadStatus.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/LeadStatus.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/LeadStatus.IsConverted" {
     import { FieldId } from "@salesforce/schema";
     const IsConverted: FieldId;

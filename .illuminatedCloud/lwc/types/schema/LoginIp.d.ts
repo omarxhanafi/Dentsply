@@ -24,6 +24,12 @@ declare module "@salesforce/schema/LoginIp.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/LoginIp.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/LoginIp.IsAuthenticated" {
     import { FieldId } from "@salesforce/schema";
     const IsAuthenticated: FieldId;

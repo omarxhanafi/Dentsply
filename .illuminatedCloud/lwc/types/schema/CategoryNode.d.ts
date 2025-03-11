@@ -30,6 +30,12 @@ declare module "@salesforce/schema/CategoryNode.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/CategoryNode.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CategoryNode.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

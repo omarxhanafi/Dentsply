@@ -36,6 +36,12 @@ declare module "@salesforce/schema/SBQQ__CustomAction__c.Custom_Actions__r" {
     export default Custom_Actions__r;
 }
 
+declare module "@salesforce/schema/SBQQ__CustomAction__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SBQQ__CustomAction__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

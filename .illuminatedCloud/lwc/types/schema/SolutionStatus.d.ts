@@ -30,6 +30,12 @@ declare module "@salesforce/schema/SolutionStatus.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/SolutionStatus.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SolutionStatus.IsDefault" {
     import { FieldId } from "@salesforce/schema";
     const IsDefault: FieldId;

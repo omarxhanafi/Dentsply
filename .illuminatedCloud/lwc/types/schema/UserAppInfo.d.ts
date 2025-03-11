@@ -54,6 +54,12 @@ declare module "@salesforce/schema/UserAppInfo.FormFactor" {
     export default FormFactor;
 }
 
+declare module "@salesforce/schema/UserAppInfo.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/UserAppInfo.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

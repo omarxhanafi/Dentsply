@@ -36,6 +36,12 @@ declare module "@salesforce/schema/WarrantyTermHistory.Field" {
     export default Field;
 }
 
+declare module "@salesforce/schema/WarrantyTermHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/WarrantyTermHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

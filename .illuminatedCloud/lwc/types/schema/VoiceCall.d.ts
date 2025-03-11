@@ -192,6 +192,12 @@ declare module "@salesforce/schema/VoiceCall.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/VoiceCall.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/VoiceCall.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

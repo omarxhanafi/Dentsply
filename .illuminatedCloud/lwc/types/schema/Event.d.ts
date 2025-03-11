@@ -516,6 +516,12 @@ declare module "@salesforce/schema/Event.GroupEventType" {
     export default GroupEventType;
 }
 
+declare module "@salesforce/schema/Event.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Event.IsAllDayEvent" {
     import { FieldId } from "@salesforce/schema";
     const IsAllDayEvent: FieldId;

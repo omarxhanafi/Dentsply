@@ -462,6 +462,12 @@ declare module "@salesforce/schema/Network__c.Hub_Contact__r" {
     export default Hub_Contact__r;
 }
 
+declare module "@salesforce/schema/Network__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Network__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

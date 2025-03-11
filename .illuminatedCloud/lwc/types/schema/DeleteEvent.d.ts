@@ -30,6 +30,12 @@ declare module "@salesforce/schema/DeleteEvent.DeletedDate" {
     export default DeletedDate;
 }
 
+declare module "@salesforce/schema/DeleteEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DeleteEvent.Record" {
     import { FieldId } from "@salesforce/schema";
     const Record: FieldId;

@@ -6,6 +6,12 @@ declare module "@salesforce/schema/UserLogin" {
     export default UserLogin;
 }
 
+declare module "@salesforce/schema/UserLogin.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/UserLogin.IsFrozen" {
     import { FieldId } from "@salesforce/schema";
     const IsFrozen: FieldId;

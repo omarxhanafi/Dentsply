@@ -66,6 +66,12 @@ declare module "@salesforce/schema/FSL__User_Territory__ChangeEvent.FSL__User__r
     export default FSL__User__r;
 }
 
+declare module "@salesforce/schema/FSL__User_Territory__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__User_Territory__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

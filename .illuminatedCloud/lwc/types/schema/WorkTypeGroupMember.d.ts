@@ -114,6 +114,12 @@ declare module "@salesforce/schema/WorkTypeGroupMember.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/WorkTypeGroupMember.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/WorkTypeGroupMember.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

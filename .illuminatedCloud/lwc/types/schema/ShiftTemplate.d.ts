@@ -42,6 +42,12 @@ declare module "@salesforce/schema/ShiftTemplate.Duration" {
     export default Duration;
 }
 
+declare module "@salesforce/schema/ShiftTemplate.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ShiftTemplate.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

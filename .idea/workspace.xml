@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9e60bd2-7bdf-40cd-acd0-d4883273aff1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/apex/AccountChangeRequestExports.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/apex/AccountChangeRequestExports.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/apex/ActivityHistoryControllerExports.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/apex/ActivityHistoryControllerExports.d.ts" afterDir="false" />
@@ -1342,7 +1341,6 @@
       <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/Territory2.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/Territory2.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/Territory2AlignmentLog.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/Territory2AlignmentLog.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/Territory2ModelFeed.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/Territory2ModelFeed.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/Territory2ModelHistory.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/Territory2Type.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/Territory2Type.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/TestSuiteMembership.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/TestSuiteMembership.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/ThirdPartyAccountLink.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.illuminatedCloud/lwc/types/schema/ThirdPartyAccountLink.d.ts" afterDir="false" />
@@ -1853,13 +1851,9 @@
                   <option name="body" value="// Define the order and user IDs&#10;Id excludedOrderId = '8019Z00000b23RLQAY';&#10;Id userId = '0056M00000ASrV4QAL';&#10;&#10;// Query orders to delete&#10;List&lt;Order&gt; ordersToDelete = [&#10;        SELECT Id&#10;        FROM Order&#10;        WHERE Id != :excludedOrderId&#10;        AND CreatedById = :userId&#10;];&#10;&#10;// Check if there are orders to delete&#10;if (!ordersToDelete.isEmpty()) {&#10;    delete ordersToDelete;&#10;}&#10;&#10;// Define the quote and user IDs&#10;Id excludedQuoteId = '0Q09Z00000411RBSAY';&#10;&#10;// Query quotes to delete&#10;List&lt;Quote&gt; quotesToDelete = [&#10;        SELECT Id&#10;        FROM Quote&#10;        WHERE Id != :excludedQuoteId&#10;        AND CreatedById = :userId&#10;];&#10;&#10;// Check if there are quotes to delete&#10;if (!quotesToDelete.isEmpty()) {&#10;    delete quotesToDelete;&#10;}&#10;            &#10;            " />
                   <option name="name" value="Anonymous Apex 2" />
                 </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="List&lt;OrderItem&gt; orderItemsToDelete = [SELECT Id from OrderItem where OrderId = '8019Z00000bA1GsQAK'];&#10;&#10;delete orderItemsToDelete;" />
-                  <option name="name" value="Anonymous Apex 3" />
-                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="3" />
+            <option name="selectedSavedDocumentIndex" value="2" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionMruWorkspaceSettings">
@@ -20376,7 +20370,7 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ORDERCLONECONTROLLER" value="1741265145665" />
+                      <entry key="APEXCLASS:ORDERCLONECONTROLLER" value="1741686609868" />
                       <entry key="APEXCLASS:ORDERITEMTRIGGERHANDLER" value="1738745353807" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1737034166879" />
                       <entry key="APEXCLASS:ORDERTRIGGERHANDLER" value="1739264251710" />
@@ -22080,6 +22074,7 @@
       <workItem from="1739441163012" duration="207000" />
       <workItem from="1739455491859" duration="5999000" />
       <workItem from="1740125603775" duration="23593000" />
+      <workItem from="1741686714843" duration="1035000" />
     </task>
     <servers />
   </component>
@@ -22134,6 +22129,7 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_BatchCreateProcedureTrackers_testBatchCreateProcedureTrackers.ic2" NAME="StgJan Coverage Results" MODIFIED="1673859457008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_EventPathController.ic2" NAME="Cleanup2 Coverage Results" MODIFIED="1734628861617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Frost2" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$ContactTriggerTest_testNoDeleteKOLError.ic2" NAME="DevMar25 Coverage Results" MODIFIED="1741686114443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevMar25" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ObjectivesController_OGSM.ic2" NAME="StgJan25 Coverage Results" MODIFIED="1737386246886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan25" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OrderCloneController.ic2" NAME="RLMDev Coverage Results" MODIFIED="1740395623622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevMar25" CONNECTION_TYPE="OAUTH" />

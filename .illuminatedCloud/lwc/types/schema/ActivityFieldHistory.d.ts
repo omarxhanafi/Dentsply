@@ -66,6 +66,12 @@ declare module "@salesforce/schema/ActivityFieldHistory.FieldName" {
     export default FieldName;
 }
 
+declare module "@salesforce/schema/ActivityFieldHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ActivityFieldHistory.IsDataAvailable" {
     import { FieldId } from "@salesforce/schema";
     const IsDataAvailable: FieldId;

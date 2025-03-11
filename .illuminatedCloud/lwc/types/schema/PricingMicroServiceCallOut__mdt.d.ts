@@ -24,6 +24,12 @@ declare module "@salesforce/schema/PricingMicroServiceCallOut__mdt.GetOrderDetai
     export default GetOrderDetailsLogicAppsURL__c;
 }
 
+declare module "@salesforce/schema/PricingMicroServiceCallOut__mdt.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/PricingMicroServiceCallOut__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

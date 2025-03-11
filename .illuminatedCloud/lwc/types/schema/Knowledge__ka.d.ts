@@ -120,6 +120,12 @@ declare module "@salesforce/schema/Knowledge__ka.FlowOrchestrationWorkItems" {
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/Knowledge__ka.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Knowledge__ka.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

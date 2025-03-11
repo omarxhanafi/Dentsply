@@ -30,6 +30,12 @@ declare module "@salesforce/schema/TwoFactorTempCode.Expiration" {
     export default Expiration;
 }
 
+declare module "@salesforce/schema/TwoFactorTempCode.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/TwoFactorTempCode.Identifier" {
     import { FieldId } from "@salesforce/schema";
     const Identifier: FieldId;

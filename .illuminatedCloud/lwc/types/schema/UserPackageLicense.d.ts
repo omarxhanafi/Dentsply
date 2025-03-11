@@ -24,6 +24,12 @@ declare module "@salesforce/schema/UserPackageLicense.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/UserPackageLicense.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/UserPackageLicense.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

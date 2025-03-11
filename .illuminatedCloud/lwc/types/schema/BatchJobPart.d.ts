@@ -156,6 +156,12 @@ declare module "@salesforce/schema/BatchJobPart.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/BatchJobPart.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/BatchJobPart.InputRecordCount" {
     import { FieldId } from "@salesforce/schema";
     const InputRecordCount: FieldId;

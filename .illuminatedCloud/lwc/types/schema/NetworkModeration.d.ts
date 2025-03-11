@@ -36,6 +36,12 @@ declare module "@salesforce/schema/NetworkModeration.EntityId" {
     export default EntityId;
 }
 
+declare module "@salesforce/schema/NetworkModeration.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/NetworkModeration.ModerationType" {
     import { FieldId } from "@salesforce/schema";
     const ModerationType: FieldId;

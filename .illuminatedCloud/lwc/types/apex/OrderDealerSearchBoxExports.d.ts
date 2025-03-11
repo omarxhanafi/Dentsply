@@ -9,17 +9,17 @@ declare module "@salesforce/apex/OrderDealerSearchBox.fetchLookUpValues" {
 }
 
 declare module "@salesforce/apex/OrderDealerSearchBox.getAllPdeList" {
-    export default function getAllPdeList(params: {orderId: string}): Promise<any[]>;
+    export default function getAllPdeList(params: {orderId: string}): Promise<Preferred_dealer_item__c[]>;
 }
 
 declare module "@salesforce/apex/OrderDealerSearchBox.Initialize" {
-    export default function Initialize(params: {recordId: string}): Promise<any>;
+    export default function Initialize(params: {recordId: string}): Promise<Order>;
 }
 
 declare module "@salesforce/apex/OrderDealerSearchBox.saveDealer" {
-    export default function saveDealer(params: {accList: any[], orderId: string}): Promise<any[]>;
+    export default function saveDealer(params: {accList: Account[], orderId: string}): Promise<Preferred_dealer_item__c[]>;
 }
 
 declare module "@salesforce/apex/OrderDealerSearchBox.updateDealerInfo" {
-    export default function updateDealerInfo(params: {dealerId: string, orderRec: any}): Promise<string>;
+    export default function updateDealerInfo(params: {dealerId: string, orderRec: Order}): Promise<string>;
 }

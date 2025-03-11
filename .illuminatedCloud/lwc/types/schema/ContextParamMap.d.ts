@@ -42,6 +42,12 @@ declare module "@salesforce/schema/ContextParamMap.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/ContextParamMap.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContextParamMap.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

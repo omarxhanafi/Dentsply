@@ -36,6 +36,12 @@ declare module "@salesforce/schema/maps__AssignmentPlan__ChangeEvent.CurrencyIso
     export default CurrencyIsoCode;
 }
 
+declare module "@salesforce/schema/maps__AssignmentPlan__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/maps__AssignmentPlan__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

@@ -210,6 +210,12 @@ declare module "@salesforce/schema/OrderItemChangeEvent.Free_of_Charge_Delivery_
     export default Free_of_Charge_Delivery__c;
 }
 
+declare module "@salesforce/schema/OrderItemChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OrderItemChangeEvent.Item_at_100__c" {
     import { FieldId } from "@salesforce/schema";
     const Item_at_100__c: FieldId;

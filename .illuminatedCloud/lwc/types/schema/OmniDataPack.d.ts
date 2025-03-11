@@ -132,6 +132,12 @@ declare module "@salesforce/schema/OmniDataPack.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/OmniDataPack.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OmniDataPack.IsAddedToMultiPack" {
     import { FieldId } from "@salesforce/schema";
     const IsAddedToMultiPack: FieldId;

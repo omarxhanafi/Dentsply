@@ -66,6 +66,12 @@ declare module "@salesforce/schema/OrgMetricScanSummary.FlowOrchestrationWorkIte
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/OrgMetricScanSummary.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OrgMetricScanSummary.ImplementationEffort" {
     import { FieldId } from "@salesforce/schema";
     const ImplementationEffort: FieldId;

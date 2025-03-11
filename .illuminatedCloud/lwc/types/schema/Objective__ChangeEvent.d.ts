@@ -60,6 +60,12 @@ declare module "@salesforce/schema/Objective__ChangeEvent.Goals__c" {
     export default Goals__c;
 }
 
+declare module "@salesforce/schema/Objective__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Objective__ChangeEvent.IndicatedActions__c" {
     import { FieldId } from "@salesforce/schema";
     const IndicatedActions__c: FieldId;

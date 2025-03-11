@@ -90,6 +90,12 @@ declare module "@salesforce/schema/Emails__ChangeEvent.Email_opt_out__c" {
     export default Email_opt_out__c;
 }
 
+declare module "@salesforce/schema/Emails__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Emails__ChangeEvent.Inactive__c" {
     import { FieldId } from "@salesforce/schema";
     const Inactive__c: FieldId;

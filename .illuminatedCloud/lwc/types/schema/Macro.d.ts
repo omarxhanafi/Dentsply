@@ -72,6 +72,12 @@ declare module "@salesforce/schema/Macro.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/Macro.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Macro.IsAlohaSupported" {
     import { FieldId } from "@salesforce/schema";
     const IsAlohaSupported: FieldId;

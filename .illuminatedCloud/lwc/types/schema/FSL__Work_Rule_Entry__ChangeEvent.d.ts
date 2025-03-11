@@ -48,6 +48,12 @@ declare module "@salesforce/schema/FSL__Work_Rule_Entry__ChangeEvent.FSL__Work_R
     export default FSL__Work_Rule__r;
 }
 
+declare module "@salesforce/schema/FSL__Work_Rule_Entry__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Work_Rule_Entry__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

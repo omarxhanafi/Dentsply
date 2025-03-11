@@ -30,6 +30,12 @@ declare module "@salesforce/schema/Profile.Description" {
     export default Description;
 }
 
+declare module "@salesforce/schema/Profile.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Profile.IsSsoEnabled" {
     import { FieldId } from "@salesforce/schema";
     const IsSsoEnabled: FieldId;

@@ -240,6 +240,12 @@ declare module "@salesforce/schema/Accounts_Receivables__c.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/Accounts_Receivables__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Accounts_Receivables__c.Invoice_Age_until_fully_paid__c" {
     import { FieldId } from "@salesforce/schema";
     const Invoice_Age_until_fully_paid__c: FieldId;

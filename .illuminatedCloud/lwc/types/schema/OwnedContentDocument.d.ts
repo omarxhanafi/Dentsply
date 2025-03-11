@@ -72,6 +72,12 @@ declare module "@salesforce/schema/OwnedContentDocument.FileType" {
     export default FileType;
 }
 
+declare module "@salesforce/schema/OwnedContentDocument.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OwnedContentDocument.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

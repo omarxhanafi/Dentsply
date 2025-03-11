@@ -24,6 +24,12 @@ declare module "@salesforce/schema/Research_Activity__c.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/Research_Activity__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Research_Activity__c.Investigators__r" {
     import { FieldId } from "@salesforce/schema";
     const Investigators__r: FieldId;

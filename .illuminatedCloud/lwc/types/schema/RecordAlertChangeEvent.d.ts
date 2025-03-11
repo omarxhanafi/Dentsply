@@ -42,6 +42,12 @@ declare module "@salesforce/schema/RecordAlertChangeEvent.EffectiveDate" {
     export default EffectiveDate;
 }
 
+declare module "@salesforce/schema/RecordAlertChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/RecordAlertChangeEvent.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

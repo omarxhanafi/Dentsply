@@ -42,6 +42,12 @@ declare module "@salesforce/schema/ProcedurePlanVariable.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/ProcedurePlanVariable.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ProcedurePlanVariable.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

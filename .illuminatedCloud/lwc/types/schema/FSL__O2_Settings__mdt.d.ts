@@ -24,6 +24,12 @@ declare module "@salesforce/schema/FSL__O2_Settings__mdt.FSL__o2Endpoint__c" {
     export default FSL__o2Endpoint__c;
 }
 
+declare module "@salesforce/schema/FSL__O2_Settings__mdt.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__O2_Settings__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

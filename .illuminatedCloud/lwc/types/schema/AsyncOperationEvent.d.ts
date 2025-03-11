@@ -30,6 +30,12 @@ declare module "@salesforce/schema/AsyncOperationEvent.EventUuid" {
     export default EventUuid;
 }
 
+declare module "@salesforce/schema/AsyncOperationEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AsyncOperationEvent.OperationDetails" {
     import { FieldId } from "@salesforce/schema";
     const OperationDetails: FieldId;

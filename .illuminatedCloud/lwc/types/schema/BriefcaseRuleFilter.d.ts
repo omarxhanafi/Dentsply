@@ -54,6 +54,12 @@ declare module "@salesforce/schema/BriefcaseRuleFilter.FilterValue" {
     export default FilterValue;
 }
 
+declare module "@salesforce/schema/BriefcaseRuleFilter.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/BriefcaseRuleFilter.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -30,6 +30,12 @@ declare module "@salesforce/schema/CorsWhitelistEntry.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/CorsWhitelistEntry.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CorsWhitelistEntry.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

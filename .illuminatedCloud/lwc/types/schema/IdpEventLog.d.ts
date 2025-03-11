@@ -36,6 +36,12 @@ declare module "@salesforce/schema/IdpEventLog.ErrorCode" {
     export default ErrorCode;
 }
 
+declare module "@salesforce/schema/IdpEventLog.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/IdpEventLog.IdentityUsed" {
     import { FieldId } from "@salesforce/schema";
     const IdentityUsed: FieldId;

@@ -84,6 +84,12 @@ declare module "@salesforce/schema/FSL__Time_Dependency__ChangeEvent.FSL__Servic
     export default FSL__Service_Appointment_2__r;
 }
 
+declare module "@salesforce/schema/FSL__Time_Dependency__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Time_Dependency__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

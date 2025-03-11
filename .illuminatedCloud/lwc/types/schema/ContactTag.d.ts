@@ -12,6 +12,12 @@ declare module "@salesforce/schema/ContactTag.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/ContactTag.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContactTag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

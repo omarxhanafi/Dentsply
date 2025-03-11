@@ -48,6 +48,12 @@ declare module "@salesforce/schema/SocialPostChangeEvent.Headline" {
     export default Headline;
 }
 
+declare module "@salesforce/schema/SocialPostChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SocialPostChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

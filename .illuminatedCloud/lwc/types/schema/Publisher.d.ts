@@ -12,6 +12,12 @@ declare module "@salesforce/schema/Publisher.DurableId" {
     export default DurableId;
 }
 
+declare module "@salesforce/schema/Publisher.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Publisher.InstalledEntityDefinitions" {
     import { FieldId } from "@salesforce/schema";
     const InstalledEntityDefinitions: FieldId;

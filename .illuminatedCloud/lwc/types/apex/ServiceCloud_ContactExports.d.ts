@@ -5,9 +5,9 @@ declare module "@salesforce/apex/ServiceCloud_Contact.getCaseFieldLabels" {
 }
 
 declare module "@salesforce/apex/ServiceCloud_Contact.getContactInfo" {
-    export default function getContactInfo(params: {recordId: string}): Promise<any>;
+    export default function getContactInfo(params: {recordId: string}): Promise<Contact>;
 }
 
 declare module "@salesforce/apex/ServiceCloud_Contact.getOpenCases" {
-    export default function getOpenCases(params: {recordId: string}): Promise<any[]>;
+    export default function getOpenCases(params: {recordId: string}): Promise<Case[]>;
 }

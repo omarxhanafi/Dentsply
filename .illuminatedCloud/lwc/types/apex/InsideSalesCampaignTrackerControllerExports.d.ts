@@ -13,7 +13,7 @@ declare module "@salesforce/apex/InsideSalesCampaignTrackerController.getActityR
 }
 
 declare module "@salesforce/apex/InsideSalesCampaignTrackerController.getCampaignDetails" {
-    export default function getCampaignDetails(params: {accountId: string}): Promise<any[]>;
+    export default function getCampaignDetails(params: {accountId: string}): Promise<Campaign[]>;
 }
 
 declare module "@salesforce/apex/InsideSalesCampaignTrackerController.getContactTypePicklistValues" {

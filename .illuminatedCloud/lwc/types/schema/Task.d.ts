@@ -504,6 +504,12 @@ declare module "@salesforce/schema/Task.First_Call_Resolution__c" {
     export default First_Call_Resolution__c;
 }
 
+declare module "@salesforce/schema/Task.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Task.IsArchived" {
     import { FieldId } from "@salesforce/schema";
     const IsArchived: FieldId;

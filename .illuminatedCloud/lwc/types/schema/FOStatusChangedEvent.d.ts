@@ -42,6 +42,12 @@ declare module "@salesforce/schema/FOStatusChangedEvent.FulfillmentOrderId" {
     export default FulfillmentOrderId;
 }
 
+declare module "@salesforce/schema/FOStatusChangedEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FOStatusChangedEvent.NewStatus" {
     import { FieldId } from "@salesforce/schema";
     const NewStatus: FieldId;

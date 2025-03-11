@@ -192,6 +192,12 @@ declare module "@salesforce/schema/FSL__Scheduling_Policy_Goal__c.GeneratedDocRe
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/FSL__Scheduling_Policy_Goal__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Scheduling_Policy_Goal__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

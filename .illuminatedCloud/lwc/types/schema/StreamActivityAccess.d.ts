@@ -36,6 +36,12 @@ declare module "@salesforce/schema/StreamActivityAccess.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/StreamActivityAccess.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/StreamActivityAccess.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

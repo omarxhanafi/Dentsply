@@ -186,6 +186,12 @@ declare module "@salesforce/schema/FSL__Crew_Management_User_Settings_Territory_
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/FSL__Crew_Management_User_Settings_Territory__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Crew_Management_User_Settings_Territory__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

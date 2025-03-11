@@ -24,6 +24,12 @@ declare module "@salesforce/schema/CaseTeamTemplateMember.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/CaseTeamTemplateMember.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CaseTeamTemplateMember.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

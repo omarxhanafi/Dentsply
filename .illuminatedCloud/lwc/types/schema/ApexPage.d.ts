@@ -60,6 +60,12 @@ declare module "@salesforce/schema/ApexPage.Description" {
     export default Description;
 }
 
+declare module "@salesforce/schema/ApexPage.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ApexPage.IsAvailableInTouch" {
     import { FieldId } from "@salesforce/schema";
     const IsAvailableInTouch: FieldId;

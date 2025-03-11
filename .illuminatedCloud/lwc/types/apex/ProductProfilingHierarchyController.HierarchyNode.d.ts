@@ -2,7 +2,7 @@
 
 declare namespace ProductProfilingHierarchyController {
     declare interface HierarchyNode {
-        node?: any;
+        node?: Non_ERP_Products__c;
         nodeName?: string;
         children?: ProductProfilingHierarchyController.HierarchyNode[];
         isProfiled?: boolean;

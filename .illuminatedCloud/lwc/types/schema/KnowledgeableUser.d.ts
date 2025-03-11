@@ -6,6 +6,12 @@ declare module "@salesforce/schema/KnowledgeableUser" {
     export default KnowledgeableUser;
 }
 
+declare module "@salesforce/schema/KnowledgeableUser.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/KnowledgeableUser.Network" {
     import { FieldId } from "@salesforce/schema";
     const Network: FieldId;

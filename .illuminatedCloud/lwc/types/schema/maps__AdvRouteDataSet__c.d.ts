@@ -180,6 +180,12 @@ declare module "@salesforce/schema/maps__AdvRouteDataSet__c.GeneratedDocRefObjec
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/maps__AdvRouteDataSet__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/maps__AdvRouteDataSet__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

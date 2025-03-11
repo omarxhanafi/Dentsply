@@ -66,6 +66,12 @@ declare module "@salesforce/schema/User_Role__ChangeEvent.Email__c" {
     export default Email__c;
 }
 
+declare module "@salesforce/schema/User_Role__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/User_Role__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

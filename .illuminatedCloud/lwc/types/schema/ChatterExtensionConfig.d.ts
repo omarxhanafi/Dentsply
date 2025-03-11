@@ -48,6 +48,12 @@ declare module "@salesforce/schema/ChatterExtensionConfig.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/ChatterExtensionConfig.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ChatterExtensionConfig.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

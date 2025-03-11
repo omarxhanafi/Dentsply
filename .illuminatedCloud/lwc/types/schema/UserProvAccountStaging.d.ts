@@ -72,6 +72,12 @@ declare module "@salesforce/schema/UserProvAccountStaging.ExternalUsername" {
     export default ExternalUsername;
 }
 
+declare module "@salesforce/schema/UserProvAccountStaging.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/UserProvAccountStaging.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

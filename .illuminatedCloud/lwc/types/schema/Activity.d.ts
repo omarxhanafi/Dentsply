@@ -354,6 +354,12 @@ declare module "@salesforce/schema/Activity.First_Call_Resolution__c" {
     export default First_Call_Resolution__c;
 }
 
+declare module "@salesforce/schema/Activity.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Activity.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

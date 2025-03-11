@@ -60,6 +60,12 @@ declare module "@salesforce/schema/RevenueAsyncOperation.FinishedAt" {
     export default FinishedAt;
 }
 
+declare module "@salesforce/schema/RevenueAsyncOperation.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/RevenueAsyncOperation.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

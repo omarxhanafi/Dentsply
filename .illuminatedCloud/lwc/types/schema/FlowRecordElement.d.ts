@@ -54,6 +54,12 @@ declare module "@salesforce/schema/FlowRecordElement.FlowRecordVersionId" {
     export default FlowRecordVersionId;
 }
 
+declare module "@salesforce/schema/FlowRecordElement.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FlowRecordElement.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -72,6 +72,12 @@ declare module "@salesforce/schema/ContentHubItem.FileType" {
     export default FileType;
 }
 
+declare module "@salesforce/schema/ContentHubItem.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContentHubItem.IsFolder" {
     import { FieldId } from "@salesforce/schema";
     const IsFolder: FieldId;

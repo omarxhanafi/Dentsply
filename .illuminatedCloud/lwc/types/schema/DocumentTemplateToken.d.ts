@@ -162,6 +162,12 @@ declare module "@salesforce/schema/DocumentTemplateToken.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/DocumentTemplateToken.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DocumentTemplateToken.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

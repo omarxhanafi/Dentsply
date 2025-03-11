@@ -48,6 +48,12 @@ declare module "@salesforce/schema/ExpenseHistory.Field" {
     export default Field;
 }
 
+declare module "@salesforce/schema/ExpenseHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ExpenseHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

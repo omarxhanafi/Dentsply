@@ -18,6 +18,12 @@ declare module "@salesforce/schema/QueueSobject.CreatedById" {
     export default CreatedById;
 }
 
+declare module "@salesforce/schema/QueueSobject.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/QueueSobject.Queue" {
     import { FieldId } from "@salesforce/schema";
     const Queue: FieldId;

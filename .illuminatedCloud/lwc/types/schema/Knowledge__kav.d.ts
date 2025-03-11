@@ -234,6 +234,12 @@ declare module "@salesforce/schema/Knowledge__kav.FlowOrchestrationWorkItems" {
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/Knowledge__kav.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Knowledge__kav.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

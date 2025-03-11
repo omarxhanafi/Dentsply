@@ -36,6 +36,12 @@ declare module "@salesforce/schema/BusinessProcess.Description" {
     export default Description;
 }
 
+declare module "@salesforce/schema/BusinessProcess.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/BusinessProcess.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

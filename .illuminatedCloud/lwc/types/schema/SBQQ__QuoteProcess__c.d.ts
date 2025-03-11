@@ -24,6 +24,12 @@ declare module "@salesforce/schema/SBQQ__QuoteProcess__c.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/SBQQ__QuoteProcess__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SBQQ__QuoteProcess__c.Inputs__r" {
     import { FieldId } from "@salesforce/schema";
     const Inputs__r: FieldId;

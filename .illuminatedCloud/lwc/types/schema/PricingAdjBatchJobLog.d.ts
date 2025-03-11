@@ -168,6 +168,12 @@ declare module "@salesforce/schema/PricingAdjBatchJobLog.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/PricingAdjBatchJobLog.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/PricingAdjBatchJobLog.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

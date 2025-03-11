@@ -66,6 +66,12 @@ declare module "@salesforce/schema/ExplainabilityActionDef.ExplainabilityActionD
     export default ExplainabilityActionDef;
 }
 
+declare module "@salesforce/schema/ExplainabilityActionDef.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ExplainabilityActionDef.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

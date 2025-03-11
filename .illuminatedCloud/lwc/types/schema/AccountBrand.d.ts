@@ -114,6 +114,12 @@ declare module "@salesforce/schema/AccountBrand.GeocodeAccuracy" {
     export default GeocodeAccuracy;
 }
 
+declare module "@salesforce/schema/AccountBrand.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AccountBrand.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

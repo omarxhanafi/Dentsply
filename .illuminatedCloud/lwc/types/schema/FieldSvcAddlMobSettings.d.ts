@@ -36,6 +36,12 @@ declare module "@salesforce/schema/FieldSvcAddlMobSettings.FieldServiceMobileSet
     export default FieldServiceMobileSettingsId;
 }
 
+declare module "@salesforce/schema/FieldSvcAddlMobSettings.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FieldSvcAddlMobSettings.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

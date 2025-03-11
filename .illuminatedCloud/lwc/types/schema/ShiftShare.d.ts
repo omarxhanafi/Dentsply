@@ -12,6 +12,12 @@ declare module "@salesforce/schema/ShiftShare.AccessLevel" {
     export default AccessLevel;
 }
 
+declare module "@salesforce/schema/ShiftShare.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ShiftShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

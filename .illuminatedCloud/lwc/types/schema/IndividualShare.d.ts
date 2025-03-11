@@ -6,6 +6,12 @@ declare module "@salesforce/schema/IndividualShare" {
     export default IndividualShare;
 }
 
+declare module "@salesforce/schema/IndividualShare.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/IndividualShare.Individual" {
     import { FieldId } from "@salesforce/schema";
     const Individual: FieldId;

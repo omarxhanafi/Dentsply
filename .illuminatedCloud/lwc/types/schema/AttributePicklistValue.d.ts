@@ -198,6 +198,12 @@ declare module "@salesforce/schema/AttributePicklistValue.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/AttributePicklistValue.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AttributePicklistValue.IsDefault" {
     import { FieldId } from "@salesforce/schema";
     const IsDefault: FieldId;

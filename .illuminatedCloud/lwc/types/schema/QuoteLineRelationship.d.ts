@@ -120,6 +120,12 @@ declare module "@salesforce/schema/QuoteLineRelationship.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/QuoteLineRelationship.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/QuoteLineRelationship.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

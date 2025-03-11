@@ -138,6 +138,12 @@ declare module "@salesforce/schema/EngagementChannelType.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/EngagementChannelType.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EngagementChannelType.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

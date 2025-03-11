@@ -474,6 +474,12 @@ declare module "@salesforce/schema/CaseChangeEvent.HasSelfServiceComments" {
     export default HasSelfServiceComments;
 }
 
+declare module "@salesforce/schema/CaseChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CaseChangeEvent.InboundEmailAfterCaseClosed__c" {
     import { FieldId } from "@salesforce/schema";
     const InboundEmailAfterCaseClosed__c: FieldId;

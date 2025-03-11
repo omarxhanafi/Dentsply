@@ -7,6 +7,6 @@ declare namespace OrderDealerSearchBoxCopy {
         totalRecords?: number;
         recordStart?: number;
         recordEnd?: number;
-        accountList?: any[];
+        accountList?: Account[];
     }
 }

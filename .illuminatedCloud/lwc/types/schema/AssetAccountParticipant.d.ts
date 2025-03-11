@@ -174,6 +174,12 @@ declare module "@salesforce/schema/AssetAccountParticipant.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/AssetAccountParticipant.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AssetAccountParticipant.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

@@ -126,6 +126,12 @@ declare module "@salesforce/schema/AssetActionSource.FlowOrchestrationWorkItems"
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/AssetActionSource.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AssetActionSource.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -12,6 +12,12 @@ declare module "@salesforce/schema/DC_Flow_Settings__Tag.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/DC_Flow_Settings__Tag.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DC_Flow_Settings__Tag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

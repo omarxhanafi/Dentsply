@@ -36,6 +36,12 @@ declare module "@salesforce/schema/ConsumptionRate.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/ConsumptionRate.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ConsumptionRate.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

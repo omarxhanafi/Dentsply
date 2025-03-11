@@ -42,6 +42,12 @@ declare module "@salesforce/schema/SBQQ__Quote__c.Discount_Schedules__r" {
     export default Discount_Schedules__r;
 }
 
+declare module "@salesforce/schema/SBQQ__Quote__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SBQQ__Quote__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

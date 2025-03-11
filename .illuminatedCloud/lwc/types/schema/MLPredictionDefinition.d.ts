@@ -48,6 +48,12 @@ declare module "@salesforce/schema/MLPredictionDefinition.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/MLPredictionDefinition.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/MLPredictionDefinition.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

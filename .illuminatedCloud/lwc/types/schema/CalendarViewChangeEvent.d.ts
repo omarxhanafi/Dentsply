@@ -66,6 +66,12 @@ declare module "@salesforce/schema/CalendarViewChangeEvent.FillPattern" {
     export default FillPattern;
 }
 
+declare module "@salesforce/schema/CalendarViewChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CalendarViewChangeEvent.IsDisplayed" {
     import { FieldId } from "@salesforce/schema";
     const IsDisplayed: FieldId;

@@ -30,6 +30,12 @@ declare module "@salesforce/schema/AssignmentRule.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/AssignmentRule.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AssignmentRule.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

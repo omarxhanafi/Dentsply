@@ -336,6 +336,12 @@ declare module "@salesforce/schema/Project__c.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/Project__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Project__c.Initiator_role_info__c" {
     import { FieldId } from "@salesforce/schema";
     const Initiator_role_info__c: FieldId;

@@ -132,6 +132,12 @@ declare module "@salesforce/schema/FlowExecutionErrorEvent.FlowVersionNumber" {
     export default FlowVersionNumber;
 }
 
+declare module "@salesforce/schema/FlowExecutionErrorEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FlowExecutionErrorEvent.InterviewBatchId" {
     import { FieldId } from "@salesforce/schema";
     const InterviewBatchId: FieldId;

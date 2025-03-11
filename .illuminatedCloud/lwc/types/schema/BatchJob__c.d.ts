@@ -90,6 +90,12 @@ declare module "@salesforce/schema/BatchJob__c.ExtendedStatus__c" {
     export default ExtendedStatus__c;
 }
 
+declare module "@salesforce/schema/BatchJob__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/BatchJob__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

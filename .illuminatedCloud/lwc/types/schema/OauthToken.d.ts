@@ -42,6 +42,12 @@ declare module "@salesforce/schema/OauthToken.DeleteToken" {
     export default DeleteToken;
 }
 
+declare module "@salesforce/schema/OauthToken.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OauthToken.LastUsedDate" {
     import { FieldId } from "@salesforce/schema";
     const LastUsedDate: FieldId;

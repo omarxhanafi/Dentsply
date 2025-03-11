@@ -384,6 +384,12 @@ declare module "@salesforce/schema/Account_Plan__c.IMPLBusinessOwner__r" {
     export default IMPLBusinessOwner__r;
 }
 
+declare module "@salesforce/schema/Account_Plan__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Account_Plan__c.ImplantsNotes__c" {
     import { FieldId } from "@salesforce/schema";
     const ImplantsNotes__c: FieldId;

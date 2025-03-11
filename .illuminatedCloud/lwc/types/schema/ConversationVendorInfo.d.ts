@@ -132,6 +132,12 @@ declare module "@salesforce/schema/ConversationVendorInfo.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/ConversationVendorInfo.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ConversationVendorInfo.IntegrationClass" {
     import { FieldId } from "@salesforce/schema";
     const IntegrationClass: FieldId;

@@ -114,6 +114,12 @@ declare module "@salesforce/schema/Idea.Focus_area__c" {
     export default Focus_area__c;
 }
 
+declare module "@salesforce/schema/Idea.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Idea.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

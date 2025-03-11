@@ -36,6 +36,12 @@ declare module "@salesforce/schema/OrderActionHistory.Field" {
     export default Field;
 }
 
+declare module "@salesforce/schema/OrderActionHistory.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OrderActionHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

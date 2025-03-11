@@ -24,6 +24,12 @@ declare module "@salesforce/schema/Alt_ETM2__mdt.ETM2_Zip_Code__c" {
     export default ETM2_Zip_Code__c;
 }
 
+declare module "@salesforce/schema/Alt_ETM2__mdt.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Alt_ETM2__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

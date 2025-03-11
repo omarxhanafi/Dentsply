@@ -3432,6 +3432,12 @@ declare module "@salesforce/schema/Account.IamMainContact__c" {
     export default IamMainContact__c;
 }
 
+declare module "@salesforce/schema/Account.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Account.Implant_Brand_Mix__c" {
     import { FieldId } from "@salesforce/schema";
     const Implant_Brand_Mix__c: FieldId;

@@ -12,6 +12,12 @@ declare module "@salesforce/schema/DataStatistics.ExternalId" {
     export default ExternalId;
 }
 
+declare module "@salesforce/schema/DataStatistics.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DataStatistics.StatType" {
     import { FieldId } from "@salesforce/schema";
     const StatType: FieldId;

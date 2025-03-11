@@ -42,6 +42,12 @@ declare module "@salesforce/schema/QuoteLineGroup.Description" {
     export default Description;
 }
 
+declare module "@salesforce/schema/QuoteLineGroup.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/QuoteLineGroup.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

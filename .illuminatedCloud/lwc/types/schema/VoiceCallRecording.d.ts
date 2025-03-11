@@ -42,6 +42,12 @@ declare module "@salesforce/schema/VoiceCallRecording.DurationInSeconds" {
     export default DurationInSeconds;
 }
 
+declare module "@salesforce/schema/VoiceCallRecording.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/VoiceCallRecording.IsConsented" {
     import { FieldId } from "@salesforce/schema";
     const IsConsented: FieldId;

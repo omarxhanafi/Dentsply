@@ -60,6 +60,12 @@ declare module "@salesforce/schema/VideoCallParticipant.FlowOrchestrationWorkIte
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/VideoCallParticipant.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/VideoCallParticipant.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

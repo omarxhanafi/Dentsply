@@ -36,6 +36,12 @@ declare module "@salesforce/schema/SearchLayout.FieldsDisplayed" {
     export default FieldsDisplayed;
 }
 
+declare module "@salesforce/schema/SearchLayout.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SearchLayout.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

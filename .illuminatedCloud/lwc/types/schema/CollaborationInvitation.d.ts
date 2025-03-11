@@ -30,6 +30,12 @@ declare module "@salesforce/schema/CollaborationInvitation.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/CollaborationInvitation.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CollaborationInvitation.InvitedUserEmail" {
     import { FieldId } from "@salesforce/schema";
     const InvitedUserEmail: FieldId;

@@ -156,6 +156,12 @@ declare module "@salesforce/schema/OperatingHoursHoliday.HolidayId" {
     export default HolidayId;
 }
 
+declare module "@salesforce/schema/OperatingHoursHoliday.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OperatingHoursHoliday.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

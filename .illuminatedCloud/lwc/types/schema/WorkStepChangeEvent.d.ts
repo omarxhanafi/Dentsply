@@ -66,6 +66,12 @@ declare module "@salesforce/schema/WorkStepChangeEvent.ExecutionOrder" {
     export default ExecutionOrder;
 }
 
+declare module "@salesforce/schema/WorkStepChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/WorkStepChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

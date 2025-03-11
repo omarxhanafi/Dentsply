@@ -60,6 +60,12 @@ declare module "@salesforce/schema/ExpressionSetDefinition.ExpressionSetDefiniti
     export default ExpressionSetDefinitions;
 }
 
+declare module "@salesforce/schema/ExpressionSetDefinition.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ExpressionSetDefinition.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

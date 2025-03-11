@@ -78,6 +78,12 @@ declare module "@salesforce/schema/EventRelayFeedback.EventRelayNumber" {
     export default EventRelayNumber;
 }
 
+declare module "@salesforce/schema/EventRelayFeedback.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EventRelayFeedback.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

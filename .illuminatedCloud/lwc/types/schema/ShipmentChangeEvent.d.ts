@@ -102,6 +102,12 @@ declare module "@salesforce/schema/ShipmentChangeEvent.FulfillmentOrderId" {
     export default FulfillmentOrderId;
 }
 
+declare module "@salesforce/schema/ShipmentChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ShipmentChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

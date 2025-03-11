@@ -18,6 +18,12 @@ declare module "@salesforce/schema/EventBusSubscriber.ExternalId" {
     export default ExternalId;
 }
 
+declare module "@salesforce/schema/EventBusSubscriber.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EventBusSubscriber.IsPartitioned" {
     import { FieldId } from "@salesforce/schema";
     const IsPartitioned: FieldId;

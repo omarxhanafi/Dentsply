@@ -48,6 +48,12 @@ declare module "@salesforce/schema/QueueRoutingConfig.DropAdditionalSkillsTimeou
     export default DropAdditionalSkillsTimeout;
 }
 
+declare module "@salesforce/schema/QueueRoutingConfig.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/QueueRoutingConfig.IsAttributeBased" {
     import { FieldId } from "@salesforce/schema";
     const IsAttributeBased: FieldId;

@@ -306,6 +306,12 @@ declare module "@salesforce/schema/ProcedureTracker__c.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/ProcedureTracker__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ProcedureTracker__c.IntraoralScanner__c" {
     import { FieldId } from "@salesforce/schema";
     const IntraoralScanner__c: FieldId;

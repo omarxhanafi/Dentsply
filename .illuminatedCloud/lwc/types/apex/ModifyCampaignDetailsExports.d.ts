@@ -1,15 +1,15 @@
 // DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
 
 declare module "@salesforce/apex/ModifyCampaignDetails.createTask" {
-    export default function createTask(params: {task: any, selectedRecordsIds: string[], accountId: string}): Promise<void>;
+    export default function createTask(params: {task: Task, selectedRecordsIds: string[], accountId: string}): Promise<void>;
 }
 
 declare module "@salesforce/apex/ModifyCampaignDetails.filterSelectedRecords" {
-    export default function filterSelectedRecords(params: {lstRecordId: string[], accountId: string}): Promise<any[]>;
+    export default function filterSelectedRecords(params: {lstRecordId: string[], accountId: string}): Promise<Campaign[]>;
 }
 
 declare module "@salesforce/apex/ModifyCampaignDetails.getCampaignDetails" {
-    export default function getCampaignDetails(params: {accountId: string}): Promise<any[]>;
+    export default function getCampaignDetails(params: {accountId: string}): Promise<Campaign[]>;
 }
 
 declare module "@salesforce/apex/ModifyCampaignDetails.getPickValues_Act" {

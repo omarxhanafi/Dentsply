@@ -30,6 +30,12 @@ declare module "@salesforce/schema/EntitySubscription.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/EntitySubscription.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EntitySubscription.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -168,6 +168,12 @@ declare module "@salesforce/schema/Image.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/Image.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Image.ImageClass" {
     import { FieldId } from "@salesforce/schema";
     const ImageClass: FieldId;

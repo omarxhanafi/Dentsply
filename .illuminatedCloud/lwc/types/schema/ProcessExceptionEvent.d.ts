@@ -72,6 +72,12 @@ declare module "@salesforce/schema/ProcessExceptionEvent.ExternalReference" {
     export default ExternalReference;
 }
 
+declare module "@salesforce/schema/ProcessExceptionEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ProcessExceptionEvent.Message" {
     import { FieldId } from "@salesforce/schema";
     const Message: FieldId;

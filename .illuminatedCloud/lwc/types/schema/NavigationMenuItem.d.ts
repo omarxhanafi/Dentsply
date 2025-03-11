@@ -60,6 +60,12 @@ declare module "@salesforce/schema/NavigationMenuItem.DraftRowId" {
     export default DraftRowId;
 }
 
+declare module "@salesforce/schema/NavigationMenuItem.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/NavigationMenuItem.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

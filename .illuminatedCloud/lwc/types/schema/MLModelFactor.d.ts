@@ -42,6 +42,12 @@ declare module "@salesforce/schema/MLModelFactor.FactorType" {
     export default FactorType;
 }
 
+declare module "@salesforce/schema/MLModelFactor.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/MLModelFactor.Importance" {
     import { FieldId } from "@salesforce/schema";
     const Importance: FieldId;

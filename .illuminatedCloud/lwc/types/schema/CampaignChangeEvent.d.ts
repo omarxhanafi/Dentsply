@@ -1146,6 +1146,12 @@ declare module "@salesforce/schema/CampaignChangeEvent.Hotel_Information__c" {
     export default Hotel_Information__c;
 }
 
+declare module "@salesforce/schema/CampaignChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CampaignChangeEvent.Include_in_Dealer_Community__c" {
     import { FieldId } from "@salesforce/schema";
     const Include_in_Dealer_Community__c: FieldId;

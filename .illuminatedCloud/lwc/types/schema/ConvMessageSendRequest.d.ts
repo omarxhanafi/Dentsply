@@ -72,6 +72,12 @@ declare module "@salesforce/schema/ConvMessageSendRequest.FailedMessageIdentifie
     export default FailedMessageIdentifiers;
 }
 
+declare module "@salesforce/schema/ConvMessageSendRequest.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ConvMessageSendRequest.InProgressMessageCount" {
     import { FieldId } from "@salesforce/schema";
     const InProgressMessageCount: FieldId;

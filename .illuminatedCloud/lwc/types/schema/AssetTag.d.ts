@@ -12,6 +12,12 @@ declare module "@salesforce/schema/AssetTag.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/AssetTag.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AssetTag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

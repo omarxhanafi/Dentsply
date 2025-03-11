@@ -78,6 +78,12 @@ declare module "@salesforce/schema/EmbeddedServiceDetail.Height" {
     export default Height;
 }
 
+declare module "@salesforce/schema/EmbeddedServiceDetail.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EmbeddedServiceDetail.IsFieldServiceEnabled" {
     import { FieldId } from "@salesforce/schema";
     const IsFieldServiceEnabled: FieldId;

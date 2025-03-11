@@ -636,6 +636,12 @@ declare module "@salesforce/schema/Lead.I_will_perform_the_surgical_procedure__c
     export default I_will_perform_the_surgical_procedure__c;
 }
 
+declare module "@salesforce/schema/Lead.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Lead.Implant_User__c" {
     import { FieldId } from "@salesforce/schema";
     const Implant_User__c: FieldId;

@@ -186,6 +186,12 @@ declare module "@salesforce/schema/Account_Segmentation__c.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/Account_Segmentation__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Account_Segmentation__c.Integration_ID__c" {
     import { FieldId } from "@salesforce/schema";
     const Integration_ID__c: FieldId;

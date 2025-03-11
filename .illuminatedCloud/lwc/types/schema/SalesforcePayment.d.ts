@@ -24,6 +24,12 @@ declare module "@salesforce/schema/SalesforcePayment.ExternalId" {
     export default ExternalId;
 }
 
+declare module "@salesforce/schema/SalesforcePayment.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SalesforcePayment.Memo" {
     import { FieldId } from "@salesforce/schema";
     const Memo: FieldId;

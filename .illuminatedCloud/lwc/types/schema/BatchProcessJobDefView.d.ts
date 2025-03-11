@@ -12,6 +12,12 @@ declare module "@salesforce/schema/BatchProcessJobDefView.DurableId" {
     export default DurableId;
 }
 
+declare module "@salesforce/schema/BatchProcessJobDefView.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/BatchProcessJobDefView.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

@@ -36,6 +36,12 @@ declare module "@salesforce/schema/NetworkMember.DigestFrequency" {
     export default DigestFrequency;
 }
 
+declare module "@salesforce/schema/NetworkMember.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/NetworkMember.LastChatterActivityDate" {
     import { FieldId } from "@salesforce/schema";
     const LastChatterActivityDate: FieldId;

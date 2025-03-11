@@ -48,6 +48,12 @@ declare module "@salesforce/schema/ServiceCrewChangeEvent.FSL__GanttColor__c" {
     export default FSL__GanttColor__c;
 }
 
+declare module "@salesforce/schema/ServiceCrewChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ServiceCrewChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

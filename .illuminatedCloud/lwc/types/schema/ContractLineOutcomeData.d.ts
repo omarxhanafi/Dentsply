@@ -72,6 +72,12 @@ declare module "@salesforce/schema/ContractLineOutcomeData.FlowOrchestrationWork
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/ContractLineOutcomeData.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContractLineOutcomeData.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

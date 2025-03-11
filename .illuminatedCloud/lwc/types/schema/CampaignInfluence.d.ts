@@ -90,6 +90,12 @@ declare module "@salesforce/schema/CampaignInfluence.FlowOrchestrationWorkItems"
     export default FlowOrchestrationWorkItems;
 }
 
+declare module "@salesforce/schema/CampaignInfluence.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CampaignInfluence.Influence" {
     import { FieldId } from "@salesforce/schema";
     const Influence: FieldId;

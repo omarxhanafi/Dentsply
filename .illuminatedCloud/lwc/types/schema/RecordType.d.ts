@@ -60,6 +60,12 @@ declare module "@salesforce/schema/RecordType.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/RecordType.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/RecordType.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

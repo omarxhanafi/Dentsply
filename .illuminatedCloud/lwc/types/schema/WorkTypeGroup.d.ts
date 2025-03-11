@@ -132,6 +132,12 @@ declare module "@salesforce/schema/WorkTypeGroup.Histories" {
     export default Histories;
 }
 
+declare module "@salesforce/schema/WorkTypeGroup.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/WorkTypeGroup.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

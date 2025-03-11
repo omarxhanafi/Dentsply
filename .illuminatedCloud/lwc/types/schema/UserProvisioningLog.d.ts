@@ -48,6 +48,12 @@ declare module "@salesforce/schema/UserProvisioningLog.ExternalUsername" {
     export default ExternalUsername;
 }
 
+declare module "@salesforce/schema/UserProvisioningLog.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/UserProvisioningLog.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

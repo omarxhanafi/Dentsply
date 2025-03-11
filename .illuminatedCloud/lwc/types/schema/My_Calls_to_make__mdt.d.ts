@@ -18,6 +18,12 @@ declare module "@salesforce/schema/My_Calls_to_make__mdt.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/My_Calls_to_make__mdt.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/My_Calls_to_make__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

@@ -162,6 +162,12 @@ declare module "@salesforce/schema/tz__World_Clock_Location__c.GeneratedDocRefOb
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/tz__World_Clock_Location__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/tz__World_Clock_Location__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -108,6 +108,12 @@ declare module "@salesforce/schema/IndividualChangeEvent.HasOptedOutTracking" {
     export default HasOptedOutTracking;
 }
 
+declare module "@salesforce/schema/IndividualChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/IndividualChangeEvent.IndividualsAge" {
     import { FieldId } from "@salesforce/schema";
     const IndividualsAge: FieldId;

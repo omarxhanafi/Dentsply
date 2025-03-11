@@ -72,6 +72,12 @@ declare module "@salesforce/schema/WebLink.Height" {
     export default Height;
 }
 
+declare module "@salesforce/schema/WebLink.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/WebLink.IsProtected" {
     import { FieldId } from "@salesforce/schema";
     const IsProtected: FieldId;

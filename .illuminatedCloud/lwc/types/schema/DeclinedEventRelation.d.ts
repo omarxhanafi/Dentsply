@@ -48,6 +48,12 @@ declare module "@salesforce/schema/DeclinedEventRelation.EventId" {
     export default EventId;
 }
 
+declare module "@salesforce/schema/DeclinedEventRelation.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DeclinedEventRelation.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

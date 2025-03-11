@@ -132,6 +132,12 @@ declare module "@salesforce/schema/FlowRecordChangeEvent.FlowType" {
     export default FlowType;
 }
 
+declare module "@salesforce/schema/FlowRecordChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FlowRecordChangeEvent.InstalledPackageName" {
     import { FieldId } from "@salesforce/schema";
     const InstalledPackageName: FieldId;

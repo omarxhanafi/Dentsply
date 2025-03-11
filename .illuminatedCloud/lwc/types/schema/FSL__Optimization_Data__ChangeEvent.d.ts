@@ -42,6 +42,12 @@ declare module "@salesforce/schema/FSL__Optimization_Data__ChangeEvent.FSL__Iden
     export default FSL__Identifier__c;
 }
 
+declare module "@salesforce/schema/FSL__Optimization_Data__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Optimization_Data__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

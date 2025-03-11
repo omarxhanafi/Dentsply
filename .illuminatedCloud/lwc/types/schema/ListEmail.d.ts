@@ -126,6 +126,12 @@ declare module "@salesforce/schema/ListEmail.HtmlBody" {
     export default HtmlBody;
 }
 
+declare module "@salesforce/schema/ListEmail.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ListEmail.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

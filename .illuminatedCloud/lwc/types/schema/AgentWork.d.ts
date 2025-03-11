@@ -150,6 +150,12 @@ declare module "@salesforce/schema/AgentWork.HandleTime" {
     export default HandleTime;
 }
 
+declare module "@salesforce/schema/AgentWork.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AgentWork.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

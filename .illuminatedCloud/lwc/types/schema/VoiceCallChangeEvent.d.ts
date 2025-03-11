@@ -120,6 +120,12 @@ declare module "@salesforce/schema/VoiceCallChangeEvent.FromPhoneNumber" {
     export default FromPhoneNumber;
 }
 
+declare module "@salesforce/schema/VoiceCallChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/VoiceCallChangeEvent.IsDiarizationOptIn" {
     import { FieldId } from "@salesforce/schema";
     const IsDiarizationOptIn: FieldId;

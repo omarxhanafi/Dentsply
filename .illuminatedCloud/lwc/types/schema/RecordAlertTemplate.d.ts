@@ -36,6 +36,12 @@ declare module "@salesforce/schema/RecordAlertTemplate.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/RecordAlertTemplate.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/RecordAlertTemplate.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

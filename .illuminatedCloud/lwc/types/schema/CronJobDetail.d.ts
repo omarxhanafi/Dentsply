@@ -12,6 +12,12 @@ declare module "@salesforce/schema/CronJobDetail.CronJobDetail" {
     export default CronJobDetail;
 }
 
+declare module "@salesforce/schema/CronJobDetail.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/CronJobDetail.JobType" {
     import { FieldId } from "@salesforce/schema";
     const JobType: FieldId;

@@ -12,6 +12,12 @@ declare module "@salesforce/schema/ThirdPartyAccountLink.Handle" {
     export default Handle;
 }
 
+declare module "@salesforce/schema/ThirdPartyAccountLink.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ThirdPartyAccountLink.IsNotSsoUsable" {
     import { FieldId } from "@salesforce/schema";
     const IsNotSsoUsable: FieldId;

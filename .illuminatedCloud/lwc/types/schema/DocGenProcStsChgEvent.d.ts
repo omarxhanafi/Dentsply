@@ -42,6 +42,12 @@ declare module "@salesforce/schema/DocGenProcStsChgEvent.EventUuid" {
     export default EventUuid;
 }
 
+declare module "@salesforce/schema/DocGenProcStsChgEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/DocGenProcStsChgEvent.PdfDocumentIdentifier" {
     import { FieldId } from "@salesforce/schema";
     const PdfDocumentIdentifier: FieldId;

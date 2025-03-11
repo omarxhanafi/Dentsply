@@ -72,6 +72,12 @@ declare module "@salesforce/schema/PresenceUserConfig.HasAfterConvoWorkTimer" {
     export default HasAfterConvoWorkTimer;
 }
 
+declare module "@salesforce/schema/PresenceUserConfig.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/PresenceUserConfig.InterruptibleCapacity" {
     import { FieldId } from "@salesforce/schema";
     const InterruptibleCapacity: FieldId;

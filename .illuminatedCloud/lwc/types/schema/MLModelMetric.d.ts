@@ -60,6 +60,12 @@ declare module "@salesforce/schema/MLModelMetric.GraphType" {
     export default GraphType;
 }
 
+declare module "@salesforce/schema/MLModelMetric.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/MLModelMetric.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

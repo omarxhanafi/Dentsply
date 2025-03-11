@@ -54,6 +54,12 @@ declare module "@salesforce/schema/AttachedContentNote.FileType" {
     export default FileType;
 }
 
+declare module "@salesforce/schema/AttachedContentNote.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AttachedContentNote.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

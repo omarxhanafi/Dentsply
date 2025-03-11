@@ -30,6 +30,12 @@ declare module "@salesforce/schema/RelatedListDefinition.EntityDefinitionId" {
     export default EntityDefinitionId;
 }
 
+declare module "@salesforce/schema/RelatedListDefinition.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/RelatedListDefinition.IsCustomizable" {
     import { FieldId } from "@salesforce/schema";
     const IsCustomizable: FieldId;

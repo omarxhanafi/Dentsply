@@ -12,6 +12,12 @@ declare module "@salesforce/schema/GeneratedDocumentShare.AccessLevel" {
     export default AccessLevel;
 }
 
+declare module "@salesforce/schema/GeneratedDocumentShare.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/GeneratedDocumentShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -36,6 +36,12 @@ declare module "@salesforce/schema/FlowOrchestrationEvent.EventUuid" {
     export default EventUuid;
 }
 
+declare module "@salesforce/schema/FlowOrchestrationEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FlowOrchestrationEvent.OrchestrationInstanceId" {
     import { FieldId } from "@salesforce/schema";
     const OrchestrationInstanceId: FieldId;

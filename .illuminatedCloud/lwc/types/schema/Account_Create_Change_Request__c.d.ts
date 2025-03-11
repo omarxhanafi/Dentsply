@@ -456,6 +456,12 @@ declare module "@salesforce/schema/Account_Create_Change_Request__c.IBAN__c" {
     export default IBAN__c;
 }
 
+declare module "@salesforce/schema/Account_Create_Change_Request__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Account_Create_Change_Request__c.Identity_Management_Notes_on_Account__c" {
     import { FieldId } from "@salesforce/schema";
     const Identity_Management_Notes_on_Account__c: FieldId;

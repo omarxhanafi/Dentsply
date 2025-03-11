@@ -1,15 +1,15 @@
 // DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
 
 declare module "@salesforce/apex/LightningAccountController.getAccountInfo" {
-    export default function getAccountInfo(params: {recordId: string}): Promise<any>;
+    export default function getAccountInfo(params: {recordId: string}): Promise<Account>;
 }
 
 declare module "@salesforce/apex/LightningAccountController.getContacts" {
-    export default function getContacts(params: {recordId: string}): Promise<any[]>;
+    export default function getContacts(params: {recordId: string}): Promise<Contact[]>;
 }
 
 declare module "@salesforce/apex/LightningAccountController.getTeamSetup" {
-    export default function getTeamSetup(): Promise<any[]>;
+    export default function getTeamSetup(): Promise<Team_setup__mdt[]>;
 }
 
 declare module "@salesforce/apex/LightningAccountController.getUserAccess" {

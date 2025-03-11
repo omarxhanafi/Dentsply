@@ -60,6 +60,12 @@ declare module "@salesforce/schema/LeadOpportunitySetting__mdt.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/LeadOpportunitySetting__mdt.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/LeadOpportunitySetting__mdt.IsTest__c" {
     import { FieldId } from "@salesforce/schema";
     const IsTest__c: FieldId;

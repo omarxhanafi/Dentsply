@@ -36,6 +36,12 @@ declare module "@salesforce/schema/OrgWideEmailAddress.DisplayName" {
     export default DisplayName;
 }
 
+declare module "@salesforce/schema/OrgWideEmailAddress.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OrgWideEmailAddress.IsAllowAllProfiles" {
     import { FieldId } from "@salesforce/schema";
     const IsAllowAllProfiles: FieldId;

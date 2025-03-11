@@ -9,7 +9,7 @@ declare module "@salesforce/apex/ObjectivesController_OGSM.deleteObjective" {
 }
 
 declare module "@salesforce/apex/ObjectivesController_OGSM.fetchObjectives" {
-    export default function fetchObjectives(params: {accountPlanId: string}): Promise<any[]>;
+    export default function fetchObjectives(params: {accountPlanId: string}): Promise<Objective__c[]>;
 }
 
 declare module "@salesforce/apex/ObjectivesController_OGSM.updateObjectives" {

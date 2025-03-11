@@ -42,6 +42,12 @@ declare module "@salesforce/schema/TimeSheetChangeEvent.EndDate" {
     export default EndDate;
 }
 
+declare module "@salesforce/schema/TimeSheetChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/TimeSheetChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

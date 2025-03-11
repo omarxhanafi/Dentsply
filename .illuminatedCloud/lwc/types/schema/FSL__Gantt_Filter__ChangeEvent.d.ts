@@ -96,6 +96,12 @@ declare module "@salesforce/schema/FSL__Gantt_Filter__ChangeEvent.FSL__Selected_
     export default FSL__Selected_Statuses__c;
 }
 
+declare module "@salesforce/schema/FSL__Gantt_Filter__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Gantt_Filter__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

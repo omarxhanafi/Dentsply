@@ -36,6 +36,12 @@ declare module "@salesforce/schema/EventLogFile.EventType" {
     export default EventType;
 }
 
+declare module "@salesforce/schema/EventLogFile.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EventLogFile.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

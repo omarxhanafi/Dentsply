@@ -126,6 +126,12 @@ declare module "@salesforce/schema/OmniScriptSavedSession.GeneratedDocRefObjects
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/OmniScriptSavedSession.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OmniScriptSavedSession.IsContentEncoded" {
     import { FieldId } from "@salesforce/schema";
     const IsContentEncoded: FieldId;

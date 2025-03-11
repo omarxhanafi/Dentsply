@@ -12,6 +12,12 @@ declare module "@salesforce/schema/SellerShare.AccessLevel" {
     export default AccessLevel;
 }
 
+declare module "@salesforce/schema/SellerShare.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/SellerShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

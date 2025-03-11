@@ -7,6 +7,6 @@ declare namespace OrderDealerSearchBox {
         totalRecords?: number;
         recordStart?: number;
         recordEnd?: number;
-        accountList?: any[];
+        accountList?: Account[];
     }
 }

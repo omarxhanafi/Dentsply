@@ -24,6 +24,12 @@ declare module "@salesforce/schema/ColorDefinition.DurableId" {
     export default DurableId;
 }
 
+declare module "@salesforce/schema/ColorDefinition.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ColorDefinition.TabDefinition" {
     import { FieldId } from "@salesforce/schema";
     const TabDefinition: FieldId;

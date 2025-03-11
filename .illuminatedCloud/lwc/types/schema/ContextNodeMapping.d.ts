@@ -60,6 +60,12 @@ declare module "@salesforce/schema/ContextNodeMapping.CreatedDate" {
     export default CreatedDate;
 }
 
+declare module "@salesforce/schema/ContextNodeMapping.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ContextNodeMapping.InheritedFrom" {
     import { FieldId } from "@salesforce/schema";
     const InheritedFrom: FieldId;

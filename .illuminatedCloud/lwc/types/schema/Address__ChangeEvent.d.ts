@@ -120,6 +120,12 @@ declare module "@salesforce/schema/Address__ChangeEvent.GdwUniqueKey__c" {
     export default GdwUniqueKey__c;
 }
 
+declare module "@salesforce/schema/Address__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Address__ChangeEvent.IsDeleted__c" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted__c: FieldId;

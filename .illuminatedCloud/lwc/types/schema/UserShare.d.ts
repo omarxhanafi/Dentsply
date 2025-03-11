@@ -6,6 +6,12 @@ declare module "@salesforce/schema/UserShare" {
     export default UserShare;
 }
 
+declare module "@salesforce/schema/UserShare.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/UserShare.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

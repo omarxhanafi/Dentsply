@@ -108,6 +108,12 @@ declare module "@salesforce/schema/Group.GroupMembers" {
     export default GroupMembers;
 }
 
+declare module "@salesforce/schema/Group.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Group.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

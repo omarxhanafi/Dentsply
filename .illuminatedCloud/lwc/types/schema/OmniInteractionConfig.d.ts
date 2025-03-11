@@ -30,6 +30,12 @@ declare module "@salesforce/schema/OmniInteractionConfig.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/OmniInteractionConfig.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/OmniInteractionConfig.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

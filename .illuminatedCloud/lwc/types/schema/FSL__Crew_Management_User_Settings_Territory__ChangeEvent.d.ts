@@ -60,6 +60,12 @@ declare module "@salesforce/schema/FSL__Crew_Management_User_Settings_Territory_
     export default FSL__Service_Territory__r;
 }
 
+declare module "@salesforce/schema/FSL__Crew_Management_User_Settings_Territory__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Crew_Management_User_Settings_Territory__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

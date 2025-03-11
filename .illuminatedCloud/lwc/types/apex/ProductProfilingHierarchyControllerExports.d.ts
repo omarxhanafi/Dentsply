@@ -29,7 +29,7 @@ declare module "@salesforce/apex/ProductProfilingHierarchyController.getManufact
 }
 
 declare module "@salesforce/apex/ProductProfilingHierarchyController.getProductProfiling" {
-    export default function getProductProfiling(params: {recordId: string}): Promise<any[]>;
+    export default function getProductProfiling(params: {recordId: string}): Promise<Product_Profiling__c[]>;
 }
 
 declare module "@salesforce/apex/ProductProfilingHierarchyController.getProductProfilingMap" {
@@ -41,7 +41,7 @@ declare module "@salesforce/apex/ProductProfilingHierarchyController.getSBUs" {
 }
 
 declare module "@salesforce/apex/ProductProfilingHierarchyController.getWorkflows" {
-    export default function getWorkflows(params: {recordId: string}): Promise<any[]>;
+    export default function getWorkflows(params: {recordId: string}): Promise<Workflow__c[]>;
 }
 
 declare module "@salesforce/apex/ProductProfilingHierarchyController.publishPPCreationEvent" {
@@ -53,5 +53,5 @@ declare module "@salesforce/apex/ProductProfilingHierarchyController.publishPPCr
 }
 
 declare module "@salesforce/apex/ProductProfilingHierarchyController.updateProductProfilingRecords" {
-    export default function updateProductProfilingRecords(params: {productProfilingList: any[]}): Promise<void>;
+    export default function updateProductProfilingRecords(params: {productProfilingList: Product_Profiling__c[]}): Promise<void>;
 }

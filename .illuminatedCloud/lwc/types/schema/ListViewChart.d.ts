@@ -54,6 +54,12 @@ declare module "@salesforce/schema/ListViewChart.GroupingField" {
     export default GroupingField;
 }
 
+declare module "@salesforce/schema/ListViewChart.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ListViewChart.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

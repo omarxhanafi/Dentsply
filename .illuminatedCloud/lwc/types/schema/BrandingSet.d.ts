@@ -48,6 +48,12 @@ declare module "@salesforce/schema/BrandingSet.DeveloperName" {
     export default DeveloperName;
 }
 
+declare module "@salesforce/schema/BrandingSet.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/BrandingSet.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

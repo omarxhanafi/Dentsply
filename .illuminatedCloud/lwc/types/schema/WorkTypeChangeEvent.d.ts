@@ -78,6 +78,12 @@ declare module "@salesforce/schema/WorkTypeChangeEvent.FSL__Exact_Appointments__
     export default FSL__Exact_Appointments__c;
 }
 
+declare module "@salesforce/schema/WorkTypeChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/WorkTypeChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

@@ -30,6 +30,12 @@ declare module "@salesforce/schema/AllowedEmailDomain.Domain" {
     export default Domain;
 }
 
+declare module "@salesforce/schema/AllowedEmailDomain.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/AllowedEmailDomain.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

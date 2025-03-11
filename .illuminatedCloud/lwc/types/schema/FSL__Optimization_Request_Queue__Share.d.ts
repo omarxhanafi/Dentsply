@@ -12,6 +12,12 @@ declare module "@salesforce/schema/FSL__Optimization_Request_Queue__Share.Access
     export default AccessLevel;
 }
 
+declare module "@salesforce/schema/FSL__Optimization_Request_Queue__Share.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Optimization_Request_Queue__Share.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

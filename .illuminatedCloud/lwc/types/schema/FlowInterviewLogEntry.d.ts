@@ -72,6 +72,12 @@ declare module "@salesforce/schema/FlowInterviewLogEntry.FlowInterviewLogId" {
     export default FlowInterviewLogId;
 }
 
+declare module "@salesforce/schema/FlowInterviewLogEntry.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FlowInterviewLogEntry.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -42,6 +42,12 @@ declare module "@salesforce/schema/ExtlClntAppPlcyCnfg.ExternalClientApplication
     export default ExternalClientApplicationId;
 }
 
+declare module "@salesforce/schema/ExtlClntAppPlcyCnfg.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/ExtlClntAppPlcyCnfg.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

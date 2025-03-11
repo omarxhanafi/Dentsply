@@ -180,6 +180,12 @@ declare module "@salesforce/schema/FSL__Work_Rule_Entry__c.GeneratedDocRefObject
     export default GeneratedDocRefObjects;
 }
 
+declare module "@salesforce/schema/FSL__Work_Rule_Entry__c.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/FSL__Work_Rule_Entry__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

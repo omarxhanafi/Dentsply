@@ -48,6 +48,12 @@ declare module "@salesforce/schema/Workflow__ChangeEvent.GlobalProductShowtoallc
     export default GlobalProductShowtoallcountries__c;
 }
 
+declare module "@salesforce/schema/Workflow__ChangeEvent.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/Workflow__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

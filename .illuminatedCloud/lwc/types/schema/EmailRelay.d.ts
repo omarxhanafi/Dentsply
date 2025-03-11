@@ -42,6 +42,12 @@ declare module "@salesforce/schema/EmailRelay.Host" {
     export default Host;
 }
 
+declare module "@salesforce/schema/EmailRelay.Id" {
+    import { FieldId } from "@salesforce/schema";
+    const Id: FieldId;
+    export default Id;
+}
+
 declare module "@salesforce/schema/EmailRelay.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;
