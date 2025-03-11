@@ -23,6 +23,8 @@ private class Test_KOLInfoController {
         Expert__c KOL = new Expert__c();
         KOL.Contact__c = con.Id;
         KOL.Name = 'x';
+        KOL.Government_Role__c = 'YES';
+        KOL.Government_Role_Date__c = Date.today();
         insert KOL;
 
         Test.startTest();
@@ -53,6 +55,8 @@ private class Test_KOLInfoController {
         Expert__c KOL = new Expert__c();
         KOL.Contact__c = con.Id;
         KOL.Name = 'x';
+        KOL.Government_Role__c = 'YES';
+        KOL.Government_Role_Date__c = Date.today();
         insert KOL;
         
         KOL_Contract__c contr = new KOL_Contract__c();
@@ -91,6 +95,8 @@ private class Test_KOLInfoController {
         Expert__c KOL = new Expert__c();
         KOL.Contact__c = con.Id;
         KOL.Name = 'x';
+        KOL.Government_Role__c = 'YES';
+        KOL.Government_Role_Date__c = Date.today();
         insert KOL;
 
         CventEvents__Event__c ev = new CventEvents__Event__c();
@@ -100,6 +106,7 @@ private class Test_KOLInfoController {
         ev.CventEvents__pkg_Status__c = 'Active';
         ev.CventEvents__pkg_EventStub__c = '012345';
         ev.CventEvents__pkg_Title__c = 'Test event 1';
+        ev.CventEvents__pkg_EventStatus__c = 'Ongoing';
         insert ev;
         
         CventEvents__Event__c ev2 = new CventEvents__Event__c();
@@ -109,6 +116,7 @@ private class Test_KOLInfoController {
         ev2.CventEvents__pkg_Status__c = 'Active';
         ev2.CventEvents__pkg_EventStub__c = '0123456';
         ev2.CventEvents__pkg_Title__c = 'Test event 2';
+        ev2.CventEvents__pkg_EventStatus__c = 'Ongoing';
         insert ev2;
         
         CventEvents__Event__c ev3 = new CventEvents__Event__c();
@@ -118,6 +126,7 @@ private class Test_KOLInfoController {
         ev3.CventEvents__pkg_Status__c = 'Active';
         ev3.CventEvents__pkg_EventStub__c = '01234567';
         ev3.CventEvents__pkg_Title__c = 'Test event 3';
+        ev3.CventEvents__pkg_EventStatus__c = 'Ongoing';
         insert ev3;
         
         CventEvents__Attendee__c att = new CventEvents__Attendee__c();
@@ -192,6 +201,8 @@ private class Test_KOLInfoController {
         Expert__c KOL = new Expert__c();
         KOL.Contact__c = con.Id;
         KOL.Name = 'x';
+        KOL.Government_Role__c = 'YES';
+        KOL.Government_Role_Date__c = Date.today();
         insert KOL;
         
         KOL_Contract__c contr = new KOL_Contract__c();
@@ -207,6 +218,7 @@ private class Test_KOLInfoController {
         ev.CventEvents__pkg_Status__c = 'Active';
         ev.CventEvents__pkg_EventStub__c = '012345';
         ev.CventEvents__pkg_Title__c = 'Test event 1';    
+        ev.CventEvents__pkg_EventStatus__c = 'Ongoing';
         insert ev;
         
         KOL_Contract_Deliverable__c del = new KOL_Contract_Deliverable__c();
@@ -218,6 +230,7 @@ private class Test_KOLInfoController {
         System.debug(del);
         
 		CventEvents__Event__c ev2 = new CventEvents__Event__c();
+        ev2.CventEvents__pkg_EventStatus__c = 'Ongoing';
         ev2.ContractedSpeaker__c = 'Test Test';
         ev2.KOLManageremail__c = userEmail;
         ev2.CventEvents__pkg_Code__c = 'TEST543210';

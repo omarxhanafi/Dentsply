@@ -51,7 +51,10 @@ public class ContactTriggerTest {
         }
         insert testContactList;
         system.debug(testContactList);
-        List<Expert__c> testKOLList = TestDataFactory.createExperts(1, testContactList);
+        List<Expert__c> testKOLList = TestDataFactory.returnExperts(1, testContactList);
+        testKOLList[0].Government_Role__c = 'YES';
+        testKOLList[0].Government_Role_Date__c = Date.today();
+        insert testKOLList;
         System.runAs(testUser) {
             Test.startTest();
                try{
