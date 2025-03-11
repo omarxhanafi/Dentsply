@@ -78,12 +78,6 @@ declare module "@salesforce/schema/FSL__Scheduling_Policy__ChangeEvent.FSL__Trav
     export default FSL__Travel_Mode__c;
 }
 
-declare module "@salesforce/schema/FSL__Scheduling_Policy__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Scheduling_Policy__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

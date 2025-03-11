@@ -42,12 +42,6 @@ declare module "@salesforce/schema/SBQQ__ProductOption__c.FavoriteProduct__r" {
     export default FavoriteProduct__r;
 }
 
-declare module "@salesforce/schema/SBQQ__ProductOption__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SBQQ__ProductOption__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

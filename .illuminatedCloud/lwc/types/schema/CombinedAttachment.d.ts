@@ -60,12 +60,6 @@ declare module "@salesforce/schema/CombinedAttachment.FileType" {
     export default FileType;
 }
 
-declare module "@salesforce/schema/CombinedAttachment.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CombinedAttachment.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -282,12 +282,6 @@ declare module "@salesforce/schema/StartUpPractice__c.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/StartUpPractice__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/StartUpPractice__c.IdentifiedNeedsAndProducts__c" {
     import { FieldId } from "@salesforce/schema";
     const IdentifiedNeedsAndProducts__c: FieldId;

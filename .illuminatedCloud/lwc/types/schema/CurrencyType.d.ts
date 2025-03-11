@@ -36,12 +36,6 @@ declare module "@salesforce/schema/CurrencyType.DecimalPlaces" {
     export default DecimalPlaces;
 }
 
-declare module "@salesforce/schema/CurrencyType.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CurrencyType.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

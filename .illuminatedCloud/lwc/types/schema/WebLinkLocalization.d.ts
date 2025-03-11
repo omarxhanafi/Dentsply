@@ -24,12 +24,6 @@ declare module "@salesforce/schema/WebLinkLocalization.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/WebLinkLocalization.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/WebLinkLocalization.Language" {
     import { FieldId } from "@salesforce/schema";
     const Language: FieldId;

@@ -102,12 +102,6 @@ declare module "@salesforce/schema/ReturnOrderChangeEvent.ExpirationDate" {
     export default ExpirationDate;
 }
 
-declare module "@salesforce/schema/ReturnOrderChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ReturnOrderChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

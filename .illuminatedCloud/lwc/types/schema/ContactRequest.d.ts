@@ -78,12 +78,6 @@ declare module "@salesforce/schema/ContactRequest.FlowOrchestrationWorkItems" {
     export default FlowOrchestrationWorkItems;
 }
 
-declare module "@salesforce/schema/ContactRequest.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContactRequest.IsCallback" {
     import { FieldId } from "@salesforce/schema";
     const IsCallback: FieldId;

@@ -12,12 +12,6 @@ declare module "@salesforce/schema/StreamingChannelShare.AccessLevel" {
     export default AccessLevel;
 }
 
-declare module "@salesforce/schema/StreamingChannelShare.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/StreamingChannelShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

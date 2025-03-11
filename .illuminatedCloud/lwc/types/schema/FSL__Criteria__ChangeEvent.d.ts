@@ -72,12 +72,6 @@ declare module "@salesforce/schema/FSL__Criteria__ChangeEvent.FSL__Work_Types__c
     export default FSL__Work_Types__c;
 }
 
-declare module "@salesforce/schema/FSL__Criteria__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Criteria__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

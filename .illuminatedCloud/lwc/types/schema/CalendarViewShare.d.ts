@@ -12,12 +12,6 @@ declare module "@salesforce/schema/CalendarViewShare.AccessLevel" {
     export default AccessLevel;
 }
 
-declare module "@salesforce/schema/CalendarViewShare.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CalendarViewShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

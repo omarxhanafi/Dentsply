@@ -78,12 +78,6 @@ declare module "@salesforce/schema/SamlSsoConfig.ExecutionUserId" {
     export default ExecutionUserId;
 }
 
-declare module "@salesforce/schema/SamlSsoConfig.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SamlSsoConfig.IdentityLocation" {
     import { FieldId } from "@salesforce/schema";
     const IdentityLocation: FieldId;

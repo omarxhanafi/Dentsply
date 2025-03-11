@@ -30,12 +30,6 @@ declare module "@salesforce/schema/MilestoneType.Description" {
     export default Description;
 }
 
-declare module "@salesforce/schema/MilestoneType.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/MilestoneType.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

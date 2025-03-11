@@ -36,12 +36,6 @@ declare module "@salesforce/schema/LiveChatButtonSkill.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/LiveChatButtonSkill.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/LiveChatButtonSkill.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

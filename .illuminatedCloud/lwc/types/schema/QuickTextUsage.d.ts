@@ -66,12 +66,6 @@ declare module "@salesforce/schema/QuickTextUsage.FlowOrchestrationWorkItems" {
     export default FlowOrchestrationWorkItems;
 }
 
-declare module "@salesforce/schema/QuickTextUsage.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/QuickTextUsage.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

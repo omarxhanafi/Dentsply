@@ -30,12 +30,6 @@ declare module "@salesforce/schema/RuleLibraryDefinition.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/RuleLibraryDefinition.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/RuleLibraryDefinition.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

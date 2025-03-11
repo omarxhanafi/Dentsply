@@ -102,12 +102,6 @@ declare module "@salesforce/schema/OmniUiCardFeed.FeedTrackedChanges" {
     export default FeedTrackedChanges;
 }
 
-declare module "@salesforce/schema/OmniUiCardFeed.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OmniUiCardFeed.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

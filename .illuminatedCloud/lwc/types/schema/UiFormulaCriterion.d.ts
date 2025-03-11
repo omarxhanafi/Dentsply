@@ -24,12 +24,6 @@ declare module "@salesforce/schema/UiFormulaCriterion.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/UiFormulaCriterion.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/UiFormulaCriterion.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

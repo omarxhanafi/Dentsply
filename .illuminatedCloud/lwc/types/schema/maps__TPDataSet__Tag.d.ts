@@ -12,12 +12,6 @@ declare module "@salesforce/schema/maps__TPDataSet__Tag.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/maps__TPDataSet__Tag.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/maps__TPDataSet__Tag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

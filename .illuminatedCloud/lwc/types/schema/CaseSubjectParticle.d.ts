@@ -30,12 +30,6 @@ declare module "@salesforce/schema/CaseSubjectParticle.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/CaseSubjectParticle.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CaseSubjectParticle.Index" {
     import { FieldId } from "@salesforce/schema";
     const Index: FieldId;

@@ -276,12 +276,6 @@ declare module "@salesforce/schema/Country__ChangeEvent.HUB__c" {
     export default HUB__c;
 }
 
-declare module "@salesforce/schema/Country__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Country__ChangeEvent.InsideSalesPL__c" {
     import { FieldId } from "@salesforce/schema";
     const InsideSalesPL__c: FieldId;

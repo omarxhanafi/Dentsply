@@ -42,12 +42,6 @@ declare module "@salesforce/schema/FSL__Bundle_Event__e.FSL__Text__c" {
     export default FSL__Text__c;
 }
 
-declare module "@salesforce/schema/FSL__Bundle_Event__e.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Bundle_Event__e.ReplayId" {
     import { FieldId } from "@salesforce/schema";
     const ReplayId: FieldId;

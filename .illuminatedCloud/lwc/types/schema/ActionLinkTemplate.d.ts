@@ -48,12 +48,6 @@ declare module "@salesforce/schema/ActionLinkTemplate.Headers" {
     export default Headers;
 }
 
-declare module "@salesforce/schema/ActionLinkTemplate.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ActionLinkTemplate.IsConfirmationRequired" {
     import { FieldId } from "@salesforce/schema";
     const IsConfirmationRequired: FieldId;

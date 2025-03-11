@@ -48,12 +48,6 @@ declare module "@salesforce/schema/CRM_Request__c.GSD_Case_Number__c" {
     export default GSD_Case_Number__c;
 }
 
-declare module "@salesforce/schema/CRM_Request__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CRM_Request__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

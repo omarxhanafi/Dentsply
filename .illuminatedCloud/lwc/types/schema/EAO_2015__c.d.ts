@@ -96,12 +96,6 @@ declare module "@salesforce/schema/EAO_2015__c.First_Name__c" {
     export default First_Name__c;
 }
 
-declare module "@salesforce/schema/EAO_2015__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EAO_2015__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

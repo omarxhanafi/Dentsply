@@ -252,12 +252,6 @@ declare module "@salesforce/schema/SBU_Information__c.Hardware_Device_Status__c"
     export default Hardware_Device_Status__c;
 }
 
-declare module "@salesforce/schema/SBU_Information__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SBU_Information__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

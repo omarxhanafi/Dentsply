@@ -66,12 +66,6 @@ declare module "@salesforce/schema/ProductItemChangeEvent.ERPWarehouse__c" {
     export default ERPWarehouse__c;
 }
 
-declare module "@salesforce/schema/ProductItemChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ProductItemChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

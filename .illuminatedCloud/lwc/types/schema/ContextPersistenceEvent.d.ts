@@ -42,12 +42,6 @@ declare module "@salesforce/schema/ContextPersistenceEvent.HasErrors" {
     export default HasErrors;
 }
 
-declare module "@salesforce/schema/ContextPersistenceEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContextPersistenceEvent.ReplayId" {
     import { FieldId } from "@salesforce/schema";
     const ReplayId: FieldId;

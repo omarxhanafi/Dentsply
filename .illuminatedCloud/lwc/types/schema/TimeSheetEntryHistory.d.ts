@@ -36,12 +36,6 @@ declare module "@salesforce/schema/TimeSheetEntryHistory.Field" {
     export default Field;
 }
 
-declare module "@salesforce/schema/TimeSheetEntryHistory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/TimeSheetEntryHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

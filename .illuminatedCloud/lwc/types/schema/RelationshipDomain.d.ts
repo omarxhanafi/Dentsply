@@ -36,12 +36,6 @@ declare module "@salesforce/schema/RelationshipDomain.FieldId" {
     export default FieldId;
 }
 
-declare module "@salesforce/schema/RelationshipDomain.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/RelationshipDomain.IsCascadeDelete" {
     import { FieldId } from "@salesforce/schema";
     const IsCascadeDelete: FieldId;

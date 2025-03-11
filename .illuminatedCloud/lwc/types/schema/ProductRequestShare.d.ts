@@ -12,12 +12,6 @@ declare module "@salesforce/schema/ProductRequestShare.AccessLevel" {
     export default AccessLevel;
 }
 
-declare module "@salesforce/schema/ProductRequestShare.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ProductRequestShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -36,12 +36,6 @@ declare module "@salesforce/schema/SecurityCustomBaseline.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/SecurityCustomBaseline.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SecurityCustomBaseline.IsDefault" {
     import { FieldId } from "@salesforce/schema";
     const IsDefault: FieldId;

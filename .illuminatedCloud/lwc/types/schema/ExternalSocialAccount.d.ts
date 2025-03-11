@@ -66,12 +66,6 @@ declare module "@salesforce/schema/ExternalSocialAccount.ExternalPictureURL" {
     export default ExternalPictureURL;
 }
 
-declare module "@salesforce/schema/ExternalSocialAccount.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ExternalSocialAccount.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

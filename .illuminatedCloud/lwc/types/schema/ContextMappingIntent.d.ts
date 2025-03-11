@@ -36,12 +36,6 @@ declare module "@salesforce/schema/ContextMappingIntent.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/ContextMappingIntent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContextMappingIntent.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

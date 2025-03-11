@@ -372,12 +372,6 @@ declare module "@salesforce/schema/Product2ChangeEvent.ID_18__c" {
     export default ID_18__c;
 }
 
-declare module "@salesforce/schema/Product2ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Product2ChangeEvent.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

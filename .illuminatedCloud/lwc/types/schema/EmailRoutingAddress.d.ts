@@ -48,12 +48,6 @@ declare module "@salesforce/schema/EmailRoutingAddress.EmailServicesAddressId" {
     export default EmailServicesAddressId;
 }
 
-declare module "@salesforce/schema/EmailRoutingAddress.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EmailRoutingAddress.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

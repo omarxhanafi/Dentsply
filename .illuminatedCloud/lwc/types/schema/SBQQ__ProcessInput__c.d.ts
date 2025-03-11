@@ -30,12 +30,6 @@ declare module "@salesforce/schema/SBQQ__ProcessInput__c.DependentInputs__r" {
     export default DependentInputs__r;
 }
 
-declare module "@salesforce/schema/SBQQ__ProcessInput__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SBQQ__ProcessInput__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

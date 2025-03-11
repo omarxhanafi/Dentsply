@@ -54,12 +54,6 @@ declare module "@salesforce/schema/CallCenter.CustomSettings" {
     export default CustomSettings;
 }
 
-declare module "@salesforce/schema/CallCenter.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CallCenter.InternalName" {
     import { FieldId } from "@salesforce/schema";
     const InternalName: FieldId;

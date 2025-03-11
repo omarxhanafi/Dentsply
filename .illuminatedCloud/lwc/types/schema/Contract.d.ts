@@ -846,12 +846,6 @@ declare module "@salesforce/schema/Contract.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/Contract.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Contract.Implant_commitment__c" {
     import { FieldId } from "@salesforce/schema";
     const Implant_commitment__c: FieldId;

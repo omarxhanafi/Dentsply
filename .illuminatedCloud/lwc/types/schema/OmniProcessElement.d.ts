@@ -66,12 +66,6 @@ declare module "@salesforce/schema/OmniProcessElement.EmbeddedOmniScriptKey" {
     export default EmbeddedOmniScriptKey;
 }
 
-declare module "@salesforce/schema/OmniProcessElement.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OmniProcessElement.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

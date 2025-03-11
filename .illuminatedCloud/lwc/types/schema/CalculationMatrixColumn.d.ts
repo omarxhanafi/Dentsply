@@ -144,12 +144,6 @@ declare module "@salesforce/schema/CalculationMatrixColumn.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/CalculationMatrixColumn.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CalculationMatrixColumn.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

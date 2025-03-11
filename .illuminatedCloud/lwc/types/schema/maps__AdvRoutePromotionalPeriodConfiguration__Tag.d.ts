@@ -12,12 +12,6 @@ declare module "@salesforce/schema/maps__AdvRoutePromotionalPeriodConfiguration_
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/maps__AdvRoutePromotionalPeriodConfiguration__Tag.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/maps__AdvRoutePromotionalPeriodConfiguration__Tag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

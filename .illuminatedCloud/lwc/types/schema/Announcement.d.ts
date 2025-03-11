@@ -54,12 +54,6 @@ declare module "@salesforce/schema/Announcement.FeedItemId" {
     export default FeedItemId;
 }
 
-declare module "@salesforce/schema/Announcement.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Announcement.IsArchived" {
     import { FieldId } from "@salesforce/schema";
     const IsArchived: FieldId;

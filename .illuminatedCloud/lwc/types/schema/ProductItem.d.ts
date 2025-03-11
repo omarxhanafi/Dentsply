@@ -180,12 +180,6 @@ declare module "@salesforce/schema/ProductItem.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/ProductItem.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ProductItem.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

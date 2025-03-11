@@ -42,12 +42,6 @@ declare module "@salesforce/schema/ContentFolderItem.FileType" {
     export default FileType;
 }
 
-declare module "@salesforce/schema/ContentFolderItem.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContentFolderItem.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

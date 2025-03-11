@@ -102,12 +102,6 @@ declare module "@salesforce/schema/Territory2ModelFeed.FeedTrackedChanges" {
     export default FeedTrackedChanges;
 }
 
-declare module "@salesforce/schema/Territory2ModelFeed.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Territory2ModelFeed.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

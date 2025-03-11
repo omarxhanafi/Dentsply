@@ -48,12 +48,6 @@ declare module "@salesforce/schema/DelegatedAccountHistory.Field" {
     export default Field;
 }
 
-declare module "@salesforce/schema/DelegatedAccountHistory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DelegatedAccountHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

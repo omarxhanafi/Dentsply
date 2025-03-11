@@ -18,12 +18,6 @@ declare module "@salesforce/schema/GroupMember.GroupId" {
     export default GroupId;
 }
 
-declare module "@salesforce/schema/GroupMember.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/GroupMember.SystemModstamp" {
     import { FieldId } from "@salesforce/schema";
     const SystemModstamp: FieldId;

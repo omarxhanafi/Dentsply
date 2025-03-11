@@ -72,12 +72,6 @@ declare module "@salesforce/schema/NetworkActivityAudit.EntityType" {
     export default EntityType;
 }
 
-declare module "@salesforce/schema/NetworkActivityAudit.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/NetworkActivityAudit.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

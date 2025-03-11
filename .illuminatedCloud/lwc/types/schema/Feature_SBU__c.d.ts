@@ -42,12 +42,6 @@ declare module "@salesforce/schema/Feature_SBU__c.Feature__r" {
     export default Feature__r;
 }
 
-declare module "@salesforce/schema/Feature_SBU__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Feature_SBU__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

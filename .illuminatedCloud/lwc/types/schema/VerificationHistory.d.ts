@@ -36,12 +36,6 @@ declare module "@salesforce/schema/VerificationHistory.EventGroup" {
     export default EventGroup;
 }
 
-declare module "@salesforce/schema/VerificationHistory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/VerificationHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

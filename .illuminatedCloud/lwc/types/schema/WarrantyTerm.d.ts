@@ -198,12 +198,6 @@ declare module "@salesforce/schema/WarrantyTerm.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/WarrantyTerm.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/WarrantyTerm.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

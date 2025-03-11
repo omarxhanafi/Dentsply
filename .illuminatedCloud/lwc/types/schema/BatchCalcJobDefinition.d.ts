@@ -66,12 +66,6 @@ declare module "@salesforce/schema/BatchCalcJobDefinition.ExecutionPlatformType"
     export default ExecutionPlatformType;
 }
 
-declare module "@salesforce/schema/BatchCalcJobDefinition.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/BatchCalcJobDefinition.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

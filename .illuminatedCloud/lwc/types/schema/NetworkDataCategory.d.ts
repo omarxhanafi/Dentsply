@@ -48,12 +48,6 @@ declare module "@salesforce/schema/NetworkDataCategory.Description" {
     export default Description;
 }
 
-declare module "@salesforce/schema/NetworkDataCategory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/NetworkDataCategory.Image" {
     import { FieldId } from "@salesforce/schema";
     const Image: FieldId;

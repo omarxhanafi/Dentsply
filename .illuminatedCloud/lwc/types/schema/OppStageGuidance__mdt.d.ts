@@ -42,12 +42,6 @@ declare module "@salesforce/schema/OppStageGuidance__mdt.FieldsToDisplay__c" {
     export default FieldsToDisplay__c;
 }
 
-declare module "@salesforce/schema/OppStageGuidance__mdt.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OppStageGuidance__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

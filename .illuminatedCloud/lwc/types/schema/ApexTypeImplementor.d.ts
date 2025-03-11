@@ -36,12 +36,6 @@ declare module "@salesforce/schema/ApexTypeImplementor.DurableId" {
     export default DurableId;
 }
 
-declare module "@salesforce/schema/ApexTypeImplementor.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ApexTypeImplementor.InterfaceApexClass" {
     import { FieldId } from "@salesforce/schema";
     const InterfaceApexClass: FieldId;

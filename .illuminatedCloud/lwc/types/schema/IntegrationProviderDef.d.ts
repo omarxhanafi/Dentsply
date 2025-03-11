@@ -90,12 +90,6 @@ declare module "@salesforce/schema/IntegrationProviderDef.FulfillmentSteps" {
     export default FulfillmentSteps;
 }
 
-declare module "@salesforce/schema/IntegrationProviderDef.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/IntegrationProviderDef.InputDataProcessor" {
     import { FieldId } from "@salesforce/schema";
     const InputDataProcessor: FieldId;

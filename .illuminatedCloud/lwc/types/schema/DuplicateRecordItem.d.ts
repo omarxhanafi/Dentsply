@@ -66,12 +66,6 @@ declare module "@salesforce/schema/DuplicateRecordItem.FlowOrchestrationWorkItem
     export default FlowOrchestrationWorkItems;
 }
 
-declare module "@salesforce/schema/DuplicateRecordItem.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DuplicateRecordItem.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

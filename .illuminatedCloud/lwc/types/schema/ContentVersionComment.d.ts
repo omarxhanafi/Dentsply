@@ -42,12 +42,6 @@ declare module "@salesforce/schema/ContentVersionComment.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/ContentVersionComment.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContentVersionComment.RelatedRecord" {
     import { FieldId } from "@salesforce/schema";
     const RelatedRecord: FieldId;

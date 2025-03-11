@@ -12,12 +12,6 @@ declare module "@salesforce/schema/OrderTag.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/OrderTag.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OrderTag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

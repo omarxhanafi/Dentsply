@@ -78,12 +78,6 @@ declare module "@salesforce/schema/SocialPersona.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/SocialPersona.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SocialPersona.IsDefault" {
     import { FieldId } from "@salesforce/schema";
     const IsDefault: FieldId;

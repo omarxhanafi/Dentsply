@@ -66,12 +66,6 @@ declare module "@salesforce/schema/TwoFactorMethodsInfo.HasVerifiedMobileNumber"
     export default HasVerifiedMobileNumber;
 }
 
-declare module "@salesforce/schema/TwoFactorMethodsInfo.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/TwoFactorMethodsInfo.User" {
     import { FieldId } from "@salesforce/schema";
     const User: FieldId;

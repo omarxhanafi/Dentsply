@@ -150,12 +150,6 @@ declare module "@salesforce/schema/XSBU_2_orgs__c.ISO_currency_del__c" {
     export default ISO_currency_del__c;
 }
 
-declare module "@salesforce/schema/XSBU_2_orgs__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/XSBU_2_orgs__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

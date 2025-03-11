@@ -174,12 +174,6 @@ declare module "@salesforce/schema/VideoCall.HostId" {
     export default HostId;
 }
 
-declare module "@salesforce/schema/VideoCall.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/VideoCall.IntelligenceScore" {
     import { FieldId } from "@salesforce/schema";
     const IntelligenceScore: FieldId;

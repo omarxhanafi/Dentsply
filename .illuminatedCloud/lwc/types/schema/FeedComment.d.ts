@@ -108,12 +108,6 @@ declare module "@salesforce/schema/FeedComment.HasEntityLinks" {
     export default HasEntityLinks;
 }
 
-declare module "@salesforce/schema/FeedComment.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FeedComment.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

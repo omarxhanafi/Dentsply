@@ -48,12 +48,6 @@ declare module "@salesforce/schema/Folder.Folder" {
     export default Folder;
 }
 
-declare module "@salesforce/schema/Folder.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Folder.IsReadonly" {
     import { FieldId } from "@salesforce/schema";
     const IsReadonly: FieldId;

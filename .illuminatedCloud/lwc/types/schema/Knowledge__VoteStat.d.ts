@@ -12,12 +12,6 @@ declare module "@salesforce/schema/Knowledge__VoteStat.Channel" {
     export default Channel;
 }
 
-declare module "@salesforce/schema/Knowledge__VoteStat.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Knowledge__VoteStat.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

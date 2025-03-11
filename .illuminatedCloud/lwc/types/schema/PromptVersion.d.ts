@@ -114,12 +114,6 @@ declare module "@salesforce/schema/PromptVersion.Header" {
     export default Header;
 }
 
-declare module "@salesforce/schema/PromptVersion.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/PromptVersion.Image" {
     import { FieldId } from "@salesforce/schema";
     const Image: FieldId;

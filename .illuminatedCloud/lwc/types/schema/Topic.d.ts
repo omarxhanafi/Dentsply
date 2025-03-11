@@ -96,12 +96,6 @@ declare module "@salesforce/schema/Topic.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/Topic.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Topic.LinkedEntity" {
     import { FieldId } from "@salesforce/schema";
     const LinkedEntity: FieldId;

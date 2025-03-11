@@ -168,12 +168,6 @@ declare module "@salesforce/schema/EntityMilestone.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/EntityMilestone.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EntityMilestone.IsCompleted" {
     import { FieldId } from "@salesforce/schema";
     const IsCompleted: FieldId;

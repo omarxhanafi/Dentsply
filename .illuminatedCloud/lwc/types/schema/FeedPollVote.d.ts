@@ -54,12 +54,6 @@ declare module "@salesforce/schema/FeedPollVote.FeedItemId" {
     export default FeedItemId;
 }
 
-declare module "@salesforce/schema/FeedPollVote.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FeedPollVote.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

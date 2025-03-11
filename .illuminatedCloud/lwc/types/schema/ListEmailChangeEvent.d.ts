@@ -72,12 +72,6 @@ declare module "@salesforce/schema/ListEmailChangeEvent.HtmlBody" {
     export default HtmlBody;
 }
 
-declare module "@salesforce/schema/ListEmailChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ListEmailChangeEvent.IsTracked" {
     import { FieldId } from "@salesforce/schema";
     const IsTracked: FieldId;

@@ -90,12 +90,6 @@ declare module "@salesforce/schema/EmailServicesFunction.FunctionName" {
     export default FunctionName;
 }
 
-declare module "@salesforce/schema/EmailServicesFunction.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EmailServicesFunction.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

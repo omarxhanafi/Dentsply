@@ -30,12 +30,6 @@ declare module "@salesforce/schema/geopointe__Check_In__c.Geopointe_Device_Event
     export default Geopointe_Device_Events__r;
 }
 
-declare module "@salesforce/schema/geopointe__Check_In__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/geopointe__Check_In__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

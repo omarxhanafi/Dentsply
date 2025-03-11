@@ -30,12 +30,6 @@ declare module "@salesforce/schema/OpportunityCompetitor.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/OpportunityCompetitor.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OpportunityCompetitor.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -78,12 +78,6 @@ declare module "@salesforce/schema/AssetAttribute.ExternalId" {
     export default ExternalId;
 }
 
-declare module "@salesforce/schema/AssetAttribute.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AssetAttribute.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

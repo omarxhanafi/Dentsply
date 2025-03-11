@@ -18,12 +18,6 @@ declare module "@salesforce/schema/ActiveProfileMetric.AssignedUserCount" {
     export default AssignedUserCount;
 }
 
-declare module "@salesforce/schema/ActiveProfileMetric.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ActiveProfileMetric.MetricsDate" {
     import { FieldId } from "@salesforce/schema";
     const MetricsDate: FieldId;

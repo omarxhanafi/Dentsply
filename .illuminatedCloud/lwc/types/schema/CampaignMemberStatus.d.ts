@@ -42,12 +42,6 @@ declare module "@salesforce/schema/CampaignMemberStatus.HasResponded" {
     export default HasResponded;
 }
 
-declare module "@salesforce/schema/CampaignMemberStatus.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CampaignMemberStatus.IsDefault" {
     import { FieldId } from "@salesforce/schema";
     const IsDefault: FieldId;

@@ -102,12 +102,6 @@ declare module "@salesforce/schema/AuthProvider.IconUrl" {
     export default IconUrl;
 }
 
-declare module "@salesforce/schema/AuthProvider.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AuthProvider.IdTokenIssuer" {
     import { FieldId } from "@salesforce/schema";
     const IdTokenIssuer: FieldId;

@@ -66,12 +66,6 @@ declare module "@salesforce/schema/AgentWorkSkill.FlowOrchestrationWorkItems" {
     export default FlowOrchestrationWorkItems;
 }
 
-declare module "@salesforce/schema/AgentWorkSkill.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AgentWorkSkill.IsAdditionalSkill" {
     import { FieldId } from "@salesforce/schema";
     const IsAdditionalSkill: FieldId;

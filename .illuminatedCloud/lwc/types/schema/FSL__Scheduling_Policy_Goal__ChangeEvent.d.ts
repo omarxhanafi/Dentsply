@@ -66,12 +66,6 @@ declare module "@salesforce/schema/FSL__Scheduling_Policy_Goal__ChangeEvent.FSL_
     export default FSL__Weight__c;
 }
 
-declare module "@salesforce/schema/FSL__Scheduling_Policy_Goal__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Scheduling_Policy_Goal__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

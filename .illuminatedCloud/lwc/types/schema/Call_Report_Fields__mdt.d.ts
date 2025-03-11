@@ -12,12 +12,6 @@ declare module "@salesforce/schema/Call_Report_Fields__mdt.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/Call_Report_Fields__mdt.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Call_Report_Fields__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

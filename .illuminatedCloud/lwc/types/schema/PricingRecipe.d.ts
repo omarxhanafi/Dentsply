@@ -42,12 +42,6 @@ declare module "@salesforce/schema/PricingRecipe.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/PricingRecipe.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/PricingRecipe.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

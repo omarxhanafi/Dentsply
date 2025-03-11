@@ -84,12 +84,6 @@ declare module "@salesforce/schema/ContentDistribution.FirstViewDate" {
     export default FirstViewDate;
 }
 
-declare module "@salesforce/schema/ContentDistribution.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContentDistribution.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

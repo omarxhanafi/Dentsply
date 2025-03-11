@@ -24,12 +24,6 @@ declare module "@salesforce/schema/NetworkMemberChunk.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/NetworkMemberChunk.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/NetworkMemberChunk.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

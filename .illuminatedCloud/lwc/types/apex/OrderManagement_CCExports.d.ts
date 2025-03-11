@@ -5,15 +5,15 @@ declare module "@salesforce/apex/OrderManagement_CC.checkIfAllowToCreateOrder" {
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.cloneOrder" {
-    export default function cloneOrder(params: {orderId: string, contractId: string}): Promise<Order>;
+    export default function cloneOrder(params: {orderId: string, contractId: string}): Promise<any>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.cloneOrderItems" {
-    export default function cloneOrderItems(params: {orderItemId: string}): Promise<OrderItem>;
+    export default function cloneOrderItems(params: {orderItemId: string}): Promise<any>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.createOrder" {
-    export default function createOrder(params: {pricebookId: string, parentId: string, currencyIsoCode: string, contractId: string, sourceRecordId: string, addressRecordId: string, accountId: string}): Promise<Order>;
+    export default function createOrder(params: {pricebookId: string, parentId: string, currencyIsoCode: string, contractId: string, sourceRecordId: string, addressRecordId: string, accountId: string}): Promise<any>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.deleteOrderItem" {
@@ -25,11 +25,11 @@ declare module "@salesforce/apex/OrderManagement_CC.getAccountRecordType" {
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getAddressRecords" {
-    export default function getAddressRecords(params: {parentId: string, pricebookId: string, accountId: string, sourceRecId: string}): Promise<Address__c[]>;
+    export default function getAddressRecords(params: {parentId: string, pricebookId: string, accountId: string, sourceRecId: string}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getContracts" {
-    export default function getContracts(params: {pricebookId: string, parentId: string, currencyIsoCode: string}): Promise<Contract[]>;
+    export default function getContracts(params: {pricebookId: string, parentId: string, currencyIsoCode: string}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getNavType" {
@@ -37,11 +37,11 @@ declare module "@salesforce/apex/OrderManagement_CC.getNavType" {
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getOrder" {
-    export default function getOrder(params: {orderId: string}): Promise<Order>;
+    export default function getOrder(params: {orderId: string}): Promise<any>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getOrderItems" {
-    export default function getOrderItems(params: {orderId: string, pageNumber: number, pageSize: number}): Promise<OrderItem[]>;
+    export default function getOrderItems(params: {orderId: string, pageNumber: number, pageSize: number}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getOrderItemsCounter" {
@@ -49,7 +49,7 @@ declare module "@salesforce/apex/OrderManagement_CC.getOrderItemsCounter" {
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getPriceBooks" {
-    export default function getPriceBooks(): Promise<Pricebook2[]>;
+    export default function getPriceBooks(): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getPriceBooksEntriesCurrencies" {
@@ -57,7 +57,7 @@ declare module "@salesforce/apex/OrderManagement_CC.getPriceBooksEntriesCurrenci
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getProducts" {
-    export default function getProducts(params: {pricebookId: string, parentId: string, keywordSearch: string, currencyIsoCode: string, valueDesc1: string, valueDesc2: string, valueDesc3: string, valueDesc4: string, pageNumber: number, pageSize: number, superProducts: boolean}): Promise<Product2[]>;
+    export default function getProducts(params: {pricebookId: string, parentId: string, keywordSearch: string, currencyIsoCode: string, valueDesc1: string, valueDesc2: string, valueDesc3: string, valueDesc4: string, pageNumber: number, pageSize: number, superProducts: boolean}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getProductsCounter" {
@@ -65,7 +65,7 @@ declare module "@salesforce/apex/OrderManagement_CC.getProductsCounter" {
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getRelatedAccountsWithContact" {
-    export default function getRelatedAccountsWithContact(params: {parentId: string}): Promise<AccountContactRelation[]>;
+    export default function getRelatedAccountsWithContact(params: {parentId: string}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getSBUDescriptions" {
@@ -73,7 +73,7 @@ declare module "@salesforce/apex/OrderManagement_CC.getSBUDescriptions" {
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getSourceRecords" {
-    export default function getSourceRecords(params: {parentId: string, pricebookId: string, accountId: string}): Promise<Source_Record__c[]>;
+    export default function getSourceRecords(params: {parentId: string, pricebookId: string, accountId: string}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.getUserDecimalSeparator" {
@@ -81,7 +81,7 @@ declare module "@salesforce/apex/OrderManagement_CC.getUserDecimalSeparator" {
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.insertOrderItems" {
-    export default function insertOrderItems(params: {orderItems: OrderItem[]}): Promise<string>;
+    export default function insertOrderItems(params: {orderItems: any[]}): Promise<string>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.ProdPricingERPCallOut" {
@@ -89,7 +89,7 @@ declare module "@salesforce/apex/OrderManagement_CC.ProdPricingERPCallOut" {
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.refreshFormulas" {
-    export default function refreshFormulas(params: {om: OrderItem}): Promise<OrderItem>;
+    export default function refreshFormulas(params: {om: any}): Promise<any>;
 }
 
 declare module "@salesforce/apex/OrderManagement_CC.uIThemeDisplayed" {

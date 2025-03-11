@@ -12,12 +12,6 @@ declare module "@salesforce/schema/DebugLog__Share.AccessLevel" {
     export default AccessLevel;
 }
 
-declare module "@salesforce/schema/DebugLog__Share.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DebugLog__Share.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

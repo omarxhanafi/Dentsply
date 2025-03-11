@@ -12,12 +12,6 @@ declare module "@salesforce/schema/FSL__Crew_Management_User_Settings__Tag.Creat
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/FSL__Crew_Management_User_Settings__Tag.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Crew_Management_User_Settings__Tag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -54,12 +54,6 @@ declare module "@salesforce/schema/PromptAction.FlowOrchestrationWorkItems" {
     export default FlowOrchestrationWorkItems;
 }
 
-declare module "@salesforce/schema/PromptAction.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/PromptAction.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

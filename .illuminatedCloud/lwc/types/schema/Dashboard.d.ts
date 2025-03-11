@@ -162,12 +162,6 @@ declare module "@salesforce/schema/Dashboard.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/Dashboard.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Dashboard.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

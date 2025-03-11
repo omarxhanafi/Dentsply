@@ -138,12 +138,6 @@ declare module "@salesforce/schema/ProcedureProfiling__c.Heliodent__c" {
     export default Heliodent__c;
 }
 
-declare module "@salesforce/schema/ProcedureProfiling__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ProcedureProfiling__c.InLabMCXL__c" {
     import { FieldId } from "@salesforce/schema";
     const InLabMCXL__c: FieldId;

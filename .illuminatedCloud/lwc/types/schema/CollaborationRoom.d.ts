@@ -42,12 +42,6 @@ declare module "@salesforce/schema/CollaborationRoom.CurrencyIsoCode" {
     export default CurrencyIsoCode;
 }
 
-declare module "@salesforce/schema/CollaborationRoom.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CollaborationRoom.IsArchived" {
     import { FieldId } from "@salesforce/schema";
     const IsArchived: FieldId;

@@ -36,12 +36,6 @@ declare module "@salesforce/schema/IndividualHistory.Field" {
     export default Field;
 }
 
-declare module "@salesforce/schema/IndividualHistory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/IndividualHistory.Individual" {
     import { FieldId } from "@salesforce/schema";
     const Individual: FieldId;

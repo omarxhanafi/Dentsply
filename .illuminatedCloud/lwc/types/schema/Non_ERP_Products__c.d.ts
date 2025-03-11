@@ -228,12 +228,6 @@ declare module "@salesforce/schema/Non_ERP_Products__c.GlobalProductShowtoallcou
     export default GlobalProductShowtoallcountries__c;
 }
 
-declare module "@salesforce/schema/Non_ERP_Products__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Non_ERP_Products__c.Inactive__c" {
     import { FieldId } from "@salesforce/schema";
     const Inactive__c: FieldId;

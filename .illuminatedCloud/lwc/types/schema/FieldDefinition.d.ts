@@ -84,12 +84,6 @@ declare module "@salesforce/schema/FieldDefinition.ExtraTypeInfo" {
     export default ExtraTypeInfo;
 }
 
-declare module "@salesforce/schema/FieldDefinition.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FieldDefinition.IsAiPredictionField" {
     import { FieldId } from "@salesforce/schema";
     const IsAiPredictionField: FieldId;

@@ -42,12 +42,6 @@ declare module "@salesforce/schema/DatasetExportEvent.EventUuid" {
     export default EventUuid;
 }
 
-declare module "@salesforce/schema/DatasetExportEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DatasetExportEvent.Message" {
     import { FieldId } from "@salesforce/schema";
     const Message: FieldId;

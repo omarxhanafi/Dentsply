@@ -162,12 +162,6 @@ declare module "@salesforce/schema/maps__TerritoryAggregationSetting__c.Generate
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/maps__TerritoryAggregationSetting__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/maps__TerritoryAggregationSetting__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -36,12 +36,6 @@ declare module "@salesforce/schema/DuplicateRule.DuplicateRecordSets" {
     export default DuplicateRecordSets;
 }
 
-declare module "@salesforce/schema/DuplicateRule.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DuplicateRule.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

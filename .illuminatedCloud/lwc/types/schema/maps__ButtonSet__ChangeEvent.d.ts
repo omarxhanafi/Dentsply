@@ -36,12 +36,6 @@ declare module "@salesforce/schema/maps__ButtonSet__ChangeEvent.CurrencyIsoCode"
     export default CurrencyIsoCode;
 }
 
-declare module "@salesforce/schema/maps__ButtonSet__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/maps__ButtonSet__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

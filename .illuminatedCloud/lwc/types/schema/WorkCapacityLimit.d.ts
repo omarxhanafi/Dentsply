@@ -132,12 +132,6 @@ declare module "@salesforce/schema/WorkCapacityLimit.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/WorkCapacityLimit.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/WorkCapacityLimit.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

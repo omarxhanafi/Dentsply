@@ -12,12 +12,6 @@ declare module "@salesforce/schema/FSL__Territory_Optimization_Request__Tag.Crea
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/FSL__Territory_Optimization_Request__Tag.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Territory_Optimization_Request__Tag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -204,12 +204,6 @@ declare module "@salesforce/schema/SalesforceContract.FulfillmentProviders" {
     export default FulfillmentProviders;
 }
 
-declare module "@salesforce/schema/SalesforceContract.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SalesforceContract.IsAddOnEligible" {
     import { FieldId } from "@salesforce/schema";
     const IsAddOnEligible: FieldId;

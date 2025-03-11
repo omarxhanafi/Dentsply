@@ -6,12 +6,6 @@ declare module "@salesforce/schema/ContentUserSubscription" {
     export default ContentUserSubscription;
 }
 
-declare module "@salesforce/schema/ContentUserSubscription.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContentUserSubscription.SubscribedToUser" {
     import { FieldId } from "@salesforce/schema";
     const SubscribedToUser: FieldId;

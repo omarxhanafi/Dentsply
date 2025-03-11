@@ -30,12 +30,6 @@ declare module "@salesforce/schema/CuratedExpJobEvent.EventUuid" {
     export default EventUuid;
 }
 
-declare module "@salesforce/schema/CuratedExpJobEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CuratedExpJobEvent.JobName" {
     import { FieldId } from "@salesforce/schema";
     const JobName: FieldId;

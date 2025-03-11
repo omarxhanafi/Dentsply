@@ -24,12 +24,6 @@ declare module "@salesforce/schema/GuidanceRenderer__mdt.Guidance_Content__c" {
     export default Guidance_Content__c;
 }
 
-declare module "@salesforce/schema/GuidanceRenderer__mdt.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/GuidanceRenderer__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

@@ -54,12 +54,6 @@ declare module "@salesforce/schema/FeedRevision.FeedEntityId" {
     export default FeedEntityId;
 }
 
-declare module "@salesforce/schema/FeedRevision.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FeedRevision.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

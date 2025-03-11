@@ -42,12 +42,6 @@ declare module "@salesforce/schema/OmniExtTrackingDef.ExtTrackingConfigDefs" {
     export default ExtTrackingConfigDefs;
 }
 
-declare module "@salesforce/schema/OmniExtTrackingDef.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OmniExtTrackingDef.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

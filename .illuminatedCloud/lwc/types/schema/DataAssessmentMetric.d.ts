@@ -42,12 +42,6 @@ declare module "@salesforce/schema/DataAssessmentMetric.DataAssessmentMetrics" {
     export default DataAssessmentMetrics;
 }
 
-declare module "@salesforce/schema/DataAssessmentMetric.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DataAssessmentMetric.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

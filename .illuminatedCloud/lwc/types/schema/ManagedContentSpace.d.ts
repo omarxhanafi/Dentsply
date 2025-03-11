@@ -54,12 +54,6 @@ declare module "@salesforce/schema/ManagedContentSpace.Description" {
     export default Description;
 }
 
-declare module "@salesforce/schema/ManagedContentSpace.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ManagedContentSpace.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

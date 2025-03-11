@@ -54,12 +54,6 @@ declare module "@salesforce/schema/Promotion_Material__c.Entry_Date__c" {
     export default Entry_Date__c;
 }
 
-declare module "@salesforce/schema/Promotion_Material__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Promotion_Material__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

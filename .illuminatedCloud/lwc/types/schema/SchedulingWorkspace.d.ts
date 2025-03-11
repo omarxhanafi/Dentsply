@@ -144,12 +144,6 @@ declare module "@salesforce/schema/SchedulingWorkspace.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/SchedulingWorkspace.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SchedulingWorkspace.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

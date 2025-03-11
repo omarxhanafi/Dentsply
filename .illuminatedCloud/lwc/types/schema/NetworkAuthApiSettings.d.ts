@@ -84,12 +84,6 @@ declare module "@salesforce/schema/NetworkAuthApiSettings.HeadlessDiscoveryHandl
     export default HeadlessDiscoveryHandlerId;
 }
 
-declare module "@salesforce/schema/NetworkAuthApiSettings.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/NetworkAuthApiSettings.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

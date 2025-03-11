@@ -222,12 +222,6 @@ declare module "@salesforce/schema/ContentVersion.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/ContentVersion.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContentVersion.IsAssetEnabled" {
     import { FieldId } from "@salesforce/schema";
     const IsAssetEnabled: FieldId;

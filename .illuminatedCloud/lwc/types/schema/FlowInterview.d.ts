@@ -78,12 +78,6 @@ declare module "@salesforce/schema/FlowInterview.Guid" {
     export default Guid;
 }
 
-declare module "@salesforce/schema/FlowInterview.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FlowInterview.Interview" {
     import { FieldId } from "@salesforce/schema";
     const Interview: FieldId;

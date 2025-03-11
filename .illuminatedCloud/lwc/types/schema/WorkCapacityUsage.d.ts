@@ -132,12 +132,6 @@ declare module "@salesforce/schema/WorkCapacityUsage.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/WorkCapacityUsage.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/WorkCapacityUsage.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -384,12 +384,6 @@ declare module "@salesforce/schema/Engagement__c.Hotel__r" {
     export default Hotel__r;
 }
 
-declare module "@salesforce/schema/Engagement__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Engagement__c.Internal_Speaker__c" {
     import { FieldId } from "@salesforce/schema";
     const Internal_Speaker__c: FieldId;

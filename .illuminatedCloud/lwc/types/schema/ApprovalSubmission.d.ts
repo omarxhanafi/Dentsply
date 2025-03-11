@@ -78,12 +78,6 @@ declare module "@salesforce/schema/ApprovalSubmission.FlowOrchestrationWorkItems
     export default FlowOrchestrationWorkItems;
 }
 
-declare module "@salesforce/schema/ApprovalSubmission.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ApprovalSubmission.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

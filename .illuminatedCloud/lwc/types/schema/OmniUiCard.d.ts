@@ -120,12 +120,6 @@ declare module "@salesforce/schema/OmniUiCard.GeneratedDocRefObjects" {
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/OmniUiCard.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OmniUiCard.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

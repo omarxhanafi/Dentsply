@@ -186,12 +186,6 @@ declare module "@salesforce/schema/FSL__User_Setting_Territory__c.GeneratedDocRe
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/FSL__User_Setting_Territory__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__User_Setting_Territory__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -72,12 +72,6 @@ declare module "@salesforce/schema/ManagedContent.ExternalId" {
     export default ExternalId;
 }
 
-declare module "@salesforce/schema/ManagedContent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ManagedContent.Image" {
     import { FieldId } from "@salesforce/schema";
     const Image: FieldId;

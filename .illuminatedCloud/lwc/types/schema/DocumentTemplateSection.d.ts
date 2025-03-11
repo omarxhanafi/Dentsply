@@ -204,12 +204,6 @@ declare module "@salesforce/schema/DocumentTemplateSection.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/DocumentTemplateSection.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DocumentTemplateSection.IsBatchable" {
     import { FieldId } from "@salesforce/schema";
     const IsBatchable: FieldId;

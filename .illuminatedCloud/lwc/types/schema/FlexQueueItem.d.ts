@@ -24,12 +24,6 @@ declare module "@salesforce/schema/FlexQueueItem.FlexQueueItemId" {
     export default FlexQueueItemId;
 }
 
-declare module "@salesforce/schema/FlexQueueItem.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FlexQueueItem.JobPosition" {
     import { FieldId } from "@salesforce/schema";
     const JobPosition: FieldId;

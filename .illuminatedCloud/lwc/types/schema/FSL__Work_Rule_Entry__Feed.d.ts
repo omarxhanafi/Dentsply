@@ -102,12 +102,6 @@ declare module "@salesforce/schema/FSL__Work_Rule_Entry__Feed.FeedTrackedChanges
     export default FeedTrackedChanges;
 }
 
-declare module "@salesforce/schema/FSL__Work_Rule_Entry__Feed.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Work_Rule_Entry__Feed.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

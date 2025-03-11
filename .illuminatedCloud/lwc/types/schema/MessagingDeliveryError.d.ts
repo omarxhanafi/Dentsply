@@ -66,12 +66,6 @@ declare module "@salesforce/schema/MessagingDeliveryError.FullMessage" {
     export default FullMessage;
 }
 
-declare module "@salesforce/schema/MessagingDeliveryError.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/MessagingDeliveryError.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -48,12 +48,6 @@ declare module "@salesforce/schema/AuraDefinitionInfo.Format" {
     export default Format;
 }
 
-declare module "@salesforce/schema/AuraDefinitionInfo.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AuraDefinitionInfo.LastModifiedDate" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedDate: FieldId;

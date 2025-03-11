@@ -48,12 +48,6 @@ declare module "@salesforce/schema/ContentWorkspaceMember.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/ContentWorkspaceMember.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContentWorkspaceMember.Member" {
     import { FieldId } from "@salesforce/schema";
     const Member: FieldId;

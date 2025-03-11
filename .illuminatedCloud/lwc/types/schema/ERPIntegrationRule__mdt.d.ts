@@ -144,12 +144,6 @@ declare module "@salesforce/schema/ERPIntegrationRule__mdt.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/ERPIntegrationRule__mdt.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ERPIntegrationRule__mdt.IsEnabled__c" {
     import { FieldId } from "@salesforce/schema";
     const IsEnabled__c: FieldId;

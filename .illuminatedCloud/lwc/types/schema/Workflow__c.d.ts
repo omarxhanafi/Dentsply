@@ -192,12 +192,6 @@ declare module "@salesforce/schema/Workflow__c.GlobalProductShowtoallcountries__
     export default GlobalProductShowtoallcountries__c;
 }
 
-declare module "@salesforce/schema/Workflow__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Workflow__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -36,12 +36,6 @@ declare module "@salesforce/schema/DomainSite.DomainId" {
     export default DomainId;
 }
 
-declare module "@salesforce/schema/DomainSite.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DomainSite.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

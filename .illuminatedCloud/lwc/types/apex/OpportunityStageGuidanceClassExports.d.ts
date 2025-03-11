@@ -1,11 +1,11 @@
 // DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
 
 declare module "@salesforce/apex/OpportunityStageGuidanceClass.checkAccountPrograms" {
-    export default function checkAccountPrograms(params: {recordId: string}): Promise<LoyaltyProgram__c[]>;
+    export default function checkAccountPrograms(params: {recordId: string}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OpportunityStageGuidanceClass.checkStageType" {
-    export default function checkStageType(params: {stageName: string}): Promise<OpportunityStage>;
+    export default function checkStageType(params: {stageName: string}): Promise<any>;
 }
 
 declare module "@salesforce/apex/OpportunityStageGuidanceClass.getOppStageGuidance" {

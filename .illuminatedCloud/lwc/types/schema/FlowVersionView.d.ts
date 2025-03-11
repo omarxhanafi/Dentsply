@@ -66,12 +66,6 @@ declare module "@salesforce/schema/FlowVersionView.FlowVersionView" {
     export default FlowVersionView;
 }
 
-declare module "@salesforce/schema/FlowVersionView.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FlowVersionView.IsSwingFlow" {
     import { FieldId } from "@salesforce/schema";
     const IsSwingFlow: FieldId;

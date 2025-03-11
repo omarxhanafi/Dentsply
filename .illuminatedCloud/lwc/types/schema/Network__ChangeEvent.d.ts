@@ -294,12 +294,6 @@ declare module "@salesforce/schema/Network__ChangeEvent.Hub_Contact__r" {
     export default Hub_Contact__r;
 }
 
-declare module "@salesforce/schema/Network__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Network__ChangeEvent.Key_Network__c" {
     import { FieldId } from "@salesforce/schema";
     const Key_Network__c: FieldId;

@@ -186,12 +186,6 @@ declare module "@salesforce/schema/CollaborationGroup.HasPrivateFieldsAccess" {
     export default HasPrivateFieldsAccess;
 }
 
-declare module "@salesforce/schema/CollaborationGroup.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CollaborationGroup.InformationBody" {
     import { FieldId } from "@salesforce/schema";
     const InformationBody: FieldId;

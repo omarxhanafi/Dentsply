@@ -60,12 +60,6 @@ declare module "@salesforce/schema/TableauHostMapping.HostType" {
     export default HostType;
 }
 
-declare module "@salesforce/schema/TableauHostMapping.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/TableauHostMapping.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

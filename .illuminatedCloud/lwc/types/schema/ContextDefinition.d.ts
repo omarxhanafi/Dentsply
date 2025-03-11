@@ -66,12 +66,6 @@ declare module "@salesforce/schema/ContextDefinition.DisplayName" {
     export default DisplayName;
 }
 
-declare module "@salesforce/schema/ContextDefinition.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContextDefinition.InheritedFrom" {
     import { FieldId } from "@salesforce/schema";
     const InheritedFrom: FieldId;

@@ -72,12 +72,6 @@ declare module "@salesforce/schema/Territory2.ForecastUserId" {
     export default ForecastUserId;
 }
 
-declare module "@salesforce/schema/Territory2.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Territory2.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

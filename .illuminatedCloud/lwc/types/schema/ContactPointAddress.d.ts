@@ -144,12 +144,6 @@ declare module "@salesforce/schema/ContactPointAddress.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/ContactPointAddress.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContactPointAddress.IsDefault" {
     import { FieldId } from "@salesforce/schema";
     const IsDefault: FieldId;

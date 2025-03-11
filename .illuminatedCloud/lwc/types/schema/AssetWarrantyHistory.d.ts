@@ -48,12 +48,6 @@ declare module "@salesforce/schema/AssetWarrantyHistory.Field" {
     export default Field;
 }
 
-declare module "@salesforce/schema/AssetWarrantyHistory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AssetWarrantyHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -12,12 +12,6 @@ declare module "@salesforce/schema/EngagementInterface.EndDateTime" {
     export default EndDateTime;
 }
 
-declare module "@salesforce/schema/EngagementInterface.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EngagementInterface.ImplementorType" {
     import { FieldId } from "@salesforce/schema";
     const ImplementorType: FieldId;

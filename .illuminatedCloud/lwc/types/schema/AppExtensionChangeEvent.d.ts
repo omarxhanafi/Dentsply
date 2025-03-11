@@ -54,12 +54,6 @@ declare module "@salesforce/schema/AppExtensionChangeEvent.FieldServiceMobileSet
     export default FieldServiceMobileSettingsId;
 }
 
-declare module "@salesforce/schema/AppExtensionChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AppExtensionChangeEvent.InstallationUrl" {
     import { FieldId } from "@salesforce/schema";
     const InstallationUrl: FieldId;

@@ -72,12 +72,6 @@ declare module "@salesforce/schema/ExternalEventMapping.FlowOrchestrationWorkIte
     export default FlowOrchestrationWorkItems;
 }
 
-declare module "@salesforce/schema/ExternalEventMapping.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ExternalEventMapping.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

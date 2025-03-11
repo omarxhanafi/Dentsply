@@ -66,12 +66,6 @@ declare module "@salesforce/schema/FSL__Polygon__ChangeEvent.FSL__Service_Territ
     export default FSL__Service_Territory__r;
 }
 
-declare module "@salesforce/schema/FSL__Polygon__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Polygon__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

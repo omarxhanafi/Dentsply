@@ -48,12 +48,6 @@ declare module "@salesforce/schema/CallCenterRoutingMap.ExternalId" {
     export default ExternalId;
 }
 
-declare module "@salesforce/schema/CallCenterRoutingMap.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CallCenterRoutingMap.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

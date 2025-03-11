@@ -48,12 +48,6 @@ declare module "@salesforce/schema/ExtlClntAppOauthIpRange.ExtlClntAppOauthSetti
     export default ExtlClntAppOauthSettingsId;
 }
 
-declare module "@salesforce/schema/ExtlClntAppOauthIpRange.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ExtlClntAppOauthIpRange.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

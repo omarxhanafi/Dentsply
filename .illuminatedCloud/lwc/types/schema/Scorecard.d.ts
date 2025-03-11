@@ -42,12 +42,6 @@ declare module "@salesforce/schema/Scorecard.Description" {
     export default Description;
 }
 
-declare module "@salesforce/schema/Scorecard.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Scorecard.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

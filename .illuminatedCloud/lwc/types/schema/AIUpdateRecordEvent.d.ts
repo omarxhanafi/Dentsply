@@ -42,12 +42,6 @@ declare module "@salesforce/schema/AIUpdateRecordEvent.EventUuid" {
     export default EventUuid;
 }
 
-declare module "@salesforce/schema/AIUpdateRecordEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AIUpdateRecordEvent.IsUpdated" {
     import { FieldId } from "@salesforce/schema";
     const IsUpdated: FieldId;

@@ -54,12 +54,6 @@ declare module "@salesforce/schema/TenantUsageEntitlement.HasRollover" {
     export default HasRollover;
 }
 
-declare module "@salesforce/schema/TenantUsageEntitlement.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/TenantUsageEntitlement.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

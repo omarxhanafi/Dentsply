@@ -636,12 +636,6 @@ declare module "@salesforce/schema/CampaignMember.IDSContact__c" {
     export default IDSContact__c;
 }
 
-declare module "@salesforce/schema/CampaignMember.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CampaignMember.Implant_Lost_Comparison__c" {
     import { FieldId } from "@salesforce/schema";
     const Implant_Lost_Comparison__c: FieldId;

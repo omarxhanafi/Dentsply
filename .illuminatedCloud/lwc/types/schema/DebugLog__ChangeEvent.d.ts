@@ -66,12 +66,6 @@ declare module "@salesforce/schema/DebugLog__ChangeEvent.ErrorType__c" {
     export default ErrorType__c;
 }
 
-declare module "@salesforce/schema/DebugLog__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DebugLog__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

@@ -48,12 +48,6 @@ declare module "@salesforce/schema/PermissionSetGroup.HasActivationRequired" {
     export default HasActivationRequired;
 }
 
-declare module "@salesforce/schema/PermissionSetGroup.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/PermissionSetGroup.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

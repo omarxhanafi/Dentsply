@@ -78,12 +78,6 @@ declare module "@salesforce/schema/BackgroundOperation.GroupLeaderId" {
     export default GroupLeaderId;
 }
 
-declare module "@salesforce/schema/BackgroundOperation.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/BackgroundOperation.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

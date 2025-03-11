@@ -72,12 +72,6 @@ declare module "@salesforce/schema/FlowOrchestrationLog.Duration" {
     export default Duration;
 }
 
-declare module "@salesforce/schema/FlowOrchestrationLog.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FlowOrchestrationLog.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

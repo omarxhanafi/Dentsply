@@ -6,12 +6,6 @@ declare module "@salesforce/schema/AggregateResult" {
     export default AggregateResult;
 }
 
-declare module "@salesforce/schema/AggregateResult.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AggregateResult.UserRecordAccess" {
     import { FieldId } from "@salesforce/schema";
     const UserRecordAccess: FieldId;

@@ -42,12 +42,6 @@ declare module "@salesforce/schema/OutOfOffice.EndDate" {
     export default EndDate;
 }
 
-declare module "@salesforce/schema/OutOfOffice.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OutOfOffice.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

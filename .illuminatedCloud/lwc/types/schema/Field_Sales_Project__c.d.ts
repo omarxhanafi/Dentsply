@@ -240,12 +240,6 @@ declare module "@salesforce/schema/Field_Sales_Project__c.GeneratedDocRefObjects
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/Field_Sales_Project__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Field_Sales_Project__c.Initiative_Type__c" {
     import { FieldId } from "@salesforce/schema";
     const Initiative_Type__c: FieldId;

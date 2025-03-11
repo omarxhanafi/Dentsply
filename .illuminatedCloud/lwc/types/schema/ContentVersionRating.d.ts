@@ -24,12 +24,6 @@ declare module "@salesforce/schema/ContentVersionRating.ContextRecord" {
     export default ContextRecord;
 }
 
-declare module "@salesforce/schema/ContentVersionRating.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContentVersionRating.LastModifiedDate" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedDate: FieldId;

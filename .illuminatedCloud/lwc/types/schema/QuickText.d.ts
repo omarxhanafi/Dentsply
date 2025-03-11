@@ -72,12 +72,6 @@ declare module "@salesforce/schema/QuickText.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/QuickText.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/QuickText.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

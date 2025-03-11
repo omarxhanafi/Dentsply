@@ -54,12 +54,6 @@ declare module "@salesforce/schema/OpportunityHistory.ForecastCategory" {
     export default ForecastCategory;
 }
 
-declare module "@salesforce/schema/OpportunityHistory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OpportunityHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

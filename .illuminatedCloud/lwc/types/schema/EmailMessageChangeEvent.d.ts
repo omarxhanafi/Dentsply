@@ -126,12 +126,6 @@ declare module "@salesforce/schema/EmailMessageChangeEvent.HtmlBody" {
     export default HtmlBody;
 }
 
-declare module "@salesforce/schema/EmailMessageChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EmailMessageChangeEvent.Incoming" {
     import { FieldId } from "@salesforce/schema";
     const Incoming: FieldId;

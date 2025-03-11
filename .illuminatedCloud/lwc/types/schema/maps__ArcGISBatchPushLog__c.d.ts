@@ -162,12 +162,6 @@ declare module "@salesforce/schema/maps__ArcGISBatchPushLog__c.GeneratedDocRefOb
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/maps__ArcGISBatchPushLog__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/maps__ArcGISBatchPushLog__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

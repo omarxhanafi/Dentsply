@@ -48,12 +48,6 @@ declare module "@salesforce/schema/EntitlementTemplate.EntitlementTemplate" {
     export default EntitlementTemplate;
 }
 
-declare module "@salesforce/schema/EntitlementTemplate.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EntitlementTemplate.IsPerIncident" {
     import { FieldId } from "@salesforce/schema";
     const IsPerIncident: FieldId;

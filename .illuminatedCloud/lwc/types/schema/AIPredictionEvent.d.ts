@@ -48,12 +48,6 @@ declare module "@salesforce/schema/AIPredictionEvent.HasError" {
     export default HasError;
 }
 
-declare module "@salesforce/schema/AIPredictionEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AIPredictionEvent.InsightId" {
     import { FieldId } from "@salesforce/schema";
     const InsightId: FieldId;

@@ -12,12 +12,6 @@ declare module "@salesforce/schema/FSL__Optimization_Request_Queue__Tag.CreatedD
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/FSL__Optimization_Request_Queue__Tag.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Optimization_Request_Queue__Tag.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

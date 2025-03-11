@@ -12,12 +12,6 @@ declare module "@salesforce/schema/UnitOfMeasureShare.AccessLevel" {
     export default AccessLevel;
 }
 
-declare module "@salesforce/schema/UnitOfMeasureShare.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/UnitOfMeasureShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

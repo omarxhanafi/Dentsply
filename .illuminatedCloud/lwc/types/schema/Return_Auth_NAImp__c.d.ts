@@ -72,12 +72,6 @@ declare module "@salesforce/schema/Return_Auth_NAImp__c.Description_Notes__c" {
     export default Description_Notes__c;
 }
 
-declare module "@salesforce/schema/Return_Auth_NAImp__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Return_Auth_NAImp__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

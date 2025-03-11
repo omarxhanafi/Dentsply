@@ -36,12 +36,6 @@ declare module "@salesforce/schema/QuoteLineItemHistory.Field" {
     export default Field;
 }
 
-declare module "@salesforce/schema/QuoteLineItemHistory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/QuoteLineItemHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

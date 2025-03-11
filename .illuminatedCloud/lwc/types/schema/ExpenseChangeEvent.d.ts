@@ -90,12 +90,6 @@ declare module "@salesforce/schema/ExpenseChangeEvent.ExpenseType" {
     export default ExpenseType;
 }
 
-declare module "@salesforce/schema/ExpenseChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ExpenseChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

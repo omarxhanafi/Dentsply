@@ -6,12 +6,6 @@ declare module "@salesforce/schema/UserPreference" {
     export default UserPreference;
 }
 
-declare module "@salesforce/schema/UserPreference.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/UserPreference.Preference" {
     import { FieldId } from "@salesforce/schema";
     const Preference: FieldId;

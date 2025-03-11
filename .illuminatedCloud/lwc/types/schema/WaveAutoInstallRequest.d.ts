@@ -60,12 +60,6 @@ declare module "@salesforce/schema/WaveAutoInstallRequest.FolderId" {
     export default FolderId;
 }
 
-declare module "@salesforce/schema/WaveAutoInstallRequest.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/WaveAutoInstallRequest.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -48,12 +48,6 @@ declare module "@salesforce/schema/PermissionSet.HasActivationRequired" {
     export default HasActivationRequired;
 }
 
-declare module "@salesforce/schema/PermissionSet.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/PermissionSet.IsCustom" {
     import { FieldId } from "@salesforce/schema";
     const IsCustom: FieldId;

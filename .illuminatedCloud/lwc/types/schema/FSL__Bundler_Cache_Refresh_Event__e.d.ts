@@ -36,12 +36,6 @@ declare module "@salesforce/schema/FSL__Bundler_Cache_Refresh_Event__e.FSL__orgi
     export default FSL__orgid__c;
 }
 
-declare module "@salesforce/schema/FSL__Bundler_Cache_Refresh_Event__e.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Bundler_Cache_Refresh_Event__e.ReplayId" {
     import { FieldId } from "@salesforce/schema";
     const ReplayId: FieldId;

@@ -36,12 +36,6 @@ declare module "@salesforce/schema/geopointe__GP_List2__c.Geopointe_List_Tag_Lis
     export default Geopointe_List_Tag_List__r;
 }
 
-declare module "@salesforce/schema/geopointe__GP_List2__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/geopointe__GP_List2__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

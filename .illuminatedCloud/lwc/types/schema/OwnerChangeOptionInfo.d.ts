@@ -36,12 +36,6 @@ declare module "@salesforce/schema/OwnerChangeOptionInfo.EntityDefinitionId" {
     export default EntityDefinitionId;
 }
 
-declare module "@salesforce/schema/OwnerChangeOptionInfo.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OwnerChangeOptionInfo.IsEditable" {
     import { FieldId } from "@salesforce/schema";
     const IsEditable: FieldId;

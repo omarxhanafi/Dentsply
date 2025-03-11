@@ -24,12 +24,6 @@ declare module "@salesforce/schema/EmbeddedServiceLabel.EmbeddedServiceConfigDev
     export default EmbeddedServiceConfigDeveloperName;
 }
 
-declare module "@salesforce/schema/EmbeddedServiceLabel.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EmbeddedServiceLabel.LabelKey" {
     import { FieldId } from "@salesforce/schema";
     const LabelKey: FieldId;

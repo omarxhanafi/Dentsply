@@ -48,12 +48,6 @@ declare module "@salesforce/schema/TaxEngineProvider.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/TaxEngineProvider.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/TaxEngineProvider.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

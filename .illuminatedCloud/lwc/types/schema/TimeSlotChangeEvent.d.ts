@@ -60,12 +60,6 @@ declare module "@salesforce/schema/TimeSlotChangeEvent.FSL__Slot_Color__c" {
     export default FSL__Slot_Color__c;
 }
 
-declare module "@salesforce/schema/TimeSlotChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/TimeSlotChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

@@ -24,12 +24,6 @@ declare module "@salesforce/schema/CampaignShare.CampaignId" {
     export default CampaignId;
 }
 
-declare module "@salesforce/schema/CampaignShare.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CampaignShare.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -36,12 +36,6 @@ declare module "@salesforce/schema/FSL__FMA_Count_Action__e.FSL__FMA_CS_Name__c"
     export default FSL__FMA_CS_Name__c;
 }
 
-declare module "@salesforce/schema/FSL__FMA_Count_Action__e.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__FMA_Count_Action__e.ReplayId" {
     import { FieldId } from "@salesforce/schema";
     const ReplayId: FieldId;

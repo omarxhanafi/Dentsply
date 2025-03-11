@@ -42,12 +42,6 @@ declare module "@salesforce/schema/BusinessProcessTypeDef.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/BusinessProcessTypeDef.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/BusinessProcessTypeDef.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

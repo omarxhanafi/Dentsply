@@ -282,12 +282,6 @@ declare module "@salesforce/schema/WorkOrderChangeEvent.GeocodeAccuracy" {
     export default GeocodeAccuracy;
 }
 
-declare module "@salesforce/schema/WorkOrderChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/WorkOrderChangeEvent.IsClosed" {
     import { FieldId } from "@salesforce/schema";
     const IsClosed: FieldId;

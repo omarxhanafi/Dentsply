@@ -114,12 +114,6 @@ declare module "@salesforce/schema/DecisionTable.HasIncrementalSyncFailed" {
     export default HasIncrementalSyncFailed;
 }
 
-declare module "@salesforce/schema/DecisionTable.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DecisionTable.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

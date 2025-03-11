@@ -48,12 +48,6 @@ declare module "@salesforce/schema/RecommendationResponse.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/RecommendationResponse.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/RecommendationResponse.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

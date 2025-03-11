@@ -654,12 +654,6 @@ declare module "@salesforce/schema/ContractChangeEvent.General_practitioner__c" 
     export default General_practitioner__c;
 }
 
-declare module "@salesforce/schema/ContractChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContractChangeEvent.Implant_commitment__c" {
     import { FieldId } from "@salesforce/schema";
     const Implant_commitment__c: FieldId;

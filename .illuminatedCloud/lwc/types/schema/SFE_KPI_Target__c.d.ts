@@ -90,12 +90,6 @@ declare module "@salesforce/schema/SFE_KPI_Target__c.GROW_CFEs__c" {
     export default GROW_CFEs__c;
 }
 
-declare module "@salesforce/schema/SFE_KPI_Target__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SFE_KPI_Target__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

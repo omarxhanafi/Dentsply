@@ -30,12 +30,6 @@ declare module "@salesforce/schema/Monthly_Review__c.Date__c" {
     export default Date__c;
 }
 
-declare module "@salesforce/schema/Monthly_Review__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Monthly_Review__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

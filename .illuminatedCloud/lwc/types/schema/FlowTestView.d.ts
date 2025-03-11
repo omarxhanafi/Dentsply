@@ -66,12 +66,6 @@ declare module "@salesforce/schema/FlowTestView.FlowTestResults" {
     export default FlowTestResults;
 }
 
-declare module "@salesforce/schema/FlowTestView.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FlowTestView.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

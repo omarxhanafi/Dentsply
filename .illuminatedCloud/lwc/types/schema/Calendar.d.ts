@@ -42,12 +42,6 @@ declare module "@salesforce/schema/Calendar.EventRelations" {
     export default EventRelations;
 }
 
-declare module "@salesforce/schema/Calendar.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Calendar.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

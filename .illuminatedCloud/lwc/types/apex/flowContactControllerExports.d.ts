@@ -5,5 +5,5 @@ declare module "@salesforce/apex/flowContactController.executeSoql" {
 }
 
 declare module "@salesforce/apex/flowContactController.getRelatedContacts" {
-    export default function getRelatedContacts(params: {recordId: string, sObjectName: string, accountField: string, contactFields: string}): Promise<Contact[]>;
+    export default function getRelatedContacts(params: {recordId: string, sObjectName: string, accountField: string, contactFields: string}): Promise<any[]>;
 }

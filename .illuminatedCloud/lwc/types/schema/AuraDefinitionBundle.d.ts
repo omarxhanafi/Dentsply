@@ -60,12 +60,6 @@ declare module "@salesforce/schema/AuraDefinitionBundle.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/AuraDefinitionBundle.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AuraDefinitionBundle.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

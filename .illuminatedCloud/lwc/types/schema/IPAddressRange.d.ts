@@ -42,12 +42,6 @@ declare module "@salesforce/schema/IPAddressRange.EndAddress" {
     export default EndAddress;
 }
 
-declare module "@salesforce/schema/IPAddressRange.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/IPAddressRange.IpAddressFeature" {
     import { FieldId } from "@salesforce/schema";
     const IpAddressFeature: FieldId;

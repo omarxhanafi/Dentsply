@@ -48,12 +48,6 @@ declare module "@salesforce/schema/ExternalDataUserAuth.ExternalDataSourceId" {
     export default ExternalDataSourceId;
 }
 
-declare module "@salesforce/schema/ExternalDataUserAuth.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ExternalDataUserAuth.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -12,12 +12,6 @@ declare module "@salesforce/schema/Strategic_Goal__Share.AccessLevel" {
     export default AccessLevel;
 }
 
-declare module "@salesforce/schema/Strategic_Goal__Share.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Strategic_Goal__Share.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

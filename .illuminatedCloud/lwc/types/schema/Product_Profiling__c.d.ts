@@ -234,12 +234,6 @@ declare module "@salesforce/schema/Product_Profiling__c.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/Product_Profiling__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Product_Profiling__c.InUseSince__c" {
     import { FieldId } from "@salesforce/schema";
     const InUseSince__c: FieldId;

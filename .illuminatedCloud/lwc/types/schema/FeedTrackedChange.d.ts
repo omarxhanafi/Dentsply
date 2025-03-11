@@ -36,12 +36,6 @@ declare module "@salesforce/schema/FeedTrackedChange.FieldName" {
     export default FieldName;
 }
 
-declare module "@salesforce/schema/FeedTrackedChange.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FeedTrackedChange.NewValue" {
     import { FieldId } from "@salesforce/schema";
     const NewValue: FieldId;

@@ -348,12 +348,6 @@ declare module "@salesforce/schema/OrderItem.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/OrderItem.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OrderItem.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

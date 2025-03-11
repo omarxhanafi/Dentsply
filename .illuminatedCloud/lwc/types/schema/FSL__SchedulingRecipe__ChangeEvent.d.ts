@@ -114,12 +114,6 @@ declare module "@salesforce/schema/FSL__SchedulingRecipe__ChangeEvent.FSL__Semi_
     export default FSL__Semi_Automated__c;
 }
 
-declare module "@salesforce/schema/FSL__SchedulingRecipe__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__SchedulingRecipe__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

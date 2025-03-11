@@ -60,12 +60,6 @@ declare module "@salesforce/schema/IdeaComment.CreatorSmallPhotoUrl" {
     export default CreatorSmallPhotoUrl;
 }
 
-declare module "@salesforce/schema/IdeaComment.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/IdeaComment.Idea" {
     import { FieldId } from "@salesforce/schema";
     const Idea: FieldId;

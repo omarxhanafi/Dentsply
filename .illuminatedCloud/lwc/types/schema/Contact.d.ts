@@ -1524,12 +1524,6 @@ declare module "@salesforce/schema/Contact.HowCollected__c" {
     export default HowCollected__c;
 }
 
-declare module "@salesforce/schema/Contact.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Contact.Implants_Management_Notes__c" {
     import { FieldId } from "@salesforce/schema";
     const Implants_Management_Notes__c: FieldId;

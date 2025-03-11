@@ -60,12 +60,6 @@ declare module "@salesforce/schema/Item_Specification__c.Hidden_From_Users__c" {
     export default Hidden_From_Users__c;
 }
 
-declare module "@salesforce/schema/Item_Specification__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Item_Specification__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

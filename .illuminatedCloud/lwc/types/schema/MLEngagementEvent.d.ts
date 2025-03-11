@@ -84,12 +84,6 @@ declare module "@salesforce/schema/MLEngagementEvent.Feature" {
     export default Feature;
 }
 
-declare module "@salesforce/schema/MLEngagementEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/MLEngagementEvent.LoggedAt" {
     import { FieldId } from "@salesforce/schema";
     const LoggedAt: FieldId;

@@ -66,12 +66,6 @@ declare module "@salesforce/schema/FSL__Service_Goal__ChangeEvent.FSL__Resource_
     export default FSL__Resource_Priority_Field__c;
 }
 
-declare module "@salesforce/schema/FSL__Service_Goal__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__Service_Goal__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

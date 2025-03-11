@@ -24,12 +24,6 @@ declare module "@salesforce/schema/PackageLicense.ExpirationDate" {
     export default ExpirationDate;
 }
 
-declare module "@salesforce/schema/PackageLicense.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/PackageLicense.IsAvailableForIntegrations" {
     import { FieldId } from "@salesforce/schema";
     const IsAvailableForIntegrations: FieldId;

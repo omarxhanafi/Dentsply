@@ -48,12 +48,6 @@ declare module "@salesforce/schema/ContactCenterChannel.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/ContactCenterChannel.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContactCenterChannel.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

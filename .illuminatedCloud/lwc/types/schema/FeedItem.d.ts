@@ -150,12 +150,6 @@ declare module "@salesforce/schema/FeedItem.HasVerifiedComment" {
     export default HasVerifiedComment;
 }
 
-declare module "@salesforce/schema/FeedItem.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FeedItem.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

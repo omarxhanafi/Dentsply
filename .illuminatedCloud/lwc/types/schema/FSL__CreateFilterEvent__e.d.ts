@@ -72,12 +72,6 @@ declare module "@salesforce/schema/FSL__CreateFilterEvent__e.FSL__TerritoryIds__
     export default FSL__TerritoryIds__c;
 }
 
-declare module "@salesforce/schema/FSL__CreateFilterEvent__e.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSL__CreateFilterEvent__e.ReplayId" {
     import { FieldId } from "@salesforce/schema";
     const ReplayId: FieldId;

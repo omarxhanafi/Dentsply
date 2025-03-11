@@ -30,12 +30,6 @@ declare module "@salesforce/schema/CampaignInfluenceModel.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/CampaignInfluenceModel.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CampaignInfluenceModel.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

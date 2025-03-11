@@ -54,12 +54,6 @@ declare module "@salesforce/schema/MessagingChannelUsage.ErrorReason" {
     export default ErrorReason;
 }
 
-declare module "@salesforce/schema/MessagingChannelUsage.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/MessagingChannelUsage.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

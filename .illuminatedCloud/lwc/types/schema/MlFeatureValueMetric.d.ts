@@ -42,12 +42,6 @@ declare module "@salesforce/schema/MlFeatureValueMetric.Feature" {
     export default Feature;
 }
 
-declare module "@salesforce/schema/MlFeatureValueMetric.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/MlFeatureValueMetric.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -42,12 +42,6 @@ declare module "@salesforce/schema/Lecture__ChangeEvent.CurrencyIsoCode" {
     export default CurrencyIsoCode;
 }
 
-declare module "@salesforce/schema/Lecture__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Lecture__ChangeEvent.Internal_Lecture__c" {
     import { FieldId } from "@salesforce/schema";
     const Internal_Lecture__c: FieldId;

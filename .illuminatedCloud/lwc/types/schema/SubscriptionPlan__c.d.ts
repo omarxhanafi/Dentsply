@@ -126,12 +126,6 @@ declare module "@salesforce/schema/SubscriptionPlan__c.GrossTCV__c" {
     export default GrossTCV__c;
 }
 
-declare module "@salesforce/schema/SubscriptionPlan__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SubscriptionPlan__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

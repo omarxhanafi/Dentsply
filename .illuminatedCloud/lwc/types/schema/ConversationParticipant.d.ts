@@ -54,12 +54,6 @@ declare module "@salesforce/schema/ConversationParticipant.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/ConversationParticipant.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ConversationParticipant.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

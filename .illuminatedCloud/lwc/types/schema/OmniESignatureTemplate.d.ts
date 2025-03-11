@@ -48,12 +48,6 @@ declare module "@salesforce/schema/OmniESignatureTemplate.FieldsData" {
     export default FieldsData;
 }
 
-declare module "@salesforce/schema/OmniESignatureTemplate.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OmniESignatureTemplate.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

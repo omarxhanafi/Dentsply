@@ -6,12 +6,6 @@ declare module "@salesforce/schema/UserPermissionAccess" {
     export default UserPermissionAccess;
 }
 
-declare module "@salesforce/schema/UserPermissionAccess.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/UserPermissionAccess.LastCacheUpdate" {
     import { FieldId } from "@salesforce/schema";
     const LastCacheUpdate: FieldId;

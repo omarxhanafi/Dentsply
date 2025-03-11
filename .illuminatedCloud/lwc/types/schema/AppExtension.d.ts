@@ -48,12 +48,6 @@ declare module "@salesforce/schema/AppExtension.FieldServiceMobileSettingsId" {
     export default FieldServiceMobileSettingsId;
 }
 
-declare module "@salesforce/schema/AppExtension.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AppExtension.InstallationUrl" {
     import { FieldId } from "@salesforce/schema";
     const InstallationUrl: FieldId;

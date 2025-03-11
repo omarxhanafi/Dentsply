@@ -54,12 +54,6 @@ declare module "@salesforce/schema/CountryStopRules__mdt.HasPricebookStopOrder__
     export default HasPricebookStopOrder__c;
 }
 
-declare module "@salesforce/schema/CountryStopRules__mdt.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CountryStopRules__mdt.IsMedicalGeneral__c" {
     import { FieldId } from "@salesforce/schema";
     const IsMedicalGeneral__c: FieldId;

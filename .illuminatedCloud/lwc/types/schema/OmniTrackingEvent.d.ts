@@ -54,12 +54,6 @@ declare module "@salesforce/schema/OmniTrackingEvent.EventUuid" {
     export default EventUuid;
 }
 
-declare module "@salesforce/schema/OmniTrackingEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OmniTrackingEvent.ReplayId" {
     import { FieldId } from "@salesforce/schema";
     const ReplayId: FieldId;

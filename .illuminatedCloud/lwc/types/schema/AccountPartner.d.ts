@@ -48,12 +48,6 @@ declare module "@salesforce/schema/AccountPartner.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/AccountPartner.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AccountPartner.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -90,12 +90,6 @@ declare module "@salesforce/schema/ContextNode.DisplayName" {
     export default DisplayName;
 }
 
-declare module "@salesforce/schema/ContextNode.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContextNode.InheritedFrom" {
     import { FieldId } from "@salesforce/schema";
     const InheritedFrom: FieldId;

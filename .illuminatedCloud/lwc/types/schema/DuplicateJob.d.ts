@@ -72,12 +72,6 @@ declare module "@salesforce/schema/DuplicateJob.EndDateTime" {
     export default EndDateTime;
 }
 
-declare module "@salesforce/schema/DuplicateJob.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DuplicateJob.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

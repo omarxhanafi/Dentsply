@@ -72,12 +72,6 @@ declare module "@salesforce/schema/ExternalDataSource.ExternalDataSrcDescriptors
     export default ExternalDataSrcDescriptors;
 }
 
-declare module "@salesforce/schema/ExternalDataSource.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ExternalDataSource.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

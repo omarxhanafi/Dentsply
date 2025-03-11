@@ -162,12 +162,6 @@ declare module "@salesforce/schema/Default_price_book__c.GeneratedDocRefObjects"
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/Default_price_book__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Default_price_book__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

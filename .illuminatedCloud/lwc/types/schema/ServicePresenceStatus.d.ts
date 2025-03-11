@@ -30,12 +30,6 @@ declare module "@salesforce/schema/ServicePresenceStatus.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/ServicePresenceStatus.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ServicePresenceStatus.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

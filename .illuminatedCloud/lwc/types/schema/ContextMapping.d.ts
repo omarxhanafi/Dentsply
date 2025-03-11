@@ -54,12 +54,6 @@ declare module "@salesforce/schema/ContextMapping.Description" {
     export default Description;
 }
 
-declare module "@salesforce/schema/ContextMapping.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContextMapping.InheritedFrom" {
     import { FieldId } from "@salesforce/schema";
     const InheritedFrom: FieldId;

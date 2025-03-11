@@ -36,12 +36,6 @@ declare module "@salesforce/schema/Community.Description" {
     export default Description;
 }
 
-declare module "@salesforce/schema/Community.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Community.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

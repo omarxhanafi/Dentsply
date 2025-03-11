@@ -36,12 +36,6 @@ declare module "@salesforce/schema/ProductCategoryHistory.Field" {
     export default Field;
 }
 
-declare module "@salesforce/schema/ProductCategoryHistory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ProductCategoryHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

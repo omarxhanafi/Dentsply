@@ -24,12 +24,6 @@ declare module "@salesforce/schema/ActionOverride__mdt.FlowName__c" {
     export default FlowName__c;
 }
 
-declare module "@salesforce/schema/ActionOverride__mdt.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ActionOverride__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

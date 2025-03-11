@@ -78,12 +78,6 @@ declare module "@salesforce/schema/UserServicePresence.FlowOrchestrationWorkItem
     export default FlowOrchestrationWorkItems;
 }
 
-declare module "@salesforce/schema/UserServicePresence.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/UserServicePresence.IdleDuration" {
     import { FieldId } from "@salesforce/schema";
     const IdleDuration: FieldId;

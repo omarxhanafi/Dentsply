@@ -30,12 +30,6 @@ declare module "@salesforce/schema/AttentionPoint__mdt.Icon__c" {
     export default Icon__c;
 }
 
-declare module "@salesforce/schema/AttentionPoint__mdt.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AttentionPoint__mdt.Label" {
     import { FieldId } from "@salesforce/schema";
     const Label: FieldId;

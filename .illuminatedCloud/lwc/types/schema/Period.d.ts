@@ -30,12 +30,6 @@ declare module "@salesforce/schema/Period.FullyQualifiedLabel" {
     export default FullyQualifiedLabel;
 }
 
-declare module "@salesforce/schema/Period.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/Period.IsForecastPeriod" {
     import { FieldId } from "@salesforce/schema";
     const IsForecastPeriod: FieldId;

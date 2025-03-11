@@ -216,12 +216,6 @@ declare module "@salesforce/schema/PartnerFundRequest.Histories" {
     export default Histories;
 }
 
-declare module "@salesforce/schema/PartnerFundRequest.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/PartnerFundRequest.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

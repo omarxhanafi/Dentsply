@@ -42,12 +42,6 @@ declare module "@salesforce/schema/EmailDomainFilter.FromDomain" {
     export default FromDomain;
 }
 
-declare module "@salesforce/schema/EmailDomainFilter.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EmailDomainFilter.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

@@ -150,12 +150,6 @@ declare module "@salesforce/schema/FlowRecord.FlowType" {
     export default FlowType;
 }
 
-declare module "@salesforce/schema/FlowRecord.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FlowRecord.InstalledPackageName" {
     import { FieldId } from "@salesforce/schema";
     const InstalledPackageName: FieldId;

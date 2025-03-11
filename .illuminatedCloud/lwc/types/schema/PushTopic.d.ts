@@ -42,12 +42,6 @@ declare module "@salesforce/schema/PushTopic.Description" {
     export default Description;
 }
 
-declare module "@salesforce/schema/PushTopic.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/PushTopic.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

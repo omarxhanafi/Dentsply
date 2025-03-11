@@ -24,12 +24,6 @@ declare module "@salesforce/schema/ApexLog.DurationMilliseconds" {
     export default DurationMilliseconds;
 }
 
-declare module "@salesforce/schema/ApexLog.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ApexLog.LastModifiedDate" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedDate: FieldId;

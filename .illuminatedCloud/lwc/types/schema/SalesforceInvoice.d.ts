@@ -72,12 +72,6 @@ declare module "@salesforce/schema/SalesforceInvoice.FirstPublishLocation" {
     export default FirstPublishLocation;
 }
 
-declare module "@salesforce/schema/SalesforceInvoice.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/SalesforceInvoice.InvoiceCurrency" {
     import { FieldId } from "@salesforce/schema";
     const InvoiceCurrency: FieldId;

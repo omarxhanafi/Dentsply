@@ -72,12 +72,6 @@ declare module "@salesforce/schema/ContextAttributeMapping.Description" {
     export default Description;
 }
 
-declare module "@salesforce/schema/ContextAttributeMapping.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContextAttributeMapping.InheritedFrom" {
     import { FieldId } from "@salesforce/schema";
     const InheritedFrom: FieldId;

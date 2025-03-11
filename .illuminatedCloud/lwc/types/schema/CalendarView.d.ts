@@ -66,12 +66,6 @@ declare module "@salesforce/schema/CalendarView.FillPattern" {
     export default FillPattern;
 }
 
-declare module "@salesforce/schema/CalendarView.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/CalendarView.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -13,5 +13,5 @@ declare module "@salesforce/apex/quickCreateCampaignFromCventController.createNe
 }
 
 declare module "@salesforce/apex/quickCreateCampaignFromCventController.getMembersCount" {
-    export default function getMembersCount(params: {campaignId: string}): Promise<Campaign>;
+    export default function getMembersCount(params: {campaignId: string}): Promise<any>;
 }

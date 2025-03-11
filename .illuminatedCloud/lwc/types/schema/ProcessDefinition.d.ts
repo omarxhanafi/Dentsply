@@ -36,12 +36,6 @@ declare module "@salesforce/schema/ProcessDefinition.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/ProcessDefinition.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ProcessDefinition.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

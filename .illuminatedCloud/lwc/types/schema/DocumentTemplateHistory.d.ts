@@ -48,12 +48,6 @@ declare module "@salesforce/schema/DocumentTemplateHistory.Field" {
     export default Field;
 }
 
-declare module "@salesforce/schema/DocumentTemplateHistory.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DocumentTemplateHistory.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

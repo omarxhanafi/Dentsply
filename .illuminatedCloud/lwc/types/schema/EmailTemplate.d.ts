@@ -192,12 +192,6 @@ declare module "@salesforce/schema/EmailTemplate.HtmlValue" {
     export default HtmlValue;
 }
 
-declare module "@salesforce/schema/EmailTemplate.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/EmailTemplate.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

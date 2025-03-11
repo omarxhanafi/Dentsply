@@ -60,12 +60,6 @@ declare module "@salesforce/schema/AuthConfig.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/AuthConfig.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AuthConfig.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

@@ -72,12 +72,6 @@ declare module "@salesforce/schema/ApexTestResultLimits.Email" {
     export default Email;
 }
 
-declare module "@salesforce/schema/ApexTestResultLimits.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ApexTestResultLimits.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

@@ -108,12 +108,6 @@ declare module "@salesforce/schema/OpportunityLineItem.Factory_ordered__c" {
     export default Factory_ordered__c;
 }
 
-declare module "@salesforce/schema/OpportunityLineItem.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/OpportunityLineItem.Installation_Date__c" {
     import { FieldId } from "@salesforce/schema";
     const Installation_Date__c: FieldId;

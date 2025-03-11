@@ -102,12 +102,6 @@ declare module "@salesforce/schema/AssetTokenEvent.ExternalClientApplicationId" 
     export default ExternalClientApplicationId;
 }
 
-declare module "@salesforce/schema/AssetTokenEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AssetTokenEvent.Name" {
     import { FieldId } from "@salesforce/schema";
     const Name: FieldId;

@@ -54,12 +54,6 @@ declare module "@salesforce/schema/BriefcaseDefinition.DeveloperName" {
     export default DeveloperName;
 }
 
-declare module "@salesforce/schema/BriefcaseDefinition.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/BriefcaseDefinition.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

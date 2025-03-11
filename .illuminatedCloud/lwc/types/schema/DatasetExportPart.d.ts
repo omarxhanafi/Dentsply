@@ -54,12 +54,6 @@ declare module "@salesforce/schema/DatasetExportPart.DatasetExportId" {
     export default DatasetExportId;
 }
 
-declare module "@salesforce/schema/DatasetExportPart.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DatasetExportPart.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

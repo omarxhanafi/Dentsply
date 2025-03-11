@@ -36,12 +36,6 @@ declare module "@salesforce/schema/tz__World_Clock_Location__ChangeEvent.Currenc
     export default CurrencyIsoCode;
 }
 
-declare module "@salesforce/schema/tz__World_Clock_Location__ChangeEvent.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/tz__World_Clock_Location__ChangeEvent.LastModifiedBy" {
     import { FieldId } from "@salesforce/schema";
     const LastModifiedBy: FieldId;

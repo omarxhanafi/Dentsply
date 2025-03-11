@@ -54,12 +54,6 @@ declare module "@salesforce/schema/BusinessHours.FridayStartTime" {
     export default FridayStartTime;
 }
 
-declare module "@salesforce/schema/BusinessHours.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/BusinessHours.IsActive" {
     import { FieldId } from "@salesforce/schema";
     const IsActive: FieldId;

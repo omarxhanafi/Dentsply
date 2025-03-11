@@ -42,12 +42,6 @@ declare module "@salesforce/schema/ContentWorkspaceDoc.CreatedDate" {
     export default CreatedDate;
 }
 
-declare module "@salesforce/schema/ContentWorkspaceDoc.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/ContentWorkspaceDoc.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

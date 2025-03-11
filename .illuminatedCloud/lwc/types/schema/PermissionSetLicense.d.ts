@@ -42,12 +42,6 @@ declare module "@salesforce/schema/PermissionSetLicense.GrantedByLicenses" {
     export default GrantedByLicenses;
 }
 
-declare module "@salesforce/schema/PermissionSetLicense.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/PermissionSetLicense.IsAvailableForIntegrations" {
     import { FieldId } from "@salesforce/schema";
     const IsAvailableForIntegrations: FieldId;

@@ -54,12 +54,6 @@ declare module "@salesforce/schema/FeedSignal.FeedItemId" {
     export default FeedItemId;
 }
 
-declare module "@salesforce/schema/FeedSignal.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FeedSignal.InsertedBy" {
     import { FieldId } from "@salesforce/schema";
     const InsertedBy: FieldId;

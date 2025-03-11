@@ -312,12 +312,6 @@ declare module "@salesforce/schema/FSSK__FSK_FSL_Starter_Kit__c.GeneratedDocRefO
     export default GeneratedDocRefObjects;
 }
 
-declare module "@salesforce/schema/FSSK__FSK_FSL_Starter_Kit__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/FSSK__FSK_FSL_Starter_Kit__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

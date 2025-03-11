@@ -78,12 +78,6 @@ declare module "@salesforce/schema/AsyncApexJob.ExtendedStatus" {
     export default ExtendedStatus;
 }
 
-declare module "@salesforce/schema/AsyncApexJob.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/AsyncApexJob.JobItemsProcessed" {
     import { FieldId } from "@salesforce/schema";
     const JobItemsProcessed: FieldId;

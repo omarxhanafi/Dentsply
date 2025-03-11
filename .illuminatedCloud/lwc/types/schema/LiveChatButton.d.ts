@@ -84,12 +84,6 @@ declare module "@salesforce/schema/LiveChatButton.HasQueue" {
     export default HasQueue;
 }
 
-declare module "@salesforce/schema/LiveChatButton.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/LiveChatButton.InviteEndPosition" {
     import { FieldId } from "@salesforce/schema";
     const InviteEndPosition: FieldId;

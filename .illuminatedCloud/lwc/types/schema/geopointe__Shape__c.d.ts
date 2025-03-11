@@ -30,12 +30,6 @@ declare module "@salesforce/schema/geopointe__Shape__c.Geopointe_Assignment_Area
     export default Geopointe_Assignment_Areas__r;
 }
 
-declare module "@salesforce/schema/geopointe__Shape__c.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/geopointe__Shape__c.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;

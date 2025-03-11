@@ -90,12 +90,6 @@ declare module "@salesforce/schema/DecisionTableParameter.FieldPath" {
     export default FieldPath;
 }
 
-declare module "@salesforce/schema/DecisionTableParameter.Id" {
-    import { FieldId } from "@salesforce/schema";
-    const Id: FieldId;
-    export default Id;
-}
-
 declare module "@salesforce/schema/DecisionTableParameter.IsDeleted" {
     import { FieldId } from "@salesforce/schema";
     const IsDeleted: FieldId;
