@@ -2,7 +2,7 @@
 
 declare namespace WorkflowProfilingController {
     declare interface NonERPProductWrapper {
-        product?: Non_ERP_Products__c;
+        product?: any;
         active?: boolean;
         inactive?: boolean;
         productProfilingId?: string;

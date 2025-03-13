@@ -1,7 +1,7 @@
 // DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
 
 declare module "@salesforce/apex/OrderDealer_CC.getDealers" {
-    export default function getDealers(params: {orderId: string}): Promise<Preferred_dealer_item__c[]>;
+    export default function getDealers(params: {orderId: string}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OrderDealer_CC.getRecentlyViewed" {
@@ -9,7 +9,7 @@ declare module "@salesforce/apex/OrderDealer_CC.getRecentlyViewed" {
 }
 
 declare module "@salesforce/apex/OrderDealer_CC.saveDealers" {
-    export default function saveDealers(params: {distributors: string[], orderId: string}): Promise<Preferred_dealer_item__c[]>;
+    export default function saveDealers(params: {distributors: string[], orderId: string}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/OrderDealer_CC.search" {

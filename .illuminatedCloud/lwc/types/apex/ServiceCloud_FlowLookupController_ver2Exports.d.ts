@@ -1,7 +1,7 @@
 // DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
 
 declare module "@salesforce/apex/ServiceCloud_FlowLookupController_ver2.getCaseInfo" {
-    export default function getCaseInfo(params: {recordId: string}): Promise<Case>;
+    export default function getCaseInfo(params: {recordId: string}): Promise<any>;
 }
 
 declare module "@salesforce/apex/ServiceCloud_FlowLookupController_ver2.searchDB" {

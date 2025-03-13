@@ -51,6 +51,8 @@ public class Test_KOLInfoTrigger {
         Expert__c testKOL = new Expert__c();
         testKOL.Contact__c = testContact.Id;
         testKOL.Name = 'Test KOL';
+        testKOL.Government_Role__c = 'YES';
+        testKOL.Government_Role_Date__c = Date.today();
         insert testKOL;
         
         Test.startTest();
@@ -58,6 +60,8 @@ public class Test_KOLInfoTrigger {
         Expert__c validateKOL = new Expert__c();
         validateKOL.Contact__c = testContact.Id;
         validateKOL.Name = 'Validating KOL duplication';
+        validateKOL.Government_Role__c = 'YES';
+        validateKOL.Government_Role_Date__c = Date.today();
         
         try {
         	insert validateKOL;
@@ -93,6 +97,8 @@ public class Test_KOLInfoTrigger {
         Expert__c testKOL = new Expert__c();
         testKOL.Contact__c = testContact.Id;
         testKOL.Name = 'Test KOL';
+        testKOL.Government_Role__c = 'YES';
+        testKOL.Government_Role_Date__c = Date.today();
         insert testKOL;
                 
         Test.startTest();
@@ -130,6 +136,8 @@ public class Test_KOLInfoTrigger {
         Expert__c testKOL = new Expert__c();
         testKOL.Contact__c = testContact.Id;
         testKOL.Name = 'Test KOL';
+        testKOL.Government_Role__c = 'YES';
+        testKOL.Government_Role_Date__c = Date.today();
         insert testKOL;
                 
         Test.startTest();

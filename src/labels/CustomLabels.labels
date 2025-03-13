@@ -9,6 +9,22 @@
         <value>Yikes, a Sales lead has been canceled...</value>
     </labels>
     <labels>
+        <fullName>ASalesLeadHasBeenCompleted</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ASalesLeadHasBeenCompleted</shortDescription>
+        <value>Woop, woop, a sales lead has been recently closed ...</value>
+    </labels>
+    <labels>
+        <fullName>AccountChangeRequestCompleted</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountChangeRequestCompleted</shortDescription>
+        <value>A recent account change has been approved and is being processed ...</value>
+    </labels>
+    <labels>
         <fullName>AccountDeBriefing</fullName>
         <categories>AccountNews</categories>
         <language>en_US</language>
@@ -39,6 +55,14 @@
         <protected>false</protected>
         <shortDescription>AccountFlagsAdvanced</shortDescription>
         <value>Advanced</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsCerec</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsCerec</shortDescription>
+        <value>CEREC Club</value>
     </labels>
     <labels>
         <fullName>AccountFlagsCerecClub</fullName>
@@ -97,12 +121,36 @@
         <value>Account 360 Flags</value>
     </labels>
     <labels>
+        <fullName>AccountFlagsHelpText</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsHelpText</shortDescription>
+        <value>White: N/A, Red: Inactive, Green: Active</value>
+    </labels>
+    <labels>
         <fullName>AccountFlagsLight</fullName>
         <categories>AccountFlags</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>AccountFlagsLight</shortDescription>
         <value>Light</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsMultipleFound</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsMultipleFound</shortDescription>
+        <value>Multiple Found</value>
+    </labels>
+    <labels>
+        <fullName>AccountFlagsOneDs</fullName>
+        <categories>AccountFlags</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountFlagsOneDs</shortDescription>
+        <value>One DS</value>
     </labels>
     <labels>
         <fullName>AccountFlagsOnlineOrdering</fullName>
@@ -161,6 +209,13 @@
         <value>Ortho</value>
     </labels>
     <labels>
+        <fullName>AccountSelection</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account selection</shortDescription>
+        <value>Please select an account</value>
+    </labels>
+    <labels>
         <fullName>ActivityReported12LastMonths</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
@@ -193,6 +248,14 @@
         <value># Last 12 months CFEs</value>
     </labels>
     <labels>
+        <fullName>ActivityScoreboardNotAvailable</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScoreboardNotAvailable</shortDescription>
+        <value>Not Available</value>
+    </labels>
+    <labels>
         <fullName>ActivityScoreboardTasksCompleted</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
@@ -201,12 +264,36 @@
         <value>task(s)</value>
     </labels>
     <labels>
+        <fullName>ActivityScorecardFirstEventDate</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScorecardFirstEventDate</shortDescription>
+        <value>First Event Date</value>
+    </labels>
+    <labels>
         <fullName>ActivityScorecardHeader</fullName>
         <categories>Activity Scoreboard</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ActivityScorecardHeader</shortDescription>
         <value>360 Activity Scorecard</value>
+    </labels>
+    <labels>
+        <fullName>ActivityScorecardLastEventDate</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScorecardLastEventDate</shortDescription>
+        <value>Last Event Date</value>
+    </labels>
+    <labels>
+        <fullName>ActivityScorecardMyLastEventDate</fullName>
+        <categories>Activity Scoreboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActivityScorecardMyLastEventDate</shortDescription>
+        <value>My Last Event Date</value>
     </labels>
     <labels>
         <fullName>ActivityScorecardPlannedCFEs</fullName>
@@ -263,6 +350,14 @@
         <protected>false</protected>
         <shortDescription>AnEventIsUpcomingSoon</shortDescription>
         <value>An Event is upcoming soon</value>
+    </labels>
+    <labels>
+        <fullName>AssetCreated</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AssetCreated</shortDescription>
+        <value>An asset has just been associated with this account ...</value>
     </labels>
     <labels>
         <fullName>Assign_Case</fullName>
@@ -485,12 +580,36 @@
         <value>Check the sessions in which this campaign member will participate:</value>
     </labels>
     <labels>
+        <fullName>CampaignMemberCreated</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CampaignMemberCreated</shortDescription>
+        <value>Recently added as a member of the following campaign ...</value>
+    </labels>
+    <labels>
         <fullName>Carrier</fullName>
         <categories>Service Cloud: Flow Labels</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Carrier</shortDescription>
         <value>Carrier</value>
+    </labels>
+    <labels>
+        <fullName>CaseClosed</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseClosed</shortDescription>
+        <value>A case was recently closed ...</value>
+    </labels>
+    <labels>
+        <fullName>CaseNotClosed</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseNotClosed</shortDescription>
+        <value>Watch out! This case is open for more than one week ...</value>
     </labels>
     <labels>
         <fullName>Choose</fullName>
@@ -501,12 +620,36 @@
         <value>Choose</value>
     </labels>
     <labels>
+        <fullName>Completed</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Campaign From Cvent Status Lwc</shortDescription>
+        <value>Completed</value>
+    </labels>
+    <labels>
+        <fullName>ContactNewCreation</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ContactNewCreation</shortDescription>
+        <value>A contact has just been associated with this account ...</value>
+    </labels>
+    <labels>
         <fullName>ContactTypeMandatory</fullName>
         <categories>Inside sales</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Contact type mandatory</shortDescription>
         <value>Please select a contact type for each Campaign.</value>
+    </labels>
+    <labels>
+        <fullName>ContractExpired</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ContractExpired</shortDescription>
+        <value>Watch out, this contract will expire in the next few days ...</value>
     </labels>
     <labels>
         <fullName>ConvertedSalesLead</fullName>
@@ -919,6 +1062,30 @@
         <value>Where</value>
     </labels>
     <labels>
+        <fullName>DSCareActiveSubscription</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DSCareActiveSubscription</shortDescription>
+        <value>Hurray! The Customer does have an active DS Care subscription</value>
+    </labels>
+    <labels>
+        <fullName>DSCoreActiveSubscription</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DSCoreActiveSubscription</shortDescription>
+        <value>Hurray! The Customer does have an active DS Core subscription</value>
+    </labels>
+    <labels>
+        <fullName>DSCoreCancelledSubscription</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DSCoreCancelledSubscription</shortDescription>
+        <value>Yikes, a DS Subscription has been recently canceled...</value>
+    </labels>
+    <labels>
         <fullName>Date</fullName>
         <categories>Service Cloud: Flow Labels</categories>
         <language>en_US</language>
@@ -933,6 +1100,13 @@
         <protected>false</protected>
         <shortDescription>Dates must be future dates</shortDescription>
         <value>Due Date and Reminder date must be Greater than today date.</value>
+    </labels>
+    <labels>
+        <fullName>Deactivate_User_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Deactivate User Error Message</shortDescription>
+        <value>You can&apos;t deactive this User because it&apos;s referenced in Lead &amp; Opportunity Settings default Owners</value>
     </labels>
     <labels>
         <fullName>DueDateAndSubjectMandatory</fullName>
@@ -989,6 +1163,14 @@
         <protected>false</protected>
         <shortDescription>Unauthorized endpoint, please check Setup</shortDescription>
         <value>Unauthorized endpoint, please check Setup</value>
+    </labels>
+    <labels>
+        <fullName>Error</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Campaign From Cvent Status Lwc</shortDescription>
+        <value>Error</value>
     </labels>
     <labels>
         <fullName>ErrorNewLWCPricingLabels</fullName>
@@ -1215,6 +1397,14 @@
         <value>No Account Programs are available</value>
     </labels>
     <labels>
+        <fullName>Generate_Sales_Lead</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quick Create Campaign From Cvent LWC</shortDescription>
+        <value>Generate Sales Lead</value>
+    </labels>
+    <labels>
         <fullName>Go_to</fullName>
         <categories>Global Order</categories>
         <language>en_US</language>
@@ -1237,6 +1427,14 @@
         <protected>false</protected>
         <shortDescription>The number of field values does not match the number of header fields on line</shortDescription>
         <value>The number of field values does not match the number of header fields on line</value>
+    </labels>
+    <labels>
+        <fullName>In_Progress</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Campaign From Cvent Status Lwc</shortDescription>
+        <value>In Progress</value>
     </labels>
     <labels>
         <fullName>InactiveAccountMessage</fullName>
@@ -1274,6 +1472,15 @@
         <protected>false</protected>
         <shortDescription>Invoice number</shortDescription>
         <value>Invoice number</value>
+    </labels>
+    <labels>
+        <fullName>It_appears_that_new_dynamic_mappings_have_been_added</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quick Create Campaign From Cvent LWC</shortDescription>
+        <value>It appears that new dynamic mappings have been added.
+      They have been submitted for validation and will be considered during the next event conversion process.</value>
     </labels>
     <labels>
         <fullName>KOLDeleteError</fullName>
@@ -1442,12 +1649,52 @@
         <value>more</value>
     </labels>
     <labels>
+        <fullName>NewProductProfiling</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NewProductProfiling</shortDescription>
+        <value>A new product (Profiling) was associated with this account ...</value>
+    </labels>
+    <labels>
+        <fullName>NewSuresmileRegistration</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NewSuresmileRegistration</shortDescription>
+        <value>This practice has just registered to SureSmile® Clear Aligners website ...</value>
+    </labels>
+    <labels>
+        <fullName>NewWorkOrder</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NewWorkOrder</shortDescription>
+        <value>A new work order has been recently assigned to this account ...</value>
+    </labels>
+    <labels>
         <fullName>New_Account_Request_Primary_Contact_Section</fullName>
         <categories>New Account Request</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>New Account Request: Primary Contact Section</shortDescription>
         <value>New Account Request: ERP Primary Contact Information</value>
+    </labels>
+    <labels>
+        <fullName>New_Matched_Campaign_Members</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quick Create Campaign From Cvent LWC</shortDescription>
+        <value>New Contacts</value>
+    </labels>
+    <labels>
+        <fullName>New_Unmatched_Campaign_Members</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quick Create Campaign From Cvent LWC</shortDescription>
+        <value>New Leads</value>
     </labels>
     <labels>
         <fullName>New_or_Replacement_Order</fullName>
@@ -1488,6 +1735,14 @@
         <protected>false</protected>
         <shortDescription>Order: No Source Record</shortDescription>
         <value>The original order is not assigned to a source Record - the assigned Pricebook requires a source record in order to call the external prices (Pricing Micro Services)</value>
+    </labels>
+    <labels>
+        <fullName>Not_Started</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Campaign From Cvent Status Lwc</shortDescription>
+        <value>Not Started</value>
     </labels>
     <labels>
         <fullName>OD_Account_Col</fullName>
@@ -1592,6 +1847,14 @@
         <protected>false</protected>
         <shortDescription>OD Type Col</shortDescription>
         <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>OMCanNotCreateOrder</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OM Can Not Create Order</shortDescription>
+        <value>You Can Not Create Order</value>
     </labels>
     <labels>
         <fullName>OMNoPricebookAccess</fullName>
@@ -2025,12 +2288,28 @@
         <value>Order Items Updated Successfully</value>
     </labels>
     <labels>
+        <fullName>OMnoneCustomLabel</fullName>
+        <categories>Order Management</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OMnoneCustomLabel</shortDescription>
+        <value>--None--</value>
+    </labels>
+    <labels>
         <fullName>Om_Order_Created_Success</fullName>
         <categories>Order Management</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Om Order Created Success</shortDescription>
         <value>The Order is Created successfully</value>
+    </labels>
+    <labels>
+        <fullName>OneDSRegistration</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OneDSRegistration</shortDescription>
+        <value>This practice has just registered to One DS Loyalty Program...</value>
     </labels>
     <labels>
         <fullName>One_Procedure_Tracker_Per_Account_and_Type</fullName>
@@ -2064,12 +2343,84 @@
         <value>Watch out! An opportunity is closing soon ...</value>
     </labels>
     <labels>
+        <fullName>OpportunityOverdue</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpportunityOverdue</shortDescription>
+        <value>Oops, an opportunity is overdue ...</value>
+    </labels>
+    <labels>
+        <fullName>OpportunityRecentlyLost</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpportunityRecentlyLost</shortDescription>
+        <value>Too bad, an opportunity was recently lost ...</value>
+    </labels>
+    <labels>
         <fullName>OpportunityRecentlyWon</fullName>
         <categories>AccountNews</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>OpportunityRecentlyWon</shortDescription>
         <value>An opportunity was recently successfully closed won ...</value>
+    </labels>
+    <labels>
+        <fullName>OrderAddShippingAddressFlow</fullName>
+        <categories>OrderAddShippingAddressFlow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderAddShippingAddressFlow</shortDescription>
+        <value>This is current shipping address if you need to change click on &quot;Next&quot;</value>
+    </labels>
+    <labels>
+        <fullName>OrderAddShippingAddressFlowNoAddress</fullName>
+        <categories>OrderAddShippingAddressFlow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderAddShippingAddressFlowNoAddress</shortDescription>
+        <value>There are not known addresses related with customer</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneConfirmation</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Are you sure you want to clone</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneRejectedDenied</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>You are about to clone an Order that was</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneRejectedDeniedConfirmation</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Are you sure?</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneWarning</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderCloneWarning</shortDescription>
+        <value>Confirm with your administrator : Sync Pricing Data Job is executed.</value>
+    </labels>
+    <labels>
+        <fullName>OrderCreated</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderCreated</shortDescription>
+        <value>An Order has recently been created ...</value>
     </labels>
     <labels>
         <fullName>Order_Add_dealer</fullName>
@@ -2387,6 +2738,38 @@
         <protected>false</protected>
         <shortDescription>Product Profiling PROFILING INFO</shortDescription>
         <value>PROFILING INFO</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCloneConfirmation</fullName>
+        <categories>QuoteClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteClone</shortDescription>
+        <value>Are you sure you want to clone</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCloneRejectedDenied</fullName>
+        <categories>QuoteClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteClone</shortDescription>
+        <value>You are about to clone a Quote that was</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCloneWarning</fullName>
+        <categories>QuoteClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteCloneWarning</shortDescription>
+        <value>Confirm with your administrator: Sync Pricing Data Job is executed.</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCreated</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteCreated</shortDescription>
+        <value>A Quote has recently been created ...</value>
     </labels>
     <labels>
         <fullName>Quote_Approval_Request</fullName>
@@ -2765,6 +3148,14 @@ If you don’t send updates, and you only extend the recurrence end date, then f
         <value>Oops, a Sales Lead has been cancelled ...</value>
     </labels>
     <labels>
+        <fullName>SalesLeadRecentlyCreated</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SalesLeadRecentlyCreated</shortDescription>
+        <value>A sales lead has been recently created ...</value>
+    </labels>
+    <labels>
         <fullName>Sales_Opportunity_Territory_Assignment</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -2834,6 +3225,14 @@ Please contact your Administrator (CRM Analyst).</value>
         <value>Would you care to take part in a survey around this service?</value>
     </labels>
     <labels>
+        <fullName>ServiceAppointmentOverdue</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ServiceAppointmentOverdue</shortDescription>
+        <value>Watch out! A service appointment will soon be overdue ...</value>
+    </labels>
+    <labels>
         <fullName>SimulateContractTypeNewLWCPricingLabels</fullName>
         <categories>NewLWCPricingLabels</categories>
         <language>en_US</language>
@@ -2842,12 +3241,172 @@ Please contact your Administrator (CRM Analyst).</value>
         <value>Simulate Contract Type</value>
     </labels>
     <labels>
+        <fullName>SourceRecordDeactivated</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SourceRecordDeactivated</shortDescription>
+        <value>Oops, it looks like a source record has been recently deactivated ...</value>
+    </labels>
+    <labels>
+        <fullName>SuresmileOrderThatNeedsActions</fullName>
+        <categories>AccountNews</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SuresmileOrderThatNeedsActions</shortDescription>
+        <value>Watch out! This Suresmile Order need some actions...</value>
+    </labels>
+    <labels>
+        <fullName>Survey_Activity_Log_Subject</fullName>
+        <categories>Service Cloud</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Survey Activity Log Subject</shortDescription>
+        <value>Survey Sent</value>
+    </labels>
+    <labels>
         <fullName>TYPE_OPTION_NOT_SELECTED</fullName>
         <categories>CMT</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Please choose a valid custom metadata type.</shortDescription>
         <value>Please choose a valid custom metadata type.</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_BatchUpdateProducts</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BatchUpdateProducts</shortDescription>
+        <value>Batch Update Products</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Details</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Details</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Duration</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Duration</shortDescription>
+        <value>Duration</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_EndTime</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EndTime</shortDescription>
+        <value>End Time</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_ErrorMessages</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorMessages</shortDescription>
+        <value>Error Messages</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Errors</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Errors</shortDescription>
+        <value>Errors</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_ExecuteBatch</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExecuteBatch</shortDescription>
+        <value>Execute Batch</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_ItemsProcessed</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ItemsProcessed</shortDescription>
+        <value>Items Processed</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_JobID</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>JobID</shortDescription>
+        <value>Job ID</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Next</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Next</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_PageOf</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PageOf</shortDescription>
+        <value>Page {0} of {1}</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Previous</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Previous</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_PreviousJobs</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreviousJobs</shortDescription>
+        <value>Previous jobs</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_ProductCount</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductCount</shortDescription>
+        <value>Product Count</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_StartTime</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>StartTime</shortDescription>
+        <value>Start Time</value>
+    </labels>
+    <labels>
+        <fullName>UpdateProducts_Status</fullName>
+        <categories>UpdateProducts</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>View_Error_Logs</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Campaign From Cvent Status Lwc</shortDescription>
+        <value>View Error Logs</value>
     </labels>
     <labels>
         <fullName>View_Invoice</fullName>
@@ -2872,6 +3431,14 @@ Please contact your Administrator (CRM Analyst).</value>
         <protected>false</protected>
         <shortDescription>WPConfirmationHeader</shortDescription>
         <value>Confirmation</value>
+    </labels>
+    <labels>
+        <fullName>WPConfirmationText</fullName>
+        <categories>WorkflowProfiling</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WPConfirmationText</shortDescription>
+        <value>Are you sure you want to create a Product Profiling record?</value>
     </labels>
     <labels>
         <fullName>WPConfirmationText1</fullName>
@@ -3004,6 +3571,14 @@ Click new to add more ...</value>
         <value>--None--</value>
     </labels>
     <labels>
+        <fullName>create_button</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quick Create Campaign From Cvent LWC</shortDescription>
+        <value>Create</value>
+    </labels>
+    <labels>
         <fullName>details_hide</fullName>
         <categories>Global Order</categories>
         <language>en_US</language>
@@ -3042,6 +3617,22 @@ Click new to add more ...</value>
         <protected>false</protected>
         <shortDescription>Order: keyword</shortDescription>
         <value>Keyword</value>
+    </labels>
+    <labels>
+        <fullName>main_brand</fullName>
+        <categories>Cvent</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quick Create Campaign From Cvent LWC</shortDescription>
+        <value>Main Brand</value>
+    </labels>
+    <labels>
+        <fullName>msg_AlreadyLocked</fullName>
+        <categories>Equipment Booking</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inventory Item is locked</shortDescription>
+        <value>You cannot change the status from &apos;Released&apos; to another status because the Inventory Item in this booking is already reserved in</value>
     </labels>
     <labels>
         <fullName>msg_NoItemsAvailable1</fullName>
@@ -3682,189 +4273,5 @@ Click new to add more ...</value>
         <protected>false</protected>
         <shortDescription>xsbu_assign_ETM_manually</shortDescription>
         <value>Assign the Opportunity to</value>
-    </labels>
-    <labels>
-        <fullName>QuoteCloneConfirmation</fullName>
-        <categories>QuoteClone</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>QuoteClone</shortDescription>
-        <value>Are you sure you want to clone</value>
-    </labels>
-    <labels>
-        <fullName>QuoteCloneWarning</fullName>
-        <categories>QuoteClone</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>QuoteCloneWarning</shortDescription>
-        <value>Confirm with your administrator: Sync Pricing Data Job is executed.</value>
-    </labels>
-    <labels>
-        <fullName>QuoteCloneRejectedDenied</fullName>
-        <categories>QuoteClone</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>QuoteClone</shortDescription>
-        <value>You are about to clone a Quote that was</value>
-    </labels>
-    <labels>
-        <fullName>OrderCloneConfirmation</fullName>
-        <categories>OrderClone</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>OrderClone</shortDescription>
-        <value>Are you sure you want to clone</value>
-    </labels>
-    <labels>
-        <fullName>OrderCloneWarning</fullName>
-        <categories>OrderClone</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>OrderCloneWarning</shortDescription>
-        <value>Confirm with your administrator : Sync Pricing Data Job is executed.</value>
-    </labels>
-    <labels>
-        <fullName>OrderCloneRejectedDenied</fullName>
-        <categories>OrderClone</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>OrderClone</shortDescription>
-        <value>You are about to clone an Order that was</value>
-    </labels>
-    <labels>
-        <fullName>OrderCloneRejectedDeniedConfirmation</fullName>
-        <categories>OrderClone</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>OrderClone</shortDescription>
-        <value>Are you sure?</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_BatchUpdateProducts</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>BatchUpdateProducts</shortDescription>
-        <value>Batch Update Products</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_ExecuteBatch</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ExecuteBatch</shortDescription>
-        <value>Execute Batch</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_PreviousJobs</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>PreviousJobs</shortDescription>
-        <value>Previous jobs</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_JobID</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>JobID</shortDescription>
-        <value>Job ID</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_StartTime</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>StartTime</shortDescription>
-        <value>Start Time</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_EndTime</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>EndTime</shortDescription>
-        <value>End Time</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_Status</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Status</shortDescription>
-        <value>Status</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_Details</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Details</shortDescription>
-        <value>Details</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_Duration</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Duration</shortDescription>
-        <value>Duration</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_ProductCount</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ProductCount</shortDescription>
-        <value>Product Count</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_Errors</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Errors</shortDescription>
-        <value>Errors</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_ItemsProcessed</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ItemsProcessed</shortDescription>
-        <value>Items Processed</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_ErrorMessages</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>ErrorMessages</shortDescription>
-        <value>Error Messages</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_Previous</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Previous</shortDescription>
-        <value>Previous</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_Next</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Next</shortDescription>
-        <value>Next</value>
-    </labels>
-    <labels>
-        <fullName>UpdateProducts_PageOf</fullName>
-        <categories>UpdateProducts</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>PageOf</shortDescription>
-        <value>Page {0} of {1}</value>
     </labels>
 </CustomLabels>

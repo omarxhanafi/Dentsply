@@ -13,5 +13,5 @@ declare module "@salesforce/apex/EventMultiWhoController.search" {
 }
 
 declare module "@salesforce/apex/EventMultiWhoController.setEventWhoIds" {
-    export default function setEventWhoIds(params: {eventId: string, whoIdList: string[]}): Promise<EventRelation[]>;
+    export default function setEventWhoIds(params: {eventId: string, whoIdList: string[]}): Promise<any[]>;
 }

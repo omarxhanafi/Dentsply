@@ -9,5 +9,5 @@ declare module "@salesforce/apex/CallReportQuickActionPocController.getPickListV
 }
 
 declare module "@salesforce/apex/CallReportQuickActionPocController.getProcedureTrackerDataList" {
-    export default function getProcedureTrackerDataList(params: {recordId: string}): Promise<ProcedureTracker__c>;
+    export default function getProcedureTrackerDataList(params: {recordId: string}): Promise<any>;
 }

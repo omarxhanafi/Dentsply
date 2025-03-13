@@ -1,7 +1,7 @@
 // DO NOT EDIT: This file is managed by Illuminated Cloud. Any external changes will be discarded.
 
 declare module "@salesforce/apex/ServiceCloud_Account.getAccountInfo" {
-    export default function getAccountInfo(params: {recordId: string}): Promise<Account>;
+    export default function getAccountInfo(params: {recordId: string}): Promise<any>;
 }
 
 declare module "@salesforce/apex/ServiceCloud_Account.getCaseFieldLabels" {
@@ -9,9 +9,9 @@ declare module "@salesforce/apex/ServiceCloud_Account.getCaseFieldLabels" {
 }
 
 declare module "@salesforce/apex/ServiceCloud_Account.getOpenCases" {
-    export default function getOpenCases(params: {recordId: string}): Promise<Case[]>;
+    export default function getOpenCases(params: {recordId: string}): Promise<any[]>;
 }
 
 declare module "@salesforce/apex/ServiceCloud_Account.getTerritoryInfo" {
-    export default function getTerritoryInfo(params: {recordId: string}): Promise<UserTerritory2Association[]>;
+    export default function getTerritoryInfo(params: {recordId: string}): Promise<any[]>;
 }

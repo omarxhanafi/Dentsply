@@ -2,7 +2,7 @@
 
 declare namespace flowQuestionnaireController {
     declare interface QuestionWrapper {
-        questionDetails?: Questions__c;
+        questionDetails?: any;
         options?: string[];
     }
 }
