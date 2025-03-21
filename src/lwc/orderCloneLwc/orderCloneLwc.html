@@ -1,26 +1,67 @@
 <template>
-    <lightning-quick-action-panel header="Confirm Cloning">
+    <lightning-quick-action-panel header={labels.OrderCloneHeader}>
         <!-- Warning for Rejected/Denied Orders -->
         <div lwc:if={redWarningVisible} class="slds-notify slds-notify_alert slds-alert_error rejected-alert" role="alert">
-            <lightning-icon icon-name="utility:warning" alternative-text="Error" size="small" class="slds-m-right_x-small"></lightning-icon>
+            <lightning-icon icon-name="utility:warning" size="small" class="slds-m-right_x-small"></lightning-icon>
             <span>{labels.OrderCloneRejectedDenied} <strong>{orderStatus}</strong>. {labels.OrderCloneRejectedDeniedConfirmation}</span>
-            <button class="slds-button slds-button_icon slds-notify__close" onclick={closeRedWarning}>
-                <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Close"></lightning-icon>
-            </button>
         </div>
 
-        <!-- Standard Warning -->
+        <!-- Standard Warning with Condensed Message -->
         <div lwc:if={warningVisible} class="slds-notify slds-notify_alert slds-alert_warning warning-alert" role="alert">
-            <lightning-icon icon-name="utility:warning" alternative-text="Warning" size="small" class="slds-m-right_x-small"></lightning-icon>
-            <span>{labels.OrderCloneWarning}</span>
-            <button class="slds-button slds-button_icon slds-notify__close" onclick={closeWarning}>
-                <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Close"></lightning-icon>
-            </button>
+            <div>
+                <p class="slds-text-color_warning slds-m-bottom_x-small">
+                    <lightning-icon icon-name="utility:warning" size="small" class="slds-m-right_x-small"></lightning-icon>
+                    {condensedMessage}
+                </p>
+
+                <!-- "See more" Link -->
+                <a href="javascript:void(0);" onclick={toggleDetails} class="slds-text-link slds-m-bottom_x-small">
+                    {seeMoreText}
+                </a>
+
+                <!-- Collapsible Section -->
+                <div lwc:if={showDetails}>
+                    <!-- Pricing Changes -->
+                    <template lwc:if={hasPricingChanges}>
+                        <br>
+                        <div>
+                            <p class="slds-text-color_warning slds-m-bottom_x-small">
+                                <strong>{labels.OrderClonePricingChangesHeader}</strong>
+                            </p>
+                            <div>
+                                <template for:each={pricingChanges} for:item="change">
+                                    <div key={change.productId} class="slds-text-body_regular slds-m-bottom_xx-small">
+                                        <strong>{change.productName}</strong>: {change.oldPrice} → {change.newPrice}
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Product Structure Changes -->
+                    <template lwc:if={hasStructureChanges}>
+                        <br>
+                        <div>
+                            <p class="slds-text-color_warning slds-m-bottom_x-small">
+                                <strong>{labels.OrderCloneStructuralChangesHeader}</strong>
+                            </p>
+                            <div>
+                                <template for:each={structureChanges} for:item="change">
+                                    <div key={change.name} class="slds-text-body_regular slds-m-bottom_xx-small">
+                                        <strong>{change.name}</strong> was {change.action} {change.preposition} <strong>{change.bundleName}</strong>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
         </div>
 
         <!-- Confirmation Message -->
         <p>{labels.OrderCloneConfirmation} <strong>{orderNumber}</strong>?</p>
 
+        <!-- Buttons -->
         <div slot="footer">
             <lightning-button label="No" onclick={handleNo}></lightning-button>
             <lightning-button label="Yes" variant="brand" onclick={handleYes} class="slds-m-left_small"></lightning-button>

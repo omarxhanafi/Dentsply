@@ -3684,22 +3684,6 @@ Click new to add more ...</value>
         <value>Assign the Opportunity to</value>
     </labels>
     <labels>
-        <fullName>QuoteCloneConfirmation</fullName>
-        <categories>QuoteClone</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>QuoteClone</shortDescription>
-        <value>Are you sure you want to clone</value>
-    </labels>
-    <labels>
-        <fullName>QuoteCloneWarning</fullName>
-        <categories>QuoteClone</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>QuoteCloneWarning</shortDescription>
-        <value>Confirm with your administrator: Sync Pricing Data Job is executed.</value>
-    </labels>
-    <labels>
         <fullName>QuoteCloneRejectedDenied</fullName>
         <categories>QuoteClone</categories>
         <language>en_US</language>
@@ -3738,5 +3722,158 @@ Click new to add more ...</value>
         <protected>false</protected>
         <shortDescription>OrderClone</shortDescription>
         <value>Are you sure?</value>
+    </labels>
+
+    <labels>
+        <fullName>OrderCloneHeader</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Confirm Cloning</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneChangesDetected</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>The following changes were detected:</value>
+    </labels>
+    <labels>
+        <fullName>OrderClonePricingChanges</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Pricing changes</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneStructuralChanges</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Structural changes</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneAndSeparator</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value> and </value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneSeeMore</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>See more</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneSeeLess</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>See less</value>
+    </labels>
+    <labels>
+        <fullName>OrderClonePricingChangesHeader</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Pricing Changes:</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneStructuralChangesHeader</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Structural Changes:</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneSuccessTitle</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneSuccessMessage</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Order "{0}" created successfully!</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCloneSuccessMessage</fullName>
+        <categories>QuoteClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Quote "{0}" - "{1}" created successfully!</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneErrorTitle</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneErrorMessage</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>An error occurred while cloning the Order. Check the logs for details.</value>
+    </labels>
+    <labels>
+        <fullName>QuoteCloneErrorMessage</fullName>
+        <categories>QuoteClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>QuoteClone</shortDescription>
+        <value>An error occurred while cloning the Quote. Check the logs for details.</value>
+    </labels>
+    <labels>
+        <fullName>OrderClonePrepositionTo</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>to</value>
+    </labels>
+    <labels>
+        <fullName>OrderClonePrepositionFrom</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>from</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneActionAdded</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>added</value>
+    </labels>
+    <labels>
+        <fullName>OrderCloneActionRemoved</fullName>
+        <categories>OrderClone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OrderClone</shortDescription>
+        <value>removed</value>
     </labels>
 </CustomLabels>

@@ -13,3 +13,7 @@
     border: 1px solid #d93f3c;
     color: #5a1e1e;
 }
+
+.compact-paragraph {
+    margin-bottom: 0;
+}
