@@ -1,45 +1,43 @@
 ({
 
-    checkDealerVisible : function(cmp, event){
-
+    checkDealerVisible: function(cmp, event) {
         var action = cmp.get("c.getOpportunitySettings");
         action.setParams({
             category: cmp.find("catField").get("v.value"),
             accountid: cmp.get("v.recordId")
         });
 
-        action.setCallback(this, function(result){
-
+        action.setCallback(this, function(result) {
             var state = result.getState();
-            if (cmp.isValid() && state === "SUCCESS"){
-                var resultList = result.getReturnValue();
-                //console.log('Dealer list: ' + JSON.stringify(resultList, null, 2));
-                var hideDealer = false;
+            if (cmp.isValid() && state === "SUCCESS") {
+                var settings = result.getReturnValue();
+                var hideDealer = true; // Default to hiding the dealer field
+                var isDealerMandatory = false; // Default to not mandatory
 
-                resultList = resultList.filter(r => r.BrandsList__c.split(";").indexOf(cmp.find("brandField").get("v.value")) != -1);
+                if (settings && settings.length > 0) {
+                    // Filter settings based on the selected brand
+                    var selectedBrand = cmp.find("brandField").get("v.value");
+                    var filteredSettings = settings.filter(function(setting) {
+                        return setting.BrandsList__c && setting.BrandsList__c.split(";").includes(selectedBrand);
+                    });
 
-                if(resultList.length>0){
-                    console.log(resultList);
-                    if(resultList[0].ShowDistributor__c == false){
-                        hideDealer = true;
-                    } else {
-                        cmp.set("v.isDealerMandatoryOutput", resultList[0].Dealer_Distributor_is_Mandatory__c);
+                    if (filteredSettings.length > 0) {
+                        hideDealer = !filteredSettings[0].ShowDistributor__c;
+                        isDealerMandatory = filteredSettings[0].Dealer_Distributor_is_Mandatory__c;
                     }
                 }
 
+                // Set the component attributes
                 cmp.set("v.hideDealer", hideDealer);
+                cmp.set("v.isDealerMandatoryOutput", isDealerMandatory);
 
-
+                // Check if category and brand fields should be hidden
                 let hideCategory = cmp.get('v.hideCategoryBrand');
-
-                /*if(hideCategory == false){
-                        cmp.find('catField').reportValidity();
-                        cmp.find('brandField').reportValidity();
-                }*/
             }
         });
         $A.enqueueAction(action);
     },
+
 
     checkValidity: function(cmp, event){
         

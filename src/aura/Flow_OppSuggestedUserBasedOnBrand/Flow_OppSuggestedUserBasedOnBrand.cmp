@@ -46,9 +46,8 @@
                               onchange="{!c.submitForm}" required="true"/>
 
         <aura:if isTrue="{!v.hideDealer == false}">
-            <!--<lightning:inputField aura:id="dealerField" fieldName="Dealer__c" onchange="{!c.submitForm}"/> -->
             <c:dealerLookup aura:id="dealerField" recordId="{!v.accountId}" category="{!v.categoryOutput}"
-                            onvaluechange="{!c.submitDealer}"/>
+                            onvaluechange="{!c.submitDealer}" required="{!v.isDealerMandatoryOutput}"/>
         </aura:if>
 
         <!--<aura:if isTrue="{!v.objType != 'Opportunity'}">
