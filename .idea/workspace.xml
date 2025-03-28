@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/OrderCloneController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/OrderCloneController.cls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/classes/QuoteCloneController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/QuoteCloneController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_OrderCloneController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_OrderCloneController.cls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classes/Test_QuoteCloneController.cls" beforeDir="false" afterPath="$PROJECT_DIR$/src/classes/Test_QuoteCloneController.cls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,13 +83,9 @@
                   <option name="body" value="System.debug(JSON.serializePretty(QuoteCloneController.checkProductStructureChanges('0Q09Z00000411RBSAY')));" />
                   <option name="name" value="Anonymous Apex 5" />
                 </AnonymousApexSavedDocument>
-                <AnonymousApexSavedDocument>
-                  <option name="body" value="delete [select id from OrderItem where orderid = '8019Z00000b23RLQAY'];" />
-                  <option name="name" value="Anonymous Apex 6" />
-                </AnonymousApexSavedDocument>
               </list>
             </option>
-            <option name="selectedSavedDocumentIndex" value="2" />
+            <option name="selectedSavedDocumentIndex" value="4" />
           </AnonymousApexSettings>
         </option>
         <option name="connectionMruWorkspaceSettings">
@@ -18608,17 +18602,17 @@
                 <ConnectionWorkspaceSettings>
                   <option name="buildSuccessDatesBySourceRootRelativePath">
                     <map>
-                      <entry key="APEXCLASS:ORDERCLONECONTROLLER" value="1743078496391" />
+                      <entry key="APEXCLASS:ORDERCLONECONTROLLER" value="1743188281010" />
                       <entry key="APEXCLASS:ORDERITEMTRIGGERHANDLER" value="1738745353807" />
                       <entry key="APEXCLASS:ORDERMANAGEMENT_CC" value="1737034166879" />
                       <entry key="APEXCLASS:ORDERTRIGGERHANDLER" value="1739264251710" />
                       <entry key="APEXCLASS:ORDERTRIGGERHELPER" value="1738691632949" />
-                      <entry key="APEXCLASS:QUOTECLONECONTROLLER" value="1743079992589" />
+                      <entry key="APEXCLASS:QUOTECLONECONTROLLER" value="1743188281010" />
                       <entry key="APEXCLASS:QUOTETRIGGERHANDLER" value="1738691710442" />
                       <entry key="APEXCLASS:QUOTETRIGGERHELPER" value="1738691710442" />
-                      <entry key="APEXCLASS:TEST_ORDERCLONECONTROLLER" value="1743080195188" />
+                      <entry key="APEXCLASS:TEST_ORDERCLONECONTROLLER" value="1743080362167" />
                       <entry key="APEXCLASS:TEST_ORDERTRIGGER" value="1738505690538" />
-                      <entry key="APEXCLASS:TEST_QUOTECLONECONTROLLER" value="1743080195188" />
+                      <entry key="APEXCLASS:TEST_QUOTECLONECONTROLLER" value="1743080362167" />
                       <entry key="APEXCLASS:TEST_QUOTETRIGGERHANDLER" value="1738693563596" />
                       <entry key="AURADEFINITIONBUNDLE:OPPSTAGEGUIDANCEMODALCONTENT" value="1740129243362" />
                       <entry key="CUSTOMLABELS:CUSTOMLABELS" value="1742492711000" />
@@ -19477,6 +19471,7 @@
     "Apex Unit Tests.Test_ProductProfilingTrigger.testPreventDeletion.executor": "Run",
     "Apex Unit Tests.Test_ProductTrigger.executor": "Debug",
     "Apex Unit Tests.Test_QuoteCloneController.executor": "Coverage",
+    "Apex Unit Tests.Test_QuoteCloneController.testCheckPricingChanges.executor": "Run",
     "Apex Unit Tests.Test_QuoteCloneController.testCloneQuote.executor": "Run",
     "Apex Unit Tests.Test_QuoteCloneController.testGetQuoteDetails.executor": "Run",
     "Apex Unit Tests.Test_QuoteTriggerHandler.executor": "Run",
@@ -19520,7 +19515,7 @@
       <recent name="$PROJECT_DIR$/src/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Apex Unit Tests.Test_QuoteCloneController">
+  <component name="RunManager" selected="Apex Unit Tests.Test_OrderCloneController">
     <configuration name="Test_AccountFlagsController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -19948,101 +19943,6 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_OrderCloneController.testCloneOrder" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="changedOnly" value="false" />
-      <option name="connectionName" value="RLMDev" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="dependencyUniqueFullName" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OrderCloneController" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_OrderCloneController">
-            <value>
-              <set>
-                <option value="testCloneOrder" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <option name="allTests" value="false" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="apexLogLevel" value="DEBUG" />
-      <option name="calloutsLogLevel" value="INFO" />
-      <option name="changedOnly" value="false" />
-      <option name="connectionName" value="RLMDev" />
-      <option name="connectionType" value="OAUTH" />
-      <option name="contextConfiguration" value="true" />
-      <option name="databaseLogLevel" value="INFO" />
-      <option name="dependencyUniqueFullName" />
-      <option name="directoryPath" />
-      <option name="logLevelsInitialized" value="false" />
-      <option name="moduleToTestClassNames">
-        <map>
-          <entry key="Dentsply">
-            <value>
-              <set>
-                <option value="Test_OrderCloneController" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="nbaLogLevel" value="INFO" />
-      <option name="profilingLogLevel" value="INFO" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="systemLogLevel" value="DEBUG" />
-      <option name="testClassToTestMethodNames">
-        <map>
-          <entry key="Test_OrderCloneController">
-            <value>
-              <set>
-                <option value="testCloneOrder" />
-              </set>
-            </value>
-          </entry>
-        </map>
-      </option>
-      <option name="testSuiteName" />
-      <option name="validationLogLevel" value="INFO" />
-      <option name="visualforceLogLevel" value="INFO" />
-      <option name="waveLogLevel" value="INFO" />
-      <option name="workflowLogLevel" value="INFO" />
-      <method v="2" />
-    </configuration>
     <configuration name="Test_QuoteCloneController" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allTests" value="false" />
       <option name="allowRunningInParallel" value="false" />
@@ -20122,13 +20022,108 @@
       <option name="workflowLogLevel" value="INFO" />
       <method v="2" />
     </configuration>
+    <configuration name="Test_QuoteCloneController.testCheckPricingChanges" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="changedOnly" value="false" />
+      <option name="connectionName" value="RLMDev" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="dependencyUniqueFullName" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_QuoteCloneController" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_QuoteCloneController">
+            <value>
+              <set>
+                <option value="testCheckPricingChanges" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <option name="allTests" value="false" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="apexLogLevel" value="DEBUG" />
+      <option name="calloutsLogLevel" value="INFO" />
+      <option name="changedOnly" value="false" />
+      <option name="connectionName" value="RLMDev" />
+      <option name="connectionType" value="OAUTH" />
+      <option name="contextConfiguration" value="true" />
+      <option name="databaseLogLevel" value="INFO" />
+      <option name="dependencyUniqueFullName" />
+      <option name="directoryPath" />
+      <option name="logLevelsInitialized" value="false" />
+      <option name="moduleToTestClassNames">
+        <map>
+          <entry key="Dentsply">
+            <value>
+              <set>
+                <option value="Test_QuoteCloneController" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="nbaLogLevel" value="INFO" />
+      <option name="profilingLogLevel" value="INFO" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="systemLogLevel" value="DEBUG" />
+      <option name="testClassToTestMethodNames">
+        <map>
+          <entry key="Test_QuoteCloneController">
+            <value>
+              <set>
+                <option value="testCheckPricingChanges" />
+              </set>
+            </value>
+          </entry>
+        </map>
+      </option>
+      <option name="testSuiteName" />
+      <option name="validationLogLevel" value="INFO" />
+      <option name="visualforceLogLevel" value="INFO" />
+      <option name="waveLogLevel" value="INFO" />
+      <option name="workflowLogLevel" value="INFO" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Apex Unit Tests.Test_QuoteCloneController" />
         <item itemvalue="Apex Unit Tests.Test_OrderCloneController" />
+        <item itemvalue="Apex Unit Tests.Test_QuoteCloneController" />
+        <item itemvalue="Apex Unit Tests.Test_QuoteCloneController.testCheckPricingChanges" />
         <item itemvalue="Apex Unit Tests.Test_OrderCloneController.testCheckProductStructureChanges" />
         <item itemvalue="Apex Unit Tests.Test_OrderCloneController.testCheckPricingChanges" />
-        <item itemvalue="Apex Unit Tests.Test_OrderCloneController.testCloneOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -20327,7 +20322,7 @@
       <workItem from="1741686714843" duration="1035000" />
       <workItem from="1742225532900" duration="33801000" />
       <workItem from="1742894145697" duration="1208000" />
-      <workItem from="1742977458283" duration="5828000" />
+      <workItem from="1742977458283" duration="11717000" />
     </task>
     <servers />
   </component>
@@ -20384,9 +20379,9 @@
     <SUITE FILE_PATH="coverage/Dentsply$Test_EventPathController.ic2" NAME="Cleanup2 Coverage Results" MODIFIED="1734628861617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Frost2" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_AssignMarginGuidanceHelper_testCalculateMargins.ic2" NAME="Margin Coverage Results" MODIFIED="1677067029631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="Tracker" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$ContactTriggerTest_testNoDeleteKOLError.ic2" NAME="DevMar25 Coverage Results" MODIFIED="1741686114443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevMar25" CONNECTION_TYPE="OAUTH" />
-    <SUITE FILE_PATH="coverage/Dentsply$Test_QuoteCloneController.ic2" NAME="RLMDev Coverage Results" MODIFIED="1743080208028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" PROJECT_NAME="Dentsply" CONNECTION_NAME="RLMDev" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ObjectivesController_OGSM.ic2" NAME="StgJan25 Coverage Results" MODIFIED="1737386246886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="StgJan25" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_ScheduleCreateProcedureTrackers.ic2" NAME="SureSmile Coverage Results" MODIFIED="1671630434682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="SureSmile" CONNECTION_TYPE="OAUTH" />
+    <SUITE FILE_PATH="coverage/Dentsply$Test_OrderCloneController.ic2" NAME="RLMDev Coverage Results" MODIFIED="1743188286318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" PROJECT_NAME="Dentsply" CONNECTION_NAME="RLMDev" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_KOLInfoTrigger_testPreventDuplicateKOLs.ic2" NAME="DevMar25 Coverage Results" MODIFIED="1741707323091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevMar25" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_NewContractController_testEligibilityOfCreation.ic2" NAME="DevFeb Coverage Results" MODIFIED="1673603932022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevFeb" CONNECTION_TYPE="OAUTH" />
     <SUITE FILE_PATH="coverage/Dentsply$Test_OneDSCanadaTermsAndConditions_CC.ic2" NAME="DentsplyDevOctober Coverage Results" MODIFIED="1665652628428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="Apex" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true" PROJECT_NAME="Dentsply" CONNECTION_NAME="DevNov" CONNECTION_TYPE="OAUTH" />
